@@ -15,11 +15,11 @@
   %   \put(0,0){\scshape {\Large to} {\LARGE Mathematical Proof}}
   % \end{picture}
   \newcommand{\enormoussize}{\fontsize{30pt}{20pt}\selectfont}
-  {\enormoussize\scshape \makebox[0em][l]{\raisebox{24pt}{\large\itshape \hspace*{15pt}An Inquiry-Based}}Introduction to Proof}
+  {\enormoussize\scshape \makebox[0em][l]{\raisebox{24pt}{\large\itshape \hspace*{15pt}An Inquiry-Based}}{\color{darkii}Introduction to Proof}}
 \end{center}
 \vspace*{\fill}
 \begin{flushright}
-  \large
+  \large\color{darki}
   \begin{tabular}{@{}l@{}}
   Jim Hef{}feron  \\
   Saint Michael's College \\
@@ -31,11 +31,11 @@
 \chapter*{Preface}
 
 This is a course in Mathematical proof. 
-Its audience is US sophmore Mathematics majors although since
-it requires only high school mathematics, not Calculus,
+Its audience is majors who are US sophmores, although since
+it requires only high school mathematics
 it can be used with first year students.
 
-This course is Inquiry-Based (sometimes called the Moore method).
+This course is Inquiry-Based (sometimes called Moore method).
 That is, this text is a sequence of exercises
 along with definitions and a few 
 remarks.
@@ -43,24 +43,42 @@ The class works through those by
 proving, providing examples, counterexamples, etc.
 The students directly grapple with the material, guided lightly by
 the instructor, together working though misunderstandings, 
-sometimes stumbling around in the dark, and sometimes 
+sometimes stumbling around in the dark, and occasionally
 having beautiful flashes of insight.
 With students at this level, 
 this approach is the best way to build mathematical maturity.
 
-The material starts with elementary number theory 
-including divisibility and primes, 
-then moves to sets, functions, and relations, and finally
+The material starts with elementary number theory, 
+then moves to sets, functions and relations, and finally
 finishes with cardinality.
 We approach these naively, meaning without a systemmatic development from
 axioms.
 
+Finally, a comment on covering the topics in logic.
+Here we start with elementary number theory for the same reason
+that Little League starts with hitting balls, and not with 
+the rulebook.
+People with a turn for the subject readily jump into proving things about
+divisibility and primes, and get excited about enjoying this new work, 
+while starting with a month of preliminary material might be a problem.
+In my course classes begin with some students going to the 
+board to write their answer to the homework, and I use the five or 
+ten minutes to show slides that address the issues that 
+the class's current work raises, such as the truth table 
+definition of the implication operator.
+In this way those topics are covered, but the main emphasis lies on 
+the class's work proving things.  
+
+
+
 \medskip
-The material is Free, including its \LaTeX{} source; see the details  
-at \url{http://joshua.smcvt.edu/proofs}.  
-Also there are the slides that I use  
-on things such as truth tables and quantifiers,
-and a description of how my class runs.
+\textsc{License.}
+The material is Free; see the details  
+at \url{http://joshua.smcvt.edu/proofs}.
+This includes the book's \LaTeX{} source, so instructors can tailor the
+material to their students.  
+Also on that page are the slides that I use,
+and a brief description of how my class runs.
 
 
 
@@ -828,19 +846,25 @@ $\R^2=\setbuilder{(x,y)}{x,y\in\R}$.
 
 \begin{ex}
 \begin{exes}
+\item $A\times \emptyset=\emptyset$.
+  What about $\emptyset\times A$?
 \item $A\times B=\emptyset$ iff $A=\emptyset$ or~$B=\emptyset$
 \item Prove that there are sets so that $A\times B\neq B\times A$.
 \item Under what circumstances is $A\times B=B\times A$?
 \item Is $(A\times B)\times C$ equal to $A\times (B\times C)$?
+\item $A\times B\subseteq A^\prime\times B^\prime$ if and only if
+  $A\subseteq A^\prime$ and $B\subseteq B^\prime$.
 \end{exes}
 \end{ex}
 
-\begin{ex} 
+\begin{ex} We can ask about the intersection between Cartesian product and 
+other set operations.
 \begin{exes}
-\item $A\times B\subseteq A^\prime\times B^\prime$ if and only if
-  $A\subseteq A^\prime$ and $B\subseteq B^\prime$.
 \item $(A\union B)\times C=(A\times C)\union(B\times C)$
 \item What happens for intersection?
+\item $(A\times B)\union (C\times D)\subseteq ()A\union C\times (B\union D)$
+\item What happens for intersection?
+\item What happens for complement?
 \end{exes}
 \end{ex}
 
@@ -862,13 +886,23 @@ a set of pairs $(d,c)\in D\times C$ that is
 exactly one $c\in C$ such that $(d,c)\in f$. 
 \end{df}
 
-Sometimes say mapping.
+Sometimes say map or morphism.
 Alternative notation $D\rightarrow^f C$.
 
 Maps-to notation.
+Argument and value.
+
+Two functions are equal only if they have the same domain, codomain,
+and graph.
 
 \begin{df}
-  Constant function, identity
+The \definend{identity function} $\map{\identity}{D}{D}$ has
+$\identity(d)=d$ for all $d\in D$.
+\end{df}
+
+\begin{df}
+A \definend{constant function} $\map{f}{D}{C}$ has  
+$f(d_0)=f(d_1)$ for all $d_0,d_1\in D$.
 \end{df}
 
 maps with multiple arguments, arity
@@ -893,19 +927,39 @@ $\map{f_1}{D_1}{C_1}$ and $\map{f_2}{D_2}{C_2}$ then $f\times g$.
 % .....................................
 \section{Operations}
 
+\begin{df}
+  projection, injection
+\end{df}
+
 Composition
 
 Arrow diagram.
 
-\begin{df}
-  projection, injection
-\end{df}
 
 
 
 
 % .....................................
 \section{One-to-one, onto}
+
+The definition of function specifies that for every argument there is 
+exactly one associated value.
+
+\begin{df}
+A function is \definend{one-to-one} if for each value there is at most
+one associated argument, that is, if $f(d_0)=f(d_1)$ implies that $d_0=d_1$
+for elements $d_0,d_1$ of the domain.
+A function is \definend{onto} if for each value there is at least
+one associated argument, that is, if for each element $c$ of the codomain
+there exists an element $d$ of the domain such that $f(d)=c$.
+A function that is both one-to-one and onto is a 
+\definend{correspondence} or \definend{permutation}.     
+\end{df}
+
+\begin{ex}
+If there is a correspondence between two finite sets then the two sets
+have the same number of elements.  
+\end{ex}
 
 \begin{ex}
 \begin{exes}
@@ -919,7 +973,7 @@ Arrow diagram.
 \begin{exes}
 \item If $g\circ f$ is onto then $g$ is onto.
 \item If $g\circ f$ is one-to-one then $f$ is one-to-one.
-\item Other two cases need not hold.     
+\item The other two cases need not hold.     
 \end{exes}
 \end{ex}
 
@@ -971,10 +1025,6 @@ and sometimes write $xRy$.
 \end{exes}
 \end{ex}
 
-\begin{df}
-The \definend{diagonal relation} on $A$ is $\setbuilder{(x,x)}{x\in A}$.  
-\end{df}
-
 \begin{df} 
 Let $R$ be a binary relation on a set~$X$.
 The relation is \definend{reflexive} if $(x,x)\in R$ for all $x\in X$.
@@ -983,12 +1033,26 @@ $(y,x)\in R$ for all $x,y\in R$.
 The relation is \definend{transitive} if 
 $(x,y)\in R$ and $(y,z)\in R$ implies that 
 $(x,z)\in R$ for all elements $x,y,z\in R$.
-A relation that satisfies all three contitions is an
+A relation that satisfies all three conditions is an
 \definend{equivalence relation}.  
 \end{df}
 
+\begin{ex}   \pord{} that each is reflexive, symmetric, and transitive.
+\begin{exes}
+\item The ``goes into'' relation
+  $D=\setbuilder{(d,m)\in\Z^2}{d\divides m}$.
+\item
+  For any set~$A$ the \definend{diagonal relation} on $A$ 
+  is $\setbuilder{(x,x)}{x\in A}$. 
+\item
+  Where $A$ is a set,
+  $E=\setbuilder{(x,y)\in A\times\powerset(A)}{x\in y}$.
+\end{exes}
+\end{ex}
+
 \begin{ex} For each, find a binary relation satisfying the condition.
 \begin{exes}
+\item Not reflexive.
 \item Not transitive.
 \item Reflexive and symmetric but not transitive.
 \item Transitive but not symmetric or reflexive.
@@ -1017,7 +1081,7 @@ If $R$ is an equivalence relation on~$X$ then instead of $(x,y)\in R$
 we may write $x\equiv y\pmod R$.  
 \end{df}
 
-\begin{ex}
+\begin{ex} \label{RationalsAsEqClasses}
 \begin{exes}
 \item Let $X=\Z\times (\N-\set{0})$.
 Show that 
@@ -1027,10 +1091,11 @@ is an equivalence.
 \end{exes}
 \end{ex}
 
-\begin{ex}
+\begin{ex} \label{PlaneLinesAsClasses}
 \begin{exes}
-\item Let $X$ be the set of lines in the Euclidean plane.
-Let $R=\setbuilder{(\ell_0,\ell_1)\in X^2}{\text{the two are parallel}}$. 
+\item Let $X$ be the set of lines in the Euclidean plane and consider
+the relation
+$R=\setbuilder{(\ell_0,\ell_1)\in X^2}{\text{the two are parallel}}$. 
 Show that is an equivalence.
 \item List five elements of $R$.
 \item Fix a vertical line $\ell$ (for instance, the $x$-axis 
@@ -1045,9 +1110,10 @@ The \definend{equivalence class} of $x\in X$ is the set
 $\eqclass{x}=\setbuilder{y\in X}{y\equiv x\pmod R}$.   
 \end{df}
 
-\begin{ex}
+\begin{ex} Describe the equivalence classes.
 \begin{exes}
-\item     
+\item \cref{RationalsAsEqClasses}
+\item \cref{PlaneLinesAsClasses}
 \end{exes}
 \end{ex}
 
