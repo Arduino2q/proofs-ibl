@@ -1,0 +1,1142 @@
+\documentclass{ibl}
+\newcommand{\venn}[2]{\begin{tabular}{@{}c@{}}\includegraphics{#1} \\ #2\end{tabular}}
+
+\frontmatter
+
+\begin{document}    
+\vspace*{\fill}
+\begin{center}
+  \setlength{\unitlength}{1in}
+  % \newcommand{\enormoussize}{\fontsize{50pt}{20pt}\selectfont}
+  % \begin{picture}(0,0)
+  %   \put(0,.2){\enormoussize\scshape I}
+  %   \put(.3,.5){\LARGE\scshape nquiry-Based} 
+  %   \put(.38,.3){\LARGE\scshape ntroduction}  
+  %   \put(0,0){\scshape {\Large to} {\LARGE Mathematical Proof}}
+  % \end{picture}
+  \newcommand{\enormoussize}{\fontsize{30pt}{20pt}\selectfont}
+  {\enormoussize\scshape \makebox[0em][l]{\raisebox{24pt}{\large\itshape \hspace*{15pt}An Inquiry-Based}}Introduction to Proof}
+\end{center}
+\vspace*{\fill}
+\begin{flushright}
+  \large
+  \begin{tabular}{@{}l@{}}
+  Jim Hef{}feron  \\
+  Saint Michael's College \\
+  version 0.1
+  \end{tabular}
+\end{flushright}
+
+
+\chapter*{Preface}
+
+This is a course in Mathematical proof. 
+Its audience is US sophmore Mathematics majors although since
+it requires only high school mathematics, not Calculus,
+it can be used with first year students.
+
+This course is Inquiry-Based (sometimes called the Moore method).
+That is, this text is a sequence of exercises
+along with definitions and a few 
+remarks.
+The class works through those by
+proving, providing examples, counterexamples, etc.
+The students directly grapple with the material, guided lightly by
+the instructor, together working though misunderstandings, 
+sometimes stumbling around in the dark, and sometimes 
+having beautiful flashes of insight.
+With students at this level, 
+this approach is the best way to build mathematical maturity.
+
+The material starts with elementary number theory 
+including divisibility and primes, 
+then moves to sets, functions, and relations, and finally
+finishes with cardinality.
+We approach these naively, meaning without a systemmatic development from
+axioms.
+
+\medskip
+The material is Free, including its \LaTeX{} source; see the details  
+at \url{http://joshua.smcvt.edu/proofs}.  
+Also there are the slides that I use  
+on things such as truth tables and quantifiers,
+and a description of how my class runs.
+
+
+
+
+\mainmatter
+\pagestyle{bodypage}
+\chapter{Number Theory}
+
+We begin with elementary results about the
+\definend{integers\/} $\Z=\set{..,-2,-1,0,1,2,..}$.
+In this chapter, if we just say ``number'' then it means integer.
+In some cases, results refer to the 
+\definend{natural numbers\/} $\N=\set{0,1,2,..}$.
+(Be aware that some mathematicians mistakenly 
+perceive that the natural numbers do not include~$0$.)
+
+
+
+% .....................................
+\section{Divisibility}
+
+\begin{df}
+  For two integers $d,n$ we say that
+  $d$ \definend{divides}~$n$
+  if there is an integer~$k$ such that $dk=n$.
+  Here, $d$~is the \definend{divisor}, 
+  $n$~is the \definend{dividend},
+  and~$k$ is the \definend{quotient}.
+  (Alternative wordings are:
+  $d$~\definend{is a factor of}~$n$,
+  or $d$~\definend{goes evenly into}~$n$,
+  or $n$~\definend{is a multiple of}~$d$.)
+  We denote the relationship as
+  $d|n$ if $d$~is a divisor of~$n$
+  or as $d\not |n$ if it is not.
+\end{df}
+
+\begin{df}
+  A natural number is \definend{even} if it is a multiple of~$2$.
+  Otherwise it is \definend{odd}.
+  (Alternative wording is that the number \definend{has even parity}
+  or \definend{has odd parity}.)
+\end{df}
+
+% \begin{nt}
+  The notation $d\divides n$ signifies a relationship between two numbers.
+  It is different than the fraction $d/n$, which is a number.
+  We can sensibly ask ``Does $2$ divide~$5$?''\spacefactor=1000\
+  but the question ``Does $2/5$?''\spacefactor=1000\ is not sensible.   
+% \end{nt}
+
+\begin{ex}[Interaction of parity with sign]
+Recall that the \definend{absolute value} of a number~$a$ is $a$ in the\
+case that~$a$ is positive and is~$-a$ in the case that $a\leq 0$.  
+\pord
+\begin{exes}
+\item If a number is even then its negative is even.
+\item If a number is odd then its negative is odd.
+\item If $d\divides a$ then $-d\divides a$ and $d\divides -a$.
+\item If $d\divides a$ then $d\divides\absval{a}$.
+\item For any $a\neq 0$, its largest divisor is $\absval{a}$.
+\end{exes}  
+\end{ex}
+
+\begin{ex}[Interaction of parity with addition]\pord
+\begin{exes}
+\item The sum of two evens is even.
+\item The difference of two evens is even.
+\item The sum of two odds is odd.
+\item The difference of two odds is odd.
+\item Generalize to arbitrary divisors~$d$.
+\end{exes}  
+\end{ex}
+
+\begin{ex}
+Find a counterexample to:
+where $a,b\in\N$, then $a+b$ is even if and only if $a-b$ is even.
+Patch the statement so it is true.
+\end{ex}
+
+\begin{ex}[Interaction of parity with multiplication]\pord
+\begin{exes}
+\item The product of two evens is even.
+\item The quotient of two evens, if it is an integer, is even.
+\item The product of two odds is odd.
+\item The quotient of two odds, if it is an integer, is odd.
+\item Generalize to arbitrary divisors~$d$.
+\end{exes}  
+\end{ex}
+
+\begin{ex}[Divisibility Properties]
+Let $d$, $m$, and $n$ be integers.
+\pord
+\begin{exes}
+\item \notetext{Reflexivity} Every number divides itself.
+\item Every number divides $0$ while
+  the only number that $0$ divides is itself.
+\item Every number is divisible by $1$ while
+  the only numbers that divide $1$ are $1$~itself and $-1$.
+\item \notetext{Transitivity} If $d\divides n$ and $n\divides m$ 
+   then $d\divides m$.
+\item \notetext{Cancellation} 
+  For $d,n\in\Z$ we have $d\divides n$ if and only if 
+  $ad\divides an$ for any~$a\in\Z$.
+\item \notetext{Comparison} 
+  For $d,n\in\Z^+$, if $n$ is a multiple of~$d$ then $n\geq d$.
+\item If $d\divides a$ and $d\divides b$ then $d\divides (a+b)$.  
+\end{exes}
+\end{ex}
+
+\begin{ex}
+Extend Comparison to all of $\Z$.  
+\end{ex}
+
+\begin{ex}
+Give the converse of the Reflexivity property: what conclusion can you make
+if $a\divides b$ and~$b\divides a$?
+\end{ex}
+
+\begin{ex}
+Suppose $a,b,c\in\Z$.
+\begin{exes}
+\item If $a\divides b$ then $a\divides bc$ for all integers~$c$.
+\item If $a\divides b$ and $a\divides c$ then $a$ divides the 
+  sum~$b+c$ and difference~$b-c$.
+\item Generalize.
+\end{exes}
+\end{ex}
+
+
+
+
+% .....................................
+\section{Interlude: induction}
+Results in the prior section need only proof techniques that come naturally
+to people with a mathematical aptitude.
+But some results to follow require a technique 
+that is not as natural, mathematical induction.
+
+For that reason, we now pause to introduce induction.
+We start with exercises about sums 
+(but note that induction is not about sums,
+they only make good exercises).
+For instance, most people have noticed that the odd numbers sum to 
+perfect squares: $1+3=4$, $1+3+5=9$, $1+3+5+7=16$, etc.,
+so we look to prove 
+the statement, 
+``The first $n$ odd numbers $1$, $3$, $5$, $\ldots$, $2n-1$, add to $n^2$.'' 
+
+Our induction proofs have two steps, two separate things to check.
+For the base step we show that the statement holds for a first number;
+below we will verify the truth of the statement for $n=1$.
+The inductive step is more subtle;
+we will verify the following implication.
+\begin{equation*}
+  \begin{tabular}{l} 
+  \textit{If} the statement holds from the base case up to and including 
+   the $n=k$ case \\
+  \textit{then} the statement also holds in the~$n=k+1$ case.
+  \end{tabular}
+  \tag{$*$}
+\end{equation*}
+Doing both steps  
+proves that the statement is true for all~$n\geq 1$.
+For one thing, the base case    
+directly verifies the statement for the number~$1$.
+Next, because the inductive step verifies the implication~($*$) for all $k$, 
+that implication applies when~$k=1$, where it gives 
+that the statement is true for the number~$2$. 
+Now, with both $n=1$ and~$n=2$ established, 
+apply ($*$) again to conclude that the statement is true for the number~$3$.
+In this way, we bootstrap to all numbers greater than or equal to $1$.
+Below is a sample proof, doing both steps.
+
+\begin{proof}
+  We prove that $1+3+\cdots+(2n-1)=n^2$ by induction.
+  For the $n=1$ base step note that on the left the sum has one term, $1$,
+  which equals the value on the right, $1^2$.
+
+  For the inductive step assume that the 
+  formula is true for cases $n=1$, $n=2$, \ldots, $n=k$, and 
+  consider the $n=k+1$ case.
+  The sum is $1+3+\cdots+(2k-1)+(2(k+1)-1)=1+3+\cdots+(2k-1)+(2k+1)$.
+  By the inductive hypothesis the statement is true in the $n=k$ case
+  so we can substitute.
+  \begin{equation*}
+    1+3+\cdots+(2k-1)+(2k+1)=k^2+(2k+1)=(k+1)^2
+  \end{equation*}
+  This is the required expression for the case~$k+1$.
+\end{proof}
+
+\begin{ex}
+Prove by induction.
+\begin{exes}
+\item $1+2+\cdots+n=n(n+1)/2$
+\item $1+4+9+\cdots+n^2=n(n+1)(2n+1)/6$
+\item $1+8+27+\cdots+n^3=n^2(n+1)^2/4$
+\end{exes}
+\end{ex}
+
+\begin{ex}
+Prove by induction that
+$1+2+4+8+\cdots+2^{n-1}=2^n-1$.  
+\end{ex}
+
+\begin{ex}
+Prove by induction.
+\begin{exes}
+  \item \notetext{Arithmetic series}
+       $b+(b+a)+(b+2a)+\cdots+(b+na)=(2b+na)\cdot n/2$
+  \item \notetext{Geometric series}
+        $1+r+r^2+r^3+\cdots+r^n=(1-r^{n+1})/(1-r)$ for any $r\neq 1$.
+\end{exes}
+\end{ex}
+
+\begin{ex}
+Prove by induction that $n<2^n$ for all $n\in\N$.  
+\end{ex}
+
+\begin{ex}
+Prove that for all $n\geq 2$, sums can be reversed
+$a_1+a_2+\cdots+a_n=a_n+\cdots+a_1$.   
+\end{ex}
+
+\begin{ex}
+Prove by induction.
+\begin{exes}
+\item For all $n\geq 2$ the number $6$ divides the number $n^3-n$.
+\item If $n\in\N$ then $4\divides 13^n-1$.
+\item If $n\in\N$ then
+    $(1+\sfrac{1}{1})\cdot(1+\sfrac{1}{2})\,\cdots\,(1+\sfrac{1}{n})=n+1$.
+\end{exes}
+\end{ex}
+
+Sometimes when you have finished proving something by induction, 
+while you now are sure that the statement is true, 
+you can be left with the sense
+that you are no nearer knowing really \emph{why} it is true.
+
+
+
+% .....................................
+\section{Division}
+We can generalize divisibilty.
+
+\begin{ex}
+\begin{exes}
+\item Where $a$ and $b>0$ are integers, there are integers $q$ and~$r$
+such
+that $a=bq+r$ and
+$r\in\set{0,..,b-1}$.
+\item
+Prove that the quotient and remainder are unique.
+\item 
+What to do if $b\leq 0$?
+\end{exes}
+\end{ex}
+
+\begin{ex}
+When is $r=0$? 
+\end{ex}
+
+\begin{df}
+In the $a=bq+r$ equation above, $a$ is the \definend{dividend} and
+$b$ is the \definend{divisor}, while 
+$q$ is the \definend{quotient} and~$r$ is the \definend{remainder}.  
+\end{df}
+
+From grade school we know an effective procedure, an algorithm, to 
+determine the quotient and remainder.
+
+\begin{df}
+Where $b>0$ then the \definend{modulus} $a\bmod b$ 
+is the remainder when $a$ is divided by~$b$.
+Two numbers $a,c$ are \definend{congruent modulo $b$} $a\equiv c\pmod b$ 
+if they have the same modulus with respect to~$b$.
+\end{df}
+
+\begin{ex}\pord
+\begin{exes}
+\item $a\bmod b=b\bmod a$
+\item $a\bmod b=-a\bmod b$
+\item $b\bmod b=1$    
+\end{exes}
+\end{ex}
+
+\begin{ex}
+Prove that $a\equiv c\pmod b$ if and only if $b\divides (a-c)$.  
+\end{ex}
+
+\begin{ex}
+Let $a,b,c,d,m$ be integers with $m>0$ and
+$a\equiv b\pmod m$ and $c\equiv d\pmod m$.
+\begin{exes}
+\item $a+c\equiv b+d\pmod m$
+\item $ac\equiv bd\pmod m$
+\item $a^n\equiv b^n\pmod m$ for all $n\geq 1$.    
+\end{exes}
+\end{ex}
+
+
+% .....................................
+\section{Primes}
+\begin{df}
+Let $n$ be an integer greater than or equal to~$2$.
+Then $n$ is \definend{prime} if its only divisors are itself and~$1$,
+else it is \definend{composite}.  
+\end{df}
+
+\begin{ex}\pord
+An integer $n>1$ is composite if and only if it has factors $a,b$ such that
+$1<a,b<n$.  
+\end{ex}
+
+\begin{ex}
+\begin{exes}
+\item Every number greater than $1$ has a prime divisor.
+\item Every number $n>1$ has a prime divisor~$p$ with $p\leq \sqrt{n}$.
+\item Show that the inequality cannot be made strict.     
+\end{exes}
+\end{ex}
+
+\begin{ex}[Euclid's Theorem]
+There are infinitely many primes.  
+\end{ex}
+
+\begin{ex} Suppose that $p$ is a prime.
+\begin{exes}
+\item If  $p\divides ab$ then either $p\divides a$ or
+$p\divides b$.
+\item If $p\divides a_1\cdot a_2\cdots a_n$ then 
+$p$ divides at least one~$a_i$.    
+\end{exes}
+\end{ex}
+
+\begin{ex}[Fundamental Theorem of Arithmetic]
+\begin{exes}
+\item Any number $n>1$ can be written as a product of primes
+$n=p_1^{e_1}p_2^{e_2}\cdots p_k^{e_k}$.
+\item That factorization is essentially unique:~if 
+$n=p_1^{e_1}p_2^{e_2}\cdots p_k^{e_k}$ and we write the primes
+in ascending order $p_1<p_2<\cdots<p_k$ then any other
+factorization of~$n$ into a product of primes in ascending order will give the
+same result.      
+\end{exes}
+\end{ex}
+
+\begin{ex} The second item is a classic consequence of the Fundamental Theorem.
+\begin{exes}
+\item Prove that if a number is a square then in its prime factorization 
+  each prime occurs an even number of times.
+\item Prove that $\sqrt{2}$ is irrational.
+\item Generalize the first item to any power.
+\item Generalize the second item.    
+\end{exes}
+\end{ex}
+
+
+% .....................................
+\section{Common divisors and multiples}
+
+\begin{df}
+An integer is a \definend{common divisor} of two other integers if it
+divides both of them.
+The \definend{greatest common divisor} of two integers 
+is the largest integer that is their common divisor,
+except that we take the greatest common divisor of $0$ and $0$ 
+to be $0$.
+\end{df}
+
+We write $\gcd(a,b)$ for the greatest common divisor.
+
+\begin{ex}
+Generalize the definition to sets of integers.
+\end{ex}
+
+\begin{ex}
+We will focus on the two integer case.
+\begin{exes} 
+\item For any two number $a,b$ the greatest common divisor exists.
+\item $0\leq \gcd(a,b)\leq\min(\absval{a},\absval{b})$.
+\item If either $a$ or $b$ is nonzero then 
+  $0< \gcd(a,b)\leq\min(\absval{a},\absval{b})$.
+\item If $a>0$ then $\gcd(a,0)=a$.
+\item $\gcd(a,a)=\absval{a}$
+\item $\gcd(a,b)=\gcd(b,a)$
+\item $\gcd(a,b)=\gcd(\absval{a},\absval{b})$
+\end{exes}  
+\end{ex}
+
+\begin{ex}\pord
+\begin{exes}
+\item $\gcd(ca,cb)=c\cdot\gcd(a,b)$
+\item $\gcd(a+b,c)=\gcd(a,c)+\gcd(b,c)$
+\item $\gcd(ab,c)=\gcd(a,c)\cdot\gcd(b,c)$    
+\end{exes}
+\end{ex}
+
+\begin{ex}
+Where the prime factorizations are $a=p_1^{e_1}\cdots p_n^{e_n}$
+and $b=p_1^{f_1}\cdots p_n^{f_m}$, in the prime factorization of
+$\gcd(a,b)$ the exponent of $p_i$ is $\min(e_i,f_i)$.
+\end{ex}
+
+\begin{df}
+Two numbers are \definend{relatively prime} if their greatest common
+divisor is $1$.  
+\end{df}
+
+\begin{ex}
+\begin{exes}
+\item $\gcd(a,b)=1$ iff $\gcd(b,a)=1$
+\item If $\gcd(a,b)=d$ then $\gcd(a/d, b/d)=1$.
+\item Is the converse true?    
+\end{exes}
+\end{ex}
+
+\begin{ex}\notetext{Euclid's algorithm}
+Prove that if $a=bq+r$ then $\gcd(a,b)=\gcd(b,r)$.  
+\end{ex}
+
+The algorithm associated with this result finds the greatest common
+divisor.  For instance, to find $\gcd(803,154)$ compute that
+$803=154\cdot 5+33$ and apply the result to get that 
+$\gcd(803,154)=\gcd(154,33)$.
+Now since $154=33\cdot 4+22$ the result gives
+$\gcd(154,33)=\gcd(33,22)$.
+By eye we spot the answer of $11$ but continuing as though we hadn't noticed,
+we get $33=22\cdot 1+11$ so $\gcd(33,22)=\gcd(22,11)$.
+Then $22=11\cdot 2+0$ tells us that $\gcd(22,11)=11$, so the algorithm 
+terminates.
+
+\begin{ex}
+Use Euclid's Algorithm.
+\begin{exes}
+\item $\gcd(15,25)$
+\item $\gcd(48,732)$  
+\end{exes}
+\end{ex}
+
+\begin{df}
+A number $c$ is a \definend{linear combination} of two others $a$ and~$b$
+if it has the form $c=a\cdot m+b\cdot n$ for some $m,n\in\Z$.  
+\end{df}
+
+\begin{ex}\notetext{B\'ezout's Lemma}
+\begin{exes}
+\item Any common divisor of $a$ and~$b$ is a divisor of 
+any linear combination of the two.
+\item The greatest common divisors of two numbers is a linear combination of 
+those two.
+\item The greatest common divisor of two numbers is the smallest positive
+number that is a linear combination of the two.
+\end{exes}
+\end{ex}
+
+\begin{ex}
+If $a\divides bc$ and $a$ is relatively prime to $b$ then $a\divides c$.  
+\end{ex}
+
+\begin{df}
+The \definend{least common multiple} of two numbers is the smallest number
+that is a multiple of each.
+\end{df}
+
+\begin{ex} We write $\lcm(a,b)$.
+\begin{exes}
+\item The least common multiple of any two integers exists.
+\item Generalize to sets of integers.
+\item $\lcm(a,b)=\lcm(b,a)$.
+\end{exes}
+\end{ex}
+
+\begin{ex}
+Where the prime factorizations are $a=p_1^{e_1}\cdots p_n^{e_n}$
+and $b=p_1^{f_1}\cdots p_n^{f_m}$, 
+in the prime factorization of $\lcm(a,b)$ the exponent of 
+$p_i$ is $\max(e_i,f_i)$.
+\end{ex}
+
+\begin{ex}
+Prove that $\lcm(a,b)=ab/\!\gcd(a,b)$.
+\end{ex}
+
+
+
+
+
+
+
+
+
+
+
+%===================================================
+\chapter{Sets}
+\begin{df}
+A \definend{set} is a collection of objects that is definite\Dash every 
+object is either
+definitely in the set or definitely not in the set.
+An object~$x$ that is in a set~$A$ is an \definend{element}
+or \definend{member}
+of the set, written $x\in A$
+(to denote that $x$ is not an element of $A$ write~$x\notin A$).
+Two sets are equal if they have the same elements.
+\end{df}
+\noindent (Read $\in$ as ``is an element of'' rather than ``in'' since the 
+latter reading causes confusion with 
+the subset relation defined below.)
+
+We often define a set by either listing or describing its elements.
+Thus the set containing the primes less than ten could be written
+either as $\set{2, 3, 5, 7}$ or as~$\set{p<10\suchthat \text{$p$ is prime}}$.
+
+\begin{ex} \pord
+\begin{exes}
+\item $\set{1,3,5}=\set{5,3,1}$    
+\item $\set{2, 4, 6}=\set{2, 4, 6, 4}$    
+\item $\set{1, 3}=\set{n\in\N\suchthat n<5}$ 
+\item $0\in\Z+$   
+\item $4\in\set{n\in\N\suchthat n^2<50}$
+\end{exes}
+\end{ex}
+
+\begin{df}
+The set with no elements is the \definend{empty set\/} $\emptyset$.  
+\end{df}
+
+\begin{df}
+The set~$B$ is a \definend{subset} of the set~$A$
+if every element of $B$ is an element of~$A$,
+that is, if $x\in B$ implies that~$x\in A$.
+It is denoted $B\subseteq A$.
+\end{df}
+
+\begin{ex} \pord
+\begin{exes}
+\item $\set{1,3,5}\subseteq\set{1,3, 5, 7, 9}$
+\item $\set{1, 3, 5}\in\set{1, 3, 5, 7, 9}$   
+\item $\set{1,3,5}\subseteq\setbuilder{n\in\N}{\text{$n$ is prime}}$
+\item $\emptyset\subseteq\set{1, 2, 3, 4}$
+\item $\N\subseteq\Z$
+\item $\set{2}\in\set{1, \set{2}, 3}$
+\item $\set{2}\subseteq\set{1, \set{2}, 3}$
+\end{exes}
+\end{ex}
+
+\begin{ex} Prove for all sets $A$
+\begin{exes}
+\item $A\subseteq A$ and $\emptyset\subseteq A$
+\item The empty set is unique: if $A$ is empty and $B$ is empty then $A=B$.
+\end{exes}
+\end{ex}
+
+\begin{ex}
+Prove that if $A\subseteq B$ and~$B\subseteq C$ then~$A\subseteq C$.  
+\end{ex}
+
+\begin{ex} For each, give example sets or show it is not possible.
+\begin{exes}
+\item $A\subseteq B$, $B\not\subseteq C$, $A\subseteq C$
+\item $A\not\subseteq B$, $B\not\subseteq C$, $A\subseteq C$
+\item $A\not\subseteq B$ $B\subseteq C$, $A\subseteq C$    
+\end{exes}
+\end{ex}
+
+We will always work inside of a \definend{universal set}.
+For instance, while we are doing number theory we may consider 
+the set of objects less than $100$,
+but in the context of that discussion the universal set is $\Z$ 
+so we are considering the set of integers less than $100$.
+
+\begin{df}
+The \definend{characteristic function} of a set~$A$ is a map
+$\charfcn{A}$ (whose domain is the universal set) such that
+$\charfcn{A}(x)=1$ for $x\in A$, and $\charfcn{A}(x)=0$ for $x\notin A$.  
+\end{df}
+
+\begin{ex}
+Give the formula relating $\charfcn{A}$ and $\charfcn{B}$ to
+  $\charfcn{A\intersection B}$.
+Do the same for union.
+\end{ex}
+
+
+
+
+
+% .....................................
+\section{Operations}
+
+\begin{df}
+Let $A$ be a set.
+The \definend{complement} of $A$, denoted $\setcomp{A}$, is the 
+set of objects that are not elements of~$A$.  
+\end{df}
+
+One reason for working inside a universal set is that it makes the complement
+operation easier. 
+For instance, in a discussion of number theory where $A$ is the set of 
+things that are less than~$100$ we can take the complement and we needn't 
+worry about picking up unwanted objects such as $\pi$.
+
+\begin{ex}
+Prove that the complement of the complement is the original set
+  $\setcomp{\setcomp{A}}=A$. 
+\end{ex}
+
+\begin{df}
+Let $A$ and $B$ be sets.
+The set of elements 
+from either~$A$ or~$B$ is the \definend{union}
+$A\union B=\setbuilder{x}{\text{$x\in A$ or $x\in B$}}$.  
+The set of elements 
+from both~$A$ and~$B$ is the \definend{intersection} 
+$A\intersection B=\setbuilder{x}{\text{$x\in A$ and $x\in B$}}$.  
+\end{df}
+
+Picture set operations with \definend{Venn diagrams}.
+\begin{center}
+  \venn{asy/venn_union.pdf}{$A\union B$}
+  \hspace*{3em}
+  \venn{asy/venn_int.pdf}{$A\intersection B$}
+  \hspace*{3em}
+  \venn{asy/venn_comp.pdf}{$\setcomp{A}$}
+\end{center}
+In each diagram
+the region inside the rectangle depicts the universal set and the 
+region inside each circle depicts each of the sets.
+On the left the part in mauve shows 
+the union as containing all of the two sets joined, 
+the middle shows the intersection
+containing only the region common to both,
+and on the right the mauve region is all but the set.
+
+\begin{df}
+The \definend{difference} of two sets is $A-B=\setbuilder{x\in A}{x\notin B}$.  
+The \definend{symmetric difference} is 
+$A\symdiff B=(A-B)\union(B-A)$.
+\end{df}
+
+\begin{ex}
+Draw the Venn diagram for difference and symmetric difference.  
+\end{ex}
+
+\begin{ex} \pord
+\begin{exes}
+\item If $A\subseteq X$ then $X-A$ is the same as $\setcomp{A}$ where
+$X$ is the universal set.     
+\item $A-B\subseteq A$
+\item $A-B=A\intersection\setcomp{B}$
+\item For all pairs of sets, $A-B=B-A$.
+\item For all pairs of sets, $A\symdiff B=B\symdiff A$.
+\end{exes}
+\end{ex}
+
+\begin{ex}\notetext{DeMorgan's Laws}
+\begin{exes}
+\item $A\union\emptyset=A$ and $A\intersection\emptyset=\emptyset$
+\item \notetext{Idempotence} $A\union A=A$ and $A\intersection A=A$  
+\item $A\intersection B\subseteq A\subseteq A\union B$  
+\item \notetext{Commutativity}
+   $A\union B=B\union A$ and $A\intersection B=B\intersection A$
+\item \notetext{Associativity} 
+  $(A\union B)\union C=A\union (B\union C)$
+  and $(A\intersection B)\intersection C=A\intersection (B\intersection C)$
+\item 
+  $\setcomp{A\union B}=\setcomp{A}\intersection\setcomp{B}$
+  and 
+  $\setcomp{A\intersection B}=\setcomp{A}\union\setcomp{B}$
+\item \notetext{Distributivity} 
+$A\union (B\intersection C)=(A\union B)\intersection (A\union C)$
+ and $A\intersection (B\union C)=(A\intersection B)\union (A\intersection C)$
+\end{exes}
+\end{ex}
+
+\begin{df}
+Two sets are \definend{disjoint} if their intersection is empty.  
+\end{df}
+
+\begin{ex}
+\pord: $A\intersection B$ and $A-B$ are disjoint.  
+\end{ex}
+
+\begin{df}
+For a finite set~$A$ the \definend{order} $|A|$ is the number of elements.
+\end{df}
+
+% \begin{ex}
+% For finite sets, if $A\subseteq B$ then $|A|\leq |B|$
+% \end{ex}
+
+\begin{df}
+For a set~$A$ the \definend{power set} is $\powerset(A)$ is the set of all
+subsets of~$A$.
+\end{df}
+
+\begin{ex} List each.
+\begin{exes}
+\item $\powerset(\set{a,b})$   
+\item $\powerset(\set{a,b,c})$   
+\item $\powerset(\set{a})$   
+\item $\powerset(\emptyset)$   
+\end{exes}
+\end{ex}
+
+\begin{ex} Prove.
+\begin{exes}
+% \item $\powerset(A)\subseteq \powerset(B)$ iff $A\subseteq B$  
+\item $\powerset(A)=\powerset(B)$ iff $A= B$  
+\item Where~$A$ is a finite set, $|\powerset(A)|=2^{|A|}$.    
+\end{exes}
+\end{ex}
+
+\begin{ex} \pord:
+if $A\subseteq B$ then $\powerset(A)\subseteq\powerset(B)$.  
+\end{ex}
+
+
+
+
+% .....................................
+\section{Cartesian product}
+
+\begin{df}
+The \definend{sequence\/} 
+formed from $x_0$, $x_1$, \ldots, $x_{n-1}$ is
+denoted $\seq{x_0, x_1, \ldots, x_{n-1}}$.
+Two sequences $\seq{x_0, x_1, \ldots, x_{n-1}}$ and
+$\seq{y_0, y_1, \ldots, y_{n-1}}$ are equal if and only if
+they have the same members in the same order:
+$x_0=y_0$, $x_1=y_1$, \ldots, $x_{n-1}=y_{n-1}$. 
+The \definend{length} $\lh(\seq{x_0, x_1, \ldots, x_{n-1}})$
+is the number of entries, $n$.
+\end{df}
+
+\begin{ex}\pord
+\begin{exes}
+\item $\set{3, 4, 5}=\set{4, 3, 5}$
+\item $\sequence{3, 4, 5}=\sequence{4, 3, 5}$
+\item $\set{3, 4, 4, 5}=\set{4, 3, 5}$
+\item $\sequence{3, 4,4,5}=\sequence{3,4,5}$  
+\end{exes}
+\end{ex}
+
+\begin{df}
+For sets $A_0$, $A_1$, \ldots, $A_{n-1}$ the \definend{Cartesian product}
+is the set of all length~$n$ sequences
+$A_0\times A_1\times \cdots \times A_{n-1}
+  =\setbuilder{\sequence{a_0,a_1,\ldots,a_{n-1}}}{\text{$a_0\in A_0$, and \ldots, and~$a_{n-1}\in A_{n-1}$}}$.
+\end{df}
+
+If the sets are the same then 
+a sequence of length~$2$ is often called an \definend{ordered pair} and 
+written with parentheses $(x_0,x_1)$
+(similarly we have ordered triples, $4$-tuples, etc.).
+Also in this case we often write $A\times\cdots\times A$ 
+as~$A^n$.
+Thus, for the Cartesian coordinate system for the plane may appear as
+$\R^2=\setbuilder{(x,y)}{x,y\in\R}$.
+
+\begin{ex}
+\pord:  $\N^2\subseteq \Z^2$.  
+\end{ex}
+
+\begin{ex}
+\begin{exes}
+\item $A\times B=\emptyset$ iff $A=\emptyset$ or~$B=\emptyset$
+\item Prove that there are sets so that $A\times B\neq B\times A$.
+\item Under what circumstances is $A\times B=B\times A$?
+\item Is $(A\times B)\times C$ equal to $A\times (B\times C)$?
+\end{exes}
+\end{ex}
+
+\begin{ex} 
+\begin{exes}
+\item $A\times B\subseteq A^\prime\times B^\prime$ if and only if
+  $A\subseteq A^\prime$ and $B\subseteq B^\prime$.
+\item $(A\union B)\times C=(A\times C)\union(B\times C)$
+\item What happens for intersection?
+\end{exes}
+\end{ex}
+
+
+
+
+
+
+
+
+%===================================================
+\chapter{Functions, relations}
+\begin{df}
+A \definend{function}~$f$ from \definend{domain}~$D$
+to \definend{codomain}~$C$, written $\map{f}{D}{C}$,
+consists of those two sets along with the \definend{graph}, 
+a set of pairs $(d,c)\in D\times C$ that is 
+\definend{well-defined}: for each $d\in D$ there is
+exactly one $c\in C$ such that $(d,c)\in f$. 
+\end{df}
+
+Sometimes say mapping.
+Alternative notation $D\rightarrow^f C$.
+
+Maps-to notation.
+
+\begin{df}
+  Constant function, identity
+\end{df}
+
+maps with multiple arguments, arity
+
+\begin{df}
+  image (range), inverse image.
+\end{df}
+
+\begin{df}
+Restriction to a subset. 
+Extension. 
+\end{df}
+
+\begin{df}
+$\map{f_1}{D_1}{C_1}$ and $\map{f_2}{D_2}{C_2}$ then $f\times g$.  
+\end{df}
+
+
+
+
+
+% .....................................
+\section{Operations}
+
+Composition
+
+Arrow diagram.
+
+\begin{df}
+  projection, injection
+\end{df}
+
+
+
+
+% .....................................
+\section{One-to-one, onto}
+
+\begin{ex}
+\begin{exes}
+\item The composition of one-to-one functions is one-to-one.
+\item The composition of onto functions is onto.
+\item The composition of correspondences is a correspondence.    
+\end{exes}
+\end{ex}
+
+\begin{ex}
+\begin{exes}
+\item If $g\circ f$ is onto then $g$ is onto.
+\item If $g\circ f$ is one-to-one then $f$ is one-to-one.
+\item Other two cases need not hold.     
+\end{exes}
+\end{ex}
+
+\begin{df}
+Inverse function.  
+\end{df}
+
+\begin{ex}
+\begin{exes}
+\item Inverse of a correspondence is a correspondence.  
+\item $(g\circ f)^{-1}=f^{-1}\circ g^{-1}$
+\end{exes}
+\end{ex}
+
+
+
+
+% .....................................
+\section{Relations}
+\begin{df}
+A \definend{relation} on sets $A_0$, \ldots, $a_{n-1}$ is a subset
+$R\subseteq A_0\times \cdots \times A_{n-1}$. 
+If all of the sets are the same $a_0=A$, \ldots, $A_{n-1}=A$
+then we call it a relation on~$A$.
+The number of sets~$n$ is the \definend{arity} of the relation.
+and say it is \definend{$n$-ary}.
+If the arity is~$2$ then it is a \definend{binary relation}.
+In this case, if $R=\setbuilder{(x,y)}{\text{$x\in X$ and $y\in Y$}}$
+then where $(x,y)\in R$ we say $x$ is \definend{$R$-related} to~$y$
+and sometimes write $xRy$.
+\end{df}
+
+\begin{ex}
+\begin{exes}
+\item List five elements of the relation
+  $R=\setbuilder{(x,y)\in \R^2}{x+2=y}$
+\item Consider less-than $<$ as a binary relation on $\N$.
+  List five elements.
+\item List five elements of the relation
+  $\setbuilder{(x,y,z)\in\N^3}{x^2+y^2=z^2}$
+\item Show that if $\map{f}{D}{C}$ is a function then 
+  its graph is a relation.
+\item Let $\map{f}{D}{C}$ be a function.
+  Show that 
+  $R_f=\setbuilder{(x,y)}{f(x)=f(y)}$
+  is a binary relation.
+  Where $f(x)=x^2$ with domain and codomain~$\R$,
+  list five elements. 
+\end{exes}
+\end{ex}
+
+\begin{df}
+The \definend{diagonal relation} on $A$ is $\setbuilder{(x,x)}{x\in A}$.  
+\end{df}
+
+\begin{df} 
+Let $R$ be a binary relation on a set~$X$.
+The relation is \definend{reflexive} if $(x,x)\in R$ for all $x\in X$.
+The relation is \definend{symmetric} if $(x,y)\in R$ implies that
+$(y,x)\in R$ for all $x,y\in R$.
+The relation is \definend{transitive} if 
+$(x,y)\in R$ and $(y,z)\in R$ implies that 
+$(x,z)\in R$ for all elements $x,y,z\in R$.
+A relation that satisfies all three contitions is an
+\definend{equivalence relation}.  
+\end{df}
+
+\begin{ex} For each, find a binary relation satisfying the condition.
+\begin{exes}
+\item Not transitive.
+\item Reflexive and symmetric but not transitive.
+\item Transitive but not symmetric or reflexive.
+\item Reflexive and transitive but not symmetric.
+\item Symmetric and transitive but not reflexive. 
+\end{exes}
+\end{ex}
+
+\begin{ex}
+Two integers have the same \definend{parity} if they are both odd, or 
+both even.
+Show that the binary relation 
+$P=\setbuilder{(x,y)\in\Z^2}{\text{$x$ and $y$ have the same parity}}$  
+is an equivalence.
+\end{ex}
+
+\begin{ex}
+Fix a divisor $q\in\N-\set{0}$.
+Show that the relation 
+$\mathord\sim=\setbuilder{(m,n)\in\N^2}{m\equiv n\pmod q}$  
+is an equivalence.
+\end{ex}
+
+\begin{df}
+If $R$ is an equivalence relation on~$X$ then instead of $(x,y)\in R$
+we may write $x\equiv y\pmod R$.  
+\end{df}
+
+\begin{ex}
+\begin{exes}
+\item Let $X=\Z\times (\N-\set{0})$.
+Show that 
+$Q=\setbuilder{\big((p,q),(n,d)\big)\in X\times X}{pm=qn}$
+is an equivalence.
+\item List five elements of $Q$.
+\end{exes}
+\end{ex}
+
+\begin{ex}
+\begin{exes}
+\item Let $X$ be the set of lines in the Euclidean plane.
+Let $R=\setbuilder{(\ell_0,\ell_1)\in X^2}{\text{the two are parallel}}$. 
+Show that is an equivalence.
+\item List five elements of $R$.
+\item Fix a vertical line $\ell$ (for instance, the $x$-axis 
+  $\setbuilder{(x,0)}{x\in\R}$).
+  List five elements $X$ related to~$\ell$.
+\end{exes}
+\end{ex}
+
+\begin{df}
+Let $R$ be an equivalence relation on~$X$.
+The \definend{equivalence class} of $x\in X$ is the set
+$\eqclass{x}=\setbuilder{y\in X}{y\equiv x\pmod R}$.   
+\end{df}
+
+\begin{ex}
+\begin{exes}
+\item     
+\end{exes}
+\end{ex}
+
+\begin{ex} Prove that the following are equivalent statements for $x,y\in X$.
+\begin{exes}
+\item $x\equiv y\pmod R$
+\item $\eqclass{x}=\eqclass{y}$    
+\item $\eqclass{x}\intersection\eqclass{y}\neq \emptyset$
+\end{exes}
+\end{ex}
+
+
+
+
+
+%===================================================
+\chapter{Infinity}
+
+
+
+
+
+%===================================================
+\appendix
+\chapter{Peano axioms}
+\newcommand{\axiom}[1]{\textsc{Axiom~#1}\hspace{.5ex}}
+
+Particularly in the 
+first chapter a person struggles with when to consider a 
+statement sufficiently justified 
+and soon comes to wonder what the axioms are like.
+Here we give the most often used axiom system for the natural numbers, to
+convey a sense of that. 
+
+This system was 
+introduced by Dedekind in 1888 and tuned by Peano in 1889.
+In addition to the usual set and logical symbols such as $=$ and $\in$,
+with the traditional properties, 
+our language will use at least two symbols, $0$ and $S$, whose 
+properties are limited by the conditions below.
+
+\begin{ax}[Existence of a natural number]
+The constant~$0$ is a natural number.
+\end{ax}
+
+\begin{ax}[Arithmetical properties]
+The \definend{successor} function~$S$ has these properties.
+\begin{exes}
+\item \notetext{Closure} For all $a\in\N$, its successor~$S(a)$ is also 
+  a natural number.
+\item \notetext{One-to-one} For all $a,b\in\N$, if $S(a)=S(b)$ then $a=b$.
+\item \notetext{Almost onto}
+  For all $a\in\N$, if $a\neq 0$ then there is a $b\in\N$ with $S(b)=a$.
+  In contrast, no $c\in\N$ has $0$ as a successor.  
+\end{exes}
+\end{ax}
+
+
+These properties give infinitely many natural numbers:
+$0$, $S(0)$, $S(S(0))$, etc.
+Of course, the notation $0$, $1$, $2$, etc., is less clunky.
+
+\begin{ax}[Induction]
+  Suppose that $K$ is a set satisfying that both (i)~$0\in K$
+  and (ii)~for all $n\in\N$, if $n\in K$ then $S(n)\in K$.
+  Then $K=\N$.
+\end{ax}
+
+We prefer an induction variant that changes
+condition~(ii) to: for all $n\in\N$, 
+if $0\in K$ and $1\in K$ and \ldots\ and $n\in K$ then $S(n)\in K$.
+These two variants are inter-derivable but while ours is 
+more awkward to state, it is sometimes more convenient to use.
+
+From those axioms we can for instance 
+define addition by recursion using successor
+\begin{equation*}
+  \add(a,n)=
+  \begin{cases}
+    a             &\text{if $n=0$}  \\
+    S(\add(a,m))  &\text{if $n=S(m)$} 
+  \end{cases}
+\end{equation*}
+and then define multiplication by recursion using addition.
+\begin{equation*}
+  \mul(a,n)=
+  \begin{cases}
+    0             &\text{if $n=0$}  \\
+    \add(\mul(a,m),a)  &\text{if $n=S(m)$} 
+  \end{cases}
+\end{equation*}
+\end{document}
