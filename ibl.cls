@@ -117,6 +117,11 @@ cleveref, % \cref
 % n.b. cleveref after! hyperref
 }
 
+% Count the number of exercises so a person can comment some out to adjust
+% the semester-long number.
+\newcounter{exercisecount}
+\AtEndDocument{\typeout{Total number of exercises: \theexercisecount}.}
+
 \declaretheoremstyle[
 spaceabove=1.1ex plus .1ex, spacebelow=1.1ex plus .2ex minus .1ex,
 headfont=\normalfont\scshape,
@@ -129,8 +134,10 @@ qed=\qedsymbol
 ]{jhstyle}
 \newcommand{\notetext}[1]{(\textsc{#1})\hspace{0.35em}} % such as \item \notetext{Transitivity}
 
+% \newcommand{\exercisename}{Exercise}
 \theoremstyle{jhstyle}
 \declaretheorem[name=Exercise,numberwithin=chapter]{ex}
+\addtotheorempreheadhook[ex]{\addtocounter{exercisecount}{1}} % count exery ex
 \declaretheorem[name=Definition,sibling=ex]{df} % see defn of \definend
 \declaretheorem[name=Note,sibling=ex]{nt}
 \declaretheorem[name=Axiom,numberwithin=chapter]{ax}
@@ -153,10 +160,20 @@ qed=\qedsymbol
 % ========================================
 % Lists
 \RequirePackage{enumitem}
+
+% Count number of exercises with parts; see also counter exercisecount
+\newcounter{exerciseswithpartscount}
+\AtEndDocument{\typeout{Number of exercises with parts: \theexerciseswithpartscount}.}
+\newcounter{exercisepartscount}
+\AtEndDocument{\typeout{Count of parts: \theexercisepartscount}.}
+\AtEndDocument{\typeout{Number for students to do is Total-Number+Count.}}
+
+% Exercises sometimes have multiple parts.
 \newenvironment{exes}{%
+\addtocounter{exerciseswithpartscount}{1}%
 \begin{enumerate}[topsep=0.15ex,partopsep=0ex,parsep=0ex,itemsep=.25ex,
                   leftmargin=1.5em,rightmargin=0em,
-                  align=left,label={\textsc{\alph*}.}]
+                  align=left,label={\textsc{\alph*}.\protect\addtocounter{exercisepartscount}{1}}] 
 }{%
 \end{enumerate}
 }

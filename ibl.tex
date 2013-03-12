@@ -7,13 +7,6 @@
 \vspace*{\fill}
 \begin{center}
   \setlength{\unitlength}{1in}
-  % \newcommand{\enormoussize}{\fontsize{50pt}{20pt}\selectfont}
-  % \begin{picture}(0,0)
-  %   \put(0,.2){\enormoussize\scshape I}
-  %   \put(.3,.5){\LARGE\scshape nquiry-Based} 
-  %   \put(.38,.3){\LARGE\scshape ntroduction}  
-  %   \put(0,0){\scshape {\Large to} {\LARGE Mathematical Proof}}
-  % \end{picture}
   \newcommand{\enormoussize}{\fontsize{30pt}{20pt}\selectfont}
   {\enormoussize\scshape \makebox[0em][l]{\raisebox{24pt}{\large\itshape \hspace*{15pt}An Inquiry-Based}}{\color{darkii}Introduction to Proof}}
 \end{center}
@@ -40,7 +33,7 @@ That is, this text is a sequence of exercises
 along with definitions and a few 
 remarks.
 The class works through those by
-proving, providing examples, counterexamples, etc.
+proving, or providing examples or counterexamples.
 The students directly grapple with the material, guided lightly by
 the instructor, together working though misunderstandings, 
 sometimes stumbling around in the dark, and occasionally
@@ -60,14 +53,16 @@ that Little League starts with hitting balls, and not with
 the rulebook.
 People with a turn for the subject readily jump into proving things about
 divisibility and primes, and get excited about enjoying this new work, 
-while starting with a month of preliminary material might be a problem.
-In my course classes begin with some students going to the 
-board to write their answer to the homework, and I use the five or 
-ten minutes to show slides that address the issues that 
-the class's current work raises, such as the truth table 
+whereas starting with a month of preliminary material would not 
+grow the same enthusiasm.
+But the logic material should appear.
+In my course, classes begin with some students going to the 
+board to write their answer to the homework and I use the  
+ten minutes to show slides that address the issues from
+the class's current work, such as the truth table 
 definition of the implication operator.
-In this way those topics are covered, but the main emphasis lies on 
-the class's work proving things.  
+In this way our emphasis stays on 
+the class's work of proving things.  
 
 
 
@@ -89,11 +84,11 @@ and a brief description of how my class runs.
 
 We begin with elementary results about the
 \definend{integers\/} $\Z=\set{..,-2,-1,0,1,2,..}$.
-In this chapter, if we just say ``number'' then it means integer.
+In this chapter, ``number'' means integer.
 In some cases, results refer to the 
 \definend{natural numbers\/} $\N=\set{0,1,2,..}$.
-(Be aware that some mathematicians mistakenly 
-perceive that the natural numbers do not include~$0$.)
+% (Be aware that some mathematicians mistakenly 
+% perceive that the natural numbers do not include~$0$.)
 
 
 
@@ -112,8 +107,8 @@ perceive that the natural numbers do not include~$0$.)
   or $d$~\definend{goes evenly into}~$n$,
   or $n$~\definend{is a multiple of}~$d$.)
   We denote the relationship as
-  $d|n$ if $d$~is a divisor of~$n$
-  or as $d\not |n$ if it is not.
+  $d\divides n$ if $d$~is a divisor of~$n$
+  or as $d\ndivides n$ if it is not.
 \end{df}
 
 \begin{df}
@@ -254,7 +249,7 @@ In this way, we bootstrap to all numbers greater than or equal to $1$.
 Below is a sample proof, doing both steps.
 
 \begin{proof}
-  We prove that $1+3+\cdots+(2n-1)=n^2$ by induction.
+  We show that $1+3+\cdots+(2n-1)=n^2$ by induction.
   For the $n=1$ base step note that on the left the sum has one term, $1$,
   which equals the value on the right, $1^2$.
 
@@ -878,22 +873,26 @@ other set operations.
 %===================================================
 \chapter{Functions, relations}
 \begin{df}
-A \definend{function}~$f$ from \definend{domain}~$D$
-to \definend{codomain}~$C$, written $\map{f}{D}{C}$,
-consists of those two sets along with the \definend{graph}, 
+A \definend{function}~$f$ (or \definend{map} or \definend{morphism}) 
+from \definend{domain}~$D$
+to \definend{codomain}~$C$, written as $\map{f}{D}{C}$,
+consists of the two sets along with a \definend{graph}, 
 a set of pairs $(d,c)\in D\times C$ that is 
 \definend{well-defined}: for each $d\in D$ there is
 exactly one $c\in C$ such that $(d,c)\in f$. 
+
+Thus a function associates each element~$d$ from the domain,
+called an \definend{argument} or~\definend{input},
+with an element~$c$ from the codomain, 
+called a~\definend{value} or~\definend{output}. 
+We write $f(d)=c$.
 \end{df}
 
-Sometimes say map or morphism.
-Alternative notation $D\rightarrow^f C$.
-
-Maps-to notation.
-Argument and value.
-
-Two functions are equal only if they have the same domain, codomain,
+\noindent Functions are equal only if they have the same domain, codomain,
 and graph.
+
+In place of $\map{f}{D}{C}$ we may write $D\mapsvia{f} C$.
+In place of $f(d)=c$ we may write $d\mapsunder{f}c$.
 
 \begin{df}
 The \definend{identity function} $\map{\identity}{D}{D}$ has
@@ -905,7 +904,13 @@ A \definend{constant function} $\map{f}{D}{C}$ has
 $f(d_0)=f(d_1)$ for all $d_0,d_1\in D$.
 \end{df}
 
-maps with multiple arguments, arity
+A function may have multiple arguments; one example is 
+$(x,y)\mapsunder{f}x^2-2y^2$.
+We would write this map $\map{f}{\R^2}{\R}$ as 
+$f(x,y)$ rather than
+$f((x,y))$.
+The number of arguments is the function's \definend{arity}.
+
 
 \begin{df}
   image (range), inverse image.
@@ -1117,12 +1122,39 @@ $\eqclass{x}=\setbuilder{y\in X}{y\equiv x\pmod R}$.
 \end{exes}
 \end{ex}
 
+\begin{df}
+A \definend{partition} of a set $X$ is a 
+set of nonempty subsets of~$X$ such that every element $x\in X$ 
+is in exactly one of these subsets.
+That is, a set~$P$ is a partition of $X$ if and only if 
+none of its elements is the empty set,
+it \definend{covers}~$X$
+(the union of the elements of $P$ is equal to~$X$),
+and the elements of $P$ are \definend{pairwise disjoint}
+(that is, $p_i\intersection p_j=\emptyset$ for $i\neq j$).
+\end{df}
+
 \begin{ex} Prove that the following are equivalent statements for $x,y\in X$.
 \begin{exes}
 \item $x\equiv y\pmod R$
 \item $\eqclass{x}=\eqclass{y}$    
 \item $\eqclass{x}\intersection\eqclass{y}\neq \emptyset$
 \end{exes}
+\end{ex}
+
+Let $X$ be a set. Consider an equivalence relation~$R$ on that set, 
+and the partition $P=\setbuilder{\eqclass{x}}{x\in X}$.
+We say that the partition is  
+the \definend{induced} by the relation or that
+the relation \definend{arises} from the partition. 
+
+\begin{ex}
+Suppose that $\map{f}{D}{C}$ is onto.
+Show that the relation
+$R=\setbuilder{(d_0,d_1)\in D^2}{f(d_0)=f(d_1)}$ 
+is an equivalence on~$D$ 
+Show that the set of inverse images 
+$P=\setbuilder{f^{-1}(c)}{c\in C}$ is a partition of the domain.
 \end{ex}
 
 
