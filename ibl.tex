@@ -1,5 +1,5 @@
 \documentclass{ibl}
-\newcommand{\venn}[2]{\begin{tabular}{@{}c@{}}\includegraphics{#1} \\ #2\end{tabular}}
+\newcommand{\grf}[2]{\begin{tabular}{@{}c@{}}\includegraphics{#1} \\ #2\end{tabular}}
 
 \frontmatter
 
@@ -32,43 +32,53 @@ This course is Inquiry-Based (sometimes called Moore method).
 That is, this text is a sequence of exercises
 along with definitions and a few 
 remarks.
-The class works through those by
-proving, or providing examples or counterexamples.
-The students directly grapple with the material, guided lightly by
-the instructor, together working though misunderstandings, 
-sometimes stumbling around in the dark, and occasionally
+The class works through those mostly by
+proving the exercises, or sometimes by providing examples or counterexamples.
+Thus, the students directly grapple with the material, 
+with the instructor only ligltly guiding, 
+and together work though misunderstandings, 
+sometimes stumbling in the dark and occasionally
 having beautiful flashes of insight.
 With students at this level, 
 this approach is the best way to build mathematical maturity.
 
 The material starts with elementary number theory, 
-then moves to sets, functions and relations, and finally
+then moves to sets, functions, and relations, and finally
 finishes with cardinality.
 We approach these naively, meaning without a systemmatic development from
 axioms.
 
-Finally, a comment on covering the topics in logic.
-Here we start with elementary number theory for the same reason
-that Little League starts with hitting balls, and not with 
-the rulebook.
-People with a turn for the subject readily jump into proving things about
-divisibility and primes, and get excited about enjoying this new work, 
+
+\medskip
+\textsc{Logic topics.}
+This book start with elementary number theory, not truth tables, 
+for the same reason
+that Little League starts by playing ball, not with the rulebook.
+Mathematics majors readily jump into proving things about
+divisibility and primes, enjoying this new work with its verbal and
+intellectual back-and-forth, 
 whereas starting with a month of preliminary material would not 
-grow the same enthusiasm.
-But the logic material should appear.
-In my course, classes begin with some students going to the 
-board to write their answer to the homework and I use the  
-ten minutes to show slides that address the issues from
+develop the same enthusiasm.
+
+But the underlying logic is good stuff, and besides, they need it.
+In my course, daily classes begin with some of the students going to the 
+board to write their answers to the homework. 
+I use these ten minutes for a slide or two that addresses issues from
 the class's current work, such as the truth table 
-definition of the implication operator.
-In this way our emphasis stays on 
-the class's work of proving things.  
+definition of implication.
+This just-in-time approach keeps 
+the class's attention on proving things, but they get the
+background that they need at the moment when they can appreciate it.
+
+The only exception is that this book covers induction as a separate
+topic, since it is sifficiently difficult as to require the class's 
+full attention.    
 
 
 
 \medskip
 \textsc{License.}
-The material is Free; see the details  
+This material is Free; see the details  
 at \url{http://joshua.smcvt.edu/proofs}.
 This includes the book's \LaTeX{} source, so instructors can tailor the
 material to their students.  
@@ -126,9 +136,7 @@ In some cases, results refer to the
 % \end{nt}
 
 \begin{ex}[Interaction of parity with sign]
-Recall that the \definend{absolute value} of a number~$a$ is $a$ in the\
-case that~$a$ is positive and is~$-a$ in the case that $a\leq 0$.  
-\pord
+\pord.
 \begin{exes}
 \item If a number is even then its negative is even.
 \item If a number is odd then its negative is odd.
@@ -138,7 +146,7 @@ case that~$a$ is positive and is~$-a$ in the case that $a\leq 0$.
 \end{exes}  
 \end{ex}
 
-\begin{ex}[Interaction of parity with addition]\pord
+\begin{ex}[Interaction of parity with addition]\pord.
 \begin{exes}
 \item The sum of two evens is even.
 \item The difference of two evens is even.
@@ -151,10 +159,10 @@ case that~$a$ is positive and is~$-a$ in the case that $a\leq 0$.
 \begin{ex}
 Find a counterexample to:
 where $a,b\in\N$, then $a+b$ is even if and only if $a-b$ is even.
-Patch the statement so it is true.
+Patch the statement (alter it slightly to make it true).
 \end{ex}
 
-\begin{ex}[Interaction of parity with multiplication]\pord
+\begin{ex}[Interaction of parity with multiplication]\pord.
 \begin{exes}
 \item The product of two evens is even.
 \item The quotient of two evens, if it is an integer, is even.
@@ -166,7 +174,7 @@ Patch the statement so it is true.
 
 \begin{ex}[Divisibility Properties]
 Let $d$, $m$, and $n$ be integers.
-\pord
+\pord.
 \begin{exes}
 \item \notetext{Reflexivity} Every number divides itself.
 \item Every number divides $0$ while
@@ -609,7 +617,7 @@ that is, if $x\in B$ implies that~$x\in A$.
 It is denoted $B\subseteq A$.
 \end{df}
 
-\begin{ex} \pord
+\begin{ex} \pord.
 \begin{exes}
 \item $\set{1,3,5}\subseteq\set{1,3, 5, 7, 9}$
 \item $\set{1, 3, 5}\in\set{1, 3, 5, 7, 9}$   
@@ -621,7 +629,7 @@ It is denoted $B\subseteq A$.
 \end{exes}
 \end{ex}
 
-\begin{ex} Prove for all sets $A$
+\begin{ex} Prove for all sets $A$.
 \begin{exes}
 \item $A\subseteq A$ and $\emptyset\subseteq A$
 \item The empty set is unique: if $A$ is empty and $B$ is empty then $A=B$.
@@ -694,11 +702,11 @@ $A\intersection B=\setbuilder{x}{\text{$x\in A$ and $x\in B$}}$.
 
 Picture set operations with \definend{Venn diagrams}.
 \begin{center}
-  \venn{asy/venn_union.pdf}{$A\union B$}
+  \grf{asy/venn_union.pdf}{$A\union B$}
   \hspace*{3em}
-  \venn{asy/venn_int.pdf}{$A\intersection B$}
+  \grf{asy/venn_int.pdf}{$A\intersection B$}
   \hspace*{3em}
-  \venn{asy/venn_comp.pdf}{$\setcomp{A}$}
+  \grf{asy/venn_comp.pdf}{$\setcomp{A}$}
 \end{center}
 In each diagram
 the region inside the rectangle depicts the universal set and the 
@@ -719,7 +727,7 @@ $A\symdiff B=(A-B)\union(B-A)$.
 Draw the Venn diagram for difference and symmetric difference.  
 \end{ex}
 
-\begin{ex} \pord
+\begin{ex} \pord.
 \begin{exes}
 \item If $A\subseteq X$ then $X-A$ is the same as $\setcomp{A}$ where
 $X$ is the universal set.     
@@ -759,7 +767,7 @@ Two sets are \definend{disjoint} if their intersection is empty.
 \end{ex}
 
 \begin{df}
-For a finite set~$A$ the \definend{order} $|A|$ is the number of elements.
+For a finite set~$A$, the \definend{order} $|A|$ is the number of elements.
 \end{df}
 
 % \begin{ex}
@@ -810,7 +818,7 @@ The \definend{length} $\lh(\seq{x_0, x_1, \ldots, x_{n-1}})$
 is the number of entries, $n$.
 \end{df}
 
-\begin{ex}\pord
+\begin{ex}\pord.
 \begin{exes}
 \item $\set{3, 4, 5}=\set{4, 3, 5}$
 \item $\sequence{3, 4, 5}=\sequence{4, 3, 5}$
@@ -824,15 +832,17 @@ For sets $A_0$, $A_1$, \ldots, $A_{n-1}$ the \definend{Cartesian product}
 is the set of all length~$n$ sequences
 $A_0\times A_1\times \cdots \times A_{n-1}
   =\setbuilder{\sequence{a_0,a_1,\ldots,a_{n-1}}}{\text{$a_0\in A_0$, and \ldots, and~$a_{n-1}\in A_{n-1}$}}$.
-\end{df}
 
 If the sets are the same then 
-a sequence of length~$2$ is often called an \definend{ordered pair} and 
+a sequence of length~$2$ may be called an \definend{ordered pair} and 
 written with parentheses $(x_0,x_1)$
 (similarly we have ordered triples, $4$-tuples, etc.).
 Also in this case we often write $A\times\cdots\times A$ 
 as~$A^n$.
-Thus, for the Cartesian coordinate system for the plane may appear as
+\end{df}
+
+Thus, we may write 
+the Cartesian coordinate system for the plane as
 $\R^2=\setbuilder{(x,y)}{x,y\in\R}$.
 
 \begin{ex}
@@ -874,34 +884,72 @@ other set operations.
 \chapter{Functions, relations}
 \begin{df}
 A \definend{function}~$f$ (or \definend{map} or \definend{morphism}) 
-from \definend{domain}~$D$
-to \definend{codomain}~$C$, written as $\map{f}{D}{C}$,
+from \definend{domain} set~$D$
+to \definend{codomain} set~$C$, written $\map{f}{D}{C}$,
 consists of the two sets along with a \definend{graph}, 
 a set of pairs $(d,c)\in D\times C$ that is 
 \definend{well-defined}: for each $d\in D$ there is
 exactly one $c\in C$ such that $(d,c)\in f$. 
 
 Thus a function associates each element~$d$ from the domain,
-called an \definend{argument} or~\definend{input},
+called an \definend{argument} (or~\definend{input}),
 with an element~$c$ from the codomain, 
-called a~\definend{value} or~\definend{output}. 
-We write $f(d)=c$.
+called a~\definend{value} (or~\definend{output}). 
+We may also say the $c$ is the \definend{image} of $d$, 
+or $d$ \definend{maps to}~$c$, and write $f(d)=c$.
 \end{df}
 
 \noindent Functions are equal only if they have the same domain, codomain,
 and graph.
 
-In place of $\map{f}{D}{C}$ we may write $D\mapsvia{f} C$.
-In place of $f(d)=c$ we may write $d\mapsunder{f}c$.
+Draw a function by showing the domain and codomain as blobs 
+or \definend{beans}, with either a simple arrow from the domain to
+the codomain,  
+or with an barred arrow from elements of the domain to elements of the
+codomain.
+\begin{center}
+  \grf{asy/bean_fcn.pdf}{$\map{f}{D}{C}$}
+  \hspace{10em}
+  \grf{asy/bean_fcn_elets.pdf}{$a\mapsunder{}f(a)$ and $b\mapsunder{}f(b)$}
+\end{center}
+In place of $\map{f}{D}{C}$ you may see $D\mapsvia{f} C$ and
+in place of $f(d)=c$ you may see $d\mapsunder{f}c$.
 
-\begin{df}
-The \definend{identity function} $\map{\identity}{D}{D}$ has
-$\identity(d)=d$ for all $d\in D$.
-\end{df}
+\begin{ex} \pord{} that each is a function.\label{FindFunctions}
+\begin{exes}
+\item $D=\set{0,1,2}$, $C=\set{3,4,5}$,
+  $G=\set{(0,3), (1,4), (2,5)}$    
+\item $D=\set{0,1,2}$, $C=\set{3,4,5}$,
+  $G=\set{(0,3), (1,4), (2,3)}$    
+\item $D=\set{0,1,2}$, $C=\set{3,4,5}$,
+  $G=\set{(0,3), (1,4)}$    
+\item $D=\set{0,1,2}$, $C=\N$,
+  $G=\set{(0,3), (1,3), (2,3)}$    
+\item $D=\N$, $C=\N$,
+  $G=\set{(0,3), (1,4), (2,5)}$    
+\item $D=\set{0,1,2}$, $C=\set{3,4,5}$,
+  $G=\set{(0,3), (1,4), (0,5)}$    
+\item $D=\N$, $C=\N$,
+  $G=\setbuilder{(d,c)\in D\times C}{c=d^2}$    
+\end{exes}
+\end{ex}
+
+We often ignore the distinction between a function and its graph, and 
+think of the function as the set of ordered pairs 
+(the graph is only in the definition because the codomain cannot be recovered
+from the set of ordered pairs).
+
+\begin{ex}
+Let $D$ and $C$ be finite sets.
+How many maps are there from $D$ to $C$?
+\end{ex}
 
 \begin{df}
 A \definend{constant function} $\map{f}{D}{C}$ has  
 $f(d_0)=f(d_1)$ for all $d_0,d_1\in D$.
+% \end{df}\begin{df}
+The \definend{identity function} $\map{\identity}{D}{D}$ has
+$\identity(d)=d$ for all $d\in D$.
 \end{df}
 
 A function may have multiple arguments; one example is 
@@ -911,87 +959,182 @@ $f(x,y)$ rather than
 $f((x,y))$.
 The number of arguments is the function's \definend{arity}.
 
+\begin{df}
+The \definend{range} of $\map{f}{D}{C}$
+is $\setbuilder{y\in C}{\text{there is a $x\in D$ such that $f(x)=y$}}$.
+\end{df}
+
+\begin{ex}
+For each function of \cref{FindFunctions} find the range.  
+\end{ex}
 
 \begin{df}
-  image (range), inverse image.
+Let $\map{f}{D}{C}$.
+The \definend{restriction} of $f$ to $B\subseteq D$ is
+$\map{\restrictionmap{f}{B}}{B}{C}$ whose action is given by 
+$\restrictionmap{f}{B}(b)=f(b)$ for all $b\in B$.
+Where $g$ is a restriction of~$f$, we say that
+$f$ is an \definend{extension} of~$g$.
+
+The \definend{image} $f(b)$ of $B$ under $f$ is the range of 
+the function $\restrictionmap{f}{B}$.
 \end{df}
 
 \begin{df}
-Restriction to a subset. 
-Extension. 
+Let $\map{f}{D}{C}$.
+The \definend{inverse image of the element}~$c\in C$ is
+the set $f^{-1}(c)=\setbuilder{d\in D}{f(d)=c}$.
+The \definend{inverse image of the set}~$A\subseteq C$
+is the set $f^{-1}(A)=\setbuilder{d\in D}{f(d)\in A}$   
 \end{df}
 
-\begin{df}
-$\map{f_1}{D_1}{C_1}$ and $\map{f_2}{D_2}{C_2}$ then $f\times g$.  
-\end{df}
+\begin{ex}
+Prove that $f^{-1}(A)$ is the union of the sets $f^{-1}(c)$ for all $c\in A$.
+\end{ex}
 
 
 
 
 
 % .....................................
-\section{Operations}
+\section{Composition}
 
 \begin{df}
-  projection, injection
+The \definend{composition} of
+the two functions
+$\map{f}{D}{C}$ and $\map{g}{C}{B}$ 
+is $\map{\composed{g}{f}}{D}{B}$ given by 
+$\composed{g}{f}(d)=g(f(d))$.
 \end{df}
 
-Composition
+Observe that although when reading from left to right $g$ comes first, 
+it is the function that is applied second. 
+Observe also that the codomain of~$f$ is the domain of~$g$.
 
-Arrow diagram.
+\begin{ex} Let $D=\set{0,1,2}$, $C=\set{a,b,c,d}$, 
+and $B=\set{\alpha,\beta,\gamma}$
+Suppose that $\map{f}{D}{C}$ is given by $0\mapsunder{} a$, $1\mapsunder{} c$, 
+$2\mapsunder{} d$ and that $\map{g}{C}{B}$
+is given by 
+$a\mapsunder{}\alpha$, $b\mapsunder{} \beta$, and $c\mapsunder{}\gamma$.
+\begin{exes}
+\item Compute $\composed{g}{f}$ on all arguments or show the composition
+  function is not defined.
+\item Compute $\composed{f}{g}$ on all arguments or show it is not defined.
+\item Find the range of $f$, $g$, and $\composed{g}{f}$.    
+\end{exes}
+\end{ex}
+
+\begin{ex}
+Let $\map{f}{\R}{\R}$ be $f(x)=x^2$ and let $\map{g}{\R}{\R}$ be~$g(x)=3x+1$.
+Find the domain, codomain, and a formula for each of
+$\composed{g}{f}$ and $\composed{f}{g}$.  
+\end{ex}
+
+\begin{ex}\notetext{Properties of composition} Prove each.
+\begin{exes}
+\item Composition need not be commutative.
+\item\notetext{Associativity} 
+  $\composed{h}{(\composed{g}{f})}=\composed{(\composed{h}{g})}{f}$    
+% \item $g(f(A))=\composed{g}{f}(A)$
+% \item $(\composed{g}{f})^{-1}(C)=f^{-1}(g^{-1}(C))$
+\end{exes}
+\end{ex}
 
 
 
 
 
 % .....................................
-\section{One-to-one, onto}
+\section{inverse}
 
 The definition of function specifies that for every argument there is 
 exactly one associated value.
 
 \begin{df}
-A function is \definend{one-to-one} if for each value there is at most
+A function is \definend{one-to-one} (or an \definend{injection}) 
+if for each value there is at most
 one associated argument, that is, if $f(d_0)=f(d_1)$ implies that $d_0=d_1$
 for elements $d_0,d_1$ of the domain.
-A function is \definend{onto} if for each value there is at least
+A function is \definend{onto} (or a \definend{surjection}) 
+if for each value there is at least
 one associated argument, that is, if for each element $c$ of the codomain
 there exists an element $d$ of the domain such that $f(d)=c$.
 A function that is both one-to-one and onto is a 
-\definend{correspondence} or \definend{permutation}.     
+\definend{correspondence} (or \definend{bijection}, or \definend{permutation}).
 \end{df}
 
 \begin{ex}
-If there is a correspondence between two finite sets then the two sets
+If $D$ and~$C$ are finite sets and there is a 
+correspondence~$\map{f}{D}{C}$
+then the two sets
 have the same number of elements.  
 \end{ex}
 
-\begin{ex}
+\begin{ex} Prove.
 \begin{exes}
-\item The composition of one-to-one functions is one-to-one.
-\item The composition of onto functions is onto.
-\item The composition of correspondences is a correspondence.    
+\item A composition of one-to-one functions is one-to-one.
+\item A composition of onto functions is onto.
+\item A composition of correspondences is a correspondence.    
 \end{exes}
 \end{ex}
 
-\begin{ex}
+\begin{ex} 
 \begin{exes}
 \item If $g\circ f$ is onto then $g$ is onto.
 \item If $g\circ f$ is one-to-one then $f$ is one-to-one.
-\item The other two cases need not hold.     
+\item Do the other two cases hold?     
 \end{exes}
 \end{ex}
 
 \begin{df}
-Inverse function.  
+A function \definend{inverse} to $\map{f}{D}{C}$ is 
+$\map{f^{-1}}{C}{D}$ such that 
+$\composed{f^{-1}}{f}$ is the identity map on~$D$ and
+$\composed{f}{f^{-1}}$ is the identity map on~$C$.
 \end{df}
+
+\begin{ex} 
+\begin{exes}
+\item Let $\map{s}{\R^+}{\R}$ be~$s(x)=x^2$ and let
+  $\map{r}{\R^+}{\R^+}$ be $r(x)=\sqrt{x}$.
+  Show that $r$ is inverse to $s$.    
+\item Let $\map{f}{\Z}{\Z}$ be~$f(x)=x+3$ and let
+  $\map{g}{\Z}{\Z}$ be $g(x)=x-3$.
+  Show that $g$ is inverse to $f$.
+\item Show that $s$ is inverse to $r$, and that $f$ is inverse to~$g$.
+\item Let $\map{h}{\N}{\N}$ be the function that returns
+  $n+1$ if $n$ is even, and returns $n-1$ if $n$ is odd.
+  Find a function inverse to~$h$.
+\item Show that $\map{t}{\R}{\R}$ given by $t(x)=x^2$
+  has no inverse.
+\end{exes}
+\end{ex}
 
 \begin{ex}
 \begin{exes}
-\item Inverse of a correspondence is a correspondence.  
-\item $(g\circ f)^{-1}=f^{-1}\circ g^{-1}$
+\item Find a pair of maps $\map{f}{D}{C}$ and $\map{g}{C}{D}$
+  such that $\composed{g}{f}$ is the identity but $\composed{f}{g}$
+  is not.
+  (We say that $g$ is a \definend{right inverse} of~$f$, or what is the
+  same thing, that $f$ is a \definend{left inverse} of~$g$).
+\item Find a pair of maps $\map{f}{D}{C}$ and $\map{g}{C}{D}$
+  such that $\composed{f}{g}$ is the identity but $\composed{g}{f}$
+  is not.
 \end{exes}
 \end{ex}
+
+\begin{ex} Prove each.
+\begin{exes}
+\item If a function has an inverse then that inverse
+  is unique.
+\item A function has an inverse if and only if that 
+  function is a correspondence.
+\item The inverse of a correspondence is a correspondence.  
+\item $(g\circ f)^{-1}=f^{-1}\circ g^{-1}$
+\end{exes}  
+\end{ex}
+
 
 
 
@@ -1152,7 +1295,7 @@ the relation \definend{arises} from the partition.
 Suppose that $\map{f}{D}{C}$ is onto.
 Show that the relation
 $R=\setbuilder{(d_0,d_1)\in D^2}{f(d_0)=f(d_1)}$ 
-is an equivalence on~$D$ 
+is an equivalence on~$D$. 
 Show that the set of inverse images 
 $P=\setbuilder{f^{-1}(c)}{c\in C}$ is a partition of the domain.
 \end{ex}
