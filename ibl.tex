@@ -104,7 +104,7 @@ But the background is good stuff also and
 students like it once they see where it goes.
 In the second chapter and third chapters we cover 
 sets, functions, and relations, now with the
-intellectual habits we've established in the first chapter.
+intellectual habits we've established at the start.
 
 There are some topics, such as the definition of implication, 
 that students need even in the
@@ -158,13 +158,10 @@ a brief description of what classroom technique works for me.
 \chapter{Number Theory}
 
 We begin with elementary results about the
-\definend{integers\/} $\Z=\set{..,-2,-1,0,1,2,..}$.
+integers $\Z=\set{..,-2,-1,0,1,2,\ldots}$.
 In this chapter, ``number'' means integer.
 In some cases, results refer to the 
-\definend{natural numbers\/} $\N=\set{0,1,2,..}$.
-% (Be aware that some mathematicians mistakenly 
-% perceive that the natural numbers do not include~$0$.)
-
+natural numbers $\N=\set{0,1,2,\ldots}$.
 
 
 % .....................................
@@ -187,8 +184,8 @@ In some cases, results refer to the
 \end{df}
 
 \begin{df}
-  A natural number is \definend{even} if it is a multiple of~$2$.
-  Otherwise it is \definend{odd}.
+  A natural number is \definend{even} if $2$ divides it,
+  otherwise it is \definend{odd}.
   (Alternative wording is that the number \definend{has even parity}
   or \definend{has odd parity}.)
 \end{df}
@@ -223,8 +220,8 @@ In some cases, results refer to the
 
 \begin{ex}
 Find a counterexample to:
-where $a,b\in\N$, then $a+b$ is even if and only if $a-b$ is even.
-Patch the statement (alter it slightly to make it true).
+where $a,b\in\N$, the number $a+b$ is even if and only if $a-b$ is even.
+Patch the statement\Dash that is, alter it slightly\Dash to make it true.
 \end{ex}
 
 \begin{ex}[Interaction of parity with multiplication]\pord.
@@ -267,10 +264,10 @@ if $a\divides b$ and~$b\divides a$?
 \end{ex}
 
 \begin{ex}
-Suppose $a,b,c\in\Z$.
+Suppose that $a,b,c\in\Z$.
 \begin{exes}
-\item If $a\divides b$ then $a\divides bc$ for all integers~$c$.
-\item If $a\divides b$ and $a\divides c$ then $a$ divides the 
+\item Prove that if $a\divides b$ then $a\divides bc$ for all integers~$c$.
+\item Prove that if $a\divides b$ and $a\divides c$ then $a$ divides the 
   sum~$b+c$ and difference~$b-c$.
 \item Generalize.
 \end{exes}
@@ -289,12 +286,12 @@ that is not as natural, mathematical induction.
 For that reason, we now pause to introduce induction.
 We start with exercises about sums 
 (but note that induction is not about sums,
-they only make good exercises).
+we start with them only because they make the best first exercises).
 For instance, most people have noticed that the odd numbers sum to 
 perfect squares: $1+3=4$, $1+3+5=9$, $1+3+5+7=16$, etc.,
 so we look to prove 
 the statement, 
-``The first $n$ odd numbers $1$, $3$, $5$, $\ldots$, $2n-1$, add to $n^2$.'' 
+``The sum of the first $n$ odd numbers $1+3+5+\cdots+2n-1$ is $n^2$.'' 
 
 Our induction proofs have two steps, two separate things to check.
 For the base step we show that the statement holds for a first number;
@@ -358,7 +355,7 @@ Prove by induction.
   \item \notetext{Arithmetic series}
        $b+(b+a)+(b+2a)+\cdots+(b+na)=(2b+na)\cdot n/2$
   \item \notetext{Geometric series}
-        $1+r+r^2+r^3+\cdots+r^n=(1-r^{n+1})/(1-r)$ for any $r\neq 1$.
+        $1+r+r^2+r^3+\cdots+r^n=(r^{n+1-1})/(r-1)$ for any $r\neq 1$.
 \end{exes}
 \end{ex}
 
@@ -367,12 +364,12 @@ Prove by induction that $n<2^n$ for all $n\in\N$.
 \end{ex}
 
 \begin{ex}
-Prove that for all $n\geq 2$, sums can be reversed
-$a_1+a_2+\cdots+a_n=a_n+\cdots+a_1$.   
+Prove that for all $n\geq 1$, sums can be reversed
+$a_0+a_1+\cdots+a_{n-1}=a_{n-1}+\cdots+a_0$.   
 \end{ex}
 
 \begin{ex}
-Prove by induction.
+Prove each by induction.
 \begin{exes}
 \item For all $n\geq 2$ the number $6$ divides the number $n^3-n$.
 \item If $n\in\N$ then $4\divides 13^n-1$.
@@ -381,11 +378,14 @@ Prove by induction.
 \end{exes}
 \end{ex}
 
-Sometimes when you have finished proving something by induction, 
+The prior exercise illustrates that 
+sometimes when you have finish a proof by induction, 
 while you now are sure that the statement is true, 
-you can be left with the sense
-that you are no nearer knowing really \emph{why} it is true.
-
+you can nonetheless be left with the sense
+that you are not sure really \emph{why} it is true.
+For example, you can show that the second item holds in a 
+way that gives more intuition by plugging $13$ into the formula for a
+geometric series. 
 
 
 % .....................................
@@ -405,17 +405,16 @@ What to do if $b\leq 0$?
 \end{exes}
 \end{ex}
 
-\begin{ex}
-When is $r=0$? 
-\end{ex}
 
 \begin{df}
-In the $a=bq+r$ equation above, $a$ is the \definend{dividend} and
+In the $a=bq+r$ equation, $a$ is the \definend{dividend} and
 $b$ is the \definend{divisor}, while 
 $q$ is the \definend{quotient} and~$r$ is the \definend{remainder}.  
 \end{df}
 
-From grade school we know an effective procedure, an algorithm, to 
+Observe that (for $b>0$) $r=0$ if and only if $b\divides a$. 
+Of course, 
+we all know from grade school an effective procedure, an algorithm, to 
 determine the quotient and remainder.
 
 \begin{df}
@@ -440,6 +439,7 @@ Prove that $a\equiv c\pmod b$ if and only if $b\divides (a-c)$.
 \begin{ex}
 Let $a,b,c,d,m$ be integers with $m>0$ and
 $a\equiv b\pmod m$ and $c\equiv d\pmod m$.
+Prove each.
 \begin{exes}
 \item $a+c\equiv b+d\pmod m$
 \item $ac\equiv bd\pmod m$
@@ -457,6 +457,8 @@ $a\equiv b\pmod m$ and $c\equiv d\pmod m$.
 \end{ex}
 
 
+
+
 % .....................................
 \section{Primes}
 \begin{df}
@@ -465,7 +467,7 @@ Then $n$ is \definend{prime} if its only divisors are itself and~$1$,
 else it is \definend{composite}.  
 \end{df}
 
-\begin{ex}\pord
+\begin{ex}\pord.
 An integer $n>1$ is composite if and only if it has factors $a,b$ such that
 $1<a,b<n$.  
 \end{ex}
@@ -482,7 +484,7 @@ $1<a,b<n$.
 There are infinitely many primes.  
 \end{ex}
 
-\begin{ex} Suppose that $p$ is a prime.
+\begin{ex} Suppose that $p$ is a prime.  Prove each.
 \begin{exes}
 \item If  $p\divides ab$ then either $p\divides a$ or
 $p\divides b$.
@@ -491,7 +493,7 @@ $p$ divides at least one~$a_i$.
 \end{exes}
 \end{ex}
 
-\begin{ex}[Fundamental Theorem of Arithmetic]
+\begin{ex}[Fundamental Theorem of Arithmetic]  Prove.
 \begin{exes}
 \item Any number $n>1$ can be written as a product of primes
 $n=p_1^{e_1}p_2^{e_2}\cdots p_k^{e_k}$.
@@ -503,7 +505,8 @@ same result.
 \end{exes}
 \end{ex}
 
-\begin{ex} The second item is a classic consequence of the Fundamental Theorem.
+\begin{ex} Prove (the second item, showing the existence of real numbers that
+are not rational, is classically important).
 \begin{exes}
 \item Prove that if a number is a square then in its prime factorization 
   each prime occurs an even number of times.
@@ -521,24 +524,24 @@ same result.
 An integer is a \definend{common divisor} of two other integers if it
 divides both of them.
 The \definend{greatest common divisor} of two integers 
-is the largest integer that is their common divisor,
+is the largest of their common divisors,
 except that we take the greatest common divisor of $0$ and $0$ 
 to be $0$.
+We write $\gcd(a,b)$ for the greatest common divisor
+of $a$ and~$b$.
 \end{df}
 
-We write $\gcd(a,b)$ for the greatest common divisor.
+% \begin{ex}
+% Generalize the definition to sets of integers.
+% \end{ex}
 
 \begin{ex}
-Generalize the definition to sets of integers.
-\end{ex}
-
-\begin{ex}
-We will focus on the two integer case.
+We will focus on the two integer case.  Prove each.
 \begin{exes} 
 \item For any two number $a,b$ the greatest common divisor exists.
 \item $0\leq \gcd(a,b)\leq\min(\absval{a},\absval{b})$.
-\item If either $a$ or $b$ is nonzero then 
-  $0< \gcd(a,b)\leq\min(\absval{a},\absval{b})$.
+\item If either $a$ or $b$ is nonzero then the left-hand
+  inequality in the prior item is strict.
 \item If $a>0$ then $\gcd(a,0)=a$.
 \item $\gcd(a,a)=\absval{a}$
 \item $\gcd(a,b)=\gcd(b,a)$
@@ -546,7 +549,7 @@ We will focus on the two integer case.
 \end{exes}  
 \end{ex}
 
-\begin{ex}\pord
+\begin{ex}\pord.
 \begin{exes}
 \item $\gcd(ca,cb)=c\cdot\gcd(a,b)$
 \item $\gcd(a+b,c)=\gcd(a,c)+\gcd(b,c)$
@@ -555,8 +558,10 @@ We will focus on the two integer case.
 \end{ex}
 
 \begin{ex}
-Where the prime factorizations are $a=p_1^{e_1}\cdots p_n^{e_n}$
-and $b=p_1^{f_1}\cdots p_n^{f_m}$, in the prime factorization of
+Assume that two numbers have prime factorizations 
+of $a=p_1^{e_1}\cdots p_n^{e_n}$
+and $b=p_1^{f_1}\cdots p_n^{f_m}$.
+Prove that in the prime factorization of
 $\gcd(a,b)$ the exponent of $p_i$ is $\min(e_i,f_i)$.
 \end{ex}
 
@@ -571,6 +576,11 @@ divisor is $1$.
 \item If $\gcd(a,b)=d$ then $\gcd(a/d, b/d)=1$.
 \item Is the converse true?    
 \end{exes}
+\end{ex}
+
+\begin{ex}
+Give (and prove) a condition of the prime factorizations of $a$ and~$b$
+equivalent to their being relatively prime.
 \end{ex}
 
 \begin{ex}\notetext{Euclid's algorithm}
@@ -638,7 +648,7 @@ We write $\lcm(a,b)$.
 \begin{ex} 
 \begin{exes}
 \item The least common multiple of any two integers exists.
-\item Generalize to sets of integers.
+% \item Generalize to sets of integers.
 \item $\lcm(a,b)=\lcm(b,a)$.
 \end{exes}
 \end{ex}
@@ -677,21 +687,22 @@ of the set, written $x\in A$
 Two sets are equal if they have the same elements.
 \end{df}
 \noindent (Read $\in$ as ``is an element of'' rather than ``in'' since the 
-latter reading causes confusion with 
+latter word causes confusion with 
 the subset relation defined below.)
 As a symonym for set we sometimes use ``collection.''
 
 We often define a set by either listing or describing its elements.
-Thus the set containing the primes less than ten could be written
+Thus we could write 
+the set containing the primes less than ten 
 either as $\set{2, 3, 5, 7}$ or as~$\set{p<10\suchthat \text{$p$ is prime}}$.
 
-\begin{ex} \pord
+\begin{ex} \pord.
 \begin{exes}
 \item $\set{1,3,5}=\set{5,3,1}$    
 \item $\set{2, 4, 6}=\set{2, 4, 6, 4}$    
 \item $\set{1, 3}=\set{n\in\N\suchthat n<5}$ 
-\item $0\in\Z+$   
-\item $4\in\set{n\in\N\suchthat n^2<50}$
+\item $0\in\Z^+$   
+% \item $4\in\set{n\in\N\suchthat n^2<50}$
 \end{exes}
 \end{ex}
 
@@ -793,11 +804,11 @@ Prove that the complement of the complement is the original set
 
 \begin{df}
 Let $A$ and $B$ be sets.
-The set of elements 
-from either~$A$ or~$B$ is the \definend{union}
+Their \definend{union} is the set of elements 
+from either set 
 $A\union B=\setbuilder{x}{\text{$x\in A$ or $x\in B$}}$.  
-The set of elements 
-from both~$A$ and~$B$ is the \definend{intersection} 
+Their \definend{intersection} is the set of elements 
+from both sets
 $A\intersection B=\setbuilder{x}{\text{$x\in A$ and $x\in B$}}$.  
 \end{df}
 
@@ -818,7 +829,7 @@ Picture set operations with \definend{Venn diagrams}.
 \end{center}
 In each diagram
 the region inside the rectangle depicts the universal set and the 
-region inside each circle depicts each of the sets.
+region inside each circle depicts the set.
 On the left the part in mauve shows 
 the union as containing all of the two sets joined, 
 the middle shows the intersection
@@ -928,12 +939,13 @@ if $A\subseteq B$ then $\powerset(A)\subseteq\powerset(B)$.
 The \definend{sequence\/} 
 formed from $x_0$, $x_1$, \ldots, $x_{n-1}$ is
 denoted $\seq{x_0, x_1, \ldots, x_{n-1}}$.
+The \definend{length} of a sequence $\lh(\seq{x_0, x_1, \ldots, x_{n-1}})$
+is the number of entries $n$.
 Two sequences $\seq{x_0, x_1, \ldots, x_{n-1}}$ and
 $\seq{y_0, y_1, \ldots, y_{n-1}}$ are equal if and only if
-they have the same members in the same order:
+they have the same length and
+the same members in the same order:
 $x_0=y_0$, $x_1=y_1$, \ldots, $x_{n-1}=y_{n-1}$. 
-The \definend{length} $\lh(\seq{x_0, x_1, \ldots, x_{n-1}})$
-is the number of entries, $n$.
 \end{df}
 
 \begin{ex}\pord.
@@ -946,21 +958,21 @@ is the number of entries, $n$.
 \end{ex}
 
 \begin{df}
-For sets $A_0$, $A_1$, \ldots, $A_{n-1}$ the \definend{Cartesian product}
+The \definend{Cartesian product} of the sets $A_0$, $A_1$, \ldots, $A_{n-1}$ 
 is the set of all length~$n$ sequences
 $A_0\times A_1\times \cdots \times A_{n-1}
-  =\setbuilder{\sequence{a_0,a_1,\ldots,a_{n-1}}}{\text{$a_0\in A_0$, and \ldots, and~$a_{n-1}\in A_{n-1}$}}$.
+  =\setbuilder{\sequence{a_0,a_1,\ldots,a_{n-1}}}{\text{$a_0\in A_0$, \ldots, and~$a_{n-1}\in A_{n-1}$}}$.
 
 If the sets are the same then 
 a sequence of length~$2$ may be called an \definend{ordered pair} and 
 written with parentheses $(x_0,x_1)$
-(similarly we have ordered triples, $4$-tuples, etc.).
+(similarly we have ordered triples, four-tuples, etc.).
 In this case we often write $A\times\cdots\times A$ 
 as~$A^n$.
 \end{df}
 
-Thus, we may write 
-the Cartesian coordinate system for the plane as
+Thus, we write 
+Cartesian coordinates in the plane as members of
 $\R^2=\setbuilder{(x,y)}{x,y\in\R}$.
 
 \begin{ex}
@@ -975,13 +987,13 @@ $\R^2=\setbuilder{(x,y)}{x,y\in\R}$.
 \item Prove that there are sets so that $A\times B\neq B\times A$.
 \item Under what circumstances is $A\times B=B\times A$?
 \item Is $(A\times B)\times C$ equal to $A\times (B\times C)$?
-\item $A\times B\subseteq A^\prime\times B^\prime$ if and only if
+\item Prove that $A\times B\subseteq A^\prime\times B^\prime$ if and only if
   $A\subseteq A^\prime$ and $B\subseteq B^\prime$.
 \end{exes}
 \end{ex}
 
-\begin{ex} We can ask about the interaction between Cartesian product and 
-other set operations.
+\begin{ex} \notetext{Interaction between Cartesian product and 
+other set operations}
 \begin{exes}
 \item $(A\union B)\times C=(A\times C)\union(B\times C)$
 \item What happens for intersection?

@@ -78,6 +78,26 @@
 \newcommand{\intersection}{\cap}
 % \newcommand{\setcomp}[1]{{#1}^\complement} % http://tex.stackexchange.com/questions/15984/what-symbol-should-one-use-for-a-set-complement  
 \newcommand{\setcomp}[1]{\overline{#1}}
+% for set complement from http://tex.stackexchange.com/questions/22100/the-bar-and-overline-commands
+\newsavebox\myboxA
+\newsavebox\myboxB
+\newlength\mylenA
+% Use like: |\xoverline{W}|~~|\xoverline{i}|~~|\xoverline[3.0]{i}|$
+\newcommand*\xoverline[2][0.75]{%
+    \sbox{\myboxA}{$\m@th#2$}%
+    \setbox\myboxB\null% Phantom box
+    \ht\myboxB=\ht\myboxA%
+    \dp\myboxB=\dp\myboxA%
+    \wd\myboxB=#1\wd\myboxA% Scale phantom
+    \sbox\myboxB{$\m@th\overline{\copy\myboxB}$}%  Overlined phantom
+    \setlength\mylenA{\the\wd\myboxA}%   calc width diff
+    \addtolength\mylenA{-\the\wd\myboxB}%
+    \ifdim\wd\myboxB<\wd\myboxA%
+       \rlap{\hskip 0.5\mylenA\usebox\myboxB}{\usebox\myboxA}%
+    \else
+        \hskip -0.5\mylenA\rlap{\usebox\myboxA}{\hskip 0.5\mylenA\usebox\myboxB}%
+    \fi}
+\renewcommand{\setcomp}[1]{\xoverline{#1}}
 % \newcommand{\charfcn}[1]{\mathbf{\chi}_{#1}} 
 \usepackage{bbm}
 \newcommand{\charfcn}[1]{\mathbbm{1}_{#1}} 
