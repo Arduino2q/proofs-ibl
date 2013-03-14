@@ -443,6 +443,15 @@ $a\equiv b\pmod m$ and $c\equiv d\pmod m$.
 \end{exes}
 \end{ex}
 
+\begin{ex}\notetext{Pigeonhole principle}  Prove each.
+\begin{exes}
+\item Let $B$ be a finite list of numbers.
+  Its maximum number is at least as big as its average.
+\item If you put $n$~many papers into fewer than $n$~many 
+  pigeonholes then at least one hole gets at least two papers.    
+\end{exes}
+\end{ex}
+
 
 % .....................................
 \section{Primes}
@@ -570,9 +579,9 @@ $803=154\cdot 5+33$ and apply the result to get that
 $\gcd(803,154)=\gcd(154,33)$.
 Now since $154=33\cdot 4+22$ the result gives
 $\gcd(154,33)=\gcd(33,22)$.
-By eye we spot the answer of $11$ but continuing as though we hadn't noticed,
-we get $33=22\cdot 1+11$ so $\gcd(33,22)=\gcd(22,11)$.
-Then $22=11\cdot 2+0$ tells us that $\gcd(22,11)=11$, so the algorithm 
+By eye we spot the answer of $11$ but continuing as though we hadn't noticed
+we get $33=22\cdot 1+11$, so $\gcd(33,22)=\gcd(22,11)$.
+Then $22=11\cdot 2+0$ tells us that $\gcd(22,11)=11$, and the algorithm 
 terminates.
 
 \begin{ex}
@@ -606,9 +615,10 @@ If $a\divides bc$ and $a$ is relatively prime to $b$ then $a\divides c$.
 \begin{df}
 The \definend{least common multiple} of two numbers is the smallest number
 that is a multiple of each.
+We write $\lcm(a,b)$.
 \end{df}
 
-\begin{ex} We write $\lcm(a,b)$.
+\begin{ex} 
 \begin{exes}
 \item The least common multiple of any two integers exists.
 \item Generalize to sets of integers.
@@ -652,6 +662,7 @@ Two sets are equal if they have the same elements.
 \noindent (Read $\in$ as ``is an element of'' rather than ``in'' since the 
 latter reading causes confusion with 
 the subset relation defined below.)
+As a symonym for set we sometimes use ``collection.''
 
 We often define a set by either listing or describing its elements.
 Thus the set containing the primes less than ten could be written
@@ -698,7 +709,12 @@ It is denoted $B\subseteq A$.
 \end{ex}
 
 \begin{ex}
-Prove that if $A\subseteq B$ and~$B\subseteq C$ then~$A\subseteq C$.  
+\begin{exes} 
+\item \notetext{Mutual inclusion}
+  Prove that if $A\subseteq B$ and $B\subseteq A$ then $A=B$.  
+\item \notetext{Transitivity}
+  Prove that if $A\subseteq B$ and~$B\subseteq C$ then~$A\subseteq C$.  
+\end{exes}
 \end{ex}
 
 \begin{ex} For each, give example sets or show it is not possible.
@@ -720,6 +736,18 @@ The \definend{characteristic function} of a set~$A$ is a map
 $\charfcn{A}$ (whose domain is the universal set) such that
 $\charfcn{A}(x)=1$ for $x\in A$, and $\charfcn{A}(x)=0$ for $x\notin A$.  
 \end{df}
+
+\begin{ex} \notetext{Russell's paradox}
+Consider a collection that contains everything.
+That collection contains itself.
+Let $C$ be the set of all sets that contain themselves, and let
+$D$ be the set of all sets that don't contain themselves.
+\begin{exes}
+\item Show that assuming $D$ contains itself leads to a contradiction.
+\item Show that assuming $D$ does not contain itself also leads to a
+contradiction.  
+\end{exes}
+\end{ex}
 
 
 
@@ -762,7 +790,6 @@ Give the formula relating $\charfcn{A}$ and $\charfcn{B}$ to
 Do the same for union.
 Do the same for complementation.
 \end{ex}
-
 
 Picture set operations with \definend{Venn diagrams}.
 \begin{center}
@@ -944,6 +971,9 @@ other set operations.
 
 
 
+
+
+
 %===================================================
 \chapter{Functions, relations}
 \begin{df}
@@ -973,7 +1003,7 @@ or with an barred arrow from elements of the domain to elements of the
 codomain.
 \begin{center}
   \grf{asy/bean_fcn.pdf}{$\map{f}{D}{C}$}
-  \hspace{10em}
+  \hspace{8em}
   \grf{asy/bean_fcn_elets.pdf}{$a\mapsunder{}f(a)$ and $b\mapsunder{}f(b)$}
 \end{center}
 In place of $\map{f}{D}{C}$ you may see $D\mapsvia{f} C$ and
@@ -1074,13 +1104,17 @@ $\composed{g}{f}(d)=g(f(d))$.
 Observe that although when reading from left to right $g$ comes first, 
 it is the function that is applied second. 
 Observe also that the codomain of~$f$ is the domain of~$g$.
+\begin{center}
+  \includegraphics{asy/bean_fcn_comp.pdf}  
+\end{center}
 
 \begin{ex} Let $D=\set{0,1,2}$, $C=\set{a,b,c,d}$, 
 and $B=\set{\alpha,\beta,\gamma}$
 Suppose that $\map{f}{D}{C}$ is given by $0\mapsunder{} a$, $1\mapsunder{} c$, 
 $2\mapsunder{} d$ and that $\map{g}{C}{B}$
 is given by 
-$a\mapsunder{}\alpha$, $b\mapsunder{} \beta$, and $c\mapsunder{}\gamma$.
+$a\mapsunder{}\alpha$, $b\mapsunder{} \beta$, $c\mapsunder{}\gamma$,
+and $d\mapsunder{}\alpha$.
 \begin{exes}
 \item Compute $\composed{g}{f}$ on all arguments or show the composition
   function is not defined.
@@ -1095,7 +1129,7 @@ Find the domain, codomain, and a formula for each of
 $\composed{g}{f}$ and $\composed{f}{g}$.  
 \end{ex}
 
-\begin{ex}\notetext{Properties of composition} Prove each.
+\begin{ex}Prove each.
 \begin{exes}
 \item Composition need not be commutative.
 \item\notetext{Associativity} 
@@ -1176,16 +1210,11 @@ $\composed{f}{f^{-1}}$ is the identity map on~$C$.
 \end{ex}
 
 \begin{ex}
-\begin{exes}
-\item Find a pair of maps $\map{f}{D}{C}$ and $\map{g}{C}{D}$
+  Find a pair of maps $\map{f}{D}{C}$ and $\map{g}{C}{D}$
   such that $\composed{g}{f}$ is the identity but $\composed{f}{g}$
   is not.
   (We say that $g$ is a \definend{right inverse} of~$f$, or what is the
   same thing, that $f$ is a \definend{left inverse} of~$g$).
-\item Find a pair of maps $\map{f}{D}{C}$ and $\map{g}{C}{D}$
-  such that $\composed{f}{g}$ is the identity but $\composed{g}{f}$
-  is not.
-\end{exes}
 \end{ex}
 
 \begin{ex} Prove each.
@@ -1195,7 +1224,8 @@ $\composed{f}{f^{-1}}$ is the identity map on~$C$.
 \item A function has an inverse if and only if that 
   function is a correspondence.
 \item The inverse of a correspondence is a correspondence.  
-\item $(g\circ f)^{-1}=f^{-1}\circ g^{-1}$
+\item If $f$ and $g$ each is invertable then so is 
+  $\composed{g}{f}$, and $(\composed{g}{f})^{-1}=\composed{f^{-1}}{g^{-1}}$.
 \end{exes}  
 \end{ex}
 
@@ -1341,6 +1371,10 @@ and the elements of $P$ are \definend{pairwise disjoint}
 (that is, $p_i\intersection p_j=\emptyset$ for $i\neq j$).
 \end{df}
 
+\begin{center}
+  \grf{asy/bean_partition.pdf}{Set~$X$ partitioned into four parts}
+\end{center}
+
 \begin{ex} Prove that the following are equivalent statements for $x,y\in X$.
 \begin{exes}
 \item $x\equiv y\pmod R$
@@ -1402,11 +1436,8 @@ We write $A\sim B$.
 \begin{ex} Prove.
 \begin{exes}
 \item The relation $\sim$ is an equivalence.
-\item For all natural numbers $n$, any pair of sets with~$n$ elements
-have the same cardinality .
-\item Fix a set~$A$ with $n$~elements.
-  For any $m\neq n$, a set with $m$ elements does not have the same
-  cardinality as~$A$.
+\item Two finite sets have the sme cardinality iff they have the
+  same number of elements.
 \end{exes}
 \end{ex}
 
@@ -1446,7 +1477,7 @@ A set is \definend{countable} if it is either finite or denumerable.
 
 \begin{ex}
 \begin{exes}
-\item The set $\powerset{\N}$ is not countable.
+\item The set $\powerset(\N)$ is not countable.
 \item The set of real numbers is not countable.  
 \end{exes}
 \end{ex}
@@ -1524,3 +1555,10 @@ and then define multiplication by recursion using addition.
   \end{cases}
 \end{equation*}
 \end{document}
+
+
+TODO
+
+1) Pigeonhole Principle?
+  For a non-empty, finite bag of numbers, the maximum value is at 
+  least the average value.
