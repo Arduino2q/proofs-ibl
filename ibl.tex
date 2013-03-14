@@ -2,7 +2,6 @@
 \newcommand{\grf}[2]{\begin{tabular}{@{}c@{}}\includegraphics{#1} \\ #2\end{tabular}}
 
 \frontmatter
-
 \begin{document}    
 \vspace*{\fill}
 \begin{center}
@@ -15,16 +14,59 @@
   \large\color{darki}
   \begin{tabular}{@{}l@{}}
   Jim Hef{}feron  \\
-  Saint Michael's College \\
-  version 0.1
+  version 0.5
   \end{tabular}
 \end{flushright}
+
+\newpage
+\vspace*{\fill}
+\begin{center}
+  \renewcommand{\arraystretch}{1.07}
+  {\large\textsc{Notation}} \\[3ex]
+  \begin{tabular}{r|l}
+    $\Z$    &integers; $\set{\ldots, -2,-1,0,1,2,\ldots}$  \\
+    $\N$    &natural numbers; $\set{0,1,2,\ldots}$  \\
+    $\Z^+$  &positive integers; $\set{1,2,\ldots}$  \\
+    $\Q$    &rational numbers  \\
+    $\R$    &real numbers     \\
+    $a\divides b$  &$a$ divides~$b$ \\
+    $a\bmod b$  &the remainder when $a$ is divided by $b$ \\
+    $a\equiv c\pmod b$ &$a$ and $c$ have the same remainder when divided by $b$ \\
+    $\gcd(a,b)$ &greatest common divisor of $a$ and~$b$  \\
+    $\lcm(a,b)$ &least common multiple of $a$ and~$b$  \\
+    $a\in A$  &$a$ is an element of $A$  \\
+    $\emptyset$  &the empty set  \\
+    $A\subseteq B$ &$A$ is a subset of~$B$  \\
+    $\charfcn{A}$  &characteristic function of the set~$A$ \\
+    $\setcomp{A}$  &complement of the set~$A$  \\
+    $A\union B$, $A\intersection B$ &union and intersection of the two sets \\
+    $A- B$, $A\symdiff B$ &difference and symmetric difference of the sets \\
+    $|A|$  &order of the finite set $A$; number of elements \\ 
+    $\powerset(A)$  &power set of $A$; set of all of $A$'s subsets \\
+    $\seq{x_0,x_1,\ldots}$,$\lh(\seq{x_0,x_1,\ldots})$ &sequence, length of the sequence   \\
+    $A_0\times A_1\times \cdots \times A_{n-1}$  &Cartesian product \\
+    $A^n$  &Cartesian product of the set with itself  \\
+    $\map{f}{D}{C}$  &function with domain~$D$ and codomain~$C$ \\
+    $\map{\identity}{D}{D}$  &identity map; $\identity(d)=d$ \\
+    $\restrictionmap{f}{B}$  &restriction of $f$ to a subset of the domain \\
+    $f^{-1}(c)$, $f^{-1}(A)$  &inverse image of an element or subset of the codomain \\
+    $\composed{g}{f}$  &composition of the functions  \\
+    $f^{-1}$  &function inverse to~$f$  \\
+    $x\equiv y\pmod R$  &$(x,y)\in R$ where $R$ is an equivalence \\ 
+    $\eqclass{x}$  &equivalence class containing~$x$  \\
+    $A\sim B$  &the two sets have the same cardinality
+  \end{tabular}
+\end{center}
+\vspace*{\fill}
+
+
+
 
 
 \chapter*{Preface}
 
 This is a course in Mathematical proof. 
-Its audience is majors who are US sophmores, although since
+Its audience is majors who are US sophomores, although since
 it requires only high school mathematics
 it can be used with first year students.
 
@@ -35,7 +77,7 @@ remarks.
 The class works through those mostly by
 proving the exercises, or sometimes by providing examples or counterexamples.
 Thus, the students directly grapple with the material, 
-with the instructor only ligltly guiding, 
+with the instructor only lightly guiding, 
 and together work though misunderstandings, 
 sometimes stumbling in the dark and occasionally
 having beautiful flashes of insight.
@@ -43,27 +85,29 @@ With students at this level,
 this approach is the best way to build mathematical maturity.
 
 The material starts with elementary number theory, 
-then moves to sets, functions, and relations, and finally
-finishes with cardinality.
-We approach these naively, meaning without a systemmatic development from
+then moves to sets, functions, and relations. 
+There is an optional brief final chapter on cardinality.
+We approach these naively, meaning without a systematic development from
 axioms.
 
 
 \medskip
-\textsc{Logic topics.}
-This book start with elementary number theory, not truth tables, 
+\noindent\textsc{Background topics.}
+We start with elementary number theory, not truth tables, 
 for the same reason
 that Little League starts by playing ball, not with the rulebook.
-Mathematics majors readily jump into proving things about
-divisibility and primes, enjoying this new work with its verbal and
-intellectual back-and-forth, 
-whereas starting with a month of preliminary material would not 
-develop the same enthusiasm.
+Math majors readily take to proving things about
+divisibility and primes, enjoying the 
+intellectual and verbal challenge, 
+whereas a month of preliminary material does not 
+spark enthusiasm.
+This also explains why we use some terms, such as an element of a set, before
+their definition.
 
-But the underlying logic is good stuff, and besides, they need it.
-In my course, daily classes begin with some of the students going to the 
-board to write their answers to the homework. 
-I use these ten minutes for a slide or two that addresses issues from
+But the underlying logic is good stuff and besides, they need it.
+I have daily classes begin with some students going to the 
+board to write their answers to the homework and 
+I use these ten minutes for a slide or two that covers issues from
 the class's current work, such as the truth table 
 definition of implication.
 This just-in-time approach keeps 
@@ -71,19 +115,36 @@ the class's attention on proving things, but they get the
 background that they need at the moment when they can appreciate it.
 
 The only exception is that this book covers induction as a separate
-topic, since it is sifficiently difficult as to require the class's 
-full attention.    
+topic, since it is often new for students and since it takes 
+the class's full attention.
 
 
 
 \medskip
-\textsc{License.}
+\noindent\textsc{License.}
 This material is Free; see the details  
 at \url{http://joshua.smcvt.edu/proofs}.
 This includes the book's \LaTeX{} source, so instructors can tailor the
 material to their students.  
-Also on that page are the slides that I use,
-and a brief description of how my class runs.
+Also on that page are the slides that I use
+and, for instructors new to this approach, 
+a brief description of what classroom technique works for me.
+
+
+\vspace{\fill}
+\noindent\parbox{.95\textwidth}{\raggedright\textit{At the first meeting of the class Moore would define the basic terms and either challenge the class to discover the relations among them, or, depending on the subject, the level, and the students, explicitly state a theorem, or two, or three. Class dismissed. Next meeting: "Mr Smith, please prove Theorem 1. Oh, you can't? Very well, Mr Jones, you? No? Mr Robinson? No? Well, let's skip Theorem 1 and come back to it later. How about Theorem 2, Mr Smith?" Someone almost always could do something. If not, class dismissed. It didn't take the class long to discover that Moore really meant it, and presently the students would be proving theorems and watching the proofs of others with the eyes of eagles.}\hspace{2em} --Paul Halmos}
+
+\vspace{.2in}
+\noindent\parbox{.95\textwidth}{\textit{It's a kind of art that may change lives.}\hspace{2em} --Peter Schjeldahl}
+ 
+\vspace*{\fill}
+\begin{flushright}
+  \begin{tabular}{@{}l@{}}
+  Jim Hef{}feron  \\
+  Saint Michael's College  \\
+  2013-Spring
+  \end{tabular}
+\end{flushright}
 
 
 
@@ -325,7 +386,7 @@ that you are no nearer knowing really \emph{why} it is true.
 
 % .....................................
 \section{Division}
-We can generalize divisibilty.
+We can generalize divisibility.
 
 \begin{ex}
 \begin{exes}
@@ -660,11 +721,6 @@ $\charfcn{A}$ (whose domain is the universal set) such that
 $\charfcn{A}(x)=1$ for $x\in A$, and $\charfcn{A}(x)=0$ for $x\notin A$.  
 \end{df}
 
-\begin{ex}
-Give the formula relating $\charfcn{A}$ and $\charfcn{B}$ to
-  $\charfcn{A\intersection B}$.
-Do the same for union.
-\end{ex}
 
 
 
@@ -699,6 +755,14 @@ The set of elements
 from both~$A$ and~$B$ is the \definend{intersection} 
 $A\intersection B=\setbuilder{x}{\text{$x\in A$ and $x\in B$}}$.  
 \end{df}
+
+\begin{ex}
+Give the formula relating $\charfcn{A}$ and $\charfcn{B}$ to
+  $\charfcn{A\intersection B}$.
+Do the same for union.
+Do the same for complementation.
+\end{ex}
+
 
 Picture set operations with \definend{Venn diagrams}.
 \begin{center}
@@ -837,7 +901,7 @@ If the sets are the same then
 a sequence of length~$2$ may be called an \definend{ordered pair} and 
 written with parentheses $(x_0,x_1)$
 (similarly we have ordered triples, $4$-tuples, etc.).
-Also in this case we often write $A\times\cdots\times A$ 
+In this case we often write $A\times\cdots\times A$ 
 as~$A^n$.
 \end{df}
 
@@ -862,7 +926,7 @@ $\R^2=\setbuilder{(x,y)}{x,y\in\R}$.
 \end{exes}
 \end{ex}
 
-\begin{ex} We can ask about the intersection between Cartesian product and 
+\begin{ex} We can ask about the interaction between Cartesian product and 
 other set operations.
 \begin{exes}
 \item $(A\union B)\times C=(A\times C)\union(B\times C)$
@@ -1046,7 +1110,7 @@ $\composed{g}{f}$ and $\composed{f}{g}$.
 
 
 % .....................................
-\section{inverse}
+\section{Inverse}
 
 The definition of function specifies that for every argument there is 
 exactly one associated value.
@@ -1300,6 +1364,27 @@ Show that the set of inverse images
 $P=\setbuilder{f^{-1}(c)}{c\in C}$ is a partition of the domain.
 \end{ex}
 
+\begin{df}
+A binary relation~$R$ is \definend{antisymmetric} if
+$(x,y)\in R$ and $(y,x)\in R$ implies that $x=y$.
+A relation is a \definend{partial ordering} if it is 
+reflexive, antisymmetric, and transitive.  
+\end{df}
+
+\begin{ex}
+Can a relation be both symmetric and antisymmetric?  
+\end{ex}
+
+\begin{ex} Prove each.
+\begin{exes}
+\item The usual less than or equal to relation~$\leq$ on 
+the real numbers is a partial order.
+\item The relation `divides' on $\N$ is a partial order.
+\item For any set~$A$ the relation $\subseteq$ on $\powerset(A)$ is
+a partial order.
+\end{exes}
+\end{ex}
+
 
 
 
@@ -1307,6 +1392,64 @@ $P=\setbuilder{f^{-1}(c)}{c\in C}$ is a partition of the domain.
 %===================================================
 \chapter{Infinity}
 
+\begin{df}
+Two sets have the \definend{same cardinality} 
+(or are \definend{equinumerous}) if there is a 
+correspondence from one to the other.
+We write $A\sim B$.   
+\end{df}
+
+\begin{ex} Prove.
+\begin{exes}
+\item The relation $\sim$ is an equivalence.
+\item For all natural numbers $n$, any pair of sets with~$n$ elements
+have the same cardinality .
+\item Fix a set~$A$ with $n$~elements.
+  For any $m\neq n$, a set with $m$ elements does not have the same
+  cardinality as~$A$.
+\end{exes}
+\end{ex}
+
+\begin{df}
+A set is \definend{finite} if it has~$n$ elements for some $n\in\N$.
+Otherwise the set is \definend{infinite}.   
+\end{df}
+
+\begin{df}
+A set is \definend{denumerable} if it has the same cardinality 
+as $\N$.
+A set is \definend{countable} if it is either finite or denumerable.
+\end{df}
+
+\begin{ex}  Prove.
+\begin{exes}
+\item The set~$\N\times\N$ is countable.
+\item The set of integers is countable.
+\end{exes}
+\end{ex}
+
+\begin{ex} Prove that the following are equivalent for a set~$A$.
+\begin{exes}
+\item $A$ is countable
+\item $A$ is empty or there is an onto function from $\N$ to~$A$
+\item There is a one-to-one function from $A$ to~$\N$    
+\end{exes}
+\end{ex}
+
+\begin{ex} Prove.
+\begin{exes}
+\item The set of rational numbers is countable.
+\item The union of countably many sets is countable.
+\item The set of finite sequences of elements from a countable set is countable.
+\end{exes}
+\end{ex}
+
+\begin{ex}
+\begin{exes}
+\item The set $\powerset{\N}$ is not countable.
+\item The set of real numbers is not countable.  
+\end{exes}
+\end{ex}
 
 
 

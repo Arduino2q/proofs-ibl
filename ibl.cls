@@ -100,6 +100,11 @@
 
 
 % ========================================
+% Preface has epigrams set in ragged
+\RequirePackage{ragged2e}
+
+
+% ========================================
 \usepackage{mathtools}  % imports amsmath
 \DeclarePairedDelimiter\absval{\lvert}{\rvert}%
 \newcommand{\lcm}{\operatorname{lcm}}
