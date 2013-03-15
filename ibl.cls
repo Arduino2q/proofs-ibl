@@ -89,7 +89,7 @@
 
 \fancypagestyle{bodypage}{%
 \fancyhf{}% clear all six fields
-\fancyhead[RE,LO]{\small Hef{}feron, \today}
+\fancyhead[RE,LO]{\small Introduction to Proof, \today}
 \fancyhead[LE,RO]{\small page \thepage}
 \renewcommand{\headrulewidth}{0.7pt}
 \renewcommand{\footrulewidth}{0pt}
@@ -134,7 +134,7 @@ notefont=\mdseries, notebraces={(}{)},
 bodyfont=\normalfont,
 headformat={\NUMBER\hspace*{0.5em}\NAME.\spacefactor=1000 \NOTE},
 headpunct={},
-postheadspace=0.5em,
+postheadspace=0.5em plus .03em,
 qed=\qedsymbol
 ]{jhstyle}
 \newcommand{\notetext}[1]{(\textsc{#1})\hspace{0.35em}} % such as \item \notetext{Transitivity}
@@ -171,13 +171,21 @@ qed=\qedsymbol
 \AtEndDocument{\typeout{Number of exercises with parts: \theexerciseswithpartscount}.}
 \newcounter{exercisepartscount}
 \AtEndDocument{\typeout{Count of parts: \theexercisepartscount}.}
-\AtEndDocument{\typeout{Number for students to do is Total-Number+Count.}}
+\newcounter{exercisetotal}
+\AtEndDocument{\setcounter{exercisetotal}{\value{exercisecount}}%
+\addtocounter{exercisetotal}{\value{exercisepartscount}}%
+\addtocounter{exercisetotal}{-\value{exerciseswithpartscount}}%
+\typeout{Number for students to do is Total-Number+Count=\theexercisetotal.}}
 
 % Exercises sometimes have multiple parts.
+\newlength{\exesindent}\setlength{\exesindent}{1.25em}
 \newenvironment{exes}{%
 \addtocounter{exerciseswithpartscount}{1}%
-\begin{enumerate}[topsep=0.15ex,partopsep=0ex,parsep=0ex,itemsep=.25ex,
-                  leftmargin=1.5em,rightmargin=0em,
+% \hspace*{0em}% Causes it to start on a new line? 
+\begin{enumerate}[topsep=0.15ex,partopsep=0ex,parsep=0ex,
+                  beginpenalty=150,   % Prevent page break after newline start
+                  itemsep=.25ex plus .03ex minus .01ex,
+                  leftmargin=\exesindent,rightmargin=0em,
                   align=left,label={\textsc{\alph*}.\protect\addtocounter{exercisepartscount}{1}}] 
 }{%
 \end{enumerate}
@@ -217,5 +225,7 @@ qed=\qedsymbol
 \DeclareMathOperator{\add}{add}
 \DeclareMathOperator{\mul}{mul}
 \newcommand*{\symdiff}{\mathbin{\triangle}}
+\DeclareMathOperator{\range}{Ran}
+\DeclareMathOperator{\image}{Im}
 
 

@@ -14,12 +14,11 @@
   \large\color{darki}
   \begin{tabular}{@{}l@{}}
   Jim Hef{}feron  \\
-  version 0.5
+  version 0.9
   \end{tabular}
 \end{flushright}
 
 \newpage
-\vspace*{\fill}
 \begin{center}
   \renewcommand{\arraystretch}{1.07}
   {\large\textsc{Notation}} \\[3ex]
@@ -58,6 +57,40 @@
   \end{tabular}
 \end{center}
 \vspace*{\fill}
+\begin{center}
+  {\large\textsc{Lower case Greek letters, with pronounciation}}
+    \\[3ex]
+  \newcommand{\pronounced}[1]{\hspace*{.2em}\small\textit{#1}}
+  \begin{tabular}{cl@{\hspace*{3em}}cl}
+    character &\multicolumn{1}{c}{name}       
+    &character  &\multicolumn{1}{c}{name}  \\ 
+    \hline
+     \( \alpha  \) &alpha \pronounced{AL-fuh}  
+       &\( \nu     \)  &nu  \pronounced{NEW}       \\
+     \( \beta   \) &beta  \pronounced{BAY-tuh}     
+       &\( \xi  \)  &xi   \pronounced{KSIGH}    \\ 
+     \( \gamma  \) &gamma  \pronounced{GAM-muh}    
+       &\( o       \) &omicron  \pronounced{OM-uh-CRON}  \\
+     \( \delta  \) &delta  \pronounced{DEL-tuh}   
+       &\( \pi \) &pi  \pronounced{PIE}     \\
+     \( \epsilon\) &epsilon  \pronounced{EP-suh-lon}   
+       &\( \rho \) &rho  \pronounced{ROW}    \\
+     \( \zeta   \) &zeta   \pronounced{ZAY-tuh}    
+       &\( \sigma  \) &sigma  \pronounced{SIG-muh}  \\
+     \( \eta    \) &eta  \pronounced{AY-tuh}      
+       &\( \tau \) &tau  \pronounced{TOW (as in cow)}    \\
+     \( \theta  \) &theta  \pronounced{THAY-tuh}    
+       &\( \upsilon\) &upsilon  \pronounced{OOP-suh-LON}  \\
+     \( \iota \) &iota \pronounced{eye-OH-tuh}   
+       &\( \phi    \) &phi  \pronounced{FEE, or FI (as in hi)}    \\
+     \( \kappa  \) &kappa  \pronounced{KAP-uh}  
+       &\( \chi    \) &chi  \pronounced{KI (as in hi)}    \\
+     \( \lambda \) &lambda  \pronounced{LAM-duh}  
+       &\( \psi    \) &psi \pronounced{SIGH, or PSIGH}    \\
+     \( \mu  \)  &mu  \pronounced{MEW}     
+       &\( \omega  \) &omega  \pronounced{oh-MAY-guh}  
+  \end{tabular}
+\end{center}
 
 
 
@@ -65,8 +98,8 @@
 
 \chapter*{Preface}
 
-This is a course in Mathematical proof. 
-Its audience is majors who are US sophomores, although since
+This is a course in mathematical proof. 
+It is for majors who are US sophomores, although since
 it requires only high school mathematics
 it can be used with first year students.
 
@@ -78,13 +111,14 @@ This course is Inquiry-Based (sometimes called Moore method).
 That is, this text is a sequence of exercises
 along with definitions and a few 
 remarks.
-The class works through those mostly by
-proving the exercises, or sometimes by providing examples or counterexamples.
+The class works through those together by
+proving statements, or sometimes by providing examples or counterexamples.
 The students directly grapple with the material, 
 with the instructor only lightly guiding, 
-and together work though misunderstandings, 
-sometimes stumbling in the dark and occasionally
+talking out misunderstandings, 
+sometimes stumbling in the dark, and occasionally
 having beautiful flashes of insight.
+% In short, this approach is the difference between cover and do.
 With students at this level, 
 this approach is the best way to build mathematical maturity.
 
@@ -101,12 +135,12 @@ intellectual challenge and verbal exchange,
 whereas a month of background material can be an initial damper.
 
 But the background is good stuff also and 
-students like it once they see where it goes.
-In the second chapter and third chapters we cover 
+students climb aboard it once they see where it will take them.
+In the second and third chapters we do
 sets, functions, and relations, now with the
 intellectual habits we've established at the start.
 
-There are some topics, such as the definition of implication, 
+However, there are some topics, such as the definition of implication, 
 that students need even in the
 first chapter.
 I have daily classes begin with some students going to the 
@@ -114,12 +148,12 @@ board to write their answers to the homework and
 I use these ten minutes for a slide or two that covers issues from
 the class's current work.
 This just-in-time approach keeps the class centered 
-on proving things, but students get what
-they need at the moment when they can appreciate it.
+on proving things, but they get what
+they need when they need it.
 
-The only exception is that here we cover induction as a separate
-topic, since it is often new for students and since it takes 
-the class's full attention.
+The only exception is that we take an interlude to explicitly cover induction,
+since it is often new for students and since it requires 
+their full attention.
 
 
 
@@ -127,11 +161,11 @@ the class's full attention.
 \noindent\textsc{License.}
 This material is Free; see the details  
 at \url{http://joshua.smcvt.edu/proofs}.
-This includes the book's \LaTeX{} source, so instructors can tailor the
-material to their students.  
+This includes the \LaTeX{} source, so instructors can tailor the
+material to the students.  
 Also on that page are the slides that I use
 and, for instructors new to this approach, 
-a brief description of what classroom technique works for me.
+a brief description of what classroom techniques work for me.
 
 
 \vspace{\fill}
@@ -157,7 +191,7 @@ a brief description of what classroom technique works for me.
 \pagestyle{bodypage}
 \chapter{Number Theory}
 
-We begin with elementary results about the
+We begin with results about the
 integers $\Z=\set{..,-2,-1,0,1,2,\ldots}$.
 In this chapter, ``number'' means integer.
 In some cases, results refer to the 
@@ -937,10 +971,10 @@ if $A\subseteq B$ then $\powerset(A)\subseteq\powerset(B)$.
 
 \begin{df}
 The \definend{sequence\/} 
-formed from $x_0$, $x_1$, \ldots, $x_{n-1}$ is
-denoted $\seq{x_0, x_1, \ldots, x_{n-1}}$.
+formed from $x_0$, $x_1$, \ldots, $x_{n-1}$ is written
+$\seq{x_0, x_1, \ldots, x_{n-1}}$.
 The \definend{length} of a sequence $\lh(\seq{x_0, x_1, \ldots, x_{n-1}})$
-is the number of entries $n$.
+is the number of entries.
 Two sequences $\seq{x_0, x_1, \ldots, x_{n-1}}$ and
 $\seq{y_0, y_1, \ldots, y_{n-1}}$ are equal if and only if
 they have the same length and
@@ -1023,23 +1057,22 @@ consists of the two sets along with a \definend{graph},
 a set of pairs $(d,c)\in D\times C$ that is 
 \definend{well-defined}: for each $d\in D$ there is
 exactly one $c\in C$ such that $(d,c)\in f$. 
+Functions are equal only if they have the same domain, codomain,
+and graph.
 
 Thus a function associates each element~$d$ from the domain,
 called an \definend{argument} (or~\definend{input}),
 with an element~$c$ from the codomain, 
 called a~\definend{value} (or~\definend{output}). 
-We may also say the $c$ is the \definend{image} of $d$, 
-or $d$ \definend{maps to}~$c$, and write $f(d)=c$.
+We write $f(d)=c$ and say that $c$ is the \definend{image} of $d$ 
+or that $d$ \definend{maps to}~$c$.
 \end{df}
 
-\noindent Functions are equal only if they have the same domain, codomain,
-and graph.
-
-Draw a function by showing the domain and codomain as blobs 
-or \definend{beans}, with either a simple arrow from the domain to
-the codomain,  
-or with an barred arrow from elements of the domain to elements of the
-codomain.
+A \definend{bean diagram} pictures a function by drawing the domain and 
+codomain as blobs and 
+either showing the function as a whole as a simple arrow   
+or showing the function's action on individual elements 
+with arrows that begin with a vertical bar.
 \begin{center}
   \grf{asy/bean_fcn.pdf}{$\map{f}{D}{C}$}
   \hspace{8em}
@@ -1067,10 +1100,13 @@ in place of $f(d)=c$ you may see $d\mapsunder{f}c$.
 \end{exes}
 \end{ex}
 
-We often ignore the distinction between a function and its graph, and 
-think of the function as the set of ordered pairs 
-(the graph is only in the definition because the codomain cannot be recovered
-from the set of ordered pairs).
+We often ignore the distinction between a function and its graph
+and just
+think of the function as the set of ordered pairs.
+(The graph is in the definition only 
+because the codomain cannot be recovered
+from the set of ordered pairs, so the function must be 
+given as a tuple.)
 
 \begin{ex}
 Let $D$ and $C$ be finite sets.
@@ -1080,8 +1116,8 @@ How many maps are there from $D$ to $C$?
 \begin{df}
 A \definend{constant function} $\map{f}{D}{C}$ has  
 $f(d_0)=f(d_1)$ for all $d_0,d_1\in D$.
-% \end{df}\begin{df}
-The \definend{identity function} $\map{\identity}{D}{D}$ has
+\end{df}\begin{df}
+An \definend{identity function} $\map{\identity}{D}{D}$ has
 $\identity(d)=d$ for all $d\in D$.
 \end{df}
 
@@ -1093,24 +1129,27 @@ $f((x,y))$.
 The number of arguments is the function's \definend{arity}.
 
 \begin{df}
-The \definend{range} of $\map{f}{D}{C}$
-is $\setbuilder{y\in C}{\text{there is a $x\in D$ such that $f(x)=y$}}$.
+The \definend{range} of a function $\map{f}{D}{C}$,
+denoted  $f(D)$ or $\range(f)$,
+is the set
+$\setbuilder{y\in C}{\text{there is a $x\in D$ such that $f(x)=y$}}$.
 \end{df}
 
 \begin{ex}
-For each function of \cref{FindFunctions} find the range.  
+Find the range of each function in \cref{FindFunctions}.  
 \end{ex}
 
 \begin{df}
 Let $\map{f}{D}{C}$.
 The \definend{restriction} of $f$ to $B\subseteq D$ is
-$\map{\restrictionmap{f}{B}}{B}{C}$ whose action is given by 
+the function $\map{\restrictionmap{f}{B}}{B}{C}$ whose action is given by 
 $\restrictionmap{f}{B}(b)=f(b)$ for all $b\in B$.
-Where $g$ is a restriction of~$f$, we say that
+A synonym is that
 $f$ is an \definend{extension} of~$g$.
 
-The \definend{image} $f(b)$ of $B$ under $f$ is the range of 
-the function $\restrictionmap{f}{B}$.
+The \definend{image} of the set $B$ under $f$, 
+denoted $f(B)$ or $\image(f)$,
+is the range of the function $\restrictionmap{f}{B}$.
 \end{df}
 
 \begin{df}
@@ -1140,15 +1179,16 @@ is $\map{\composed{g}{f}}{D}{B}$ given by
 $\composed{g}{f}(d)=g(f(d))$.
 \end{df}
 
-Observe that although $g$ comes first when reading the $\composed{g}{f}$ 
-from left to right, 
-$g$ is not the function that is applied first. 
-Observe also that the codomain of~$f$ is the domain of~$g$
-(we sometimes use a composition where the domain of~$g$ is not the 
-entire codomain, but is a superset of the range of~$f$).
 \begin{center}
   \includegraphics{asy/bean_fcn_comp.pdf}  
 \end{center}
+Observe that although $g$ comes first when reading the expression 
+$\composed{g}{f}$ 
+from left to right, 
+the function that is applied first is~$f$. 
+Observe also that the codomain of~$f$ is the domain of~$g$
+(we sometimes use a composition where the domain of~$g$ is not the 
+entire codomain, but is a superset of the range of~$f$).
 
 \begin{ex} Let $D=\set{0,1,2}$, $C=\set{a,b,c,d}$, 
 and $B=\set{\alpha,\beta,\gamma}$
@@ -1200,7 +1240,8 @@ A function is \definend{onto} (or a \definend{surjection})
 if for each value there is at least
 one associated argument, that is, if for each element $c$ of the codomain
 there exists an element $d$ of the domain such that $f(d)=c$.
-A function that is both one-to-one and onto is a 
+A function that is both one-to-one and onto, so that for every value there
+is exactly one associated argument, is a 
 \definend{correspondence} (or \definend{bijection}, or \definend{permutation}).
 \end{df}
 
@@ -1346,7 +1387,7 @@ A relation that satisfies all three conditions is an
 \end{ex}
 
 \begin{ex}
-Two integers have the same \definend{parity} if they are both odd, or 
+Recall that two integers have the same parity if they are both odd or 
 both even.
 Show that the binary relation 
 $P=\setbuilder{(x,y)\in\Z^2}{\text{$x$ and $y$ have the same parity}}$  
@@ -1354,9 +1395,9 @@ is an equivalence.
 \end{ex}
 
 \begin{ex}
-Fix a divisor $q\in\N-\set{0}$.
+Fix a divisor $q\in\Z^+$.
 Show that the relation 
-$\mathord\sim=\setbuilder{(m,n)\in\N^2}{m\equiv n\pmod q}$  
+$\setbuilder{(m,n)\in\N^2}{m\equiv n\pmod q}$  
 is an equivalence.
 \end{ex}
 
@@ -1367,11 +1408,10 @@ we may write $x\equiv y\pmod R$.
 
 \begin{ex} \label{RationalsAsEqClasses}
 \begin{exes}
-\item Let $X=\Z\times (\N-\set{0})$.
-Show that 
-$Q=\setbuilder{\big((p,q),(n,d)\big)\in X\times X}{pm=qn}$
-is an equivalence.
-\item List five elements of $Q$.
+\item Show that 
+$\setbuilder{\big((p,q),(n,d)\big)\in \Z\times\Z^+}{pm=qn}$
+is an equivalence relation.
+\item List five elements.
 \end{exes}
 \end{ex}
 
@@ -1380,11 +1420,11 @@ is an equivalence.
 \item Let $X$ be the set of lines in the Euclidean plane and consider
 the relation
 $R=\setbuilder{(\ell_0,\ell_1)\in X^2}{\text{the two are parallel}}$. 
-Show that is an equivalence.
-\item List five elements of $R$.
+Show that $R$ is an equivalence.
+\item List five elements.
 \item Fix a vertical line $\ell$ (for instance, the $x$-axis 
   $\setbuilder{(x,0)}{x\in\R}$).
-  List five elements $X$ related to~$\ell$.
+  List five elements of $X$ that are related to~$\ell$.
 \end{exes}
 \end{ex}
 
@@ -1410,14 +1450,15 @@ none of its elements is the empty set,
 it \definend{covers}~$X$
 (the union of the elements of $P$ is equal to~$X$),
 and the elements of $P$ are \definend{pairwise disjoint}
-(that is, $p_i\intersection p_j=\emptyset$ for $i\neq j$).
+(the intersection $p_i\intersection p_j$ is empty for $i\neq j$).
 \end{df}
 
 \begin{center}
   \grf{asy/bean_partition.pdf}{Set~$X$ partitioned into four parts}
 \end{center}
 
-\begin{ex} Prove that the following are equivalent statements for $x,y\in X$.
+\begin{ex} Let $R$ be an equivalence on~$X$.
+Prove that the following are equivalent statements for $x,y\in X$;
 \begin{exes}
 \item $x\equiv y\pmod R$
 \item $\eqclass{x}=\eqclass{y}$    
@@ -1425,11 +1466,18 @@ and the elements of $P$ are \definend{pairwise disjoint}
 \end{exes}
 \end{ex}
 
-Let $X$ be a set. Consider an equivalence relation~$R$ on that set, 
-and the partition $P=\setbuilder{\eqclass{x}}{x\in X}$.
-We say that the partition is  
-the \definend{induced} by the relation or that
-the relation \definend{arises} from the partition. 
+\begin{ex} Prove.
+\begin{exes}
+\item Where $R$ is an equivalence, 
+  the collection of equivalence classes 
+  $\setbuilder{\eqclass{x}}{x\in X}$ forms a partition of~$X$.
+  We say it is the partition \definend{induced} by the relation.
+\item Where $P$ is a partition of~$X$, 
+  the relation $R=\setbuilder{(x,y)\in X^2}{\text{$x$ and~$y$ are in the same part}}$ 
+  is an equivalence.
+  We say this relation \definend{arises from} the partition. 
+\end{exes}
+\end{ex}
 
 \begin{ex}
 Suppose that $\map{f}{D}{C}$ is onto.
@@ -1475,6 +1523,15 @@ correspondence from one to the other.
 We write $A\sim B$.   
 \end{df}
 
+\begin{df}
+A set is \definend{finite} if it has~$n$ elements for some $n\in\N$.
+Otherwise the set is \definend{infinite}.   
+% \end{df}\begin{df}
+A set is \definend{denumerable} if it has the same cardinality 
+as $\N$.
+A set is \definend{countable} if it is either finite or denumerable.
+\end{df}
+
 \begin{ex} Prove.
 \begin{exes}
 \item The relation $\sim$ is an equivalence.
@@ -1482,17 +1539,6 @@ We write $A\sim B$.
   same number of elements.
 \end{exes}
 \end{ex}
-
-\begin{df}
-A set is \definend{finite} if it has~$n$ elements for some $n\in\N$.
-Otherwise the set is \definend{infinite}.   
-\end{df}
-
-\begin{df}
-A set is \definend{denumerable} if it has the same cardinality 
-as $\N$.
-A set is \definend{countable} if it is either finite or denumerable.
-\end{df}
 
 \begin{ex}  Prove.
 \begin{exes}
