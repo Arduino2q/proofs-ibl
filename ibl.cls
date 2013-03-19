@@ -58,9 +58,9 @@
 }
 
 
-% ========================================
-% Page layout
-\RequirePackage[left=1.45in,right=1.45in,top=1in,bottom=1in]{geometry}
+% % ========================================
+% % Page layout
+% \RequirePackage[left=1.45in,right=1.45in,top=1in,bottom=1in]{geometry}
 
 \RequirePackage[english]{isodate}
 \isodate
@@ -87,16 +87,16 @@
 \renewcommand{\footrulewidth}{0pt}
 }
 
-\fancypagestyle{bodypage}{%
-\fancyhf{}% clear all six fields
-\fancyhead[RE,LO]{\small Introduction to Proof, \today}
-\fancyhead[LE,RO]{\small page \thepage}
-\renewcommand{\headrulewidth}{0.7pt}
-\renewcommand{\footrulewidth}{0pt}
-}
+% \fancypagestyle{bodypage}{%
+% \fancyhf{}% clear all six fields
+% \fancyhead[RE,LO]{\small Introduction to Proof, \today}
+% \fancyhead[LE,RO]{\small page \thepage}
+% \renewcommand{\headrulewidth}{0.7pt}
+% \renewcommand{\footrulewidth}{0pt}
+% }
 
-\pagestyle{prefacepage}
-\AtBeginDocument{\thispagestyle{firstpage}}
+% \pagestyle{prefacepage}
+% \AtBeginDocument{\thispagestyle{firstpage}}
 
 
 % ========================================
@@ -146,6 +146,7 @@ qed=\qedsymbol
 \declaretheorem[name=Definition,sibling=ex]{df} % see defn of \definend
 \declaretheorem[name=Note,sibling=ex]{nt}
 \declaretheorem[name=Axiom,numberwithin=chapter]{ax}
+% \declaretheorem[name=Answer,sibling=ex]{df} % see defn of answer environment 
 
 
 % ========================================
@@ -191,6 +192,7 @@ qed=\qedsymbol
 \end{enumerate}
 }
 
+
 % ========================================
 % Font
 \usepackage{fourier}
@@ -206,11 +208,38 @@ qed=\qedsymbol
 % \titleformat*{\subsubsection}{\large\headingfont}
 % \renewcommand{\maketitlehooka}{\headingfont}
 
+% % ========================================
+% % Answers
+% \usepackage{answers}
+% \Newassociation{ans}{answer}{answers}
+% \Opensolutionfile{answers}[answersbody]
+
+% % \begin{Filesave}{answers}
+% % \documentclass{ibl}
+% % \begin{document}
+% % \begin{answerlist}  
+% % \end{Filesave}
+
+% \AtEndDocument{%
+% \Closesolutionfile{answers}}
+
+% \renewenvironment{answer}[1]{%
+% % \hspace*{0em}% Causes it to start on a new line? 
+% \begin{enumerate}[topsep=0.15ex,partopsep=0ex,parsep=0ex,
+%                   beginpenalty=150,   % Prevent page break after newline start
+%                   itemsep=.25ex plus .03ex minus .01ex,
+%                   leftmargin=\exesindent,rightmargin=0em,
+%                   align=left,label={\textsc{#1}.}] 
+% }{%
+% \end{enumerate}
+% }
 
 
 % ========================================
 % Convenient definitions
 
+% Graphics, with a caption
+\newcommand{\grf}[2]{\begin{tabular}{@{}c@{}}\includegraphics{#1} \\ #2\end{tabular}}
 
 % Vulgar fractions
 \RequirePackage{xfrac}

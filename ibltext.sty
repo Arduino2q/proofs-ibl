@@ -1,0 +1,33 @@
+% ========================================
+% Page layout
+\RequirePackage[left=1.45in,right=1.45in,top=1in,bottom=1in]{geometry}
+
+% fancyhdr
+\fancypagestyle{bodypage}{%
+\fancyhf{}% clear all six fields
+\fancyhead[RE,LO]{\small Introduction to Proof, \today}
+\fancyhead[LE,RO]{\small page \thepage}
+\renewcommand{\headrulewidth}{0.7pt}
+\renewcommand{\footrulewidth}{0pt}
+}
+
+\pagestyle{prefacepage}
+\AtBeginDocument{\thispagestyle{firstpage}}
+
+% ========================================
+% Answers
+% This has to go in this .sty because it opens and empties answers.tex, 
+% which would be bad if you ran pdflatex answers.
+\usepackage{answers}
+\Newassociation{ans}{answer}{answers}
+\Opensolutionfile{answers}[answersbody]
+
+% \begin{Filesave}{answers}
+% \documentclass{ibl}
+% \begin{document}
+% \begin{answerlist}  
+% \end{Filesave}
+
+\AtEndDocument{%
+\Closesolutionfile{answers}}
+

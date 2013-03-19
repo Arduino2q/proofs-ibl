@@ -1,0 +1,28 @@
+% ========================================
+% Page layout
+\RequirePackage[left=1.45in,right=1.45in,top=1in,bottom=1in]{geometry}
+
+% fancyhdr
+\fancypagestyle{bodypage}{%
+\fancyhf{}% clear all six fields
+\fancyhead[RE,LO]{\small Answers: Introduction to Proof, \today}
+\fancyhead[LE,RO]{\small page \thepage}
+\renewcommand{\headrulewidth}{0.7pt}
+\renewcommand{\footrulewidth}{0pt}
+}
+
+\pagestyle{firstpage}
+\AtBeginDocument{\thispagestyle{firstpage}}
+
+
+% ========================================
+% use facilities of package enumitem
+\newenvironment{answer}[1]{%
+\begin{enumerate}[topsep=0.15ex,partopsep=0ex,parsep=0ex,
+                  beginpenalty=150,   % Prevent page break after newline start
+                  itemsep=.25ex plus .03ex minus .01ex,
+                  leftmargin=0em,rightmargin=0em,
+                  align=left]\item[#1] 
+}{%
+\end{enumerate}
+}
