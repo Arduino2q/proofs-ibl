@@ -295,26 +295,26 @@ and $a-b=dm-dn=d(m-n)$ is multiple of~$d$.
 Find a counterexample to:
 where $a,b\in\N$, the number $a+b$ is even if and only if $a-b$ is even.
 Patch the statement\Dash that is, alter it slightly\Dash to make it true.
-\end{ex}
 \begin{ans}
-A counterexample is to take $1,3\in\N$, since
+One counterexample is to take $1,3\in\N$, since
 $1-3$ is not defined on the natural numbers.  
-To patch it change the $\N$ to~$\Z$:~where $a,b\in\Z$, 
+To patch the statement change the $\N$ to~$\Z$:~where $a,b\in\Z$, 
 the number $a+b$ is even if and only if $a-b$ is even.
 
-For a proof suppose that if $a,b\in\Z$.
+For a proof of the patched statement, suppose that if $a,b\in\Z$.
 Then $a+b$ is even if and only if 
 $a+b=2k$ for some $k\in\Z$,
 which is true if and only if
 $a-b=a+b-2b=2k-2b=2(k-b)$,
 which holds if and only if~$a-b$ is even. 
 \end{ans}
+\end{ex}
 
 \begin{ex}[Interaction of parity with multiplication]\pord.
 \begin{exes}
 \item The product of two evens is even.
 \item The quotient of two evens, if it is an integer, is even.
-\item Generalize to arbitrary divisors~$d$.
+\item Generalize the first item to any divisor~$d$.
 \end{exes}  
 \begin{ans}
 \begin{exes}
@@ -338,33 +338,53 @@ $d$ is a multiple of~$d^2$.)
 
 \begin{ex}[Divisibility Properties]
 Let $d$, $m$, and $n$ be integers.
-\pord.
+Prove each.
 \begin{exes}
 \item \notetext{Reflexivity} Every number divides itself.
 \item Every number divides $0$ while
   the only number that $0$ divides is itself.
-\item Every number is divisible by $1$ while
-  the only numbers that divide $1$ are $1$~itself and $-1$.
+\item Every number is divisible by $1$.
 \item \notetext{Transitivity} If $d\divides n$ and $n\divides m$ 
    then $d\divides m$.
 \item \notetext{Cancellation} 
   For $d,n\in\Z$ we have $d\divides n$ if and only if 
-  $ad\divides an$ for any~$a\in\Z$.
+  $ad\divides an$ for any~$a\in\Z$ with $a\neq 0$.
 \item \notetext{Comparison} 
   For $d,n\in\Z^+$, if $n$ is a multiple of~$d$ then $n\geq d$.
+\item The only numbers that divide~$1$ are $1$ and~$-1$.
 \item For any $a\neq 0$, its largest divisor is $\absval{a}$.
 \item If $d\divides a$ and $d\divides b$ then $d\divides (a+b)$.  
 \end{exes}
 \begin{ans}
 \begin{exes}
-\item
-\item
-\item
-\item
-\item
+\item For any number $a\in\Z$, we have $a=a\cdot 1$.
+\item For every number $a\in\Z$ the equation~$0=a\cdot 0=0\cdot a$ holds.
+  This shows that every number divides $0$ because it has $0$ as a 
+  multiple of~$a$.
+  It also shows that the only number that~$0$ divides is itself 
+  because it shows that $0$ times any number is~$0$. 
+\item For every $a\in\Z$ the equation $a=1\cdot a$ holds.
+  Thus every number is a multiple of~$1$.
+\item Suppose that $d, n, m\in\Z$ are such that $d\divides n$ and
+  $n\divides m$.
+  Then there are $i,j\in\Z$ such that $n=di$ and~$m=nj$.
+  Substitute to get $m=(di)\cdot j=d\cdot(ij)$, which shows that
+  $d$ divides~$m$.
+\item Fix~$d,n\in\Z$.
+  If $d\divides n$ then $n=dk$ for some $k\in\Z$ and so for any~$a\in\Z$
+  we have $an=adk$, which shows that $ad\divides an$.
+  For the other implication, if $a\in\Z$ is such that $a\neq 0$ and
+  $ad\divides an$ then $an=adk$ for some  $k$.
+  Since $a\neq 0$ we can multiply by $1/a$ to get $n=dk$, and therefore
+  $d\divides n$.
+\item Assume $d,n\in\Z^+$.
+  Because $n$ is a multiple of $d$ we have that $n=dk$ for some $k\in\Z$.
+  Note that $k\geq 1$ since otherwise $n\leq 0$, but $n$ is given as positive.  
+  Multiplying by the positive number~$d$ gives $n=dk\geq d$ 
+\item Suppose that $1=m\cdot n$ for $m,n\in\Z^+$. 
 \item First note that if $a\neq 0$ then $\absval{a}$ is a divisor of~$a$.
-For, ff $a>0$ then $a\divides a$ is clear by writing $a=a\cdot 1$,
-while if $a<0$ then $a\divides a$ follows from $a=a\cdot(-1)$.
+  For, if $a>0$ then $a\divides a$ is clear by writing $a=a\cdot 1$,
+  while if $a<0$ then $a\divides a$ follows from $a=a\cdot(-1)$.
 \end{exes}
 \end{ans}
 \end{ex}
@@ -480,6 +500,19 @@ Prove by induction that $n<2^n$ for all $n\in\N$.
 \end{ex}
 
 \begin{ex}
+The sequence of \definend{Fibonnacci numbers} is
+$0,1,2,3,5,8,13, \ldots$, where new numbers are the sum of the 
+two prior numbers $f_{n+1}=f_n+f_{n-1}$, and starting with $f_0=0$ and $f_1=0$.
+What is wrong with this induction argument purporting to show that
+all Fibonnacci numbers are even?
+``The $n=0$ base case is clear.  For the inductive step, assume it is 
+true for all cases up to and including $n=k$ and consider the $n=k+1$ case.
+The next number $f_{n+1}$ is the sum of the two prior numbers, which by
+the inductive hypothesis are both even.  
+Thus their sum is even.''   
+\end{ex}
+
+\begin{ex}
 Prove that for all $n\geq 1$, sums can be reversed
 $a_0+a_1+\cdots+a_{n-1}=a_{n-1}+\cdots+a_0$.   
 \end{ex}
@@ -503,9 +536,46 @@ For example, you can show that the second item holds in a
 way that gives more intuition by plugging $13$ into the formula for a
 geometric series. 
 
+\begin{df}
+The \definend{principle of mathematical induction} is that a
+statement is true for all natural numbers if it
+meets two conditions: first that the statement is true for $0$,
+and second that for any $k\in\N$, if the statement is true for 
+all natural numbers less than $k$ then it is also true for~$k$.  
+\end{df}
+
+\noindent (Some authors observe that the second condition is an implication, 
+so we can omit the first condition since then the second condition 
+is trivially true.
+Here we retain the first condition.)
+% Not quite right; k vs k+1 etc.
+
+\begin{df}
+The \definend{well-ordering principle} 
+(or the \definend{least number principle})
+is that any nonempty 
+subset of the natural
+numbers has a least element.  
+\end{df}
+
 \begin{ex}
-Show that the principle of induction is equivalent to the least number 
+Show that the principle of induction implies the least number 
 principle.
+\begin{ans}
+We shall prove by induction that if a set of natural numbers does not
+have a least element then that set is empty, that is, it contains no 
+natural number.
+To that end, consider the statement $P(n)$: if a set~$S$ 
+of natural numbers has no
+least element then $S$ does not contain~$n$.
+
+The base case is easy since if $S$ contains~$0$ then it clearly has a 
+least element, so $P(0)$ is true.
+For the inductive step assume that $P(0)$, \ldots, $P(k)$ are all true
+for $k\geq 0$ and consider the statement $P(k+1)$.
+If~$S$ has no least element and~$S$ does not contain any of $0$, \ldots,~$k$ 
+then~$S$ cannot contain~$k+1$ either, since it would be least.   
+\end{ans}
 \end{ex}
 
 
@@ -1477,6 +1547,14 @@ A relation that satisfies all three conditions is an
 \item Reflexive and transitive but not symmetric.
 \item Symmetric and transitive but not reflexive. 
 \end{exes}
+\end{ex}
+
+\begin{ex}
+What is wrong with this purported proof that in the definition
+of an equivalence relation, the condition of reflexivity is redundant?
+\textit{For any $x$, symmetry is that $x∼y$ implies $y∼x$.
+By transitivity we have $x∼y$ and $y∼x$ together imply that $x∼x$. 
+Therefore, symmetry and transitivity together imply reflexivity.}  
 \end{ex}
 
 \begin{ex}

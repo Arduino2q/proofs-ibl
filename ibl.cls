@@ -154,10 +154,10 @@ qed=\qedsymbol
 \RequirePackage[sc,medium,compact,raggedright,nobottomtitles,clearempty]{titlesec}
 % \titleformat{command}[shape]{format}{label}{sep}{before-code}[after-code]
 % \titlespacing*{command}{left}{before-sep}{after-sep}[right-sep]  % *-d form omits paragraph indent after title
-\titleformat{\chapter}[block]{\color{darki}\Large\scshape}{Chapter \thechapter}{1em}{}[\thispagestyle{firstpage}]
-\titlespacing*{\chapter}{0em}{4ex}{2ex} 
-\titleformat{\section}[block]{\color{darki}\large\scshape}{}{0em}{}[]
-\titlespacing*{\section}{0em}{7ex}{1ex} 
+% \titleformat{\chapter}[block]{\color{darki}\Large\scshape}{Chapter \thechapter}{1em}{\Writetofile{}{}}[\thispagestyle{firstpage}]
+% \titlespacing*{\chapter}{0em}{4ex}{2ex} 
+% \titleformat{\section}[block]{\color{darki}\large\scshape}{}{0em}{}[]
+% \titlespacing*{\section}{0em}{7ex}{1ex} 
 % \titleformat{\chapter}[display]{\color{darki}\Large\scshape}{\filleft\MakeUppercase{\chaptertitlename} {\Huge\thechapter}}{1em}{}[\thispagestyle{firstpage}]
 % \titlespacing*{\chapter}{0em}{4ex}{2ex} 
 % \titleformat{\section}[block]{\large\scshape}{}{0em}{}[]

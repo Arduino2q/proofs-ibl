@@ -31,3 +31,35 @@
 \AtEndDocument{%
 \Closesolutionfile{answers}}
 
+
+% ========================================
+% Title-ing of chapters and sections
+% Uses titlesec. 
+\titleformat{\chapter}[block]{\color{darki}\Large\scshape}{Chapter \thechapter}{1em}{}[\thispagestyle{firstpage}]
+\titlespacing*{\chapter}{0em}{4ex}{2ex} 
+\titleformat{\section}[block]{\color{darki}\large\scshape}{}{0em}{}[]
+\titlespacing*{\section}{0em}{7ex}{1ex} 
+
+% Here is the interaction with answers package.  
+% Need to write the name of the chapter or section to the answer file.
+% But that I can tell, I can't get \thetitle into titlesec's 
+% \titleformat after-code.  So I write a new \chapter and \section
+% that grab those, write the material to answers, and then run the command
+% that titlesec has defined. 
+%   Grab the name of the chapter, write it to the answers file, then
+% invoke the titlesec \chapter command.
+\let\chapterholder\chapter
+\renewcommand{\chapter}{\@ifstar  % look out for \chapter*{Preface}
+                     \jhchapterStar%
+                     \jhchapterNoStar%
+}
+\newcommand{\jhchapterStar}[1]{\chapterholder{#1}}
+\newcommand{\jhchapterNoStar}[1]{\Writetofile{answers}{\protect\chapter{#1}}\chapterholder{#1}}
+% Same thing for the \section command
+\let\sectionholder\section
+\renewcommand{\section}{\@ifstar
+                     \jhsectionStar%
+                     \jhsectionNoStar%
+}
+\newcommand{\jhsectionStar}[1]{\sectionholder{#1}}
+\newcommand{\jhsectionNoStar}[1]{\Writetofile{answers}{\protect\section{#1}}\sectionholder{#1}}
