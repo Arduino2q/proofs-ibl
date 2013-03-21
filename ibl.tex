@@ -224,12 +224,10 @@ natural numbers $\N=\set{0,1,2,\ldots}$.
   or \definend{has odd parity}.)
 \end{df}
 
-% \begin{nt}
-  The notation $d\divides n$ signifies a relationship between two numbers.
-  It is different than the fraction $d/n$, which is a number.
-  We can sensibly ask ``Does $2$ divide~$5$?''\spacefactor=1000\
-  but the question ``Does $2/5$?''\spacefactor=1000\ is not sensible.   
-% \end{nt}
+The notation $d\divides n$ signifies a relationship between two numbers.
+It is different than the fraction $d/n$, which is a number.
+We can sensibly ask ``Does $2$ divide~$5$?''\spacefactor=1000\
+but ``Does $2/5$?''\spacefactor=1000\ is not sensible.   
 
 \begin{ex}[Interaction of parity with sign]
 \pord.
@@ -279,10 +277,10 @@ Then $a+b=2m+2n=2(m+n)$ is even,
 and $a-b=2m-2n=2(m-n)$ is even.
 \item Both statements are false: for instance $1$ and~$3$ are odd
 but both $1+3$ and~$1-3$ are even.
-\item A reasonable generalization is: for any $d\in\Z$
+\item A reasonable generalization is that for any $d\in\Z$
   the sum and difference of multiples of~$d$ is again a multiple of~$d$.
  
-For a proof, 
+For a proof
 let $a,b\in\Z$ be multiples of~$d$ so that $a=dm$ and~$b=dn$ 
 for some $m,n\in\Z$.
 Then $a+b=dm+dn=d(m+n)$ is a multiple of~$d$
@@ -296,12 +294,13 @@ Find a counterexample to:
 where $a,b\in\N$, the number $a+b$ is even if and only if $a-b$ is even.
 Patch the statement\Dash that is, alter it slightly\Dash to make it true.
 \begin{ans}
-One counterexample is to take $1,3\in\N$, since
-$1-3$ is not defined on the natural numbers.  
-To patch the statement change the $\N$ to~$\Z$:~where $a,b\in\Z$, 
+One counterexample is to take the numbers $1,3\in\N$, since the difference
+$1-3$ does not have a defined value on the natural numbers.  
+The patch is to change the $\N$ to~$\Z$:
+where $a,b\in\Z$, 
 the number $a+b$ is even if and only if $a-b$ is even.
 
-For a proof of the patched statement, suppose that if $a,b\in\Z$.
+For a proof of the patched statement suppose that $a,b\in\Z$.
 Then $a+b$ is even if and only if 
 $a+b=2k$ for some $k\in\Z$,
 which is true if and only if
@@ -357,14 +356,12 @@ Prove each.
 \end{exes}
 \begin{ans}
 \begin{exes}
-\item For any number $a\in\Z$, we have $a=a\cdot 1$.
-\item For every number $a\in\Z$ the equation~$0=a\cdot 0=0\cdot a$ holds.
-  This shows that every number divides $0$ because it has $0$ as a 
-  multiple of~$a$.
-  It also shows that the only number that~$0$ divides is itself 
-  because it shows that $0$ times any number is~$0$. 
+\item Any number $a\in\Z$ satisfies that $a=a\cdot 1$.
+\item For every $k\in\Z$ the equation~$0=k\cdot 0=0\cdot k$ has~$0$ 
+  as a multiple of~$k$.
+  That equation also shows that the only number that~$0$ divides is itself. 
 \item For every $a\in\Z$ the equation $a=1\cdot a$ holds.
-  Thus every number is a multiple of~$1$.
+   Thus every number is a multiple of~$1$.
 \item Suppose that $d, n, m\in\Z$ are such that $d\divides n$ and
   $n\divides m$.
   Then there are $i,j\in\Z$ such that $n=di$ and~$m=nj$.

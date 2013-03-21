@@ -17,12 +17,32 @@
 
 % ========================================
 % use facilities of package enumitem
+\newlength{\unifiedlistparindent}  % use same value in lists and sublists
+\setlength{\unifiedlistparindent}{2ex}  
+
 \newenvironment{answer}[1]{%
 \begin{enumerate}[topsep=0.15ex,partopsep=0ex,parsep=0ex,
-                  beginpenalty=150,   % Prevent page break after newline start
+                  beginpenalty=150,% Prevent page break after newline start
+                  labelwidth=0em,align=left,labelsep=1.5em,
                   itemsep=.25ex plus .03ex minus .01ex,
-                  leftmargin=0em,rightmargin=0em,
-                  align=left]\item[#1] 
+                  leftmargin=1.5em,rightmargin=0em,
+                  listparindent=\unifiedlistparindent,
+                  align=left,label={\textsc{\alph*}.}]\item[#1] 
+}{%
+\end{enumerate}
+}
+
+% \newlength{\exesindent}\setlength{\exesindent}{1.25em}
+\renewenvironment{exes}{%
+% \addtocounter{exerciseswithpartscount}{1}%
+% \hspace*{0em}% Causes it to start on a new line? 
+\begin{enumerate}[topsep=0.15ex,partopsep=0ex,parsep=0ex,
+                  beginpenalty=150,   % Prevent page break after newline start
+                  labelwidth=1em plus .03em minus 0em,align=right,labelsep=1em,
+                  itemsep=.25ex plus .03ex minus .01ex,
+                  leftmargin=1.25em,rightmargin=0em,
+                  listparindent=\unifiedlistparindent,
+                  align=left,label={\textsc{\alph*}.\protect\addtocounter{exercisepartscount}{1}}] 
 }{%
 \end{enumerate}
 }
