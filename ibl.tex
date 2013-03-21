@@ -345,14 +345,16 @@ Prove each.
 \item Every number is divisible by $1$.
 \item \notetext{Transitivity} If $d\divides n$ and $n\divides m$ 
    then $d\divides m$.
+\item If $d\divides a$ and $d\divides b$ then $d\divides (a+b)$.  
 \item \notetext{Cancellation} 
   For $d,n\in\Z$ we have $d\divides n$ if and only if 
   $ad\divides an$ for any~$a\in\Z$ with $a\neq 0$.
 \item \notetext{Comparison} 
   For $d,n\in\Z^+$, if $n$ is a multiple of~$d$ then $n\geq d$.
 \item The only numbers that divide~$1$ are $1$ and~$-1$.
-\item For any $a\neq 0$, its largest divisor is $\absval{a}$.
-\item If $d\divides a$ and $d\divides b$ then $d\divides (a+b)$.  
+\item The largest divisor of $a$ is $\absval{a}$, for $a\in\Z$ with $a\neq 0$.
+  (Recall that the absolute value  $\absval{a}$ of a number is~$a$ 
+  if $a\geq 0$ and is~$-a$ if $a<0$.) 
 \end{exes}
 \begin{ans}
 \begin{exes}
@@ -367,6 +369,10 @@ Prove each.
   Then there are $i,j\in\Z$ such that $n=di$ and~$m=nj$.
   Substitute to get $m=(di)\cdot j=d\cdot(ij)$, which shows that
   $d$ divides~$m$.
+\item Let $d,a,b\in\Z$ and suppose that $d\divides a$ and $d\divides b$.
+  Then $a=dk$ and $b=dm$ for some $k,m\in\Z$ so 
+  $a+b=dk+dm=d\cdot(k+m)$.
+  Thus $d\divides (a+b)$.
 \item Fix~$d,n\in\Z$.
   If $d\divides n$ then $n=dk$ for some $k\in\Z$ and so for any~$a\in\Z$
   we have $an=adk$, which shows that $ad\divides an$.
@@ -376,24 +382,55 @@ Prove each.
   $d\divides n$.
 \item Assume $d,n\in\Z^+$.
   Because $n$ is a multiple of $d$ we have that $n=dk$ for some $k\in\Z$.
-  Note that $k\geq 1$ since otherwise $n\leq 0$, but $n$ is given as positive.  
+  Note that $k\geq 1$ since otherwise $n\leq 0$ but $n$ is given as positive.  
   Multiplying by the positive number~$d$ gives $n=dk\geq d$ 
-\item Suppose that $1=m\cdot n$ for $m,n\in\Z^+$. 
-\item First note that if $a\neq 0$ then $\absval{a}$ is a divisor of~$a$.
-  For, if $a>0$ then $a\divides a$ is clear by writing $a=a\cdot 1$,
-  while if $a<0$ then $a\divides a$ follows from $a=a\cdot(-1)$.
+\item First consider a divisor~$d$ of~$1$ that is a positive integer.
+  By the prior item $1\geq d$ so the only such divisor is~$d=1$.
+  Clearly $0$ is not a divisor of~$1$ so the only remaining candidates
+  are negative integers.
+  We have shown that for $d,a\in\Z$, if $d\divides a$ then $-d\divides a$,
+  so if a negative number~$d$ divides~$1$ then the positive~$-d$ 
+  also divides~$1$.
+  Since the only such positive number is~$-d=1$, the only 
+  candidate for a negative divisor is $d=-1$. 
+\item Fix $a\in\Z$. 
+  First note that $\absval{a}$ does indeed divide~$a$ because
+  if $a\geq 0$ then $\absval{a}\divides a$ follows from 
+  $a=\absval{a}\cdot 1$,
+  while if $a<0$ then $\absval{a}\divides a$ follows from 
+  $a=\absval{a}\cdot(-1)$.
+
+  We finish by showing that no divisor of~$a\neq 0$ is larger than $\absval{a}$.
+  We have shown that for $d,a\in\Z$ if $d\divides a$ then $d\divides -a$,
+  if a negative~$a$ had a divisor greater than~$\absval{a}$ then the
+  positive number~$-a$ would also have such a divisor.
+  So we will be done if
+  we show there is no dividend~$a>0$ with a divisor larger than $\absval{a}=a$.
+  By the Comparison property, a positive dividend is greater than or 
+  equal to any of its divisors. 
+  Thus~$\absval{a}$ is maximal. 
 \end{exes}
 \end{ans}
 \end{ex}
 
-
-\begin{ex}
-Extend Comparison to all of $\Z$.  
-\end{ex}
+% \begin{ex}
+% Extend Comparison to all of $\Z$.  
+% \end{ex}
 
 \begin{ex}
 Give the converse of the Reflexivity property: what conclusion can you make
 if $a\divides b$ and~$b\divides a$?
+\begin{ans}
+We will show that for $a,b\in\Z$, if both $a\divides b$ and~$b\divides a$
+then $a=\pm b$.
+
+For the proof, $a\divides b$ implies that $b=ak$ and~$b\divides a$
+implies that $a=bm$ for some $k,m\in\Z$.
+Substitution gives $a=bm=akm$, and by cancellation $1=km$ (cancellation
+does not apply if $a=0$ but in this case the proof is easy).
+The only divisors of $1$ are $1$ and~$-1$, so $k=\pm 1$ and~$m=\pm 1$, 
+as required.
+\end{ans}
 \end{ex}
 
 \begin{ex}
