@@ -125,16 +125,16 @@ this is the best way to develop mathematical maturity.
 
 \medskip
 \noindent\textsc{Topics.}
-We start with elementary number theory, not logic, 
+We start with elementary number theory, not logic and sets, 
 for the same reason
-that the baseball team's annual practice starts by playing ball, 
-not with the rulebook.
+that the baseball team's annual practice starts by tossing the ball and 
+not by reading the rulebook.
 Math majors readily take to proving things about
 divisibility and primes, enjoying the 
 intellectual challenge and verbal exchange, 
-whereas an initial month of background material can be a damper.
+whereas an first month of background material is a damper.
 
-But the background is good stuff also and 
+But logic and sets are good stuff also, and 
 students are aboard once they see where it takes them.
 In the second and third chapters we do
 sets, functions, and relations, now with the
@@ -152,7 +152,7 @@ on proving things, but they get what
 they need when they need it.
 
 The only exception is that we take an interlude to explicitly cover induction,
-since it is often new for students and since it requires 
+since it is typically new for students and needs 
 their full attention.
 
 
@@ -161,7 +161,7 @@ their full attention.
 \noindent\textsc{License.}
 This material is Free; see the details  
 at \url{http://joshua.smcvt.edu/proofs}.
-This includes the \LaTeX{} source, so instructors can tailor the
+This includes the \LaTeX{} source so instructors can tailor the
 material to the students.  
 Also on that page are the slides that I use
 and, for instructors new to this approach, 
@@ -342,16 +342,15 @@ Prove each.
 \item \notetext{Reflexivity} Every number divides itself.
 \item Every number divides $0$ while
   the only number that $0$ divides is itself.
-\item Every number is divisible by $1$.
 \item \notetext{Transitivity} If $d\divides n$ and $n\divides m$ 
    then $d\divides m$.
-\item If $d\divides a$ and $d\divides b$ then $d\divides (a+b)$.  
 \item \notetext{Cancellation} 
   For $d,n\in\Z$ we have $d\divides n$ if and only if 
   $ad\divides an$ for any~$a\in\Z$ with $a\neq 0$.
 \item \notetext{Comparison} 
   For $d,n\in\Z^+$, if $n$ is a multiple of~$d$ then $n\geq d$.
-\item The only numbers that divide~$1$ are $1$ and~$-1$.
+\item Every number is divisible by $1$.
+  The only numbers that divide~$1$ are $1$ and~$-1$.
 \item The largest divisor of $a$ is $\absval{a}$, for $a\in\Z$ with $a\neq 0$.
   (Recall that the absolute value  $\absval{a}$ of a number is~$a$ 
   if $a\geq 0$ and is~$-a$ if $a<0$.) 
@@ -362,17 +361,11 @@ Prove each.
 \item For every $k\in\Z$ the equation~$0=k\cdot 0=0\cdot k$ has~$0$ 
   as a multiple of~$k$.
   That equation also shows that the only number that~$0$ divides is itself. 
-\item For every $a\in\Z$ the equation $a=1\cdot a$ holds.
-   Thus every number is a multiple of~$1$.
 \item Suppose that $d, n, m\in\Z$ are such that $d\divides n$ and
   $n\divides m$.
   Then there are $i,j\in\Z$ such that $n=di$ and~$m=nj$.
   Substitute to get $m=(di)\cdot j=d\cdot(ij)$, which shows that
   $d$ divides~$m$.
-\item Let $d,a,b\in\Z$ and suppose that $d\divides a$ and $d\divides b$.
-  Then $a=dk$ and $b=dm$ for some $k,m\in\Z$ so 
-  $a+b=dk+dm=d\cdot(k+m)$.
-  Thus $d\divides (a+b)$.
 \item Fix~$d,n\in\Z$.
   If $d\divides n$ then $n=dk$ for some $k\in\Z$ and so for any~$a\in\Z$
   we have $an=adk$, which shows that $ad\divides an$.
@@ -384,7 +377,11 @@ Prove each.
   Because $n$ is a multiple of $d$ we have that $n=dk$ for some $k\in\Z$.
   Note that $k\geq 1$ since otherwise $n\leq 0$ but $n$ is given as positive.  
   Multiplying by the positive number~$d$ gives $n=dk\geq d$ 
-\item First consider a divisor~$d$ of~$1$ that is a positive integer.
+\item That every number is divisible by~$1$ follows from the fact that
+   for every $a\in\Z$ the equation $a=1\cdot a$ holds.
+
+  For the other part 
+  first consider a divisor~$d$ of~$1$ that is a positive integer.
   By the prior item $1\geq d$ so the only such divisor is~$d=1$.
   Clearly $0$ is not a divisor of~$1$ so the only remaining candidates
   are negative integers.
@@ -424,12 +421,12 @@ if $a\divides b$ and~$b\divides a$?
 We will show that for $a,b\in\Z$, if both $a\divides b$ and~$b\divides a$
 then $a=\pm b$.
 
-For the proof, $a\divides b$ implies that $b=ak$ and~$b\divides a$
-implies that $a=bm$ for some $k,m\in\Z$.
-Substitution gives $a=bm=akm$, and by cancellation $1=km$ (cancellation
+By definition $a\divides b$ and~$b\divides a$ implies that $b=ak$
+and $a=bm$ for some $k,m\in\Z$.
+Substitution gives $a=bm=akm$ and then cancellation gives $1=km$ (cancellation
 does not apply if $a=0$ but in this case the proof is easy).
-The only divisors of $1$ are $1$ and~$-1$, so $k=\pm 1$ and~$m=\pm 1$, 
-as required.
+The only divisors of $1$ are $1$ and~$-1$, so $k=\pm 1$ and~$m=\pm 1$. 
+Thus $b=\pm a$ and~$a=\pm b$.
 \end{ans}
 \end{ex}
 
@@ -441,6 +438,24 @@ Suppose that $a,b,c\in\Z$.
   sum~$b+c$ and difference~$b-c$.
 \item Generalize.
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item If $a\divides b$ then $b=ak$ for some~$k\in\Z$.
+  Thus $bc=akc=a\cdot(kc)$ is a multiple of~$a$
+\item Suppose that $a,b,c\in\Z$ and that $a\divides b$ and $a\divides c$.
+  Then $b=ak$ and $c=am$ for some $k,m\in\Z$. 
+  Substitution  
+  $b+c=ak+am=a\cdot(k+m)$
+  shows that $a$ divides the sum~$b+c$.
+  A similar substitution
+  $b-c=ak-am=a\cdot(k-m)$
+  shows that $a$ divides the difference.
+\item A natural generalization is that $a$ divides any combination
+  $i\cdot b+j\cdot c$ where $i,j\in\Z$.
+  The proof is
+  $ib+jc=i\cdot (ak)+j\cdot(am)=a\cdot(ik+jm)$.
+\end{exes}
+\end{ans}
 \end{ex}
 
 
