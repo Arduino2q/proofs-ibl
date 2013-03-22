@@ -31,27 +31,25 @@
     $a\divides b$  &$a$ divides~$b$ \\
     $a\bmod b$  &the remainder when $a$ is divided by $b$ \\
     $a\equiv c\pmod b$ &$a$ and $c$ have the same remainder when divided by $b$ \\
-    $\gcd(a,b)$ &greatest common divisor of $a$ and~$b$  \\
-    $\lcm(a,b)$ &least common multiple of $a$ and~$b$  \\
-    $a\in A$  &$a$ is an element of $A$  \\
+    $\gcd(a,b)$, $\lcm(a,b)$ &greatest common divisor, least common multiple  \\
+    $a\in A$  &$a$ is an element of the set $A$  \\
     $\emptyset$  &the empty set  \\
     $A\subseteq B$ &$A$ is a subset of~$B$  \\
     $\charfcn{A}$  &characteristic function of the set~$A$ \\
     $\setcomp{A}$  &complement of the set~$A$  \\
-    $A\union B$, $A\intersection B$ &union and intersection of the two sets \\
-    $A- B$, $A\symdiff B$ &difference and symmetric difference of the sets \\
+    $A\union B$, $A\intersection B$ &union, intersection of the sets \\
+    $A- B$, $A\symdiff B$ &difference, symmetric difference of the sets \\
     $|A|$  &order of the finite set $A$; number of elements \\ 
     $\powerset(A)$  &power set of $A$; set of all of $A$'s subsets \\
-    $\seq{x_0,x_1,\ldots}$,$\lh(\seq{x_0,x_1,\ldots})$ &sequence, length of the sequence   \\
-    $A_0\times A_1\times \cdots \times A_{n-1}$  &Cartesian product \\
-    $A^n$  &Cartesian product of the set with itself  \\
+    $\seq{x_0,x_1,\ldots}$, $\lh(\seq{x_0,x_1,\ldots})$ &sequence, length of the sequence   \\
+    $A_0\times A_1\times \cdots \times A_{n-1}$, $A^n$  &Cartesian product of sets, product of a set with itself \\
     $\map{f}{D}{C}$  &function with domain~$D$ and codomain~$C$ \\
     $\map{\identity}{D}{D}$  &identity map; $\identity(d)=d$ \\
     $\restrictionmap{f}{B}$  &restriction of $f$ to a subset of the domain \\
     $f^{-1}(c)$, $f^{-1}(A)$  &inverse image of an element or subset of the codomain \\
-    $\composed{g}{f}$  &composition of the functions  \\
+    $\composed{g}{f}$  &function composition   \\
     $f^{-1}$  &function inverse to~$f$  \\
-    $x\equiv y\pmod R$  &$(x,y)\in R$ where $R$ is an equivalence \\ 
+    $x\equiv y\pmod R$  &$(x,y)\in R$ where $R$ is an equivalence; equivalence with respect to~$R$ \\ 
     $\eqclass{x}$  &equivalence class containing~$x$  \\
     $A\sim B$  &the two sets have the same cardinality
   \end{tabular}
@@ -127,14 +125,14 @@ this is the best way to develop mathematical maturity.
 \noindent\textsc{Topics.}
 We start with elementary number theory, not logic and sets, 
 for the same reason
-that the baseball team's annual practice starts by tossing the ball and 
-not by reading the rulebook.
+that the baseball team's annual practice starts with tossing the ball and 
+not with reading the rulebook.
 Math majors readily take to proving things about
 divisibility and primes, enjoying the 
 intellectual challenge and verbal exchange, 
-whereas an first month of background material is a damper.
+whereas an first month of background material can be a damper.
 
-But logic and sets are good stuff also, and 
+But the background material such as sets is good stuff also and 
 students are aboard once they see where it takes them.
 In the second and third chapters we do
 sets, functions, and relations, now with the
@@ -151,8 +149,8 @@ This just-in-time approach keeps the class centered
 on proving things, but they get what
 they need when they need it.
 
-The only exception is that we take an interlude to explicitly cover induction,
-since it is typically new for students and needs 
+The only exception is that we have an interlude for induction,
+since it is often new for students and needs 
 their full attention.
 
 
@@ -162,7 +160,7 @@ their full attention.
 This material is Free; see the details  
 at \url{http://joshua.smcvt.edu/proofs}.
 This includes the \LaTeX{} source so instructors can tailor the
-material to the students.  
+material to their students.  
 Also on that page are the slides that I use
 and, for instructors new to this approach, 
 a brief description of what classroom techniques work for me.
@@ -467,41 +465,41 @@ Results in the prior section need only proof techniques that come naturally
 to people with a mathematical aptitude.
 But some results to follow require a technique 
 that is not as natural, mathematical induction.
+We now pause to introduce induction.
 
-For that reason, we now pause to introduce induction.
-We start with exercises about sums 
-(but note that induction is not about sums,
+We will start with exercises about sums 
+(but note that induction is not about sums;
 we start with them only because they make the best first exercises).
 For instance, most people have noticed that the odd numbers sum to 
 perfect squares: $1+3=4$, $1+3+5=9$, $1+3+5+7=16$, etc.,
 so we look to prove 
-the statement, 
+the statement 
 ``The sum of the first $n$ odd numbers $1+3+5+\cdots+2n-1$ is $n^2$.'' 
 
 Our induction proofs have two steps, two separate things to check.
-For the base step we show that the statement holds for a first number;
-below we will verify the truth of the statement for $n=1$.
+For the base step we show that the statement holds for some first number;
+below we will verify the truth of the statement for the number~$1$.
 The inductive step is more subtle;
 we will verify the following implication.
 \begin{equation*}
   \begin{tabular}{l} 
-  \textit{If} the statement holds from the base case up to and including 
+  \textit{If} the statement holds from the base number up to and including 
    the $n=k$ case \\
   \textit{then} the statement also holds in the~$n=k+1$ case.
   \end{tabular}
   \tag{$*$}
 \end{equation*}
-Doing both steps  
-proves that the statement is true for all~$n\geq 1$.
-For one thing, the base case    
+Doing both steps will 
+prove that our statement is true for all~$n\geq 1$.
+That's because, first, the base step
 directly verifies the statement for the number~$1$.
 Next, because the inductive step verifies the implication~($*$) for all $k$, 
-that implication applies when~$k=1$, where it gives 
+that implication applies when~$k=1$, giving 
 that the statement is true for the number~$2$. 
-Now, with both $n=1$ and~$n=2$ established, 
+Now, with the statement established for both $1$ and~$2$, 
 apply ($*$) again to conclude that the statement is true for the number~$3$.
 In this way, we bootstrap to all numbers greater than or equal to $1$.
-Below is a sample proof, doing both steps.
+Below is an example proof.
 
 \begin{proof}
   We show that $1+3+\cdots+(2n-1)=n^2$ by induction.
@@ -526,7 +524,50 @@ Prove by induction.
 \item $1+2+\cdots+n=n(n+1)/2$
 \item $1+4+9+\cdots+n^2=n(n+1)(2n+1)/6$
 \item $1+8+27+\cdots+n^3=n^2(n+1)^2/4$
+\item Extend the statement used above about the sum of odd numbers
+  to cover the case of~$0$.
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item For the $n=1$ base step note that the sum on the left
+  has the single term~$1$
+  while the right side is $1\cdot(1+1)/2$, which also equals~$1$.
+
+  For the inductive step take the inductive hypothesis 
+  that the statement is true for $n=1$, 
+  \ldots\,, $n=k$ and consider $n=k+1$.
+  We have 
+  $1+2+\cdots+k+(k+1)=k(k+1)/2+(k+1)=(k+1)\cdot(k/2+1)=(k+1)\cdot(k+2)/2$, 
+  as required.  
+  (The first equality results from applying the inductive hypothesis to 
+  the $n=k$ case.) 
+\item The $n=1$ base step is that the left side has the single term~$1$
+  while the right side is $1\cdot(1+1)\cdot(2\cdot 1+1)/6$, and the 
+  two are equal.
+
+  For the inductive step assume that the statement is true for 
+  $n=1$, \ldots\,, $n=k$ and consider $n=k+1$.
+  Applying the inductive hypothesis in the $n=k$ case and reducing gives
+  $1+4+9+\cdots+k^2+(k+1)^2=k(k+1)(2k+1)/6+(k+1)^2
+    =(k+1)\cdot [k(2k+1)/6+(k+1)]
+    =(k+1)\cdot [k(2k+1)+6(k+1)]/6
+    =(k+1)\cdot [2k^2+7k+6]/6
+    =(k+1)(k+2)(2(k+1)+1)/6$,
+  as required.
+\item The base step is~$n=1$.  
+  The left side has the single term $1$ while the right side is 
+  $1^2(2)^2/4$, so they are equal.
+
+  For the inductive step assume that the statement is true when $n=1$, 
+  \ldots\,, $n=k$.
+  Then 
+   $1+8+27+\cdots+k^3+(k+1)^3
+    =k^2(k+1)^2/4+(k+1)^3
+    =(k+1)^2\cdot [(k^2/4)+(k+1)]
+    =(k+1)^2\cdot (k^2+4k+4)/4
+    =(k+1)^2(k+2)^2/4$.    
+\end{exes}
+\end{ans}
 \end{ex}
 
 \begin{ex}
@@ -549,19 +590,6 @@ Prove by induction that $n<2^n$ for all $n\in\N$.
 \end{ex}
 
 \begin{ex}
-The sequence of \definend{Fibonnacci numbers} is
-$0,1,2,3,5,8,13, \ldots$, where new numbers are the sum of the 
-two prior numbers $f_{n+1}=f_n+f_{n-1}$, and starting with $f_0=0$ and $f_1=0$.
-What is wrong with this induction argument purporting to show that
-all Fibonnacci numbers are even?
-``The $n=0$ base case is clear.  For the inductive step, assume it is 
-true for all cases up to and including $n=k$ and consider the $n=k+1$ case.
-The next number $f_{n+1}$ is the sum of the two prior numbers, which by
-the inductive hypothesis are both even.  
-Thus their sum is even.''   
-\end{ex}
-
-\begin{ex}
 Prove that for all $n\geq 1$, sums can be reversed
 $a_0+a_1+\cdots+a_{n-1}=a_{n-1}+\cdots+a_0$.   
 \end{ex}
@@ -576,28 +604,55 @@ Prove each by induction.
 \end{exes}
 \end{ex}
 
-The prior exercise illustrates that 
-sometimes when you have finish a proof by induction, 
-while you now are sure that the statement is true, 
-you can nonetheless be left with the sense
-that you are not sure really \emph{why} it is true.
-For example, you can show that the second item holds in a 
-way that gives more intuition by plugging $13$ into the formula for a
-geometric series. 
+% The prior exercise illustrates that 
+% sometimes when you have finish a proof by induction, 
+% while you now are sure that the statement is true, 
+% you can nonetheless be left with the sense
+% that you are not sure really \emph{why} it is true.
+% For example, you can show that the second item holds in a 
+% way that gives more intuition by plugging $13$ into the formula for a
+% geometric series. 
 
 \begin{df}
 The \definend{principle of mathematical induction} is that a
 statement is true for all natural numbers if it
-meets two conditions: first that the statement is true for $0$,
-and second that for any $k\in\N$, if the statement is true for 
-all natural numbers less than $k$ then it is also true for~$k$.  
+meets two conditions: the base step that the statement is true for some
+initial number~$j\in\N$,
+and the inductive step that for any $k\in\N$, 
+if the statement is true for 
+all natural numbers $n$ with $j\leq n\leq k$ then the
+statement is also true for~$k+1$.  
 \end{df}
 
-\noindent (Some authors observe that the second condition is an implication, 
-so we can omit the first condition since then the second condition 
-is trivially true.
-Here we retain the first condition.)
-% Not quite right; k vs k+1 etc.
+\noindent (Many authors reduce the two to a single condition: 
+if the statement is true for all natural numbers less than~$k$
+then the statement is also true for~$k$.
+This formulation covers the base step by folding it into the 
+implication because
+the `if' part\Dash that the statement is true for all numbers prior to
+the initial number\Dash is vacuously true, so the truth of the implication
+follows only from the truth of the `then' clause.
+We retain the base step out of a preference to be explicit.)
+
+\begin{ex}
+The sequence of \definend{Fibonnacci numbers} is
+$0,1,2,3,5,8,13, \ldots$\,, defined by the condition that 
+the next number is the sum of the 
+two prior numbers $f_{n+1}=f_n+f_{n-1}$, and with initial conditions
+$f_0=0$ and~$f_1=0$.
+What is wrong with this argument purporting to show that
+all Fibonnacci numbers are even?
+``The $n=0$ base case is clear.  For the inductive step, assume the statement 
+is true for all cases up to and including $n=k$ and consider the $n=k+1$ case.
+By definition 
+the next number $f_{n+1}$ is the sum of the two prior numbers, which by
+the inductive hypothesis are both even.  
+Thus their sum is even.''   
+\begin{ans}
+The argument does not completely cover the $n=k+1$ case.
+In that case, if $k=0$ the expression $f_{n+1}=f_n+f_{n-1}$ is undefined.  
+\end{ans}
+\end{ex}
 
 \begin{df}
 The \definend{well-ordering principle} 
@@ -1834,16 +1889,21 @@ $0$, $S(0)$, $S(S(0))$, etc.
 Of course, the notation $0$, $1$, $2$, etc., is less clunky.
 
 \begin{ax}[Induction]
-  Suppose that $K$ is a set satisfying that both (i)~$0\in K$
+  Suppose that $K$ is a set satisfying both (i)~$0\in K$
   and (ii)~for all $n\in\N$, if $n\in K$ then $S(n)\in K$.
   Then $K=\N$.
 \end{ax}
 
-We prefer an induction variant that changes
-condition~(ii) to: for all $n\in\N$, 
-if $0\in K$ and $1\in K$ and \ldots\ and $n\in K$ then $S(n)\in K$.
-These two variants are inter-derivable but while ours is 
-more awkward to state, it is sometimes more convenient to use.
+\noindent (In this book use an induction variant that changes
+condition~(ii) to: for all $k\in\N$,  
+if $n\in K$ for $0\leq n\leq k$ then $S(k)\in K$.
+Condition~(ii) above is often called \definend{weak induction} while
+the version we use is \definend{strong induction}.
+There are technical differences but for our purposes
+the two variants are interchangable. 
+We prefer the strong variant because while it is 
+more awkward to state, it is sometimes easier to apply.)
+% http://mathoverflow.net/questions/37944/induction-vs-strong-induction
 
 From those axioms we can for instance 
 define addition by recursion using successor
@@ -1866,7 +1926,3 @@ and then define multiplication by recursion using addition.
 
 
 TODO
-
-1) Pigeonhole Principle?
-  For a non-empty, finite bag of numbers, the maximum value is at 
-  least the average value.

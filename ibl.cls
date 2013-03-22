@@ -125,7 +125,7 @@ cleveref, % \cref
 % Count the number of exercises so a person can comment some out to adjust
 % the semester-long number.
 \newcounter{exercisecount}
-\AtEndDocument{\typeout{Total number of exercises: \theexercisecount}.}
+\AtEndDocument{\typeout{Total number of exercises: \theexercisecount.}}
 
 \declaretheoremstyle[
 spaceabove=1.1ex plus .1ex, spacebelow=1.1ex plus .2ex minus .1ex,
@@ -169,9 +169,9 @@ qed=\qedsymbol
 
 % Count number of exercises with parts; see also counter exercisecount
 \newcounter{exerciseswithpartscount}
-\AtEndDocument{\typeout{Number of exercises with parts: \theexerciseswithpartscount}.}
+\AtEndDocument{\typeout{Number of exercises with parts: \theexerciseswithpartscount.}}
 \newcounter{exercisepartscount}
-\AtEndDocument{\typeout{Count of parts: \theexercisepartscount}.}
+\AtEndDocument{\typeout{Count of parts: \theexercisepartscount.}}
 \newcounter{exercisetotal}
 \AtEndDocument{\setcounter{exercisetotal}{\value{exercisecount}}%
 \addtocounter{exercisetotal}{\value{exercisepartscount}}%
