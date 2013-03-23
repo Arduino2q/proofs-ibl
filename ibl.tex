@@ -476,10 +476,10 @@ so we look to prove
 the statement 
 ``The sum of the first $n$ odd numbers $1+3+5+\cdots+2n-1$ is $n^2$.'' 
 
-Our induction proofs have two steps, two separate things to check.
+Our induction proofs have two steps.
 For the base step we show that the statement holds for some first number;
-below we will verify the truth of the statement for the number~$1$.
-The inductive step is more subtle;
+below we will verify the the statement for the number~$1$.
+The inductive step is more subtle,
 we will verify the following implication.
 \begin{equation*}
   \begin{tabular}{l} 
@@ -497,7 +497,7 @@ Next, because the inductive step verifies the implication~($*$) for all $k$,
 that implication applies when~$k=1$, giving 
 that the statement is true for the number~$2$. 
 Now, with the statement established for both $1$ and~$2$, 
-apply ($*$) again to conclude that the statement is true for the number~$3$.
+apply ($*$) again to conclude that it is true for the number~$3$.
 In this way, we bootstrap to all numbers greater than or equal to $1$.
 Below is an example proof.
 
@@ -511,10 +511,8 @@ Below is an example proof.
   consider the $n=k+1$ case.
   The sum is $1+3+\cdots+(2k-1)+(2(k+1)-1)=1+3+\cdots+(2k-1)+(2k+1)$.
   By the inductive hypothesis the statement is true in the $n=k$ case
-  so we can substitute.
-  \begin{equation*}
-    1+3+\cdots+(2k-1)+(2k+1)=k^2+(2k+1)=(k+1)^2
-  \end{equation*}
+  so we can substitute 
+  $1+3+\cdots+(2k-1)+(2k+1)=k^2+(2k+1)=(k+1)^2$.
   This is the required expression for the case~$k+1$.
 \end{proof}
 
@@ -676,7 +674,7 @@ Prove each by induction.
 \begin{exes}
 \item For all $n\in\N$, the number~$k^2+k$ is even.
 \item For all $n\geq 2$ the number $n^3-n$ is divisible by $6$.
-% \item If $n\in\N$ then $4\divides 13^n-1$.
+\item If $n\in\N$ then $4\divides 13^n-1$.
 \item If $n\in\N$ then
     $(1+\sfrac{1}{1})\cdot(1+\sfrac{1}{2})\,\cdots\,(1+\sfrac{1}{n})=n+1$.
 \end{exes}
@@ -700,19 +698,38 @@ Prove each by induction.
   We have $3k^2+3k=3\cdot k(k+1)$, and since
   $k(k+1)$ is even (this was shown in the prior item),
   the product is divisible by $6$.  
-% WORKING HERE
+\item The $n=0$ base step is clear, since four divides $13^0-1=0$.
+  For the inductive step assume that the statement is true for all cases 
+  with $0\leq n\leq k$ and consider the $n=k+1$ case.
+  We have $13^{k+1}-1=(13^{k+1}-13)+(13-1)=13(13^k-1)+12$.
+  By the inductive hypothesis the first term is divisible by~$4$, while the
+  second term is obviously divisible by~$4$, and so the statement holds in 
+  this case.
+
+  \textit{Comment.}
+  This illustrates that 
+  sometimes when you have finish a proof by induction, 
+  while you now are sure that the statement is true, 
+  you can nonetheless be left with the sense
+  that you are not sure really \emph{why} it is true.
+  For example, you can show that this statement holds in a 
+  way that gives more intuition by plugging $13$ into the formula for a
+  geometric series. 
+\item The base step is a product with $n=1$~term.
+  The left side is $(1+\sfrac{1}{1})=2$ while the right side is $1+1=2$,
+  and they are equal.
+
+  Assume the inductive hypothesis, that the statement is true for
+  $n=1$, \ldots\,, $n=k$ and consider the $n=k+1$ case.
+  We have
+  $(1+\sfrac{1}{1})\cdot(1+\sfrac{1}{2})\,\cdots\,(1+\sfrac{1}{k})\cdot(1+\sfrac{1}{k+1})
+  =
+  (k+1)\cdot(1+\sfrac{1}{k+1})
+  =(k+1)+(k+1)/(k+1)
+  =k+2$.
 \end{exes}
 \end{ans}
 \end{ex}
-
-% The prior exercise illustrates that 
-% sometimes when you have finish a proof by induction, 
-% while you now are sure that the statement is true, 
-% you can nonetheless be left with the sense
-% that you are not sure really \emph{why} it is true.
-% For example, you can show that the second item holds in a 
-% way that gives more intuition by plugging $13$ into the formula for a
-% geometric series. 
 
 \noindent
 Be aware that while many induction arguments use the inductive 
@@ -762,20 +779,20 @@ numbers has a least element.
 \begin{ex}
 Show that the principle of induction implies the least number 
 principle.
+\textit{Hint:}
+you can use induction to prove that if a set of natural numbers does not
+have a least element then that set is empty.
 \begin{ans}
-We shall prove by induction that if a set of natural numbers does not
-have a least element then that set is empty, that is, it contains no 
-natural number.
-To that end, consider the statement $P(n)$: if a set~$S$ 
+We shall prove by induction the statement: if a set~$A$ 
 of natural numbers has no
-least element then $S$ does not contain~$n$.
+least element then $A$ does not contain~$n$.
 
-The base case is easy since if $S$ contains~$0$ then it clearly has a 
-least element, so $P(0)$ is true.
-For the inductive step assume that $P(0)$, \ldots, $P(k)$ are all true
-for $k\geq 0$ and consider the statement $P(k+1)$.
-If~$S$ has no least element and~$S$ does not contain any of $0$, \ldots,~$k$ 
-then~$S$ cannot contain~$k+1$ either, since it would be least.   
+The base case is easy since if $A$ were to contains~$0$ then it would
+clearly have a least element.
+For the inductive step assume that the statement is true in the cases
+$n=0$, \ldots\,, $n=k$ and consider the statement in the case~$n=k+1$.
+If~$A$ has no least element and~$A$ does not contain any of $0$, \ldots,~$k$ 
+then~$A$ cannot contain~$k+1$ either, since it would be least.   
 \end{ans}
 \end{ex}
 
