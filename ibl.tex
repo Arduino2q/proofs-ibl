@@ -524,8 +524,7 @@ Prove by induction.
 \item $1+2+\cdots+n=n(n+1)/2$
 \item $1+4+9+\cdots+n^2=n(n+1)(2n+1)/6$
 \item $1+8+27+\cdots+n^3=n^2(n+1)^2/4$
-\item Extend the statement used above about the sum of odd numbers
-  to cover the case of~$0$.
+\item $1+2+4+8+\cdots+2^{n-1}=2^n-1$
 \end{exes}
 \begin{ans}
 \begin{exes}
@@ -565,43 +564,145 @@ Prove by induction.
     =k^2(k+1)^2/4+(k+1)^3
     =(k+1)^2\cdot [(k^2/4)+(k+1)]
     =(k+1)^2\cdot (k^2+4k+4)/4
-    =(k+1)^2(k+2)^2/4$.    
+    =(k+1)^2(k+2)^2/4$. 
+\item The $n=1$ base step has a sum on the left with a single term, $1$.
+The expression on the right is $2^1-1=1$, and they are equal.
+
+The inductive hypothesis is that 
+the statement is true for the cases $n=1$, \ldots\,, $n=k$.
+The $n=k+1$ summation is
+$1+2+4+\cdots+2^{k-1}+2^k$, 
+and application of the inductive hypothesis in the $n=k$ case gives
+$(2^k-1)+2^k=2\cdot 2^k-1=2^{k+1}-1$, as required. 
+
+(\textit{Comment.} A person could instead take the base step to be
+$n=0$, giving an empty summation that totalw to $0$, and an expression
+on the right of~$2^0-1=0$.)   
 \end{exes}
 \end{ans}
 \end{ex}
 
 \begin{ex}
-Prove by induction that
-$1+2+4+8+\cdots+2^{n-1}=2^n-1$.  
-\end{ex}
-
-\begin{ex}
-Prove by induction.
+Prove by induction, for $a,b,r\in\R$.
 \begin{exes}
-  \item \notetext{Arithmetic series}
-       $b+(b+a)+(b+2a)+\cdots+(b+na)=(2b+na)\cdot n/2$
-  \item \notetext{Geometric series}
-        $1+r+r^2+r^3+\cdots+r^n=(r^{n+1-1})/(r-1)$ for any $r\neq 1$.
+\item \notetext{Arithmetic series}
+  $b+(a+b)+(2a+b)+\cdots+((n-1)a+b)=(n(n-1)/2)\cdot a+n\cdot b$
+\item \notetext{Geometric series}
+  $1+r+r^2+r^3+\cdots+r^n=(r^{n+1}-1)/(r-1)$ for $r\neq 1$
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item The base step is~$n=1$.
+The sum on the left has one term, $b$, while the expression on the right is     
+$0\cdot a+1\cdot b$, so the two sides are equal.
+
+For the inductive step assume that the statement holds when $n=1$, 
+\ldots\,, $n=k$ and consider the $n=k+1$~case.
+We have
+$b+(a+b)+(2a+b)+\cdots+((k-1)a+b)+(ka+b)
+=[(k(k-1)/2)\cdot a+k\cdot b]+(ka+b)
+=[(2k+(k-1)k)/2]\cdot a+[k+1]\cdot b
+=((k+1)(k)/2)\cdot a+(k+1)\cdot b$,
+as required. 
+
+\item The $n=0$ base step has the single term~$1$ in the left summation and
+  $(r^1-1)/(r-1)$ on the right, and they are equal.
+
+  For the inductive step assume that the statement is true for 
+  $n=0$, \ldots\,, $n=k$.
+  The $n=k+1$ case is
+  $1+r+r^2+r^3+\cdots+r^k+r^{k+1}
+  =(r^{k+1}-1)/(r-1)+r^{k+1}
+  =[r^{k+1}-1+r^{k+1}(r-1)]/(r-1)
+  =[r\cdot r^{k+1}-1]/(r-1)
+  =(r^{k+2}-1)/(r-1)$ for $r\neq 1$.
+\end{exes}
+\end{ans}
 \end{ex}
 
 \begin{ex}
 Prove by induction that $n<2^n$ for all $n\in\N$.  
+\begin{ans}
+The $n=0$ base case is that $0$ is less than~$2^0$, which is true.
+
+For the inductive step assume that the statement holds when 
+$n=0$, \ldots\,, $n=k$ and  consider case~$n=k+1$.
+We have $k+1<2^k+1\leq 2^{k+1}$ (the second holds because $2^k<2^{k+1}$). 
+\end{ans}
 \end{ex}
 
 \begin{ex}
-Prove that for all $n\geq 1$, sums can be reversed
-$a_0+a_1+\cdots+a_{n-1}=a_{n-1}+\cdots+a_0$.   
+Prove that $n+1$-term sums of reals commute
+$a_0+a_1+\cdots+a_{n-1}=a_{n-1}+\cdots+a_0$ for all $n\geq 1$,
+starting from the assumption that sums of two terms commute.
+\begin{ans}
+The $n=1$ base step is the commutativity assumption $a_0+a_1=a_1+a_0$.
+
+For the inductive step assume the statement is true for all 
+sums of~$n$ terms with 
+with $1\leq n\leq k$, and consider $n=k+1$.
+We have 
+$a_0+a_1+\cdots+a_{k-1}+a_k
+=(a_0+a_1+\cdots+a_{k-1})+a_k
+=a_k+(a_0+a_1+\cdots+a_{k-1})$ with the second equality coming from
+two-term commutativity.
+By the inductive hypothesis that is equal to 
+$a_k+(a_{k-1}+\cdots+a_0)=a_k+a_{k-1}+\cdots+a_0$.
+\end{ans}
+\end{ex}
+
+\begin{ex}
+The sequence of \definend{Fibonnacci numbers} is
+$0,1,2,3,5,8,13, \ldots$\,, defined by the condition that 
+the next number is the sum of the 
+two prior numbers $f_{n+1}=f_n+f_{n-1}$, and with initial conditions
+$f_0=0$ and~$f_1=0$.
+What is wrong with this argument purporting to show that
+all Fibonnacci numbers are even?
+``The $n=0$ base case is clear.  For the inductive step, assume the statement 
+is true for all cases up to and including $n=k$.
+By definition 
+the next case $f_{k+1}$ is the sum of the two prior numbers, which by
+the inductive hypothesis are both even.  
+Thus their sum is even.''   
+\begin{ans}
+The argument does not completely cover the $n=k+1$ case.
+In that case, if $k=0$ the expression $f_{n+1}=f_n+f_{n-1}$ is undefined.  
+\end{ans}
 \end{ex}
 
 \begin{ex}
 Prove each by induction.
 \begin{exes}
-\item For all $n\geq 2$ the number $6$ divides the number $n^3-n$.
-\item If $n\in\N$ then $4\divides 13^n-1$.
+\item For all $n\in\N$, the number~$k^2+k$ is even.
+\item For all $n\geq 2$ the number $n^3-n$ is divisible by $6$.
+% \item If $n\in\N$ then $4\divides 13^n-1$.
 \item If $n\in\N$ then
     $(1+\sfrac{1}{1})\cdot(1+\sfrac{1}{2})\,\cdots\,(1+\sfrac{1}{n})=n+1$.
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item For the $n=0$ base step observe that $0^2+0$ is even.
+  For the inductive step assume the statement for $n=0$, \ldots\,, $n=k$
+  and consider the $n=k+1$ case.
+  We have $(k+1)^2+(k+1)=k^2+2k+1+k+1=(k^2+k)+(2k+2)$. 
+  By the inductive hypothesis $k^2+k$ is even, and clearly $2k+2$ is even, 
+  so the sum is even.
+\item The base step is $n=2$.
+  Since $6$ divides $2^3-2=8-2$, the statement holds in this case.
+
+  For the inductive step assume that the statment is true for 
+  the cases $n=0$, \ldots\,, $n=k$.
+  In the $n=k+1$ case, consider 
+  $(k+1)^3-(k+1)=(k^3+3k^2+3k+1)-(k+1)=(k^3+3k^2+3k)-k$.
+  The inductive hypothesis gives that $6$ divides $(k^3-k)$ so we will
+  be finished if we show it divides  $3k^2+3k$.
+  We have $3k^2+3k=3\cdot k(k+1)$, and since
+  $k(k+1)$ is even (this was shown in the prior item),
+  the product is divisible by $6$.  
+% WORKING HERE
+\end{exes}
+\end{ans}
 \end{ex}
 
 % The prior exercise illustrates that 
@@ -612,6 +713,21 @@ Prove each by induction.
 % For example, you can show that the second item holds in a 
 % way that gives more intuition by plugging $13$ into the formula for a
 % geometric series. 
+
+\noindent
+Be aware that while many induction arguments use the inductive 
+hypothesis only in the $n=k$ case,
+some break from that pattern.
+
+\begin{ex}
+The game of Nim starts with two piles of $n$~chips.
+Two players take turns picking a pile and removing 
+some nonzero number of chips from that pile. 
+The winner is the player who takes the final chip.
+Prove by induction on~$n$ that the second player always wins by
+playing this way: whatever number of chips the first player removes
+from one pile, the second player removes the same number from the other pile.
+\end{ex}
 
 \begin{df}
 The \definend{principle of mathematical induction} is that a
@@ -632,27 +748,8 @@ implication because
 the `if' part\Dash that the statement is true for all numbers prior to
 the initial number\Dash is vacuously true, so the truth of the implication
 follows only from the truth of the `then' clause.
-We retain the base step out of a preference to be explicit.)
+Here we retain the base step, preferring to be explicit.)
 
-\begin{ex}
-The sequence of \definend{Fibonnacci numbers} is
-$0,1,2,3,5,8,13, \ldots$\,, defined by the condition that 
-the next number is the sum of the 
-two prior numbers $f_{n+1}=f_n+f_{n-1}$, and with initial conditions
-$f_0=0$ and~$f_1=0$.
-What is wrong with this argument purporting to show that
-all Fibonnacci numbers are even?
-``The $n=0$ base case is clear.  For the inductive step, assume the statement 
-is true for all cases up to and including $n=k$ and consider the $n=k+1$ case.
-By definition 
-the next number $f_{n+1}$ is the sum of the two prior numbers, which by
-the inductive hypothesis are both even.  
-Thus their sum is even.''   
-\begin{ans}
-The argument does not completely cover the $n=k+1$ case.
-In that case, if $k=0$ the expression $f_{n+1}=f_n+f_{n-1}$ is undefined.  
-\end{ans}
-\end{ex}
 
 \begin{df}
 The \definend{well-ordering principle} 
@@ -1180,7 +1277,13 @@ Two sets are \definend{disjoint} if their intersection is empty.
 \end{df}
 
 \begin{ex}
-\pord: $A\intersection B$ and $A-B$ are disjoint.  
+\begin{exes}
+\item \pord: $A\intersection B$ and $A\symdiff B$ are disjoint.  
+\item Find three sets $A$, $B$, and $C$, such that 
+$A\intersection B\intersection C$ is empty but the sets are
+not pairwise disjoint, that is, none of $A\intersection B$, 
+$A\intersection C$, or $B\intersection C$ is empty. 
+\end{exes}
 \end{ex}
 
 \begin{df}
