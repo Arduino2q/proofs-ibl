@@ -109,10 +109,10 @@ This course is Inquiry-Based (sometimes called Moore method).
 That is, this text is a sequence of exercises
 along with definitions and a few 
 remarks.
-The class works through those together by
-proving statements, or sometimes by providing examples or counterexamples.
-The students directly grapple with the material, 
-while the instructor only lightly guides, 
+The students together work through the mathematics by
+proving statements or sometimes by providing examples or counterexamples.
+They grapple directly with the material\Dash the instructor only 
+lightly guides\Dash
 talking out misunderstandings, 
 sometimes stumbling in the dark, and sometimes
 having beautiful flashes of insight.
@@ -133,7 +133,7 @@ intellectual challenge and verbal exchange,
 whereas an first month of background material can be a damper.
 
 But the background material such as sets is good stuff also and 
-students are aboard once they see where it takes them.
+students are onboard once they see where it takes them.
 In the second and third chapters we do
 sets, functions, and relations, now with the
 intellectual habits we've established at the start.
@@ -148,10 +148,9 @@ the class's current work.
 This just-in-time approach keeps the class centered 
 on proving things, but they get what
 they need when they need it.
-
-The only exception is that we have an interlude for induction,
+(The only exception is that we briefly pause to focus on induction,
 since it is often new for students and needs 
-their full attention.
+their full attention.)
 
 
 
@@ -408,10 +407,6 @@ Prove each.
 \end{ans}
 \end{ex}
 
-% \begin{ex}
-% Extend Comparison to all of $\Z$.  
-% \end{ex}
-
 \begin{ex}
 Give the converse of the Reflexivity property: what conclusion can you make
 if $a\divides b$ and~$b\divides a$?
@@ -574,7 +569,7 @@ and application of the inductive hypothesis in the $n=k$ case gives
 $(2^k-1)+2^k=2\cdot 2^k-1=2^{k+1}-1$, as required. 
 
 (\textit{Comment.} A person could instead take the base step to be
-$n=0$, giving an empty summation that totalw to $0$, and an expression
+$n=0$, giving an empty summation that totals to $0$, and an expression
 on the right of~$2^0-1=0$.)   
 \end{exes}
 \end{ans}
@@ -744,6 +739,20 @@ The winner is the player who takes the final chip.
 Prove by induction on~$n$ that the second player always wins by
 playing this way: whatever number of chips the first player removes
 from one pile, the second player removes the same number from the other pile.
+\begin{ans}
+The base step is where the two piles have $n=1$~chips.
+The first player must pick a pile and must remove a chip, leaving one chip
+in one pile, so the second player wins.
+
+For the inductive step assume that the strategy wins when there are two piles
+with $n=1$, \ldots\,, $n=k$~chips and consider two piles with
+$k+1$~chips.
+The first player picks a pile and removes some nonzero number of chips.
+If the second player removes the same number of chips from the other
+pile then we have reduced to a game with equal-sized piles, each
+with~$k$ or fewer chips, which the inductive hypothesis says
+is a win for the second player.  
+\end{ans}
 \end{ex}
 
 \begin{df}
@@ -767,7 +776,6 @@ the initial number\Dash is vacuously true, so the truth of the implication
 follows only from the truth of the `then' clause.
 Here we retain the base step, preferring to be explicit.)
 
-
 \begin{df}
 The \definend{well-ordering principle} 
 (or the \definend{least number principle})
@@ -779,11 +787,11 @@ numbers has a least element.
 \begin{ex}
 Show that the principle of induction implies the least number 
 principle.
-\textit{Hint:}
+\hint
 you can use induction to prove that if a set of natural numbers does not
 have a least element then that set is empty.
 \begin{ans}
-We shall prove by induction the statement: if a set~$A$ 
+We shall use induction to prove for all $n\in\N$ that if a set~$A$ 
 of natural numbers has no
 least element then $A$ does not contain~$n$.
 
@@ -798,33 +806,76 @@ then~$A$ cannot contain~$k+1$ either, since it would be least.
 
 
 
+
+
 % .....................................
 \section{Division}
 We can generalize divisibility.
 
-\begin{ex}
-\begin{exes}
-\item Where $a$ and $b>0$ are integers, there are integers $q$ and~$r$
-such
-that $a=bq+r$ and
-$r\in\set{0,..,b-1}$.
+\begin{ex} \notetext{Division Theorem} We prove that 
+where $a$ and $b>0$ are integers there are integers $q$ and~$r$
+such that $a=bq+r$ and $r\in\set{0,\ldots,b-1}$,
+breaking the argument into a few steps.
+\begin{exes} 
+\item Show that the statement is true for $a=0$.
+  Show also that if the statement is true for~$a>0$ then it is true
+  for~$a<0$. 
+\item Prove the statement for $a>0$.
+  \hint you can consider the set $\setbuilder{a-bq}{q\in\Z}$, note that
+  because it has positive elements then by the Least Number principle
+  it must have a smallest positive
+  element, and show that this smallest positive element is the desired~$r$.
 \item
-Prove that the quotient and remainder are unique.
-\item 
-What to do if $b\leq 0$?
+  Prove that the $q$ and~$r$ are unique.
+% \item 
+% What to do if $b\leq 0$?
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item
+  If $a=0$ then the statement holds with $q=0$ and~$r=0$.
+  Next assume that the statement holds for any positive~$a$ 
+  and consider a negative~$a$.
+  Then since $-a$ is positive we have that there exist 
+  $q\in\Z$ and $r\in\set{0,\ldots,b-1}$ with $-a=bq+r$.
+  Multiplying through by $-1$ gives $a=b(-q)+r$.
+\item We follow the hint.
+  Consider the set $E=\setbuilder{a-bq}{q\in\Z}$.
+  Because $a>0$, the element of~$E$ associated with $q=0$ is positive.
+  By the Least Number Principle, $E$ has a smallest positive element.
+  Call it~$r$.
+  We will be finished if we show that~$r\in\set{0, \ldots , b-1}$.
+
+  So suppose, to get a contradiction, that this number~$r$ is not in the set 
+  $\set{0, \ldots , b-1}$.
+  Since $r$ is an element of~$E$ there must be some associated
+  $q_r\in\Z$ such that $r=a-b\cdot q_r$.
+  The assumption that $r\notin\set{0, \ldots , b-1}$ gives that $r\geq b$
+  and so that $r-b$ is a positive integer.
+  Then $r-b=a-b\cdot (q_r-1)$ and so $r-b\in E$.
+  This contradicts that~$r$ is the least element of~$E$ that is positive.
+\item Suppose that $q_0,r_0\in\Z$ and $q_1,r_1\in\Z$ are such that
+  $a=bq_0+r_0$ where $r_0\in\set{0, \ldots, b-1}$, and also
+  $a=bq_1+r_1$ where $r_1\in\set{0, \ldots, b-1}$.
+  Subtract to get $0=b\cdot(q_0-q_1)+(r_0-r_1)$ and $-b<r_0-r_1<b$.
+  Rearrange the equation $-b\cdot(q_0-q_1)=(r_0-r_1)$,
+  and divide by $-b$ to get $q_0-q_1=(r_0-r_1)/(-b)$.
+  Thus  $-1<q_0-q_1<1$, and since $q_0-q_1\in\Z$ we have $q_0-q_1=0$.
+  With that the equation $q_0-q_1=(r_0-r_1)/(-b)$ shows that $r_0-r_1=0$.
+\end{exes}
+\end{ans}
 \end{ex}
 
 
 \begin{df}
-In the $a=bq+r$ equation, $a$ is the \definend{dividend} and
-$b$ is the \definend{divisor}, while 
+In the  $a=bq+r$ of the Division Theorem, 
+$a$ is the \definend{dividend} and
+$b$ is the \definend{divisor} while 
 $q$ is the \definend{quotient} and~$r$ is the \definend{remainder}.  
 \end{df}
 
-Observe that (for $b>0$) $r=0$ if and only if $b\divides a$. 
-Of course, 
-we all know from grade school an effective procedure, an algorithm, to 
+Observe that in the Division Therem, $r=0$ if and only if $b\divides a$. 
+From grade school we know an effective procedure, an algorithm, to 
 determine the quotient and remainder.
 
 \begin{df}
@@ -840,6 +891,16 @@ if they have the same modulus with respect to~$b$.
 \item $a\bmod b=-a\bmod b$
 \item $b\bmod b=1$    
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item This is false.
+  A counterexample is that $2\bmod 1=0$ but $1\bmod 2=1$.
+\item This is false.
+  A counterexample is that $1\bmod 3=0$ but $-1\bmod 3=2$.
+\item This is false;
+  $1\bmod 1=0$.     
+\end{exes}
+\end{ans}
 \end{ex}
 
 \begin{ex}

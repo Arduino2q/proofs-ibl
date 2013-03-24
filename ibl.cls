@@ -256,5 +256,6 @@ qed=\qedsymbol
 \newcommand*{\symdiff}{\mathbin{\triangle}}
 \DeclareMathOperator{\range}{Ran}
 \DeclareMathOperator{\image}{Im}
+\newcommand{\hint}{\textit{Hint:} }
 
 
