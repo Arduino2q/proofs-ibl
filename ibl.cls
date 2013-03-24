@@ -257,5 +257,6 @@ qed=\qedsymbol
 \DeclareMathOperator{\range}{Ran}
 \DeclareMathOperator{\image}{Im}
 \newcommand{\hint}{\textit{Hint:} }
+\newcommand{\comment}{\textit{Comment:} }
 
 

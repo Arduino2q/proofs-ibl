@@ -904,7 +904,14 @@ if they have the same modulus with respect to~$b$.
 \end{ex}
 
 \begin{ex}
-Prove that $a\equiv c\pmod b$ if and only if $b\divides (a-c)$.  
+Prove that $a\equiv b\pmod m$ if and only if $m\divides (a-b)$,
+that is, if and only if $a$ and~$b$ differ by a multiple of~$m$.  
+\begin{ans}
+If $a\equiv b\pmod m$ if and only if they leave the same remainder,
+$a=mq_a+r$ and~$b=bq_b+r$ for some $q_a,q_b\in\Z$.
+That's equivalent to $a-b=m\cdot(q_a-q_b)$, 
+which is true if and only if $a-b$ is divisible by~$m$.
+\end{ans}
 \end{ex}
 
 \begin{ex}
@@ -914,9 +921,75 @@ Prove each.
 \begin{exes}
 \item $a+c\equiv b+d\pmod m$
 \item $ac\equiv bd\pmod m$
-\item $a^n\equiv b^n\pmod m$ for all $n\geq 1$.    
+\item $a^n\equiv b^n\pmod m$ for all $n\in\Z^+$.
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item By the prior exercise, $a\equiv b\pmod m$ holds iff 
+  $(a-b)$ is a multiple of~$m$, 
+  so $a-b=mi$ for some~$i\in\Z$.
+  Similarly, $c\equiv d\pmod m$ holds iff $m\divides (c-d)$, 
+  so $c-d=mj$ for some~$j\in\Z$.
+  Adding gives $(a+c)-(b+d)=m(i+j)$, which holds if and only if
+  $m\divides (a+c)-(b+d)$, which in turn is equivalent to
+  $a+c\equiv b+d\pmod m$.
+\item We have that $a\equiv b\pmod m$ holds if and only if
+  $a$ and~$b$ differ by a multiple of~$m$, so 
+  $a=b+mi$ for some~$i\in\Z$. 
+  Similarly $c=d+mj$ for some~$j\in\Z$.
+  Multiplying gives $ac=bd+m\cdot(id+mij+jb)$, 
+  which is equivalent to $ac\equiv bd\pmod m$. 
+\item We will show this by induction on the power~$n$.
+  The $n=1$ base step is true by the introductary assumption that 
+  $a\equiv b\pmod m$.
+  For the inductive step assume that the statement is true in the cases
+  $n=1$, \ldots\,, $n=k$.
+  The $k+1$ case is an application of the prior item with 
+  $a^k\cdot a$ on the left of the equivalence and $b^k\cdot b$ on the
+  right.
+\end{exes}
+\end{ans}
 \end{ex}
+
+\begin{df}
+For any real number~$x$,
+its \definend{floor} $\floor{x}$ is
+the greatest integer less than or equal to~$x$.  
+\end{df}
+
+\begin{ex} Prove each.
+\begin{exes} 
+\item The quotient when $a$ is divided by $b$ is $\floor{a/b}$.
+\item $a =b\cdot\floor{a/b}+a\bmod b$.    
+\item $b\cdot(a\bmod m)=(ba)\bmod{(bm)}$.    
+\end{exes}
+\begin{ans}
+\begin{exes}
+\item The quotient~$q$ when $a$ is divided by~$b$ is defined by the
+  property that $a=bq+r$ where~$r\in\set{0,\ldots,b-1}$.
+  So to show that $\floor{a/b}$ is the quotient we must show that 
+  the remainder~$a-b\floor{a/b}$
+  lies in the set $\set{0,\ldots\,,b-1}$, that is, 
+  we must show that $\floor{a/b}$ has the property 
+  that $0\leq a-b\floor{a/b}\leq b-1$.
+  
+  By the definition of floor, $x-1<\floor{x}\leq x$ for any real~$x$. 
+  Thus we have
+  $(a/b)-1< \floor{a/b}\leq a/b$ and multiplication by~$b$ gives
+  $a-b< b\cdot\floor{a/b}\leq a$.
+  Therefore $b\cdot\floor{a/b}$ is at a minimum $0$ less than~$a$, and
+  at a maximum $b-1$ less than~$a$, as required.
+\item This is immediate from the prior item and the 
+  definition of $a\bmod b$ as the remainder.
+\item Where $a, b, m\in\Z$ and $m>0$ we have
+  $b\cdot(a\bmod m)=b\cdot(a-m\floor{a/m})
+  =ba- bm\floor{a/m}
+  =ba- bm\floor{ba/bm}
+  =ba\bmod bm$.    
+\end{exes}
+\end{ans}
+\end{ex}
+
 
 \begin{ex}\notetext{Pigeonhole principle}  Prove each.
 \begin{exes}
@@ -2075,7 +2148,7 @@ Of course, the notation $0$, $1$, $2$, etc., is less clunky.
   Then $K=\N$.
 \end{ax}
 
-\noindent (In this book use an induction variant that changes
+\noindent (In this book we use an induction variant that changes
 condition~(ii) to: for all $k\in\N$,  
 if $n\in K$ for $0\leq n\leq k$ then $S(k)\in K$.
 Condition~(ii) above is often called \definend{weak induction} while
