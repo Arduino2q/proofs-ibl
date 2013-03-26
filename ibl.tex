@@ -130,26 +130,26 @@ not with reading the rulebook.
 Math majors readily take to proving things about
 divisibility and primes, enjoying the 
 intellectual challenge and verbal exchange, 
-whereas an first month of background material can be a damper.
+whereas a first month of background material can be a damper.
 
-But the background material such as sets is good stuff also and 
+But the background material is good stuff also and 
 students are onboard once they see where it takes them.
 In the second and third chapters we do
 sets, functions, and relations, now with the
 intellectual habits we've established at the start.
 
-However there are some topics, such as the definition of implication, 
+There are some topics, such as the definition of implication, 
 that students need even in the
 first chapter.
-I have daily classes begin with some people going to the 
-board to write their answers to the homework and 
+My class meetings begin with some people going to the 
+board to write their answers to the homework, and 
 I use these ten minutes for a slide or two that covers issues from
 the class's current work.
 This just-in-time approach keeps the class centered 
-on proving things, but they get what
+on proving things while ensuring that they get what
 they need when they need it.
-(The only exception is that we briefly pause to focus on induction,
-since it is often new for students and needs 
+(The only exception is that we briefly pause to do induction,
+since it is typically new for these students and needs 
 their full attention.)
 
 
@@ -993,76 +993,35 @@ the greatest integer less than or equal to~$x$.
 
 \begin{ex}\notetext{Pigeonhole principle}  Prove each.
 \begin{exes}
-\item Let $B$ be a finite list of numbers.
-  Its maximum number is at least as big as its average.
+\item For a finite list of numbers,
+  the maximum is at least as big as the average.
 \item If you put $n$~many papers into fewer than $n$~many 
   pigeonholes then at least one hole gets at least two papers.    
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item Let the numbers be $p_0$, \ldots\,, $p_{n-1}$.
+  The average is $a=(p_0+\cdots+p_{n-1})/n$ and so 
+  $p_0+\cdots+p_{n-1}=na$.
+  If each number were less than average $p_i<a$ then the sum
+  $p_0+\cdots+p_{n-1}$ would be less than $na$, so at least
+  one must be at least average.
+\item Form the list where $p_i$ is the in the $i$-th pigeonhole.
+  The average number of papers per hole is greater than~$1$, 
+  so the maximum number is greater than~$1$.
+  Since each $p_i$ is a natural number, the maximum must be at least~$2$.      
+\end{exes}
+\end{ans}
 \end{ex}
+
+
+
 
 
 
 
 % .....................................
-\section{Primes}
-\begin{df}
-Let $n$ be an integer greater than or equal to~$2$.
-Then $n$ is \definend{prime} if its only divisors are itself and~$1$,
-else it is \definend{composite}.  
-\end{df}
-
-\begin{ex}\pord.
-An integer $n>1$ is composite if and only if it has factors $a,b$ such that
-$1<a,b<n$.  
-\end{ex}
-
-\begin{ex}
-\begin{exes}
-\item Every number greater than $1$ has a prime divisor.
-\item Every number $n>1$ has a prime divisor~$p$ with $p\leq \sqrt{n}$.
-\item Show that the inequality cannot be made strict.     
-\end{exes}
-\end{ex}
-
-\begin{ex}[Euclid's Theorem]
-There are infinitely many primes.  
-\end{ex}
-
-\begin{ex} Suppose that $p$ is a prime.  Prove each.
-\begin{exes}
-\item If  $p\divides ab$ then either $p\divides a$ or
-$p\divides b$.
-\item If $p\divides a_1\cdot a_2\cdots a_n$ then 
-$p$ divides at least one~$a_i$.    
-\end{exes}
-\end{ex}
-
-\begin{ex}[Fundamental Theorem of Arithmetic]  Prove.
-\begin{exes}
-\item Any number $n>1$ can be written as a product of primes
-$n=p_1^{e_1}p_2^{e_2}\cdots p_k^{e_k}$.
-\item That factorization is essentially unique:~if 
-$n=p_1^{e_1}p_2^{e_2}\cdots p_k^{e_k}$ and we write the primes
-in ascending order $p_1<p_2<\cdots<p_k$ then any other
-factorization of~$n$ into a product of primes in ascending order will give the
-same result.      
-\end{exes}
-\end{ex}
-
-\begin{ex} Prove (the second item, showing the existence of real numbers that
-are not rational, is classically important).
-\begin{exes}
-\item Prove that if a number is a square then in its prime factorization 
-  each prime occurs an even number of times.
-\item Prove that $\sqrt{2}$ is irrational.
-\item Generalize the first item to any power.
-\item Generalize the second item.    
-\end{exes}
-\end{ex}
-
-
-% .....................................
-\section{Common divisors and multiples}
+\section{Common divisors and common multiples}
 
 \begin{df}
 An integer is a \definend{common divisor} of two other integers if it
@@ -1080,17 +1039,32 @@ of $a$ and~$b$.
 % \end{ex}
 
 \begin{ex}
-We will focus on the two integer case.  Prove each.
+Prove.
 \begin{exes} 
-\item For any two number $a,b$ the greatest common divisor exists.
+\item \notetext{Existence} Any $a,b\in\Z$ have a greatest common divisor.
 \item $0\leq \gcd(a,b)\leq\min(\absval{a},\absval{b})$.
 \item If either $a$ or $b$ is nonzero then the left-hand
   inequality in the prior item is strict.
 \item If $a>0$ then $\gcd(a,0)=a$.
 \item $\gcd(a,a)=\absval{a}$
-\item $\gcd(a,b)=\gcd(b,a)$
+\item \notetext{Commutativity} $\gcd(a,b)=\gcd(b,a)$
 \item $\gcd(a,b)=\gcd(\absval{a},\absval{b})$
-\end{exes}  
+\end{exes} 
+\begin{ans}
+\begin{exes}
+\item
+\item
+\item
+\item
+\item
+\item The two sets 
+  $\setbuilder{m\in\Z}{\text{$m\divides a$ and $m\divides b$\,}}$
+  and 
+  $\setbuilder{n\in\Z}{\text{$n\divides b$ and $n\divides a$\,}}$
+  are equal and so have the same greatest element. 
+\item    
+\end{exes}
+\end{ans}
 \end{ex}
 
 \begin{ex}\pord.
@@ -1152,7 +1126,7 @@ Use Euclid's Algorithm.
 \end{exes}
 \end{ex}
 
-We can perform Euclid's algorith in reverse.
+We can perform Euclid's algorithm in reverse.
 For instance, from $33=22\cdot 1+11$ we can rewrite to 
 express the greatest common divisor $11$ as a combination 
 $11=1\cdot 33-1\cdot 22$.
@@ -1212,6 +1186,143 @@ Prove that $\lcm(a,b)=ab/\!\gcd(a,b)$.
 
 
 
+
+
+
+
+
+
+
+% .....................................
+\section{Primes}
+\begin{df}
+An integer greater than~$1$
+is \definend{prime} if its only divisors are itself and~$1$,
+else it is \definend{composite}.  
+\end{df}
+
+\begin{ex} Prove.
+\begin{exes}
+\item An integer $n>1$ is composite if and only if it has factors $a,b$ 
+  such that $1<a,b<n$.  
+\item Every number greater than $1$ has a prime divisor.
+\item Every composite number $n>1$ has a prime divisor~$p$ 
+  with $p\leq \sqrt{n}$.
+\item Show that the prior inequality cannot be made strict.     
+\end{exes}
+\begin{ans}
+\begin{exes}
+\item The `if' direction, that if it has such factors then it is composite,
+  is clear.
+  For `only if' assume that $n$ is composite so
+  that at least one of its divisors~$a$ satisfies that $1<a<n$.
+  Consider $b\in\Z$ such that $ab=n$; we will be finished when we show 
+  that $1<b<n$.
+  First, $b$ is positive because $a$ and~$n$ are positive.
+  Next,~$b$ must be greater than~$1$ because $0<b\leq 1$ 
+  implies that $ab\leq a<n$.
+  Finally,~$b$ must be less than~$n$ because $1<a$ implies that $b<ab=n$. 
+\item We use induction to prove that
+  every number greater than one has a prime divisor.
+  The base step is~$n=2$, which has a prime divisor, namely~$2$ itself.
+
+  For the inductive step suppose that the statement is true for the cases 
+  $n=2$, \ldots, $n=k$ and consider $k+1$.
+  If $k+1$ is prime then we are done, the prime divisor is $k+1$~itself.
+  Otherwise $k+1$ is composite.
+  By the prior item it has factors $a,b$ with $1<a,b<k+1$.
+  The inductive hypothesis applies to these numbers, and so~$a$ has at
+  least one prime factor, which is then a prime factor of $k+1$.
+\item Because~$n>1$ is composite there are numbers~$a,b\in\Z$ with
+  $1<a,b<n$.
+  If both~$a>\sqrt{n}$ and~$b>\sqrt{n}$ then we would have that
+  $a\cdot b>\sqrt{n}\cdot\sqrt{n}=n$,
+  so at least one of the factors of~$n$ must be less than or equal 
+  to~$\sqrt{n}$.
+
+  We finish by showning that $n$ has a factor in that category that is prime.
+  Let $c$ be a factor of~$n$ with $c\leq\sqrt{n}$.
+  Then $c$ has a prime factor~$p$.
+  This~$p$ is a factor of~$n$ by the Transitivity property. 
+  It is 
+  less than or equal to~$c$ by the Comparison property and therefore
+  is less than or equal to~$\sqrt{n}$.  
+\item Take $n=4$.
+\end{exes}
+\end{ans}
+\end{ex}
+
+\begin{ex}[Euclid's Theorem]
+There are infinitely many primes.  
+\begin{ans}
+To obtain a contradition, assume otherwise.
+Assume that there are finitely many primes: 
+$p_0=2$, $p_1=3$, \ldots\,, $p_{n-1}$.
+Consider the number $m=(p_0\cdotp_1\cdots p_{n-1})+1$.
+
+This number is greater than~$1$ because it is greater than 
+$p_0\cdotp_1\cdots p_{n-1}$, 
+which is a product of $n>0$-many numbers, each of which is greater than~$1$.
+Thus~$m$ has a prime factor, which by the assumption is one of the~$p_i$.
+But~$m$ is constructed so that dividing it by any~$p_i$ 
+leaves a remainder of~$1$.
+This is a contradiction, so the assumption that there is a finite
+list of primes is impossible.
+\end{ans}
+\end{ex}
+
+\begin{ex} \notetext{Euclid's Lemma} Suppose that $p$ is a prime.  Prove each.
+\begin{exes}
+\item If  $p\divides ab$ then either $p\divides a$ or
+$p\divides b$.
+\item If $p\divides a_1\cdot a_2\cdots a_n$ then 
+$p$ divides at least one~$a_i$.    
+\end{exes}
+\begin{ans}
+\begin{exes}
+\item     
+\end{exes}
+\end{ans}
+\end{ex}
+
+\begin{ex}[Fundamental Theorem of Arithmetic]  Prove.
+\begin{exes}
+\item Any number $n>1$ can be written as a product of one or more primes
+$n=p_1^{e_1}p_2^{e_2}\cdots p_k^{e_k}$.
+\item That factorization is essentially unique:~if 
+$n=p_1^{e_1}p_2^{e_2}\cdots p_k^{e_k}$ and we write the primes
+in ascending order $p_1<p_2<\cdots<p_k$ then any other
+factorization of~$n$ into a product of primes in ascending order will give the
+same result.      
+\end{exes}
+\begin{ans}
+\begin{exes}
+\item We do induction.
+For the base step, observe that $n=2$ is the product of one prime. 
+For the inductive step assume that the statement holds when $n=2$, \ldots\,, 
+$n=k$ and consider~$n=k+1$.
+Every number greater than~$1$ factors $k+1=a\cdot b$ into two smaller
+numbers.
+Because these two are smaller
+the inductive hypothesis applies, so each is a product of 
+primes.
+Then $k+1=ab$ can be written as a product of primes.
+\item
+   
+\end{exes}
+\end{ans}
+\end{ex}
+
+\begin{ex} Prove (the second item, showing the existence of real numbers that
+are not rational, is classically important).
+\begin{exes}
+\item Prove that if a number is a square then in its prime factorization 
+  each prime occurs an even number of times.
+\item Prove that $\sqrt{2}$ is irrational.
+\item Generalize the first item to any power.
+\item Generalize the second item.    
+\end{exes}
+\end{ex}
 
 
 
@@ -1577,30 +1688,30 @@ to \definend{codomain} set~$C$, written $\map{f}{D}{C}$,
 consists of the two sets along with a \definend{graph}, 
 a set of pairs $(d,c)\in D\times C$ that is 
 \definend{well-defined}: for each $d\in D$ there is
-exactly one $c\in C$ such that $(d,c)\in f$. 
+exactly one $c\in C$ such that $(d,c)$ is an element of the graph. 
 Functions are equal only if they have the same domain, codomain,
 and graph.
-
-Thus a function associates each element~$d$ from the domain,
-called an \definend{argument} (or~\definend{input}),
-with an element~$c$ from the codomain, 
-called a~\definend{value} (or~\definend{output}). 
-We write $f(d)=c$ and say that $c$ is the \definend{image} of $d$ 
-or that $d$ \definend{maps to}~$c$.
 \end{df}
 
-A \definend{bean diagram} pictures a function by drawing the domain and 
+\noindent Thus a function associates each element~$d$ from the domain,
+called an \definend{argument} or~\definend{input},
+with an element~$c$ from the codomain, 
+called a~\definend{value} or~\definend{output}. 
+We write $f(d)=c$ and say that $c$ is the \definend{image} of $d$ 
+or that $d$ \definend{maps to}~$c$.
+
+A \definend{bean diagram} pictures the domain and 
 codomain as blobs and 
-either showing the function as a whole as a simple arrow   
-or showing the function's action on individual elements 
-with arrows that begin with a vertical bar.
+either shows the function as a whole as a simple arrow   
+or shows the function's action on individual elements 
+with arrows that begin with a bar.
 \begin{center}
   \grf{asy/bean_fcn.pdf}{$\map{f}{D}{C}$}
   \hspace{8em}
   \grf{asy/bean_fcn_elets.pdf}{$a\mapsunder{}f(a)$ and $b\mapsunder{}f(b)$}
 \end{center}
-In place of $\map{f}{D}{C}$ you may see $D\mapsvia{f} C$ and
-in place of $f(d)=c$ you may see $d\mapsunder{f}c$.
+% In place of $\map{f}{D}{C}$ you may see $D\mapsvia{f} C$ and
+% in place of $f(d)=c$ you may see $d\mapsunder{f}c$.
 
 \begin{ex} \pord{} that each is a function.\label{FindFunctions}
 \begin{exes}
@@ -1621,6 +1732,11 @@ in place of $f(d)=c$ you may see $d\mapsunder{f}c$.
 \end{exes}
 \end{ex}
 
+\begin{ex}
+Let $D$ and $C$ be finite sets.
+How many maps are there from $D$ to $C$?
+\end{ex}
+
 We often ignore the distinction between a function and its graph
 and just
 think of the function as the set of ordered pairs.
@@ -1629,22 +1745,9 @@ because the codomain cannot be recovered
 from the set of ordered pairs, so the function must be 
 given as a tuple.)
 
-\begin{ex}
-Let $D$ and $C$ be finite sets.
-How many maps are there from $D$ to $C$?
-\end{ex}
-
-\begin{df}
-A \definend{constant function} $\map{f}{D}{C}$ has  
-$f(d_0)=f(d_1)$ for all $d_0,d_1\in D$.
-\end{df}\begin{df}
-An \definend{identity function} $\map{\identity}{D}{D}$ has
-$\identity(d)=d$ for all $d\in D$.
-\end{df}
-
 A function may have multiple arguments; one example is 
 $(x,y)\mapsunder{f}x^2-2y^2$.
-We would write this map $\map{f}{\R^2}{\R}$ as 
+We write this map $\map{f}{\R^2}{\R}$ as 
 $f(x,y)$ rather than
 $f((x,y))$.
 The number of arguments is the function's \definend{arity}.
@@ -1788,6 +1891,11 @@ have the same number of elements.
 \item Do the other two cases hold?     
 \end{exes}
 \end{ex}
+
+\begin{df}
+An \definend{identity function} $\map{\identity}{D}{D}$ has
+$\identity(d)=d$ for all $d\in D$.
+\end{df}
 
 \begin{df}
 A function \definend{inverse} to $\map{f}{D}{C}$ is 
