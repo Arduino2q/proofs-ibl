@@ -1197,8 +1197,8 @@ Prove that $\lcm(a,b)=ab/\!\gcd(a,b)$.
 \section{Primes}
 \begin{df}
 An integer greater than~$1$
-is \definend{prime} if its only divisors are itself and~$1$,
-else it is \definend{composite}.  
+is \definend{prime} if its only divisors are~$1$ and itself.
+Otherwise it is \definend{composite}.  
 \end{df}
 
 \begin{ex} Prove.
@@ -1285,6 +1285,10 @@ $p$ divides at least one~$a_i$.
 \end{ans}
 \end{ex}
 
+
+% Gowers: http://gowers.wordpress.com/2011/11/13/why-isnt-the-fundamental-theorem-of-arithmetic-obvious/
+% and
+% http://gowers.wordpress.com/2011/11/18/proving-the-fundamental-theorem-of-arithmetic/
 \begin{ex}[Fundamental Theorem of Arithmetic]  Prove.
 \begin{exes}
 \item Any number $n>1$ can be written as a product of one or more primes
@@ -1312,6 +1316,24 @@ Then $k+1=ab$ can be written as a product of primes.
 \end{exes}
 \end{ans}
 \end{ex}
+
+
+\begin{ex} \pord
+% From: http://gowers.wordpress.com/2011/11/13/why-isnt-the-fundamental-theorem-of-arithmetic-obvious/
+\begin{exes}
+\item $5\cdot 7\cdot 19\neq 3\cdot 11\cdot 17$
+\item $47\cdot 863\neq 73\cdot 557$
+\item $1357\cdot 4183\neq 1081\cdot 5251$ % due to David Speyer
+\end{exes}
+\begin{ans}
+\begin{exes}
+\item All the numbers are prime, and they are different.
+\item These numbers are prime, and different.
+\item The two sides are equal (the numbers are non-prime).     
+\end{exes}
+\end{ans}
+\end{ex}
+
 
 \begin{ex} Prove (the second item, showing the existence of real numbers that
 are not rational, is classically important).
