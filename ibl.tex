@@ -97,7 +97,7 @@
 \chapter*{Preface}
 
 This is a course in mathematical proof. 
-It is for majors who are US sophomores, although since
+It is for math majors who are US sophomore, although since
 it requires only high school mathematics
 it can be used with first year students.
 
@@ -111,9 +111,9 @@ along with definitions and a few
 remarks.
 The students together work through the mathematics by
 proving statements or sometimes by providing examples or counterexamples.
-They grapple directly with the material\Dash the instructor only 
+They work directly with the mathematics\Dash the instructor only 
 lightly guides\Dash
-talking out misunderstandings, 
+working out misunderstandings, 
 sometimes stumbling in the dark, and sometimes
 having beautiful flashes of insight.
 % In short, this approach is the difference between cover and do.
@@ -125,9 +125,9 @@ this is the best way to develop mathematical maturity.
 \noindent\textsc{Topics.}
 We start with elementary number theory, not logic and sets, 
 for the same reason
-that the baseball team's annual practice starts with tossing the ball and 
+that the baseball team's annual practice starts with hitting the ball and 
 not with reading the rulebook.
-Math majors readily take to proving things about
+Math majors take readily to proving things about
 divisibility and primes, enjoying the 
 intellectual challenge and verbal exchange, 
 whereas a first month of background material can be a damper.
@@ -136,19 +136,19 @@ But the background material is good stuff also and
 students are onboard once they see where it takes them.
 In the second and third chapters we do
 sets, functions, and relations, now with the
-intellectual habits we've established at the start.
+intellectual habits that we've established at the start.
 
 There are some topics, such as the definition of implication, 
 that students need even in the
 first chapter.
 My class meetings begin with some people going to the 
 board to write their answers to the homework, and 
-I use these ten minutes for a slide or two that covers issues from
-the class's current work.
+I often use these ten minutes for a beamer slide or two that covers issues from
+the current work.
 This just-in-time approach keeps the class centered 
 on proving things while ensuring that they get what
 they need when they need it.
-(The only exception is that we briefly pause to do induction,
+(The only exception is that we pause briefly to do induction,
 since it is typically new for these students and needs 
 their full attention.)
 
@@ -162,7 +162,7 @@ This includes the \LaTeX{} source so instructors can tailor the
 material to their students.  
 Also on that page are the slides that I use
 and, for instructors new to this approach, 
-a brief description of what classroom techniques work for me.
+a brief description of the classroom approach that works for me.
 
 
 \vspace{\fill}
@@ -190,8 +190,8 @@ a brief description of what classroom techniques work for me.
 
 We begin with results about the
 integers $\Z=\set{..,-2,-1,0,1,2,\ldots}$.
-In this chapter, ``number'' means integer.
-In some cases, results refer to the 
+In this chapter ``number'' means integer.
+In some cases results refer to the 
 natural numbers $\N=\set{0,1,2,\ldots}$.
 
 
@@ -332,7 +332,7 @@ $d$ is a multiple of~$d^2$.)
 \end{ans}
 \end{ex}
 
-\begin{ex}[Divisibility Properties]
+\begin{ex}[Divisibility Properties] \label{ex:DivisibilityProperties}
 Let $d$, $m$, and $n$ be integers.
 Prove each.
 \begin{exes}
@@ -350,7 +350,8 @@ Prove each.
   The only numbers that divide~$1$ are $1$ and~$-1$.
 \item The largest divisor of $a$ is $\absval{a}$, for $a\in\Z$ with $a\neq 0$.
   (Recall that the absolute value  $\absval{a}$ of a number is~$a$ 
-  if $a\geq 0$ and is~$-a$ if $a<0$.) 
+  if $a\geq 0$ and is~$-a$ if $a<0$.)
+\item Every nonzero integer has only finitely many divisors.
 \end{exes}
 \begin{ans}
 \begin{exes}
@@ -402,13 +403,15 @@ Prove each.
   we show there is no dividend~$a>0$ with a divisor larger than $\absval{a}=a$.
   By the Comparison property, a positive dividend is greater than or 
   equal to any of its divisors. 
-  Thus~$\absval{a}$ is maximal. 
+  Thus~$\absval{a}$ is maximal.
+\item By the prior item if $a\neq 0$ then all of the divisors of~$a$
+  are in the interval of integers from $-a$ to~$a$. 
 \end{exes}
 \end{ans}
 \end{ex}
 
 \begin{ex}
-Give the converse of the Reflexivity property: what conclusion can you make
+Give the converse of Reflexivity: what conclusion can you make
 if $a\divides b$ and~$b\divides a$?
 \begin{ans}
 We will show that for $a,b\in\Z$, if both $a\divides b$ and~$b\divides a$
@@ -460,11 +463,11 @@ Results in the prior section need only proof techniques that come naturally
 to people with a mathematical aptitude.
 But some results to follow require a technique 
 that is not as natural, mathematical induction.
-We now pause to introduce induction.
+We pause now to introduce it.
 
 We will start with exercises about sums 
-(but note that induction is not about sums;
-we start with them only because they make the best first exercises).
+(but note that induction is not about sums,
+we use them only because they make the best first exercises).
 For instance, most people have noticed that the odd numbers sum to 
 perfect squares: $1+3=4$, $1+3+5=9$, $1+3+5+7=16$, etc.,
 so we look to prove 
@@ -474,7 +477,7 @@ the statement
 Our induction proofs have two steps.
 For the base step we show that the statement holds for some first number;
 below we will verify the the statement for the number~$1$.
-The inductive step is more subtle,
+The inductive step is more subtle;
 we will verify the following implication.
 \begin{equation*}
   \begin{tabular}{l} 
@@ -489,10 +492,10 @@ prove that our statement is true for all~$n\geq 1$.
 That's because, first, the base step
 directly verifies the statement for the number~$1$.
 Next, because the inductive step verifies the implication~($*$) for all $k$, 
-that implication applies when~$k=1$, giving 
-that the statement is true for the number~$2$. 
+that implication applied to the~$k=1$ case gives 
+that the statement is true for the case of the number~$2$. 
 Now, with the statement established for both $1$ and~$2$, 
-apply ($*$) again to conclude that it is true for the number~$3$.
+apply ($*$) again to conclude that the statement is true for the number~$3$.
 In this way, we bootstrap to all numbers greater than or equal to $1$.
 Below is an example proof.
 
@@ -516,7 +519,7 @@ Prove by induction.
 \begin{exes}
 \item $1+2+\cdots+n=n(n+1)/2$
 \item $1+4+9+\cdots+n^2=n(n+1)(2n+1)/6$
-\item $1+8+27+\cdots+n^3=n^2(n+1)^2/4$
+% \item $1+8+27+\cdots+n^3=n^2(n+1)^2/4$
 \item $1+2+4+8+\cdots+2^{n-1}=2^n-1$
 \end{exes}
 \begin{ans}
@@ -546,18 +549,18 @@ Prove by induction.
     =(k+1)\cdot [2k^2+7k+6]/6
     =(k+1)(k+2)(2(k+1)+1)/6$,
   as required.
-\item The base step is~$n=1$.  
-  The left side has the single term $1$ while the right side is 
-  $1^2(2)^2/4$, so they are equal.
+% \item The base step is~$n=1$.  
+%   The left side has the single term $1$ while the right side is 
+%   $1^2(2)^2/4$, so they are equal.
 
-  For the inductive step assume that the statement is true when $n=1$, 
-  \ldots\,, $n=k$.
-  Then 
-   $1+8+27+\cdots+k^3+(k+1)^3
-    =k^2(k+1)^2/4+(k+1)^3
-    =(k+1)^2\cdot [(k^2/4)+(k+1)]
-    =(k+1)^2\cdot (k^2+4k+4)/4
-    =(k+1)^2(k+2)^2/4$. 
+%   For the inductive step assume that the statement is true when $n=1$, 
+%   \ldots\,, $n=k$.
+%   Then 
+%    $1+8+27+\cdots+k^3+(k+1)^3
+%     =k^2(k+1)^2/4+(k+1)^3
+%     =(k+1)^2\cdot [(k^2/4)+(k+1)]
+%     =(k+1)^2\cdot (k^2+4k+4)/4
+%     =(k+1)^2(k+2)^2/4$. 
 \item The $n=1$ base step has a sum on the left with a single term, $1$.
 The expression on the right is $2^1-1=1$, and they are equal.
 
@@ -810,8 +813,6 @@ then~$A$ cannot contain~$k+1$ either, since it would be least.
 
 % .....................................
 \section{Division}
-We can generalize divisibility.
-
 \begin{ex} \notetext{Division Theorem} We prove that 
 where $a$ and $b>0$ are integers there are integers $q$ and~$r$
 such that $a=bq+r$ and $r\in\set{0,\ldots,b-1}$,
@@ -1034,17 +1035,14 @@ We write $\gcd(a,b)$ for the greatest common divisor
 of $a$ and~$b$.
 \end{df}
 
-% \begin{ex}
-% Generalize the definition to sets of integers.
-% \end{ex}
-
 \begin{ex}
 Prove.
 \begin{exes} 
 \item \notetext{Existence} Any $a,b\in\Z$ have a greatest common divisor.
-\item $0\leq \gcd(a,b)\leq\min(\absval{a},\absval{b})$.
-\item If either $a$ or $b$ is nonzero then the left-hand
-  inequality in the prior item is strict.
+\item If either number is nonzero then 
+  $0\leq \gcd(a,b)\leq\min(\absval{a},\absval{b})$.
+  If both are nonzero then the first
+  inequality is strict.
 \item If $a>0$ then $\gcd(a,0)=a$.
 \item $\gcd(a,a)=\absval{a}$
 \item \notetext{Commutativity} $\gcd(a,b)=\gcd(b,a)$
@@ -1052,137 +1050,302 @@ Prove.
 \end{exes} 
 \begin{ans}
 \begin{exes}
-\item
-\item
-\item
-\item
-\item
+\item If $a=b=0$ then $\gcd(a,b)$ exists. 
+  If $a=0$ and~$b\neq 0$ then, since every number divides~$0$, the set of 
+  common divisors of the two is the set of divisors of~$b$, 
+  the largest of which is~$\absval{b}$.
+  In the same way, if $a\neq 0$ and~$b=0$ then the greatest common divisor 
+  is~$\absval{a}$.
+
+  So suppose that each number is nonzero.
+  In this case the number~$1$ is a common divisor, so when we establish that 
+  there is a common divisor that is greatest we will know it is positive.
+  To establish that, note that each number has finitely many divisors and
+  so the overlap\Dash the set of divisors common to both\Dash is finite.
+  A finite set of integers must have an element that is greatest.
+\item If $a=b=0$ then $\gcd(a,b)=0$. 
+  If $a=0$ and~$b\neq 0$ then the set of 
+  common divisors of the two equals the set of divisors of~$b$, 
+  the greatest of which $\gcd(a,b)=\absval{b}$ is larger than zero.
+  In the same way, if $a\neq 0$ and~$b=0$ then the greatest common divisor 
+  is~$\absval{a}>0$.
+
+  If each number is nonzero then~$1$ is a common divisor so 
+  the greatest common divisor is greater then zero.
+  For the other inequality,
+  where $d$ is a common divisor, 
+  because it divides~$a$ we have that $d\leq\absval{a}$ and
+  because it divides~$b$ we have that $d\leq\absval{b}$.
+  Thus $d$ is less than or equal to the mimimum of the two. 
+\item One of the Divisibility Properties in \ref{ex:DivisibilityProperties}
+  is that for any nonzero integer~$a$ the largest divisor is $\absval{a}$.
+  Since $a$ is positive, $\absval{a}=a$.
+\item The Divisibility Properties in \ref{ex:DivisibilityProperties}
+  include that for any~$a\neq 0$ the largest divisor is $\absval{a}$.
+  In the case that $a=0$ the definition of greatest common divisor 
+  is that $\gcd(0,0)=0=\absval{0}$.
 \item The two sets 
   $\setbuilder{m\in\Z}{\text{$m\divides a$ and $m\divides b$\,}}$
   and 
   $\setbuilder{n\in\Z}{\text{$n\divides b$ and $n\divides a$\,}}$
   are equal and so have the same greatest element. 
-\item    
+  That is, the definition is symmetric in $a$ and~$b$.
+\item If both numbers are zero then the statement is clearly true.
+  For the other case note that for any
+  integer $c$, a number is a divisor of $c$ if and only if it divides 
+  the absolute value~$\absval{c}$.
+  Thus, the set of divisors of both~$a$ and~$b$ 
+  is the same as the set of divisors of both~$\absval{a}$ and~$\absval{b}$, \
+  and therefore the two sets have the same greatest element.
 \end{exes}
 \end{ans}
 \end{ex}
 
-\begin{ex}\pord.
-\begin{exes}
-\item $\gcd(ca,cb)=c\cdot\gcd(a,b)$
-\item $\gcd(a+b,c)=\gcd(a,c)+\gcd(b,c)$
-\item $\gcd(ab,c)=\gcd(a,c)\cdot\gcd(b,c)$    
-\end{exes}
-\end{ex}
-
-\begin{ex}
-Assume that two numbers have prime factorizations 
-of $a=p_1^{e_1}\cdots p_n^{e_n}$
-and $b=p_1^{f_1}\cdots p_n^{f_m}$.
-Prove that in the prime factorization of
-$\gcd(a,b)$ the exponent of $p_i$ is $\min(e_i,f_i)$.
-\end{ex}
-
 \begin{df}
-Two numbers are \definend{relatively prime} (or \definend{coprime}) if their greatest common
-divisor is $1$.
+Two numbers are \definend{relatively prime} 
+(or \definend{coprime}) if their greatest common divisor is $1$.
 \end{df}
 
-People sometimes write $\gcd(a,b)=1$ as $a\perp b$.
-
-\begin{ex}
-\begin{exes}
-\item $\gcd(a,b)=1$ iff $\gcd(b,a)=1$
-\item If $\gcd(a,b)=d$ then $\gcd(a/d, b/d)=1$.
-\item Is the converse true?    
-\end{exes}
-\end{ex}
-
-\begin{ex}
-Give (and prove) a condition of the prime factorizations of $a$ and~$b$
-equivalent to their being relatively prime.
-\end{ex}
-
-\begin{ex}\notetext{Euclid's algorithm}
-Prove that if $a=bq+r$ then $\gcd(a,b)=\gcd(b,r)$.  
-\end{ex}
-
-The algorithm for which this result is named finds the greatest common
-divisor.  For instance, to find $\gcd(803,154)$ compute that
-$803=154\cdot 5+33$ and apply the result to get that 
-$\gcd(803,154)=\gcd(154,33)$.
-Now since $154=33\cdot 4+22$ the result gives
-$\gcd(154,33)=\gcd(33,22)$.
-By eye we spot the answer of $11$ but continuing as though we hadn't noticed
-we get $33=22\cdot 1+11$, so $\gcd(33,22)=\gcd(22,11)$.
-Then $22=11\cdot 2+0$ tells us that $\gcd(22,11)=11$, and the algorithm 
-terminates.
-
-\begin{ex}
-Use Euclid's Algorithm.
-\begin{exes}
-\item $\gcd(15,25)$
-\item $\gcd(48,732)$  
-\end{exes}
-\end{ex}
-
-We can perform Euclid's algorithm in reverse.
-For instance, from $33=22\cdot 1+11$ we can rewrite to 
-express the greatest common divisor $11$ as a combination 
-$11=1\cdot 33-1\cdot 22$.
-The equation $154=33\cdot 4+22$ gives a way to express
-the $11$ as a combination of the prior pair
-$11=1\cdot 33-1\cdot (154-4\cdot 33)=-1\cdot 154+5\cdot 33$.
-Backing up still further, the equation 
-$803=154\cdot 5+33$
-gives $11=-1\cdot 154+5\cdot (803-5\cdot 154)=5\cdot 803-26\cdot 154$
-as a combination of the pair of numbers that started the
-Euclid's algorithm example.
+\noindent Sometimes $\gcd(a,b)=1$ is denoted $a\perp b$.
 
 \begin{df}
-A number $c$ is a \definend{linear combination} of two others $a$ and~$b$
-if it has the form $c=a\cdot m+b\cdot n$ for some $m,n\in\Z$.  
+The \definend{least common multiple} of two numbers $\lcm(a,b)$ 
+is the smallest number that is a multiple of each.
 \end{df}
 
-\begin{ex}\notetext{B\'ezout's Lemma}
+\begin{ex} Prove.
 \begin{exes}
-\item Any common divisor of $a$ and~$b$ is a divisor of 
-any linear combination of the two.
-\item The greatest common divisors of two numbers is a linear combination of 
-those two.
-\item The greatest common divisor of two numbers is the smallest positive
-number that is a linear combination of the two.
+\item \notetext{Existence} Any two integers have a least common multiple.
+\item \notetext{Commutativity} $\lcm(a,b)=\lcm(b,a)$
 \end{exes}
-\end{ex}
-
-\begin{ex}
-If $a\divides bc$ and $a$ is relatively prime to $b$ then $a\divides c$.  
-\end{ex}
-
-\begin{df}
-The \definend{least common multiple} of two numbers is the smallest number
-that is a multiple of each.
-We write $\lcm(a,b)$.
-\end{df}
-
-\begin{ex} 
+\begin{ans}
 \begin{exes}
-\item The least common multiple of any two integers exists.
-% \item Generalize to sets of integers.
-\item $\lcm(a,b)=\lcm(b,a)$.
+\item The absolute value of the product of the two is a common multiple.
+  So the set of nonnegative common multiples is not empty.
+  Any nonempty set of natural numbers has a least element. 
+\item The definition is symmetric in $a$ and~$b$.    
 \end{exes}
+\end{ans}
 \end{ex}
 
 \begin{ex}
-Where the prime factorizations are $a=p_1^{e_1}\cdots p_n^{e_n}$
-and $b=p_1^{f_1}\cdots p_n^{f_m}$, 
-in the prime factorization of $\lcm(a,b)$ the exponent of 
-$p_i$ is $\max(e_i,f_i)$.
+For each of these pairs $a,b$ compute $\gcd(a,b)$, $\lcm(a,b)$, $ab$, and
+$\gcd(a,b)\cdot\lcm(a,b)$.
+\begin{exes}
+% \item $a=6$, $b=15$
+\item $a=18$, $b=35$  
+\item $a=20$, $b=-14$
+\end{exes}
+\begin{ans}
+\begin{exes}
+% \item $\gcd(a,b)=3$, $\lcm(a,b)=30$, $ab=90$, $\gcd(a,b)\cdot\lcm(a,b)=90$
+\item $\gcd(a,b)=1$, $\lcm(a,b)=630$, $ab=630$, $\gcd(a,b)\cdot\lcm(a,b)=630$
+\item $\gcd(a,b)=2$, $\lcm(a,b)=140$, $ab=-280$, $\gcd(a,b)\cdot\lcm(a,b)=280$
+\end{exes}
+\end{ans}
 \end{ex}
 
 \begin{ex}
-Prove that $\lcm(a,b)=ab/\!\gcd(a,b)$.
+\begin{exes}
+\item Prove that any common multiple of two numbers is divisible by the 
+  least common multiple.
+  \hint apply the Division-Remainder theorem with the divisor $\lcm(a,b)$.
+\item Prove that the product of two numbers is divisible by their 
+  least common multiple.
+\item For any numbers $a,b\in\Z$ let $d$ be given by $ab=\lcm(a,b)\cdot d$.
+  Prove that any common divisor of $a$ and~$b$ also divides~$d$.
+\item Prove that $\gcd(a,b)\leq\absval{d}$.
+\item Prove that $\absval{d}=\gcd(a,b)$. 
+\item Prove that any common divisor of two numbers also divides their
+  greatest common divisor.
+\item Prove that $\lcm(a,b)\cdot\gcd(a,b)=\absval{ab}$. 
+% \item Any common divisor of two numbers divides the greatest common divisor.
+%   \hint in the case that both numbers $a$ and~$b$ are nonzero, 
+%   consider their product and apply the prior item to get that 
+%   it is a multiple of the least common multiple.
+%   Write $ab=\lcm(a,b)\cdot s$ and show that $\absval{s}$ equals the
+%   greatest common divisor by showing it is both greater than and less than
+%   $\gcd(a,b)$. 
+\end{exes}  
+\begin{ans}  %% TODO check the zero and negative cases.
+\begin{exes}
+\item Suppose that $\lcm(a,b)=\ell$ and that $m$ is a common multiple
+  of the two numbers.
+  Dividing $m$ by~$\ell$ gives a quotient and remainder so that 
+  $m=\ell\cdot q+r$ with $0\leq r< \ell$.
+  We have that $r=m-\ell q$, and each term on the right is a multiple
+  of both $a$ and~$b$.
+  Therefore $r$ is a common multiple of $a$ and~$b$.
+  Because the remainder $r$ is less than the least common multiple~$\ell$,
+  we conclude that $r=0$, and so $\ell\divides m$.
+\item Given $a,b\in\Z$, the product $ab$ is a common multiple of the two.
+  Apply the prior item.
+\item By the previous item, the least common multiple of $a,b\in\Z$ divides
+  the product~$ab$.
+  So $d$ is an integer for all number pairs $a,b$.
+  
+  Let~$c$ be a common divisor so that $c=a\cdot k_a$ and $c=b\cdot k_b$.
+  The number $ck_ak_b$ is a common multiple of $a$ and~$b$. 
+  By the first item, it is divisible by the least common multiple  
+  $\ell\divides ck_ak_b$.
+  Multiplication by $cd$ gives $\ell\cdot cd\divides ck_ak_b\cdot cd$.
+  Regroup to $(\ell c)d\divides (ck_a)(ck_b)d$, which is
+  $ab\cdot c\divides ab\cdot d$, and therefore by cancellation $c\divides d$,
+  as desired.
+\item By the prior item, any common divisor of $a$ and~$b$ will divide~$d$.
+  One such common divisor is $\gcd(a,b)$.
+  This implies $\gcd(a,b)\leq\absval{d}$.
+\item
+  After the previous item, we need only show that $\gcd(a,b)\geq\absval{s}$ 
+  Because $\lcm(a,b)$ is a common multiple of the two, 
+  both $\ell/a$ and~$\ell/b$ are integers. 
+  Reqriting the equation~$ab=\ell g$ to 
+  $a=(\ell/b)\cdot d$ shows that~$d$ is a divisor of~$a$, and similarly
+  it is a divisor of~$b$.
+  Because $d$ is a common divisor, $\absval{d}\leq \gcd(a,b)$.
+\item This is immediate from the prior items.
+\item This is immediate from the prior items.
+% \item 
+%   If both $a$ and~$b$ are zero then the greatest common divisor is zero,
+%   and any number divides zero.
+%   If one number is zero and the other is nonzero then
+%   without loss of generality we can take $a=0$ and~$b\neq 0$.
+%   Since all numbers divide~$a$, the condition that a number~$c$ 
+%   is a common divisor
+%   becomes just that $c$ divides~$b$.
+%   So in this case we must show that any divisor of $b$ divides the 
+%   absolute value of~$b$, which we know to be true by the divisibility 
+%   properties.
+  
+%   The final case is that both numbers are nonzero.
+%   Consider their product $ab$.
+%   It is a common multiple of the two so the least common multiple 
+%   $\ell=\lcm(a,b)$ is a factor; suppose that $ab=\ell\cdot s$.
+%   We will show that $\absval{s}$ is the greatest common divisor.
+
+%   We first show that any common divisor of $a$ and~$b$ also divides~$s$.
+%   Let~$c$ be a common divisor so that $c=a\cdot k_a$ and $c=b\cdot k_b$
+%   The number $ck_ak_b$ is a common multiple of $a$ and~$b$. 
+%   By the prior item $\ell\divides ck_ak_b$.
+%   Multiplication by $cs$ gives $\ell\cdot cs\divides ck_ak_b\cdot cs$.
+%   Regroup to $(\ell s)c\divides (ck_a)(ck_b)s$, which is
+%   $ab\cdot c\divides ab\cdot s$, and therefore by cancellation $c\divides s$,
+%   as desired.
+%   In particular, note that because $\gcd(a,b)$ divides both $a$ and~$b$, 
+%   it divides~$s$, which implies that $\gcd(a,b)\leq\absval{s}$.
+  
+%   For the inequality in the other direction, 
+%   start with the equation~$ab=\ell s$ and note that because $\ell$ is 
+%   a common multiple, both $\ell/a$ and~$\ell/b$ are integers.
+%   Thus $a=(\ell/b)\cdot s$ shows that~$s$ is a divisor of~$a$, and similarly
+%   it is a divisor of~$b$.  
+%   Therefore~$\absval{s}\leq \gcd(a,b)$.
+\end{exes}
+\end{ans}
 \end{ex}
+
+\begin{ex}  
+\begin{exes} 
+\item 
+  Prove that
+  dividing by the greatest common divisor leaves no common divisors:
+  $a/\gcd(a,b)$ and $b/\gcd(a,b)$ are relatively prime.
+\item \notetext{Euclid's Lemma}
+  If $a$ and~$b$ are relatively prime then $a\divides bc$ implies that 
+  $a\divides c$.
+\end{exes}
+\begin{ans}
+\begin{exes}
+\item
+  Let $\gcd(a,b)$ be~$d$ and suppose that $\gcd(a/d,\,b/d)=k$.
+  Then $k\cdot j_a=a/d$ and~$k\cdot j_b=b/d$ for some numbers $j_a, j_b\in\Z$.
+  Thus $kd\cdot j_a=a$ and $kd\cdot j_b=b$ and so $kd$ is a common divisor
+  of $a$ and~$b$. 
+  But $d=\gcd(a,b)$ and so $k=1$, or else $kd$ would be a common divisor
+  that is larger than the greatest common divisor.    
+\item
+  Since $a\divides bc$ we know that $a$ is nonzero.
+  If $b$ is zero then because $\gcd(a,b)=1$ we have that $\absval{a}=1$ 
+  and $a\divides c$.
+  In the $b\neq 0$ case, the assumptin that $\gcd(a,b)=1$ 
+  along with the equation $\absval{ab}=\gcd(a,b)\cdot\lcm(a,b)$ shows that 
+  $\lcm(a,b)=\absval{ab}$.
+  Because $a\divides bc$, the product $bc$ is a common 
+  multiple of $a$ and~$b$ and so it is divisible by the least common multiple
+  $\lcm(a,b)\divides bc$, giving that $ab\divides bc$.  
+  Cancellation shows that $a\divides c$. 
+\end{exes}
+\end{ans}
+\end{ex}
+
+
+% TODO check answers
+% \begin{ex}\notetext{Euclid's algorithm}
+% Prove that if $a=bq+r$ then $\gcd(a,b)=\gcd(b,r)$.  
+% \end{ex}
+
+% The algorithm for which this result is named finds the greatest common
+% divisor.  For instance, to find $\gcd(803,154)$ compute that
+% $803=154\cdot 5+33$ and apply the result to get that 
+% $\gcd(803,154)=\gcd(154,33)$.
+% Now since $154=33\cdot 4+22$ the result gives
+% $\gcd(154,33)=\gcd(33,22)$.
+% By eye we spot the answer of $11$ but continuing as though we hadn't noticed
+% we get $33=22\cdot 1+11$, so $\gcd(33,22)=\gcd(22,11)$.
+% Then $22=11\cdot 2+0$ tells us that $\gcd(22,11)=11$, and the algorithm 
+% terminates.
+
+% \begin{ex}
+% Use Euclid's Algorithm.
+% \begin{exes}
+% \item $\gcd(15,25)$
+% \item $\gcd(48,732)$  
+% \end{exes}
+% \end{ex}
+
+% We can perform Euclid's algorithm in reverse.
+% For instance, from $33=22\cdot 1+11$ we can rewrite to 
+% express the greatest common divisor $11$ as a combination 
+% $11=1\cdot 33-1\cdot 22$.
+% The equation $154=33\cdot 4+22$ gives a way to express
+% the $11$ as a combination of the prior pair
+% $11=1\cdot 33-1\cdot (154-4\cdot 33)=-1\cdot 154+5\cdot 33$.
+% Backing up still further, the equation 
+% $803=154\cdot 5+33$
+% gives $11=-1\cdot 154+5\cdot (803-5\cdot 154)=5\cdot 803-26\cdot 154$
+% as a combination of the pair of numbers that started the
+% Euclid's algorithm example.
+
+% \begin{df}
+% A number $c$ is a \definend{linear combination} of two others $a$ and~$b$
+% if it has the form $c=a\cdot m+b\cdot n$ for some $m,n\in\Z$.  
+% \end{df}
+
+% \begin{ex}\notetext{B\'ezout's Lemma}
+% \begin{exes}
+% \item Any common divisor of $a$ and~$b$ is a divisor of 
+% any linear combination of the two.
+% \item The greatest common divisors of two numbers is a linear combination of 
+% those two.
+% \item The greatest common divisor of two numbers is the smallest positive
+% number that is a linear combination of the two.
+% \end{exes}
+% \end{ex}
+
+
+% \begin{ex}\pord.
+% \begin{exes}
+% \item $\gcd(ca,cb)=c\cdot\gcd(a,b)$
+% \item $\gcd(a+b,c)=\gcd(a,c)+\gcd(b,c)$
+% \item $\gcd(ab,c)=\gcd(a,c)\cdot\gcd(b,c)$    
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item     
+% \end{exes}
+% \end{ans}
+% \end{ex}
+
 
 
 
@@ -1334,9 +1497,26 @@ Then $k+1=ab$ can be written as a product of primes.
 \end{ans}
 \end{ex}
 
+% \begin{ex}
+% Give (and prove) a condition of the prime factorizations of $a$ and~$b$
+% equivalent to their being relatively prime.
+% \end{ex}
 
-\begin{ex} Prove (the second item, showing the existence of real numbers that
-are not rational, is classically important).
+\begin{ex}
+Suppose that two numbers have prime factorizations 
+of $a=p_1^{e_1}\cdots p_n^{e_n}$
+and $b=p_1^{f_1}\cdots p_n^{f_m}$.
+Prove each.
+\begin{exes}
+\item
+  In the prime factorization of
+  $\gcd(a,b)$ the exponent of $p_i$ is $\min(e_i,f_i)$.
+\item In the prime factorization of $\lcm(a,b)$ the exponent of 
+  $p_i$ is $\max(e_i,f_i)$.
+\end{exes}
+\end{ex}
+
+\begin{ex} Prove.
 \begin{exes}
 \item Prove that if a number is a square then in its prime factorization 
   each prime occurs an even number of times.
@@ -1798,6 +1978,15 @@ denoted $f(B)$ or $\image(f)$,
 is the range of the function $\restrictionmap{f}{B}$.
 \end{df}
 
+\begin{ex}
+Find the image of each set under the usual real-valued function $f(x)=\tan(x)$.
+\begin{exes}
+\item $\leftclosed{\pi/4}{\pi/2}=\setbuilder{x\in\R}{\pi/4\leq x<\pi/2}$
+\item \set{-\pi/3}
+\item $\R^+$  
+\end{exes}
+\end{ex}
+
 \begin{df}
 Let $\map{f}{D}{C}$.
 The \definend{inverse image of the element}~$c\in C$ is
@@ -1805,6 +1994,38 @@ the set $f^{-1}(c)=\setbuilder{d\in D}{f(d)=c}$.
 The \definend{inverse image of the set}~$A\subseteq C$
 is the set $f^{-1}(A)=\setbuilder{d\in D}{f(d)\in A}$   
 \end{df}
+
+\begin{ex}
+Find the inverse image of each under the function $\map{f}{\R}{\R}$ 
+given by $x\mapsto x^2$.
+\begin{exes}
+\item $9$
+\item $\closed{16}{25}=\setbuilder{y\in\R}{16\leq y\leq 25}$
+\end{exes}
+\begin{ans}
+\begin{exes}
+\item It is the set $\set{3,-3}$, sometimes abbreviated as $\pm 3$.
+\item It is the union $\closed{4}{5}\union \closed{-5}{-4}$.    
+\end{exes}
+\end{ans}
+\end{ex}
+
+\begin{ex}
+Find the inverse image of each under the usual real-valued function $f(x)=\sin(x)$.
+\begin{exes}
+\item $\sqrt{3}/2$
+\item $2$
+\item $\closed{0}{2}=\setbuilder{x\in\R}{0\leq \sin(x)\leq 2}$
+\end{exes}
+\begin{ans}
+\begin{exes}
+\item $\set{\ldots,-10\pi/3,-5\pi/3,-4\pi/3,\pi/3,2\pi/3,7\pi/3,8\pi/3, \ldots}$
+\item $\emptyset$
+\item $\closed{0}{\pi}\union\closed{2\pi}{3\pi}\union\closed{-\pi}{-2\pi}\union\cdots$
+\end{exes}
+\end{ans}
+\end{ex}
+
 
 \begin{ex}
 Prove that $f^{-1}(A)$ is the union of the sets $f^{-1}(c)$ for all $c\in A$.
