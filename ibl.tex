@@ -226,7 +226,8 @@ It is different than the fraction $d/n$, which is a number.
 We can sensibly ask ``Does $2$ divide~$5$?''\spacefactor=1000\
 but ``Does $2/5$?''\spacefactor=1000\ is not sensible.   
 
-\begin{ex}[Interaction of parity with sign]
+\begin{ex}[Interaction of parity with sign] 
+\label{ex:InteractionOfParityWithSign}
 \pord.
 \begin{exes}
 \item If a number is even then its negative is even.
@@ -571,7 +572,7 @@ $1+2+4+\cdots+2^{k-1}+2^k$,
 and application of the inductive hypothesis in the $n=k$ case gives
 $(2^k-1)+2^k=2\cdot 2^k-1=2^{k+1}-1$, as required. 
 
-(\textit{Comment.} A person could instead take the base step to be
+(\remark we could instead take the base step to be
 $n=0$, giving an empty summation that totals to $0$, and an expression
 on the right of~$2^0-1=0$.)   
 \end{exes}
@@ -704,7 +705,7 @@ Prove each by induction.
   second term is obviously divisible by~$4$, and so the statement holds in 
   this case.
 
-  \textit{Comment.}
+  \remark
   This illustrates that 
   sometimes when you have finish a proof by induction, 
   while you now are sure that the statement is true, 
@@ -769,7 +770,7 @@ all natural numbers $n$ with $j\leq n\leq k$ then the
 statement is also true for~$k+1$.  
 \end{df}
 
-\noindent (Many authors reduce the two to a single condition: 
+\noindent (You may see the two reduced to a single condition: 
 if the statement is true for all natural numbers less than~$k$
 then the statement is also true for~$k$.
 This formulation covers the base step by folding it into the 
@@ -791,7 +792,7 @@ numbers has a least element.
 Show that the principle of induction implies the least number 
 principle.
 \hint
-you can use induction to prove that if a set of natural numbers does not
+use induction to prove that if a set of natural numbers does not
 have a least element then that set is empty.
 \begin{ans}
 We shall use induction to prove for all $n\in\N$ that if a set~$A$ 
@@ -1039,13 +1040,16 @@ of $a$ and~$b$.
 Prove.
 \begin{exes} 
 \item \notetext{Existence} Any $a,b\in\Z$ have a greatest common divisor.
+\item \notetext{Commutativity} $\gcd(a,b)=\gcd(b,a)$
 \item If either number is nonzero then 
   $0\leq \gcd(a,b)\leq\min(\absval{a},\absval{b})$.
   If both are nonzero then the first
   inequality is strict.
-\item If $a>0$ then $\gcd(a,0)=a$.
-\item $\gcd(a,a)=\absval{a}$
-\item \notetext{Commutativity} $\gcd(a,b)=\gcd(b,a)$
+\item If $d$ is a common divisor of $a$ and~$b$ then so is~$\absval{d}$.
+  Thus common divisors are limited to the interval from $-\gcd(a,b)$
+  to $\gcd(a,b)$.
+\item For any $a\in\Z$, both $\gcd(a,a)=\absval{a}$ 
+  and~$\gcd(a,0)=\absval{a}$.
 \item $\gcd(a,b)=\gcd(\absval{a},\absval{b})$
 \end{exes} 
 \begin{ans}
@@ -1063,6 +1067,12 @@ Prove.
   To establish that, note that each number has finitely many divisors and
   so the overlap\Dash the set of divisors common to both\Dash is finite.
   A finite set of integers must have an element that is greatest.
+\item The two sets 
+  $\setbuilder{m\in\Z}{\text{$m\divides a$ and $m\divides b$\,}}$
+  and 
+  $\setbuilder{n\in\Z}{\text{$n\divides b$ and $n\divides a$\,}}$
+  are equal and so have the same greatest element. 
+  That is, the definition is symmetric in $a$ and~$b$.
 \item If $a=b=0$ then $\gcd(a,b)=0$. 
   If $a=0$ and~$b\neq 0$ then the set of 
   common divisors of the two equals the set of divisors of~$b$, 
@@ -1077,19 +1087,21 @@ Prove.
   because it divides~$a$ we have that $d\leq\absval{a}$ and
   because it divides~$b$ we have that $d\leq\absval{b}$.
   Thus $d$ is less than or equal to the mimimum of the two. 
-\item One of the Divisibility Properties in \ref{ex:DivisibilityProperties}
-  is that for any nonzero integer~$a$ the largest divisor is $\absval{a}$.
-  Since $a$ is positive, $\absval{a}=a$.
+\item If $d$ is nonnegative then the statement is trivial.
+  If $d$ is negative then
+  this is immediate from \ref{ex:InteractionOfParityWithSign},
+  which says that if $d$ divides a number then so does $-d$.
 \item The Divisibility Properties in \ref{ex:DivisibilityProperties}
   include that for any~$a\neq 0$ the largest divisor is $\absval{a}$.
   In the case that $a=0$ the definition of greatest common divisor 
   is that $\gcd(0,0)=0=\absval{0}$.
-\item The two sets 
-  $\setbuilder{m\in\Z}{\text{$m\divides a$ and $m\divides b$\,}}$
-  and 
-  $\setbuilder{n\in\Z}{\text{$n\divides b$ and $n\divides a$\,}}$
-  are equal and so have the same greatest element. 
-  That is, the definition is symmetric in $a$ and~$b$.
+
+  For the other half, 
+  every number divides zero, so the condition that $\gcd(a,0)$ be a common
+  divisor reduces to the condition that it divide~$a$.
+  As in the previous paragraph, one of the Divisibility Properties  
+  is that for any nonzero integer~$a$ the largest divisor is $\absval{a}$.
+  If $a=0$ then the equation is also true.
 \item If both numbers are zero then the statement is clearly true.
   For the other case note that for any
   integer $c$, a number is a divisor of $c$ if and only if it divides 
@@ -1110,26 +1122,33 @@ Two numbers are \definend{relatively prime}
 
 \begin{df}
 The \definend{least common multiple} of two numbers $\lcm(a,b)$ 
-is the smallest number that is a multiple of each.
+is the smallest natural number that is a multiple of each.
 \end{df}
 
 \begin{ex} Prove.
 \begin{exes}
 \item \notetext{Existence} Any two integers have a least common multiple.
+  Nonzero integers have a positive lcm.
 \item \notetext{Commutativity} $\lcm(a,b)=\lcm(b,a)$
 \end{exes}
 \begin{ans}
 \begin{exes}
-\item The absolute value of the product of the two is a common multiple.
+\item The absolute value of the product of the two is a common multiple,
+  and is positive if neither number is zero.
   So the set of nonnegative common multiples is not empty.
-  Any nonempty set of natural numbers has a least element. 
-\item The definition is symmetric in $a$ and~$b$.    
+  Any nonempty set of natural numbers has a least element.
+\item The definition is symmetric in $a$ and~$b$.
+  That is, the two sets
+  $\setbuilder{m\in\Z}{\text{$a\divides m$ and $b\divides m$}}$
+  and     
+  $\setbuilder{m\in\Z}{\text{$b\divides m$ and $a\divides m$}}$
+  are equal, and so have the same smallest nonnegative element.
 \end{exes}
 \end{ans}
 \end{ex}
 
 \begin{ex}
-For each of these pairs $a,b$ compute $\gcd(a,b)$, $\lcm(a,b)$, $ab$, and
+For each pair $a,b$ compute $\gcd(a,b)$, $\lcm(a,b)$, $ab$, and
 $\gcd(a,b)\cdot\lcm(a,b)$.
 \begin{exes}
 % \item $a=6$, $b=15$
@@ -1145,64 +1164,83 @@ $\gcd(a,b)\cdot\lcm(a,b)$.
 \end{ans}
 \end{ex}
 
-\begin{ex}
+\begin{ex} Let $a$ and~$b$ be integers.
 \begin{exes}
-\item Prove that any common multiple of two numbers is divisible by the 
+\item Prove that any common multiple of two nonzero
+   numbers is divisible by their 
   least common multiple.
   \hint apply the Division-Remainder theorem with the divisor $\lcm(a,b)$.
-\item Prove that the product of two numbers is divisible by their 
+\item Prove that the product of two nonzero numbers is divisible by their 
   least common multiple.
-\item For any numbers $a,b\in\Z$ let $d$ be given by $ab=\lcm(a,b)\cdot d$.
+\item Let $d$ be defined by 
+  $ab=\lcm(a,b)\cdot d$, except that if either $a$ or~$b$ is zero
+  then $d=\max\set{\absval{a},\absval{b}}$.
   Prove that any common divisor of $a$ and~$b$ also divides~$d$.
 \item Prove that $\gcd(a,b)\leq\absval{d}$.
 \item Prove that $\absval{d}=\gcd(a,b)$. 
 \item Prove that any common divisor of two numbers also divides their
   greatest common divisor.
 \item Prove that $\lcm(a,b)\cdot\gcd(a,b)=\absval{ab}$. 
-% \item Any common divisor of two numbers divides the greatest common divisor.
-%   \hint in the case that both numbers $a$ and~$b$ are nonzero, 
-%   consider their product and apply the prior item to get that 
-%   it is a multiple of the least common multiple.
-%   Write $ab=\lcm(a,b)\cdot s$ and show that $\absval{s}$ equals the
-%   greatest common divisor by showing it is both greater than and less than
-%   $\gcd(a,b)$. 
 \end{exes}  
 \begin{ans}  %% TODO check the zero and negative cases.
 \begin{exes}
-\item Suppose that $\lcm(a,b)=\ell$ and that $m$ is a common multiple
+\item Let $\ell=\lcm(a,b)$ and suppose that $m$ is a common multiple
   of the two numbers.
-  Dividing $m$ by~$\ell$ gives a quotient and remainder so that 
+
+  Dividing $m$ by~$\ell$ gives 
   $m=\ell\cdot q+r$ with $0\leq r< \ell$.
-  We have that $r=m-\ell q$, and each term on the right is a multiple
-  of both $a$ and~$b$.
-  Therefore $r$ is a common multiple of $a$ and~$b$.
+  In $r=m-\ell q$ 
+  each term on the right is a multiple
+  of both $a$ and~$b$ and so 
+  $r$ is a common multiple of $a$ and~$b$.
   Because the remainder $r$ is less than the least common multiple~$\ell$,
-  we conclude that $r=0$, and so $\ell\divides m$.
-\item Given $a,b\in\Z$, the product $ab$ is a common multiple of the two.
+  we conclude that $r=0$ and so $\ell\divides m$.
+\item The product $ab$ is a common multiple of the two.
   Apply the prior item.
-\item By the previous item, the least common multiple of $a,b\in\Z$ divides
+\item If $a=0$ and~$b=0$ then $d=0$, and any number divides~$0$.
+  If one of $a$ and~$b$ is zero and one is not then without loss of generality
+  we can take $a=0$, $b\neq 0$.
+  Since all numbers divide~$0$ the condition that a number~$c$ 
+  is a common divisor of $a$ and~$b$
+  becomes just that $c$ divides~$b$.
+  So in this case we must show that any divisor of $b$ divides the 
+  absolute value of~$b$, which we know to be true by the divisibility 
+  properties~\ref{ex:DivisibilityProperties}.
+
+  The remaining case is that both numbers are nonzero.
+  First note that in this case,
+  by the previous item, the least common multiple of $a,b\in\Z$ divides
   the product~$ab$.
-  So $d$ is an integer for all number pairs $a,b$.
+  So $d$ is an integer for all pairs $a,b$ of nonzero numbers
+  and we can sensibly apply the definition of `divides' to
+  $a$ and~$d$, and to $b$ and~$d$.
   
-  Let~$c$ be a common divisor so that $c=a\cdot k_a$ and $c=b\cdot k_b$.
+  Let~$c$ be a common divisor so that $a=c\cdot k_a$ and $b=c\cdot k_b$.
   The number $ck_ak_b$ is a common multiple of $a$ and~$b$. 
-  By the first item, it is divisible by the least common multiple  
+  By the first item it is divisible by the least common multiple  
   $\ell\divides ck_ak_b$.
   Multiplication by $cd$ gives $\ell\cdot cd\divides ck_ak_b\cdot cd$.
   Regroup to $(\ell c)d\divides (ck_a)(ck_b)d$, which is
   $ab\cdot c\divides ab\cdot d$, and therefore by cancellation $c\divides d$,
   as desired.
-\item By the prior item, any common divisor of $a$ and~$b$ will divide~$d$.
+\item The number~$d$ is zero only if both $a$ and~$b$ are
+  zero.
+  In this case the equation is true: $\gcd(0,0)=0\leq d=0$.
+
+  In the $d\neq 0$ case we can apply the 
+  Divisibility property~\ref{ex:DivisibilityProperties} that the
+  largest divisor of a nonzero number is the absolute value of that number.
+  By the prior item, any common divisor of $a$ and~$b$ will divide~$d$.
   One such common divisor is $\gcd(a,b)$.
-  This implies $\gcd(a,b)\leq\absval{d}$.
+  Thus $\gcd(a,b)\leq\absval{d}$.
 \item
-  After the previous item, we need only show that $\gcd(a,b)\geq\absval{s}$ 
-  Because $\lcm(a,b)$ is a common multiple of the two, 
+  After the previous item, we need only show that $\gcd(a,b)\geq\absval{d}$. 
+  Because $\ell=\lcm(a,b)$ is a common multiple of the two, 
   both $\ell/a$ and~$\ell/b$ are integers. 
-  Reqriting the equation~$ab=\ell g$ to 
+  Rewriting the equation~$ab=\ell d$ to 
   $a=(\ell/b)\cdot d$ shows that~$d$ is a divisor of~$a$, and similarly
   it is a divisor of~$b$.
-  Because $d$ is a common divisor, $\absval{d}\leq \gcd(a,b)$.
+  Thus $d$ is a common divisor and so $\absval{d}\leq \gcd(a,b)$.
 \item This is immediate from the prior items.
 \item This is immediate from the prior items.
 % \item 
@@ -1257,23 +1295,25 @@ $\gcd(a,b)\cdot\lcm(a,b)$.
 \begin{ans}
 \begin{exes}
 \item
-  Let $\gcd(a,b)$ be~$d$ and suppose that $\gcd(a/d,\,b/d)=k$.
-  Then $k\cdot j_a=a/d$ and~$k\cdot j_b=b/d$ for some numbers $j_a, j_b\in\Z$.
-  Thus $kd\cdot j_a=a$ and $kd\cdot j_b=b$ and so $kd$ is a common divisor
+  Let $\gcd(a,b)$ be~$d$ and suppose that $\gcd(a/d,\,b/d)=c$.
+  Then $c\cdot k_a=a/d$ and~$c\cdot k_b=b/d$ for some numbers $k_a, k_b\in\Z$.
+  Thus $cd\cdot k_a=a$ and $cd\cdot k_b=b$ and so $cd$ is a common divisor
   of $a$ and~$b$. 
-  But $d=\gcd(a,b)$ and so $k=1$, or else $kd$ would be a common divisor
+  But $d$ is the greatest of the common divisors and so $c=1$, 
+  or else $cd$ would be a common divisor
   that is larger than the greatest common divisor.    
 \item
   Since $a\divides bc$ we know that $a$ is nonzero.
-  If $b$ is zero then because $\gcd(a,b)=1$ we have that $\absval{a}=1$ 
-  and $a\divides c$.
-  In the $b\neq 0$ case, the assumptin that $\gcd(a,b)=1$ 
-  along with the equation $\absval{ab}=\gcd(a,b)\cdot\lcm(a,b)$ shows that 
+  If $b=0$ then because $\gcd(a,b)=1$ we have that $\absval{a}=1$ 
+  and therefore $a\divides c$.
+
+  In the $b\neq 0$ case, the assumption that $\gcd(a,b)=1$ 
+  along with the equation $\absval{ab}=\gcd(a,b)\cdot\lcm(a,b)$ implies that 
   $\lcm(a,b)=\absval{ab}$.
   Because $a\divides bc$, the product $bc$ is a common 
   multiple of $a$ and~$b$ and so it is divisible by the least common multiple
   $\lcm(a,b)\divides bc$, giving that $ab\divides bc$.  
-  Cancellation shows that $a\divides c$. 
+  Cancellation then gives that $a\divides c$. 
 \end{exes}
 \end{ans}
 \end{ex}
@@ -1480,6 +1520,9 @@ Then $k+1=ab$ can be written as a product of primes.
 \end{ans}
 \end{ex}
 
+\noindent\remark
+the definition of prime excludes~$1$ so that factorization is unique, 
+since we otherwise could just add more $1$'s.
 
 \begin{ex} \pord
 % From: http://gowers.wordpress.com/2011/11/13/why-isnt-the-fundamental-theorem-of-arithmetic-obvious/
@@ -1545,13 +1588,13 @@ of the set, written $x\in A$
 (to denote that $x$ is not an element of $A$ write~$x\notin A$).
 Two sets are equal if they have the same elements.
 \end{df}
-\noindent (Read $\in$ as ``is an element of'' rather than ``in'' since the 
+\noindent (Read `$\in$' as ``is an element of'' rather than ``in'' since the 
 latter word causes confusion with 
 the subset relation defined below.)
-As a symonym for set we sometimes use ``collection.''
+We sometimes say ``collection'' as a synonym for set.
 
-We often define a set by either listing or describing its elements.
-Thus we could write 
+We often give a set by either listing or describing its elements.
+Thus we may write 
 the set containing the primes less than ten 
 either as $\set{2, 3, 5, 7}$ or as~$\set{p<10\suchthat \text{$p$ is prime}}$.
 
@@ -1604,7 +1647,7 @@ It is denoted $B\subseteq A$.
 \end{exes}
 \end{ex}
 
-\begin{ex} For each, give example sets or show it is not possible.
+\begin{ex} For each, give example sets or show that no example is possible.
 \begin{exes}
 \item $A\subseteq B$, $B\not\subseteq C$, $A\subseteq C$
 \item $A\not\subseteq B$, $B\not\subseteq C$, $A\subseteq C$
@@ -1613,7 +1656,7 @@ It is denoted $B\subseteq A$.
 \end{ex}
 
 We will always work inside of a \definend{universal set}.
-For instance, while we are doing number theory we may consider 
+For instance, while we are doing number theory we may discuss 
 the set of objects less than $100$,
 but in the context of that discussion the universal set is $\Z$ 
 so we are considering the set of integers less than $100$.
@@ -1625,10 +1668,12 @@ $\charfcn{A}(x)=1$ for $x\in A$, and $\charfcn{A}(x)=0$ for $x\notin A$.
 \end{df}
 
 \begin{ex} \notetext{Russell's paradox}
-Consider a collection that contains everything.
-That collection contains itself.
-Let $C$ be the set of all sets that contain themselves, and let
-$D$ be the set of all sets that don't contain themselves.
+The definition that we gave of sets allows them to contain anything, so 
+consider a set that contains all sets.
+It contains itself.
+So consider the set of all sets that contain themselves, and  
+the set of all sets that don't contain themselves.
+Call the latter~$D$.
 \begin{exes}
 \item Show that assuming $D$ contains itself leads to a contradiction.
 \item Show that assuming $D$ does not contain itself also leads to a
@@ -1650,11 +1695,12 @@ The \definend{complement} of $A$, denoted $\setcomp{A}$, is the
 set of objects that are not elements of~$A$.  
 \end{df}
 
-One reason for working inside a universal set is that it makes the complement
-operation easier. 
-For instance, in a discussion of number theory where $A$ is the set of 
-things that are less than~$100$ we can take the complement and we needn't 
-worry about picking up unwanted objects such as $\pi$.
+\noindent\remark
+Working inside of a universal set makes the complement
+operation sensible. 
+For instance, in discussing of number theory, where $A$ is the set of 
+objects that are less than~$100$, we can take the complement without 
+worrying about picking up unwanted objects such as $\pi$.
 
 \begin{ex}
 Prove that the complement of the complement is the original set
@@ -2049,9 +2095,9 @@ $\composed{g}{f}(d)=g(f(d))$.
 \begin{center}
   \includegraphics{asy/bean_fcn_comp.pdf}  
 \end{center}
-Observe that although $g$ comes first when reading the expression 
-$\composed{g}{f}$ 
-from left to right, 
+Observe that, 
+although when reading the expression $\composed{g}{f}$ from left to right 
+the $g$ comes first, 
 the function that is applied first is~$f$. 
 Observe also that the codomain of~$f$ is the domain of~$g$
 (we sometimes use a composition where the domain of~$g$ is not the 
