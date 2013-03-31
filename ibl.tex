@@ -1,6 +1,19 @@
 \documentclass{ibl}
 \usepackage{ibltext} % for the text only; answers-only is another .sty
 
+\usepackage{etoolbox}
+\usepackage{comment}
+\newbool{euclid}
+% \booltrue{euclid}  % Euclid's proof of Euclid's Lemma
+\boolfalse{euclid}  % Bezout proof of Euclid's Lemma
+\ifbool{euclid}{
+  \includecomment{euclidproof}  
+  \excludecomment{bezoutproof}
+}{
+  \excludecomment{euclidproof} 
+  \includecomment{bezoutproof}
+}
+
 \frontmatter
 \begin{document}    
 \vspace*{\fill}
@@ -427,7 +440,7 @@ Thus $b=\pm a$ and~$a=\pm b$.
 \end{ans}
 \end{ex}
 
-\begin{ex}
+\begin{ex} \notetext{Linearity} \label{ex:DividesAndLinearCombinations}
 Suppose that $a,b,c\in\Z$.
 \begin{exes}
 \item Prove that if $a\divides b$ then $a\divides bc$ for all integers~$c$.
@@ -1148,196 +1161,341 @@ is the smallest natural number that is a multiple of each.
 \end{ex}
 
 % ========== Start Euclid's argument of lemma =========== 
-% \begin{ex}
-% For each pair $a,b$ compute $\gcd(a,b)$, $\lcm(a,b)$, $ab$, and
-% $\gcd(a,b)\cdot\lcm(a,b)$.
-% \begin{exes}
-% % \item $a=6$, $b=15$
-% \item $a=18$, $b=35$  
-% \item $a=20$, $b=-14$
-% \end{exes}
-% \begin{ans}
-% \begin{exes}
-% % \item $\gcd(a,b)=3$, $\lcm(a,b)=30$, $ab=90$, $\gcd(a,b)\cdot\lcm(a,b)=90$
-% \item $\gcd(a,b)=1$, $\lcm(a,b)=630$, $ab=630$, $\gcd(a,b)\cdot\lcm(a,b)=630$
-% \item $\gcd(a,b)=2$, $\lcm(a,b)=140$, $ab=-280$, $\gcd(a,b)\cdot\lcm(a,b)=280$
-% \end{exes}
-% \end{ans}
-% \end{ex}
+\begin{euclidproof}
+\begin{ex}
+For each pair $a,b$ compute $\gcd(a,b)$, $\lcm(a,b)$, $ab$, and
+$\gcd(a,b)\cdot\lcm(a,b)$.
+\begin{exes}
+% \item $a=6$, $b=15$
+\item $a=18$, $b=35$  
+\item $a=20$, $b=-14$
+\end{exes}
+\begin{ans}
+\begin{exes}
+% \item $\gcd(a,b)=3$, $\lcm(a,b)=30$, $ab=90$, $\gcd(a,b)\cdot\lcm(a,b)=90$
+\item $\gcd(a,b)=1$, $\lcm(a,b)=630$, $ab=630$, $\gcd(a,b)\cdot\lcm(a,b)=630$
+\item $\gcd(a,b)=2$, $\lcm(a,b)=140$, $ab=-280$, $\gcd(a,b)\cdot\lcm(a,b)=280$
+\end{exes}
+\end{ans}
+\end{ex}
 
-% \begin{ex} Let $a$ and~$b$ be integers.
-% \begin{exes}
-% \item Prove that any common multiple of two nonzero
-%    numbers is divisible by their 
-%   least common multiple.
-%   \hint apply the Division-Remainder theorem with the divisor $\lcm(a,b)$.
-% \item Prove that the product of two nonzero numbers is divisible by their 
-%   least common multiple.
-% \item Let $d$ be defined by 
-%   $ab=\lcm(a,b)\cdot d$, except that if either $a$ or~$b$ is zero
-%   then $d=\max\set{\absval{a},\absval{b}}$.
-%   Prove that any common divisor of $a$ and~$b$ also divides~$d$.
-% \item Prove that $\gcd(a,b)\leq\absval{d}$.
-% \item Prove that $\absval{d}=\gcd(a,b)$. 
-% \item Prove that any common divisor of two numbers also divides their
-%   greatest common divisor.
-% \item Prove that $\lcm(a,b)\cdot\gcd(a,b)=\absval{ab}$. 
-% \end{exes}  
-% \begin{ans}  %% TODO check the zero and negative cases.
-% \begin{exes}
-% \item Let $\ell=\lcm(a,b)$ and suppose that $m$ is a common multiple
-%   of the two numbers.
+\begin{ex} Let $a$ and~$b$ be integers.
+\begin{exes}
+\item Prove that any common multiple of two nonzero
+   numbers is divisible by their 
+  least common multiple.
+  \hint apply the Division-Remainder theorem with the divisor $\lcm(a,b)$.
+\item Prove that the product of two nonzero numbers is divisible by their 
+  least common multiple.
+\item Let $d$ be defined by 
+  $ab=\lcm(a,b)\cdot d$, except that if either $a$ or~$b$ is zero
+  then $d=\max\set{\absval{a},\absval{b}}$.
+  Prove that any common divisor of $a$ and~$b$ also divides~$d$.
+\item Prove that $\gcd(a,b)\leq\absval{d}$.
+\item Prove that $\absval{d}=\gcd(a,b)$. 
+\item Prove that any common divisor of two numbers also divides their
+  greatest common divisor.
+\item Prove that $\lcm(a,b)\cdot\gcd(a,b)=\absval{ab}$. 
+\end{exes}  
+\begin{ans}  %% TODO check the zero and negative cases.
+\begin{exes}
+\item Let $\ell=\lcm(a,b)$ and suppose that $m$ is a common multiple
+  of the two numbers.
 
-%   Dividing $m$ by~$\ell$ gives 
-%   $m=\ell\cdot q+r$ with $0\leq r< \ell$.
-%   In $r=m-\ell q$ 
-%   each term on the right is a multiple
-%   of both $a$ and~$b$ and so 
-%   $r$ is a common multiple of $a$ and~$b$.
-%   Because the remainder $r$ is less than the least common multiple~$\ell$,
-%   we conclude that $r=0$ and so $\ell\divides m$.
-% \item The product $ab$ is a common multiple of the two.
-%   Apply the prior item.
-% \item If $a=0$ and~$b=0$ then $d=0$, and any number divides~$0$.
-%   If one of $a$ and~$b$ is zero and one is not then without loss of generality
-%   we can take $a=0$, $b\neq 0$.
-%   Since all numbers divide~$0$ the condition that a number~$c$ 
-%   is a common divisor of $a$ and~$b$
-%   becomes just that $c$ divides~$b$.
-%   So in this case we must show that any divisor of $b$ divides the 
-%   absolute value of~$b$, which we know to be true by the divisibility 
-%   properties~\ref{ex:DivisibilityProperties}.
+  Dividing $m$ by~$\ell$ gives 
+  $m=\ell\cdot q+r$ with $0\leq r< \ell$.
+  In $r=m-\ell q$ 
+  each term on the right is a multiple
+  of both $a$ and~$b$ and so 
+  $r$ is a common multiple of $a$ and~$b$.
+  Because the remainder $r$ is less than the least common multiple~$\ell$,
+  we conclude that $r=0$ and so $\ell\divides m$.
+\item The product $ab$ is a common multiple of the two.
+  Apply the prior item.
+\item If $a=0$ and~$b=0$ then $d=0$, and any number divides~$0$.
+  If one of $a$ and~$b$ is zero and one is not then without loss of generality
+  we can take $a=0$, $b\neq 0$.
+  Since all numbers divide~$0$ the condition that a number~$c$ 
+  is a common divisor of $a$ and~$b$
+  becomes just that $c$ divides~$b$.
+  So in this case we must show that any divisor of $b$ divides the 
+  absolute value of~$b$, which we know to be true by the divisibility 
+  properties~\ref{ex:DivisibilityProperties}.
 
-%   The remaining case is that both numbers are nonzero.
-%   First note that in this case,
-%   by the previous item, the least common multiple of $a,b\in\Z$ divides
-%   the product~$ab$.
-%   So $d$ is an integer for all pairs $a,b$ of nonzero numbers
-%   and we can sensibly apply the definition of `divides' to
-%   $a$ and~$d$, and to $b$ and~$d$.
+  The remaining case is that both numbers are nonzero.
+  First note that in this case,
+  by the previous item, the least common multiple of $a,b\in\Z$ divides
+  the product~$ab$.
+  So $d$ is an integer for all pairs $a,b$ of nonzero numbers
+  and we can sensibly apply the definition of `divides' to
+  $a$ and~$d$, and to $b$ and~$d$.
   
-%   Let~$c$ be a common divisor so that $a=c\cdot k_a$ and $b=c\cdot k_b$.
-%   The number $ck_ak_b$ is a common multiple of $a$ and~$b$. 
-%   By the first item it is divisible by the least common multiple  
-%   $\ell\divides ck_ak_b$.
-%   Multiplication by $cd$ gives $\ell\cdot cd\divides ck_ak_b\cdot cd$.
-%   Regroup to $(\ell c)d\divides (ck_a)(ck_b)d$, which is
-%   $ab\cdot c\divides ab\cdot d$, and therefore by cancellation $c\divides d$,
-%   as desired.
-% \item The number~$d$ is zero only if both $a$ and~$b$ are
-%   zero.
-%   In this case the equation is true: $\gcd(0,0)=0\leq d=0$.
+  Let~$c$ be a common divisor so that $a=c\cdot k_a$ and $b=c\cdot k_b$.
+  The number $ck_ak_b$ is a common multiple of $a$ and~$b$. 
+  By the first item it is divisible by the least common multiple  
+  $\ell\divides ck_ak_b$.
+  Multiplication by $cd$ gives $\ell\cdot cd\divides ck_ak_b\cdot cd$.
+  Regroup to $(\ell c)d\divides (ck_a)(ck_b)d$, which is
+  $ab\cdot c\divides ab\cdot d$, and therefore by cancellation $c\divides d$,
+  as desired.
+\item The number~$d$ is zero only if both $a$ and~$b$ are
+  zero.
+  In this case the equation is true: $\gcd(0,0)=0\leq d=0$.
 
-%   In the $d\neq 0$ case we can apply the 
-%   Divisibility property~\ref{ex:DivisibilityProperties} that the
-%   largest divisor of a nonzero number is the absolute value of that number.
-%   By the prior item, any common divisor of $a$ and~$b$ will divide~$d$.
-%   One such common divisor is $\gcd(a,b)$.
-%   Thus $\gcd(a,b)\leq\absval{d}$.
-% \item
-%   After the previous item, we need only show that $\gcd(a,b)\geq\absval{d}$. 
-%   Because $\ell=\lcm(a,b)$ is a common multiple of the two, 
-%   both $\ell/a$ and~$\ell/b$ are integers. 
-%   Rewriting the equation~$ab=\ell d$ to 
-%   $a=(\ell/b)\cdot d$ shows that~$d$ is a divisor of~$a$, and similarly
-%   it is a divisor of~$b$.
-%   Thus $d$ is a common divisor and so $\absval{d}\leq \gcd(a,b)$.
-% \item This is immediate from the prior items.
-% \item This is immediate from the prior items.
-% \end{exes}
-% \end{ans}
-% \end{ex}
+  In the $d\neq 0$ case we can apply the 
+  Divisibility property~\ref{ex:DivisibilityProperties} that the
+  largest divisor of a nonzero number is the absolute value of that number.
+  By the prior item, any common divisor of $a$ and~$b$ will divide~$d$.
+  One such common divisor is $\gcd(a,b)$.
+  Thus $\gcd(a,b)\leq\absval{d}$.
+\item
+  After the previous item, we need only show that $\gcd(a,b)\geq\absval{d}$. 
+  Because $\ell=\lcm(a,b)$ is a common multiple of the two, 
+  both $\ell/a$ and~$\ell/b$ are integers. 
+  Rewriting the equation~$ab=\ell d$ to 
+  $a=(\ell/b)\cdot d$ shows that~$d$ is a divisor of~$a$, and similarly
+  it is a divisor of~$b$.
+  Thus $d$ is a common divisor and so $\absval{d}\leq \gcd(a,b)$.
+\item This is immediate from the prior items.
+\item This is immediate from the prior items.
+\end{exes}
+\end{ans}
+\end{ex}
 
-% \begin{ex}  
-% \begin{exes} 
-% \item 
-%   Prove that
-%   dividing by the greatest common divisor leaves no common divisors:
-%   $a/\gcd(a,b)$ and $b/\gcd(a,b)$ are relatively prime.
-% \item \notetext{Euclid's Lemma}
-%   If $a$ and~$b$ are relatively prime then $a\divides bc$ implies that 
-%   $a\divides c$.
-% \end{exes}
-% \begin{ans}
-% \begin{exes}
-% \item
-%   Let $\gcd(a,b)$ be~$d$ and suppose that $\gcd(a/d,\,b/d)=c$.
-%   Then $c\cdot k_a=a/d$ and~$c\cdot k_b=b/d$ for some numbers $k_a, k_b\in\Z$.
-%   Thus $cd\cdot k_a=a$ and $cd\cdot k_b=b$ and so $cd$ is a common divisor
-%   of $a$ and~$b$. 
-%   But $d$ is the greatest of the common divisors and so $c=1$, 
-%   or else $cd$ would be a common divisor
-%   that is larger than the greatest common divisor.    
-% \item
-%   Since $a\divides bc$ we know that $a$ is nonzero.
-%   If $b=0$ then because $\gcd(a,b)=1$ we have that $\absval{a}=1$ 
-%   and therefore $a\divides c$.
+\begin{ex}  
+\begin{exes} 
+\item 
+  Prove that
+  dividing by the greatest common divisor leaves no common divisors:
+  $a/\gcd(a,b)$ and $b/\gcd(a,b)$ are relatively prime.
+\item \notetext{Euclid's Lemma}
+  If $a$ and~$b$ are relatively prime then $a\divides bc$ implies that 
+  $a\divides c$.
+\end{exes}
+\begin{ans}
+\begin{exes}
+\item
+  Let $\gcd(a,b)$ be~$d$ and suppose that $\gcd(a/d,\,b/d)=c$.
+  Then $c\cdot k_a=a/d$ and~$c\cdot k_b=b/d$ for some numbers $k_a, k_b\in\Z$.
+  Thus $cd\cdot k_a=a$ and $cd\cdot k_b=b$ and so $cd$ is a common divisor
+  of $a$ and~$b$. 
+  But $d$ is the greatest of the common divisors and so $c=1$, 
+  or else $cd$ would be a common divisor
+  that is larger than the greatest common divisor.    
+\item
+  Since $a\divides bc$ we know that $a$ is nonzero.
+  If $b=0$ then because $\gcd(a,b)=1$ we have that $\absval{a}=1$ 
+  and therefore $a\divides c$.
 
-%   In the $b\neq 0$ case, the assumption that $\gcd(a,b)=1$ 
-%   along with the equation $\absval{ab}=\gcd(a,b)\cdot\lcm(a,b)$ implies that 
-%   $\lcm(a,b)=\absval{ab}$.
-%   Because $a\divides bc$, the product $bc$ is a common 
-%   multiple of $a$ and~$b$ and so it is divisible by the least common multiple
-%   $\lcm(a,b)\divides bc$, giving that $ab\divides bc$.  
-%   Cancellation then gives that $a\divides c$. 
-% \end{exes}
-% \end{ans}
-% \end{ex}
+  In the $b\neq 0$ case, the assumption that $\gcd(a,b)=1$ 
+  along with the equation $\absval{ab}=\gcd(a,b)\cdot\lcm(a,b)$ implies that 
+  $\lcm(a,b)=\absval{ab}$.
+  Because $a\divides bc$, the product $bc$ is a common 
+  multiple of $a$ and~$b$ and so it is divisible by the least common multiple
+  $\lcm(a,b)\divides bc$, giving that $ab\divides bc$.  
+  Cancellation then gives that $a\divides c$. 
+\end{exes}
+\end{ans}
+\end{ex}
 % ========== End Euclid's argument of lemma =========== 
-
+\end{euclidproof}
 % ========== Start Bezout argument of lemma =========== 
+\begin{bezoutproof}
 % TODO check answers
 \begin{ex}\notetext{Euclid's algorithm}
 Prove that if $a=bq+r$ then $\gcd(a,b)=\gcd(b,r)$.  
+\begin{ans}
+Because $a=bq+r$ any common divisor of $b$ and~$r$ also divides~$a$, 
+by Linearity~\ref{ex:DividesAndLinearCombinations}.
+Rewrite the equation as $r=a-bq$ and then for the same reason any
+common divisor of $a$ and~$b$ also divides~$r$.
+So the pairs $b,r$ and $a,b$ have the same common divisors, and
+therefore the same greatest common divisor.
+\end{ans}
 \end{ex}
 
-The algorithm for which this result is named finds the greatest common
-divisor.  For instance, to find $\gcd(803,154)$ compute that
-$803=154\cdot 5+33$ and apply the result to get that 
+The algorithm associated with this result finds the greatest common
+divisor for any $a,b\in\Z$ with $b\neq 0$.  
+For instance, to find $\gcd(803,154)$ divide the larger by
+the smaller $803=154\cdot 5+33$ and then the above result shows that  
 $\gcd(803,154)=\gcd(154,33)$.
-Now since $154=33\cdot 4+22$ the result gives
+Next, since $154=33\cdot 4+22$ the above result gives
 $\gcd(154,33)=\gcd(33,22)$.
 By eye we spot the answer of $11$ but continuing as though we hadn't noticed
 we get $33=22\cdot 1+11$, so $\gcd(33,22)=\gcd(22,11)$.
-Then $22=11\cdot 2+0$ tells us that $\gcd(22,11)=11$, and the algorithm 
-terminates.
+Finally, $22=11\cdot 2+0$ gives that 
+$\gcd(22,11)=11$, so the algorithm terminates with $\gcd(803,154)=11$.
 
-\begin{ex}
-Use Euclid's Algorithm.
-\begin{exes}
-\item $\gcd(15,25)$
-\item $\gcd(48,732)$  
-\end{exes}
-\end{ex}
-
-We can perform Euclid's algorithm in reverse.
-For instance, from $33=22\cdot 1+11$ we can rewrite to 
-express the greatest common divisor $11$ as a combination 
+We can reverse this calculation.
+From $33=22\cdot 1+11$ we can  
+express the greatest common divisor~$11$ as a combination 
 $11=1\cdot 33-1\cdot 22$.
-The equation $154=33\cdot 4+22$ gives a way to express
-the $11$ as a combination of the prior pair
-$11=1\cdot 33-1\cdot (154-4\cdot 33)=-1\cdot 154+5\cdot 33$.
+Next, 
+the equation $154=33\cdot 4+22$ lets us express
+the $11$ as a combination 
+$11=1\cdot 33-1\cdot (154-4\cdot 33)=-1\cdot 154+5\cdot 33$
+of the pair $154,33$.
 Backing up still further, the equation 
 $803=154\cdot 5+33$
-gives $11=-1\cdot 154+5\cdot (803-5\cdot 154)=5\cdot 803-26\cdot 154$
-as a combination of the pair of numbers that started the
-Euclid's algorithm example.
+gives $11=-1\cdot 154+5\cdot (803-5\cdot 154)=5\cdot 803-26\cdot 154$, so 
+we can express the greatest common divisor as a combination of the pair
+$803,154$ of numbers that began the Euclid's algorithm example.
+
 
 \begin{df}
 A number $c$ is a \definend{linear combination} of two others $a$ and~$b$
 if it has the form $c=a\cdot m+b\cdot n$ for some $m,n\in\Z$.  
 \end{df}
 
-\begin{ex}\notetext{B\'ezout's Lemma}
+\begin{ex}
+Use Euclid's Algorithm to find the greatest common divisor of the two.
+Use that calculation to express the greatest common divisor as a 
+linear combination of the two.
 \begin{exes}
-\item Any common divisor of $a$ and~$b$ is a divisor of 
-any linear combination of the two.
+\item $15$, $25$
+\item $48$,$732$  
+\end{exes}
+\begin{ans}
+\begin{exes}
+\item To get the greatest common divisor the first step is
+  $25=15\cdot 1+10$ followed by $15=10\cdot 1+5$ and finally
+  $10=5\cdot 2+0$ shows that $\gcd(25,15)=5$.
+
+  Reversing those starts with $5=1\cdot 15-1\cdot 10$.
+  Use the equation $25=15\cdot 1+10$ to substitute 
+  $5=1\cdot 15-1\cdot(1\cdot 25-1\cdot 15)=-1\cdot 25+2\cdot 15$.
+  This expresses $\gcd(25,15)=5$ as a linear combination of
+  $25$ and~$15$.
+\item Start by dividing the larger by the smaller
+  $732=48\cdot 15+12$.
+  The next step is $48=12\cdot 4+0$, so $\gcd(732,48)=12$.
+
+  Reversing is trivial:
+  $12=1\cdot 732-12\cdot 48$.
+\end{exes}
+\end{ans}
+\end{ex}
+
+\begin{ex}\notetext{B\'ezout's Lemma}  Prove.  \label{ex:Bezout}
+\begin{exes}
+\item Euclid's algorithm terminates.
 \item The greatest common divisors of two numbers is a linear combination of 
-those two.
+the two.
 \item The greatest common divisor of two numbers is the smallest positive
 number that is a linear combination of the two.
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item Since $\gcd(a,b)=\gcd(\pm a, \pm b)$ we can restrict to $a\geq 0$
+  and $b>0$.
+  Write $a$ as~$a_0$ and~$b$ as~$b_0$.
+  The first step of the algorithm divides the larger number by the smaller; 
+  without loss of generality we have $a_0=b_0\cdot q_0+r_0$ with 
+  $0\leq r_0< b_0$.
+  If the remainder~$r$ is not zero, which would mean the algorithm 
+  terminated,
+  then we next have $b_0=r_0\cdot q_1+r_1$ with $0\leq r_1< r_0$.
+  Therefore $0\leq r_1<r_0<b$.
+
+  In this way the remainders $r_i$ form a sequence of positive numbers that
+  are falling.
+  Such a sequence must be finite so that for some~$i$ 
+  an~$r_i$ is zero and the algorithm terminates.
+\item The above calculation reversing Euclid's algorithm proves by
+  construction that the greatest common divisor can be expressed 
+  a combination of the two.
+\item   The $a=b=0$ case is separate.
+  Here $\gcd(a,b)=0$ by definition and for any $s$ and $t$ we
+  have $0=\gcd(a,b)=s\cdot a+t\cdot b=s\cdot 0+t\cdot 0$.
+
+  The other case is that one number or the other is nonzero.
+  Consider the set of linear combinations 
+  $\mathcal{L}=\setbuilder{sa+tb}{s,t\in\Z}$.
+  It has a positive element since not all its elements are~$0$
+  (one of $a$ or~$b$ is nonzero and taking $1$ times that element
+  plus zero times the other gives a nonzero member), and if it has a 
+  negative element then negating the coefficients $s$ and~$t$ gives 
+  a positive element.
+  Any set of positive integers has a least positive element.
+  Call that element~$d\in\mathcal{L}$.
+
+  For any combination $sa+tb$, because the greatest common divisor
+  $\gcd(a,b)$ goes into both $a$ and~$b$ it also divides $sa+tb$  
+  (from Linearity~\ref{ex:DividesAndLinearCombinations})
+  Therefore $\gcd(a,b)\leq d$.
+
+  The prior item shows $d\leq\gcd(a,b)$ and so the two are equal. 
+
+  % Let the two numbers be $a,b\in\Z$; we want to show that there are
+  % $s,t\in\Z$ so that $\gcd(a,b)=s\cdot a+t\cdot b$.
+
+  % The $a=b=0$ case is separate.
+  % In this case $\gcd(a,b)=0$ by definition and for any $s$ and $t$ we
+  % have $0=\gcd(a,b)=s\cdot a+t\cdot b=s\cdot 0+t\cdot 0$.
+
+  % The other case is that either number is nonzero.
+  % Consider the set of linear combinations 
+  % $\mathcal{L}=\setbuilder{sa+tb}{s,t\in\Z}$.
+  % It has a positive element since not all its elements are~$0$
+  % (one of $a$ or~$b$ is nonzero and taking $1$ times that element
+  % plus zero times the other gives a nonzero member), and if it has a 
+  % negative element then negating the coefficients $s$ and~$t$ gives 
+  % a positive element.
+  % Any set of positive integers has a least positive element.
+  % Call that element~$d\in\mathcal{L}$.
+  % We will show that $d=\gcd(a,b)$.
+
+  % By the first item any divisor common to $a$ and $b$ also divides 
+  % a combination of the two, so $\gcd(a,b)\divides d=sa+bt$, and therefore
+  % $\gcd(a,b)\leq d$.
+
+  % For the inequality in the other direction, 
+  % we will show that $d$ is a common divisor.
+  % To show that $d\divides a$ write $a=dq+r$ with $0\leq r<d$ and
+  % substitute: $r=a-dq=a-(sa+tb)\cdot q=(1-s)\cdot a-t\cdot b$.
+  % Because~$d$ is the minimal positive combination, and becasue $r<d$,
+  % this implies that the remainder~$r$ is zero and so $d\divides a$.
+  % In the same way $d\divides b$.
+  % As a common divisor, $d\leq\gcd(a,b)$.
+\end{exes}
+\end{ans}
 \end{ex}
+
+\begin{ex}
+Let $a,b\in\Z$ and $m\in\N$. 
+Prove each.
+\begin{exes}
+\item $\gcd(ma,mb)=m\cdot\gcd(a,b)$
+\item If $d$ is a common divosor of $a$ and~$b$ then 
+  $\gcd(a/d,\,b/d)=\gcd(a,b)/d$.
+  This implies that 
+  dividing by the greatest common divisor leaves no common divisors:
+  if $a$ and~$b$ are nonzero then $a/gcd(a,b)$ and $b/\gcd(a,b)$
+  are relatively prime.
+\item \notetext{Euclid's Lemma}
+  If $a$ and~$b$ are relatively prime then $a\divides bc$ implies that 
+  $a\divides c$.
+\end{exes}
+\begin{ans}
+\begin{exes}
+\item If both $a$ and~$b$ are zero then the equation is trivial.
+  If one or both numbers are nonzero then by 
+  B\'ezout's Lemma~\ref{ex:Bezout}, $\gcd(ma,mb)$ is the least
+  positive value of $\setbuilder{s\cdot ma+t\cdot mb}{s,t\in\Z}$.
+  This equals $m$ times the least positive member of 
+  $\setbuilder{sa+tb}{s,t\in\Z}$, 
+  which is $m\cdot\gcd(a,b)$.
+\item This is immediate from the prior item on taking $m$ to be~$d$, 
+  and also taking $a$ to be~$a/d$ and $b$ to be~$b/d$.     
+\item Since $a$ and~$b$ are relatively prime we have $\gcd(a,b)=1$
+  and the first item gives that $\gcd(ca,cb)=c$.
+  Thus $c=s\cdot ac+t\cdot bc$ for some $s,t\in\Z$, and
+  because $a\divides ac$ and~$a\divides bc$ we have by Linearity that
+  $a\divides c$.
+\end{exes}
+\end{ans}
+\end{ex}
+
 
 
 % \begin{ex}\pord.
@@ -1353,6 +1511,7 @@ number that is a linear combination of the two.
 % \end{ans}
 % \end{ex}
 % ========== End Bezout argument of lemma =========== 
+\end{bezoutproof}
 
 
 
