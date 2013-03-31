@@ -1262,13 +1262,13 @@ $\gcd(a,b)\cdot\lcm(a,b)$.
 \end{ans}
 \end{ex}
 
-\begin{ex}  
+\begin{ex}  \label{ex:EuclidsLemma}
 \begin{exes} 
 \item 
   Prove that
   dividing by the greatest common divisor leaves no common divisors:
   $a/\gcd(a,b)$ and $b/\gcd(a,b)$ are relatively prime.
-\item \notetext{Euclid's Lemma}
+\item \notetext{Euclid's Lemma}  
   If $a$ and~$b$ are relatively prime then $a\divides bc$ implies that 
   $a\divides c$.
 \end{exes}
@@ -1461,7 +1461,7 @@ number that is a linear combination of the two.
 \end{ans}
 \end{ex}
 
-\begin{ex}
+\begin{ex}  \label{ex:EuclidsLemma}
 Let $a,b\in\Z$ and $m\in\N$. 
 Prove each.
 \begin{exes}
@@ -1472,7 +1472,7 @@ Prove each.
   dividing by the greatest common divisor leaves no common divisors:
   if $a$ and~$b$ are nonzero then $a/gcd(a,b)$ and $b/\gcd(a,b)$
   are relatively prime.
-\item \notetext{Euclid's Lemma}
+\item \notetext{Euclid's Lemma}  
   If $a$ and~$b$ are relatively prime then $a\divides bc$ implies that 
   $a\divides c$.
 \end{exes}
@@ -1495,23 +1495,8 @@ Prove each.
 \end{exes}
 \end{ans}
 \end{ex}
-
-
-
-% \begin{ex}\pord.
-% \begin{exes}
-% \item $\gcd(ca,cb)=c\cdot\gcd(a,b)$
-% \item $\gcd(a+b,c)=\gcd(a,c)+\gcd(b,c)$
-% \item $\gcd(ab,c)=\gcd(a,c)\cdot\gcd(b,c)$    
-% \end{exes}
-% \begin{ans}
-% \begin{exes}
-% \item     
-% \end{exes}
-% \end{ans}
-% \end{ex}
-% ========== End Bezout argument of lemma =========== 
 \end{bezoutproof}
+% ========== End Bezout argument of lemma =========== 
 
 
 
@@ -1528,7 +1513,7 @@ Prove each.
 \begin{df}
 An integer greater than~$1$
 is \definend{prime} if its only divisors are~$1$ and itself.
-Otherwise it is \definend{composite}.  
+A number greater than~$1$ that is not prime is~\definend{composite}.  
 \end{df}
 
 \begin{ex} Prove.
@@ -1601,16 +1586,31 @@ list of primes is impossible.
 \end{ans}
 \end{ex}
 
-\begin{ex} Suppose that $p$ is a prime.  Prove each.
+\begin{ex} Suppose that $p$ is a prime.  Prove each.\label{ex:EuclidsOtherLemma}
 \begin{exes}
 \item If  $p\divides ab$ then either $p\divides a$ or
 $p\divides b$.
-\item If $p\divides a_1\cdot a_2\cdots a_n$ then 
+\item If $p\divides a_0\cdot a_1\cdots a_{n-1}$ then 
 $p$ divides at least one~$a_i$.    
 \end{exes}
 \begin{ans}
 \begin{exes}
-\item     
+\item Let $d=\gcd(p,a)$.
+  Then $d$ is a positive number such that $d\divides p$ and~$d\divides a$.
+  Because $p$ is prime, either $d=p$ or~$d=1$.
+  If $d=p$ then $p\divides a$.
+  If $d=1$ then Euclid's Lemma~\ref{ex:EuclidsLemma} shows that 
+  $p\divides b$.
+\item We prove this by induction on the size of the product.
+  The base step is $n=1$, that there are two numbers in the product.
+  This is proved in the prior item.
+
+  For the inductive step assume that the statement is true for $n=1$, \ldots,
+  $n=k$ and suppose that $n=k+1$, that $p\divides a_0\cdots a_{k-1}a_k$.
+  Taking $a_0\cdots a_{k-1}$ as~$a$ and $a_k$ as~$b$, the prior item applies
+  to show that $p\divides a_0\cdots a_{k-1}$ or~$p\divides a_k$.
+  In the latter case we are done while in the former case the
+  inductive hypothesis applies to show that $p$ divides one of the factors.
 \end{exes}
 \end{ans}
 \end{ex}
@@ -1624,10 +1624,12 @@ $p$ divides at least one~$a_i$.
 \item Any number $n>1$ can be written as a product of one or more primes
 $n=p_1^{e_1}p_2^{e_2}\cdots p_k^{e_k}$.
 \item That factorization is essentially unique:~if 
-$n=p_1^{e_1}p_2^{e_2}\cdots p_k^{e_k}$ and we write the primes
+$n=p_1^{e_1}p_2^{e_2}\cdots p_k^{e_k}$ and the primes
 in ascending order $p_1<p_2<\cdots<p_k$ then any other
 factorization of~$n$ into a product of primes in ascending order will give the
-same result.      
+same result. 
+\hint suppose that there are two factorizations into primes $n=p_0\cdots p_{s-1}$
+and $n=q_0\cdots q_{t-1}$ in ascending order and use induction on~$s$.     
 \end{exes}
 \begin{ans}
 \begin{exes}
@@ -1641,15 +1643,48 @@ Because these two are smaller
 the inductive hypothesis applies, so each is a product of 
 primes.
 Then $k+1=ab$ can be written as a product of primes.
-\item
-   
+\item Assume that $n=p_0\cdots p_{s-1}$ with $s\geq 1$ and
+$p_0\leq\cdots \leq p_{s-1}$, 
+and also that $n=q_0\cdots q_{t-1}$ with $t\geq 1$ 
+and $q_0\leq\cdots \leq q_{t-1}$.
+We will show that $s=t$ and that $p_i=q_i$ for each $i$.
+
+We use induction on~$s$.
+The base step is~$s=1$ so that $n=p_0$ is prime.
+Now $p_0=q_0\cdots q_{t-1}$ and this is a nontrivial factorization of a prime
+unless $t=1$.
+
+For the inductive step assume that the factorization is unique for
+$s=1$, \ldots\,, $s=k$ and consider the $s=k+1$ case, with
+$n=p_0\cdots p_{s-1}\cdot p_s$.   
+Assume that there is another prime factorization $n=q_0\cdots q_{t-1}$
+for $t\geq 1$ and $q_0\leq\cdots \leq q_{t-1}$.
+
+We first show that $p_s$ equals some $q_i$.
+Because $p_s\divides n$ we have $p_s\divides q_0\cdots q_{t-1}$ and so
+by the above result~\ref{ex:EuclidsOtherLemma} shows that
+$p_s$ divides some $q_i$.
+Because $q_i$ is prime this shows that $p_s$ equals~$q_i$,
+since primes don't have any divisors other than~$1$ and themselves.
+
+To finish, cancel the primes.
+That is, consider 
+$n/p_s=p_0\cdots p_{s-1}=q_0\cdots q_{i-1}\cdot q_{i+1}\cdots q_{t-1}$.
+There remains at least one prime on the right (by the assumption that $s=k+1$),
+so the inductive hypothesis applies. 
+Therefore
+the ascending sequence of $q$'s without~$q_i$ 
+equals the ascending sequence of $p$'s without~$p_s$,
+both in length and in members. 
+Obviously then the entire sequence of $q$'s equals the entire sequence of
+$p$'s, again in length and in individual members. 
 \end{exes}
 \end{ans}
 \end{ex}
 
-\noindent\remark
-the definition of prime excludes~$1$ so that factorization is unique, 
-since we otherwise could just add more $1$'s.
+\noindent\remark had we included~$1$ among the primes then 
+factorization would not be unique 
+since to any existing factorization we could add more $1$'s.
 
 \begin{ex} \pord
 % From: http://gowers.wordpress.com/2011/11/13/why-isnt-the-fundamental-theorem-of-arithmetic-obvious/
@@ -1674,8 +1709,9 @@ since we otherwise could just add more $1$'s.
 
 \begin{ex}
 Suppose that two numbers have prime factorizations 
-of $a=p_1^{e_1}\cdots p_n^{e_n}$
-and $b=p_1^{f_1}\cdots p_n^{f_m}$.
+of $a=p_0^{e_0}\cdots p_{n-1}^{e_{n-1}}$
+and $b=p_0^{f_0}\cdots p_{n-1}^{f_{n-1}}$
+(to use the same primes, we allow that some of the exponents are zero).
 Prove each.
 \begin{exes}
 \item
@@ -1684,16 +1720,48 @@ Prove each.
 \item In the prime factorization of $\lcm(a,b)$ the exponent of 
   $p_i$ is $\max(e_i,f_i)$.
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item Let $d=\gcd(a,b)$.
+  Note that if $p$ is a prime that divides~$a$ and~$b$ then
+  by \ref{ex:EuclidsOtherLemma} above, $p$ must be one of the 
+  $p_0$, \ldots\,, $p_{n-1}$.   
+  So let the prime factorization of~$d$ be $p_0^{g_0}\cdots p_n^{g_n}$. 
+  If $g_i=\min(e_i,f_i)$ for each~$i$ then $d$~divides both $a$ and~$b$.
+  If $g_i>\min(e_i,f_i)$ then, supposing without loss of generality
+  that the smaller of $e_i$ and~$f_i$ is $e_i$, writing
+  $d\cdot k=a$ gives $p_0^{g_0}\cdots p_i^{g_i}\cdots p_{n-1}^{g_{n-1}}\cdot k$
+  equal to $p_0^{e_0}\cdots p_i^{e_i}\cdots p_{n-1}^{e_{n-1}}$, and 
+  cancelling the most factors of~$p_i$ possible (that is, cancelling $p_i^{e_i}$)
+  gives a contradiction because there is at least one factor
+  of $p_i$ on one side but no such factor on the other.
+\item  This argument is just like the prior item's.  
+\end{exes}
+\end{ans}
 \end{ex}
 
-\begin{ex} Prove.
+\begin{ex} \notetext{Existence of Irrational Numbers}
 \begin{exes}
 \item Prove that if a number is a square then in its prime factorization 
   each prime occurs an even number of times.
 \item Prove that $\sqrt{2}$ is irrational.
-\item Generalize the first item to any power.
-\item Generalize the second item.    
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item The square of $n=p_0^{e_0}\cdots p_{s-1}^{e_{s-1}}$ is
+  $n=p_0^{2e_0}\cdots p_{s-1}^{2e_{s-1}}$.
+\item Suppose that $\sqrt{2}=n/d$ for $n,d\in\Z$.
+  Clearing the fraction and squaring gives $2\cdot n^2=d^2$.
+  On the right, the prime factorization of~$d^2$ has $2$ raised to an even 
+  power.
+  On the left, the prime factorization of~$n^2$ has $2$ raised to an even power
+  also, but there is another factor of~$2$ on the right.
+  Thus the left has an odd number of factors of~$2$ while the right has
+  and even number of factors of~$2$.
+  This contradicts the uniqueness of factorizations, showing the 
+  original supposition to be false. 
+\end{exes}
+\end{ans}
 \end{ex}
 
 
