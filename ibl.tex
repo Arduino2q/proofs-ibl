@@ -1686,7 +1686,7 @@ $p$'s, again in length and in individual members.
 factorization would not be unique 
 since to any existing factorization we could add more $1$'s.
 
-\begin{ex} \pord
+\begin{ex} \pord.
 % From: http://gowers.wordpress.com/2011/11/13/why-isnt-the-fundamental-theorem-of-arithmetic-obvious/
 \begin{exes}
 \item $5\cdot 7\cdot 19\neq 3\cdot 11\cdot 17$
@@ -1771,6 +1771,8 @@ Prove each.
 
 
 
+
+
 %===================================================
 \chapter{Sets}
 \begin{df}
@@ -1798,13 +1800,25 @@ either as $\set{2, 3, 5, 7}$ or as~$\set{p<10\suchthat \text{$p$ is prime}}$.
 \item $\set{1,3,5}=\set{5,3,1}$    
 \item $\set{2, 4, 6}=\set{2, 4, 6, 4}$    
 \item $\set{1, 3}=\set{n\in\N\suchthat n<5}$ 
-\item $0\in\Z^+$   
+\item $0\in\set{1,2,\set{0}}$   
 % \item $4\in\set{n\in\N\suchthat n^2<50}$
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item These two sets are equal because they contain the same elements, $1$, $3$, and~$5$.
+\item These two sets are equal because they contain the same elements, $2$, $4$, and~$6$.
+\item These sets are not equal because the set on the left contains~$2$
+  while the set on the right does not.
+\item This is false because the set on the right has three elements, 
+  and by inspection none of the three is the number~$0$;
+  in particular, $\set{0}$ is not equal to~$0$.
+% \item This is true because $4^2$ is less than $50$.    
+\end{exes}
+\end{ans}
 \end{ex}
 
 \begin{df}
-The set with no elements is the \definend{empty set\/} $\emptyset$.  
+The set with no elements is the \definend{empty set} $\emptyset$.  
 \end{df}
 
 \begin{df}
@@ -1820,10 +1834,27 @@ It is denoted $B\subseteq A$.
 \item $\set{1, 3, 5}\in\set{1, 3, 5, 7, 9}$   
 \item $\set{1,3,5}\subseteq\setbuilder{n\in\N}{\text{$n$ is prime}}$
 \item $\emptyset\subseteq\set{1, 2, 3, 4}$
-\item $\N\subseteq\Z$
+% \item $\N\subseteq\Z$
 \item $\set{2}\in\set{1, \set{2}, 3}$
 \item $\set{2}\subseteq\set{1, \set{2}, 3}$
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item This is true because, by inspection, each of the elements of the set
+  on the left, $1$, $3$, and~$5$, is an element of the set on the right.
+\item The set $\set{1,3,5}$ is not an element of the set on the right.
+  All elements of the set on the right are numbers.
+\item This is not true since~$1$ is an element of the set on the left
+  but not of the set on the right.
+\item This is true since $x\in\emptyset$ implies that $x\in\set{1, 2, 3, 4}$. 
+  (The implication is vacuous.)
+% \item This is true since every natural number is an integer.
+\item This is true since $\set{2}$ is the second element listed as a
+  member of the set on the right.
+\item This is not true since $2$ is an element of the set on the left but
+  not an element of the set on the right.
+\end{exes}
+\end{ans}
 \end{ex}
 
 \begin{ex} Prove for all sets $A$.
@@ -1831,15 +1862,40 @@ It is denoted $B\subseteq A$.
 \item $A\subseteq A$ and $\emptyset\subseteq A$
 \item The empty set is unique: if $A$ is empty and $B$ is empty then $A=B$.
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item For the first, let $x$ be an element of the set on the left, $A$.
+  Then $x$ is an element of the set on the right, $A$, obviously.
+
+  For the second, observe that the implication 
+  `if $x\in\emptyset$ then $x\in A$' is true 
+  because any implication with a false first clause is true
+  (that is, it is vacuously true).
+\item If $A=\emptyset$ and~$B=\emptyset$ then $A=B$ because they have the
+  same elements: the statement `$x\in A$ if and only if~$x\in B$' holds   
+  for all $x$.
+\end{exes}
+\end{ans}
 \end{ex}
 
-\begin{ex}
+\begin{ex} Prove, for $A$, $B$, and~$C$ sets.
 \begin{exes} 
 \item \notetext{Mutual inclusion}
-  Prove that if $A\subseteq B$ and $B\subseteq A$ then $A=B$.  
+  If $A\subseteq B$ and $B\subseteq A$ then $A=B$.  
 \item \notetext{Transitivity}
-  Prove that if $A\subseteq B$ and~$B\subseteq C$ then~$A\subseteq C$.  
+  If $A\subseteq B$ and~$B\subseteq C$ then~$A\subseteq C$.  
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item Since $A\subseteq B$, any element of~$A$ is also an element of~$B$.
+   Since $B\subseteq A$, any element of~$B$ is also an element of~$A$.
+   Thus they contain the same elements.
+\item Consider $x\in A$.
+   Because $A\subseteq B$ we have that~$x\in B$ and with that, because
+   $B\subseteq C$ we have that $x\in C$.
+   So $x\in A$ implies that $x\in C$, and therefore~$A\subseteq C$.
+\end{exes}
+\end{ans}
 \end{ex}
 
 \begin{ex} For each, give example sets or show that no example is possible.
@@ -1848,6 +1904,13 @@ It is denoted $B\subseteq A$.
 \item $A\not\subseteq B$, $B\not\subseteq C$, $A\subseteq C$
 \item $A\not\subseteq B$ $B\subseteq C$, $A\subseteq C$    
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item $A=\set{0}$, $B=\set{0,1,2}$, $C=\set{0,1}$
+\item $A=\set{0}$, $B=\set{2}$, $C=\set{0,1}$
+\item $A=\set{0}$, $B=\set{1}$, $C=\set{0,1}$
+\end{exes}
+\end{ans}
 \end{ex}
 
 We will always work inside of a \definend{universal set}.
@@ -1855,6 +1918,7 @@ For instance, while we are doing number theory we may discuss
 the set of objects less than $100$,
 but in the context of that discussion the universal set is $\Z$ 
 so we are considering the set of integers less than $100$.
+
 
 \begin{df}
 The \definend{characteristic function} of a set~$A$ is a map
@@ -1865,15 +1929,28 @@ $\charfcn{A}(x)=1$ for $x\in A$, and $\charfcn{A}(x)=0$ for $x\notin A$.
 \begin{ex} \notetext{Russell's paradox}
 The definition that we gave of sets allows them to contain anything, so 
 consider a set that contains all sets.
-It contains itself.
-So consider the set of all sets that contain themselves, and  
-the set of all sets that don't contain themselves.
+It has itself as an element.
+So consider the set of all sets that have themselves as elements, and  
+the set of all sets that don't.
 Call the latter~$D$.
 \begin{exes}
 \item Show that assuming $D$ contains itself leads to a contradiction.
 \item Show that assuming $D$ does not contain itself also leads to a
 contradiction.  
 \end{exes}
+\begin{ans}
+Let $D$ be the set of all sets~$S$ that do not contain themselves
+$D=\setbuilder{S}{S\notin S}$.
+\begin{exes}
+\item If~$D$ were to have itself as an element 
+  then it wouldn't satisfy the condition
+  $S\notin S$, so $D$ would not be in the collection 
+  $\setbuilder{\text{set~$S$}}{S\notin S}$.
+  That is, in this case $D\notin D$, a contradiction. 
+\item If $D$ does not have itself for an element then it satisfies the
+  condition $S\notin S$, so $D\in D$, a contradiction.
+\end{exes}
+\end{ans}
 \end{ex}
 
 
@@ -1899,7 +1976,22 @@ worrying about picking up unwanted objects such as $\pi$.
 
 \begin{ex}
 Prove that the complement of the complement is the original set
-  $\setcomp{\setcomp{A}}=A$. 
+$\setcomp{\setcomp{A}}=A$. 
+\begin{ans}
+  We will show mutual inclusion, that $A\subseteq\setcomp{\setcomp{A}}$
+  and that $\setcomp{\setcomp{A}}\subseteq A$.
+
+  For the first inclusion suppose that $a\in A$.
+  Then by definition of the complement, $a\notin\setcomp{A}$.
+  The last statement implies that $a\in\setcomp{\setcomp{A}}$.
+  Thus  $A\subseteq\setcomp{\setcomp{A}}$.
+
+  Inclusion in the other direction is similar.
+  Suppose that $x\in\setcomp{\setcomp{A}}$.
+  Then $x\notin\setcomp{A}$.
+  By definition of the complement then $x\in\setcomp{A}$.
+  Thus $\setcomp{\setcomp{A}}\subseteq A$. 
+\end{ans}
 \end{ex}
 
 \begin{df}
@@ -1917,6 +2009,33 @@ Give the formula relating $\charfcn{A}$ and $\charfcn{B}$ to
   $\charfcn{A\intersection B}$.
 Do the same for union.
 Do the same for complementation.
+\begin{ans}
+  The formula relating $\charfcn{A}$ and $\charfcn{B}$ to
+  $\charfcn{A\intersection B}$ is 
+  $\charfcn{A\intersection B}=\charfcn{A}\cdot\charfcn{B}$.
+  To verify this formula there are two cases: $x\in A\intersection B$ 
+  and~$x\notin A\intersection B$.
+  If $x\in A\intersection B$ then $x\in A$ and $x\in B$, so 
+  $\charfcn{A}(x)=\charfcn{B}(x)=1$ and the product is correct.
+  If $x\notin A\intersection B$ then either $x\notin A$ or~$x\notin B$,
+  so at least one of $\charfcn{A}(x)$ or~$\charfcn{B}(x)$ is zero, 
+  and here also the product is correct.
+
+  For the union the formula is    
+  $\charfcn{A\union B}=\charfcn{A}+\charfcn{B}-\charfcn{A\intersection B}$.
+  To verify the formula we can check four cases:
+  (i)~$x\in A$ and~$x\notin B$, 
+  (ii)~$x\notin A$ and~$x\in B$, 
+  (iii)~$x\in A\intersection B$, 
+  and (iv)~$x\notin A$ and~$x\notin B$.
+  Verification of the formula in these cases is as in the prior paragraph.
+
+  The complement formula is    
+  $\charfcn{\setcomp{A}}=1-\charfcn{A}$.
+  There are two cases to verify: 
+  $x\in A$ and~$x\notin A$.
+  These cases are straightforward.
+\end{ans}
 \end{ex}
 
 Picture set operations with \definend{Venn diagrams}.
@@ -1934,7 +2053,7 @@ On the left the part in mauve shows
 the union as containing all of the two sets joined, 
 the middle shows the intersection
 containing only the region common to both,
-and on the right the mauve region is all but the set.
+and on the right the mauve region, the complement, is all but the set~$A$.
 
 \begin{df}
 The \definend{difference} of two sets is $A-B=\setbuilder{x\in A}{x\notin B}$.  
@@ -1942,39 +2061,169 @@ The \definend{symmetric difference} is
 $A\symdiff B=(A-B)\union(B-A)$.
 \end{df}
 
+\noindent If $A\subseteq X$ then $X-A$ is the same as $\setcomp{A}$ where
+$X$ is the universal set.     
+
 \begin{ex}
 Draw the Venn diagram for difference and symmetric difference.  
+\begin{ans}
+These are the Venn diagrams for diffeence and symmetric difference.
+\begin{center}
+  \grf{asy/venn_diff.pdf}{$A- B$}
+  \hspace*{3em}
+  \grf{asy/venn_symdiff.pdf}{$A\symdiff B$}
+\end{center}  
+\end{ans}
 \end{ex}
 
 \begin{ex} \pord.
 \begin{exes}
-\item If $A\subseteq X$ then $X-A$ is the same as $\setcomp{A}$ where
-$X$ is the universal set.     
 \item $A-B\subseteq A$
 \item $A-B=A\intersection\setcomp{B}$
 \item For all pairs of sets, $A-B=B-A$.
 \item For all pairs of sets, $A\symdiff B=B\symdiff A$.
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item  This is true.
+  If $x\in A-B$
+  then by the definition of set difference $x\in A$ (but $x\notin B$).
+  This implication is the requirement for $A\subseteq B$.
+\item We will show the sets are equal by mutual inclusion.
+
+  For the left-to-right inclusion $A-B\subseteq A\intersection \setcomp{B}$
+  suppose that $x\in A-B$.
+  Then by the definition of set difference both $x\in A$ and $x\notin B$ hold.
+  Therefore $x$ is an element of the intersection 
+  $x\in A\intersection\setcomp{B}$.
+  
+  For the $A\intersection\setcomp{B}\subseteq A-B$ inclusion suppose that
+  $x\in A\intersection\setcomp{B}$.
+  Then $x\in A$ and $x\in\setcomp{B}$, so $x\notin B$.
+  By the definition of set difference then, $x\in A-B$.
+\item This is false.
+  One example is $A=\set{0,1}$ and~$B=\set{1,2}$.
+  Then $A-B=\set{0}$ while~$B-A=\set{2}$.
+\item We will prove that the two are equal.
+  One way is that 
+  $A\symdiff B=\setbuilder{x}{\text{$x\in A-B$ and $x\in B-A$}}
+              =\setbuilder{x}{\text{$x\in B-A$ and $x\in A-B$}}
+              =B\symdiff A$.
+\end{exes}
+\end{ans}
 \end{ex}
 
-\begin{ex}\notetext{DeMorgan's Laws}
+\begin{ex}\notetext{DeMorgan's Laws}  Prove.
 \begin{exes}
-\item $A\union\emptyset=A$ and $A\intersection\emptyset=\emptyset$
-\item \notetext{Idempotence} $A\union A=A$ and $A\intersection A=A$  
+\item $A\intersection\emptyset=\emptyset$ and $A\union\emptyset=A$  
+\item \notetext{Idempotence} $A\intersection A=A$ and $A\union A=A$    
 \item $A\intersection B\subseteq A\subseteq A\union B$  
 \item \notetext{Commutativity}
-   $A\union B=B\union A$ and $A\intersection B=B\intersection A$
+   $A\intersection B=B\intersection A$ and
+   $A\union B=B\union A$ 
 \item \notetext{Associativity} 
-  $(A\union B)\union C=A\union (B\union C)$
-  and $(A\intersection B)\intersection C=A\intersection (B\intersection C)$
+  $(A\intersection B)\intersection C=A\intersection (B\intersection C)$
+  and
+  $(A\union B)\union C=A\union (B\union C)$ 
 \item 
-  $\setcomp{A\union B}=\setcomp{A}\intersection\setcomp{B}$
-  and 
   $\setcomp{A\intersection B}=\setcomp{A}\union\setcomp{B}$
+  and
+  $\setcomp{A\union B}=\setcomp{A}\intersection\setcomp{B}$ 
 \item \notetext{Distributivity} 
 $A\union (B\intersection C)=(A\union B)\intersection (A\union C)$
  and $A\intersection (B\union C)=(A\intersection B)\union (A\intersection C)$
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item 
+  The first equality follows from: $x\in A\intersection\emptyset$
+  iff $x\in A$ and~$x\in\emptyset$, 
+  which, because an `and' statement holds if and only if both halves hold
+  and the second clause never holds,
+  is equivalent to $x\in\emptyset$. 
+
+  For the second equality, 
+  $x\in A\union\emptyset$ iff $x\in A$ or~$x\in\emptyset$,
+  which is equivalent to $x\in A$.
+\item We have that $x\in A\intersection A$ if and only if
+  both $x\in A$ and~$x\in A$, 
+  which is true if and only if $x\in A$.
+\item For the first containment $A\intersection B\subseteq A$ observe that 
+  $x\in A\intersection B$ implies that
+  $x\in A$ and $x\in B$, so in particular $x\in A$.
+  Thus $A\intersection B\subseteq A$.
+
+  The second containment is just as trivial:
+  $x\in A$ implies that $x\in A$ or~$x\in B$, and so $A\subseteq A\union B$.
+\item First we do $A\intersection B=B\intersection A$.
+  By the definition of intersection,  
+  $A\intersection A=\setbuilder{x}{\text{$x\in A$ and $x\in B$}}
+    =\setbuilder{x}{\text{$x\in B$ and $x\in A$}}=B\intersection A$.
+  (The middle equality holds by the commutativity of `and'.)
+
+  Equality for union is similar since like `and', the logical connective
+  `or' is also commutative.
+\item Each of these is a consequence of the observation that the 
+  logical connective used in the definition is associative.
+
+  For intersection,
+  $(A\intersection B)\intersection C=
+    \setbuilder{x}{\text{$x\in A\intersection B$ and $x\in C$}}
+    =
+    \setbuilder{x}{\text{($x\in A$ and $x\in B$) and $x\in C$}}
+    =
+    \setbuilder{x}{\text{$x\in A$ and ($x\in B$ and $x\in C$)}}
+   =
+    \setbuilder{x}{\text{$x\in A$ and $x\in B\intersection C$}}
+   =
+   A\intersection (B\intersection C)$
+   (the second equality holds because `and' is associative).
+   Union is similar.
+\item (These two are a consequence of the fact that logical negation
+  satisfies that `not($P$ and $Q$)' has the same truth value as
+  `not($P$) or not($Q$)'.)
+
+  We show  $\setcomp{A\intersection B}=\setcomp{A}\union\setcomp{B}$
+  by mutual containment.
+  Suppose first that $x\in \setcomp{A\intersection B}$ so that
+  $x\notin A\intersection B$.
+  Then $x\notin A$ or $x\notin B$.
+  and so $x\in \setcomp{A}\union\setcomp{B}$.
+  Thus $\setcomp{A\intersection B}\subseteq\setcomp{A}\union\setcomp{B}$.
+
+  Now suppose that $x\in \setcomp{A}\union\setcomp{B}$.
+  Then $x\in\setcomp{A}$ or~$x\in\setcomp{B}$.
+  Restated, that is $x\notin A$ or $x\notin B$,
+  which gives that $x\notin A\intersection B$ and
+  so $x\in\setcomp{A\intersection B}$.
+  Thus $\setcomp{A}\union\setcomp{B}\subseteq\setcomp{A\intersection B}$.
+  
+  The other identity is similar.
+\item For $A\union (B\intersection C)=(A\union B)\intersection (A\union C)$
+  first suppose that $x\in A\union (B\intersection C)$.
+  Then $x\in A$ or $x\in B\intersection C$.
+  In the case that $x\in A$ we have both that $x\in A\union B$ and that
+  $x\in A\union C$.
+  In the case that $x\in B\intersection C$, so $x\in B$ and~$x\in C$, 
+  we have both that $x\in A\union B$ and that~$x\in A\union C$.
+  Since in either case $x\in (A\union B)\intersection (A\union C)$,
+  we know that 
+  $A\union (B\intersection C)\subseteq (A\union B)\intersection (A\union C)$.
+
+  Now suppose that $x\in (A\union B)\intersection (A\union C)$.
+  Then $x\in A\union B$ and also $x\in A\union C$.
+  There are two cases: either~$x\in A$ or $x\notin A$.
+  If $x\in A$ then $x\in A\union (B\intersection C)$.
+  If $x\notin A$ then because $x\in A\union B$ we know that $x\in B$
+  and because $x\in A\union C$ we know that $x\in C$.
+  So in this case also $x\in A\union (B\intersection C)$.
+  Thus 
+  $(A\union B)\intersection (A\union C)\subseteq A\union (B\intersection C)$.
+
+  Therefore, by mutual containment, the two sets are equal.
+  The other identity is similar.
+\end{exes}
+\end{ans}
 \end{ex}
 
 \begin{df}
@@ -1989,6 +2238,42 @@ $A\intersection B\intersection C$ is empty but the sets are
 not pairwise disjoint, that is, none of $A\intersection B$, 
 $A\intersection C$, or $B\intersection C$ is empty. 
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item The statement is true.
+  By definition $A\symdiff B=\setbuilder{x}{\text{$x\in A-B$ or $x\in B-A$}}$.
+  In the $x\in A-B$ case, $x\notin B$ and so $x\notin A\intersection B$.
+  The $x\in B-A$ case is similar.
+  Thus $(A\symdiff B)\intersection (A\intersection B)$ has no elements.
+\item One example is $A=\set{5,6}$, $B=\set{3,6}$, and 
+  $C=\set{3,5}$.
+
+  \remark
+  one way to make up such examples is to use this table.
+  \begin{center}
+    \begin{tabular}{ccc|c}
+      $x\in A$  &$x\in B$  &$x\in C$  &row number \\ \hline
+         $0$    &$0$       &$0$       &$0$    \\
+         $0$    &$0$       &$1$       &$1$    \\
+         $0$    &$1$       &$0$       &$2$    \\
+         $0$    &$1$       &$1$       &$3$    \\[.5ex]
+         $1$    &$0$       &$0$       &$4$    \\
+         $1$    &$0$       &$1$       &$5$    \\
+         $1$    &$1$       &$0$       &$6$    \\
+         $1$    &$1$       &$1$       &$7$    
+    \end{tabular}
+  \end{center}
+  On the left it has $0$ or~$1$ to indicate `true' or `false'.
+  It uses the bits $0$ or~$1$ so that each row on the left makes a 
+  binary number, and on the 
+  right is the decimal expression of that number.
+  In this case we want a number to fall in $A\intersection C$ so put
+  $5$ into~$A$ and~$C$.
+  We want a number in $A\intersection B$ so put~$6$ in each.
+  We want a number in $B\intersection C$ so put~$3$ in each.
+  (Carefully avoid putting~$7$ in all three.)
+\end{exes}
+\end{ans}
 \end{ex}
 
 \begin{df}
@@ -2062,7 +2347,12 @@ $x_0=y_0$, $x_1=y_1$, \ldots, $x_{n-1}=y_{n-1}$.
 \item $\sequence{3, 4,4,5}=\sequence{3,4,5}$  
 \end{exes}
 \begin{ans}
- Test Test Test.
+\begin{exes}
+\item
+\item
+\item
+\item    
+\end{exes}
 \end{ans}
 \end{ex}
 
