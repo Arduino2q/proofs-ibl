@@ -1857,7 +1857,8 @@ It is denoted $B\subseteq A$.
 \end{ans}
 \end{ex}
 
-\begin{ex} Prove for all sets $A$.
+\begin{ex} \label{ex:EmptySetUnique}
+Prove for all sets $A$. 
 \begin{exes}
 \item $A\subseteq A$ and $\emptyset\subseteq A$
 \item The empty set is unique: if $A$ is empty and $B$ is empty then $A=B$.
@@ -1878,7 +1879,8 @@ It is denoted $B\subseteq A$.
 \end{ans}
 \end{ex}
 
-\begin{ex} Prove, for $A$, $B$, and~$C$ sets.
+\begin{ex} \notetext{Properties of subset} \label{ex:PropertiesOfSubset}
+Prove, for $A$, $B$, and~$C$ sets.
 \begin{exes} 
 \item \notetext{Mutual inclusion}
   If $A\subseteq B$ and $B\subseteq A$ then $A=B$.  
@@ -2290,13 +2292,27 @@ subsets of~$A$.
 \end{df}
 
 \begin{ex} List 
- $\powerset(\set{a,b})$,   
- $\powerset(\set{a,b,c})$,   
- $\powerset(\set{a})$, and   
- $\powerset(\emptyset)$.   
+  $\powerset(\set{a,b})$,   
+  $\powerset(\set{a,b,c})$,   
+  $\powerset(\set{a})$, and   
+  $\powerset(\emptyset)$.
+  Find the order of each.   
+\begin{ans}
+The power set
+$\powerset(\set{a,b})=\set{\emptyset, \set{a}, \set{b}, \set{a,b}}$
+of the two-element set has four elements.
+The power set 
+$\powerset(\set{a,b,c})=\set{\emptyset,\set{a},\set{b},\set{c},
+                             \set{a,b},\set{b,c},\set{a,c},\set{a,b,c}}$
+of the three-element set has eight elements.
+The power set of the singleton $\set{a}$ has two elements
+$\powerset(\set{a})=\set{\emptyset,\set{a}}$.
+The power set of the empty set has one element
+$\powerset(\emptyset)=\set{\emptyset}$.   
+\end{ans}
 \end{ex}
 
-\begin{ex}  Let $A=\set{\emptyset,\set{\emptyset}}$. \pord.
+\begin{ex}  Let $S=\set{\emptyset,\set{\emptyset}}$. \pord.
 \begin{exes}
 \item $\emptyset\in\powerset(A)$    
 \item $\emptyset\subseteq\powerset(A)$    
@@ -2305,18 +2321,85 @@ subsets of~$A$.
 \item $\set{\set{\emptyset}}\in\powerset(A)$    
 \item $\set{\set{\emptyset}}\subseteq\powerset(A)$    
 \end{exes}
+\begin{ans}
+The power set of a two-element set $\set{a,b}$ is 
+$\powerset(\set{a,b})=\set{\emptyset,\set{a},\set{b},\set{a,b}}$.
+Taking $\emptyset$ for~$a$ and $\set{\emptyset}$ for~$b$ we have
+$\powerset(S)=\set{\emptyset, \set{\emptyset}, \set{\set{\emptyset}}, 
+                   \set{\emptyset, \set{\emptyset}}}$.
+\begin{exes}
+\item This is true by inspection, the empty set is the first element
+  of $\powerset(S)$ listed.
+\item This is true by the earlier result~\ref{ex:EmptySetUnique}
+  that the empty set is a subset of all sets.
+\item Again, by inspection, one of the elements of $\powerset(S)$ is 
+  $\set{\emptyset}$.  (It is listed second.)
+\item This is true.
+  To verify that one set is a subset of another we can check that for all
+  elements~$x$ of that one, $x$ is also an element of the other.
+  In this case the subset~$\set{\emptyset}$ has only one element to check,
+  and the first item above checks that it is an element of~$\powerset(S)$.
+\item This is true by inspection, since it is the element that is listed
+  third.
+\item To verify that $\set{\set{\emptyset}}$ is a subset of~$\powerset(S)$
+  we can check that each of its elements are elements of the power set.
+  It has only one element, namely~$\set{\emptyset}$.
+  That is indeed one of the elements of~$\powerset(S)$, as checked in 
+  an item above. 
+\end{exes}
+\end{ans}
 \end{ex}
 
 \begin{ex} \pord:
 if $A\subseteq B$ then $\powerset(A)\subseteq\powerset(B)$.  
+% \item $\powerset(A)=\powerset(B)$ iff $A=B$  
+\begin{ans}
+This is true.
+Let $A\subseteq B$ and consider $x\in\powerset(A)$.
+Then~$x$ is a subset of~$A$.
+Any subset of~$A$ is a subset of~$B$ by 
+the Transitivity property of~\ref{ex:PropertiesOfSubset},
+so $x$ is a subset of~$B$.
+Therefore $\powerset(A)\subseteq\powerset(B)$.
+\end{ans}
 \end{ex}
 
-\begin{ex} Prove.
-\begin{exes}
-% \item $\powerset(A)\subseteq \powerset(B)$ iff $A\subseteq B$  
-\item $\powerset(A)=\powerset(B)$ iff $A= B$  
-\item Where~$A$ is a finite set, $|\powerset(A)|=2^{|A|}$.    
-\end{exes}
+\begin{ex}
+Where~$A$ is a finite set, prove that $|\powerset(A)|=2^{|A|}$.    
+\begin{ans}
+We prove this by induction on the number of elements in~$A$.
+The base step is that~$A$ has zero-many elements.
+The power set of the empty set has
+one element $\powerset(\emptyset)=\set{\emptyset}$ and
+since $2^0=1$, the statement is true in this case. 
+
+For the inductive step suppose that the statement is true for the 
+$n=0$, \ldots\,, $n=k$ cases and consider a set
+with $k+1$~elements
+$A=\set{a_0, \ldots, a_{k-1},a_k}$.
+For each element~$S\in\powerset(A)$, that is, each subset~$S\subseteq A$,
+either $a_k\in S$ or $a_k\notin S$.
+The number of subsets in the first category is $2^{k-1}$ by the inductive
+hypothesis.
+Showing that 
+the second category also contains~$2^{k-1}$-many elements will finish the proof
+because then
+the total of the two categories is 
+$2^{k-1}+2^{k-1}=2\cdot(2^{k-1})=2^k$.
+
+We will show that the collection of subsets containing~$a_k$
+has the same number of elements as the collection of subsets that do not
+contain~$a_k$
+(as noted in the prior paragraph, the inductive hypothesis gives that
+the second collection has $2^{k-1}$-many elements).
+To prove that, with every subset~$S$ of $A$ that contains~$a_k$ we associate
+a subset $\hat{S}$ that does not contain~$a_k$,
+namely $\hat{S}=S-\set{a_k}$.
+Clearly for each such~$S$ there is one and only one such~$\hat{S}$.
+So, the two collections\Dash the set of subsets of $A$ containing~$a_k$
+and the set of subsets of~$A$ that do not contain~$a_k$\Dash match
+up element-by-element, and therefore have the same number of elements.
+\end{ans}
 \end{ex}
 
 
@@ -2327,27 +2410,88 @@ if $A\subseteq B$ then $\powerset(A)\subseteq\powerset(B)$.
 \section{Cartesian product}
 
 \begin{df}
-The \definend{sequence\/} 
-formed from $x_0$, $x_1$, \ldots, $x_{n-1}$ is written
-$\seq{x_0, x_1, \ldots, x_{n-1}}$.
+The \definend{sequence\/} $\seq{x_0, x_1, \ldots, x_{n-1}}$
+formed from the \definend{elements} 
+(or \definend{terms}) $x_0$, $x_1$, \ldots, $x_{n-1}$ 
+is an ordered list of objects.
 The \definend{length} of a sequence $\lh(\seq{x_0, x_1, \ldots, x_{n-1}})$
-is the number of entries.
+is the number of elements~$n$.
 Two sequences $\seq{x_0, x_1, \ldots, x_{n-1}}$ and
-$\seq{y_0, y_1, \ldots, y_{n-1}}$ are equal if and only if
+$\seq{y_0, y_1, \ldots, y_{m-1}}$ are equal if and only if
 they have the same length and
-the same members in the same order:
+the same elements, in the same order:
+$n=m$ and
 $x_0=y_0$, $x_1=y_1$, \ldots, $x_{n-1}=y_{n-1}$. 
 \end{df}
 
 \begin{ex}\pord.
 \begin{exes}
-\item $\set{3, 4, 5}=\set{4, 3, 5}$
-\item $\sequence{3, 4, 5}=\sequence{4, 3, 5}$
 \item $\set{3, 4, 4, 5}=\set{4, 3, 5}$
-\item $\sequence{3, 4,4,5}=\sequence{3,4,5}$  
+\item $\sequence{3, 4, 5}=\sequence{4, 3, 5}$
+\item $\sequence{3, 4, 4, 5}=\sequence{3,4,5}$  
 \end{exes}
 \begin{ans}
 \begin{exes}
+\item These two sets contain the same elements, $3$, $4$, and~$5$,
+  and so are equal.
+\item These sequences are not equal because they differ in the first element.
+\item These sequences are not equal because they have different lengths.
+  (In addition, they differ in their third elements.)
+\end{exes}
+\end{ans}
+\end{ex}
+
+\begin{df}
+For sets $A_0$, $A_1$, \ldots, $A_{n-1}$
+the \definend{Cartesian product} 
+is the set of all length~$n$ sequences
+$A_0\times A_1\times \cdots \times A_{n-1}
+  =\setbuilder{\sequence{a_0,a_1,\ldots,a_{n-1}}}{\text{$a_0\in A_0$, \ldots, and~$a_{n-1}\in A_{n-1}$}}$.
+If the sets are the same we often write $A\times\cdots\times A$ 
+as~$A^n$.
+\end{df}
+
+A sequence of length~$2$ may be called an \definend{ordered pair} and 
+written with parentheses $(x_0,x_1)$
+(similarly we have ordered triples, four-tuples, etc.).
+Thus, we write 
+Cartesian coordinates of points in the plane as members of
+$\R^2=\setbuilder{(x,y)}{x,y\in\R}$.
+
+\begin{ex}
+Prove that $\N^2\subseteq \Z^2$.
+Generalize. 
+\begin{ans}
+Any element of $\N^2$ is a sequence of length two $\sequence{a,b}$ where
+$a,b\in\N$.
+Since $\N\subseteq\Z$, that is a sequence of length two of elements of~$\Z$, 
+and so is an element of~$\Z^2$.
+
+The generalization is that $A\subseteq B$ implies that~$A^n=B^n$ for all 
+$n\in\N$.
+The argument is straightforward, just as in the prior paragraph,
+except for the~$n=0$ case.
+A length zero sequence~$\sequence{}$ is empty and so any two 
+length zero sequences are equal (they have the same length and do not 
+differ on any of their elements).
+Thus $A^0=B^0=\set{\sequence{}}$.
+\end{ans}
+\end{ex}
+
+\begin{ex}
+\begin{exes}
+\item $A\times \emptyset=\emptyset$.
+  What about $\emptyset\times A$?
+\item $A\times B=\emptyset$ iff $A=\emptyset$ or~$B=\emptyset$
+\item Show that there are sets so that $A\times B\neq B\times A$.
+  Under what circumstances is $A\times B=B\times A$?
+\item Is $(A\times B)\times C$ equal to $A\times (B\times C)$?
+\item Prove that $A\times B\subseteq A^\prime\times B^\prime$ if and only if
+  $A\subseteq A^\prime$ and $B\subseteq B^\prime$.
+\end{exes}
+\begin{ans}
+\begin{exes}
+\item 
 \item
 \item
 \item
@@ -2356,47 +2500,13 @@ $x_0=y_0$, $x_1=y_1$, \ldots, $x_{n-1}=y_{n-1}$.
 \end{ans}
 \end{ex}
 
-\begin{df}
-The \definend{Cartesian product} of the sets $A_0$, $A_1$, \ldots, $A_{n-1}$ 
-is the set of all length~$n$ sequences
-$A_0\times A_1\times \cdots \times A_{n-1}
-  =\setbuilder{\sequence{a_0,a_1,\ldots,a_{n-1}}}{\text{$a_0\in A_0$, \ldots, and~$a_{n-1}\in A_{n-1}$}}$.
-
-If the sets are the same then 
-a sequence of length~$2$ may be called an \definend{ordered pair} and 
-written with parentheses $(x_0,x_1)$
-(similarly we have ordered triples, four-tuples, etc.).
-In this case we often write $A\times\cdots\times A$ 
-as~$A^n$.
-\end{df}
-
-Thus, we write 
-Cartesian coordinates in the plane as members of
-$\R^2=\setbuilder{(x,y)}{x,y\in\R}$.
-
-\begin{ex}
-\pord:  $\N^2\subseteq \Z^2$.  
-\end{ex}
-
-\begin{ex}
-\begin{exes}
-\item $A\times \emptyset=\emptyset$.
-  What about $\emptyset\times A$?
-\item $A\times B=\emptyset$ iff $A=\emptyset$ or~$B=\emptyset$
-\item Prove that there are sets so that $A\times B\neq B\times A$.
-\item Under what circumstances is $A\times B=B\times A$?
-\item Is $(A\times B)\times C$ equal to $A\times (B\times C)$?
-\item Prove that $A\times B\subseteq A^\prime\times B^\prime$ if and only if
-  $A\subseteq A^\prime$ and $B\subseteq B^\prime$.
-\end{exes}
-\end{ex}
-
 \begin{ex} \notetext{Interaction between Cartesian product and 
 other set operations}
 \begin{exes}
-\item $(A\union B)\times C=(A\times C)\union(B\times C)$
+\item Prove that $(A\union B)\times C=(A\times C)\union(B\times C)$
 \item What happens for intersection?
-\item $(A\times B)\union (C\times D)\subseteq ()A\union C\times (B\union D)$
+\item Prove that 
+  $(A\times B)\union (C\times D)\subseteq ()A\union C\times (B\union D)$
 \item What happens for intersection?
 \item What happens for complement?
 \end{exes}
