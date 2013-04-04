@@ -1915,12 +1915,12 @@ Prove, for $A$, $B$, and~$C$ sets.
 \end{ans}
 \end{ex}
 
-We will always work inside of a \definend{universal set}.
+We will always work inside of a \definend{universal set}, 
+denoted $\universalset$.
 For instance, while we are doing number theory we may discuss 
 the set of objects less than $100$,
-but in the context of that discussion the universal set is $\Z$ 
+but in the context of that discussion the universal set is $\universalset=\Z$ 
 so we are considering the set of integers less than $100$.
-
 
 \begin{df}
 The \definend{characteristic function} of a set~$A$ is a map
@@ -1972,8 +1972,9 @@ set of objects that are not elements of~$A$.
 \noindent\remark
 Working inside of a universal set makes the complement
 operation sensible. 
-For instance, in discussing of number theory, where $A$ is the set of 
-objects that are less than~$100$, we can take the complement without 
+For instance, in discussing of number theory where
+$\universalset=\Z$, if $A$ is the set of 
+objects that are less than~$100$ then we can take the complement without 
 worrying about picking up unwanted objects such as $\pi$.
 
 \begin{ex}
@@ -2064,7 +2065,7 @@ $A\symdiff B=(A-B)\union(B-A)$.
 \end{df}
 
 \noindent If $A\subseteq X$ then $X-A$ is the same as $\setcomp{A}$ where
-$X$ is the universal set.     
+the universal set is~$X$.     
 
 \begin{ex}
 Draw the Venn diagram for difference and symmetric difference.  
@@ -2480,22 +2481,70 @@ Thus $A^0=B^0=\set{\sequence{}}$.
 
 \begin{ex}
 \begin{exes}
-\item $A\times \emptyset=\emptyset$.
-  What about $\emptyset\times A$?
-\item $A\times B=\emptyset$ iff $A=\emptyset$ or~$B=\emptyset$
+\item Prove that $A\times B=\emptyset$ iff $A=\emptyset$ or~$B=\emptyset$
 \item Show that there are sets so that $A\times B\neq B\times A$.
   Under what circumstances is $A\times B=B\times A$?
 \item Is $(A\times B)\times C$ equal to $A\times (B\times C)$?
-\item Prove that $A\times B\subseteq A^\prime\times B^\prime$ if and only if
+\item Show that this statement is false: 
+  $A\times B\subseteq A^\prime\times B^\prime$ if and only if
   $A\subseteq A^\prime$ and $B\subseteq B^\prime$.
+  Adjust it to make it true.
 \end{exes}
 \begin{ans}
 \begin{exes}
-\item 
-\item
-\item
-\item
-\item    
+\item If $A=\emptyset$ then $A\times B=\emptyset$ because there are no 
+  sequences with a first element drawn from $\emptyset$.
+  For the same reason, $A\times\emptyset=\emptyset$.
+ 
+  If neither set is empty then there exist some $a\in A$ and~$b\in B$, so 
+  $(a,b)\in A\times B$, and $A\times B$ is not empty.
+\item The two sets $A\times B$ and~$B\times A$ are not equal. 
+  For instance, if $A=\set{0}$ and~$B=\set{1}$ then 
+  $A\times B=\set{\sequence{0,1}}$
+  while
+  $B\times A=\set{\sequence{1,0}}$.
+
+  If $A\times B$ and $B\times A$ are the same set then either that set is empty 
+  and so either $A$ is empty or $B$ is empty,
+  or it is not.
+  If it is not empty then for each of its elements $\sequence{x,y}$,
+  we have both that $x\in A$ and that $x\in B$ (and similarly for~$y$).
+  Clearly in this case $A=B$.
+\item The two sets $(A\times B)\times C$ and~$A\times (B\times C)$ 
+  are not equal.
+  For instance, if $A=\set{a}$, $B=\set{b}$, and $C=\set{c}$ then 
+  $(A\times B)\times C=\set{\sequence{\sequence{a,b},c}}$
+  has a single element, a sequence with two elements, the first
+  of which is a sequence.
+  But while $A\times(B\times C)=\set{\sequence{a,\sequence{b,c}}}$ 
+  also has a single element that is a sequence with two elements, 
+  the first element here is not a sequence. 
+
+  \remark they are only equal if one of them is empty.
+\item The example 
+  $A=\emptyset$, $B=\set{1,2}$, $A^\prime=\set{a}$, $B^\prime=\set{1}$
+  shows that the statment is false since 
+  $A\times B=\emptyset\subseteq A^\prime\times B^\prime$ but 
+  $B\not\subseteq B^\prime$.
+
+  The adjusted statement is: for all nonempty sets,  
+  $A\times B\subseteq A^\prime\times B^\prime$ if and only if
+  $A\subseteq A^\prime$ and $B\subseteq B^\prime$.
+  We will prove the `if' and `only if' clauses separately.
+
+  For `only if' suppose that $A\subseteq A^\prime$ and~$B\subseteq B^\prime$.
+  Then any element of~$A\times B$ is a pair $\sequence{a,b}$. 
+  Because of the subset relationship, $a\in A^\prime$ and~$b\in B^\prime$
+  and so $\sequence{a,b}\in A^\prime\times B^\prime$.
+  Thus $A\times B\subseteq A^\prime\times B^\prime$.
+
+  Now assume that $A\not\subseteq A^\prime$ (the case 
+  of $B\not\subseteq B^\prime$ is similar) and that $a\in A$ 
+  but~$a\notin A^\prime$.
+  Because $B$ is not empty there is a~$b\in B$ and 
+  so~$\sequence{a,b}\in A\times B$.
+  But $\sequence{a,b}\notin A^\prime\times B^\prime$,\
+  and so $A\times B\neq A^\prime\times B^\prime$.   
 \end{exes}
 \end{ans}
 \end{ex}
@@ -2505,11 +2554,46 @@ other set operations}
 \begin{exes}
 \item Prove that $(A\union B)\times C=(A\times C)\union(B\times C)$
 \item What happens for intersection?
-\item Prove that 
-  $(A\times B)\union (C\times D)\subseteq ()A\union C\times (B\union D)$
-\item What happens for intersection?
-\item What happens for complement?
+\item Show that in general $\setcomp{A\times B}$ does not equal 
+  $\setcomp{A}\times\setcomp{B}$.
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item Assume first that $\sequence{x,c}\in (A\union B)\times C$.
+  Then $x\in A\union B$ and so either $x\in A$ or~$x\in B$.
+  If $x\in A$ then $\sequence{x,c}\in A\times C$, while 
+  if $x\in B$ then $\sequence{x,c}\in B\times C$, and so 
+  $\sequence{x,c}\in (A\times C)\union (B\times C)$.
+  Thus $(A\union B)\times C\subseteq (A\times C)\union (B\times C)$.
+  
+  To get containment in the other direction assume that 
+  $\sequence{x,c}\in (A\times C)\union (B\times C)$.
+  Then either $\sequence{x,c}\in A\times C$ or~$\sequence{x,c}\in B\times C$.
+  If $\sequence{x,c}\in A\times C$ then~$x\in A$ and so 
+  $\sequence{x,c}\in (A\union B)\times C$.
+  The  $\sequence{x,c}\in B\times C$ case is similar.
+  Thus $(A\times C)\union (B\times C)\subseteq (A\union B)\times C$. 
+\item We will prove that 
+  $(A\intersection B)\times C = (A\times C)\intersection (B\times C)$.
+  For contrast with the prior item
+  we will use a sequence of if and only if statements.
+
+  We have that $\sequence{x,c}\in (A\intersection B)\times C$
+  if and only if both
+  $x\in A\intersection B$ and~$c\in C$.
+  That holds if and only if both
+  $\sequence{x,c}\in A\times C$ and~$\sequence{x,c}\in B\times C$ are true,
+  which in turn is equivalent to
+  $\sequence{x,c}\in (A\times C)\intersection (B\times C)$.
+\item If the universal set is $\universalset=\Z$,
+  $A=\set{0}$, and $B=\set{1}$ then $A\times B=\set{\sequence{0,1}}$,
+  so $\setcomp{A\times B}=\Z^2-\set{\sequence{0,1}}$,
+  while $\setcomp{A}\times\setcomp{B}=(\Z-\set{0})\times(\Z-\set{1})$.
+  The two sets are not equal. 
+  For instance, $\sequence{0,2}\in \setcomp{A\times B}$
+  while $\sequence{0,2}\notin\setcomp{A}\times\setcomp{B}$.
+\end{exes}
+\end{ans}
 \end{ex}
 
 

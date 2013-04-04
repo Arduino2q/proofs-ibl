@@ -254,6 +254,7 @@ qed=\qedsymbol
 \DeclareMathOperator{\add}{add}
 \DeclareMathOperator{\mul}{mul}
 \newcommand*{\symdiff}{\mathbin{\triangle}}
+\newcommand{\universalset}{\Omega}
 \DeclareMathOperator{\range}{Ran}
 \DeclareMathOperator{\image}{Im}
 \newcommand{\hint}{\textit{Hint:} }
