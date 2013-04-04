@@ -2653,24 +2653,56 @@ with arrows that begin with a bar.
 \item $D=\N$, $C=\N$,
   $G=\set{(0,3), (1,4), (2,5)}$    
 \item $D=\set{0,1,2}$, $C=\set{3,4,5}$,
-  $G=\set{(0,3), (1,4), (0,5)}$    
+  $G=\set{(0,3), (1,4), (2,4), (0,5)}$    
 \item $D=\N$, $C=\N$,
   $G=\setbuilder{(d,c)\in D\times C}{c=d^2}$    
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item This is a function.
+  By inspection, for each pair $(x,y)\in G$ we have that
+  $x\in D$ and that~$y\in C$.
+  Also by inspection we have that for each $x\in D$ there is one and only 
+  one~$c\in C$ such that~$(x,y)\in G$.  
+\item This is a function; the fact that there is a value associated with 
+  two separate arguments is not an issue.
+  The proof is the same as for the prior item.   
+\item This is not a function. 
+  There is an element of the domain,
+  $2\in D$, with no associated value.
+  That is, there is no $c\in C$ such that $(2,c)\in G$. 
+\item  This is a function; the fact that the codomain contains many 
+  elements that are not associated with any argument in the domain is 
+  not an issue.
+  The verification is the same as for the first item.  
+\item This is not a function.
+  There is an element of the domain. $3\in D$, that is not associated with 
+  any value; that is, there is no $c\in C$ such that $(3,c)\in G$.   
+\item This is not a function because there is an element of the domain,
+  $0\in D$, that is associated with two different values.  
+\item This is a function. 
+  First, for each pair $(x,y)\in G$ we have that
+  $x\in D$ and that~$y\in C$.
+  Also, we have that for each $x\in D$ there is one and only 
+  one associated~$c\in C$, namely $c=d^2$.  
+\end{exes}
+\end{ans}
 \end{ex}
 
 \begin{ex}
 Let $D$ and $C$ be finite sets.
 How many maps are there from $D$ to $C$?
+\begin{ans}
+For each element of the domain, in making a function we have a choice 
+of associating it with any of $|C|$-many values.
+Thus the number of possible function is $|C|^{|D|}$.
+\end{ans}
 \end{ex}
 
-We often ignore the distinction between a function and its graph
-and just
-think of the function as the set of ordered pairs.
-(The graph is in the definition only 
-because the codomain cannot be recovered
-from the set of ordered pairs, so the function must be 
-given as a tuple.)
+We often ignore the distinction between a function and its graph.
+(The distinction is that the codomain is not determined
+by the set of ordered pairs so the function must be 
+defined as a triple.)
 
 A function may have multiple arguments; one example is 
 $(x,y)\mapsunder{f}x^2-2y^2$.
@@ -2687,7 +2719,18 @@ $\setbuilder{y\in C}{\text{there is a $x\in D$ such that $f(x)=y$}}$.
 \end{df}
 
 \begin{ex}
-Find the range of each function in \cref{FindFunctions}.  
+For each item in~\cref{FindFunctions}, if it is a function find the range.  
+\begin{ans}
+\begin{exes}
+\item The range is $\set{3,4,5}=C$.    
+\item The range is $\set{3,4}$.
+\item This is not a function.   
+\item The range is $\set{3}$.
+\item This is not a function.   
+\item This is not a function.   
+\item The range is the set of perfect squares $\setbuilder{a^2}{a\in\N}$.   
+\end{exes}
+\end{ans}
 \end{ex}
 
 \begin{df}
@@ -2704,12 +2747,23 @@ is the range of the function $\restrictionmap{f}{B}$.
 \end{df}
 
 \begin{ex}
-Find the image of each set under the usual real-valued function $f(x)=\tan(x)$.
+Find the image of each set under the real-valued function $f(x)=\tan(x)$.
 \begin{exes}
 \item $\leftclosed{\pi/4}{\pi/2}=\setbuilder{x\in\R}{\pi/4\leq x<\pi/2}$
 \item \set{-\pi/3}
 \item $\R^+$  
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item $f(\leftclosed{\pi/4}{\pi/2})=\leftclosed{1}{\infty}
+             =\setbuilder{x\in\R}{1\leq x<\infty}$ 
+\item $f(\set{\pi/3})=\set{\sqrt{3}}$
+\item The function $f(x)=\tan(x)$ isn't defined for all values in $\R^+$.
+  In particular, the function isn't defined for $x=\pi/4$.
+  Thus, $\restrictionmap{f}{\R^+}$ isn't defined, and so the
+  image isn't defined.
+\end{exes}
+\end{ans}
 \end{ex}
 
 \begin{df}
@@ -2736,24 +2790,14 @@ given by $x\mapsto x^2$.
 \end{ex}
 
 \begin{ex}
-Find the inverse image of each under the usual real-valued function $f(x)=\sin(x)$.
-\begin{exes}
-\item $\sqrt{3}/2$
-\item $2$
-\item $\closed{0}{2}=\setbuilder{x\in\R}{0\leq \sin(x)\leq 2}$
-\end{exes}
+Prove that $f^{-1}(A)$ is the union of the sets $f^{-1}(a)$ for all $a\in A$.
 \begin{ans}
-\begin{exes}
-\item $\set{\ldots,-10\pi/3,-5\pi/3,-4\pi/3,\pi/3,2\pi/3,7\pi/3,8\pi/3, \ldots}$
-\item $\emptyset$
-\item $\closed{0}{\pi}\union\closed{2\pi}{3\pi}\union\closed{-\pi}{-2\pi}\union\cdots$
-\end{exes}
+We have that, where $D$ is the domain, 
+$f^{-1}(A)=\setbuilder{d\in D}{f(d)\in A}$.
+Restated, this is $\setbuilder{d\in D}{\text{$f(d)=a$ for $a\in A$}}$.
+This is the union over all $a\in A$ of the 
+sets $S_a=\setbuilder{d\in D}{f(d)=a}$.  
 \end{ans}
-\end{ex}
-
-
-\begin{ex}
-Prove that $f^{-1}(A)$ is the union of the sets $f^{-1}(c)$ for all $c\in A$.
 \end{ex}
 
 
@@ -2820,18 +2864,48 @@ $\composed{g}{f}$ and $\composed{f}{g}$.
 % .....................................
 \section{Inverse}
 
-The definition of function specifies that for every argument there is 
+The definition of function specifies that for every argument from the
+domain there is 
 exactly one associated value.
+But that definition puts no such condition on the elements of the codomain.
 
 \begin{df}
 A function is \definend{one-to-one} (or an \definend{injection}) 
 if for each value there is at most
 one associated argument, that is, if $f(d_0)=f(d_1)$ implies that $d_0=d_1$
 for elements $d_0,d_1$ of the domain.
+
 A function is \definend{onto} (or a \definend{surjection}) 
 if for each value there is at least
 one associated argument, that is, if for each element $c$ of the codomain
 there exists an element $d$ of the domain such that $f(d)=c$.
+\end{df}
+
+\begin{ex} Let $\map{f}{\R}{\R}$ be $f(x)=3x+1$ and 
+  $\map{g}{\R}{\R}$ be $g(x)=x^2+1$.
+\begin{exes}
+\item Show that $f$ is one-to-one.
+\item Show that $f$ is onto.    
+\item Show that $g$ is not one-to-one, and also that it is not onto.
+\end{exes}
+\begin{ans}
+\begin{exes}
+\item Suppose that $f(x_0)=f(x_1)$ for $x_0,x_1\in\R$.
+  Then $3x_0+1=3x_1+1$.
+  Subtract the~$1$'s and divide by~$3$ to conclude that $x_0=x_1$.
+  Thus~$f$ is one-to-one. 
+\item Fix a member of the codomain~$c\in\R$.
+  Observe that $d=(c-1)/3$ is a member of the domain and that 
+  $f(d)=c$.
+  Thus $f$ is onto.
+\item The function~$g$ is not one-to-one because $g(2)=g(-2)$.
+  It is not onto because no element of the domain~$\R$ is mapped by~$g$
+  to the element $-1$ of the codomain.        
+\end{exes}
+\end{ans}
+\end{ex}
+
+\begin{df}
 A function that is both one-to-one and onto, so that for every value there
 is exactly one associated argument, is a 
 \definend{correspondence} (or \definend{bijection}, or \definend{permutation}).
