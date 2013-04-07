@@ -2918,6 +2918,10 @@ A function is \definend{onto} (or a \definend{surjection})
 if for each value there is at least
 one associated argument, that is, if for each element $c$ of the codomain
 there exists an element $d$ of the domain such that $f(d)=c$.
+
+A function that is both one-to-one and onto, so that for every value there
+is exactly one associated argument, is a 
+\definend{correspondence} (or \definend{bijection}, or \definend{permutation}).
 \end{df}
 
 \begin{ex} Let $\map{f}{\R}{\R}$ be $f(x)=3x+1$ and 
@@ -2944,45 +2948,104 @@ there exists an element $d$ of the domain such that $f(d)=c$.
 \end{ans}
 \end{ex}
 
-\begin{df}
-A function that is both one-to-one and onto, so that for every value there
-is exactly one associated argument, is a 
-\definend{correspondence} (or \definend{bijection}, or \definend{permutation}).
-\end{df}
-
-\begin{ex}
-If $D$ and~$C$ are finite sets and there is a correspondence~$\map{f}{D}{C}$
-then the two sets have the same number of elements.  
+\begin{ex} Proving these shows that, where $D$ and~$C$ are finite sets, 
+  if there is a correspondence~$\map{f}{D}{C}$
+  then the two sets have the same number of elements.
+\begin{exes}
+\item If $f$ is onto then $|C|\leq |D|$.
+\item If $f$ is one-to-one then $|C|\geq |D|$.
+\end{exes}
 \begin{ans}
-We will do induction on the numbe of elements in~$D$ to prove 
-that if there is a correspondence $\map{f}{D}{C}$ then
-$|C|=|D|$.
-In the $|D|=0$ base case, the correspondence is a trivial 
-(its graph is the empty set) and because this function is onto the
-set~$C$ must be empty also, with $|C|=0$.
+\begin{exes}
+\item Assume that $\map{f}{D}{C}$ is onto and
+  that the sets are finite.
+  We will prove the statement by induction on the number of elements in~$D$.
+  The base step is that~$D$ has no elements at all, so $D=\emptyset$.
+  The only function with an empty domain is the function whose graph is 
+  empty. 
+  Since this function is onto, the codomain~$C$ is also empty, 
+  and also has no elements.
+  So the statement holds in this case.
 
-For the inductive step assume that the statement is true for $|D|=0$, 
-\ldots, $|D|=k$ and consider the $|D|=k+1$~case.
-To get a set of size~$k$,
-put an element of~$D$ aside by picking some $d\in D$ and considering
-$\hat{D}=D-\set{d}$.
-Then the restriction 
-$\map{\restrictionmap{f}{\hat{D}}}{\hat{D}}{\range(\restrictionmap{f}{\hat{D}})}$
-is clearly onto.
-It is one-to-one because if 
-$\restrictionmap{f}{\hat{D}}(x_0)=\restrictionmap{f}{\hat{D}}(x_1)$
-then $f(x_0)=f(x_1)$ and so $x_0=x_1$.
+  For the inductive step assume that the statement is true when $|D|=0$, 
+  $|D|=1$, \ldots, $|D|=k$ and consider the~$|D|=k+1$ case.
+  Put an element of~$D$ aside by picking some $d\in D$ and considering 
+  $\hat{D}=D-\set{d}$ (because this is the $k+1$ case there is at least
+  one such element in~$D$).
+  The inductive hypothesis applies to $\hat{D}$ so the number of elements in
+  the range of the restriction map 
+  $\map{\restrictionmap{f}{\hat{D}}}{\hat{D}}{\range(\restrictionmap{f}{\hat{D}})}$
+  is less than or equal to the number of elements in the domain of that map
+  $|\range(\restrictionmap{f}{\hat{D}})|\leq |\hat{D}|$.
 
-So the inductive hypothesis applies and we have that 
-$\range(\restrictionmap{f}{\hat{D}})$ has $k$-many elements.
-Consider~$f(d)$.
-Because $f$ is one-to-one, $f(d)\notin\range(\restrictionmap{f}{\hat{D}})$
-and thus $\range(f)$ has one more element than 
-$\range(\restrictionmap{f}{\hat{D}})$.
-Because $f$ is onto, $\range(f)=N$.
-Thus $|C|=k+1=|D|$.
+  Now add the element~$d$ back by returning to considering~$D$ and the 
+  map~$\map{f}{D}{C}$.
+  The set~$D$ has one element more than the set~$\hat{D}$.
+  And $\range(f)=C$ is no more than one element larger than
+  $\range(\restrictionmap{f}{\hat{D}})$.
+  Thus $|C|\leq|D|$.
+\item Assume that $\map{f}{D}{C}$ is one-to-one and
+  that the sets are finite.
+  We will do induction on the number of elements in~$D$.
+  The base step is that~$|D|=0$.
+  The codomain cannot have fewer elements than this
+  so~$|C|\geq |D|$ holds in this case.
+
+  For the inductive step assume that the statement is true when $|D|=0$, 
+  \ldots, $|D|=k$ and consider~$|D|=k+1$.
+  Pick some $d\in D$ and consider 
+  $\hat{D}=D-\set{d}$ (because this is the $k+1$ case there is at least
+  one such element).
+  The inductive hypothesis applies to $\hat{D}$ so that 
+  the number of elements in the range of the restriction map 
+  $\map{\restrictionmap{f}{\hat{D}}}{\hat{D}}{\range(\restrictionmap{f}{\hat{D}})}$
+  is at least as great as the number of elements in the domain of that map
+  $|\range(\restrictionmap{f}{\hat{D}})|\geq |\hat{D}|$.
+
+  Now extend to~$D$ and the map~$\map{f}{D}{C}$.
+  The set~$D$ has one element more than the set~$\hat{D}$.
+  Because the map~$f$ is one-to-one, the value~$f(d)$ is not in 
+  the range of the restriction map~$\range(\restrictionmap{f}{\hat{D}})$.
+  Thus $\range(f)$ is one element larger than
+  $|\range(\restrictionmap{f}{\hat{D}})|$.
+  Therefore $|C|\geq|D|$.
+\end{exes}
 \end{ans}
 \end{ex}
+
+% \begin{ex}
+% If $D$ and~$C$ are finite sets and there is a correspondence~$\map{f}{D}{C}$
+% then the two sets have the same number of elements.  
+% \begin{ans}
+% We will do induction on the numbe of elements in~$D$ to prove 
+% that if there is a correspondence $\map{f}{D}{C}$ then
+% $|C|=|D|$.
+% In the $|D|=0$ base case, the correspondence is a trivial 
+% (its graph is the empty set) and because this function is onto the
+% set~$C$ must be empty also, with $|C|=0$.
+
+% For the inductive step assume that the statement is true for $|D|=0$, 
+% \ldots, $|D|=k$ and consider the $|D|=k+1$~case.
+% To get a set of size~$k$,
+% put an element of~$D$ aside by picking some $d\in D$ and considering
+% $\hat{D}=D-\set{d}$.
+% Then the restriction 
+% $\map{\restrictionmap{f}{\hat{D}}}{\hat{D}}{\range(\restrictionmap{f}{\hat{D}})}$
+% is clearly onto.
+% It is one-to-one because if 
+% $\restrictionmap{f}{\hat{D}}(x_0)=\restrictionmap{f}{\hat{D}}(x_1)$
+% then $f(x_0)=f(x_1)$ and so $x_0=x_1$.
+
+% So the inductive hypothesis applies and we have that 
+% $\range(\restrictionmap{f}{\hat{D}})$ has $k$-many elements.
+% Consider~$f(d)$.
+% Because $f$ is one-to-one, $f(d)\notin\range(\restrictionmap{f}{\hat{D}})$
+% and thus $\range(f)$ has one more element than 
+% $\range(\restrictionmap{f}{\hat{D}})$.
+% Because $f$ is onto, $\range(f)=N$.
+% Thus $|C|=k+1=|D|$.
+% \end{ans}
+% \end{ex}
 
 \begin{ex} Prove.
 \begin{exes}
@@ -3075,19 +3138,41 @@ $\composed{f}{f^{-1}}$ is the identity map on~$C$.
 
 \begin{ex} 
 \begin{exes}
-\item Let $\map{s}{\R^+}{\R}$ be~$s(x)=x^2$ and let
-  $\map{r}{\R^+}{\R^+}$ be $r(x)=\sqrt{x}$.
-  Show that $r$ is inverse to $s$.    
-\item Let $\map{f}{\Z}{\Z}$ be~$f(x)=x+3$ and let
-  $\map{g}{\Z}{\Z}$ be $g(x)=x-3$.
+\item Let $\map{f}{\Z}{\Z}$ be~$f(a)=a+3$ and let
+  $\map{g}{\Z}{\Z}$ be $g(a)=a-3$.
   Show that $g$ is inverse to $f$.
-\item Show that $s$ is inverse to $r$, and that $f$ is inverse to~$g$.
-\item Let $\map{h}{\N}{\N}$ be the function that returns
+\item Let $\map{h}{\Z}{\Z}$ be the function that returns
   $n+1$ if $n$ is even, and returns $n-1$ if $n$ is odd.
   Find a function inverse to~$h$.
+\item Let $\map{s}{\R^+}{\R^+}$ be~$s(x)=x^2$.
+  Find the map that is inverse to $s$.    
 \item Show that $\map{t}{\R}{\R}$ given by $t(x)=x^2$
   has no inverse.
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item Observe first that the domain of each equals the codomain of the other,
+  so their composition is defined both ways.
+  Now, $\composed{g}{f}(a)=g(f(a))=g(a+3)=(a+3)-3=a$
+  is the identity map.
+  Similarly, $\composed{f}{g}(a)=(a-3)+3$ is also the identity map.
+  Thus they are inverse.
+\item The inverse of~$s$ is the map~$\map{r}{\R^+}{\R^+}$ given my 
+  $r(x)=\sqrt{x}$.
+  The domain of each is the codomain of the other,
+  and both $\composed{s}{r}$ and~$\composed{r}{s}$ are the identity function.
+\item The inverse of~$h$ is itself.
+  The domain and codomain are equal, as required. 
+  If~$n$ is odd then $\composed{h}{h}(n)=h(n-1)=(n-1)+1=n$ because 
+  $n-1$ is even in this case.
+  Similarly if~$n$ is even then $\composed{h}{h}=(n+1)-1=n$.
+\item Consider the element~$4$ of the codomain.
+  It is the image of two different elements of the domain
+  $t(2)=t(-2)=4$. 
+  Any map $u$ that would be the inverse of~$t$ would have to associate~$4$ 
+  in its domain with both~$2$ and~$-2$, and so would not be well-defined.
+\end{exes}
+\end{ans}
 \end{ex}
 
 \begin{ex}
@@ -3096,18 +3181,77 @@ $\composed{f}{f^{-1}}$ is the identity map on~$C$.
   is not.
   (We say that $g$ is a \definend{right inverse} of~$f$, or what is the
   same thing, that $f$ is a \definend{left inverse} of~$g$).
+\begin{ans}
+Let $\map{f}{\N^2}{\N^3}$ be the injection map
+$\sequence{a,b}\mapsunder{}\sequence{a,b,0}$
+and let 
+$\map{g}{\N^3}{\N^2}$ be the projection function
+$\sequence{a,b,c}\mapsunder{}\sequence{a,b}$.
+Then the action of $\composed{g}{f}$ is 
+$\sequence{a,b}\mapsunder{}\sequence{a,b,0}\mapsunder{}\sequence{a,b}$.
+But the action in the other direction~$\composed{f}{g}$ is not the identity
+$\sequence{a,b,c}\mapsunder{}\sequence{a,b}\mapsunder{}\sequence{a,b,0}$;
+one instance is that $\composed{f}{g}(\sequence{1,2,3})$ equals
+$\sequence{1,2,0}$, not $\sequence{1,2,3}$.     
+\end{ans}
 \end{ex}
 
 \begin{ex} Prove each.
 \begin{exes}
-\item If a function has an inverse then that inverse
-  is unique.
 \item A function has an inverse if and only if that 
   function is a correspondence.
+\item If a function has an inverse then that inverse
+  is unique.
 \item The inverse of a correspondence is a correspondence.  
 \item If $f$ and $g$ each is invertable then so is 
   $\composed{g}{f}$, and $(\composed{g}{f})^{-1}=\composed{f^{-1}}{g^{-1}}$.
-\end{exes}  
+\end{exes}
+\begin{ans}
+\begin{exes}
+\item Let $\map{f}{D}{C}$ have an inverse~$\map{f^{-1}}{C}{D}$.
+
+  Suppose that $f$ is not one-to-one.
+  Then there are unequal elements~$d_0,d_1\in D$
+  such that $f(d_0)=f(d_1)$.
+  Let~$c\in C$ be that value~$c=f(d_0)$ and consider~$f^{-1}(c)$.
+  If $f^{-1}(c)\neq d_0$ then we have a contradiction since the 
+  action $d_0\mapsunder{}c\mapsunder{}f^{-1}(c)$
+  of $\composed{f^{-1}}{f}$ is not the identity on~$d_0$.
+  If $f^{-1}(c)=d_0$ then we have a similar contradiction for the
+  action of $\composed{f^{-1}}{f}$ on~$d_1$.
+  These contradictions together show that~$f$ is one-to-one.
+   
+  Now suppose that~$f$ is not onto,
+  so that there is a~$c\in C$ with no associated~$d\in D$.
+  The map~$\composed{f}{f^{-1}}$
+  cannot give $c=\composed{f}{f^{-1}}(c)=f(f^{-1}(c))$, 
+  because $c\notin\range(f)$, so this supposition yields a contradiction.
+  Therefore~$f$ is onto.
+\item Suppose that $\map{f}{D}{C}$ has two inverses $\map{g_0}{C}{D}$
+  and~$\map{g_1}{C}{D}$.
+  We will show that the two make the same associations, that is, they 
+  have the same graph and
+  thus are the same function.
+
+  So let $c$ be an element of the domain~$C$ of the two.
+  The prior item shows that~$f$ is onto so there is a~$d\in D$ such that
+  $f(d)=c$.
+  The prior item shows also that~$f$ is one-to-one so there is only 
+  one~$d$ with that property, and so $d=g_0(c)=g_1(c)$.
+\item An inverse is a function that has an inverse: the inverse of~$f^{-1}$
+  is~$f$.
+  By the first item then, $f^{-1}$ is a correspondence.
+\item The composition of $\composed{f^{-1}}{g^{-1}}$ with~$\composed{g}{f}$,
+  in either order, is the identity map.
+  The order this way  
+  $\composed{(\composed{f^{-1}}{g^{-1}})}{(\composed{g}{f})}(x)
+  =(\composed{f^{-1}}{g^{-1}})(g(f(x)))
+  =f^{-1}(g^{-1}(g(f(x))))
+  =f^{-1}(f(x))=x$
+  gives the identity,
+  and the other order is similar.
+\end{exes}
+\end{ans}
 \end{ex}
 
 
