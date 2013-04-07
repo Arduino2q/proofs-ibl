@@ -918,9 +918,10 @@ if they have the same modulus with respect to~$b$.
 \end{ans}
 \end{ex}
 
-\begin{ex}
+\begin{ex} \label{ex:AEquivBpmodMIFFABDifferBYMultipleOfM}
 Prove that $a\equiv b\pmod m$ if and only if $m\divides (a-b)$,
-that is, if and only if $a$ and~$b$ differ by a multiple of~$m$.  
+that is, if and only if $a$ and~$b$ differ by a multiple of~$m$
+(for $m>0$).  
 \begin{ans}
 If $a\equiv b\pmod m$ if and only if they leave the same remainder,
 $a=mq_a+r$ and~$b=bq_b+r$ for some $q_a,q_b\in\Z$.
@@ -3261,16 +3262,17 @@ $\sequence{1,2,0}$, not $\sequence{1,2,3}$.
 % .....................................
 \section{Relations}
 \begin{df}
-A \definend{relation} on sets $A_0$, \ldots, $a_{n-1}$ is a subset
+A \definend{relation} on sets $A_0$, \ldots, $A_{n-1}$ is a subset
 $R\subseteq A_0\times \cdots \times A_{n-1}$. 
-If all of the sets are the same $a_0=A$, \ldots, $A_{n-1}=A$
+If all of the sets are the same $A_0=A_1=\cdots =A$
 then we call it a relation on~$A$.
-The number of sets~$n$ is the \definend{arity} of the relation.
-and say it is \definend{$n$-ary}.
+
+The number of sets~$n$ is the \definend{arity} of the relation
+and we say it is \definend{$n$-ary}.
 If the arity is~$2$ then it is a \definend{binary relation}.
-In this case, if $R=\setbuilder{(x,y)}{\text{$x\in X$ and $y\in Y$}}$
-then where $(x,y)\in R$ we say $x$ is \definend{$R$-related} to~$y$
-and sometimes write $xRy$.
+In this case, where $R=\setbuilder{(x,y)}{\text{$x\in X$ and $y\in Y$}}$
+then if $(x,y)\in R$ we say $x$ is~\definend{$R$-related} to~$y$,
+sometimes written $xRy$.
 \end{df}
 
 \begin{ex}
@@ -3281,6 +3283,10 @@ and sometimes write $xRy$.
   List five elements.
 \item List five elements of the relation
   $\setbuilder{(x,y,z)\in\N^3}{x^2+y^2=z^2}$
+\item
+  Consider the set~$A=\set{0,1}$.
+  List all the elements of the relation 
+  $E=\setbuilder{(x,y)\in A\times\powerset(A)}{x\in y}$.
 \item Show that if $\map{f}{D}{C}$ is a function then 
   its graph is a relation.
 \item Let $\map{f}{D}{C}$ be a function.
@@ -3290,6 +3296,29 @@ and sometimes write $xRy$.
   Where $f(x)=x^2$ with domain and codomain~$\R$,
   list five elements. 
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item Five pairs from the relation are
+  $\sequence{0,2}$, $\sequence{1,3}$, $\sequence{-1,1}$, $\sequence{1/2,5/2}$, 
+  and~$\sequence{\pi,\pi+2}$.    
+\item Five elements of this binary relation are 
+  $\sequence{0,1}$, $\sequence{0,2}$, $\sequence{1,2}$, $\sequence{0,3}$,
+  and~$\sequence{100,1001}$. 
+\item Five elements of this $3$-ary relation are
+  $\sequence{3,4,5}$, $\sequence{5,12,13}$, $\sequence{7,24,25}$, 
+  $\sequence{8,15,17}$, and~$\sequence{0,0,0}$.
+\item There are four: $\sequence{0,\set{0}}$, 
+  $\sequence{1,\set{1}}$, $\sequence{0,\set{0,1}}$, 
+  and~$\sequence{1,\set{0,1}}$. 
+\item By definition its graph is a binary relation on~$D\times C$.
+\item The set $R_f$ is a subset of the set of ordered pairs~$C^2$,
+  so it is a binary relation on~$C$.
+
+  Where $\map{f}{\R}{\R}$ is $f(x)=x^2$ then five elements are
+  $\sequence{-1,1}$, $\sequence{-2,2}$, $\sequence{0,0}$,
+  $\sequence{1,-1}$, and $\sequence{1,1}$.
+\end{exes}
+\end{ans}
 \end{ex}
 
 \begin{df} 
@@ -3304,36 +3333,39 @@ A relation that satisfies all three conditions is an
 \definend{equivalence relation}.  
 \end{df}
 
-\begin{ex}   \pord{} that each is reflexive, symmetric, and transitive.
+\begin{ex} For each of the three conditions reflexive, symmetric, 
+  or transitive,
+  prove or disprove that the relation satisfies the condition.
 \begin{exes}
 \item The ``goes into'' relation
   $D=\setbuilder{(d,m)\in\Z^2}{d\divides m}$.
 \item
   For any set~$A$ the \definend{diagonal relation} on $A$ 
-  is $\setbuilder{(x,x)}{x\in A}$. 
+  is $\setbuilder{(a,a)}{a\in A}$. 
 \item
-  Where $A$ is a set,
-  $E=\setbuilder{(x,y)\in A\times\powerset(A)}{x\in y}$.
+  The relation on~$\R$ of `at least two greater'
+  $T=\setbuilder{(x,y)\in \R^2}{x-y\geq 2}$.
 \end{exes}
-\end{ex}
-
-\begin{ex} For each, find a binary relation satisfying the condition.
+\begin{ans}
 \begin{exes}
-\item Not reflexive.
-\item Not transitive.
-\item Reflexive and symmetric but not transitive.
-\item Transitive but not symmetric or reflexive.
-\item Reflexive and transitive but not symmetric.
-\item Symmetric and transitive but not reflexive. 
+\item This relation is reflexive since each integer~$n\in Z$ 
+  divides itself.
+  It is not symmetric since $1\divides 2$ but $2\ndivides 1$.
+  This relation is transitive by Exercise~\ref{ex:DivisibilityProperties}.
+\item This relation is reflexive since for any $a\in A$ we have that
+  $(a,a)\in A$ (this is the minimal reflexive relation on~$A$).
+  It is symmetric since if $(x,y)\in A$ then there is an
+  $a\in A$ such that $x=y=a$, and so $(y,x\in A)$ also.
+  Similarly it is transitive since if 
+  $(x,y)\in A$ and~$(y,z)\in A$ then $x=y=z=a$ for some~$a\in A$, and
+  thus $(x,z)\in A$.
+\item This relation is not reflexive since $(0,0)\notin T$,
+  and it is not symmetric since $(2,0)\in T$ but 
+  $(0,2)\notin T$.
+  This relation is transitive since if $(x,y)\in T$ and $(y,z)\in T$ 
+  then $x-y\geq 2$ and~$y-z\geq 2$, so addition gives that $x-z\geq 4$.
 \end{exes}
-\end{ex}
-
-\begin{ex}
-What is wrong with this purported proof that in the definition
-of an equivalence relation, the condition of reflexivity is redundant?
-\textit{For any $x$, symmetry is that $x∼y$ implies $y∼x$.
-By transitivity we have $x∼y$ and $y∼x$ together imply that $x∼x$. 
-Therefore, symmetry and transitivity together imply reflexivity.}  
+\end{ans}
 \end{ex}
 
 \begin{ex}
@@ -3342,13 +3374,149 @@ both even.
 Show that the binary relation 
 $P=\setbuilder{(x,y)\in\Z^2}{\text{$x$ and $y$ have the same parity}}$  
 is an equivalence.
+\begin{ans}
+For reflexivity, observe that a number has the same parity as itself.
+For symmetry, if $(x,y)\in P$ then
+two numbers have the same parity\Dash are either both even or both odd\Dash
+and so $(y,x)\in P$.
+
+The case of transitivity is as straightforward.
+Suppose that both $(x,y)\in P$ and~$(y,z)\in P$.
+Then $x$ and~$y$ have the same parity, and also $y$ and~$z$ have the same
+parity, and consequently $x$ and~$z$ have the same parity.
+So $(x,z)\in P$.  
+\end{ans}
+\end{ex}
+
+\begin{ex}
+What is wrong with this purported proof that in the definition
+of an equivalence relation, the condition of reflexivity is redundant?
+\textit{For any $x$, symmetry is that $x$ is related to~$y$ 
+implies that $y$ is related to~$x$.
+By transitivity we have $x$ is related to~$y$ and $y$ is related to~$x$ 
+together imply that $x$ is related to~$x$.
+Therefore, symmetry and transitivity together imply reflexivity.}  
+\begin{ans}
+Consider the relation   
+$R=\set{\sequence{0,0},\sequence{0,1},\sequence{1,0},\sequence{1,1}}$
+on the set~$A=\set{0,1,2}$.
+This relation is symmetric and transitive but is not reflexive.
+The implication `if $x$ is related to~$y$ then $y$ is related to~$x$'
+is true in the case of $x=2$ and~$y=2$, but it is vacuously true.
+\end{ans}
+\end{ex}
+
+\begin{ex} There are eight combinations of reflexive or not, 
+symmetric or not, and transitive or not.
+For each, find a binary relation on $A=\set{0,1,2}$
+satisfying the combination.
+\begin{ans}
+The first is a relation that is not reflexive, not symmetric, and
+not transitive.
+The relation~$R_0=\set{\sequence{0,1},\sequence{1,2}}$
+is not reflexive because it does not contain~$\sequence{0,0}$, 
+is not symmetric because while it contains~$\sequence{0,1}$
+it does not contain~$\sequence{1,0}$, and not transitive
+because it contains $\sequence{0,1}$ and~$\sequence{1,2}$
+but it does not contain~$\sequence{0,2}$.
+
+Next is a relation that is not reflexive and not symmetric but that is
+transitive.
+The relation~$R_1=\set{\sequence{0,1}}$
+is not reflexive because it does not contain~$\sequence{0,0}$,
+and is not symmetric because while it contains $\sequence{0,1}$ it does not
+contain~$\sequence{1,0}$.
+But it is transitive.
+For all cases where $R_1$ contains $\sequence{x,y}$ and~$\sequence{y,z}$
+it also contains~$\sequence{x,z}$. 
+(This is vacuously true; there are zero-many cases
+where it contains $\sequence{x,y}$ and~$\sequence{y,z}$
+because the only candidate for $\sequence{x,y}$ is~$\sequence{0,1}$
+and then $\sequence{0,1}$ cannot be $\sequence{y,z}$ since $y$ is~$1$.)
+
+Next is a relation that is not reflexive, is symmetric, and is 
+not transitive.
+One such is the relation~$R_2=A^2-\set{\sequence{2,2}}$.
+It is not reflexive since it does not contain~$\sequence{2,2}$.
+It is symmetric since for each~$\sequence{x,y}$ it contains~$\sequence{y,x}$,
+as it contains all pairs except $\sequence{2,2}$ and  
+$\sequence{x,y}=\sequence{2,2}$ is the symmetric image only of itself.
+It is not transitive since it contains~$\sequence{2,1}$ and~$\sequence{1,2}$
+but does not contain~$\sequence{2,2}$.
+
+Case~three is a relation that is not reflexive, but is symmetric and is 
+transitive.
+Consider $R_3=\set{0,1}^2
+  =\set{\sequence{0,0},\sequence{0,1},\sequence{1,0},\sequence{1,1}}$.
+It is not reflexive because it does not contain~$\sequence{2,2}$.
+It is symmetric by inspection; for each of the four elements,
+$R_3$ contains the symmetric image.
+It is transitive because for any set~$B$, the relation $B^2$ is 
+transitive (it contains all pairs so it must contain the required pair), 
+and so~$\set{0,1}^2$ is transitive. 
+(Another example relation satisfying this case is the empty relation.)
+
+A relation that is reflexive, not symmetric, and not transitive is
+$R_4=\set{\sequence{0,0},\sequence{1,1},\sequence{2,2}}$.
+By inspection it is  reflexive and
+symmetric.
+It is transitive because the condition  
+$\sequence{x,y},\sequence{y,x}\in R_4$ is only met in the trivial case that
+$x=y$.
+
+Next comes a relation that is reflexive, is not symmetric, and is transitive.
+One such relation is 
+$R_5=\set{\sequence{0,0}, \sequence{1,1}, \sequence{2,2}, \sequence{0,1}}$.
+It is clearly reflexive.
+It is not symmetric because it contains~$\sequence{0,1}$ but 
+not~$\sequence{1,0}$.
+For transitive there are only two nontrivial matching cases:
+(i)~$\sequence{0,0},\sequence{0,1}\in R_5$ and~$\sequence{0,1}\in R_5$
+and
+(i)~$\sequence{0,1},\sequence{1,1}\in R_5$ and~$\sequence{1,1}\in R_5$.
+
+Case~six is 
+a relation that is reflexive, symmetric, and not transitive.
+Consider the relation~$R_6
+  =\set{\sequence{0,0}, \sequence{1,1}, \sequence{2,2}}
+  \union\set{\sequence{0,1},\sequence{1,2},\sequence{1,0},\sequence{2,1}}$.
+By inspection it is reflexive and symmetric.
+It is not transitive because it contains $\sequence{0,1}$ and~$\sequence{1,2}$
+but does not contain~$\sequence{0,2}$.
+
+Finally, a relation that meets all three conditions
+is $R_7=A^2$.
+It is clearly reflexive.
+It is symmetric and transitive because both of those require that 
+if some pair or pairs are elements of~$R_7$ then another 
+pair is an element of~$R_7$.
+Since~$R_7$ contains all pairs, each implication must be
+satisfied.
+\end{ans}
 \end{ex}
 
 \begin{ex}
 Fix a divisor $q\in\Z^+$.
 Show that the relation 
-$\setbuilder{(m,n)\in\N^2}{m\equiv n\pmod q}$  
+$M=\setbuilder{(a,b)\in\Z^2}{a\equiv b\pmod m}$  
 is an equivalence.
+\begin{ans}
+Exercise~\ref{ex:AEquivBpmodMIFFABDifferBYMultipleOfM}
+shows that for $m>0$ the statement $a\equiv b\pmod m$
+is equivalent to the statement that the two differ by a multiple of~$m$
+$m\divides (a-b)$.
+
+With that, reflexivity is clear because $m\divides (a-a)$.
+Symmetry is also clear because if $\sequence{a,b}\in M$ 
+then $a\equiv b\pmod m$, so
+$m\divides (a-b)$, and so $a-b=m\cdot k$ for some~$k\in\Z$.
+Switch signs to get $b-a=m\cdot(-k)$, and so $\sequence{b,a}\in M$.
+
+For transitivity, $\sequence{a,b}, \sequence{b,c}\in M$ gives
+$a-b=mk_0$ and $b-c=mk_1$ for some~$k_0,k_1\in Z$.
+Add: $(a-b)+(b-c)=m\cdot(k_0-k_1)$. 
+Then $a-c$ is a multiple of~$m$.
+\end{ans}
 \end{ex}
 
 \begin{df}
