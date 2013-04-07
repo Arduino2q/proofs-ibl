@@ -3411,143 +3411,182 @@ symmetric or not, and transitive or not.
 For each, find a binary relation on $A=\set{0,1,2}$
 satisfying the combination.
 \begin{ans}
-The first is a relation that is not reflexive, not symmetric, and
-not transitive.
-The relation~$R_0=\set{\sequence{0,1},\sequence{1,2}}$
-is not reflexive because it does not contain~$\sequence{0,0}$, 
-is not symmetric because while it contains~$\sequence{0,1}$
-it does not contain~$\sequence{1,0}$, and not transitive
-because it contains $\sequence{0,1}$ and~$\sequence{1,2}$
-but it does not contain~$\sequence{0,2}$.
+  The first is a relation that is not reflexive, not symmetric, and
+  not transitive.
+  The relation~$R_0=\set{\sequence{0,1},\sequence{1,2}}$
+  is not reflexive because it does not contain~$\sequence{0,0}$, 
+  is not symmetric because while it contains~$\sequence{0,1}$
+  it does not contain~$\sequence{1,0}$, and not transitive
+  because it contains $\sequence{0,1}$ and~$\sequence{1,2}$
+  but it does not contain~$\sequence{0,2}$.
 
-Next is a relation that is not reflexive and not symmetric but that is
-transitive.
-The relation~$R_1=\set{\sequence{0,1}}$
-is not reflexive because it does not contain~$\sequence{0,0}$,
-and is not symmetric because while it contains $\sequence{0,1}$ it does not
-contain~$\sequence{1,0}$.
-But it is transitive.
-For all cases where $R_1$ contains $\sequence{x,y}$ and~$\sequence{y,z}$
-it also contains~$\sequence{x,z}$. 
-(This is vacuously true; there are zero-many cases
-where it contains $\sequence{x,y}$ and~$\sequence{y,z}$
-because the only candidate for $\sequence{x,y}$ is~$\sequence{0,1}$
-and then $\sequence{0,1}$ cannot be $\sequence{y,z}$ since $y$ is~$1$.)
+  Next is a relation that is not reflexive and not symmetric but that is
+  transitive.
+  The relation~$R_1=\set{\sequence{0,1}}$
+  is not reflexive because it does not contain~$\sequence{0,0}$,
+  and is not symmetric because while it contains $\sequence{0,1}$ it does not
+  contain~$\sequence{1,0}$.
+  But it is transitive.
+  For all cases where $R_1$ contains $\sequence{x,y}$ and~$\sequence{y,z}$
+  it also contains~$\sequence{x,z}$. 
+  (This is vacuously true; there are zero-many cases
+  where it contains $\sequence{x,y}$ and~$\sequence{y,z}$
+  because the only candidate for $\sequence{x,y}$ is~$\sequence{0,1}$
+  and then $\sequence{0,1}$ cannot be $\sequence{y,z}$ since $y$ is~$1$.)
 
-Next is a relation that is not reflexive, is symmetric, and is 
-not transitive.
-One such is the relation~$R_2=A^2-\set{\sequence{2,2}}$.
-It is not reflexive since it does not contain~$\sequence{2,2}$.
-It is symmetric since for each~$\sequence{x,y}$ it contains~$\sequence{y,x}$,
-as it contains all pairs except $\sequence{2,2}$ and  
-$\sequence{x,y}=\sequence{2,2}$ is the symmetric image only of itself.
-It is not transitive since it contains~$\sequence{2,1}$ and~$\sequence{1,2}$
-but does not contain~$\sequence{2,2}$.
+  Next is a relation that is not reflexive, is symmetric, and is 
+  not transitive.
+  One such is the relation~$R_2=A^2-\set{\sequence{2,2}}$.
+  It is not reflexive since it does not contain~$\sequence{2,2}$.
+  It is symmetric since for each~$\sequence{x,y}$ it contains~$\sequence{y,x}$,
+  as it contains all pairs except $\sequence{2,2}$ and  
+  $\sequence{x,y}=\sequence{2,2}$ is the symmetric image only of itself.
+  It is not transitive since it contains~$\sequence{2,1}$ and~$\sequence{1,2}$
+  but does not contain~$\sequence{2,2}$.
 
-Case~three is a relation that is not reflexive, but is symmetric and is 
-transitive.
-Consider $R_3=\set{0,1}^2
+  Case~three is a relation that is not reflexive, but is symmetric and is 
+  transitive.
+  Consider $R_3=\set{0,1}^2
   =\set{\sequence{0,0},\sequence{0,1},\sequence{1,0},\sequence{1,1}}$.
-It is not reflexive because it does not contain~$\sequence{2,2}$.
-It is symmetric by inspection; for each of the four elements,
-$R_3$ contains the symmetric image.
-It is transitive because for any set~$B$, the relation $B^2$ is 
-transitive (it contains all pairs so it must contain the required pair), 
-and so~$\set{0,1}^2$ is transitive. 
-(Another example relation satisfying this case is the empty relation.)
+  It is not reflexive because it does not contain~$\sequence{2,2}$.
+  It is symmetric by inspection; for each of the four elements,
+  $R_3$ contains the symmetric image.
+  It is transitive because for any set~$B$, the relation $B^2$ is 
+  transitive (it contains all pairs so it must contain the required pair), 
+  and so~$\set{0,1}^2$ is transitive. 
+  (Another example relation satisfying this case is the empty relation.)
 
-A relation that is reflexive, not symmetric, and not transitive is
-$R_4=\set{\sequence{0,0},\sequence{1,1},\sequence{2,2}}$.
-By inspection it is  reflexive and
-symmetric.
-It is transitive because the condition  
-$\sequence{x,y},\sequence{y,x}\in R_4$ is only met in the trivial case that
-$x=y$.
+  A relation that is reflexive, not symmetric, and not transitive is
+  $R_4=\set{\sequence{0,0},\sequence{1,1},\sequence{2,2}}$.
+  By inspection it is  reflexive and symmetric.
+  It is transitive because the condition  
+  $\sequence{x,y},\sequence{y,x}\in R_4$ is only met in the trivial case that
+  $x=y$.
 
-Next comes a relation that is reflexive, is not symmetric, and is transitive.
-One such relation is 
-$R_5=\set{\sequence{0,0}, \sequence{1,1}, \sequence{2,2}, \sequence{0,1}}$.
-It is clearly reflexive.
-It is not symmetric because it contains~$\sequence{0,1}$ but 
-not~$\sequence{1,0}$.
-For transitive there are only two nontrivial matching cases:
-(i)~$\sequence{0,0},\sequence{0,1}\in R_5$ and~$\sequence{0,1}\in R_5$
-and
-(i)~$\sequence{0,1},\sequence{1,1}\in R_5$ and~$\sequence{1,1}\in R_5$.
+  Next comes a relation that is reflexive, is not symmetric, and is transitive.
+  One such relation is 
+  $R_5=\set{\sequence{0,0}, \sequence{1,1}, \sequence{2,2}, \sequence{0,1}}$.
+  It is clearly reflexive.
+  It is not symmetric because it contains~$\sequence{0,1}$ but 
+  not~$\sequence{1,0}$.
+  For transitive there are only two nontrivial matching cases:
+  (i)~$\sequence{0,0},\sequence{0,1}\in R_5$ and~$\sequence{0,1}\in R_5$
+  and
+  (ii)~$\sequence{0,1},\sequence{1,1}\in R_5$ and~$\sequence{1,1}\in R_5$.
 
-Case~six is 
-a relation that is reflexive, symmetric, and not transitive.
-Consider the relation~$R_6
+  Case~six is 
+  a relation that is reflexive, symmetric, and not transitive.
+  Consider the relation~$R_6
   =\set{\sequence{0,0}, \sequence{1,1}, \sequence{2,2}}
   \union\set{\sequence{0,1},\sequence{1,2},\sequence{1,0},\sequence{2,1}}$.
-By inspection it is reflexive and symmetric.
-It is not transitive because it contains $\sequence{0,1}$ and~$\sequence{1,2}$
-but does not contain~$\sequence{0,2}$.
+  By inspection it is reflexive and symmetric.
+  It is not transitive because it contains $\sequence{0,1}$ and~$\sequence{1,2}$
+  but does not contain~$\sequence{0,2}$.
 
-Finally, a relation that meets all three conditions
-is $R_7=A^2$.
-It is clearly reflexive.
-It is symmetric and transitive because both of those require that 
-if some pair or pairs are elements of~$R_7$ then another 
-pair is an element of~$R_7$.
-Since~$R_7$ contains all pairs, each implication must be
-satisfied.
+  Finally, a relation that meets all three conditions
+  is $R_7=A^2$.
+  It is clearly reflexive.
+  It is symmetric and transitive because both of those require that 
+  if some pair or pairs are elements of~$R_7$ then another 
+  pair is an element of~$R_7$.
+  Since~$R_7$ contains all pairs, each implication must be
+  satisfied.
 \end{ans}
 \end{ex}
 
 \begin{ex}
 Fix a divisor $q\in\Z^+$.
 Show that the relation 
-$M=\setbuilder{(a,b)\in\Z^2}{a\equiv b\pmod m}$  
+$\setbuilder{(a,b)\in\Z^2}{a\equiv b\pmod m}$  
 is an equivalence.
 \begin{ans}
-Exercise~\ref{ex:AEquivBpmodMIFFABDifferBYMultipleOfM}
-shows that for $m>0$ the statement $a\equiv b\pmod m$
-is equivalent to the statement that the two differ by a multiple of~$m$
-$m\divides (a-b)$.
+  Call the relation~$M$.
+  Exercise~\ref{ex:AEquivBpmodMIFFABDifferBYMultipleOfM}
+  shows that for $m>0$ the statement $a\equiv b\pmod m$
+  is equivalent to the statement that $m\divides (a-b)$, that
+  the two differ by a multiple of~$m$.
 
-With that, reflexivity is clear because $m\divides (a-a)$.
-Symmetry is also clear because if $\sequence{a,b}\in M$ 
-then $a\equiv b\pmod m$, so
-$m\divides (a-b)$, and so $a-b=m\cdot k$ for some~$k\in\Z$.
-Switch signs to get $b-a=m\cdot(-k)$, and so $\sequence{b,a}\in M$.
+  With that, reflexivity is clear because $m\divides (a-a)$.
+  Symmetry is also clear because if $\sequence{a,b}\in M$ 
+  then $a\equiv b\pmod m$, so
+  $m\divides (a-b)$, and so $a-b=m\cdot k$ for some~$k\in\Z$.
+  Switch signs to get $b-a=m\cdot(-k)$, and so $\sequence{b,a}\in M$.
 
-For transitivity, $\sequence{a,b}, \sequence{b,c}\in M$ gives
-$a-b=mk_0$ and $b-c=mk_1$ for some~$k_0,k_1\in Z$.
-Add: $(a-b)+(b-c)=m\cdot(k_0-k_1)$. 
-Then $a-c$ is a multiple of~$m$.
+  For transitivity, $\sequence{a,b}, \sequence{b,c}\in M$ gives
+  $a-b=mk_0$ and $b-c=mk_1$ for some~$k_0,k_1\in Z$.
+  Add: $(a-b)+(b-c)=m\cdot(k_0-k_1)$. 
+  Then $a-c$ is a multiple of~$m$.
+\end{ans}
+\end{ex}
+
+\begin{ex} \label{RationalsAsEqClasses}
+Consider the relation
+$\setbuilder{((p,q),(n,d))\in (\Z\times\Z^+)^2}{pd=qn}$
+(restated, the pair $(p,q)\\Z\times\Z^+$\ is related to $(n,d)$
+if $pd=qn$).
+List five elements.
+Prove that it is an equivalence relation.
+\begin{ans}
+Each element is a pair of pairs.
+Five elements are~$((1,2),(2,4))$, 
+$((-1,2),(2,-4))$,  
+$((0,1),(0,4))$,  
+$((3,3),(-2,-2))$,  
+and~$((10,5),(2,1))$.
+
+The relation is reflexive, each $(p,q)\in\Z\times\Z^+$ is related to itself, 
+because $pq=qp$. 
+To verify that it is symmetric assume that $(p,q)$ is related to~$(n,d)$.
+Then $pd=qn$, which gives $nq=dp$, and so $(n,d)$ is related to~$(p,q)$.
+
+To check that the relation is transitive assume that 
+$(p,q)$ is related to~$(n,d)$
+and also that $(n,d)$ is related to~$(a,b)$.
+Then $pd=qn$ and~$nb=da$.
+Multiply both sides of the first equation by $ab$ to get $pdab=qnab$, reqroup as
+$pb\cdot(da)=qa\cdot(nb)$, and cancel $da=nb$ to get $pb=qa$.
+This shows that $(p,q)$ is related to $(a,b)$.  
+\end{ans}
+\end{ex}
+
+\begin{ex} \label{PlaneLinesAsClasses}
+Let $\mathcal{L}$ be the set of lines in the Euclidean plane and consider
+the relation
+$R=\setbuilder{(\ell_0,\ell_1)\in \mathcal{L}^2}{\text{the two are parallel, or the same}}$.
+\begin{exes}
+\item List five elements.
+\item Fix a vertical line $\ell$ (for instance, the $x$-axis 
+  $\setbuilder{(x,0)}{x\in\R}$).
+  List five elements of $\mathcal{L}$ that are related to~$\ell$.
+\item Show that $R$ is an equivalence.
+\end{exes}
+\begin{ans}
+\begin{exes}
+\item We can express the lines using analytic geometry, 
+  fixing an $xy$-axis, and giving the equations.
+  Parallel lines have the same slope so
+  five pairs are $(y=2x,y=2x+1)$, $(y=x,y=x-3)$, $(y=4x,y=4x)$
+  $(y=-3,y=-5)$, and~$(y=(3/2)x+1,y=(3/2)x-1)$.    
+\item As in the prior item, we can express the lines using analytic geometry, 
+  fixing an $xy$-axis, and giving the equations.
+  Five lines related to a vertical line are~$x=1$, $x=2$, $x=-1$, $x=100$, 
+  and the line $x=0$~itself.
+\item The relation is reflexive since two lines that are the same are
+  explicitly given as related.
+  The relation is symmmetric since if $\ell_0$ is related to~$\ell_1$
+  then they are parallel or the same, and in either case
+  $\ell_1$ is related to~$\ell_0$.
+  If $\ell_0$ is parallel to or the same as~$\ell_1$, 
+  which is parallel or the same as~$\ell_2$ then $\ell_0$
+  is parallel to or the same as~$\ell_2$, so the relation is
+  transitive. 
+\end{exes}
 \end{ans}
 \end{ex}
 
 \begin{df}
 If $R$ is an equivalence relation on~$X$ then instead of $(x,y)\in R$
-we may write $x\equiv y\pmod R$.  
-\end{df}
-
-\begin{ex} \label{RationalsAsEqClasses}
-\begin{exes}
-\item Show that 
-$\setbuilder{\big((p,q),(n,d)\big)\in \Z\times\Z^+}{pm=qn}$
-is an equivalence relation.
-\item List five elements.
-\end{exes}
-\end{ex}
-
-\begin{ex} \label{PlaneLinesAsClasses}
-\begin{exes}
-\item Let $X$ be the set of lines in the Euclidean plane and consider
-the relation
-$R=\setbuilder{(\ell_0,\ell_1)\in X^2}{\text{the two are parallel}}$. 
-Show that $R$ is an equivalence.
-\item List five elements.
-\item Fix a vertical line $\ell$ (for instance, the $x$-axis 
-  $\setbuilder{(x,0)}{x\in\R}$).
-  List five elements of $X$ that are related to~$\ell$.
-\end{exes}
-\end{ex}
-
-\begin{df}
-Let $R$ be an equivalence relation on~$X$.
+we may write $x\equiv y\pmod R$.
 The \definend{equivalence class} of $x\in X$ is the set
 $\eqclass{x}=\setbuilder{y\in X}{y\equiv x\pmod R}$.   
 \end{df}
