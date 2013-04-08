@@ -3522,7 +3522,7 @@ is an equivalence.
 \begin{ex} \label{RationalsAsEqClasses}
 Consider the relation
 $\setbuilder{((p,q),(n,d))\in (\Z\times\Z^+)^2}{pd=qn}$
-(restated, the pair $(p,q)\\Z\times\Z^+$\ is related to $(n,d)$
+(restated, the pair $(p,q)\\Z\times\Z^+$\ is related to the pair~$(n,d)$
 if $pd=qn$).
 List five elements.
 Prove that it is an equivalence relation.
@@ -3561,14 +3561,13 @@ $R=\setbuilder{(\ell_0,\ell_1)\in \mathcal{L}^2}{\text{the two are parallel, or 
 \item Show that $R$ is an equivalence.
 \end{exes}
 \begin{ans}
+We can express the lines using analytic geometry, 
+fixing a $xy$-axes, and giving the equations.
 \begin{exes}
-\item We can express the lines using analytic geometry, 
-  fixing an $xy$-axis, and giving the equations.
-  Parallel lines have the same slope so
-  five pairs are $(y=2x,y=2x+1)$, $(y=x,y=x-3)$, $(y=4x,y=4x)$
+\item Parallel lines have the same slope so
+  five pairs are $(y=2x,y=2x+1)$, $(y=x,y=x-3)$, $(y=4x,y=4x)$,
   $(y=-3,y=-5)$, and~$(y=(3/2)x+1,y=(3/2)x-1)$.    
-\item As in the prior item, we can express the lines using analytic geometry, 
-  fixing an $xy$-axis, and giving the equations.
+\item   
   Five lines related to a vertical line are~$x=1$, $x=2$, $x=-1$, $x=100$, 
   and the line $x=0$~itself.
 \item The relation is reflexive since two lines that are the same are
@@ -3591,36 +3590,105 @@ The \definend{equivalence class} of $x\in X$ is the set
 $\eqclass{x}=\setbuilder{y\in X}{y\equiv x\pmod R}$.   
 \end{df}
 
-\begin{ex} Describe the equivalence classes.
-\begin{exes}
-\item \cref{RationalsAsEqClasses}
-\item \cref{PlaneLinesAsClasses}
-\end{exes}
+\begin{ex} Let $R$ be an equivalence on~$X$.
+Prove that the following are equivalent statements for $x_0,x_1\in X$:
+(i)~$x_0\equiv x_1\pmod R$
+(ii)~$\eqclass{x_0}=\eqclass{x_1}$    
+and (iii)~$\eqclass{x_0}\intersection\eqclass{x_1}\neq \emptyset$.
+\begin{ans}
+We will prove this three-long chain of implications: 
+statement~(i) implies statement~(ii),
+statement~(ii) implies statement~(iii),
+and
+statement~(iii) implies statement~(i).
+
+First assume that statement~(i) holds, so that $x_0\equiv x_1\pmod R$.
+The equivalence classes $\eqclass{x_0}$ and~$\eqclass{x_1}$ are sets so
+we will prove that they are equal by mutual containment.
+If $y\in\eqclass{x_0}$ then $y\equiv x_0 \pmod R$,
+so $(y,x_0)\in R$, and so $(y,x_1)\in R$
+(by transitivity, with $(x_0,x_1)\in R$),
+showing that $y\in\eqclass{x_1}$.
+Containment the other way is similar.
+Thus statement~(i) implies statement~(ii).
+
+That statement~(ii) implies statement~(iii) is trivial.
+
+Finally, assume statement~(iii).
+Let $y$ be an element of $\eqclass{x_0}\intersection\eqclass{x_1}$.
+Then $y\equiv x_0\pmod R$ and~$y\equiv x_1\pmod R$,
+that is, $(y,x_0)\in R$ and~$(y,x_1)\in R$.
+The equivalence relation property of 
+symmetry applied to $(y,x_0)\in R$ yields~$(x_0,y)\in R$.
+Transitivity applied to the two $(x_0,y)\in R$ and~$(y,x_1)\in R$ yields
+that $(x_0,x_1)\in R$, and so $x_0\equiv x_1\pmod R$.
+Therefore~(iii) implies~(i).
+\end{ans}
 \end{ex}
 
 \begin{df}
-A \definend{partition} of a set $X$ is a 
-set of nonempty subsets of~$X$ such that every element $x\in X$ 
+A \definend{partition}~$P$ of a set $X$ is a 
+collection of nonempty subsets of~$X$ such that every element $x\in X$ 
 is in exactly one of these subsets.
-That is, a set~$P$ is a partition of $X$ if and only if 
-none of its elements is the empty set,
-it \definend{covers}~$X$
-(the union of the elements of $P$ is equal to~$X$),
-and the elements of $P$ are \definend{pairwise disjoint}
-(the intersection $p_i\intersection p_j$ is empty for $i\neq j$).
+That is, $P$ partitions~$X$ if and only if 
+$P$'s elements are nonempty,
+the union of $P$'s elements is equal to~$X$ 
+($P$~\definend{covers}~$X$),
+and $P$'s elements are \definend{pairwise disjoint}
+($p_i\intersection p_j=\emptyset$ for $i\neq j$).
 \end{df}
 
 \begin{center}
   \grf{asy/bean_partition.pdf}{Set~$X$ partitioned into four parts}
 \end{center}
 
-\begin{ex} Let $R$ be an equivalence on~$X$.
-Prove that the following are equivalent statements for $x,y\in X$;
+\begin{ex} Verify that the~$P$ is a partition of the~$X$.  
+  How many elements are in~$P$?
 \begin{exes}
-\item $x\equiv y\pmod R$
-\item $\eqclass{x}=\eqclass{y}$    
-\item $\eqclass{x}\intersection\eqclass{y}\neq \emptyset$
+\item $X=\N$, $P=\set{p_0,p_1}$ where~$p_0$ is the set of even numbers
+  and $p_1$ is the set of odd numbers
+\item $X=\Z$, $P=\setbuilder{p_i}{i\in\Z}$
+      where $p_n=\setbuilder{i\in\Z}{i\equiv n\pmod 3}$\hspace{1em}%
+      (\hint for some pairs $i,j$ we have $p_i=p_j$ and so 
+      what may look like two elements of~$P$ is in fact only one element.) 
+\item $X=\R$, $P=\setbuilder{p_x}{x\in \R}$
+      where $p_x=\setbuilder{y\in\R}{x-y\in Z}$
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item To verify that it is a partition we will check the three conditions.
+  First, that no element $p_i\in P$ is empty is clear.
+  Second, that every element of~$\N$ is an element of some~$p_i$ is
+  also clear.
+  The third is also clear; no element of~$\N$ is both even and odd.
+
+  Finally, $P$ has two elements, since $p_0\neq p_1$.
+\item To see that no $p_n$ is empty observe that $n\equiv n\pmod 3$ and
+  so $n\in p_n$.
+  The same observation shows that every $n\in\N$ is an element of at least
+  one~$p_n$.
+
+  To see that the $p_i$'s are pairwise disjoint, observe that 
+  for some pairs $i,j\in\Z$ the sets $p_i$ and~$p_j$ are equal
+  (an example is that $p_1=p_4$).
+  So we must show that if the sets are unequal then they are
+  disjoint: if $p_i\neq p_j$ then $p_i\intersection p_j=\emptyset$.
+  We will prove the equivalent implication that if 
+  $p_i\intersection p_j\neq \emptyset$ then $p_i= p_j$.
+  So assume that $x\in (p_i\intersection p_j)$.
+  Then $x\equiv i\pmod 3$ and~$x\equiv j\pmod 3$ so that by 
+  Exercise \ref{ex:AEquivBpmodMIFFABDifferBYMultipleOfM} we have that
+  $3\divides (x-i)$ and~$3\divides (x-j)$,
+  so $x-i=3\cdot k_i$ and $x-j=3\cdot k_j$ for some $k_i,k_j\in Z$.
+  Aiming to show the sets are mutually contained suppose that $y\in p_i$,
+  so $y\equiv p_i\pmod 3$, so $3\divides (y-i)$,
+  and so $y-i=3\cdot k_y$.
+  % Adding gives $$
+  
+      
+\end{exes}
+\end{ans}
+
 \end{ex}
 
 \begin{ex} Prove.
@@ -3637,12 +3705,18 @@ Prove that the following are equivalent statements for $x,y\in X$;
 \end{ex}
 
 \begin{ex}
-Suppose that $\map{f}{D}{C}$ is onto.
-Show that the relation
-$R=\setbuilder{(d_0,d_1)\in D^2}{f(d_0)=f(d_1)}$ 
-is an equivalence on~$D$. 
-Show that the set of inverse images 
-$P=\setbuilder{f^{-1}(c)}{c\in C}$ is a partition of the domain.
+Let $\map{f}{D}{C}$ be onto.
+\begin{exes}
+\item Show that the relation
+  $R=\setbuilder{(d_0,d_1)\in D^2}{f(d_0)=f(d_1)}$ 
+  is an equivalence on~$D$. 
+\item Show that the set of inverse images 
+  $P=\setbuilder{f^{-1}(c)}{c\in C}$ form a partition of the domain.
+\item Consider the map
+  $\map{\hat{f}}{P}{C}$ whose action is given by
+  $\hat{f}(p)$ is $f(d)$ for any~$d\in p$.
+  Show that~$\hat{f}$ is a function, and that it is a correspondence.
+\end{exes}
 \end{ex}
 
 \begin{df}
