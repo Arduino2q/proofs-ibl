@@ -26,8 +26,8 @@
 \setlength{\unifiedlistparindent}{1.25em}  
 
 \newenvironment{answer}[1]{%
-\begin{enumerate}[topsep=0.15ex plus 0.03ex minus 0.01ex,
-                  partopsep=0ex,parsep=0ex,
+\begin{enumerate}[topsep=0.20ex plus 0.02ex minus 0.01ex,
+                  partopsep=0ex, parsep=0ex plus 0.01ex,
                   beginpenalty=150,% Prevent page break after newline start
                   labelwidth=0em,align=left,labelsep=1.5em,
                   itemsep=.25ex plus .03ex minus .01ex,
@@ -42,12 +42,12 @@
 \renewenvironment{exes}{%
 % \addtocounter{exerciseswithpartscount}{1}%
 % \hspace*{0em}% Causes it to start on a new line? 
-\begin{enumerate}[topsep=0.15ex plus 0.03ex minus 0.01ex,
+\begin{enumerate}[topsep=0.15ex plus 0.02ex minus 0.01ex,
                   partopsep=0ex,parsep=0ex,
                   beginpenalty=150,   % Prevent page break after newline start
                   labelsep=0em,
                   labelwidth=.8em plus .03em minus 0em,align=right,labelsep=1em,
-                  itemsep=.25ex plus .03ex minus .01ex,
+                  itemsep=.25ex plus .04ex,
                   leftmargin=1.25em,rightmargin=0em,
                   listparindent=\unifiedlistparindent,
                   align=left,label={\textsc{\alph*}.\protect\addtocounter{exercisepartscount}{1}}] 

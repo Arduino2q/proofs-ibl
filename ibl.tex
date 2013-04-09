@@ -3668,22 +3668,25 @@ and $P$'s elements are \definend{pairwise disjoint}
   The same observation shows that every $n\in\N$ is an element of at least
   one~$p_n$.
 
-  To see that the $p_i$'s are pairwise disjoint, observe that 
+  To see that the $p_i$'s are pairwise disjoint, first observe that 
   for some pairs $i,j\in\Z$ the sets $p_i$ and~$p_j$ are equal
   (an example is that $p_1=p_4$).
   So we must show that if the sets are unequal then they are
   disjoint: if $p_i\neq p_j$ then $p_i\intersection p_j=\emptyset$.
+
   We will prove the equivalent implication that if 
-  $p_i\intersection p_j\neq \emptyset$ then $p_i= p_j$.
-  So assume that $x\in (p_i\intersection p_j)$.
+  $p_i\intersection p_j\neq \emptyset$ then $p_i=p_j$
+  so assume that $x\in (p_i\intersection p_j)$.
   Then $x\equiv i\pmod 3$ and~$x\equiv j\pmod 3$ so that by 
-  Exercise \ref{ex:AEquivBpmodMIFFABDifferBYMultipleOfM} we have that
+  Exercise \ref{ex:AEquivBpmodMIFFABDifferBYMultipleOfM} we have 
   $3\divides (x-i)$ and~$3\divides (x-j)$,
-  so $x-i=3\cdot k_i$ and $x-j=3\cdot k_j$ for some $k_i,k_j\in Z$.
-  Aiming to show the sets are mutually contained suppose that $y\in p_i$,
-  so $y\equiv p_i\pmod 3$, so $3\divides (y-i)$,
-  and so $y-i=3\cdot k_y$.
-  % Adding gives $$
+  and thus $x-i=3\cdot k_i$ and $x-j=3\cdot k_j$ for some $k_i,k_j\in Z$.
+  We want to show mutual containment between the sets $p_i$ and~$p_j$.
+  so let $y$ be an element of~$p_i$,
+  Then $y\equiv p_i\pmod 3$, so $3\divides (y-i)$,
+  and so $y-i=3\cdot k_y$ for some~$k_y\in\Z$.
+  Subtracting gives~$(y-i)-(x-i)=y-x=3\cdot(k_y-k_i)$,
+  so $y\equiv x\pmod 3$ and therefore  
   
       
 \end{exes}
