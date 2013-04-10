@@ -1,6 +1,8 @@
 \documentclass{ibl}
 \usepackage{ibltext} % for the text only; answers-only is another .sty
 
+\usepackage{euscript}
+
 \usepackage{etoolbox}
 \usepackage{comment}
 \newbool{euclid}
@@ -64,6 +66,7 @@
     $f^{-1}$  &function inverse to~$f$  \\
     $x\equiv y\pmod R$  &$(x,y)\in R$ where $R$ is an equivalence; equivalence with respect to~$R$ \\ 
     $\eqclass{x}$  &equivalence class containing~$x$  \\
+    $\partition{P}$  &partition of a set  \\
     $A\sim B$  &the two sets have the same cardinality
   \end{tabular}
 \end{center}
@@ -146,7 +149,7 @@ intellectual challenge and verbal exchange,
 whereas a first month of background material can be a damper.
 
 But the background material is good stuff also and 
-students are on board once they see where it takes them.
+students are on board once they see where it is going.
 In the second and third chapters we do
 sets, functions, and relations, now with the
 intellectual habits that we've established at the start.
@@ -156,7 +159,8 @@ that students need even in the
 first chapter.
 My class meetings begin with some people going to the 
 board to write their answers to the homework and 
-I often use these ten minutes for a beamer slide or two that covers issues from
+I often use these ten minutes for a beamer slide or two 
+discussing issues from
 the current work.
 This just-in-time approach keeps the class centered 
 on proving things while ensuring that they get what
@@ -204,7 +208,7 @@ a brief description of the classroom approach that works for me.
 We begin with results about the
 integers $\Z=\set{..,-2,-1,0,1,2,\ldots}$.
 In this chapter ``number'' means integer.
-In some cases results refer to the 
+Some statements refer to the 
 natural numbers $\N=\set{0,1,2,\ldots}$.
 
 
@@ -3494,8 +3498,8 @@ satisfying the combination.
 \end{ans}
 \end{ex}
 
-\begin{ex}
-Fix a divisor $q\in\Z^+$.
+\begin{ex}  \label{ex:EquivModMIsEquivalenceRelation}
+Fix a divisor $m\in\Z^+$.
 Show that the relation 
 $\setbuilder{(a,b)\in\Z^2}{a\equiv b\pmod m}$  
 is an equivalence.
@@ -3627,32 +3631,34 @@ Therefore~(iii) implies~(i).
 \end{ex}
 
 \begin{df}
-A \definend{partition}~$P$ of a set $X$ is a 
-collection of nonempty subsets of~$X$ such that every element $x\in X$ 
-is in exactly one of these subsets.
-That is, $P$ partitions~$X$ if and only if 
-$P$'s elements are nonempty,
-the union of $P$'s elements is equal to~$X$ 
-($P$~\definend{covers}~$X$),
-and $P$'s elements are \definend{pairwise disjoint}
-($p_i\intersection p_j=\emptyset$ for $i\neq j$).
+A \definend{partition}~$\partition{P}$ of a set $X$ is a 
+collection of nonempty subsets of~$P\subseteq X$ such that every 
+element $x\in X$ is in exactly one of the $P$'s.
+That is, $\partition{P}$ partitions~$X$ if and only if each
+$P\in\partition{P}$ is nonempty,
+$\partition{P}$ \definend{covers}~$X$
+(the union of all $P\in\partition{P}$ is equal to~$X$),
+and the $P$ are \definend{pairwise disjoint}
+(if $P\neq \hat{P}$ then $P\intersection \hat{P}=\emptyset$).
 \end{df}
 
 \begin{center}
   \grf{asy/bean_partition.pdf}{Set~$X$ partitioned into four parts}
 \end{center}
 
-\begin{ex} Verify that the~$P$ is a partition of the~$X$.  
-  How many elements are in~$P$?
+\begin{ex} Verify that~$\partition{P}$ is a partition of~$X$.  
+  How many elements are in~$\partition{P}$?
 \begin{exes}
-\item $X=\N$, $P=\set{p_0,p_1}$ where~$p_0$ is the set of even numbers
-  and $p_1$ is the set of odd numbers
-\item $X=\Z$, $P=\setbuilder{p_i}{i\in\Z}$
-      where $p_n=\setbuilder{i\in\Z}{i\equiv n\pmod 3}$\hspace{1em}%
-      (\hint for some pairs $i,j$ we have $p_i=p_j$ and so 
-      what may look like two elements of~$P$ is in fact only one element.) 
-\item $X=\R$, $P=\setbuilder{p_x}{x\in \R}$
-      where $p_x=\setbuilder{y\in\R}{x-y\in Z}$
+\item $X=\N$, $\partition{P}=\set{P_0,P_1}$, 
+  where~$P_0$ is the set of even numbers
+  and $P_1$ is the set of odd numbers
+\item $X=\Z$, $\partition{P}=\setbuilder{P_n}{n\in\Z}$
+      where $P_n=\setbuilder{i\in\Z}{i\equiv n\pmod 3}$\hspace{1em}%
+      (\hint some pairs $i,j$ give $P_i=P_j$ and so 
+      what appears to be two elements of~$\partition{P}$ 
+      may in fact be only one element.) 
+\item $X=\R$, $\partition{P}=\setbuilder{P_x}{x\in \R}$
+      where $P_x=\setbuilder{y\in\R}{x-y\in Z}$
 \end{exes}
 \begin{ans}
 \begin{exes}
@@ -3663,9 +3669,9 @@ and $P$'s elements are \definend{pairwise disjoint}
   The third is also clear; no element of~$\N$ is both even and odd.
 
   Finally, $P$ has two elements, since $p_0\neq p_1$.
-\item To see that no $p_n$ is empty observe that $n\equiv n\pmod 3$ and
-  so $n\in p_n$.
-  The same observation shows that every $n\in\N$ is an element of at least
+\item No $p_n$ is empty because $n\in p_n$, as~$n\equiv n\pmod 3$.
+  The observation that $n\equiv n\pmod 3$ 
+  also shows that every~$n\in\N$ is an element of at least
   one~$p_n$.
 
   To see that the $p_i$'s are pairwise disjoint, first observe that 
@@ -3675,20 +3681,27 @@ and $P$'s elements are \definend{pairwise disjoint}
   disjoint: if $p_i\neq p_j$ then $p_i\intersection p_j=\emptyset$.
 
   We will prove the equivalent implication that if 
-  $p_i\intersection p_j\neq \emptyset$ then $p_i=p_j$
-  so assume that $x\in (p_i\intersection p_j)$.
-  Then $x\equiv i\pmod 3$ and~$x\equiv j\pmod 3$ so that by 
-  Exercise \ref{ex:AEquivBpmodMIFFABDifferBYMultipleOfM} we have 
-  $3\divides (x-i)$ and~$3\divides (x-j)$,
-  and thus $x-i=3\cdot k_i$ and $x-j=3\cdot k_j$ for some $k_i,k_j\in Z$.
-  We want to show mutual containment between the sets $p_i$ and~$p_j$.
-  so let $y$ be an element of~$p_i$,
-  Then $y\equiv p_i\pmod 3$, so $3\divides (y-i)$,
-  and so $y-i=3\cdot k_y$ for some~$k_y\in\Z$.
-  Subtracting gives~$(y-i)-(x-i)=y-x=3\cdot(k_y-k_i)$,
-  so $y\equiv x\pmod 3$ and therefore  
-  
-      
+  $p_i\intersection p_j\neq \emptyset$ then $p_i=p_j$.
+  Fix $x\in p_i\intersection p_j$, which implies that
+  $x\equiv i\pmod 3$ and~$x\equiv j\pmod 3$.
+  To verify that the two sets $p_i$ and~$p_j$ are equal by mutual
+  containment, start with~$y\in p_i$, so $y\equiv i\pmod 3$.
+  Exercise~\ref{ex:EquivModMIsEquivalenceRelation}
+  shows that the relation of `equivalent modulo~$3$' is an 
+  equivalence relation.
+  Symmetry implies that $i\equiv x\pmod 3$, and together with
+  $y\equiv i\pmod 3$
+  transitivity implies that $y\equiv x\pmod 3$.
+  Apply transitivity again, using that $x\equiv j\pmod 3$, to conclude that
+  $y\equiv j\pmod 3$, which means that~$y\in p_j$.
+  Containment in the other direction is similar.  
+
+  Finally, $P$ has three elements: $p_0=p_3=p_{-3}=\cdots\hbox{}$, and
+  $p_1=p_4=p_{-2}=\cdots{}$, and~$p_2=p_5=p_{-1}=\cdots\hbox{}$.
+\item Observe that $x\in p_x$ so no~$p_x$ is empty.
+  That same observation shows that every $x\in\R$ is an element of some~$p$.
+
+  To show that the $p$'s are pairwise disjoint 
 \end{exes}
 \end{ans}
 
@@ -3701,14 +3714,15 @@ and $P$'s elements are \definend{pairwise disjoint}
   $\setbuilder{\eqclass{x}}{x\in X}$ forms a partition of~$X$.
   We say it is the partition \definend{induced} by the relation.
 \item Where $P$ is a partition of~$X$, 
-  the relation $R=\setbuilder{(x,y)\in X^2}{\text{$x$ and~$y$ are in the same part}}$ 
+  the relation 
+  $R=\setbuilder{(x,y)\in X^2}{\text{$x$ and~$y$ are in the same part}}$ 
   is an equivalence.
   We say this relation \definend{arises from} the partition. 
 \end{exes}
 \end{ex}
 
 \begin{ex}
-Let $\map{f}{D}{C}$ be onto.
+Suppose that $\map{f}{D}{C}$.
 \begin{exes}
 \item Show that the relation
   $R=\setbuilder{(d_0,d_1)\in D^2}{f(d_0)=f(d_1)}$ 
@@ -3718,7 +3732,7 @@ Let $\map{f}{D}{C}$ be onto.
 \item Consider the map
   $\map{\hat{f}}{P}{C}$ whose action is given by
   $\hat{f}(p)$ is $f(d)$ for any~$d\in p$.
-  Show that~$\hat{f}$ is a function, and that it is a correspondence.
+  Show that~$\hat{f}$ is a function, and that it is one-to-one.
 \end{exes}
 \end{ex}
 

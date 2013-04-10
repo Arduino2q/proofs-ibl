@@ -248,6 +248,10 @@ qed=\qedsymbol
 \RequirePackage{mathrsfs}
 \newcommand{\eqcl}[1]{{\mathscr E}_{#1}}
 
+% euscript characters
+\RequirePackage{euscript}
+\newcommand{\partition}[1]{\EuScript{#1}}
+
 % Misc commands
 \newcommand{\definend}[1]{\textit{#1}}
 \newcommand{\pord}{Prove or disprove}
