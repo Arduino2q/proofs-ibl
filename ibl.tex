@@ -2953,7 +2953,9 @@ is exactly one associated argument, is a
 \end{ans}
 \end{ex}
 
-\begin{ex} Proving these shows that, where $D$ and~$C$ are finite sets, 
+\begin{ex}   \label{CorrespondingSetsHaveSameNumberOfElements}
+  Proving these two items shows that, 
+  where $D$ and~$C$ are finite sets, 
   if there is a correspondence~$\map{f}{D}{C}$
   then the two sets have the same number of elements.
 \begin{exes}
@@ -3052,7 +3054,8 @@ is exactly one associated argument, is a
 % \end{ans}
 % \end{ex}
 
-\begin{ex} Prove.
+\begin{ex} \label{InteractionOneToONeOntoWithComposition}
+Prove.
 \begin{exes}
 \item A composition of one-to-one functions is one-to-one.
 \item A composition of onto functions is onto.
@@ -3201,7 +3204,8 @@ $\sequence{1,2,0}$, not $\sequence{1,2,3}$.
 \end{ans}
 \end{ex}
 
-\begin{ex} Prove each.
+\begin{ex} \label{PropertiesOfInverses}
+Prove each.
 \begin{exes}
 \item A function has an inverse if and only if that 
   function is a correspondence.
@@ -3891,6 +3895,9 @@ $R=\setbuilder{(x,x)}{x\in\N}$ on $\N$.
 %===================================================
 \chapter{Infinity}
 
+Recall Exercise~\ref{CorrespondingSetsHaveSameNumberOfElements},
+that if two sets correspond then they have the same number of elements.
+
 \begin{df}
 Two sets have the \definend{same cardinality} 
 (or are \definend{equinumerous}) if there is a 
@@ -3899,7 +3906,9 @@ We write $A\sim B$.
 \end{df}
 
 \begin{df}
-A set is \definend{finite} if it has~$n$ elements for some $n\in\N$.
+A set is \definend{finite} if it has~$n$ elements for some $n\in\N$,
+that is, if it has the same cardinality as 
+$\setbuilder{i\in\N}{i< n}=\set{0,1,\ldots,n-1}$.
 Otherwise the set is \definend{infinite}.   
 % \end{df}\begin{df}
 A set is \definend{denumerable} if it has the same cardinality 
@@ -3907,42 +3916,203 @@ as $\N$.
 A set is \definend{countable} if it is either finite or denumerable.
 \end{df}
 
-\begin{ex} Prove.
-\begin{exes}
-\item The relation $\sim$ is an equivalence.
-\item Two finite sets have the sme cardinality iff they have the
-  same number of elements.
-\end{exes}
+\begin{ex} \label{ex:EquinumeruousIsEquivalence}
+Prove that the relation~$\sim$ is an equivalence.
+\begin{ans}
+  To show that the relation~$\sim$ is reflexive 
+  suppose that $A$ is a set and note that the 
+  identity function~$\map{\identity}{A}{A}$ is a correspondence.
+  To show that the relation is symmetric recall 
+  Exercise~\ref{PropertiesOfInverses}, that
+  any correspondence~$\map{f}{A}{B}$ has an inverse~$\map{f^{-1}}{B}{A}$
+  that is also a correspondence.
+
+  To prove that the relation~$\sim$ is transitive assume that 
+  $A\sim B$ and~$B\sim C$.
+  Then there is a correspondence~$\map{f}{A}{B}$ and a 
+  correspondence $\map{g}{B}{C}$.
+  The composition $\map{\composed{g}{f}}{A}{C}$ is a correspondence
+  by Exercise~\ref{InteractionOneToONeOntoWithComposition}.
+  Thus $A\sim B$.
+\end{ans}
 \end{ex}
 
-\begin{ex}  Prove.
+\begin{ex}  \label{ex:IntegersCountable}
+Prove.
 \begin{exes}
-\item The set~$\N\times\N$ is countable.
 \item The set of integers is countable.
+\item The set~$\N\times\N$ is countable.
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item We will define a map $\map{f}{\N}{\Z}$ and just note that it is clearly a 
+  correspondence.
+  The map alternate between positive and negative values:
+  $0\mapsunder{}0$, $1\mapsunder{}1$, $2\mapsunder{}-1$, 
+  $3\mapsunder{}2$, $4\mapsunder{}-2$, $5\mapsunder{}3$, \ldots\,.
+  More formally, $f(n)=-n/2$ if $n$ is even and $f(n)=(n+1)/2$ if~$n$ is odd. 
+\item  As in the prior item we will define a map
+  $\map{f}{\N}{\N\times\N}$ and only note that it is a correspondence, 
+  without going through the verification details.
+  
+  The function alternates between columns in the same way that
+  Jackie Chan, when up against multiple bad guys, alternates amoung his 
+  attackers.
+  Thus $0\mapsunder{} (0,0)$, $1\mapsunder{}(0,1)$, $2\mapsunder{}(1,0)$, 
+  $3\mapsunder{}(0,2)$, 
+  $4\mapsunder{}(1,1)$, $5\mapsunder{}(2,0)$, $6\mapsunder{}(0,3)$, \ldots. 
+
+  \remark a sketch helps here.
+  The values associated with successive arguments trace out the 
+  diagonals of the array~$\N\times\N$.
+  \begin{center}
+  \newcommand{\chanpoint}[1]{\makebox[0em]{$(#1)$}}
+  \newcommand{\chanarrow}{{\color{darkii} $\searrow$}}
+  \setlength{\unitlength}{0.5in}
+  \begin{picture}(4,4.5)
+    \put(0,0){\chanpoint{0,0}}
+    \put(1,0){\chanpoint{1,0}}
+    \put(2,0){\chanpoint{2,0}}
+    \put(3,0){\chanpoint{3,0}}
+    \put(3.75,0){\ldots}
+    \put(0,1){\chanpoint{0,1}}
+    \put(1,1){\chanpoint{1,1}}
+    \put(2,1){\chanpoint{2,1}}
+    \put(3,1){\ldots}
+    \put(0,2){\chanpoint{0,2}}
+    \put(1,2){\chanpoint{1,2}}
+    \put(2,2){\chanpoint{2,2}}
+    \put(3,2){\ldots}
+    \put(0,3){\chanpoint{0,3}}
+    \put(1,3){\chanpoint{1,3}}
+    % \put(2,3){\ldots}
+    \put(0,3.75){$\vdots$}
+    \put(1,3.75){$\vdots$}
+    \put(2.5,3.25){$\iddots$}
+    % arrows
+    \put(0.5,0.5){\chanarrow}
+    \put(0.5,1.5){\chanarrow}
+    \put(1.5,0.5){\chanarrow}
+    \put(0.5,2.5){\chanarrow}
+  \end{picture}
+  \end{center}
+\end{exes}
+\end{ans}
 \end{ex}
 
-\begin{ex} Prove that the following are equivalent for a set~$A$.
-\begin{exes}
-\item $A$ is countable
-\item $A$ is empty or there is an onto function from $\N$ to~$A$
-\item There is a one-to-one function from $A$ to~$\N$    
-\end{exes}
+\begin{ex} \label{ex:OntoFromNatsToSetEquivToCountable}
+Prove that the following are equivalent for a set~$A$:
+(i)~$A$ is countable
+(ii)~$A$ is empty or there is an onto function from $\N$ to~$A$
+(iii)~there is a one-to-one function from $A$ to~$\N$.    
+\begin{ans}
+We will show that (i) implies~(ii), which implies~(iii), and which
+implies~(i).
+
+First the (i) implies~(ii) proof.
+If~$A$ is countable then there are two cases: either~$A$ is finite 
+or~$A$ is denumerable.
+If~$A$ is finite then it is either empty or nonempty.
+The empty case is trivial so suppose that $A$ is finite and nonempty
+and let $a$ be an element of~$A$.
+Then there is a correspondence~$\map{f}{\set{0,1,\ldots,|A|-1}}{A}$,
+so define $\map{\hat{f}}{\N}{A}$ extending~$f$ by
+$\hat{f}(i)=f(i)$ if $i\in\set{0,1,\ldots,|A|-1}$, and 
+$\hat{f}(i)=a$ otherwise.
+The extension~$\hat{f}$ is onto because $f$ is onto.
+The other case, that~$A$ is denumerable, by definition has a 
+correspondence between~$\N$ and~$A$.
+
+Next is the (ii) implies~(iii) proof.
+If~$A$ is empty then the empty function is a map with domain~$A$ and
+codomain~$\N$ that is vacuously one-to-one.
+The other possibility is that there is an onto function~$\map{f}{\N}{A}$.
+To get a map~$g$ with domain~$A$ and codomain~$\N$ that is one-to-one
+define~$g(a)$ to be the least number $n\in\N$ such that~$f(n)=a$; 
+at least one such number exists because~$f$ is onto.
+Clearly~$g$ is one-to-one.
+
+Finally for the (iii) implies~(i) proof.
+Let~$\map{f}{A}{\N}$ be one-to-one.
+Let $B=\range(A)\subseteq\N$.
+Then the function~$\map{\hat{f}}{A}{B}$ given by~$\hat{f}(a)=f(a)$ is a 
+correspondence (it only eliminates unused elements of the codomain).
+Thus $A\sim B$.
+Because Exercise~\ref{ex:EquinumeruousIsEquivalence} shows that the 
+relation~$\sim$ is an equivalence, we will be done if we show that $B$~is
+countable.
+
+So suppose that~$B$ is not finite.
+Recall that~$B\subseteq\N$ so we can define a map
+$\map{g}{\N}{B}$ by:
+take $g(j)$ to be the $j$-th largest element of~$B$.
+This map is onto because of the assumption that~$B$ is not finite, and it 
+is one-to-one by construction (if $g(j_0)=g(j_1)$ then the $j_0$-th largest
+element of~$B$ is the same as the $j_1$-th largest element, which is only
+possible if $j_0=j_1$).
+\end{ans}
 \end{ex}
 
-\begin{ex} Prove.
-\begin{exes}
-\item The set of rational numbers is countable.
-\item The union of countably many sets is countable.
-\item The set of finite sequences of elements from a countable set is countable.
-\end{exes}
+\begin{ex} Prove that the set of rational numbers is countable.
+\begin{ans}
+  We will show that the set on nonnegative rationals
+  $Q=\setbuilder{q\in\Q}{q\geq 0}$ is countable.
+  With that set countable, a function that alternates sign like the one in 
+  Exercise~\ref{ex:IntegersCountable} will show that~$\Q$ is countable.
+
+  Consider the function $\map{g}{\N\times\N}{\Q}$ where $g(p,q)$
+  is the rational number $(p+1)/(q+1)$.
+  It is not quite onto; every rational number is the image of some
+  $(p,q)$ except for $0$.
+
+  The cartesian product $\N\times\N$ is denumerable so there is a 
+  correspondence $\map{f}{\N}{\N\times\N}$.
+  Define a function $\map{h}{\N}{\Q}$ by $h(i)=0$ if $i=0$ and $h(i)=f(i-1)$
+  if $i>0$.
+  The range is $\range(h)=\range(g)\union\set{0}$ so~$h$ is onto.
+  By Exercise~\ref{ex:OntoFromNatsToSetEquivToCountable} the 
+  rationals~$\Q$ form a countable set.
+\end{ans}
 \end{ex}
 
-\begin{ex}
+\begin{ex}  Prove that these infinite sets are not countable.
 \begin{exes}
-\item The set $\powerset(\N)$ is not countable.
-\item The set of real numbers is not countable.  
+\item $\powerset(\N)$ 
+\item $\R$
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item We will show that no $\map{f}{\N}{\powerset(\N)}$ is onto.
+  Consider $R=\setbuilder{n\in\N}{n\notin f(n)}$.
+  Clearly $R\subseteq \N$ and so $R\in\powerset(\N)$.
+  We will show that there is no $i\in\N$ such that $R=f(i)$.
+
+  For contradiction assume that $R=f(i)$.
+  Consider whether $i\in R$.
+  If $R=f(i)$ and $i\in R$ then that contradicts the definition of $R$ as the 
+  collection of integers~$n$ such that $n\notin f(n)$.
+  The other $R=f(i)$ possibility is that $i\notin R$, which 
+  is also a contradiction
+  because then $i$~satifies the defining criteria for membership in~$R$, namely
+  that $i\notin R$, and therefore $i\in R$.
+Either $R=f(i)$ case gives a contradiction and so $R\neq f(i)$.
+\item We will show that there is a one-to-one map~$\map{f}{\powerset(\N)}{\R}$.
+  If $\R$ were countable\Dash if there were a one-to-one 
+  function $\map{g}{\R}{\N}$\Dash then 
+  that would give a one-to-one function~$\composed{g}{f}$ 
+  from $\powerset(\N)$ to~$\N$,
+  contradicting the prior item.
+
+  We define the action of~$f$ on a set~$A\in\powerset(\N)$ by
+  giving an associated real number between $0$ and~$1$.
+  We will give this number's binary expansion, instead of its more usual
+  decimal expansion. 
+  Let this number be such that its $i$-th binary place is $\charfcn{A}(i)$,
+  that is, the $i$-th binary place is $1$ if $i\in A$ and is $0$ otherwise. 
+  This function is one-to-one because two unequal sets differ in an 
+  element~$a\in\N$, and the two image numbers then differ in the $a$-th place.
+\end{exes}
+\end{ans}
 \end{ex}
 
 

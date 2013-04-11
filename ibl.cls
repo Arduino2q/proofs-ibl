@@ -252,6 +252,9 @@ qed=\qedsymbol
 \RequirePackage{euscript}
 \newcommand{\partition}[1]{\EuScript{#1}}
 
+% mathdots fot dots from lower-left to upper right
+\RequirePackage{mathdots}
+
 % Misc commands
 \newcommand{\definend}[1]{\textit{#1}}
 \newcommand{\pord}{Prove or disprove}
