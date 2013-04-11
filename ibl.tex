@@ -154,20 +154,20 @@ In the second and third chapters we do
 sets, functions, and relations, now with the
 intellectual habits that we've established at the start.
 
-There are some topics, such as the definition of implication, 
-that students need even in the
-first chapter.
-My class meetings begin with some people going to the 
-board to write their answers to the homework and 
-I often use these ten minutes for a beamer slide or two 
-discussing issues from
-the current work.
-This just-in-time approach keeps the class centered 
-on proving things while ensuring that they get what
-they need when they need it.
-(The only exception is that we pause briefly to do induction,
-since it is typically new for these students and since it needs 
-their full attention.)
+% There are some topics, such as the definition of implication, 
+% that students need even in the
+% first chapter.
+% My class meetings begin with some people going to the 
+% board to write their answers to the homework and 
+% I often use these ten minutes for a beamer slide or two 
+% discussing issues from
+% the current work.
+% This just-in-time approach keeps the class centered 
+% on proving things while ensuring that they get what
+% they need when they need it.
+% (The only exception is that we pause briefly to do induction,
+% since it is typically new for these students and since it needs 
+% their full attention.)
 
 
 
@@ -177,9 +177,9 @@ This material is Free; see the details
 at \url{http://joshua.smcvt.edu/proofs}.
 This includes the \LaTeX{} source so instructors can tailor the
 material to their students.  
-Also on that page are the slides that I use
-and, for instructors new to this approach, 
-a brief description of the classroom approach that works for me.
+% Also on that page are the slides that I use
+% and, for instructors new to this approach, 
+% a brief description of the classroom approach that works for me.
 
 
 \vspace{\fill}
@@ -1884,7 +1884,7 @@ Prove for all sets $A$.
 \end{ans}
 \end{ex}
 
-\begin{ex} \notetext{Properties of subset} \label{ex:PropertiesOfSubset}
+\begin{ex} \notetext{Properties of Subset} \label{ex:PropertiesOfSubset}
 Prove, for $A$, $B$, and~$C$ sets.
 \begin{exes} 
 \item \notetext{Mutual inclusion}
@@ -3652,62 +3652,87 @@ and the $P$ are \definend{pairwise disjoint}
 \item $X=\N$, $\partition{P}=\set{P_0,P_1}$, 
   where~$P_0$ is the set of even numbers
   and $P_1$ is the set of odd numbers
-\item $X=\Z$, $\partition{P}=\setbuilder{P_n}{n\in\Z}$
-      where $P_n=\setbuilder{i\in\Z}{i\equiv n\pmod 3}$\hspace{1em}%
-      (\hint some pairs $i,j$ give $P_i=P_j$ and so 
-      what appears to be two elements of~$\partition{P}$ 
-      may in fact be only one element.) 
 \item $X=\R$, $\partition{P}=\setbuilder{P_x}{x\in \R}$
       where $P_x=\setbuilder{y\in\R}{x-y\in Z}$
+      \hspace{1em}\hint some pairs $x,y\in\R$ give $P_x=P_y$
+      and so what may appear to be two elements of~$\partition{P}$
+      could in fact be a single element.
+\item $X=\Z$, $\partition{P}=\setbuilder{P_n}{n\in\Z}$
+      where $P_n=\setbuilder{i\in\Z}{i\equiv n\pmod 3}$\hspace{1em}%
+      \hint some pairs $i,j$ give $P_i=P_j$. 
 \end{exes}
 \begin{ans}
 \begin{exes}
 \item To verify that it is a partition we will check the three conditions.
-  First, that no element $p_i\in P$ is empty is clear.
-  Second, that every element of~$\N$ is an element of some~$p_i$ is
+  First, that no element $P_i\in \partition{P}$ is empty is clear.
+  Second, that every element of~$\N$ is an element of some~$P_i$ is
   also clear.
   The third is also clear; no element of~$\N$ is both even and odd.
 
-  Finally, $P$ has two elements, since $p_0\neq p_1$.
-\item No $p_n$ is empty because $n\in p_n$, as~$n\equiv n\pmod 3$.
-  The observation that $n\equiv n\pmod 3$ 
-  also shows that every~$n\in\N$ is an element of at least
-  one~$p_n$.
+  Finally, $\partition{P}$ has two elements since $P_0\neq P_1$.
+\item Before we start we bserve that there are $x_0,x_1\in\R$ such that
+  $P_{x_0}=P_{x_1}$; an example is $x_0=0.25$ and~$x_1=1.25$.
 
-  To see that the $p_i$'s are pairwise disjoint, first observe that 
-  for some pairs $i,j\in\Z$ the sets $p_i$ and~$p_j$ are equal
-  (an example is that $p_1=p_4$).
-  So we must show that if the sets are unequal then they are
-  disjoint: if $p_i\neq p_j$ then $p_i\intersection p_j=\emptyset$.
+  To prove that $\partition{p}$ is a partition, first note that $x\in P_x$.
+  For this reason no~$P_x$ is empty and also
+  every $x\in\R$ is an element of some~$P\in\partition{P}$.
 
-  We will prove the equivalent implication that if 
-  $p_i\intersection p_j\neq \emptyset$ then $p_i=p_j$.
-  Fix $x\in p_i\intersection p_j$, which implies that
+  To show that the $P$'s are pairwise disjoint 
+  we must show that if $P_x\neq P_y$ then~$P_x\intersection P_y=\emptyset$.
+  We will show the equivalent implication that
+  if $P_x\intersection P_y\neq\emptyset$ then~$P_x=P_y$.
+  So suppose that $z\in P_x\intersection P_y$.
+  Then $x-z\in\Z$ and~$y-z\in \Z$.
+  
+  To prove that $P_x=P_y$ by mutual containment assume $a\in P_x$.
+  Then $x-a\in\Z$.
+  The expression $(y-z)-(x-z)+(x-a)$ is a combination of three integers,
+  and so is an integer $y-a\in\Z$.
+  Thus $a\in P_y$.
+  Containment in the other direction is similar.
+
+  This partition~$\partition{P}$ has infinitely many elements.
+  One element is $P_{0.25}=P_{1.25}=\cdots$, and there is a $P$ for every
+  number between zero and one.
+\item  Before we begin observe that 
+  for some pairs $i,j\in\Z$ the sets $P_i$ and~$P_j$ are equal;
+  one example is that $P_1=P_4$ (numbers in either set leave a remainder 
+  of~$1$ on division by~$3$).
+
+  No $P_n$ is empty because $n\in P_n$, as~$n\equiv n\pmod 3$.
+  For the same reason every~$n\in\N$ is an element of at least
+  one~$P$.
+
+  To prove that the $P$'s are pairwise disjoint
+  we will prove the equivalent implication that if 
+  $P_i\intersection P_j\neq \emptyset$ then $P_i=P_j$.
+  Fix $x\in P_i\intersection P_j$, which implies that
   $x\equiv i\pmod 3$ and~$x\equiv j\pmod 3$.
-  To verify that the two sets $p_i$ and~$p_j$ are equal by mutual
-  containment, start with~$y\in p_i$, so $y\equiv i\pmod 3$.
+
+  To verify that the two sets $P_i$ and~$P_j$ are equal by mutual
+  containment, start with~$y\in P_i$.
+  Then $y\equiv i\pmod 3$.
   Exercise~\ref{ex:EquivModMIsEquivalenceRelation}
   shows that the relation of `equivalent modulo~$3$' is an 
   equivalence relation.
-  Symmetry implies that $i\equiv x\pmod 3$, and together with
-  $y\equiv i\pmod 3$
+  Symmetry implies that $i\equiv x\pmod 3$ and, 
+  together with $y\equiv i\pmod 3$,
   transitivity implies that $y\equiv x\pmod 3$.
-  Apply transitivity again, using that $x\equiv j\pmod 3$, to conclude that
-  $y\equiv j\pmod 3$, which means that~$y\in p_j$.
+  Apply transitivity again, using $x\equiv j\pmod 3$, to conclude that
+  $y\equiv j\pmod 3$. 
+  Thus~$y\in P_j$.
   Containment in the other direction is similar.  
 
-  Finally, $P$ has three elements: $p_0=p_3=p_{-3}=\cdots\hbox{}$, and
-  $p_1=p_4=p_{-2}=\cdots{}$, and~$p_2=p_5=p_{-1}=\cdots\hbox{}$.
-\item Observe that $x\in p_x$ so no~$p_x$ is empty.
-  That same observation shows that every $x\in\R$ is an element of some~$p$.
-
-  To show that the $p$'s are pairwise disjoint 
+  Finally, $\partition{P}$ has three elements: 
+  one is $P_0=P_3=P_{-3}=\cdots\hbox{}$ and the other two are
+  $P_1=P_4=P_{-2}=\cdots{}$ and~$P_2=P_5=P_{-1}=\cdots\hbox{}$.
 \end{exes}
 \end{ans}
 
 \end{ex}
 
-\begin{ex} Prove.
+\begin{ex} \label{ex:EquivClassesFormPartition}
+Prove.
 \begin{exes}
 \item Where $R$ is an equivalence, 
   the collection of equivalence classes 
@@ -3719,6 +3744,51 @@ and the $P$ are \definend{pairwise disjoint}
   is an equivalence.
   We say this relation \definend{arises from} the partition. 
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item Let $\partition{P}$ be the collection $\setbuilder{\eqclass{x}}{x\in X}$.
+ 
+  Note that $x\in\eqclass{x}$ by reflexivity.
+  Thus no element of the partition is empty, and 
+  every element of~$X$ is in some element of the partition.
+
+  We must prove that the elements of~$\partition{P}$ are pairwise disjoint:
+  if $\eqclass{x}\neq\eqclass{y}$ 
+  then~$\eqclass{x}\intersection\eqclass{y}=\emptyset$.
+  We will prove the equivalent implication that
+  if $\eqclass{x}\intersection\eqclass{y}\neq\emptyset$
+  then~$\eqclass{x}=\eqclass{y}$ are equal.
+  So suppose that $z\in\eqclass{x}\intersection\eqclass{y}$.
+  Then $z\equiv x\pmod R$ and~$z\equiv y\pmod R$.
+
+  To show the equality of the sets $\eqclass{x}$ and~$\eqclass{y}$ 
+  by mutual inclusion, assume $a\in\eqclass{x}$.
+  Then $a\equiv x\pmod R$.
+  From $z\equiv x\pmod R$, symmetry gives $x\equiv z\pmod R$.
+  Apply transitivity to $a\equiv x\pmod R$ and~$x\equiv z\pmod R$ to
+  derive that $a\equiv z\pmod R$.
+  With that and $z\equiv y\pmod R$, transitivity gives
+  that $a\equiv y\pmod R$. 
+  Thus $a\in\eqclass{y}$.
+  Containment in the other direction is similar.  
+\item Suppose that $\partition{P}$ is a partition. 
+
+  The relation~$R$ is reflexive because any~$x\in X$ is an element of
+  the same part as itself
+  (the parts $P\in\partition{P}$ are sets and the set~$P$ containing~$x$
+  is known to contain~$x$).
+  The relation~$R$ is symmetric because if $x$ is in the same part as~$y$
+  then $y$ is in the same part as~$x$.
+
+  For transitivity assume that $x,y,z\in X$ are such that 
+  $x$ is in the same part as~$y$, and 
+  $y$ is in the same part as~$z$.
+  That is, there is a $P\in\partition{P}$ such that
+  both $x$ and~$y$ are elements of~$P$, 
+  and also both $y$ and~$z$ are elements of~$P$.
+  Clearly then both $x$ and~$z$ are in the same part~$P$.
+\end{exes}
+\end{ans}
 \end{ex}
 
 \begin{ex}
@@ -3728,12 +3798,37 @@ Suppose that $\map{f}{D}{C}$.
   $R=\setbuilder{(d_0,d_1)\in D^2}{f(d_0)=f(d_1)}$ 
   is an equivalence on~$D$. 
 \item Show that the set of inverse images 
-  $P=\setbuilder{f^{-1}(c)}{c\in C}$ form a partition of the domain.
+  $\partition{P}=\setbuilder{f^{-1}(c)}{c\in C}$ form a partition of the domain.
 \item Consider the map
-  $\map{\hat{f}}{P}{C}$ whose action is given by
-  $\hat{f}(p)$ is $f(d)$ for any~$d\in p$.
+  $\map{\hat{f}}{\partition{P}}{C}$ whose action is given by
+  $\hat{f}(p)$ is $f(d)$ for any~$d\in P$.
   Show that~$\hat{f}$ is a function, and that it is one-to-one.
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item The relation~$R$ is reflexive because $f(d)=f(d)$ for any $d\in D$.
+  It is symmetric because if $f(d_0)=f(d_1)$ then~$f(d_1)=f(d_0)$.
+  It is transitive because if $f(d_0)=f(d_1)$ and also~$f(d_1)=f(d_2)$ 
+  then $f(d_0)=f(d_2)$.
+\item They are the equivalence classes of the relation in the prior 
+  item.
+  By Exercise~\ref{ex:EquivClassesFormPartition} they form a
+  partition of the domain.
+\item  To show that $\hat{f}$ is a function we need to show that
+  it is well-defined.
+  For this, note that $f(d_0)=f(d_1)$ for all $d_0,d_1\in P$
+  by definition of the parts~$P$, so 
+  the value of~$\hat{f}$ is the same no matter which representative~$d\in P$
+  is used to compute that value.
+
+  To show that $\hat{f}$ is one-to-one suppose that $\hat{f}(P_0)=\hat{f}(P_1)$.
+  Then $f(d_0)=f(d_1)$ for some $d_0\in P_0$ and~$d_1\in P_1$.
+  Since $f$ gives the same value on these two arguments,
+  the two are in the same inverse image, and so  
+  by the definition of the parts as the inverse images,
+  $P_0=P_1$.
+\end{exes}
+\end{ans}
 \end{ex}
 
 \begin{df}
@@ -3743,10 +3838,6 @@ A relation is a \definend{partial ordering} if it is
 reflexive, antisymmetric, and transitive.  
 \end{df}
 
-\begin{ex}
-Can a relation be both symmetric and antisymmetric?  
-\end{ex}
-
 \begin{ex} Prove each.
 \begin{exes}
 \item The usual less than or equal to relation~$\leq$ on 
@@ -3755,6 +3846,42 @@ the real numbers is a partial order.
 \item For any set~$A$ the relation $\subseteq$ on $\powerset(A)$ is
 a partial order.
 \end{exes}
+\begin{ans}
+\begin{exes}
+\item We must show that it is reflexive, antisymmetric, and transitive.
+  Reflexive is trivial\Dash for any $r\in\R$ we have $r\leq r$.
+  Antisymmetric is also easy since if $r_0\leq r_1$ and~$r_1\leq r_0$
+  then $r_0=r_1$.
+  And transitive is no harder because if $r_0\leq r_1$ and~$r_1\leq r_2$
+  then $r_0\leq r_2$.
+\item This is like the prior item in that we just cite known results.
+  To show this relation is reflexive just recall that for all $a\in\N$ we have
+  $a\divides a$.
+  Antisymmetric is that if $a\divides b$ and~$b\divides a$ then
+  $a=b$.
+  (\remark antisymmetric would not hold if the relation were over
+  $\Z$ because there the two $a\divides b$ and~$b\divides a$ together imply
+  only that $a=\pm b$.)
+  Transitive is the statement that $a\divides b$ and~$b\divides c$ imply
+  that $a\divides c$, which appears
+  in the Divisibility Properties, Exercise~\ref{ex:DivisibilityProperties}.
+\item This is reflexive since $A\subseteq A$.
+  This is antisymmetric by mutual containment: 
+  if $A_0\subseteq A_1$ and~$A_1\subseteq A_0$ then the two are equal.
+  This is transitive by Exercise~\ref{ex:PropertiesOfSubset}, 
+  the Properties of Subset.
+\end{exes}
+\end{ans}
+\end{ex}
+
+\begin{ex}
+Can a relation be both symmetric and antisymmetric?  
+\begin{ans}
+Yes.
+One example is the empty relation $R=\emptyset$ on any set.
+Another example is the relation of equality 
+$R=\setbuilder{(x,x)}{x\in\N}$ on $\N$.
+\end{ans}
 \end{ex}
 
 
