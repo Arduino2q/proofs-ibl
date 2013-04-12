@@ -213,7 +213,7 @@ qed=\qedsymbol
   \large\color{darki}
   \begin{tabular}{@{}l@{}}
   Jim Hef{}feron  \\
-  version 0.95
+  version \version
   \end{tabular}
 \end{flushright}
 }
@@ -263,4 +263,8 @@ qed=\qedsymbol
 \newcommand{\hint}{\textit{Hint:} }
 \newcommand{\remark}{\textit{Remark:} }
 
+
+% ====================================================
+% VERSION number
+\newcommand{\version}{0.95}
 

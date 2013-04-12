@@ -48,18 +48,18 @@ it can be used with first year students.
 
 \medskip
 \noindent\textsc{Approach.}
-This course is Inquiry-Based (sometimes called Moore method).
-That is, this text is a sequence of exercises
+This course is Inquiry-Based (sometimes called Moore method 
+or discovery method).
+This text is a sequence of exercises,
 along with definitions and a few 
 remarks.
 The students together work through the mathematics by
 proving statements or sometimes by providing examples or counterexamples.
-They work directly with the mathematics\Dash the instructor only 
+They grapple directly with the mathematics\Dash the instructor only 
 lightly guides\Dash
 talking out misunderstandings, 
 sometimes stumbling in the dark, and sometimes
 having beautiful flashes of insight.
-% In short, this approach is the difference between cover and do.
 For these students, 
 this is the best way to develop mathematical maturity.
 
@@ -100,9 +100,8 @@ intellectual habits that we've established at the start.
 
 \medskip
 \noindent\textsc{License.}
-This material is Free; see the details  
-at \url{http://joshua.smcvt.edu/proofs}.
-This includes the \LaTeX{} source so instructors can tailor the
+This material is Free; see \url{http://joshua.smcvt.edu/proofs}.
+This includes the \LaTeX{} source so that instructors can tailor the
 material to their students.  
 % Also on that page are the slides that I use
 % and, for instructors new to this approach, 
@@ -526,9 +525,9 @@ on the right of~$2^0-1=0$.)
 \begin{ex}
 Prove by induction, for $a,b,r\in\R$.
 \begin{exes}
-\item \notetext{Arithmetic series}
+\item \notetext{Arithmetic Series}
   $b+(a+b)+(2a+b)+\cdots+((n-1)a+b)=(n(n-1)/2)\cdot a+n\cdot b$
-\item \notetext{Geometric series}
+\item \notetext{Geometric Series}
   $1+r+r^2+r^3+\cdots+r^n=(r^{n+1}-1)/(r-1)$ for $r\neq 1$
 \end{exes}
 \begin{ans}
@@ -593,13 +592,13 @@ $a_k+(a_{k-1}+\cdots+a_0)=a_k+a_{k-1}+\cdots+a_0$.
 \end{ex}
 
 \begin{ex}
-The sequence of \definend{Fibonnacci numbers} is
+The sequence of \definend{Fibonacci numbers} is
 $0,1,2,3,5,8,13, \ldots$\,, defined by the condition that 
 the next number is the sum of the 
 two prior numbers $f_{n+1}=f_n+f_{n-1}$, and with initial conditions
 $f_0=0$ and~$f_1=0$.
 What is wrong with this argument purporting to show that
-all Fibonnacci numbers are even?
+all Fibonacci numbers are even?
 ``The $n=0$ base case is clear.  For the inductive step, assume the statement 
 is true for all cases up to and including $n=k$.
 By definition 
@@ -632,7 +631,7 @@ Prove each by induction.
 \item The base step is $n=2$.
   Since $6$ divides $2^3-2=8-2$, the statement holds in this case.
 
-  For the inductive step assume that the statment is true for 
+  For the inductive step assume that the statement is true for 
   the cases $n=0$, \ldots\,, $n=k$.
   In the $n=k+1$ case, consider 
   $(k+1)^3-(k+1)=(k^3+3k^2+3k+1)-(k+1)=(k^3+3k^2+3k)-k$.
@@ -820,7 +819,7 @@ $b$ is the \definend{divisor} while
 $q$ is the \definend{quotient} and~$r$ is the \definend{remainder}.  
 \end{df}
 
-Observe that in the Division Therem, $r=0$ if and only if $b\divides a$. 
+Observe that in the Division Theorem, $r=0$ if and only if $b\divides a$. 
 From grade school we know an effective procedure, an algorithm, to 
 determine the quotient and remainder.
 
@@ -887,7 +886,7 @@ Prove each.
   Multiplying gives $ac=bd+m\cdot(id+mij+jb)$, 
   which is equivalent to $ac\equiv bd\pmod m$. 
 \item We will show this by induction on the power~$n$.
-  The $n=1$ base step is true by the introductary assumption that 
+  The $n=1$ base step is true by the introductory assumption that 
   $a\equiv b\pmod m$.
   For the inductive step assume that the statement is true in the cases
   $n=1$, \ldots\,, $n=k$.
@@ -938,7 +937,7 @@ the greatest integer less than or equal to~$x$.
 \end{ex}
 
 
-\begin{ex}\notetext{Pigeonhole principle}  Prove each.
+\begin{ex}\notetext{Pigeonhole Principle}  Prove each.
 \begin{exes}
 \item For a finite list of numbers,
   the maximum is at least as big as the average.
@@ -1031,7 +1030,7 @@ Prove.
   where $d$ is a common divisor, 
   because it divides~$a$ we have that $d\leq\absval{a}$ and
   because it divides~$b$ we have that $d\leq\absval{b}$.
-  Thus $d$ is less than or equal to the mimimum of the two. 
+  Thus $d$ is less than or equal to the minimum of the two. 
 \item If $d$ is nonnegative then the statement is trivial.
   If $d$ is negative then
   this is immediate from \ref{ex:InteractionOfParityWithSign},
@@ -1234,7 +1233,7 @@ $\gcd(a,b)\cdot\lcm(a,b)$.
 % ========== Start Bezout argument of lemma =========== 
 \begin{bezoutproof}
 % TODO check answers
-\begin{ex}\notetext{Euclid's algorithm}
+\begin{ex}\notetext{Euclid's Algorithm}
 Prove that if $a=bq+r$ then $\gcd(a,b)=\gcd(b,r)$.  
 \begin{ans}
 Because $a=bq+r$ any common divisor of $b$ and~$r$ also divides~$a$, 
@@ -1398,7 +1397,7 @@ Let $a,b\in\Z$ and $m\in\N$.
 Prove each.
 \begin{exes}
 \item $\gcd(ma,mb)=m\cdot\gcd(a,b)$
-\item If $d$ is a common divosor of $a$ and~$b$ then 
+\item If $d$ is a common divisor of $a$ and~$b$ then 
   $\gcd(a/d,\,b/d)=\gcd(a,b)/d$.
   This implies that 
   dividing by the greatest common divisor leaves no common divisors:
@@ -1487,7 +1486,7 @@ A number greater than~$1$ that is not prime is~\definend{composite}.
   so at least one of the factors of~$n$ must be less than or equal 
   to~$\sqrt{n}$.
 
-  We finish by showning that $n$ has a factor in that category that is prime.
+  We finish by showing that $n$ has a factor in that category that is prime.
   Let $c$ be a factor of~$n$ with $c\leq\sqrt{n}$.
   Then $c$ has a prime factor~$p$.
   This~$p$ is a factor of~$n$ by the Transitivity property. 
@@ -1502,7 +1501,7 @@ A number greater than~$1$ that is not prime is~\definend{composite}.
 \begin{ex}[Euclid's Theorem]
 There are infinitely many primes.  
 \begin{ans}
-To obtain a contradition, assume otherwise.
+To obtain a contradiction, assume otherwise.
 Assume that there are finitely many primes: 
 $p_0=2$, $p_1=3$, \ldots\,, $p_{n-1}$.
 Consider the number $m=(p_0\cdotp_1\cdots p_{n-1})+1$.
@@ -1664,7 +1663,7 @@ Prove each.
   that the smaller of $e_i$ and~$f_i$ is $e_i$, writing
   $d\cdot k=a$ gives $p_0^{g_0}\cdots p_i^{g_i}\cdots p_{n-1}^{g_{n-1}}\cdot k$
   equal to $p_0^{e_0}\cdots p_i^{e_i}\cdots p_{n-1}^{e_{n-1}}$, and 
-  cancelling the most factors of~$p_i$ possible (that is, cancelling $p_i^{e_i}$)
+  canceling the most factors of~$p_i$ possible (that is, cancel-ling $p_i^{e_i}$)
   gives a contradiction because there is at least one factor
   of $p_i$ on one side but no such factor on the other.
 \item  This argument is just like the prior item's.  
@@ -1814,7 +1813,7 @@ Prove for all sets $A$.
 \begin{ex} \notetext{Properties of Subset} \label{ex:PropertiesOfSubset}
 Prove, for $A$, $B$, and~$C$ sets.
 \begin{exes} 
-\item \notetext{Mutual inclusion}
+\item \notetext{Mutual Inclusion}
   If $A\subseteq B$ and $B\subseteq A$ then $A=B$.  
 \item \notetext{Transitivity}
   If $A\subseteq B$ and~$B\subseteq C$ then~$A\subseteq C$.  
@@ -1860,7 +1859,7 @@ $\charfcn{A}$ (whose domain is the universal set) such that
 $\charfcn{A}(x)=1$ for $x\in A$, and $\charfcn{A}(x)=0$ for $x\notin A$.  
 \end{df}
 
-\begin{ex} \notetext{Russell's paradox}
+\begin{ex} \notetext{Russell's Paradox}
 The definition that we gave of sets allows them to contain anything, so 
 consider a set that contains all sets.
 It has itself as an element.
@@ -2002,7 +2001,7 @@ the universal set is~$X$.
 \begin{ex}
 Draw the Venn diagram for difference and symmetric difference.  
 \begin{ans}
-These are the Venn diagrams for diffeence and symmetric difference.
+These are the Venn diagrams for difference and symmetric difference.
 \begin{center}
   \grf{asy/venn_diff.pdf}{$A- B$}
   \hspace*{3em}
@@ -2455,7 +2454,7 @@ Thus $A^0=B^0=\set{\sequence{}}$.
   \remark they are only equal if one of them is empty.
 \item The example 
   $A=\emptyset$, $B=\set{1,2}$, $A^\prime=\set{a}$, $B^\prime=\set{1}$
-  shows that the statment is false since 
+  shows that the statement is false since 
   $A\times B=\emptyset\subseteq A^\prime\times B^\prime$ but 
   $B\not\subseteq B^\prime$.
 
@@ -2481,8 +2480,7 @@ Thus $A^0=B^0=\set{\sequence{}}$.
 \end{ans}
 \end{ex}
 
-\begin{ex} \notetext{Interaction between Cartesian product and 
-other set operations}
+\begin{ex} \notetext{Cartesian product and other set operations}
 \begin{exes}
 \item Prove that $(A\union B)\times C=(A\times C)\union(B\times C)$
 \item What happens for intersection?
@@ -2651,7 +2649,8 @@ $\setbuilder{y\in C}{\text{there is a $x\in D$ such that $f(x)=y$}}$.
 \end{df}
 
 \begin{ex}
-For each item in~\cref{FindFunctions}, if it is a function find the range.  
+For each item in Exericse~\ref{FindFunctions}, 
+if it is a function find the range.  
 \begin{ans}
 \begin{exes}
 \item The range is $\set{3,4,5}=C$.    
@@ -3139,7 +3138,7 @@ Prove each.
 \item If a function has an inverse then that inverse
   is unique.
 \item The inverse of a correspondence is a correspondence.  
-\item If $f$ and $g$ each is invertable then so is 
+\item If $f$ and $g$ each is invertible then so is 
   $\composed{g}{f}$, and $(\composed{g}{f})^{-1}=\composed{f^{-1}}{g^{-1}}$.
 \end{exes}
 \begin{ans}
@@ -3478,7 +3477,7 @@ To check that the relation is transitive assume that
 $(p,q)$ is related to~$(n,d)$
 and also that $(n,d)$ is related to~$(a,b)$.
 Then $pd=qn$ and~$nb=da$.
-Multiply both sides of the first equation by $ab$ to get $pdab=qnab$, reqroup as
+Multiply both sides of the first equation by $ab$ to get $pdab=qnab$, regroup as
 $pb\cdot(da)=qa\cdot(nb)$, and cancel $da=nb$ to get $pb=qa$.
 This shows that $(p,q)$ is related to $(a,b)$.  
 \end{ans}
@@ -3507,7 +3506,7 @@ fixing a $xy$-axes, and giving the equations.
   and the line $x=0$~itself.
 \item The relation is reflexive since two lines that are the same are
   explicitly given as related.
-  The relation is symmmetric since if $\ell_0$ is related to~$\ell_1$
+  The relation is symmetric since if $\ell_0$ is related to~$\ell_1$
   then they are parallel or the same, and in either case
   $\ell_1$ is related to~$\ell_0$.
   If $\ell_0$ is parallel to or the same as~$\ell_1$, 
@@ -3601,7 +3600,7 @@ and the $P$ are \definend{pairwise disjoint}
   The third is also clear; no element of~$\N$ is both even and odd.
 
   Finally, $\partition{P}$ has two elements since $P_0\neq P_1$.
-\item Before we start we bserve that there are $x_0,x_1\in\R$ such that
+\item Before we start we observe that there are $x_0,x_1\in\R$ such that
   $P_{x_0}=P_{x_1}$; an example is $x_0=0.25$ and~$x_1=1.25$.
 
   To prove that $\partition{p}$ is a partition, first note that $x\in P_x$.
@@ -3883,7 +3882,7 @@ Prove.
   without going through the verification details.
   
   The function alternates between columns in the same way that
-  Jackie Chan, when up against multiple bad guys, alternates amoung his 
+  Jackie Chan, when up against multiple bad guys, alternates among his 
   attackers.
   Thus $0\mapsunder{} (0,0)$, $1\mapsunder{}(0,1)$, $2\mapsunder{}(1,0)$, 
   $3\mapsunder{}(0,2)$, 
@@ -4020,7 +4019,7 @@ possible if $j_0=j_1$).
   collection of integers~$n$ such that $n\notin f(n)$.
   The other $R=f(i)$ possibility is that $i\notin R$, which 
   is also a contradiction
-  because then $i$~satifies the defining criteria for membership in~$R$, namely
+  because then $i$~satisfies the defining criteria for membership in~$R$, namely
   that $i\notin R$, and therefore $i\in R$.
 Either $R=f(i)$ case gives a contradiction and so $R\neq f(i)$.
 \item We will show that there is a one-to-one map~$\map{f}{\powerset(\N)}{\R}$.
@@ -4097,7 +4096,7 @@ if $n\in K$ for $0\leq n\leq k$ then $S(k)\in K$.
 Condition~(ii) above is often called \definend{weak induction} while
 the version we use is \definend{strong induction}.
 There are technical differences but for our purposes
-the two variants are interchangable. 
+the two variants are interchangeable. 
 We prefer the strong variant because while it is 
 more awkward to state, it is sometimes easier to apply.)
 % http://mathoverflow.net/questions/37944/induction-vs-strong-induction
