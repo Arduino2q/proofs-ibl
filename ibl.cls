@@ -198,41 +198,37 @@ qed=\qedsymbol
 \usepackage{fourier}
 \usepackage[T1]{fontenc}
 
-% Font of chapter and section titles
-% \usepackage{titling}
-% \usepackage{fontspec}
-% % Specify different font for section headings
-% \newfontfamily\headingfont[]{GFS Solomos}
-% \titleformat*{\section}{\LARGE\headingfont}
-% \titleformat*{\subsection}{\Large\headingfont}
-% \titleformat*{\subsubsection}{\large\headingfont}
-% \renewcommand{\maketitlehooka}{\headingfont}
+% ========================================
+% Cover
+\newcommand{\coverpage}[1]{%  argument is possibly "Answers to Exercises"
+\vspace*{\fill}
+\begin{center}
+  \setlength{\unitlength}{1in}
+  \newcommand{\enormoussize}{\fontsize{30pt}{20pt}\selectfont}
+  {\enormoussize\scshape \makebox[0em][l]{\raisebox{24pt}{\large\itshape \hspace*{15pt}An Inquiry-Based}}{\color{darkii}Introduction to Proof}}  \\[5pt]
+  {\Large\scshape \makebox[23em][r]{\color{darkii}#1}}
+\end{center}
+\vspace*{\fill}
+\begin{flushright}
+  \large\color{darki}
+  \begin{tabular}{@{}l@{}}
+  Jim Hef{}feron  \\
+  version 0.95
+  \end{tabular}
+\end{flushright}
+}
 
-% % ========================================
-% % Answers
-% \usepackage{answers}
-% \Newassociation{ans}{answer}{answers}
-% \Opensolutionfile{answers}[answersbody]
 
-% % \begin{Filesave}{answers}
-% % \documentclass{ibl}
-% % \begin{document}
-% % \begin{answerlist}  
-% % \end{Filesave}
+% ========================================
+% I want the booleans offered by this package
+\usepackage{etoolbox}
 
-% \AtEndDocument{%
-% \Closesolutionfile{answers}}
-
-% \renewenvironment{answer}[1]{%
-% % \hspace*{0em}% Causes it to start on a new line? 
-% \begin{enumerate}[topsep=0.15ex,partopsep=0ex,parsep=0ex,
-%                   beginpenalty=150,   % Prevent page break after newline start
-%                   itemsep=.25ex plus .03ex minus .01ex,
-%                   leftmargin=\exesindent,rightmargin=0em,
-%                   align=left,label={\textsc{#1}.}] 
-% }{%
-% \end{enumerate}
-% }
+% ========================================
+% The appendix should not write the title to the answersbody file
+\newbool{inappendix}
+\boolfalse{inappendix}
+\let\jh@appendix\appendix   % remember LaTeX's definition
+\renewcommand{\appendix}{\booltrue{inappendix}\jh@appendix}
 
 
 % ========================================

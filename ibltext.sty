@@ -7,7 +7,7 @@
 \fancyhf{}% clear all six fields
 \fancyhead[RE,LO]{\small Introduction to Proof, \today}
 \fancyhead[LE,RO]{\small page \thepage}
-\renewcommand{\headrulewidth}{0.7pt}
+\renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0pt}
 }
 
@@ -54,7 +54,7 @@
                      \jhchapterNoStar%
 }
 \newcommand{\jhchapterStar}[1]{\chapterholder{#1}}
-\newcommand{\jhchapterNoStar}[1]{\Writetofile{answers}{\protect\chapter{#1}}\chapterholder{#1}}
+\newcommand{\jhchapterNoStar}[1]{\ifbool{inappendix}{\relax}{\Writetofile{answers}{\protect\chapter{#1}}\chapterholder{#1}}}
 % Same thing for the \section command
 \let\sectionholder\section
 \renewcommand{\section}{\@ifstar

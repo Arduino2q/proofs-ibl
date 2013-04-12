@@ -7,11 +7,11 @@
 \fancyhf{}% clear all six fields
 \fancyhead[RE,LO]{\small Answers: Introduction to Proof, \today}
 \fancyhead[LE,RO]{\small page \thepage}
-\renewcommand{\headrulewidth}{0.7pt}
+\renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0pt}
 }
 
-\pagestyle{firstpage}
+\pagestyle{bodypage}
 \AtBeginDocument{\thispagestyle{firstpage}}
 
 % ========================================
@@ -29,7 +29,7 @@
 \begin{enumerate}[topsep=0.20ex plus 0.02ex minus 0.01ex,
                   partopsep=0ex, parsep=0ex plus 0.01ex,
                   beginpenalty=150,% Prevent page break after newline start
-                  labelwidth=0em,align=left,labelsep=1.5em,
+                  labelwidth=0.25em,align=left,labelsep=1.0em,
                   itemsep=.25ex plus .03ex minus .01ex,
                   leftmargin=1.25em,rightmargin=0em,
                   listparindent=\unifiedlistparindent,
@@ -45,12 +45,22 @@
 \begin{enumerate}[topsep=0.15ex plus 0.02ex minus 0.01ex,
                   partopsep=0ex,parsep=0ex,
                   beginpenalty=150,   % Prevent page break after newline start
-                  labelsep=0em,
-                  labelwidth=.8em plus .03em minus 0em,align=right,labelsep=1em,
+                  labelwidth=0.5em plus .03em minus 0em,align=right,labelsep=0.5em,
                   itemsep=.25ex plus .04ex,
-                  leftmargin=1.25em,rightmargin=0em,
+                  leftmargin=1em,rightmargin=0em,
                   listparindent=\unifiedlistparindent,
                   align=left,label={\textsc{\alph*}.\protect\addtocounter{exercisepartscount}{1}}] 
 }{%
 \end{enumerate}
 }
+
+
+% ==============================================
+% sectioning
+\titleformat{\chapter}[block]{\color{darki}\LARGE\scshape}{Chapter \thechapter}{1em}{}[\thispagestyle{firstpage}]
+\titlespacing*{\chapter}{0em}{6ex}{3ex} 
+\titleformat{\section}[block]{\color{darki}\Large\scshape}{}{0em}{}[]
+\titlespacing*{\section}{0em}{7ex}{2ex} 
+
+% \titleformat{\section}[block]{\Large\scshape}{}{0em}{}[] % unnumbered sections
+% \titlespacing*{\section}{0em}{7ex}{2ex} 

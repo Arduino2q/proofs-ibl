@@ -1,8 +1,6 @@
 \documentclass{ibl}
 \usepackage{ibltext} % for the text only; answers-only is another .sty
 
-\usepackage{euscript}
-
 \usepackage{etoolbox}
 \usepackage{comment}
 \newbool{euclid}
@@ -18,93 +16,22 @@
 
 \frontmatter
 \begin{document}    
-\vspace*{\fill}
-\begin{center}
-  \setlength{\unitlength}{1in}
-  \newcommand{\enormoussize}{\fontsize{30pt}{20pt}\selectfont}
-  {\enormoussize\scshape \makebox[0em][l]{\raisebox{24pt}{\large\itshape \hspace*{15pt}An Inquiry-Based}}{\color{darkii}Introduction to Proof}}
-\end{center}
-\vspace*{\fill}
-\begin{flushright}
-  \large\color{darki}
-  \begin{tabular}{@{}l@{}}
-  Jim Hef{}feron  \\
-  version 0.9
-  \end{tabular}
-\end{flushright}
-
-\newpage
-\begin{center}
-  \renewcommand{\arraystretch}{1.07}
-  {\large\textsc{Notation}} \\[3ex]
-  \begin{tabular}{r|l}
-    $\Z$    &integers; $\set{\ldots, -2,-1,0,1,2,\ldots}$  \\
-    $\N$    &natural numbers; $\set{0,1,2,\ldots}$  \\
-    $\Z^+$  &positive integers; $\set{1,2,\ldots}$  \\
-    $\Q$    &rational numbers  \\
-    $\R$    &real numbers     \\
-    $a\divides b$  &$a$ divides~$b$ \\
-    $a\bmod b$  &the remainder when $a$ is divided by $b$ \\
-    $a\equiv c\pmod b$ &$a$ and $c$ have the same remainder when divided by $b$ \\
-    $\gcd(a,b)$, $\lcm(a,b)$ &greatest common divisor, least common multiple  \\
-    $a\in A$  &$a$ is an element of the set $A$  \\
-    $\emptyset$  &the empty set  \\
-    $A\subseteq B$ &$A$ is a subset of~$B$  \\
-    $\charfcn{A}$  &characteristic function of the set~$A$ \\
-    $\setcomp{A}$  &complement of the set~$A$  \\
-    $A\union B$, $A\intersection B$ &union, intersection of the sets \\
-    $A- B$, $A\symdiff B$ &difference, symmetric difference of the sets \\
-    $|A|$  &order of the finite set $A$; number of elements \\ 
-    $\powerset(A)$  &power set of $A$; set of all of $A$'s subsets \\
-    $\seq{x_0,x_1,\ldots}$, $\lh(\seq{x_0,x_1,\ldots})$ &sequence, length of the sequence   \\
-    $A_0\times A_1\times \cdots \times A_{n-1}$, $A^n$  &Cartesian product of sets, product of a set with itself \\
-    $\map{f}{D}{C}$  &function with domain~$D$ and codomain~$C$ \\
-    $\map{\identity}{D}{D}$  &identity map; $\identity(d)=d$ \\
-    $\restrictionmap{f}{B}$  &restriction of $f$ to a subset of the domain \\
-    $f^{-1}(c)$, $f^{-1}(A)$  &inverse image of an element or subset of the codomain \\
-    $\composed{g}{f}$  &function composition   \\
-    $f^{-1}$  &function inverse to~$f$  \\
-    $x\equiv y\pmod R$  &$(x,y)\in R$ where $R$ is an equivalence; equivalence with respect to~$R$ \\ 
-    $\eqclass{x}$  &equivalence class containing~$x$  \\
-    $\partition{P}$  &partition of a set  \\
-    $A\sim B$  &the two sets have the same cardinality
-  \end{tabular}
-\end{center}
-\vspace*{\fill}
-\begin{center}
-  {\large\textsc{Lower case Greek letters, with pronounciation}}
-    \\[3ex]
-  \newcommand{\pronounced}[1]{\hspace*{.2em}\small\textit{#1}}
-  \begin{tabular}{cl@{\hspace*{3em}}cl}
-    character &\multicolumn{1}{c}{name}       
-    &character  &\multicolumn{1}{c}{name}  \\ 
-    \hline
-     \( \alpha  \) &alpha \pronounced{AL-fuh}  
-       &\( \nu     \)  &nu  \pronounced{NEW}       \\
-     \( \beta   \) &beta  \pronounced{BAY-tuh}     
-       &\( \xi  \)  &xi   \pronounced{KSIGH}    \\ 
-     \( \gamma  \) &gamma  \pronounced{GAM-muh}    
-       &\( o       \) &omicron  \pronounced{OM-uh-CRON}  \\
-     \( \delta  \) &delta  \pronounced{DEL-tuh}   
-       &\( \pi \) &pi  \pronounced{PIE}     \\
-     \( \epsilon\) &epsilon  \pronounced{EP-suh-lon}   
-       &\( \rho \) &rho  \pronounced{ROW}    \\
-     \( \zeta   \) &zeta   \pronounced{ZAY-tuh}    
-       &\( \sigma  \) &sigma  \pronounced{SIG-muh}  \\
-     \( \eta    \) &eta  \pronounced{AY-tuh}      
-       &\( \tau \) &tau  \pronounced{TOW (as in cow)}    \\
-     \( \theta  \) &theta  \pronounced{THAY-tuh}    
-       &\( \upsilon\) &upsilon  \pronounced{OOP-suh-LON}  \\
-     \( \iota \) &iota \pronounced{eye-OH-tuh}   
-       &\( \phi    \) &phi  \pronounced{FEE, or FI (as in hi)}    \\
-     \( \kappa  \) &kappa  \pronounced{KAP-uh}  
-       &\( \chi    \) &chi  \pronounced{KI (as in hi)}    \\
-     \( \lambda \) &lambda  \pronounced{LAM-duh}  
-       &\( \psi    \) &psi \pronounced{SIGH, or PSIGH}    \\
-     \( \mu  \)  &mu  \pronounced{MEW}     
-       &\( \omega  \) &omega  \pronounced{oh-MAY-guh}  
-  \end{tabular}
-\end{center}
+% \vspace*{\fill}
+% \begin{center}
+%   \setlength{\unitlength}{1in}
+%   \newcommand{\enormoussize}{\fontsize{30pt}{20pt}\selectfont}
+%   {\enormoussize\scshape \makebox[0em][l]{\raisebox{24pt}{\large\itshape \hspace*{15pt}An Inquiry-Based}}{\color{darkii}Introduction to Proof}}
+% \end{center}
+% \vspace*{\fill}
+% \begin{flushright}
+%   \large\color{darki}
+%   \begin{tabular}{@{}l@{}}
+%   Jim Hef{}feron  \\
+%   version 0.95
+%   \end{tabular}
+% \end{flushright}
+\coverpage{}
+\include{flyleaf}
 
 
 
@@ -3969,26 +3896,26 @@ Prove.
   \newcommand{\chanpoint}[1]{\makebox[0em]{$(#1)$}}
   \newcommand{\chanarrow}{{\color{darkii} $\searrow$}}
   \setlength{\unitlength}{0.5in}
-  \begin{picture}(4,4.5)
+  \begin{picture}(4,4)
     \put(0,0){\chanpoint{0,0}}
     \put(1,0){\chanpoint{1,0}}
     \put(2,0){\chanpoint{2,0}}
     \put(3,0){\chanpoint{3,0}}
-    \put(3.75,0){\ldots}
+    \put(3.5,0){\ldots}
     \put(0,1){\chanpoint{0,1}}
     \put(1,1){\chanpoint{1,1}}
     \put(2,1){\chanpoint{2,1}}
-    \put(3,1){\ldots}
+    \put(2.75,1){\ldots}
     \put(0,2){\chanpoint{0,2}}
     \put(1,2){\chanpoint{1,2}}
     \put(2,2){\chanpoint{2,2}}
-    \put(3,2){\ldots}
+    \put(2.75,2){\ldots}
     \put(0,3){\chanpoint{0,3}}
     \put(1,3){\chanpoint{1,3}}
     % \put(2,3){\ldots}
-    \put(0,3.75){$\vdots$}
-    \put(1,3.75){$\vdots$}
-    \put(2.5,3.25){$\iddots$}
+    \put(0,3.6){$\vdots$}
+    \put(1,3.6){$\vdots$}
+    \put(2.5,3.1){$\iddots$}
     % arrows
     \put(0.5,0.5){\chanarrow}
     \put(0.5,1.5){\chanarrow}
@@ -4065,7 +3992,7 @@ possible if $j_0=j_1$).
   It is not quite onto; every rational number is the image of some
   $(p,q)$ except for $0$.
 
-  The cartesian product $\N\times\N$ is denumerable so there is a 
+  The Cartesian product $\N\times\N$ is denumerable so there is a 
   correspondence $\map{f}{\N}{\N\times\N}$.
   Define a function $\map{h}{\N}{\Q}$ by $h(i)=0$ if $i=0$ and $h(i)=f(i-1)$
   if $i>0$.
