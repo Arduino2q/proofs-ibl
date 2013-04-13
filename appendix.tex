@@ -1,0 +1,72 @@
+\appendix
+\chapter{Peano axioms}
+\newcommand{\axiom}[1]{\textsc{Axiom~#1}\hspace{.5ex}}
+
+Particularly in the 
+first chapter a person struggles with when to consider a 
+statement sufficiently justified 
+and soon comes to wonder what the axioms are like.
+Here we give the most often used axiom system for the natural numbers, to
+convey a sense of that. 
+
+This system was 
+introduced by Dedekind in 1888 and tuned by Peano in 1889.
+In addition to the usual logical and set symbols such as $=$ and $\in$,
+with the traditional properties, 
+our language will use at least two symbols, $0$ and $S$, whose 
+properties are limited by the conditions below.
+
+\begin{ax}[Existence of a natural number]
+The constant~$0$ is a natural number.
+\end{ax}
+
+\begin{ax}[Arithmetical properties]
+The \definend{successor} function~$S$ has these properties.
+\begin{exes}
+\item \notetext{Closure} For all $a\in\N$, its successor~$S(a)$ is also 
+  a natural number.
+\item \notetext{One-to-one} For all $a,b\in\N$, if $S(a)=S(b)$ then $a=b$.
+\item \notetext{Almost onto}
+  For all $a\in\N$, if $a\neq 0$ then there is a $b\in\N$ with $S(b)=a$.
+  In contrast, no $c\in\N$ has $0$ as a successor.  
+\end{exes}
+\end{ax}
+
+These properties give infinitely many natural numbers:
+$0$, $S(0)$, $S(S(0))$, etc.
+Of course, the notation $0$, $1$, $2$, etc., is less clunky.
+
+\begin{ax}[Induction]
+  Suppose that $K$ is a set satisfying both (i)~$0\in K$
+  and (ii)~for all $n\in\N$, if $n\in K$ then $S(n)\in K$.
+  Then $K=\N$.
+\end{ax}
+
+\noindent (In this book we use an induction variant that changes
+condition~(ii) to: for all $k\in\N$,  
+if $n\in K$ for $0\leq n\leq k$ then $S(k)\in K$.
+Condition~(ii) above is often called \definend{weak induction} while
+the version we use is \definend{strong induction}.
+There are technical differences but for our purposes
+the two variants are interchangeable. 
+We prefer the strong variant because while it is 
+more awkward to state, it is sometimes easier to apply.)
+% http://mathoverflow.net/questions/37944/induction-vs-strong-induction
+
+From those axioms we can for instance 
+define addition by recursion using successor
+\begin{equation*}
+  \add(a,n)=
+  \begin{cases}
+    a             &\text{if $n=0$}  \\
+    S(\add(a,m))  &\text{if $n=S(m)$} 
+  \end{cases}
+\end{equation*}
+and then define multiplication by recursion using addition.
+\begin{equation*}
+  \mul(a,n)=
+  \begin{cases}
+    0             &\text{if $n=0$}  \\
+    \add(\mul(a,m),a)  &\text{if $n=S(m)$} 
+  \end{cases}
+\end{equation*}

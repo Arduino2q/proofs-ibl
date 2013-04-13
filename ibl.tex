@@ -1,4 +1,6 @@
-\documentclass{ibl}
+% One and only one of the next two lines should be uncommented
+\documentclass{ibl}  % for making book
+% \documentclass[compact]{ibl}  % for making handout for students
 \usepackage{ibltext} % for the text only; answers-only is another .sty
 
 \usepackage{etoolbox}
@@ -32,110 +34,16 @@
 % \end{flushright}
 \coverpage{}
 \include{flyleaf}
-
-
-
-
-
-\chapter*{Preface}
-
-This is a course in mathematical proof. 
-It is for math majors who are US sophomores, although since
-it requires only high school mathematics
-it can be used with first year students.
-
-
-
-\medskip
-\noindent\textsc{Approach.}
-This course is Inquiry-Based (sometimes called Moore method 
-or discovery method).
-This text is a sequence of exercises,
-along with definitions and a few 
-remarks.
-The students together work through the mathematics by
-proving statements or sometimes by providing examples or counterexamples.
-They grapple directly with the mathematics\Dash the instructor only 
-lightly guides\Dash
-talking out misunderstandings, 
-sometimes stumbling in the dark, and sometimes
-having beautiful flashes of insight.
-For these students, 
-this is the best way to develop mathematical maturity.
-
-
-\medskip
-\noindent\textsc{Topics.}
-We start with elementary number theory, not logic and sets, 
-for the same reason
-that the baseball team's annual practice starts with hitting the ball and 
-not with reading the rulebook.
-Math majors take readily to proving things about
-divisibility and primes, enjoying the 
-intellectual challenge and verbal exchange, 
-whereas a first month of background material can be a damper.
-
-But the background material is good stuff also and 
-students are on board once they see where it is going.
-In the second and third chapters we do
-sets, functions, and relations, now with the
-intellectual habits that we've established at the start.
-
-% There are some topics, such as the definition of implication, 
-% that students need even in the
-% first chapter.
-% My class meetings begin with some people going to the 
-% board to write their answers to the homework and 
-% I often use these ten minutes for a beamer slide or two 
-% discussing issues from
-% the current work.
-% This just-in-time approach keeps the class centered 
-% on proving things while ensuring that they get what
-% they need when they need it.
-% (The only exception is that we pause briefly to do induction,
-% since it is typically new for these students and since it needs 
-% their full attention.)
-
-
-
-\medskip
-\noindent\textsc{License.}
-This material is Free; see \url{http://joshua.smcvt.edu/proofs}.
-This includes the \LaTeX{} source so that instructors can tailor the
-material to their students.  
-% Also on that page are the slides that I use
-% and, for instructors new to this approach, 
-% a brief description of the classroom approach that works for me.
-
-
-\vspace{\fill}
-\noindent\parbox{.95\textwidth}{\raggedright\textit{At the first meeting of the class Moore would define the basic terms and either challenge the class to discover the relations among them, or, depending on the subject, the level, and the students, explicitly state a theorem, or two, or three. Class dismissed. Next meeting: "Mr Smith, please prove Theorem 1. Oh, you can't? Very well, Mr Jones, you? No? Mr Robinson? No? Well, let's skip Theorem 1 and come back to it later. How about Theorem 2, Mr Smith?" Someone almost always could do something. If not, class dismissed. It didn't take the class long to discover that Moore really meant it, and presently the students would be proving theorems and watching the proofs of others with the eyes of eagles.}\hspace{1.5em}--Paul Halmos}
-
-\vspace{.2in}
-\noindent\parbox{.95\textwidth}{\textit{It's a kind of art that may change lives.}\hspace{1.5em}--Peter Schjeldahl}
- 
-\vspace*{\fill}
-\begin{flushright}
-  \begin{tabular}{@{}l@{}}
-  Jim Hef{}feron  \\
-  Saint Michael's College  \\
-  Colchester, Vermont USA \\
-  2013-Spring
-  \end{tabular}
-\end{flushright}
-
-
+\ifbool{optioncompact}{}{\include{preface}}
 
 
 \mainmatter
 \pagestyle{bodypage}
 \chapter{Number Theory}
 
-We begin with results about the
-integers $\Z=\set{..,-2,-1,0,1,2,\ldots}$.
+We begin with results about the integers $\Z=\set{\ldots,-2,-1,0,1,2,\ldots}$.
 In this chapter ``number'' means integer.
-Some statements refer to the 
-natural numbers $\N=\set{0,1,2,\ldots}$.
+Some statements refer to the natural numbers $\N=\set{0,1,2,\ldots}$.
 
 
 % .....................................
@@ -1284,7 +1192,7 @@ Use that calculation to express the greatest common divisor as a
 linear combination of the two.
 \begin{exes}
 \item $15$, $25$
-\item $48$,$732$  
+\item $48$, $732$  
 \end{exes}
 \begin{ans}
 \begin{exes}
@@ -1901,7 +1809,7 @@ set of objects that are not elements of~$A$.
 \end{df}
 
 \noindent\remark
-Working inside of a universal set makes the complement
+working inside of a universal set makes the complement
 operation sensible. 
 For instance, in discussing of number theory where
 $\universalset=\Z$, if $A$ is the set of 
@@ -1998,17 +1906,17 @@ $A\symdiff B=(A-B)\union(B-A)$.
 \noindent If $A\subseteq X$ then $X-A$ is the same as $\setcomp{A}$ where
 the universal set is~$X$.     
 
-\begin{ex}
-Draw the Venn diagram for difference and symmetric difference.  
-\begin{ans}
-These are the Venn diagrams for difference and symmetric difference.
-\begin{center}
-  \grf{asy/venn_diff.pdf}{$A- B$}
-  \hspace*{3em}
-  \grf{asy/venn_symdiff.pdf}{$A\symdiff B$}
-\end{center}  
-\end{ans}
-\end{ex}
+% \begin{ex}
+% Draw the Venn diagram for difference and symmetric difference.  
+% \begin{ans}
+% These are the Venn diagrams for difference and symmetric difference.
+% \begin{center}
+%   \grf{asy/venn_diff.pdf}{$A- B$}
+%   \hspace*{3em}
+%   \grf{asy/venn_symdiff.pdf}{$A\symdiff B$}
+% \end{center}  
+% \end{ans}
+% \end{ex}
 
 \begin{ex} \pord.
 \begin{exes}
@@ -2246,12 +2154,12 @@ $\powerset(\emptyset)=\set{\emptyset}$.
 
 \begin{ex}  Let $S=\set{\emptyset,\set{\emptyset}}$. \pord.
 \begin{exes}
-\item $\emptyset\in\powerset(A)$    
-\item $\emptyset\subseteq\powerset(A)$    
-\item $\set{\emptyset}\in\powerset(A)$    
-\item $\set{\emptyset}\subseteq\powerset(A)$    
-\item $\set{\set{\emptyset}}\in\powerset(A)$    
-\item $\set{\set{\emptyset}}\subseteq\powerset(A)$    
+\item $\emptyset\in\powerset(A)$, 
+  $\emptyset\subseteq\powerset(A)$    
+\item $\set{\emptyset}\in\powerset(A)$, 
+  $\set{\emptyset}\subseteq\powerset(A)$    
+\item $\set{\set{\emptyset}}\in\powerset(A)$,    
+  $\set{\set{\emptyset}}\subseteq\powerset(A)$    
 \end{exes}
 \begin{ans}
 The power set of a two-element set $\set{a,b}$ is 
@@ -2260,20 +2168,25 @@ Taking $\emptyset$ for~$a$ and $\set{\emptyset}$ for~$b$ we have
 $\powerset(S)=\set{\emptyset, \set{\emptyset}, \set{\set{\emptyset}}, 
                    \set{\emptyset, \set{\emptyset}}}$.
 \begin{exes}
-\item This is true by inspection, the empty set is the first element
+\item The first is true by inspection, the empty set is the first element
   of $\powerset(S)$ listed.
-\item This is true by the earlier result~\ref{ex:EmptySetUnique}
+
+  The second is true by the earlier result~\ref{ex:EmptySetUnique}
   that the empty set is a subset of all sets.
-\item Again, by inspection, one of the elements of $\powerset(S)$ is 
+\item Again the first is true by inspection, 
+  since one of the elements of $\powerset(S)$ is 
   $\set{\emptyset}$.  (It is listed second.)
-\item This is true.
+
+  The second is true.
   To verify that one set is a subset of another we can check that for all
   elements~$x$ of that one, $x$ is also an element of the other.
   In this case the subset~$\set{\emptyset}$ has only one element to check,
   and the first item above checks that it is an element of~$\powerset(S)$.
-\item This is true by inspection, since it is the element that is listed
+\item The first is true by inspection, since it is the element that is listed
   third.
-\item To verify that $\set{\set{\emptyset}}$ is a subset of~$\powerset(S)$
+
+  To verify the second,
+  that $\set{\set{\emptyset}}$ is a subset of~$\powerset(S)$
   we can check that each of its elements are elements of the power set.
   It has only one element, namely~$\set{\emptyset}$.
   That is indeed one of the elements of~$\powerset(S)$, as checked in 
@@ -2480,51 +2393,51 @@ Thus $A^0=B^0=\set{\sequence{}}$.
 \end{ans}
 \end{ex}
 
-\begin{ex} \notetext{Cartesian product and other set operations}
-\begin{exes}
-\item Prove that $(A\union B)\times C=(A\times C)\union(B\times C)$
-\item What happens for intersection?
-\item Show that in general $\setcomp{A\times B}$ does not equal 
-  $\setcomp{A}\times\setcomp{B}$.
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item Assume first that $\sequence{x,c}\in (A\union B)\times C$.
-  Then $x\in A\union B$ and so either $x\in A$ or~$x\in B$.
-  If $x\in A$ then $\sequence{x,c}\in A\times C$, while 
-  if $x\in B$ then $\sequence{x,c}\in B\times C$, and so 
-  $\sequence{x,c}\in (A\times C)\union (B\times C)$.
-  Thus $(A\union B)\times C\subseteq (A\times C)\union (B\times C)$.
+% \begin{ex} \notetext{Cartesian product and other set operations}
+% \begin{exes}
+% \item Prove that $(A\union B)\times C=(A\times C)\union(B\times C)$
+% \item What happens for intersection?
+% \item Show that in general $\setcomp{A\times B}$ does not equal 
+%   $\setcomp{A}\times\setcomp{B}$.
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item Assume first that $\sequence{x,c}\in (A\union B)\times C$.
+%   Then $x\in A\union B$ and so either $x\in A$ or~$x\in B$.
+%   If $x\in A$ then $\sequence{x,c}\in A\times C$, while 
+%   if $x\in B$ then $\sequence{x,c}\in B\times C$, and so 
+%   $\sequence{x,c}\in (A\times C)\union (B\times C)$.
+%   Thus $(A\union B)\times C\subseteq (A\times C)\union (B\times C)$.
   
-  To get containment in the other direction assume that 
-  $\sequence{x,c}\in (A\times C)\union (B\times C)$.
-  Then either $\sequence{x,c}\in A\times C$ or~$\sequence{x,c}\in B\times C$.
-  If $\sequence{x,c}\in A\times C$ then~$x\in A$ and so 
-  $\sequence{x,c}\in (A\union B)\times C$.
-  The  $\sequence{x,c}\in B\times C$ case is similar.
-  Thus $(A\times C)\union (B\times C)\subseteq (A\union B)\times C$. 
-\item We will prove that 
-  $(A\intersection B)\times C = (A\times C)\intersection (B\times C)$.
-  For contrast with the prior item
-  we will use a sequence of if and only if statements.
+%   To get containment in the other direction assume that 
+%   $\sequence{x,c}\in (A\times C)\union (B\times C)$.
+%   Then either $\sequence{x,c}\in A\times C$ or~$\sequence{x,c}\in B\times C$.
+%   If $\sequence{x,c}\in A\times C$ then~$x\in A$ and so 
+%   $\sequence{x,c}\in (A\union B)\times C$.
+%   The  $\sequence{x,c}\in B\times C$ case is similar.
+%   Thus $(A\times C)\union (B\times C)\subseteq (A\union B)\times C$. 
+% \item We will prove that 
+%   $(A\intersection B)\times C = (A\times C)\intersection (B\times C)$.
+%   For contrast with the prior item
+%   we will use a sequence of if and only if statements.
 
-  We have that $\sequence{x,c}\in (A\intersection B)\times C$
-  if and only if both
-  $x\in A\intersection B$ and~$c\in C$.
-  That holds if and only if both
-  $\sequence{x,c}\in A\times C$ and~$\sequence{x,c}\in B\times C$ are true,
-  which in turn is equivalent to
-  $\sequence{x,c}\in (A\times C)\intersection (B\times C)$.
-\item If the universal set is $\universalset=\Z$,
-  $A=\set{0}$, and $B=\set{1}$ then $A\times B=\set{\sequence{0,1}}$,
-  so $\setcomp{A\times B}=\Z^2-\set{\sequence{0,1}}$,
-  while $\setcomp{A}\times\setcomp{B}=(\Z-\set{0})\times(\Z-\set{1})$.
-  The two sets are not equal. 
-  For instance, $\sequence{0,2}\in \setcomp{A\times B}$
-  while $\sequence{0,2}\notin\setcomp{A}\times\setcomp{B}$.
-\end{exes}
-\end{ans}
-\end{ex}
+%   We have that $\sequence{x,c}\in (A\intersection B)\times C$
+%   if and only if both
+%   $x\in A\intersection B$ and~$c\in C$.
+%   That holds if and only if both
+%   $\sequence{x,c}\in A\times C$ and~$\sequence{x,c}\in B\times C$ are true,
+%   which in turn is equivalent to
+%   $\sequence{x,c}\in (A\times C)\intersection (B\times C)$.
+% \item If the universal set is $\universalset=\Z$,
+%   $A=\set{0}$, and $B=\set{1}$ then $A\times B=\set{\sequence{0,1}}$,
+%   so $\setcomp{A\times B}=\Z^2-\set{\sequence{0,1}}$,
+%   while $\setcomp{A}\times\setcomp{B}=(\Z-\set{0})\times(\Z-\set{1})$.
+%   The two sets are not equal. 
+%   For instance, $\sequence{0,2}\in \setcomp{A\times B}$
+%   while $\sequence{0,2}\notin\setcomp{A}\times\setcomp{B}$.
+% \end{exes}
+% \end{ans}
+% \end{ex}
 
 
 
@@ -2682,17 +2595,17 @@ Find the image of each set under the real-valued function $f(x)=\tan(x)$.
 \begin{exes}
 \item $\leftclosed{\pi/4}{\pi/2}=\setbuilder{x\in\R}{\pi/4\leq x<\pi/2}$
 \item \set{-\pi/3}
-\item $\R^+$  
+% \item $\R^+$  
 \end{exes}
 \begin{ans}
 \begin{exes}
 \item $f(\leftclosed{\pi/4}{\pi/2})=\leftclosed{1}{\infty}
              =\setbuilder{x\in\R}{1\leq x<\infty}$ 
 \item $f(\set{\pi/3})=\set{\sqrt{3}}$
-\item The function $f(x)=\tan(x)$ isn't defined for all values in $\R^+$.
-  In particular, the function isn't defined for $x=\pi/4$.
-  Thus, $\restrictionmap{f}{\R^+}$ isn't defined, and so the
-  image isn't defined.
+% \item The function $f(x)=\tan(x)$ isn't defined for all values in $\R^+$.
+%   In particular, the function isn't defined for $x=\pi/4$.
+%   Thus, $\restrictionmap{f}{\R^+}$ isn't defined, and so the
+%   image isn't defined.
 \end{exes}
 \end{ans}
 \end{ex}
@@ -2758,7 +2671,7 @@ Note also that the codomain of~$f$ is the domain of~$g$
 (we sometimes use a composition where the domain of~$g$ is not the 
 entire codomain, but is a superset of the range of~$f$).
 
-Read `$\composed{g}{f}$' aloud as ``$g$ circle $f$'' 
+Read $\composed{g}{f}$ aloud as ``$g$ circle $f$'' 
 or~``$g$ composed with $f$''
 (or~``$g$ following $f$'').
 
@@ -2844,12 +2757,10 @@ A function is \definend{one-to-one} (or an \definend{injection})
 if for each value there is at most
 one associated argument, that is, if $f(d_0)=f(d_1)$ implies that $d_0=d_1$
 for elements $d_0,d_1$ of the domain.
-
 A function is \definend{onto} (or a \definend{surjection}) 
 if for each value there is at least
 one associated argument, that is, if for each element $c$ of the codomain
 there exists an element $d$ of the domain such that $f(d)=c$.
-
 A function that is both one-to-one and onto, so that for every value there
 is exactly one associated argument, is a 
 \definend{correspondence} (or \definend{bijection}, or \definend{permutation}).
@@ -3113,8 +3024,6 @@ $\composed{f}{f^{-1}}$ is the identity map on~$C$.
   Find a pair of maps $\map{f}{D}{C}$ and $\map{g}{C}{D}$
   such that $\composed{g}{f}$ is the identity but $\composed{f}{g}$
   is not.
-  (We say that $g$ is a \definend{right inverse} of~$f$, or what is the
-  same thing, that $f$ is a \definend{left inverse} of~$g$).
 \begin{ans}
 Let $\map{f}{\N^2}{\N^3}$ be the injection map
 $\sequence{a,b}\mapsunder{}\sequence{a,b,0}$
@@ -3129,6 +3038,13 @@ one instance is that $\composed{f}{g}(\sequence{1,2,3})$ equals
 $\sequence{1,2,0}$, not $\sequence{1,2,3}$.     
 \end{ans}
 \end{ex}
+
+If $\composed{g}{f}$ is the identity function then we say that 
+$g$~is a \definend{left inverse} of~$f$, or what is the
+same thing, that $f$ is a \definend{right inverse} of~$g$.
+If $g$ is both a left and right inverse of~$f$ then, 
+as above, we say just that it is
+an inverse of~$f$ (or a \definend{two-sided inverse} for emphasis). 
 
 \begin{ex} \label{PropertiesOfInverses}
 Prove each.
@@ -3205,7 +3121,7 @@ The number of sets~$n$ is the \definend{arity} of the relation
 and we say it is \definend{$n$-ary}.
 If the arity is~$2$ then it is a \definend{binary relation}.
 In this case, where $R=\setbuilder{(x,y)}{\text{$x\in X$ and $y\in Y$}}$
-then if $(x,y)\in R$ we say $x$ is~\definend{$R$-related} to~$y$,
+if $(x,y)\in R$ we say $x$ is~\definend{$R$-related} to~$y$,
 sometimes written $xRy$.
 \end{df}
 
@@ -3225,7 +3141,7 @@ sometimes written $xRy$.
   its graph is a relation.
 \item Let $\map{f}{D}{C}$ be a function.
   Show that 
-  $R_f=\setbuilder{(x,y)}{f(x)=f(y)}$
+  $R_f=\setbuilder{(x,y)\in D^2}{f(x)=f(y)}$
   is a binary relation.
   Where $f(x)=x^2$ with domain and codomain~$\R$,
   list five elements. 
@@ -3453,35 +3369,35 @@ is an equivalence.
 \end{ans}
 \end{ex}
 
-\begin{ex} \label{RationalsAsEqClasses}
-Consider the relation
-$\setbuilder{((p,q),(n,d))\in (\Z\times\Z^+)^2}{pd=qn}$
-(restated, the pair $(p,q)\\Z\times\Z^+$\ is related to the pair~$(n,d)$
-if $pd=qn$).
-List five elements.
-Prove that it is an equivalence relation.
-\begin{ans}
-Each element is a pair of pairs.
-Five elements are~$((1,2),(2,4))$, 
-$((-1,2),(2,-4))$,  
-$((0,1),(0,4))$,  
-$((3,3),(-2,-2))$,  
-and~$((10,5),(2,1))$.
+% \begin{ex} \label{RationalsAsEqClasses}
+% Consider the relation
+% $\setbuilder{((p,q),(n,d))\in (\Z\times\Z^+)^2}{pd=qn}$
+% (restated, the pair $(p,q)\\Z\times\Z^+$\ is related to the pair~$(n,d)$
+% if $pd=qn$).
+% List five elements.
+% Prove that it is an equivalence relation.
+% \begin{ans}
+% Each element is a pair of pairs.
+% Five elements are~$((1,2),(2,4))$, 
+% $((-1,2),(2,-4))$,  
+% $((0,1),(0,4))$,  
+% $((3,3),(-2,-2))$,  
+% and~$((10,5),(2,1))$.
 
-The relation is reflexive, each $(p,q)\in\Z\times\Z^+$ is related to itself, 
-because $pq=qp$. 
-To verify that it is symmetric assume that $(p,q)$ is related to~$(n,d)$.
-Then $pd=qn$, which gives $nq=dp$, and so $(n,d)$ is related to~$(p,q)$.
+% The relation is reflexive, each $(p,q)\in\Z\times\Z^+$ is related to itself, 
+% because $pq=qp$. 
+% To verify that it is symmetric assume that $(p,q)$ is related to~$(n,d)$.
+% Then $pd=qn$, which gives $nq=dp$, and so $(n,d)$ is related to~$(p,q)$.
 
-To check that the relation is transitive assume that 
-$(p,q)$ is related to~$(n,d)$
-and also that $(n,d)$ is related to~$(a,b)$.
-Then $pd=qn$ and~$nb=da$.
-Multiply both sides of the first equation by $ab$ to get $pdab=qnab$, regroup as
-$pb\cdot(da)=qa\cdot(nb)$, and cancel $da=nb$ to get $pb=qa$.
-This shows that $(p,q)$ is related to $(a,b)$.  
-\end{ans}
-\end{ex}
+% To check that the relation is transitive assume that 
+% $(p,q)$ is related to~$(n,d)$
+% and also that $(n,d)$ is related to~$(a,b)$.
+% Then $pd=qn$ and~$nb=da$.
+% Multiply both sides of the first equation by $ab$ to get $pdab=qnab$, regroup as
+% $pb\cdot(da)=qa\cdot(nb)$, and cancel $da=nb$ to get $pb=qa$.
+% This shows that $(p,q)$ is related to $(a,b)$.  
+% \end{ans}
+% \end{ex}
 
 \begin{ex} \label{PlaneLinesAsClasses}
 Let $\mathcal{L}$ be the set of lines in the Euclidean plane and consider
@@ -3489,9 +3405,9 @@ the relation
 $R=\setbuilder{(\ell_0,\ell_1)\in \mathcal{L}^2}{\text{the two are parallel, or the same}}$.
 \begin{exes}
 \item List five elements.
-\item Fix a vertical line $\ell$ (for instance, the $x$-axis 
-  $\setbuilder{(x,0)}{x\in\R}$).
-  List five elements of $\mathcal{L}$ that are related to~$\ell$.
+% \item Fix a vertical line $\ell$ (for instance, the $x$-axis 
+%   $\setbuilder{(x,0)}{x\in\R}$).
+%   List five elements of $\mathcal{L}$ that are related to~$\ell$.
 \item Show that $R$ is an equivalence.
 \end{exes}
 \begin{ans}
@@ -3501,9 +3417,9 @@ fixing a $xy$-axes, and giving the equations.
 \item Parallel lines have the same slope so
   five pairs are $(y=2x,y=2x+1)$, $(y=x,y=x-3)$, $(y=4x,y=4x)$,
   $(y=-3,y=-5)$, and~$(y=(3/2)x+1,y=(3/2)x-1)$.    
-\item   
-  Five lines related to a vertical line are~$x=1$, $x=2$, $x=-1$, $x=100$, 
-  and the line $x=0$~itself.
+% \item   
+%   Five lines related to a vertical line are~$x=1$, $x=2$, $x=-1$, $x=100$, 
+%   and the line $x=0$~itself.
 \item The relation is reflexive since two lines that are the same are
   explicitly given as related.
   The relation is symmetric since if $\ell_0$ is related to~$\ell_1$
@@ -3573,7 +3489,7 @@ and the $P$ are \definend{pairwise disjoint}
 \end{df}
 
 \begin{center}
-  \grf{asy/bean_partition.pdf}{Set~$X$ partitioned into four parts}
+  \grf{asy/bean_partition.pdf}{Set~$X$ partitioned into four parts $\partition{P}=\set{P_0,P_1,P_2,P_3}$}
 \end{center}
 
 \begin{ex} Verify that~$\partition{P}$ is a partition of~$X$.  
@@ -3672,7 +3588,7 @@ Prove.
   the relation 
   $R=\setbuilder{(x,y)\in X^2}{\text{$x$ and~$y$ are in the same part}}$ 
   is an equivalence.
-  We say this relation \definend{arises from} the partition. 
+  We say that this relation \definend{arises from} the partition. 
 \end{exes}
 \begin{ans}
 \begin{exes}
@@ -3819,305 +3735,11 @@ $R=\setbuilder{(x,x)}{x\in\N}$ on $\N$.
 
 
 %===================================================
-\chapter{Infinity}
-
-Recall Exercise~\ref{CorrespondingSetsHaveSameNumberOfElements},
-that if two sets correspond then they have the same number of elements.
-
-\begin{df}
-Two sets have the \definend{same cardinality} 
-(or are \definend{equinumerous}) if there is a 
-correspondence from one to the other.
-We write $A\sim B$.   
-\end{df}
-
-\begin{df}
-A set is \definend{finite} if it has~$n$ elements for some $n\in\N$,
-that is, if it has the same cardinality as 
-$\setbuilder{i\in\N}{i< n}=\set{0,1,\ldots,n-1}$.
-Otherwise the set is \definend{infinite}.   
-% \end{df}\begin{df}
-A set is \definend{denumerable} if it has the same cardinality 
-as $\N$.
-A set is \definend{countable} if it is either finite or denumerable.
-\end{df}
-
-\begin{ex} \label{ex:EquinumeruousIsEquivalence}
-Prove that the relation~$\sim$ is an equivalence.
-\begin{ans}
-  To show that the relation~$\sim$ is reflexive 
-  suppose that $A$ is a set and note that the 
-  identity function~$\map{\identity}{A}{A}$ is a correspondence.
-  To show that the relation is symmetric recall 
-  Exercise~\ref{PropertiesOfInverses}, that
-  any correspondence~$\map{f}{A}{B}$ has an inverse~$\map{f^{-1}}{B}{A}$
-  that is also a correspondence.
-
-  To prove that the relation~$\sim$ is transitive assume that 
-  $A\sim B$ and~$B\sim C$.
-  Then there is a correspondence~$\map{f}{A}{B}$ and a 
-  correspondence $\map{g}{B}{C}$.
-  The composition $\map{\composed{g}{f}}{A}{C}$ is a correspondence
-  by Exercise~\ref{InteractionOneToONeOntoWithComposition}.
-  Thus $A\sim B$.
-\end{ans}
-\end{ex}
-
-\begin{ex}  \label{ex:IntegersCountable}
-Prove.
-\begin{exes}
-\item The set of integers is countable.
-\item The set~$\N\times\N$ is countable.
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item We will define a map $\map{f}{\N}{\Z}$ and just note that it is clearly a 
-  correspondence.
-  The map alternate between positive and negative values:
-  $0\mapsunder{}0$, $1\mapsunder{}1$, $2\mapsunder{}-1$, 
-  $3\mapsunder{}2$, $4\mapsunder{}-2$, $5\mapsunder{}3$, \ldots\,.
-  More formally, $f(n)=-n/2$ if $n$ is even and $f(n)=(n+1)/2$ if~$n$ is odd. 
-\item  As in the prior item we will define a map
-  $\map{f}{\N}{\N\times\N}$ and only note that it is a correspondence, 
-  without going through the verification details.
-  
-  The function alternates between columns in the same way that
-  Jackie Chan, when up against multiple bad guys, alternates among his 
-  attackers.
-  Thus $0\mapsunder{} (0,0)$, $1\mapsunder{}(0,1)$, $2\mapsunder{}(1,0)$, 
-  $3\mapsunder{}(0,2)$, 
-  $4\mapsunder{}(1,1)$, $5\mapsunder{}(2,0)$, $6\mapsunder{}(0,3)$, \ldots. 
-
-  \remark a sketch helps here.
-  The values associated with successive arguments trace out the 
-  diagonals of the array~$\N\times\N$.
-  \begin{center}
-  \newcommand{\chanpoint}[1]{\makebox[0em]{$(#1)$}}
-  \newcommand{\chanarrow}{{\color{darkii} $\searrow$}}
-  \setlength{\unitlength}{0.5in}
-  \begin{picture}(4,4)
-    \put(0,0){\chanpoint{0,0}}
-    \put(1,0){\chanpoint{1,0}}
-    \put(2,0){\chanpoint{2,0}}
-    \put(3,0){\chanpoint{3,0}}
-    \put(3.5,0){\ldots}
-    \put(0,1){\chanpoint{0,1}}
-    \put(1,1){\chanpoint{1,1}}
-    \put(2,1){\chanpoint{2,1}}
-    \put(2.75,1){\ldots}
-    \put(0,2){\chanpoint{0,2}}
-    \put(1,2){\chanpoint{1,2}}
-    \put(2,2){\chanpoint{2,2}}
-    \put(2.75,2){\ldots}
-    \put(0,3){\chanpoint{0,3}}
-    \put(1,3){\chanpoint{1,3}}
-    % \put(2,3){\ldots}
-    \put(0,3.6){$\vdots$}
-    \put(1,3.6){$\vdots$}
-    \put(2.5,3.1){$\iddots$}
-    % arrows
-    \put(0.5,0.5){\chanarrow}
-    \put(0.5,1.5){\chanarrow}
-    \put(1.5,0.5){\chanarrow}
-    \put(0.5,2.5){\chanarrow}
-  \end{picture}
-  \end{center}
-\end{exes}
-\end{ans}
-\end{ex}
-
-\begin{ex} \label{ex:OntoFromNatsToSetEquivToCountable}
-Prove that the following are equivalent for a set~$A$:
-(i)~$A$ is countable
-(ii)~$A$ is empty or there is an onto function from $\N$ to~$A$
-(iii)~there is a one-to-one function from $A$ to~$\N$.    
-\begin{ans}
-We will show that (i) implies~(ii), which implies~(iii), and which
-implies~(i).
-
-First the (i) implies~(ii) proof.
-If~$A$ is countable then there are two cases: either~$A$ is finite 
-or~$A$ is denumerable.
-If~$A$ is finite then it is either empty or nonempty.
-The empty case is trivial so suppose that $A$ is finite and nonempty
-and let $a$ be an element of~$A$.
-Then there is a correspondence~$\map{f}{\set{0,1,\ldots,|A|-1}}{A}$,
-so define $\map{\hat{f}}{\N}{A}$ extending~$f$ by
-$\hat{f}(i)=f(i)$ if $i\in\set{0,1,\ldots,|A|-1}$, and 
-$\hat{f}(i)=a$ otherwise.
-The extension~$\hat{f}$ is onto because $f$ is onto.
-The other case, that~$A$ is denumerable, by definition has a 
-correspondence between~$\N$ and~$A$.
-
-Next is the (ii) implies~(iii) proof.
-If~$A$ is empty then the empty function is a map with domain~$A$ and
-codomain~$\N$ that is vacuously one-to-one.
-The other possibility is that there is an onto function~$\map{f}{\N}{A}$.
-To get a map~$g$ with domain~$A$ and codomain~$\N$ that is one-to-one
-define~$g(a)$ to be the least number $n\in\N$ such that~$f(n)=a$; 
-at least one such number exists because~$f$ is onto.
-Clearly~$g$ is one-to-one.
-
-Finally for the (iii) implies~(i) proof.
-Let~$\map{f}{A}{\N}$ be one-to-one.
-Let $B=\range(A)\subseteq\N$.
-Then the function~$\map{\hat{f}}{A}{B}$ given by~$\hat{f}(a)=f(a)$ is a 
-correspondence (it only eliminates unused elements of the codomain).
-Thus $A\sim B$.
-Because Exercise~\ref{ex:EquinumeruousIsEquivalence} shows that the 
-relation~$\sim$ is an equivalence, we will be done if we show that $B$~is
-countable.
-
-So suppose that~$B$ is not finite.
-Recall that~$B\subseteq\N$ so we can define a map
-$\map{g}{\N}{B}$ by:
-take $g(j)$ to be the $j$-th largest element of~$B$.
-This map is onto because of the assumption that~$B$ is not finite, and it 
-is one-to-one by construction (if $g(j_0)=g(j_1)$ then the $j_0$-th largest
-element of~$B$ is the same as the $j_1$-th largest element, which is only
-possible if $j_0=j_1$).
-\end{ans}
-\end{ex}
-
-\begin{ex} Prove that the set of rational numbers is countable.
-\begin{ans}
-  We will show that the set on nonnegative rationals
-  $Q=\setbuilder{q\in\Q}{q\geq 0}$ is countable.
-  With that set countable, a function that alternates sign like the one in 
-  Exercise~\ref{ex:IntegersCountable} will show that~$\Q$ is countable.
-
-  Consider the function $\map{g}{\N\times\N}{\Q}$ where $g(p,q)$
-  is the rational number $(p+1)/(q+1)$.
-  It is not quite onto; every rational number is the image of some
-  $(p,q)$ except for $0$.
-
-  The Cartesian product $\N\times\N$ is denumerable so there is a 
-  correspondence $\map{f}{\N}{\N\times\N}$.
-  Define a function $\map{h}{\N}{\Q}$ by $h(i)=0$ if $i=0$ and $h(i)=f(i-1)$
-  if $i>0$.
-  The range is $\range(h)=\range(g)\union\set{0}$ so~$h$ is onto.
-  By Exercise~\ref{ex:OntoFromNatsToSetEquivToCountable} the 
-  rationals~$\Q$ form a countable set.
-\end{ans}
-\end{ex}
-
-\begin{ex}  Prove that these infinite sets are not countable.
-\begin{exes}
-\item $\powerset(\N)$ 
-\item $\R$
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item We will show that no $\map{f}{\N}{\powerset(\N)}$ is onto.
-  Consider $R=\setbuilder{n\in\N}{n\notin f(n)}$.
-  Clearly $R\subseteq \N$ and so $R\in\powerset(\N)$.
-  We will show that there is no $i\in\N$ such that $R=f(i)$.
-
-  For contradiction assume that $R=f(i)$.
-  Consider whether $i\in R$.
-  If $R=f(i)$ and $i\in R$ then that contradicts the definition of $R$ as the 
-  collection of integers~$n$ such that $n\notin f(n)$.
-  The other $R=f(i)$ possibility is that $i\notin R$, which 
-  is also a contradiction
-  because then $i$~satisfies the defining criteria for membership in~$R$, namely
-  that $i\notin R$, and therefore $i\in R$.
-Either $R=f(i)$ case gives a contradiction and so $R\neq f(i)$.
-\item We will show that there is a one-to-one map~$\map{f}{\powerset(\N)}{\R}$.
-  If $\R$ were countable\Dash if there were a one-to-one 
-  function $\map{g}{\R}{\N}$\Dash then 
-  that would give a one-to-one function~$\composed{g}{f}$ 
-  from $\powerset(\N)$ to~$\N$,
-  contradicting the prior item.
-
-  We define the action of~$f$ on a set~$A\in\powerset(\N)$ by
-  giving an associated real number between $0$ and~$1$.
-  We will give this number's binary expansion, instead of its more usual
-  decimal expansion. 
-  Let this number be such that its $i$-th binary place is $\charfcn{A}(i)$,
-  that is, the $i$-th binary place is $1$ if $i\in A$ and is $0$ otherwise. 
-  This function is one-to-one because two unequal sets differ in an 
-  element~$a\in\N$, and the two image numbers then differ in the $a$-th place.
-\end{exes}
-\end{ans}
-\end{ex}
-
-
+\ifbool{optioncompact}{}{\include{infinity}}
 
 
 %===================================================
-\appendix
-\chapter{Peano axioms}
-\newcommand{\axiom}[1]{\textsc{Axiom~#1}\hspace{.5ex}}
-
-Particularly in the 
-first chapter a person struggles with when to consider a 
-statement sufficiently justified 
-and soon comes to wonder what the axioms are like.
-Here we give the most often used axiom system for the natural numbers, to
-convey a sense of that. 
-
-This system was 
-introduced by Dedekind in 1888 and tuned by Peano in 1889.
-In addition to the usual set and logical symbols such as $=$ and $\in$,
-with the traditional properties, 
-our language will use at least two symbols, $0$ and $S$, whose 
-properties are limited by the conditions below.
-
-\begin{ax}[Existence of a natural number]
-The constant~$0$ is a natural number.
-\end{ax}
-
-\begin{ax}[Arithmetical properties]
-The \definend{successor} function~$S$ has these properties.
-\begin{exes}
-\item \notetext{Closure} For all $a\in\N$, its successor~$S(a)$ is also 
-  a natural number.
-\item \notetext{One-to-one} For all $a,b\in\N$, if $S(a)=S(b)$ then $a=b$.
-\item \notetext{Almost onto}
-  For all $a\in\N$, if $a\neq 0$ then there is a $b\in\N$ with $S(b)=a$.
-  In contrast, no $c\in\N$ has $0$ as a successor.  
-\end{exes}
-\end{ax}
-
-
-These properties give infinitely many natural numbers:
-$0$, $S(0)$, $S(S(0))$, etc.
-Of course, the notation $0$, $1$, $2$, etc., is less clunky.
-
-\begin{ax}[Induction]
-  Suppose that $K$ is a set satisfying both (i)~$0\in K$
-  and (ii)~for all $n\in\N$, if $n\in K$ then $S(n)\in K$.
-  Then $K=\N$.
-\end{ax}
-
-\noindent (In this book we use an induction variant that changes
-condition~(ii) to: for all $k\in\N$,  
-if $n\in K$ for $0\leq n\leq k$ then $S(k)\in K$.
-Condition~(ii) above is often called \definend{weak induction} while
-the version we use is \definend{strong induction}.
-There are technical differences but for our purposes
-the two variants are interchangeable. 
-We prefer the strong variant because while it is 
-more awkward to state, it is sometimes easier to apply.)
-% http://mathoverflow.net/questions/37944/induction-vs-strong-induction
-
-From those axioms we can for instance 
-define addition by recursion using successor
-\begin{equation*}
-  \add(a,n)=
-  \begin{cases}
-    a             &\text{if $n=0$}  \\
-    S(\add(a,m))  &\text{if $n=S(m)$} 
-  \end{cases}
-\end{equation*}
-and then define multiplication by recursion using addition.
-\begin{equation*}
-  \mul(a,n)=
-  \begin{cases}
-    0             &\text{if $n=0$}  \\
-    \add(\mul(a,m),a)  &\text{if $n=S(m)$} 
-  \end{cases}
-\end{equation*}
+\ifbool{optioncompact}{}{\include{appendix}}
 \end{document}
 
 

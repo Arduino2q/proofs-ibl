@@ -3,17 +3,29 @@
 % Jim Hefferon jhefferon (at) smcvt.edu
 % --- Class structure: identification part
 % ---
-\ProvidesClass{ibl}[2013/02/26 version 0.01 of Inquiry-based Learning class (Jim Hefferon)]
+\ProvidesClass{ibl}[2013/04/13 version 0.95 of Inquiry-based Learning book class (Jim Hefferon)]
 \NeedsTeXFormat{LaTeX2e}
+
+% ========================================
+% I want the booleans offered by this package
+\usepackage{etoolbox}
 
 % --- Class structure: declaration of options part
 % ---
 % This class extends the article class
 % Read all the documentclass options; pass them to article,
-% unless the file "<currentoption>.min" exists, then it is loaded
+% unless the file "<currentoption>.ibl" exists, then it is loaded
 \DeclareOption*{\InputIfFileExists{\CurrentOption.ibl}{}{
 %
 \PassOptionsToClass{\CurrentOption}{book}}}
+
+% compact option: make shorter-length output, for copying and handing out
+\newbool{optioncompact}
+\boolfalse{optioncompact}
+\DeclareOption{compact}{
+  \booltrue{optioncompact}
+}
+
 % --- Class structure: execution of options part
 % ---
 \ProcessOptions \relax
@@ -219,9 +231,6 @@ qed=\qedsymbol
 }
 
 
-% ========================================
-% I want the booleans offered by this package
-\usepackage{etoolbox}
 
 % ========================================
 % The appendix should not write the title to the answersbody file
@@ -268,3 +277,4 @@ qed=\qedsymbol
 % VERSION number
 \newcommand{\version}{0.95}
 
+\endinput
