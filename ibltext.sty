@@ -35,7 +35,11 @@
 % ========================================
 % Title-ing of chapters and sections
 % Uses titlesec. 
-\ifbool{optioncompact}{\titleclass{\chapter}{straight}}{}
+
+% If making compact version then put chapter start on same page
+\ifbool{optioncompact}{\titleclass{\chapter}{straight}}{}  % possibilities are: straight, part, top, page
+
+% Format the chapter and section heads
 \titleformat{\chapter}[block]{\color{darki}\Large\scshape}{Chapter \thechapter}{1em}{}[\thispagestyle{firstpage}]
 \titlespacing*{\chapter}{0em}{4ex}{2ex} 
 \titleformat{\section}[block]{\color{darki}\large\scshape}{}{0em}{}[]

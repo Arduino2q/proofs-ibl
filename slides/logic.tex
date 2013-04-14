@@ -1,0 +1,597 @@
+% see: https://groups.google.com/forum/?fromgroups#!topic/comp.text.tex/s6z9Ult_zds
+\makeatletter\let\ifGm@compatii\relax\makeatother 
+\documentclass[10pt,t]{beamer}
+\usefonttheme{professionalfonts}
+\usefonttheme{serif}
+\PassOptionsToPackage{pdfpagemode=FullScreen}{hyperref}
+\PassOptionsToPackage{usenames,dvipsnames}{color}
+% \DeclareGraphicsRule{*}{mps}{*}{}
+% \usepackage{../ibl}
+\usepackage{../ibl}
+\usepackage{present}
+% \usepackage{xr}\externaldocument{../ibl} % read refs from .aux file
+% \usepackage{catchfilebetweentags}
+\usepackage{etoolbox} % from http://tex.stackexchange.com/questions/40699/input-only-part-of-a-file-using-catchfilebetweentags-package
+\makeatletter
+\patchcmd{\CatchFBT@Fin@l}{\endlinechar\m@ne}{}
+  {}{\typeout{Unsuccessful patch!}}
+\makeatother
+
+\mode<presentation>
+{
+  \usetheme{boxes}
+  \setbeamercovered{invisible}
+  \setbeamertemplate{navigation symbols}{} 
+}
+\addheadbox{filler}{\ }  % create extra space at top of slide 
+\hypersetup{colorlinks=true,linkcolor=blue} 
+
+\title[Propositional Logic] % (optional, use only with long paper titles)
+{Propositional Logic}
+
+\author{{\small Jim Hef{}feron}}
+\institute{
+  \texttt{http://joshua.smcvt.edu/proofs}
+}
+\date{}
+
+
+\subject{Propositional Logic}
+% This is only inserted into the PDF information catalog. Can be left
+% out. 
+
+\begin{document}
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+
+
+% ============================================================
+\section{Truth tables}
+
+%..........
+\begin{frame}
+  \frametitle{Propositions}
+
+A \alert{proposition} is an assertion that has a truth value, 
+either `true' or `false'.
+
+\pause
+These are propositions: ``$2+2=4$'' 
+and ``Two circles in the plane intersect in either zero points, one point,
+two points, or all of their points.''
+
+\pause
+These are not propositions: ``$3+5$''
+and ``$x$ is not prime.''
+\end{frame}
+
+
+
+%..........
+\begin{frame}[<+->]
+  \frametitle{Negation}
+
+Prefixing a proposition with \alert{not} inverts its truth value.
+
+``It is not the case that $3+3=5$''
+is true.
+
+``It is not the case that $3+3=6$''
+is false.
+
+\pause
+\bigskip
+So \textit{not} is \alert{truth functional}\Dash the truth
+of \textit{not}~$P$ depends only on the truth value of~$P$.
+Specifically, the truth value of \textit{not}~$P$ is 
+the opposite of the truth value of~$P$.  
+We say it is a \alert{unary logical operator} or call it 
+a \alert{unary boolean function} since it takes one input, a truth value, 
+and yields as output a truth value.
+
+
+\end{frame}
+
+
+%..........
+\begin{frame}
+  \frametitle{Conjunction, disjunction}
+
+A proposition consisting of the word \alert{and}
+between two sub-propositions is true if
+the two halves are true.
+
+``Both $3+1=4$ and 
+$3-1=2$''
+is true.
+
+``Both $3+1=4$ and 
+$3-1=1$''
+is false.
+
+``Both $3+1=5$ and 
+$3-1=2$''
+is false.
+
+\pause
+\bigskip
+A compound proposition constructed with \alert{or}
+between two sub-propositions is true if either of the two halves, or both,
+is true.
+
+``$2\cdot 2=4$ or 
+$2\cdot 2\neq 4$''
+is true.
+
+``$2\cdot 2=3$ or 
+$2\cdot 2\neq 4$''
+is false.
+
+``$2\cdot 2=4$ or 
+$3+1=4$''
+is true.
+
+\bigskip
+\pause
+So
+\textit{and} and \textit{or}
+are also logical operators.
+Whereas \textit{not} is unary, 
+these two are binary operators.
+\end{frame}
+
+
+
+
+
+%..........
+\begin{frame}
+  \frametitle{Truth Tables}
+
+List the action of the operators with a \alert{truth table}. 
+\begin{center}
+  \begin{tabular}[t]{c|c}
+    $P$  &$\neg P$  \\ \hline
+    $F$  &$T$  \\
+    $T$  &$F$
+  \end{tabular}
+  \qquad
+  \begin{tabular}[t]{cc|cc}
+    $P$  &$Q$  &$P\wedge Q$  &$P\vee Q$  \\ \hline
+    $F$  &$F$  &$F$          &$F$  \\
+    $F$  &$T$  &$F$          &$T$  \\
+    $T$  &$F$  &$F$          &$T$  \\
+    $T$  &$T$  &$T$          &$T$  
+  \end{tabular}
+\end{center}
+Write $\neg P$ for `\textit{not}~$P$', 
+$P\wedge Q$ for `$P$~\textit{and}~$Q$',
+and $P\vee Q$ for '$P$~\textit{or}~$Q$'.  
+
+\pause
+This notation allows formulas of a complexity that would be awkward in
+an English sentence, for instance
+$(P\vee Q)\wedge \neg(P\wedge Q)$ makes a hard to parse sentence.
+\end{frame}
+
+
+
+
+%..........
+\begin{frame}
+Sometimes using $0$ for~$F$ and $1$ for~$T$ is convenient.
+On the left side of each table the rows make the ascending numbers written in
+binary.
+\begin{center}
+  \begin{tabular}[t]{c|c}
+    $P$  &$\bar{P}$  \\ \hline
+    $0$  &$1$  \\
+    $1$  &$0$
+  \end{tabular}
+  \qquad
+  \begin{tabular}[t]{cc|cc}
+    $P$  &$Q$  &$P\cdot Q$  &$P+ Q$  \\ \hline
+    $0$  &$0$  &$0$          &$0$  \\
+    $0$  &$1$  &$0$          &$1$  \\
+    $1$  &$0$  &$0$          &$1$  \\
+    $1$  &$1$  &$1$          &$1$  
+  \end{tabular}
+\end{center}
+\pause
+In this context \textit{not}~$P$ is symbolized $\bar{P}$.
+Note that $\bar{P}=1-P$.
+
+The table makes clear why $P$~\text{and}~$Q$ is symbolized with a 
+multiplication dot~$P\cdot Q$.
+
+For $P$~\textit{or}~$Q$ the plus sign is the right symbol because 
+\textit{or} is accumulation of the truth value~$T$.
+\end{frame}
+
+
+
+
+%..........
+\begin{frame}
+  \frametitle{Other operators: Exclusive Or}
+
+Disjunction models
+sentences meaning `and/or'.
+In contrast,
+``Eat your dinner or no dessert'',
+``Live free or die'', and
+``Let me go or the girl gets it'' all mean `one or the other, but not both'.
+\begin{center}
+  \begin{tabular}{cc|c}
+    $P$  &$Q$  &$P$ \text{\small\textsc{XOR}} $Q$  \\ \hline
+    $F$  &$F$  &$F$          \\
+    $F$  &$T$  &$T$          \\
+    $T$  &$F$  &$T$          \\
+    $T$  &$T$  &$F$     
+  \end{tabular}
+\end{center}
+\end{frame}
+
+
+
+
+%..........
+\begin{frame}
+  \frametitle{Other operators: Implies}
+
+We model ``if $P$ then $Q$'' this way.
+\begin{center}
+  \begin{tabular}{cc|c}
+    $P$  &$Q$  &$P \rightarrow Q$  \\ \hline
+    $F$  &$F$  &$T$          \\
+    $F$  &$T$  &$T$          \\
+    $T$  &$F$  &$F$          \\
+    $T$  &$T$  &$T$     
+  \end{tabular}
+\end{center}
+Here $P$ is the \emph{antecedent} while $Q$ is the 
+\emph{consequent}. 
+\end{frame}
+
+
+
+
+%..........
+\begin{frame}
+  \frametitle{Other operators: Bi-implication}
+
+Model ``$P$ if and only if $Q$'' with this.
+\begin{center}
+  \begin{tabular}{cc|c}
+    $P$  &$Q$  &$P \leftrightarrow Q$  \\ \hline
+    $F$  &$F$  &$T$          \\
+    $F$  &$T$  &$F$          \\
+    $T$  &$F$  &$F$          \\
+    $T$  &$T$  &$T$     
+  \end{tabular}
+\end{center}
+This is also called \emph{logical equivalence}.
+Mathematicians sometimes write `\emph{iff}'.
+\end{frame}
+
+
+
+
+%..........
+\begin{frame}
+  \frametitle{All binary operators}
+
+We can lists all of the two-input logical operators.
+\begin{center} \small
+    \begin{tabular}{cc|c}
+       $P$  &$Q$  &$P$ $\alpha_0$ $Q$  \\ \hline
+       $F$  &$F$  &$F$          \\
+       $F$  &$T$  &$F$          \\
+       $T$  &$F$  &$F$          \\
+       $T$  &$T$  &$F$     
+     \end{tabular}
+     \quad\begin{tabular}{cc|c}
+       $P$  &$Q$  &$P$ $\alpha_1$ $Q$  \\ \hline
+       $F$  &$F$  &$F$          \\
+       $F$  &$T$  &$F$          \\
+       $T$  &$F$  &$F$          \\
+       $T$  &$T$  &$T$     
+     \end{tabular}                
+    \quad\ldots\quad                      
+    \begin{tabular}{cc|c}
+      $P$  &$Q$  &$P$ $\alpha_{15}$ $Q$  \\ \hline
+      $F$  &$F$  &$T$          \\
+      $F$  &$T$  &$T$          \\
+      $T$  &$F$  &$T$          \\
+      $T$  &$T$  &$T$ 
+    \end{tabular}
+\end{center}
+\pause
+\bigskip
+These are the one-input boolean functions.
+\begin{center} \small
+  \begin{tabular}{cccc}
+    \begin{tabular}{c|c}
+       $P$  &$\beta_0 P$  \\ \hline
+       $F$  &$F$          \\
+       $T$  &$F$     
+     \end{tabular}
+    &\begin{tabular}{c|c}
+       $P$  &$\beta_1 P$  \\ \hline
+       $F$  &$F$          \\
+       $T$  &$T$     
+     \end{tabular}               
+    &\begin{tabular}{c|c}
+       $P$  &$\beta_2 P$  \\ \hline
+       $F$  &$T$          \\
+       $T$  &$F$     
+     \end{tabular}
+    &\begin{tabular}{c|c}
+       $P$  &$\beta_3 P$  \\ \hline
+       $F$  &$T$          \\
+       $T$  &$T$     
+     \end{tabular} 
+  \end{tabular}
+\end{center}
+
+\pause
+\bigskip
+A zero-ary function is constant so the zero-ary boolean functions are:
+$T$ and $F$.
+\end{frame}
+
+
+
+
+%..........
+\begin{frame}
+  \frametitle{Evaluating complex statements}
+  We can calculate how the output results 
+  depend on the values of the input variables.
+  \pause
+  Here is the input-output relationship for
+  $(P\rightarrow Q)\wedge (P\rightarrow R)$.
+  \begin{center}
+    \begin{tabular}{ccc|ccc}
+      $P$  &$Q$  &$R$ &$P\rightarrow Q$ &$P\rightarrow R$ &$(P\rightarrow Q)\wedge (P\rightarrow R)$  \\ \hline
+      $F$  &$F$  &$F$  &$T$  &$T$  &$T$   \\
+      $F$  &$F$  &$T$  &$T$  &$T$  &$T$   \\
+      $F$  &$T$  &$F$  &$T$  &$T$  &$T$   \\
+      $F$  &$T$  &$T$  &$T$  &$T$  &$T$   \\
+      $T$  &$F$  &$F$  &$F$  &$F$  &$T$   \\
+      $T$  &$F$  &$T$  &$F$  &$T$  &$T$   \\
+      $T$  &$T$  &$F$  &$T$  &$F$  &$F$   \\
+      $T$  &$T$  &$T$  &$T$  &$T$  &$T$      
+    \end{tabular}
+  \end{center}
+\end{frame}
+
+
+
+
+%..........
+\begin{frame}
+  \frametitle{Tautology, Satisfiability, Equivalence}
+  A formula is a \emph{tautology} if it evaluates to $T$ for every value
+  of the variables.
+  A formula is \emph{satisfiable} if it evaluates to $T$ for at least one
+  value of the variables.
+
+  \pause
+  Two propositional expressions are \alert{logically equivalent} if they
+  give the same input-output relationship. 
+  Check that $E_0$ and~$E_1$ are equivalent by using truth tables to
+  verify that  
+  $E_0\leftrightarrow E_1$ is a tautology.  
+\end{frame}
+
+
+
+
+
+
+% %..........
+% \begin{frame}
+%   \frametitle{Topic: Sheffer stroke}
+% This single operator
+% \begin{center}
+%   \begin{tabular}{cc|c}
+%     $P$  &$Q$  &$P \mathbin{\text{{\small\textsc{nand}}}} Q$  \\ \hline
+%     $F$  &$F$  &$T$          \\
+%     $F$  &$T$  &$T$          \\
+%     $T$  &$F$  &$T$          \\
+%     $T$  &$T$  &$F$     
+%   \end{tabular}
+% \end{center}
+% can be used to produce any truth table.
+% For instance, $P\mathbin{\text{\small\textsc{nand}}}P$ is equivalent to $\neg P$.
+% \pause
+% The \textsc{nor} operation is also complete.
+% \end{frame}
+
+
+
+
+% %..........
+% \begin{frame}
+%   \frametitle{Topic: McCarthy Or}
+% The \texttt{or} operator used in computer languages is somewhat
+% like the one discussed here but it is \emph{short-circuited}.
+% In this expression
+% \begin{center}
+%   \texttt{if isEven(x) or isPrime(x)}
+% \end{center}
+% if \texttt{x} is even then \texttt{isPrime(x)} will not be evaluated.
+% \end{frame}
+
+
+
+
+%..........
+\begin{frame}
+  \frametitle{Note on the definition of implication}
+\begin{center}
+  \begin{tabular}{cc|c}
+    $P$  &$Q$  &$P \rightarrow Q$  \\ \hline
+    $F$  &$F$  &$T$          \\
+    $F$  &$T$  &$T$          \\
+    $T$  &$F$  &$F$          \\
+    $T$  &$T$  &$T$     
+  \end{tabular}
+\end{center}
+Consider
+``If Babe Ruth was president then life exists on other planets'' 
+or ``If life exists on other planets then life exists on earth.'' 
+Under our definition of implies both these statements are true, 
+the first because its antecedent is false 
+and the second because its consequent is true.
+Many people say this violates their intuition and ask why we 
+adopt this definition. 
+
+\pause
+Standard mathematical practice defines implication to make this
+\begin{center}
+  if $n$ is a perfect square then $n$ is not prime
+\end{center}
+come out true for all $n\in\N$.  
+Take $x=6$ to get that $F\rightarrow T$ evaluates to $T$.  
+Take $x=3$ to get that $F\rightarrow F$ gives $T$.
+\end{frame}
+% http://www.earlham.edu/~peters/courses/log/mat-imp.htm
+\begin{frame}
+\frametitle{Points about implication}
+\begin{center}
+  \begin{tabular}{cc|c}
+    $P$  &$Q$  &$P \rightarrow Q$  \\ \hline
+    $F$  &$F$  &$T$          \\
+    $F$  &$T$  &$T$          \\
+    $T$  &$F$  &$F$          \\
+    $T$  &$T$  &$T$     
+  \end{tabular}
+\end{center}
+\begin{itemize}
+\item The antecedent~$P$ need not be materially connected to the 
+  consequent~$Q$; 
+  we saw that on the prior slide.
+\item If the antecedent~$P$ is false then the statement as a whole is true.
+\pause
+\item If the antecedent is true then the statement as a whole has the
+  truth value of the consequent.
+\pause
+\item If the consequent~$Q$ is true then the statement as a whole is true. 
+\pause
+\item Truth tables show that $P\rightarrow Q$
+  is equivalent to $\neg(P\wedge \neg Q)$, 
+  to $\neg P\vee Q$,
+  and also equivalent to the \alert{contrapositive}~$\neg Q\rightarrow \neg P$.
+\pause
+\item 
+  On a table in front of you are placed four cards, 
+  marked `A', `B', `0', and~`1'.
+  You must verify the truth of the implication, 
+  ``if a card has a vowel on the one side 
+  then it has an even number on the other.''  
+  Which card or cards must you turn over?
+% \item In ``Fred is Mike's brother's son and therefore Fred is Mike's nephew'' 
+%   the statement ``Fred is Mike's nephew'' is a \textit{material consequence} 
+%   of ``Fred is Mike's brother's son'' but not a formal consequence. 
+%   This is because the validity of the argument depends on the 
+%   internal content of 
+%   the premise and conclusion, including the meanings of `brother', `son', 
+%   and `nephew', rather than on the logical form of the argument.
+\end{itemize}
+
+
+\end{frame}
+% See http://www.cs.cornell.edu/Info/People/gries/symposium/clarke.htm
+
+
+\begin{frame}
+\frametitle{Predicates, Quantifiers}
+Consider `if $n$ is odd then $n$ is a pefect square'.
+It is an implication.
+It also involves two parts, `$n$ is odd' and `$n$ is square',
+whose truth value varies depending on the value of the variable.
+In addition, there is an assertion that is not explicitely stated that
+this implication should hold for all numbers.
+
+A \alert{predicate} is a truth-valued statement with variables. 
+Technically we can take them to be functions with truth values.
+For instance, part of the example above would have $\text{Odd}(5)=T$.
+
+A \alert{quantifier} describes the quantity of values for the variables
+required to make the statement true.
+There are two main quantifiers: `for all' denoted by $\forall$,
+and `there exists' denoted $\exists$.
+In the sentence above the `for all' is only implicitly stated.
+\end{frame}
+\begin{frame}
+Examples of formally-translated statements.
+
+\begin{itemize}
+\item Every number is divisible by $1$.
+  \begin{equation*}
+    \forall n\in\N\,\big[1\divides n\big]
+  \end{equation*}
+
+\item The equation $2^n-7=a^2$ has five different solutions.
+  \begin{multline*}
+    \exists n_0, \ldots, n_4\in\N\, \big[(n_0\neq n_1) 
+                                     \wedge (n_0\neq n_2) 
+                                     \wedge \cdots 
+                                     \wedge (n_3\neq n_4)  \\
+                                     \wedge \exists a_0\in\N(2^{n_0}-7=a_0^2)
+                                     \wedge\cdots\wedge
+                                     \exists a_4\in\N(2^{n_4}-7=a_4^2)\big]
+  \end{multline*}
+
+\item If a number is divisible by $n$ then its square is divisible by~$n^2$.
+  \begin{equation*}
+    \forall m\in\N\,\exists n\in\N\,
+        \big[(n\divides m)\rightarrow (n^2\divides m^2)\big]
+  \end{equation*}
+\end{itemize}
+\end{frame}
+\begin{frame}
+Observe that the negation of a `$\forall$' statement is a `$\exists\neg$' 
+statement.
+For instance, the negation of `every odd number is a perfect square'
+\begin{equation*}
+  \forall n\in\N\,\big[ \text{Odd}(n)\rightarrow\text{Square}(n)\big]
+\end{equation*}
+is 
+\begin{equation*}
+  \exists n\in\N\,\neg\big[ \text{Odd}(n)\rightarrow\text{Square}(n)\big]
+\end{equation*}
+which is equivalent to this.
+\begin{equation*}
+  \exists n\in\N\,\big[\text{Odd}(n)\wedge\neg\text{Square}(n)\big]
+\end{equation*}
+Thus a person could show `every odd number is a perfect square' is false
+by finding a number that is both odd and not a square.
+
+\pause
+Simililarly the negation of a `$\exists$' statement is a~'$\forall\neg$`. 
+\end{frame}
+
+
+
+
+
+
+%..........
+% \begin{frame}
+% \ex
+% \end{frame}
+
+
+%...........................
+% \begin{frame}
+% \ExecuteMetaData[../gr3.tex]{GaussJordanReduction}
+% \df[def:RedEchForm]
+% 
+% \end{frame}
+\end{document}

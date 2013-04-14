@@ -33,7 +33,8 @@
 % ---
 \LoadClass{book}
 
-\usepackage{jh}
+% \usepackage{jh}
+\usepackage{ibl}
 
 \usepackage[RGB]{xcolor}
 % Colors from "Still not getting any" by sp613g, https://kuler.adobe.com/#themeID/181115 
@@ -116,13 +117,13 @@
 \RequirePackage{ragged2e}
 
 
-% ========================================
-\usepackage{mathtools}  % imports amsmath
-\DeclarePairedDelimiter\absval{\lvert}{\rvert}%
-\newcommand{\lcm}{\operatorname{lcm}}
+% % ========================================
+% \usepackage{mathtools}  % imports amsmath
+% \DeclarePairedDelimiter\absval{\lvert}{\rvert}%
+% \newcommand{\lcm}{\operatorname{lcm}}
 
-\RequirePackage{amsthm}
-\renewcommand{\qedsymbol}{\rule{0.5em}{2ex}}
+% \RequirePackage{amsthm}
+% \renewcommand{\qedsymbol}{\rule{0.5em}{2ex}}
 % ========================================
 % Exercises are inside environments
 \RequirePackage{thmtools}
@@ -243,34 +244,34 @@ qed=\qedsymbol
 % ========================================
 % Convenient definitions
 
-% Graphics, with a caption
-\newcommand{\grf}[2]{\begin{tabular}{@{}c@{}}\includegraphics{#1} \\ #2\end{tabular}}
+% % Graphics, with a caption
+% \newcommand{\grf}[2]{\begin{tabular}{@{}c@{}}\includegraphics{#1} \\ #2\end{tabular}}
 
-% Vulgar fractions
-\RequirePackage{xfrac}
+% % Vulgar fractions
+% \RequirePackage{xfrac}
 
-% Script characters
-\RequirePackage{mathrsfs}
-\newcommand{\eqcl}[1]{{\mathscr E}_{#1}}
+% % Script characters
+% \RequirePackage{mathrsfs}
+% \newcommand{\eqcl}[1]{{\mathscr E}_{#1}}
 
-% euscript characters
-\RequirePackage{euscript}
-\newcommand{\partition}[1]{\EuScript{#1}}
+% % euscript characters
+% \RequirePackage{euscript}
+% \newcommand{\partition}[1]{\EuScript{#1}}
 
-% mathdots fot dots from lower-left to upper right
-\RequirePackage{mathdots}
+% % mathdots fot dots from lower-left to upper right
+% \RequirePackage{mathdots}
 
-% Misc commands
-\newcommand{\definend}[1]{\textit{#1}}
-\newcommand{\pord}{Prove or disprove}
-\DeclareMathOperator{\add}{add}
-\DeclareMathOperator{\mul}{mul}
-\newcommand*{\symdiff}{\mathbin{\triangle}}
-\newcommand{\universalset}{\Omega}
-\DeclareMathOperator{\range}{Ran}
-\DeclareMathOperator{\image}{Im}
-\newcommand{\hint}{\textit{Hint:} }
-\newcommand{\remark}{\textit{Remark:} }
+% % Misc commands
+% \newcommand{\definend}[1]{\textit{#1}}
+% \newcommand{\pord}{Prove or disprove}
+% \DeclareMathOperator{\add}{add}
+% \DeclareMathOperator{\mul}{mul}
+% \newcommand*{\symdiff}{\mathbin{\triangle}}
+% \newcommand{\universalset}{\Omega}
+% \DeclareMathOperator{\range}{Ran}
+% \DeclareMathOperator{\image}{Im}
+% \newcommand{\hint}{\textit{Hint:} }
+% \newcommand{\remark}{\textit{Remark:} }
 
 
 % ====================================================
