@@ -1,0 +1,71 @@
+README for _Introduction to Proof_, an Inquiry-Based approach
+by Jim Hefferon, Saint Michael's College
+
+
+This is a textbook for a Proofs course.  It is appropriate for 
+US sophmores.  
+
+The approach is Inquiry-Based, sometimes called Moore Method
+or Discovery Method.  This means that the goal is to have students
+directly grapple with the material.  The text is a sequence of exercises
+with a few definitions and remarks.  The class works through the 
+material together, talking through what they are learning, sometimes
+stumbling around in the dark (the instructor should only lightly guide),
+and sometimes triumphantly emerging with an answer.
+
+The material is elementary number theory throgh the Fundamental Theorem
+of Arithmetic, sets through DeMorgan's Laws, functions through inverse
+functions, and relations through the connection between equivalence 
+relations and partitions. 
+
+
+LICENSE
+
+This book is Free, including the LaTeX source.  You can download it and 
+use it in any way that you like.
+
+In particular, instructors can use it in class without cost.  They can
+make copies and sell those copies at the bookstore (they may want to 
+prorate the cost to make their copy free).
+
+
+
+LATEX
+
+The book is in standard LaTeX.  
+
+Compile it with 
+  1) cd asy
+     asy -fpdf *.asy
+     cd ..
+  2) latexmk  (or `pdflatex ibl' twice followed by`pdflatex answers' twice)
+  3) cd slides
+     pdflatex logic
+
+I appreciate bug reports.
+
+
+_Options_
+
+Note that the book comes with answers to all exercises.  They serve two 
+purposes: (i) they ensure that when I put no question before a prerequisite,
+and (ii) they help me prepare for class.
+
+The book can be printed in a compact form.  See the first few lines of the
+ibl.tex source.  In this form it makes six or seven sheets, so it could 
+easily be copied and distributed to students on the first day of class, 
+instead of going for a bookstore route. 
+
+In the number theory chapter the instructor can compile the book to do 
+either Bezout's Lemma or to do an alternative approach that is more 
+natural but less slick.  See the boolean in the preamble of ibl.tex .
+
+
+
+ENJOY
+
+Jim Hefferon
+Saint Michael's College
+Colchester, Vermont USA
+http://joshua.smcvt.edu/proofs
+jhefferon at smcvt dot edu
