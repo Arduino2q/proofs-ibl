@@ -8,12 +8,13 @@ US sophmores.
 The approach is Inquiry-Based, sometimes called Moore Method
 or Discovery Method.  This means that the goal is to have students
 directly grapple with the material.  The text is a sequence of exercises
-with a few definitions and remarks.  The class works through the 
+with a few definitions and remarks.  Usually the exercises ask for proofs, 
+although a few ask for examples.  The class works through the 
 material together, talking through what they are learning, sometimes
 stumbling around in the dark (the instructor should only lightly guide),
 and sometimes triumphantly emerging with an answer.
 
-The material is elementary number theory throgh the Fundamental Theorem
+The material is elementary number theory through the Fundamental Theorem
 of Arithmetic, sets through DeMorgan's Laws, functions through inverse
 functions, and relations through the connection between equivalence 
 relations and partitions. 
@@ -21,13 +22,12 @@ relations and partitions.
 
 LICENSE
 
-This book is Free, including the LaTeX source.  You can download it and 
-use it in any way that you like.
+This is Free, including the LaTeX source.  You can use it in any way 
+that you like.
 
 In particular, instructors can use it in class without cost.  They can
 make copies and sell those copies at the bookstore (they may want to 
-prorate the cost to make their copy free).
-
+prorate the cost to pay for their copy).
 
 
 LATEX
@@ -41,9 +41,6 @@ Compile it with
   2) latexmk  (or `pdflatex ibl' twice followed by`pdflatex answers' twice)
   3) cd slides
      pdflatex logic
-
-I appreciate bug reports.
-
 
 _Options_
 
@@ -60,6 +57,16 @@ In the number theory chapter the instructor can compile the book to do
 either Bezout's Lemma or to do an alternative approach that is more 
 natural but less slick.  See the boolean in the preamble of ibl.tex .
 
+
+WEB PAGE
+
+There is more on the book's home page http://joshua.smcvt.edu/proofs .
+Information is there on getting an already-made copy so you don't have 
+to mess with my LaTeX.
+
+I appreciate bug reports.  I typically save them up and address them in 
+a batch but I welcome them any time.  My contact information is below, and 
+on the home page.
 
 
 ENJOY
