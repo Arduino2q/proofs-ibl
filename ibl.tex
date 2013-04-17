@@ -1,6 +1,6 @@
 % One and only one of the next two lines should be uncommented
-% \documentclass{ibl}  % for making book
-\documentclass[compact]{ibl}  % for making handout for students
+\documentclass{ibl}  % for making book
+% \documentclass[compact]{ibl}  % for making handout for students
 \usepackage{ibltext} % for the text only; answers-only is another .sty
 
 \usepackage{etoolbox}
@@ -1326,8 +1326,8 @@ Prove each.
   which is $m\cdot\gcd(a,b)$.
 \item This is immediate from the prior item on taking $m$ to be~$d$, 
   and also taking $a$ to be~$a/d$ and $b$ to be~$b/d$.     
-\item Since $a$ and~$b$ are relatively prime we have $\gcd(a,b)=1$
-  and the first item gives that $\gcd(ca,cb)=c$.
+\item The numbers $a$ and~$b$ are relatively prime so $\gcd(a,b)=1$.
+  The first item gives $\gcd(ca,cb)=c$.
   Thus $c=s\cdot ac+t\cdot bc$ for some $s,t\in\Z$, and
   because $a\divides ac$ and~$a\divides bc$ we have by Linearity that
   $a\divides c$.
@@ -1816,26 +1816,6 @@ $\universalset=\Z$, if $A$ is the set of
 objects that are less than~$100$ then we can take the complement without 
 worrying about picking up unwanted objects such as $\pi$.
 
-\begin{ex}
-Prove that the complement of the complement is the original set
-$\setcomp{\setcomp{A}}=A$. 
-\begin{ans}
-  We will show mutual inclusion, that $A\subseteq\setcomp{\setcomp{A}}$
-  and that $\setcomp{\setcomp{A}}\subseteq A$.
-
-  For the first inclusion suppose that $a\in A$.
-  Then by definition of the complement, $a\notin\setcomp{A}$.
-  The last statement implies that $a\in\setcomp{\setcomp{A}}$.
-  Thus  $A\subseteq\setcomp{\setcomp{A}}$.
-
-  Inclusion in the other direction is similar.
-  Suppose that $x\in\setcomp{\setcomp{A}}$.
-  Then $x\notin\setcomp{A}$.
-  By definition of the complement then $x\in\setcomp{A}$.
-  Thus $\setcomp{\setcomp{A}}\subseteq A$. 
-\end{ans}
-\end{ex}
-
 \begin{df}
 Let $A$ and $B$ be sets.
 Their \definend{union} is the set of elements 
@@ -1845,40 +1825,6 @@ Their \definend{intersection} is the set of elements
 from both sets
 $A\intersection B=\setbuilder{x}{\text{$x\in A$ and $x\in B$}}$.  
 \end{df}
-
-\begin{ex}
-Give the formula relating $\charfcn{A}$ and $\charfcn{B}$ to
-  $\charfcn{A\intersection B}$.
-Do the same for union.
-Do the same for complementation.
-\begin{ans}
-  The formula relating $\charfcn{A}$ and $\charfcn{B}$ to
-  $\charfcn{A\intersection B}$ is 
-  $\charfcn{A\intersection B}=\charfcn{A}\cdot\charfcn{B}$.
-  To verify this formula there are two cases: $x\in A\intersection B$ 
-  and~$x\notin A\intersection B$.
-  If $x\in A\intersection B$ then $x\in A$ and $x\in B$, so 
-  $\charfcn{A}(x)=\charfcn{B}(x)=1$ and the product is correct.
-  If $x\notin A\intersection B$ then either $x\notin A$ or~$x\notin B$,
-  so at least one of $\charfcn{A}(x)$ or~$\charfcn{B}(x)$ is zero, 
-  and here also the product is correct.
-
-  For the union the formula is    
-  $\charfcn{A\union B}=\charfcn{A}+\charfcn{B}-\charfcn{A\intersection B}$.
-  To verify the formula we can check four cases:
-  (i)~$x\in A$ and~$x\notin B$, 
-  (ii)~$x\notin A$ and~$x\in B$, 
-  (iii)~$x\in A\intersection B$, 
-  and (iv)~$x\notin A$ and~$x\notin B$.
-  Verification of the formula in these cases is as in the prior paragraph.
-
-  The complement formula is    
-  $\charfcn{\setcomp{A}}=1-\charfcn{A}$.
-  There are two cases to verify: 
-  $x\in A$ and~$x\notin A$.
-  These cases are straightforward.
-\end{ans}
-\end{ex}
 
 Picture set operations with \definend{Venn diagrams}.
 \begin{center}
@@ -1891,11 +1837,203 @@ Picture set operations with \definend{Venn diagrams}.
 In each diagram
 the region inside the rectangle depicts the universal set and the 
 region inside each circle depicts the set.
-On the left the part in mauve shows 
+On the left the part in mauve (light purple) shows 
 the union as containing all of the two sets joined, 
 the middle shows the intersection
 containing only the region common to both,
 and on the right the mauve region, the complement, is all but the set~$A$.
+
+\begin{ex}
+\addtocounter{exercisepartscount}{-5}  % This is not 6 separate exercises, it is one
+Another tool for illustrating set relationships is this table.
+\begin{center} \small
+  \begin{tabular}{cc|c}
+    $x\in A$  &$x\in B$  &row number \\ \hline
+    $0$       &$0$       &$0$  \\
+    $0$       &$1$       &$1$  \\
+    $1$       &$0$       &$2$  \\
+    $1$       &$1$       &$3$  
+  \end{tabular}
+\end{center}
+We use the bits $0$ and~$1$ instead of $F$ and~$T$ so that the 
+row is the binary representation of the row number.
+That table gives $A=\set{2,3}$, $B=\set{1,3}$, 
+and~$\universalset=\set{0,1,2,3}$.
+For each item below, illustrate the statements using these sets.
+For one item, prove it.
+\begin{exes}
+\item The complement of the complement is the original set
+  $\setcomp{\setcomp{A}}=A$.  
+\item $A\intersection\emptyset=\emptyset$ and $A\union\emptyset=A$  
+\item \notetext{Idempotence} $A\intersection A=A$ and $A\union A=A$    
+\item $A\intersection B\subseteq A\subseteq A\union B$  
+\item \notetext{Commutativity}
+   $A\intersection B=B\intersection A$ and
+   $A\union B=B\union A$ 
+\item \notetext{Associativity} 
+  $(A\intersection B)\intersection C=A\intersection (B\intersection C)$
+  and
+  $(A\union B)\union C=A\union (B\union C)$ 
+\end{exes}
+\begin{ans}
+\begin{exes}
+\item  The illustration is that the complement is 
+  $\setcomp{A}=\set{0,1}$.
+  Then the complement of the complement is~$\setcomp{\setcomp{A}}=\set{2,3}$.
+  
+  The proof 
+  is by mutual inclusion, that both~$A\subseteq\setcomp{\setcomp{A}}$
+  and~$\setcomp{\setcomp{A}}\subseteq A$.
+  For the first inclusion suppose that $a\in A$.
+  By the definition of complement $a\notin\setcomp{A}$.
+  Thus $a\in\setcomp{\setcomp{A}}$,
+  and so $A\subseteq\setcomp{\setcomp{A}}$.
+
+  Inclusion in the other direction is similar.
+  Suppose that $x\in\setcomp{\setcomp{A}}$.
+  Then $x\notin\setcomp{A}$.
+  By definition of the complement then $x\in\setcomp{A}$.
+  Thus $\setcomp{\setcomp{A}}\subseteq A$. 
+\item In the illustration $A=\set{2,3}$ so the collection of
+  elements of~$\universalset$ that are members of either~$A$ or~$\emptyset$
+  is~$\set{2,3}$.
+  The other one is as trivial: all of the members of 
+  $\universalset=\set{0,1,2,3}$ that are members of both~$A=\set{2,3}$
+  and~$\emptyset=\set{}$ are members of~$\emptyset$.
+
+  The proof of the first equality is: $x\in A\intersection\emptyset$
+  iff $x\in A$ and~$x\in\emptyset$, 
+  which, because an `and' statement holds if and only if both halves hold
+  and here the second clause never holds,
+  is equivalent to $x\in\emptyset$. 
+
+  For the second equality, 
+  $x\in A\union\emptyset$ iff $x\in A$ or~$x\in\emptyset$,
+  which is equivalent to $x\in A$.
+\item The illustration of the first is that the collection of members of both
+  $\set{2,3}$ and~$\set{2,3}$ is the set~$A=\set{2,3}$.
+  The second illustration, the intersection one, is the same.
+
+  The first is true because
+  $x\in A\intersection A$ if and only if
+  both $x\in A$ and~$x\in A$, 
+  which is true if and only if $x\in A$.
+  The proof of the second is similar.
+\item There are two containments to illustrate.
+  The one on the left is that $A\intersection B=\set{3}\subseteq A=\set{2,3}$.
+  On the right is~$A=\set{2,3}\subseteq A\union B=\set{1,2,3}$.
+
+  To prove the first containment $A\intersection B\subseteq A$ observe that 
+  $x\in A\intersection B$ implies that
+  $x\in A$ and $x\in B$, so in particular $x\in A$.
+  Thus $A\intersection B\subseteq A$.
+
+  The second containment is just as straightforward:
+  $x\in A$ implies that $x\in A$ or~$x\in B$, and so $A\subseteq A\union B$.
+\item The illustration of the intersections is: $A\intersection B=\set{3}$
+  while $B\intersection A=\set{3}$ also.
+  The unions is: $A\union B=\set{1,2,3}$ while $B\union A=\set{1,2,3}$.
+
+  For the proof, first we show that
+  $A\intersection B=B\intersection A$.
+  By the definition of intersection,  
+  $A\intersection B=\setbuilder{x}{\text{$x\in A$ and $x\in B$}}
+    =\setbuilder{x}{\text{$x\in B$ and $x\in A$}}=B\intersection A$.
+  (The middle equality holds by the commutativity of `and'.)
+
+  Equality for union is similar since, like `and', the logical connective
+  `or' is also commutative.
+\item For this three-set relationship we use this table.
+  \begin{center} \small
+    \begin{tabular}{ccc|c}
+      $x\in A$  &$x\in B$  &$x\in C$  &row number \\ \hline
+         $0$    &$0$       &$0$       &$0$    \\
+         $0$    &$0$       &$1$       &$1$    \\
+         $0$    &$1$       &$0$       &$2$    \\
+         $0$    &$1$       &$1$       &$3$    \\[.5ex]
+         $1$    &$0$       &$0$       &$4$    \\
+         $1$    &$0$       &$1$       &$5$    \\
+         $1$    &$1$       &$0$       &$6$    \\
+         $1$    &$1$       &$1$       &$7$    
+    \end{tabular}
+  \end{center}
+  For intersection, $A\intersection B=\set{6,7}$ and so
+  $(A\intersection B)\intersection C=\set{7}$ while
+  $B\intersection C=\set{3,7}$ so $A\intersection(B\intersection C)=\set{7}$.
+  Union is similar.
+
+  The proof of each is a consequence of the observation that the 
+  logical connective used in the definition is associative.
+  For intersection,
+  $(A\intersection B)\intersection C=
+    \setbuilder{x}{\text{$x\in A\intersection B$ and $x\in C$}}
+    =
+    \setbuilder{x}{\text{($x\in A$ and $x\in B$) and $x\in C$}}
+    =
+    \setbuilder{x}{\text{$x\in A$ and ($x\in B$ and $x\in C$)}}
+   =
+    \setbuilder{x}{\text{$x\in A$ and $x\in B\intersection C$}}
+   =
+   A\intersection (B\intersection C)$
+   (the second equality holds because `and' is associative).
+   Union is similar.
+\end{exes}
+\end{ans}
+\end{ex}
+
+
+% \begin{ex}
+% Prove that the complement of the complement is the original set
+% $\setcomp{\setcomp{A}}=A$. 
+% \begin{ans}
+%   We will show mutual inclusion, that $A\subseteq\setcomp{\setcomp{A}}$
+%   and that $\setcomp{\setcomp{A}}\subseteq A$.
+
+%   For the first inclusion suppose that $a\in A$.
+%   Then by definition of the complement, $a\notin\setcomp{A}$.
+%   The last statement implies that $a\in\setcomp{\setcomp{A}}$.
+%   Thus  $A\subseteq\setcomp{\setcomp{A}}$.
+
+%   Inclusion in the other direction is similar.
+%   Suppose that $x\in\setcomp{\setcomp{A}}$.
+%   Then $x\notin\setcomp{A}$.
+%   By definition of the complement then $x\in\setcomp{A}$.
+%   Thus $\setcomp{\setcomp{A}}\subseteq A$. 
+% \end{ans}
+% \end{ex}
+
+% \begin{ex}
+% Give a formula relating $\charfcn{A}$ and $\charfcn{B}$ to
+%   $\charfcn{A\intersection B}$.
+% Do the same for union, and for complementation.
+% \begin{ans}
+%   The formula relating $\charfcn{A}$ and $\charfcn{B}$ to
+%   $\charfcn{A\intersection B}$ is 
+%   $\charfcn{A\intersection B}=\charfcn{A}\cdot\charfcn{B}$.
+%   To verify this formula there are two cases: $x\in A\intersection B$ 
+%   and~$x\notin A\intersection B$.
+%   If $x\in A\intersection B$ then $x\in A$ and $x\in B$, so 
+%   $\charfcn{A}(x)=\charfcn{B}(x)=1$ and the product is correct.
+%   If $x\notin A\intersection B$ then either $x\notin A$ or~$x\notin B$,
+%   so at least one of $\charfcn{A}(x)$ or~$\charfcn{B}(x)$ is zero, 
+%   and here also the product is correct.
+
+%   For the union the formula is    
+%   $\charfcn{A\union B}=\charfcn{A}+\charfcn{B}-\charfcn{A\intersection B}$.
+%   To verify the formula we can check four cases:
+%   (i)~$x\in A$ and~$x\notin B$, 
+%   (ii)~$x\notin A$ and~$x\in B$, 
+%   (iii)~$x\in A\intersection B$, 
+%   and (iv)~$x\notin A$ and~$x\notin B$.
+%   Verification of the formula in these cases is as in the prior paragraph.
+
+%   The complement formula is    
+%   $\charfcn{\setcomp{A}}=1-\charfcn{A}$.
+%   There are two cases to verify: 
+%   $x\in A$ and~$x\notin A$.
+%   These cases are straightforward.
+% \end{ans}
+% \end{ex}
 
 \begin{df}
 The \definend{difference} of two sets is $A-B=\setbuilder{x\in A}{x\notin B}$.  
@@ -1957,16 +2095,16 @@ the universal set is~$X$.
 
 \begin{ex}\notetext{DeMorgan's Laws}  Prove.
 \begin{exes}
-\item $A\intersection\emptyset=\emptyset$ and $A\union\emptyset=A$  
-\item \notetext{Idempotence} $A\intersection A=A$ and $A\union A=A$    
-\item $A\intersection B\subseteq A\subseteq A\union B$  
-\item \notetext{Commutativity}
-   $A\intersection B=B\intersection A$ and
-   $A\union B=B\union A$ 
-\item \notetext{Associativity} 
-  $(A\intersection B)\intersection C=A\intersection (B\intersection C)$
-  and
-  $(A\union B)\union C=A\union (B\union C)$ 
+% \item $A\intersection\emptyset=\emptyset$ and $A\union\emptyset=A$  
+% \item \notetext{Idempotence} $A\intersection A=A$ and $A\union A=A$    
+% \item $A\intersection B\subseteq A\subseteq A\union B$  
+% \item \notetext{Commutativity}
+%    $A\intersection B=B\intersection A$ and
+%    $A\union B=B\union A$ 
+% \item \notetext{Associativity} 
+%   $(A\intersection B)\intersection C=A\intersection (B\intersection C)$
+%   and
+%   $(A\union B)\union C=A\union (B\union C)$ 
 \item 
   $\setcomp{A\intersection B}=\setcomp{A}\union\setcomp{B}$
   and
@@ -1977,50 +2115,50 @@ $A\union (B\intersection C)=(A\union B)\intersection (A\union C)$
 \end{exes}
 \begin{ans}
 \begin{exes}
-\item 
-  The first equality follows from: $x\in A\intersection\emptyset$
-  iff $x\in A$ and~$x\in\emptyset$, 
-  which, because an `and' statement holds if and only if both halves hold
-  and the second clause never holds,
-  is equivalent to $x\in\emptyset$. 
+% \item 
+%   The first equality follows from: $x\in A\intersection\emptyset$
+%   iff $x\in A$ and~$x\in\emptyset$, 
+%   which, because an `and' statement holds if and only if both halves hold
+%   and the second clause never holds,
+%   is equivalent to $x\in\emptyset$. 
 
-  For the second equality, 
-  $x\in A\union\emptyset$ iff $x\in A$ or~$x\in\emptyset$,
-  which is equivalent to $x\in A$.
-\item We have that $x\in A\intersection A$ if and only if
-  both $x\in A$ and~$x\in A$, 
-  which is true if and only if $x\in A$.
-\item For the first containment $A\intersection B\subseteq A$ observe that 
-  $x\in A\intersection B$ implies that
-  $x\in A$ and $x\in B$, so in particular $x\in A$.
-  Thus $A\intersection B\subseteq A$.
+%   For the second equality, 
+%   $x\in A\union\emptyset$ iff $x\in A$ or~$x\in\emptyset$,
+%   which is equivalent to $x\in A$.
+% \item We have that $x\in A\intersection A$ if and only if
+%   both $x\in A$ and~$x\in A$, 
+%   which is true if and only if $x\in A$.
+% \item For the first containment $A\intersection B\subseteq A$ observe that 
+%   $x\in A\intersection B$ implies that
+%   $x\in A$ and $x\in B$, so in particular $x\in A$.
+%   Thus $A\intersection B\subseteq A$.
 
-  The second containment is just as trivial:
-  $x\in A$ implies that $x\in A$ or~$x\in B$, and so $A\subseteq A\union B$.
-\item First we do $A\intersection B=B\intersection A$.
-  By the definition of intersection,  
-  $A\intersection A=\setbuilder{x}{\text{$x\in A$ and $x\in B$}}
-    =\setbuilder{x}{\text{$x\in B$ and $x\in A$}}=B\intersection A$.
-  (The middle equality holds by the commutativity of `and'.)
+%   The second containment is just as trivial:
+%   $x\in A$ implies that $x\in A$ or~$x\in B$, and so $A\subseteq A\union B$.
+% \item First we do $A\intersection B=B\intersection A$.
+%   By the definition of intersection,  
+%   $A\intersection A=\setbuilder{x}{\text{$x\in A$ and $x\in B$}}
+%     =\setbuilder{x}{\text{$x\in B$ and $x\in A$}}=B\intersection A$.
+%   (The middle equality holds by the commutativity of `and'.)
 
-  Equality for union is similar since like `and', the logical connective
-  `or' is also commutative.
-\item Each of these is a consequence of the observation that the 
-  logical connective used in the definition is associative.
+%   Equality for union is similar since like `and', the logical connective
+%   `or' is also commutative.
+% \item Each of these is a consequence of the observation that the 
+%   logical connective used in the definition is associative.
 
-  For intersection,
-  $(A\intersection B)\intersection C=
-    \setbuilder{x}{\text{$x\in A\intersection B$ and $x\in C$}}
-    =
-    \setbuilder{x}{\text{($x\in A$ and $x\in B$) and $x\in C$}}
-    =
-    \setbuilder{x}{\text{$x\in A$ and ($x\in B$ and $x\in C$)}}
-   =
-    \setbuilder{x}{\text{$x\in A$ and $x\in B\intersection C$}}
-   =
-   A\intersection (B\intersection C)$
-   (the second equality holds because `and' is associative).
-   Union is similar.
+%   For intersection,
+%   $(A\intersection B)\intersection C=
+%     \setbuilder{x}{\text{$x\in A\intersection B$ and $x\in C$}}
+%     =
+%     \setbuilder{x}{\text{($x\in A$ and $x\in B$) and $x\in C$}}
+%     =
+%     \setbuilder{x}{\text{$x\in A$ and ($x\in B$ and $x\in C$)}}
+%    =
+%     \setbuilder{x}{\text{$x\in A$ and $x\in B\intersection C$}}
+%    =
+%    A\intersection (B\intersection C)$
+%    (the second equality holds because `and' is associative).
+%    Union is similar.
 \item (These two are a consequence of the fact that logical negation
   satisfies that `not($P$ and $Q$)' has the same truth value as
   `not($P$) or not($Q$)'.)
@@ -2089,10 +2227,9 @@ $A\intersection C$, or $B\intersection C$ is empty.
   Thus $(A\symdiff B)\intersection (A\intersection B)$ has no elements.
 \item One example is $A=\set{5,6}$, $B=\set{3,6}$, and 
   $C=\set{3,5}$.
-
   \remark
-  one way to make up such examples is to use this table.
-  \begin{center}
+  to get this example we used the three-set table.
+  \begin{center} \small
     \begin{tabular}{ccc|c}
       $x\in A$  &$x\in B$  &$x\in C$  &row number \\ \hline
          $0$    &$0$       &$0$       &$0$    \\
@@ -2105,15 +2242,11 @@ $A\intersection C$, or $B\intersection C$ is empty.
          $1$    &$1$       &$1$       &$7$    
     \end{tabular}
   \end{center}
-  On the left it has $0$ or~$1$ to indicate `true' or `false'.
-  It uses the bits $0$ or~$1$ so that each row on the left makes a 
-  binary number, and on the 
-  right is the decimal expression of that number.
-  In this case we want a number to fall in $A\intersection C$ so put
-  $5$ into~$A$ and~$C$.
-  We want a number in $A\intersection B$ so put~$6$ in each.
-  We want a number in $B\intersection C$ so put~$3$ in each.
-  (Carefully avoid putting~$7$ in all three.)
+  Think of it as listing eight regions that could either be occupied or not.
+  We want a number to fall in $A\intersection C$ so put
+  $5$ into~$A$ and~$C$ (so the ``$A$ overlap~$C$'' region is occupied).
+  We want a number in $A\intersection B$ so put~$6$ into each.
+  We want a number in $B\intersection C$ so put~$3$ into each.
 \end{exes}
 \end{ans}
 \end{ex}
@@ -2848,7 +2981,7 @@ is exactly one associated argument, is a
 
   Now extend to~$D$ and the map~$\map{f}{D}{C}$.
   The set~$D$ has one element more than the set~$\hat{D}$.
-  Because the map~$f$ is one-to-one, the value~$f(d)$ is not in 
+  Because~$f$ is one-to-one, the value~$f(d)$ is not in 
   the range of the restriction map~$\range(\restrictionmap{f}{\hat{D}})$.
   Thus $\range(f)$ is one element larger than
   $|\range(\restrictionmap{f}{\hat{D}})|$.
