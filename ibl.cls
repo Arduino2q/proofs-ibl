@@ -191,7 +191,11 @@ qed=\qedsymbol
 \addtocounter{exercisetotal}{-\value{exerciseswithpartscount}}%
 \typeout{Number for students to do is Total-Number+Count=\theexercisetotal.}}
 
+% ++++++++++++
 % Exercises sometimes have multiple parts.
+
+% For these exercises, when done on the board, I have separate students 
+% do separate parts
 \newlength{\exesindent}\setlength{\exesindent}{1.25em}
 \newenvironment{exes}{%
 \addtocounter{exerciseswithpartscount}{1}%
@@ -203,6 +207,23 @@ qed=\qedsymbol
                   align=left,label={\textsc{\alph*}.\protect\addtocounter{exercisepartscount}{1}}] 
 }{%
 \end{enumerate}
+}
+
+% For these exercises, when done on the board I have one student do them
+% all. 
+\newlist{jhitems}{enumerate*}{1}
+\setlist*[jhitems,1]{%
+  mode=unboxed,
+  before=\unskip{\hspace*{.5em plus .05em minus .02em}\linebreak[1]},
+  after={.},
+  itemjoin={\unskip{,\hspace{.5em plus .05em minus .02em}}\linebreak[1]},
+  label={ (\roman*)},
+}
+\newenvironment{items}{%
+\addtocounter{exercisecount}{1}%
+\begin{jhitems}
+}{%
+\end{jhitems}
 }
 
 

@@ -54,6 +54,20 @@
 \end{enumerate}
 }
 
+%
+\renewenvironment{items}{%
+\begin{enumerate}[topsep=0.15ex plus 0.02ex minus 0.01ex,
+                  partopsep=0ex,parsep=0ex,
+                  beginpenalty=150,   % Prevent page break after newline start
+                  labelwidth=0.5em plus .03em minus 0em,align=right,labelsep=0.5em,
+                  itemsep=.25ex plus .04ex,
+                  leftmargin=1em,rightmargin=0em,
+                  listparindent=\unifiedlistparindent,
+                  align=left,label={(\roman*)}] 
+}{%
+\end{enumerate}
+}
+
 
 % ==============================================
 % sectioning

@@ -1,6 +1,7 @@
 % One and only one of the next two lines should be uncommented
 \documentclass{ibl}  % for making book
 % \documentclass[compact]{ibl}  % for making handout for students
+
 \usepackage{ibltext} % for the text only; answers-only is another .sty
 
 \usepackage{etoolbox}
@@ -738,12 +739,12 @@ Two numbers $a,c$ are \definend{congruent modulo $b$} $a\equiv c\pmod b$
 if they have the same modulus with respect to~$b$.
 \end{df}
 
-\begin{ex}\pord
-\begin{exes}
+\begin{ex}\pord:
+\begin{items}
 \item $a\bmod b=b\bmod a$
 \item $a\bmod b=-a\bmod b$
-\item $b\bmod b=1$    
-\end{exes}
+\item $b\bmod b=1$
+\end{items}
 \begin{ans}
 \begin{exes}
 \item This is false.
@@ -1187,15 +1188,15 @@ if it has the form $c=a\cdot m+b\cdot n$ for some $m,n\in\Z$.
 \end{df}
 
 \begin{ex}
-Use Euclid's Algorithm to find the greatest common divisor of the two.
-Use that calculation to express the greatest common divisor as a 
-linear combination of the two.
-\begin{exes}
+Use Euclid's Algorithm to find the greatest common divisor and 
+use that calculation to express the greatest common divisor as a 
+linear combination of the two:
+\begin{items}
 \item $15$, $25$
-\item $48$, $732$  
-\end{exes}
+\item $48$, $732$.
+\end{items}
 \begin{ans}
-\begin{exes}
+\begin{items}
 \item To get the greatest common divisor the first step is
   $25=15\cdot 1+10$ followed by $15=10\cdot 1+5$ and finally
   $10=5\cdot 2+0$ shows that $\gcd(25,15)=5$.
@@ -1211,7 +1212,7 @@ linear combination of the two.
 
   Reversing is trivial:
   $12=1\cdot 732-12\cdot 48$.
-\end{exes}
+\end{items}
 \end{ans}
 \end{ex}
 
@@ -1525,19 +1526,19 @@ $p$'s, again in length and in individual members.
 factorization would not be unique 
 since to any existing factorization we could add more $1$'s.
 
-\begin{ex} \pord.
+\begin{ex} Decide:
 % From: http://gowers.wordpress.com/2011/11/13/why-isnt-the-fundamental-theorem-of-arithmetic-obvious/
-\begin{exes}
+\begin{items}
 \item $5\cdot 7\cdot 19\neq 3\cdot 11\cdot 17$
 \item $47\cdot 863\neq 73\cdot 557$
 \item $1357\cdot 4183\neq 1081\cdot 5251$ % due to David Speyer
-\end{exes}
+\end{items}
 \begin{ans}
-\begin{exes}
+\begin{items}
 \item All the numbers are prime, and they are different.
 \item These numbers are prime, and different.
 \item The two sides are equal (the numbers are non-prime).     
-\end{exes}
+\end{items}
 \end{ans}
 \end{ex}
 
@@ -1632,32 +1633,34 @@ We sometimes say ``collection'' as a synonym for set.
 We often give a set by either listing or describing its elements.
 Thus we may write 
 the set containing the primes less than ten 
-either as $\set{2, 3, 5, 7}$ or as~$\set{p<10\suchthat \text{$p$ is prime}}$.
+either as $\set{2, 3, 5, 7}$ or as~$\setbuilder{p\in\N}{\text{$p<10$ and $p$ is prime}}$.
 
-\begin{ex} \pord.
-\begin{exes}
+\begin{ex} Decide and justify each:
+\begin{items}
 \item $\set{1,3,5}=\set{5,3,1}$    
 \item $\set{2, 4, 6}=\set{2, 4, 6, 4}$    
 \item $\set{1, 3}=\set{n\in\N\suchthat n<5}$ 
 \item $0\in\set{1,2,\set{0}}$   
-% \item $4\in\set{n\in\N\suchthat n^2<50}$
-\end{exes}
+\item $4\in\set{n\in\N\suchthat n^2<50}$
+\end{items}
 \begin{ans}
-\begin{exes}
-\item These two sets are equal because they contain the same elements, $1$, $3$, and~$5$.
-\item These two sets are equal because they contain the same elements, $2$, $4$, and~$6$.
+\begin{items}
+\item These two sets are equal because they contain the same elements, 
+  $1$, $3$, and~$5$.
+\item These two sets are equal because they contain the same elements, 
+  $2$, $4$, and~$6$.
 \item These sets are not equal because the set on the left contains~$2$
   while the set on the right does not.
 \item This is false because the set on the right has three elements, 
   and by inspection none of the three is the number~$0$;
   in particular, $\set{0}$ is not equal to~$0$.
-% \item This is true because $4^2$ is less than $50$.    
-\end{exes}
+\item This is true because $4^2$ is less than $50$.    
+\end{items}
 \end{ans}
 \end{ex}
 
 \begin{df}
-The set with no elements is the \definend{empty set} $\emptyset$.  
+The set without any elements is the \definend{empty set} $\emptyset$.  
 \end{df}
 
 \begin{df}
@@ -1667,18 +1670,18 @@ that is, if $x\in B$ implies that~$x\in A$.
 It is denoted $B\subseteq A$.
 \end{df}
 
-\begin{ex} \pord.
-\begin{exes}
+\begin{ex} Decide each, with justification:
+\begin{items}
 \item $\set{1,3,5}\subseteq\set{1,3, 5, 7, 9}$
 \item $\set{1, 3, 5}\in\set{1, 3, 5, 7, 9}$   
 \item $\set{1,3,5}\subseteq\setbuilder{n\in\N}{\text{$n$ is prime}}$
 \item $\emptyset\subseteq\set{1, 2, 3, 4}$
-% \item $\N\subseteq\Z$
+\item $\N\subseteq\Z$
 \item $\set{2}\in\set{1, \set{2}, 3}$
 \item $\set{2}\subseteq\set{1, \set{2}, 3}$
-\end{exes}
+\end{items}
 \begin{ans}
-\begin{exes}
+\begin{items}
 \item This is true because, by inspection, each of the elements of the set
   on the left, $1$, $3$, and~$5$, is an element of the set on the right.
 \item The set $\set{1,3,5}$ is not an element of the set on the right.
@@ -1692,7 +1695,7 @@ It is denoted $B\subseteq A$.
   member of the set on the right.
 \item This is not true since $2$ is an element of the set on the left but
   not an element of the set on the right.
-\end{exes}
+\end{items}
 \end{ans}
 \end{ex}
 
@@ -1740,17 +1743,17 @@ Prove, for $A$, $B$, and~$C$ sets.
 \end{ex}
 
 \begin{ex} For each, give example sets or show that no example is possible.
-\begin{exes}
+\begin{items}
 \item $A\subseteq B$, $B\not\subseteq C$, $A\subseteq C$
 \item $A\not\subseteq B$, $B\not\subseteq C$, $A\subseteq C$
 \item $A\not\subseteq B$ $B\subseteq C$, $A\subseteq C$    
-\end{exes}
+\end{items}
 \begin{ans}
-\begin{exes}
+\begin{items}
 \item $A=\set{0}$, $B=\set{0,1,2}$, $C=\set{0,1}$
 \item $A=\set{0}$, $B=\set{2}$, $C=\set{0,1}$
 \item $A=\set{0}$, $B=\set{1}$, $C=\set{0,1}$
-\end{exes}
+\end{items}
 \end{ans}
 \end{ex}
 
@@ -1844,7 +1847,6 @@ containing only the region common to both,
 and on the right the mauve region, the complement, is all but the set~$A$.
 
 \begin{ex}
-\addtocounter{exercisepartscount}{-5}  % This is not 6 separate exercises, it is one
 Another tool for illustrating set relationships is this table.
 \begin{center} \small
   \begin{tabular}{cc|c}
@@ -1860,8 +1862,8 @@ row is the binary representation of the row number.
 That table gives $A=\set{2,3}$, $B=\set{1,3}$, 
 and~$\universalset=\set{0,1,2,3}$.
 For each item below, illustrate the statements using these sets.
-For one item, prove it.
-\begin{exes}
+For one item, prove it:
+\begin{items}
 \item The complement of the complement is the original set
   $\setcomp{\setcomp{A}}=A$.  
 \item $A\intersection\emptyset=\emptyset$ and $A\union\emptyset=A$  
@@ -1874,9 +1876,9 @@ For one item, prove it.
   $(A\intersection B)\intersection C=A\intersection (B\intersection C)$
   and
   $(A\union B)\union C=A\union (B\union C)$ 
-\end{exes}
+\end{items}
 \begin{ans}
-\begin{exes}
+\begin{items}
 \item  The illustration is that the complement is 
   $\setcomp{A}=\set{0,1}$.
   Then the complement of the complement is~$\setcomp{\setcomp{A}}=\set{2,3}$.
@@ -1977,30 +1979,9 @@ For one item, prove it.
    A\intersection (B\intersection C)$
    (the second equality holds because `and' is associative).
    Union is similar.
-\end{exes}
+\end{items}
 \end{ans}
 \end{ex}
-
-
-% \begin{ex}
-% Prove that the complement of the complement is the original set
-% $\setcomp{\setcomp{A}}=A$. 
-% \begin{ans}
-%   We will show mutual inclusion, that $A\subseteq\setcomp{\setcomp{A}}$
-%   and that $\setcomp{\setcomp{A}}\subseteq A$.
-
-%   For the first inclusion suppose that $a\in A$.
-%   Then by definition of the complement, $a\notin\setcomp{A}$.
-%   The last statement implies that $a\in\setcomp{\setcomp{A}}$.
-%   Thus  $A\subseteq\setcomp{\setcomp{A}}$.
-
-%   Inclusion in the other direction is similar.
-%   Suppose that $x\in\setcomp{\setcomp{A}}$.
-%   Then $x\notin\setcomp{A}$.
-%   By definition of the complement then $x\in\setcomp{A}$.
-%   Thus $\setcomp{\setcomp{A}}\subseteq A$. 
-% \end{ans}
-% \end{ex}
 
 % \begin{ex}
 % Give a formula relating $\charfcn{A}$ and $\charfcn{B}$ to
@@ -2095,16 +2076,6 @@ the universal set is~$X$.
 
 \begin{ex}\notetext{DeMorgan's Laws}  Prove.
 \begin{exes}
-% \item $A\intersection\emptyset=\emptyset$ and $A\union\emptyset=A$  
-% \item \notetext{Idempotence} $A\intersection A=A$ and $A\union A=A$    
-% \item $A\intersection B\subseteq A\subseteq A\union B$  
-% \item \notetext{Commutativity}
-%    $A\intersection B=B\intersection A$ and
-%    $A\union B=B\union A$ 
-% \item \notetext{Associativity} 
-%   $(A\intersection B)\intersection C=A\intersection (B\intersection C)$
-%   and
-%   $(A\union B)\union C=A\union (B\union C)$ 
 \item 
   $\setcomp{A\intersection B}=\setcomp{A}\union\setcomp{B}$
   and
@@ -2115,50 +2086,6 @@ $A\union (B\intersection C)=(A\union B)\intersection (A\union C)$
 \end{exes}
 \begin{ans}
 \begin{exes}
-% \item 
-%   The first equality follows from: $x\in A\intersection\emptyset$
-%   iff $x\in A$ and~$x\in\emptyset$, 
-%   which, because an `and' statement holds if and only if both halves hold
-%   and the second clause never holds,
-%   is equivalent to $x\in\emptyset$. 
-
-%   For the second equality, 
-%   $x\in A\union\emptyset$ iff $x\in A$ or~$x\in\emptyset$,
-%   which is equivalent to $x\in A$.
-% \item We have that $x\in A\intersection A$ if and only if
-%   both $x\in A$ and~$x\in A$, 
-%   which is true if and only if $x\in A$.
-% \item For the first containment $A\intersection B\subseteq A$ observe that 
-%   $x\in A\intersection B$ implies that
-%   $x\in A$ and $x\in B$, so in particular $x\in A$.
-%   Thus $A\intersection B\subseteq A$.
-
-%   The second containment is just as trivial:
-%   $x\in A$ implies that $x\in A$ or~$x\in B$, and so $A\subseteq A\union B$.
-% \item First we do $A\intersection B=B\intersection A$.
-%   By the definition of intersection,  
-%   $A\intersection A=\setbuilder{x}{\text{$x\in A$ and $x\in B$}}
-%     =\setbuilder{x}{\text{$x\in B$ and $x\in A$}}=B\intersection A$.
-%   (The middle equality holds by the commutativity of `and'.)
-
-%   Equality for union is similar since like `and', the logical connective
-%   `or' is also commutative.
-% \item Each of these is a consequence of the observation that the 
-%   logical connective used in the definition is associative.
-
-%   For intersection,
-%   $(A\intersection B)\intersection C=
-%     \setbuilder{x}{\text{$x\in A\intersection B$ and $x\in C$}}
-%     =
-%     \setbuilder{x}{\text{($x\in A$ and $x\in B$) and $x\in C$}}
-%     =
-%     \setbuilder{x}{\text{$x\in A$ and ($x\in B$ and $x\in C$)}}
-%    =
-%     \setbuilder{x}{\text{$x\in A$ and $x\in B\intersection C$}}
-%    =
-%    A\intersection (B\intersection C)$
-%    (the second equality holds because `and' is associative).
-%    Union is similar.
 \item (These two are a consequence of the fact that logical negation
   satisfies that `not($P$ and $Q$)' has the same truth value as
   `not($P$) or not($Q$)'.)
@@ -2402,20 +2329,20 @@ $n=m$ and
 $x_0=y_0$, $x_1=y_1$, \ldots, $x_{n-1}=y_{n-1}$. 
 \end{df}
 
-\begin{ex}\pord.
-\begin{exes}
+\begin{ex}\pord:
+\begin{items}
 \item $\set{3, 4, 4, 5}=\set{4, 3, 5}$
 \item $\sequence{3, 4, 5}=\sequence{4, 3, 5}$
 \item $\sequence{3, 4, 4, 5}=\sequence{3,4,5}$  
-\end{exes}
+\end{items}
 \begin{ans}
-\begin{exes}
+\begin{items}
 \item These two sets contain the same elements, $3$, $4$, and~$5$,
   and so are equal.
 \item These sequences are not equal because they differ in the first element.
 \item These sequences are not equal because they have different lengths.
   (In addition, they differ in their third elements.)
-\end{exes}
+\end{items}
 \end{ans}
 \end{ex}
 
@@ -2616,8 +2543,8 @@ with arrows that begin with a bar.
 % In place of $\map{f}{D}{C}$ you may see $D\mapsvia{f} C$ and
 % in place of $f(d)=c$ you may see $d\mapsunder{f}c$.
 
-\begin{ex} \pord{} that each is a function.\label{FindFunctions}
-\begin{exes}
+\begin{ex} Decide if each is a function:\label{FindFunctions}
+\begin{items}
 \item $D=\set{0,1,2}$, $C=\set{3,4,5}$,
   $G=\set{(0,3), (1,4), (2,5)}$    
 \item $D=\set{0,1,2}$, $C=\set{3,4,5}$,
@@ -2632,9 +2559,9 @@ with arrows that begin with a bar.
   $G=\set{(0,3), (1,4), (2,4), (0,5)}$    
 \item $D=\N$, $C=\N$,
   $G=\setbuilder{(d,c)\in D\times C}{c=d^2}$    
-\end{exes}
+\end{items}
 \begin{ans}
-\begin{exes}
+\begin{items}
 \item This is a function.
   By inspection, for each pair $(x,y)\in G$ we have that
   $x\in D$ and that~$y\in C$.
@@ -2661,7 +2588,7 @@ with arrows that begin with a bar.
   $x\in D$ and that~$y\in C$.
   Also, we have that for each $x\in D$ there is one and only 
   one associated~$c\in C$, namely $c=d^2$.  
-\end{exes}
+\end{items}
 \end{ans}
 \end{ex}
 
@@ -2698,7 +2625,7 @@ $\setbuilder{y\in C}{\text{there is a $x\in D$ such that $f(x)=y$}}$.
 For each item in Exericse~\ref{FindFunctions}, 
 if it is a function find the range.  
 \begin{ans}
-\begin{exes}
+\begin{items}
 \item The range is $\set{3,4,5}=C$.    
 \item The range is $\set{3,4}$.
 \item This is not a function.   
@@ -2706,7 +2633,7 @@ if it is a function find the range.
 \item This is not a function.   
 \item This is not a function.   
 \item The range is the set of perfect squares $\setbuilder{a^2}{a\in\N}$.   
-\end{exes}
+\end{items}
 \end{ans}
 \end{ex}
 
@@ -2724,14 +2651,14 @@ is the range of the function $\restrictionmap{f}{B}$.
 \end{df}
 
 \begin{ex}
-Find the image of each set under the real-valued function $f(x)=\tan(x)$.
-\begin{exes}
+Find the image of each set under the function $f(x)=\tan(x)$:
+\begin{items}
 \item $\leftclosed{\pi/4}{\pi/2}=\setbuilder{x\in\R}{\pi/4\leq x<\pi/2}$
 \item \set{-\pi/3}
 % \item $\R^+$  
-\end{exes}
+\end{items}
 \begin{ans}
-\begin{exes}
+\begin{items}
 \item $f(\leftclosed{\pi/4}{\pi/2})=\leftclosed{1}{\infty}
              =\setbuilder{x\in\R}{1\leq x<\infty}$ 
 \item $f(\set{\pi/3})=\set{\sqrt{3}}$
@@ -2739,7 +2666,7 @@ Find the image of each set under the real-valued function $f(x)=\tan(x)$.
 %   In particular, the function isn't defined for $x=\pi/4$.
 %   Thus, $\restrictionmap{f}{\R^+}$ isn't defined, and so the
 %   image isn't defined.
-\end{exes}
+\end{items}
 \end{ans}
 \end{ex}
 
@@ -2753,16 +2680,16 @@ is the set $f^{-1}(A)=\setbuilder{d\in D}{f(d)\in A}$
 
 \begin{ex}
 Find the inverse image of each under the function $\map{f}{\R}{\R}$ 
-given by $x\mapsto x^2$.
-\begin{exes}
+given by $x\mapsto x^2$:
+\begin{items}
 \item $9$
 \item $\closed{16}{25}=\setbuilder{y\in\R}{16\leq y\leq 25}$
-\end{exes}
+\end{items}
 \begin{ans}
-\begin{exes}
+\begin{items}
 \item It is the set $\set{3,-3}$, sometimes abbreviated as $\pm 3$.
 \item It is the union $\closed{4}{5}\union \closed{-5}{-4}$.    
-\end{exes}
+\end{items}
 \end{ans}
 \end{ex}
 
@@ -3179,6 +3106,32 @@ If $g$ is both a left and right inverse of~$f$ then,
 as above, we say just that it is
 an inverse of~$f$ (or a \definend{two-sided inverse} for emphasis). 
 
+\begin{ex}
+Let $D=\set{0,1,2}$ and~$C=\set{\alpha,\beta,\gamma}$.
+Also let $\map{f,g}{D}{C}$ be given by
+$f(0)=\alpha$, $f(1)=\beta$, $f(2)=\gamma$, and
+$g(0)=\alpha$, $g(1)=\alpha$, $g(2)=\gamma$.
+Then:
+\begin{items}
+\item verify that $f$ is a correspondence
+\item construct an inverse for~$f$
+\item verify that~$g$ is not a correspondence
+\item show that~$g$ has no inverse 
+\end{items}
+\begin{ans}
+\begin{items}
+\item By inspection $f$ is both one-to-one and onto.
+\item Reverse the association made by $f$ so that $f^{-1}(\alpha)=0$,
+  $f^{-1}(\beta)=1$, and~$f^{-1}(\gamma)=2$.
+\item The map~$g$ is not one-to-one since $g(0)=g(1)$.
+  (In addition, $g$ is not onto.) 
+\item If the function~$\map{h}{C}{D}$ were to be the inverse of~$g$
+  then both $h(\alpha)=0$ and~$h(\alpha)=1$, 
+  which violates the definition of a function.   
+\end{items}
+\end{ans}
+\end{ex}
+
 \begin{ex} \label{PropertiesOfInverses}
 Prove each.
 \begin{exes}
@@ -3259,28 +3212,14 @@ sometimes written $xRy$.
 \end{df}
 
 \begin{ex}
-\begin{exes}
-\item List five elements of the relation
-  $R=\setbuilder{(x,y)\in \R^2}{x+2=y}$
-\item Consider less-than $<$ as a binary relation on $\N$.
-  List five elements.
-\item List five elements of the relation
-  $\setbuilder{(x,y,z)\in\N^3}{x^2+y^2=z^2}$
-\item
-  Consider the set~$A=\set{0,1}$.
-  List all the elements of the relation 
-  $E=\setbuilder{(x,y)\in A\times\powerset(A)}{x\in y}$.
-\item Show that if $\map{f}{D}{C}$ is a function then 
-  its graph is a relation.
-\item Let $\map{f}{D}{C}$ be a function.
-  Show that 
-  $R_f=\setbuilder{(x,y)\in D^2}{f(x)=f(y)}$
-  is a binary relation.
-  Where $f(x)=x^2$ with domain and codomain~$\R$,
-  list five elements. 
-\end{exes}
+List five elements of each relation:
+\begin{items}
+\item $\setbuilder{(x,y)\in \R^2}{x+2=y}$
+\item less-than $<$ as a binary relation on $\N$
+\item $\setbuilder{(x,y,z)\in\N^3}{x^2+y^2=z^2}$
+\end{items}
 \begin{ans}
-\begin{exes}
+\begin{items}
 \item Five pairs from the relation are
   $\sequence{0,2}$, $\sequence{1,3}$, $\sequence{-1,1}$, $\sequence{1/2,5/2}$, 
   and~$\sequence{\pi,\pi+2}$.    
@@ -3290,10 +3229,32 @@ sometimes written $xRy$.
 \item Five elements of this $3$-ary relation are
   $\sequence{3,4,5}$, $\sequence{5,12,13}$, $\sequence{7,24,25}$, 
   $\sequence{8,15,17}$, and~$\sequence{0,0,0}$.
+\end{items}
+\end{ans}
+\end{ex}
+
+
+\begin{ex}
+\begin{exes}
+\item Show that if $\map{f}{D}{C}$ is a function then 
+  its graph is a relation.
+\item
+  Consider the set~$A=\set{0,1}$.
+  List all the elements of the relation 
+  $E=\setbuilder{(x,y)\in A\times\powerset(A)}{x\in y}$.
+\item Let $\map{f}{D}{C}$ be a function.
+  Show that 
+  $R_f=\setbuilder{(x,y)\in D^2}{f(x)=f(y)}$
+  is a binary relation.
+  Where $f(x)=x^2$ with domain and codomain~$\R$,
+  list five elements. 
+\end{exes}
+\begin{ans}
+\begin{exes}
+\item By definition its graph is a binary relation on~$D\times C$.
 \item There are four: $\sequence{0,\set{0}}$, 
   $\sequence{1,\set{1}}$, $\sequence{0,\set{0,1}}$, 
   and~$\sequence{1,\set{0,1}}$. 
-\item By definition its graph is a binary relation on~$D\times C$.
 \item The set $R_f$ is a subset of the set of ordered pairs~$C^2$,
   so it is a binary relation on~$C$.
 
@@ -3536,17 +3497,17 @@ is an equivalence.
 Let $\mathcal{L}$ be the set of lines in the Euclidean plane and consider
 the relation
 $R=\setbuilder{(\ell_0,\ell_1)\in \mathcal{L}^2}{\text{the two are parallel, or the same}}$.
-\begin{exes}
+\begin{items}
 \item List five elements.
 % \item Fix a vertical line $\ell$ (for instance, the $x$-axis 
 %   $\setbuilder{(x,0)}{x\in\R}$).
 %   List five elements of $\mathcal{L}$ that are related to~$\ell$.
-\item Show that $R$ is an equivalence.
-\end{exes}
+\item Show that $R$ is an equivalence
+\end{items}
 \begin{ans}
 We can express the lines using analytic geometry, 
 fixing a $xy$-axes, and giving the equations.
-\begin{exes}
+\begin{items}
 \item Parallel lines have the same slope so
   five pairs are $(y=2x,y=2x+1)$, $(y=x,y=x-3)$, $(y=4x,y=4x)$,
   $(y=-3,y=-5)$, and~$(y=(3/2)x+1,y=(3/2)x-1)$.    
@@ -3562,7 +3523,7 @@ fixing a $xy$-axes, and giving the equations.
   which is parallel or the same as~$\ell_2$ then $\ell_0$
   is parallel to or the same as~$\ell_2$, so the relation is
   transitive. 
-\end{exes}
+\end{items}
 \end{ans}
 \end{ex}
 
