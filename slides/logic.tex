@@ -88,7 +88,7 @@ So \textit{not} is \alert{truth functional}\Dash the truth
 of \textit{not}~$P$ depends only on the truth value of~$P$.
 Specifically, the truth value of \textit{not}~$P$ is 
 the opposite of the truth value of~$P$.  
-We say it is a \alert{unary logical operator} or call it 
+We say it is a \alert{unary logical operator} or 
 a \alert{unary boolean function} since it takes one input, a truth value, 
 and yields as output a truth value.
 
@@ -119,7 +119,7 @@ is false.
 \pause
 \bigskip
 A compound proposition constructed with \alert{or}
-between two sub-propositions is true if either of the two halves, or both,
+between two sub-propositions is true if at least one half
 is true.
 
 ``$2\cdot 2=4$ or 
@@ -151,7 +151,7 @@ these two are binary operators.
 \begin{frame}
   \frametitle{Truth Tables}
 
-List the action of the operators with a \alert{truth table}. 
+Describe the action of operators with a \alert{truth table}. 
 \begin{center}
   \begin{tabular}[t]{c|c}
     $P$  &$\neg P$  \\ \hline
@@ -173,8 +173,9 @@ and $P\vee Q$ for '$P$~\textit{or}~$Q$'.
 
 \pause
 This notation allows formulas of a complexity that would be awkward in
-an English sentence, for instance
-$(P\vee Q)\wedge \neg(P\wedge Q)$ makes a hard to parse sentence.
+an English sentence. 
+For instance, an English sentence expressing 
+$(P\vee Q)\wedge \neg(P\wedge Q)$ is convoluted.
 \end{frame}
 
 
@@ -182,9 +183,9 @@ $(P\vee Q)\wedge \neg(P\wedge Q)$ makes a hard to parse sentence.
 
 %..........
 \begin{frame}
-Sometimes using $0$ for~$F$ and $1$ for~$T$ is convenient.
-On the left side of each table the rows make the ascending numbers written in
-binary.
+Sometimes we prefer using $0$ for~$F$ and $1$ for~$T$.
+One reason for the preference is that on 
+the left side of the tables the rows make the ascending binary numbers.
 \begin{center}
   \begin{tabular}[t]{c|c}
     $P$  &$\bar{P}$  \\ \hline
@@ -204,12 +205,15 @@ binary.
 In this context \textit{not}~$P$ is symbolized $\bar{P}$.
 Note that $\bar{P}=1-P$.
 
-The table makes clear why $P$~\text{and}~$Q$ is symbolized with a 
+The table makes clear why `$P$~\textit{and}~$Q$' is symbolized with a 
 multiplication dot~$P\cdot Q$.
 
-For $P$~\textit{or}~$Q$ the plus sign is the right symbol because 
+For `$P$~\textit{or}~$Q$' the plus sign is the best symbol because 
 \textit{or} is accumulation of the truth value~$T$.
 \end{frame}
+
+
+
 
 
 
@@ -223,7 +227,7 @@ sentences meaning `and/or'.
 In contrast,
 ``Eat your dinner or no dessert'',
 ``Live free or die'', and
-``Let me go or the girl gets it'' all mean `one or the other, but not both'.
+``Let me go or the hostage gets it'' all mean `one or the other, but not both'.
 \begin{center}
   \begin{tabular}{cc|c}
     $P$  &$Q$  &$P$ \text{\small\textsc{XOR}} $Q$  \\ \hline
@@ -279,12 +283,11 @@ Mathematicians sometimes write `\emph{iff}'.
 
 
 
-
 %..........
 \begin{frame}
   \frametitle{All binary operators}
 
-We can lists all of the two-input logical operators.
+We can lists all of the binary logical operators.
 \begin{center} \small
     \begin{tabular}{cc|c}
        $P$  &$Q$  &$P$ $\alpha_0$ $Q$  \\ \hline
@@ -311,7 +314,7 @@ We can lists all of the two-input logical operators.
 \end{center}
 \pause
 \bigskip
-These are the one-input boolean functions.
+These are the unary ones.
 \begin{center} \small
   \begin{tabular}{cccc}
     \begin{tabular}{c|c}
@@ -349,7 +352,7 @@ $T$ and $F$.
 %..........
 \begin{frame}
   \frametitle{Evaluating complex statements}
-  We can calculate how the output results 
+  We can easily calculate how the output results 
   depend on the values of the input variables.
   \pause
   Here is the input-output relationship for
@@ -386,6 +389,10 @@ $T$ and $F$.
   Check that $E_0$ and~$E_1$ are equivalent by using truth tables to
   verify that  
   $E_0\leftrightarrow E_1$ is a tautology.  
+
+  For instance, $P\wedge Q$ and $Q\wedge P$ are equivalent.
+  Another example is that $P\rightarrow Q$ and $\neg Q\rightarrow \neg P$ 
+  are equivalent.
 \end{frame}
 
 
@@ -443,22 +450,23 @@ $T$ and $F$.
   \end{tabular}
 \end{center}
 Consider
-``If Babe Ruth was president then life exists on other planets'' 
-or ``If life exists on other planets then life exists on earth.'' 
-Under our definition of implies both these statements are true, 
+``if Babe Ruth was president then life exists on other planets'' 
+or ``if life exists on other planets then life exists on earth.'' 
+Our definition of implies takes both of these statements to be true, 
 the first because its antecedent is false 
 and the second because its consequent is true.
-Many people say this violates their intuition and ask why we 
+Some people say that this violates their intuition and ask why we 
 adopt this definition. 
 
 \pause
-Standard mathematical practice defines implication to make this
+Standard mathematical practice defines implication to have 
 \begin{center}
   if $n$ is a perfect square then $n$ is not prime
 \end{center}
-come out true for all $n\in\N$.  
-Take $x=6$ to get that $F\rightarrow T$ evaluates to $T$.  
-Take $x=3$ to get that $F\rightarrow F$ gives $T$.
+be true for all $n\in\N$.  
+Take $x=6$ to get that $F\rightarrow T$ must evaluate to $T$.  
+Take $x=3$ to get that $F\rightarrow F$ yields $T$.
+For $T\rightarrow T$ take $x=4$.
 \end{frame}
 % http://www.earlham.edu/~peters/courses/log/mat-imp.htm
 \begin{frame}
@@ -476,6 +484,7 @@ Take $x=3$ to get that $F\rightarrow F$ gives $T$.
 \item The antecedent~$P$ need not be materially connected to the 
   consequent~$Q$; 
   we saw that on the prior slide.
+\pause
 \item If the antecedent~$P$ is false then the statement as a whole is true.
 \pause
 \item If the antecedent is true then the statement as a whole has the
@@ -511,25 +520,33 @@ Take $x=3$ to get that $F\rightarrow F$ gives $T$.
 
 \begin{frame}
 \frametitle{Predicates, Quantifiers}
-Consider `if $n$ is odd then $n$ is a pefect square'.
-It is an implication.
-It also involves two parts, `$n$ is odd' and `$n$ is square',
-whose truth value varies depending on the value of the variable.
-In addition, there is an assertion that is not explicitely stated that
-this implication should hold for all numbers.
+Consider the ordinary mathematical
+statement `if $n$ is odd then $n$ is a perfect square'.
 
-A \alert{predicate} is a truth-valued statement with variables. 
-Technically we can take them to be functions with truth values.
-For instance, part of the example above would have $\text{Odd}(5)=T$.
+\pause
+It involves two clauses, `$n$ is odd' and `$n$ is square',
+whose truth values depend on the variable~$n$.
+A \alert{predicate} is a truth-valued function.
+An example is the function~$\text{Odd}$ that takes integers as inputs and 
+yields either $T$ or~$F$, as in~$\text{Odd}(5)=T$.
+Another example is the function $\text{Square}$, as in $\text{Square}(5)=F$.
 
-A \alert{quantifier} describes the quantity of values for the variables
-required to make the statement true.
-There are two main quantifiers: `for all' denoted by $\forall$,
-and `there exists' denoted $\exists$.
-In the sentence above the `for all' is only implicitly stated.
+\pause
+In addition, although it is not explicitly stated,
+a mathematician saying this would mean that the statement holds for all~$n$.
+To make this explicit we need a
+\alert{quantifier} describing how many for how many values of the
+variable the implication must hold, in order for the statement as a whole to
+be true.
+We denote `for all' by $\forall$.
+The other main quantifier is 
+`there exists', denoted $\exists$.
+
+With these, the statement is 
+$\forall n\in\N \big[\text{Odd}(n)\rightarrow\text{Square}(n)\big]$.
 \end{frame}
 \begin{frame}
-Examples of formally-translated statements.
+Examples of formalized statements.
 
 \begin{itemize}
 \item Every number is divisible by $1$.
@@ -556,7 +573,7 @@ Examples of formally-translated statements.
 \end{itemize}
 \end{frame}
 \begin{frame}
-Observe that the negation of a `$\forall$' statement is a `$\exists\neg$' 
+Observe that the negation of a `$\forall$' statement is a `$\exists\,\neg$' 
 statement.
 For instance, the negation of `every odd number is a perfect square'
 \begin{equation*}
@@ -574,7 +591,7 @@ Thus a person could show `every odd number is a perfect square' is false
 by finding a number that is both odd and not a square.
 
 \pause
-Simililarly the negation of a `$\exists$' statement is a~'$\forall\neg$`. 
+Simililarly the negation of a `$\exists$' statement is a~'$\forall\,\neg$`. 
 \end{frame}
 
 

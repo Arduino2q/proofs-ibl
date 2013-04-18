@@ -297,6 +297,6 @@ qed=\qedsymbol
 
 % ====================================================
 % VERSION number
-\newcommand{\version}{0.95}
+\newcommand{\version}{0.97}
 
 \endinput
