@@ -19,20 +19,6 @@
 
 \frontmatter
 \begin{document}    
-% \vspace*{\fill}
-% \begin{center}
-%   \setlength{\unitlength}{1in}
-%   \newcommand{\enormoussize}{\fontsize{30pt}{20pt}\selectfont}
-%   {\enormoussize\scshape \makebox[0em][l]{\raisebox{24pt}{\large\itshape \hspace*{15pt}An Inquiry-Based}}{\color{darkii}Introduction to Proof}}
-% \end{center}
-% \vspace*{\fill}
-% \begin{flushright}
-%   \large\color{darki}
-%   \begin{tabular}{@{}l@{}}
-%   Jim Hef{}feron  \\
-%   version 0.95
-%   \end{tabular}
-% \end{flushright}
 \coverpage{}
 \include{flyleaf}
 \ifbool{optioncompact}{}{\include{preface}}
@@ -319,7 +305,7 @@ that is not as natural, mathematical induction.
 We pause now to introduce it.
 
 We will start with exercises about sums 
-(but note that induction is not about sums,
+(but note that induction is not about sums;
 we use them only because they make the best first exercises).
 For instance, most people have noticed that the odd numbers sum to 
 perfect squares: $1+3=4$, $1+3+5=9$, $1+3+5+7=16$, etc.,
@@ -328,9 +314,10 @@ the statement
 ``The sum of the first $n$ odd numbers $1+3+5+\cdots+2n-1$ is $n^2$.'' 
 
 Our induction proofs have two steps.
-For the base step we show that the statement holds for some first number;
+For the \definend{base step} 
+we show that the statement holds for some first number;
 below we will verify the the statement for the number~$1$.
-The inductive step is more subtle;
+The \definend{inductive step} is more subtle;
 we will verify the following implication.
 \begin{equation*}
   \begin{tabular}{l} 
@@ -341,7 +328,7 @@ we will verify the following implication.
   \tag{$*$}
 \end{equation*}
 Doing both steps will 
-prove that our statement is true for all~$n\geq 1$.
+prove that our example statement is true for all~$n\geq 1$.
 That's because, first, the base step
 directly verifies the statement for the number~$1$.
 Next, because the inductive step verifies the implication~($*$) for all $k$, 
@@ -1623,7 +1610,7 @@ An object~$x$ that is in a set~$A$ is an \definend{element}
 or \definend{member}
 of the set, written $x\in A$
 (to denote that $x$ is not an element of $A$ write~$x\notin A$).
-Two sets are equal if they have the same elements.
+That is, two sets are equal if and only if they have the same elements.
 \end{df}
 \noindent (Read `$\in$' as ``is an element of'' rather than ``in'' since the 
 latter word causes confusion with 
@@ -2356,7 +2343,7 @@ If the sets are the same we often write $A\times\cdots\times A$
 as~$A^n$.
 \end{df}
 
-A sequence of length~$2$ may be called an \definend{ordered pair} and 
+A sequence of length two is often called an \definend{ordered pair} and 
 written with parentheses $(x_0,x_1)$
 (similarly we have ordered triples, four-tuples, etc.).
 Thus, we write 
@@ -2385,14 +2372,14 @@ Thus $A^0=B^0=\set{\sequence{}}$.
 
 \begin{ex}
 \begin{exes}
-\item Prove that $A\times B=\emptyset$ iff $A=\emptyset$ or~$B=\emptyset$
+\item Prove that $A\times B=\emptyset$ iff $A=\emptyset$ or~$B=\emptyset$.
 \item Show that there are sets so that $A\times B\neq B\times A$.
   Under what circumstances is $A\times B=B\times A$?
 \item Is $(A\times B)\times C$ equal to $A\times (B\times C)$?
 \item Show that this statement is false: 
   $A\times B\subseteq A^\prime\times B^\prime$ if and only if
   $A\subseteq A^\prime$ and $B\subseteq B^\prime$.
-  Adjust it to make it true.
+  Patch the statement to make it true.
 \end{exes}
 \begin{ans}
 \begin{exes}
@@ -2602,28 +2589,29 @@ Thus the number of possible function is $|C|^{|D|}$.
 \end{ans}
 \end{ex}
 
-We often ignore the distinction between a function and its graph.
-(The distinction is that the codomain is not determined
+\remark
+we often ignore the distinction between a function and its graph.
+(The distinction is there because the codomain is not determined
 by the set of ordered pairs so the function must be 
-defined as a triple.)
+defined as the triple $f=\sequence{D,C,G}$.)
 
 A function may have multiple arguments; one example is 
-$(x,y)\mapsunder{f}x^2-2y^2$.
+$\sequence{x,y}\mapsunder{f}x^2-2y^2$.
 We write this map $\map{f}{\R^2}{\R}$ as 
 $f(x,y)$ rather than
-$f((x,y))$.
+$f(\sequence{x,y})$.
 The number of arguments is the function's \definend{arity}.
 
 \begin{df}
-The \definend{range} of a function $\map{f}{D}{C}$,
-denoted  $f(D)$ or $\range(f)$,
-is the set
-$\setbuilder{y\in C}{\text{there is a $x\in D$ such that $f(x)=y$}}$.
+For $\map{f}{D}{C}$,
+the \definend{range} is the set
+$\setbuilder{y\in C}{\text{there is a $x\in D$ such that $f(x)=y$}}$,
+denoted $\range(f)$ (or sometimes denoted $f(D)$).
 \end{df}
 
 \begin{ex}
 For each item in Exericse~\ref{FindFunctions}, 
-if it is a function find the range.  
+if it is a function then find its range.  
 \begin{ans}
 \begin{items}
 \item The range is $\set{3,4,5}=C$.    
@@ -2644,7 +2632,6 @@ the function $\map{\restrictionmap{f}{B}}{B}{C}$ whose action is given by
 $\restrictionmap{f}{B}(b)=f(b)$ for all $b\in B$.
 A synonym is that
 $f$ is an \definend{extension} of~$g$.
-
 The \definend{image} of the set $B$ under $f$, 
 denoted $f(B)$ or $\image(f)$,
 is the range of the function $\restrictionmap{f}{B}$.
@@ -2742,14 +2729,14 @@ $2\mapsunder{} d$ and that $\map{g}{C}{B}$
 is given by 
 $a\mapsunder{}\alpha$, $b\mapsunder{} \beta$, $c\mapsunder{}\gamma$,
 and $d\mapsunder{}\alpha$.
-\begin{exes}
+\begin{items}
 \item Compute $\composed{g}{f}$ on all arguments or show that the composition
   is not defined.
 \item Compute $\composed{f}{g}$ on all arguments or show it is not defined.
-\item Find the range of $f$, $g$, and any defined compositions.    
-\end{exes}
+\item Find the range of $f$, $g$, and any defined compositions    
+\end{items}
 \begin{ans}
-\begin{exes}
+\begin{items}
 \item The function $\map{\composed{g}{f}}{D}{B}$ is given by 
   $0\mapsunder{}\alpha$, $1\mapsunder{}\gamma$, and $2\mapsunder{}\alpha$.
 \item This map is not defined since the codomain of~$g$ is not equal to 
@@ -2757,7 +2744,7 @@ and $d\mapsunder{}\alpha$.
 \item The range of~$f$ is $\set{a,c,d}$.
   The range of~$g$ is $\set{\alpha,\beta,\gamma}$. 
   The range of $\composed{g}{f}$ is $\set{\alpha,\gamma}$.
-\end{exes}
+\end{items}
 \end{ans}
 \end{ex}
 
@@ -2775,19 +2762,12 @@ by the formula is~$\composed{f}{g}(x)=(3x+1)^2=9x^2+6x+1$.
 
 \begin{ex} Prove each.
 \begin{exes}
-\item Composition need not be commutative.
 \item\notetext{Associativity} 
   $\composed{h}{(\composed{g}{f})}=\composed{(\composed{h}{g})}{f}$    
-% \item $g(f(A))=\composed{g}{f}(A)$
-% \item $(\composed{g}{f})^{-1}(C)=f^{-1}(g^{-1}(C))$
+\item Function composition need not be commutative.
 \end{exes}
 \begin{ans}
 \begin{exes}
-\item One example of noncommutativity is $\map{f,g}{\R}{\R}$ given by 
-  $f(x)=x+1$ and $g(x)=2x+3$.
-  The formula for $\composed{f}{g}$ is $2\cdot(x+1)+3=2x+5$ while
-  the formula for $\composed{g}{f}$ is $(2x+3)+1=2x+4$.
-  Thus, for instance, the two differ on argument~$0$.
 \item The action of the map on the left side
   is $(\composed{h}{(\composed{g}{f})(x)}=h(\composed{g}{f}(x))
        =h(g(f(x)))$.
@@ -2796,6 +2776,11 @@ by the formula is~$\composed{f}{g}(x)=(3x+1)^2=9x^2+6x+1$.
       =h(g(f(x)))$.
   The two actions are equal\Dash the two give the same association of inputs
   with outputs\Dash so the maps are equal.
+\item One example of noncommutativity is $\map{f,g}{\R}{\R}$ given by 
+  $f(x)=x+1$ and $g(x)=2x+3$.
+  The formula for $\composed{f}{g}$ is $2\cdot(x+1)+3=2x+5$ while
+  the formula for $\composed{g}{f}$ is $(2x+3)+1=2x+4$.
+  Thus, for instance, the two differ on argument~$0$.
 \end{exes}
 \end{ans}
 \end{ex}
@@ -2807,10 +2792,10 @@ by the formula is~$\composed{f}{g}(x)=(3x+1)^2=9x^2+6x+1$.
 % .....................................
 \section{Inverse}
 
-The definition of function specifies that for every argument from the
+The definition of a function specifies that for every argument in the
 domain there is 
 exactly one associated value.
-But that definition puts no such condition on the elements of the codomain.
+That definition puts no such condition on the elements of the codomain.
 
 \begin{df}
 A function is \definend{one-to-one} (or an \definend{injection}) 
@@ -3104,7 +3089,7 @@ $g$~is a \definend{left inverse} of~$f$, or what is the
 same thing, that $f$ is a \definend{right inverse} of~$g$.
 If $g$ is both a left and right inverse of~$f$ then, 
 as above, we say just that it is
-an inverse of~$f$ (or a \definend{two-sided inverse} for emphasis). 
+an inverse of~$f$ (or, for emphasis, a \definend{two-sided inverse}). 
 
 \begin{ex}
 Let $D=\set{0,1,2}$ and~$C=\set{\alpha,\beta,\gamma}$.
@@ -3332,21 +3317,28 @@ So $(x,z)\in P$.
 \end{ans}
 \end{ex}
 
-\begin{ex}
-What is wrong with this purported proof that in the definition
-of an equivalence relation, the condition of reflexivity is redundant?
-\textit{For any $x$, symmetry is that $x$ is related to~$y$ 
-implies that $y$ is related to~$x$.
-By transitivity we have $x$ is related to~$y$ and $y$ is related to~$x$ 
-together imply that $x$ is related to~$x$.
-Therefore, symmetry and transitivity together imply reflexivity.}  
+\begin{ex}  \label{ex:EquivModMIsEquivalenceRelation}
+Fix a divisor $m\in\Z^+$.
+Show that the relation 
+$\setbuilder{(a,b)\in\Z^2}{a\equiv b\pmod m}$  
+is an equivalence.
 \begin{ans}
-Consider the relation   
-$R=\set{\sequence{0,0},\sequence{0,1},\sequence{1,0},\sequence{1,1}}$
-on the set~$A=\set{0,1,2}$.
-This relation is symmetric and transitive but is not reflexive.
-The implication `if $x$ is related to~$y$ then $y$ is related to~$x$'
-is true in the case of $x=2$ and~$y=2$, but it is vacuously true.
+  Call the relation~$M$.
+  Exercise~\ref{ex:AEquivBpmodMIFFABDifferBYMultipleOfM}
+  shows that for $m>0$ the statement $a\equiv b\pmod m$
+  is equivalent to the statement that $m\divides (a-b)$, that
+  the two differ by a multiple of~$m$.
+
+  With that, reflexivity is clear because $m\divides (a-a)$.
+  Symmetry is also clear because if $\sequence{a,b}\in M$ 
+  then $a\equiv b\pmod m$, so
+  $m\divides (a-b)$, and so $a-b=m\cdot k$ for some~$k\in\Z$.
+  Switch signs to get $b-a=m\cdot(-k)$, and so $\sequence{b,a}\in M$.
+
+  For transitivity, $\sequence{a,b}, \sequence{b,c}\in M$ gives
+  $a-b=mk_0$ and $b-c=mk_1$ for some~$k_0,k_1\in Z$.
+  Add: $(a-b)+(b-c)=m\cdot(k_0-k_1)$. 
+  Then $a-c$ is a multiple of~$m$.
 \end{ans}
 \end{ex}
 
@@ -3438,31 +3430,6 @@ satisfying the combination.
 \end{ans}
 \end{ex}
 
-\begin{ex}  \label{ex:EquivModMIsEquivalenceRelation}
-Fix a divisor $m\in\Z^+$.
-Show that the relation 
-$\setbuilder{(a,b)\in\Z^2}{a\equiv b\pmod m}$  
-is an equivalence.
-\begin{ans}
-  Call the relation~$M$.
-  Exercise~\ref{ex:AEquivBpmodMIFFABDifferBYMultipleOfM}
-  shows that for $m>0$ the statement $a\equiv b\pmod m$
-  is equivalent to the statement that $m\divides (a-b)$, that
-  the two differ by a multiple of~$m$.
-
-  With that, reflexivity is clear because $m\divides (a-a)$.
-  Symmetry is also clear because if $\sequence{a,b}\in M$ 
-  then $a\equiv b\pmod m$, so
-  $m\divides (a-b)$, and so $a-b=m\cdot k$ for some~$k\in\Z$.
-  Switch signs to get $b-a=m\cdot(-k)$, and so $\sequence{b,a}\in M$.
-
-  For transitivity, $\sequence{a,b}, \sequence{b,c}\in M$ gives
-  $a-b=mk_0$ and $b-c=mk_1$ for some~$k_0,k_1\in Z$.
-  Add: $(a-b)+(b-c)=m\cdot(k_0-k_1)$. 
-  Then $a-c$ is a multiple of~$m$.
-\end{ans}
-\end{ex}
-
 % \begin{ex} \label{RationalsAsEqClasses}
 % Consider the relation
 % $\setbuilder{((p,q),(n,d))\in (\Z\times\Z^+)^2}{pd=qn}$
@@ -3524,6 +3491,24 @@ fixing a $xy$-axes, and giving the equations.
   is parallel to or the same as~$\ell_2$, so the relation is
   transitive. 
 \end{items}
+\end{ans}
+\end{ex}
+
+\begin{ex}
+What is wrong with this purported proof that in the definition
+of an equivalence relation, the condition of reflexivity is redundant?
+\textit{For any $x$, symmetry is that $x$ is related to~$y$ 
+implies that $y$ is related to~$x$.
+By transitivity we have $x$ is related to~$y$ and $y$ is related to~$x$ 
+together imply that $x$ is related to~$x$.
+Therefore, symmetry and transitivity together imply reflexivity.}  
+\begin{ans}
+Consider the relation   
+$R=\set{\sequence{0,0},\sequence{0,1},\sequence{1,0},\sequence{1,1}}$
+on the set~$A=\set{0,1,2}$.
+This relation is symmetric and transitive but is not reflexive.
+The implication `if $x$ is related to~$y$ then $y$ is related to~$x$'
+is true in the case of $x=2$ and~$y=2$, but it is vacuously true.
 \end{ans}
 \end{ex}
 
@@ -3738,11 +3723,12 @@ Suppose that $\map{f}{D}{C}$.
   $R=\setbuilder{(d_0,d_1)\in D^2}{f(d_0)=f(d_1)}$ 
   is an equivalence on~$D$. 
 \item Show that the set of inverse images 
-  $\partition{P}=\setbuilder{f^{-1}(c)}{c\in C}$ form a partition of the domain.
+  $P=\setbuilder{f^{-1}(c)}{c\in C}$ form a partition of the domain.
 \item Consider the map
-  $\map{\hat{f}}{\partition{P}}{C}$ whose action is given by
-  $\hat{f}(p)$ is $f(d)$ for any~$d\in P$.
+  $\map{\hat{f}}{P}{C}$ whose action is given by:
+  $\hat{f}(p)=f(d)$ for any~$d\in P$.
   Show that~$\hat{f}$ is a function, and that it is one-to-one.
+\item Show that if $f$ is onto then so is~$\hat{f}$.
 \end{exes}
 \begin{ans}
 \begin{exes}
@@ -3767,6 +3753,11 @@ Suppose that $\map{f}{D}{C}$.
   the two are in the same inverse image, and so  
   by the definition of the parts as the inverse images,
   $P_0=P_1$.
+\item If $f$ is onto then for any $c\in C$ there is a~$d\in D$
+  such that $f(d)=c$.
+  So one of the equivalence classes that is an element of~$P$ is the set of 
+  $d\in D$ such that $f(d)=c$.
+  Then $\hat{f}$ of that class is $c$.
 \end{exes}
 \end{ans}
 \end{ex}
