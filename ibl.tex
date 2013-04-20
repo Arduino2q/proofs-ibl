@@ -1612,17 +1612,18 @@ of the set, written $x\in A$
 (to denote that $x$ is not an element of $A$ write~$x\notin A$).
 That is, two sets are equal if and only if they have the same elements.
 \end{df}
-\noindent (Read `$\in$' as ``is an element of'' rather than ``in'' since the 
+\noindent Read `$\in$' as ``is an element of'' rather than ``in'' since the 
 latter word causes confusion with 
-the subset relation defined below.)
+the subset relation defined below.
 We sometimes say ``collection'' as a synonym for set.
 
-We often give a set by either listing or describing its elements.
+We usually specify a set by either listing its elements or by
+describing its elements.
 Thus we may write 
-the set containing the primes less than ten 
+the set of the primes less than ten 
 either as $\set{2, 3, 5, 7}$ or as~$\setbuilder{p\in\N}{\text{$p<10$ and $p$ is prime}}$.
 
-\begin{ex} Decide and justify each:
+\begin{ex} Decide if each is true, and justify:
 \begin{items}
 \item $\set{1,3,5}=\set{5,3,1}$    
 \item $\set{2, 4, 6}=\set{2, 4, 6, 4}$    
@@ -1849,10 +1850,10 @@ row is the binary representation of the row number.
 That table gives $A=\set{2,3}$, $B=\set{1,3}$, 
 and~$\universalset=\set{0,1,2,3}$.
 For each item below, illustrate the statements using these sets.
-For one item, prove it:
+Pick one item and prove it:
 \begin{items}
-\item The complement of the complement is the original set
-  $\setcomp{\setcomp{A}}=A$.  
+\item the complement of the complement is the original set
+  $\setcomp{\setcomp{A}}=A$  
 \item $A\intersection\emptyset=\emptyset$ and $A\union\emptyset=A$  
 \item \notetext{Idempotence} $A\intersection A=A$ and $A\union A=A$    
 \item $A\intersection B\subseteq A\subseteq A\union B$  
@@ -2590,9 +2591,11 @@ Thus the number of possible function is $|C|^{|D|}$.
 \end{ex}
 
 \remark
-we often ignore the distinction between a function and its graph.
-(The distinction is there because the codomain is not determined
-by the set of ordered pairs so the function must be 
+we often ignore the distinction between a function and its graph; for instance 
+someone might say, ``a function is an input-output relationship'' when 
+technically it is the graph that associates inputs with outputs.
+(The distinction is there only because the codomain is not determined
+by the graph so the function must be 
 defined as the triple $f=\sequence{D,C,G}$.)
 
 A function may have multiple arguments; one example is 
@@ -2662,7 +2665,7 @@ Let $\map{f}{D}{C}$.
 The \definend{inverse image of the element}~$c\in C$ is
 the set $f^{-1}(c)=\setbuilder{d\in D}{f(d)=c}$.
 The \definend{inverse image of the set}~$A\subseteq C$
-is the set $f^{-1}(A)=\setbuilder{d\in D}{f(d)\in A}$   
+is the set $f^{-1}(A)=\setbuilder{d\in D}{f(d)\in A}$.   
 \end{df}
 
 \begin{ex}
@@ -2723,7 +2726,7 @@ or~``$g$ composed with $f$''
 (or~``$g$ following $f$'').
 
 \begin{ex} Let $D=\set{0,1,2}$, $C=\set{a,b,c,d}$, 
-and $B=\set{\alpha,\beta,\gamma}$
+and $B=\set{\alpha,\beta,\gamma}$.
 Suppose that $\map{f}{D}{C}$ is given by $0\mapsunder{} a$, $1\mapsunder{} c$, 
 $2\mapsunder{} d$ and that $\map{g}{C}{B}$
 is given by 
@@ -2902,40 +2905,6 @@ is exactly one associated argument, is a
 \end{ans}
 \end{ex}
 
-% \begin{ex}
-% If $D$ and~$C$ are finite sets and there is a correspondence~$\map{f}{D}{C}$
-% then the two sets have the same number of elements.  
-% \begin{ans}
-% We will do induction on the numbe of elements in~$D$ to prove 
-% that if there is a correspondence $\map{f}{D}{C}$ then
-% $|C|=|D|$.
-% In the $|D|=0$ base case, the correspondence is a trivial 
-% (its graph is the empty set) and because this function is onto the
-% set~$C$ must be empty also, with $|C|=0$.
-
-% For the inductive step assume that the statement is true for $|D|=0$, 
-% \ldots, $|D|=k$ and consider the $|D|=k+1$~case.
-% To get a set of size~$k$,
-% put an element of~$D$ aside by picking some $d\in D$ and considering
-% $\hat{D}=D-\set{d}$.
-% Then the restriction 
-% $\map{\restrictionmap{f}{\hat{D}}}{\hat{D}}{\range(\restrictionmap{f}{\hat{D}})}$
-% is clearly onto.
-% It is one-to-one because if 
-% $\restrictionmap{f}{\hat{D}}(x_0)=\restrictionmap{f}{\hat{D}}(x_1)$
-% then $f(x_0)=f(x_1)$ and so $x_0=x_1$.
-
-% So the inductive hypothesis applies and we have that 
-% $\range(\restrictionmap{f}{\hat{D}})$ has $k$-many elements.
-% Consider~$f(d)$.
-% Because $f$ is one-to-one, $f(d)\notin\range(\restrictionmap{f}{\hat{D}})$
-% and thus $\range(f)$ has one more element than 
-% $\range(\restrictionmap{f}{\hat{D}})$.
-% Because $f$ is onto, $\range(f)=N$.
-% Thus $|C|=k+1=|D|$.
-% \end{ans}
-% \end{ex}
-
 \begin{ex} \label{InteractionOneToONeOntoWithComposition}
 Prove.
 \begin{exes}
@@ -3066,7 +3035,8 @@ $\composed{f}{f^{-1}}$ is the identity map on~$C$.
 \end{ex}
 
 \begin{ex}
-  Find a pair of maps $\map{f}{D}{C}$ and $\map{g}{C}{D}$
+  Find a domain and codomain, and a pair of maps $\map{f}{D}{C}$ 
+  and~$\map{g}{C}{D}$,
   such that $\composed{g}{f}$ is the identity but $\composed{f}{g}$
   is not.
 \begin{ans}
@@ -3085,11 +3055,11 @@ $\sequence{1,2,0}$, not $\sequence{1,2,3}$.
 \end{ex}
 
 If $\composed{g}{f}$ is the identity function then we say that 
-$g$~is a \definend{left inverse} of~$f$, or what is the
+$g$~is a \definend{left inverse} of~$f$\!, or what is the
 same thing, that $f$ is a \definend{right inverse} of~$g$.
 If $g$ is both a left and right inverse of~$f$ then, 
 as above, we say just that it is
-an inverse of~$f$ (or, for emphasis, a \definend{two-sided inverse}). 
+an inverse of~$f$ (or for emphasis, a \definend{two-sided inverse}). 
 
 \begin{ex}
 Let $D=\set{0,1,2}$ and~$C=\set{\alpha,\beta,\gamma}$.
@@ -3099,7 +3069,7 @@ $g(0)=\alpha$, $g(1)=\alpha$, $g(2)=\gamma$.
 Then:
 \begin{items}
 \item verify that $f$ is a correspondence
-\item construct an inverse for~$f$
+\item construct an inverse for~$f$\!
 \item verify that~$g$ is not a correspondence
 \item show that~$g$ has no inverse 
 \end{items}
@@ -3186,7 +3156,7 @@ Prove each.
 A \definend{relation} on sets $A_0$, \ldots, $A_{n-1}$ is a subset
 $R\subseteq A_0\times \cdots \times A_{n-1}$. 
 If all of the sets are the same $A_0=A_1=\cdots =A$
-then we call it a relation on~$A$.
+then we say it is a relation on~$A$.
 
 The number of sets~$n$ is the \definend{arity} of the relation
 and we say it is \definend{$n$-ary}.
@@ -3345,7 +3315,7 @@ is an equivalence.
 \begin{ex} There are eight combinations of reflexive or not, 
 symmetric or not, and transitive or not.
 For each, find a binary relation on $A=\set{0,1,2}$
-satisfying the combination.
+satisfying that combination.
 \begin{ans}
   The first is a relation that is not reflexive, not symmetric, and
   not transitive.
@@ -3579,12 +3549,13 @@ and the $P$ are \definend{pairwise disjoint}
   and $P_1$ is the set of odd numbers
 \item $X=\R$, $\partition{P}=\setbuilder{P_x}{x\in \R}$
       where $P_x=\setbuilder{y\in\R}{x-y\in Z}$
-      \hspace{1em}\hint some pairs $x,y\in\R$ give $P_x=P_y$
-      and so what may appear to be two elements of~$\partition{P}$
-      could in fact be a single element.
+      \hspace{1em}\hint in some cases $P_{x_0}=P_{x_1}$ for unequal
+      $x_0,x_1\in\R$,
+      so what may appear to be two elements of~$\partition{P}$
+      can in fact be a single element.
 \item $X=\Z$, $\partition{P}=\setbuilder{P_n}{n\in\Z}$
       where $P_n=\setbuilder{i\in\Z}{i\equiv n\pmod 3}$\hspace{1em}%
-      \hint some pairs $i,j$ give $P_i=P_j$. 
+      \hint some pairs $i\neq j$ give $P_i=P_j$. 
 \end{exes}
 \begin{ans}
 \begin{exes}
@@ -3662,7 +3633,7 @@ Prove.
 \item Where $R$ is an equivalence, 
   the collection of equivalence classes 
   $\setbuilder{\eqclass{x}}{x\in X}$ forms a partition of~$X$.
-  We say it is the partition \definend{induced} by the relation.
+  We say that it is the partition \definend{induced} by the relation.
 \item Where $P$ is a partition of~$X$, 
   the relation 
   $R=\setbuilder{(x,y)\in X^2}{\text{$x$ and~$y$ are in the same part}}$ 
@@ -3723,10 +3694,10 @@ Suppose that $\map{f}{D}{C}$.
   $R=\setbuilder{(d_0,d_1)\in D^2}{f(d_0)=f(d_1)}$ 
   is an equivalence on~$D$. 
 \item Show that the set of inverse images 
-  $P=\setbuilder{f^{-1}(c)}{c\in C}$ form a partition of the domain.
+  $\partition{P}=\setbuilder{f^{-1}(c)}{c\in C}$ form a partition of the domain.
 \item Consider the map
-  $\map{\hat{f}}{P}{C}$ whose action is given by:
-  $\hat{f}(p)=f(d)$ for any~$d\in P$.
+  $\map{\hat{f}}{\partition{P}}{C}$ whose action is given by:
+  $\hat{f}(P)=f(d)$ where $d\in P$.
   Show that~$\hat{f}$ is a function, and that it is one-to-one.
 \item Show that if $f$ is onto then so is~$\hat{f}$.
 \end{exes}
@@ -3746,18 +3717,20 @@ Suppose that $\map{f}{D}{C}$.
   by definition of the parts~$P$, so 
   the value of~$\hat{f}$ is the same no matter which representative~$d\in P$
   is used to compute that value.
+  Restated, $\hat{f}(P)=c$ where $P=f^{-1}(c)$.
 
   To show that $\hat{f}$ is one-to-one suppose that $\hat{f}(P_0)=\hat{f}(P_1)$.
   Then $f(d_0)=f(d_1)$ for some $d_0\in P_0$ and~$d_1\in P_1$.
   Since $f$ gives the same value on these two arguments,
-  the two are in the same inverse image, and so  
+  the two are in the same inverse image and so  
   by the definition of the parts as the inverse images,
   $P_0=P_1$.
 \item If $f$ is onto then for any $c\in C$ there is a~$d\in D$
   such that $f(d)=c$.
-  So one of the equivalence classes that is an element of~$P$ is the set of 
+  So one of the equivalence classes~$P$ that is an element of~$\partition{P}$ 
+  is the set of 
   $d\in D$ such that $f(d)=c$.
-  Then $\hat{f}$ of that class is $c$.
+  Then $\hat{f}(P)=c$.
 \end{exes}
 \end{ans}
 \end{ex}
