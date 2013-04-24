@@ -53,7 +53,7 @@ Some statements refer to the natural numbers $\N=\set{0,1,2,\ldots}$.
 \end{df}
 
 \begin{df}
-  A natural number is \definend{even} if $2$ divides it,
+  A natural number is \definend{even} if it is divisible by~$2$,
   otherwise it is \definend{odd}.
   (Alternative wording is that the number \definend{has even parity}
   or \definend{has odd parity}.)
@@ -72,6 +72,9 @@ but ``Does $2/5$?''\spacefactor=1000\ is not sensible.
 \item If a number is odd then its negative is odd.
 \item If $d\divides a$ then $-d\divides a$ and $d\divides -a$.
 \item If $d\divides a$ then $d\divides\absval{a}$.
+  (Recall that the absolute value  $\absval{a}$ of a number is~$a$ 
+  if $a\geq 0$ and is~$-a$ if $a<0$.)
+
 \end{exes}  
 \begin{ans}
 \begin{exes}
@@ -87,8 +90,6 @@ For the first, that $-d\divides a$, observe that
 $a=(-d)\cdot(-k)$.
 For the second, observe that $-a=d\cdot(-k)$.
 \item Let $d\divides a$.
-The absolute value $\absval{a}$ equals~$a$ if $a\geq 0$ and equals
-$-a$ if $a<0$.
 For the $a\geq 0$ case, the implication that if $d\divides a$ then $d\divides a$
 is trivial.
 For the $a<0$ case, 
@@ -188,8 +189,6 @@ Prove each.
 \item Every number is divisible by $1$.
   The only numbers that divide~$1$ are $1$ and~$-1$.
 \item The largest divisor of $a$ is $\absval{a}$, for $a\in\Z$ with $a\neq 0$.
-  (Recall that the absolute value  $\absval{a}$ of a number is~$a$ 
-  if $a\geq 0$ and is~$-a$ if $a<0$.)
 \item Every nonzero integer has only finitely many divisors.
 \end{exes}
 \begin{ans}
@@ -306,17 +305,17 @@ We pause now to introduce it.
 
 We will start with exercises about sums 
 (but note that induction is not about sums;
-we use them only because they make the best first exercises).
+we use them only because they make the best initial exercises).
 For instance, most people have noticed that the odd numbers sum to 
 perfect squares: $1+3=4$, $1+3+5=9$, $1+3+5+7=16$, etc.,
 so we look to prove 
 the statement 
-``The sum of the first $n$ odd numbers $1+3+5+\cdots+2n-1$ is $n^2$.'' 
+``The sum of the first $n$ odd numbers $1+3+5+\cdots+2n+1$ is $(n+1)^2$.'' 
 
 Our induction proofs have two steps.
 For the \definend{base step} 
 we show that the statement holds for some first number;
-below we will verify the the statement for the number~$1$.
+below we will verify the the statement for the number~$0$.
 The \definend{inductive step} is more subtle;
 we will verify the following implication.
 \begin{equation*}
@@ -328,92 +327,87 @@ we will verify the following implication.
   \tag{$*$}
 \end{equation*}
 Doing both steps will 
-prove that our example statement is true for all~$n\geq 1$.
+prove that our example statement is true for all~$n\geq 0$.
 That's because, first, the base step
-directly verifies the statement for the number~$1$.
+directly verifies the statement for the number~$n=0$.
 Next, because the inductive step verifies the implication~($*$) for all $k$, 
-that implication applied to the~$k=1$ case gives 
-that the statement is true for the case of the number~$2$. 
-Now, with the statement established for both $1$ and~$2$, 
-apply ($*$) again to conclude that the statement is true for the number~$3$.
-In this way, we bootstrap to all numbers greater than or equal to $1$.
+that implication applied to the~$k=0$ case gives 
+that the statement is true for the case of the number~$n=1$. 
+Now, with the statement established for both $0$ and~$1$, 
+apply ($*$) again to conclude that the statement is true for the number~$n=2$.
+In this way, we bootstrap to all numbers~$n\geq 0$.
 Below is an example proof.
 
 \begin{proof}
-  We show that $1+3+\cdots+(2n-1)=n^2$ by induction.
-  For the $n=1$ base step note that on the left the sum has one term, $1$,
+  We show that $1+3+\cdots+(2n+1)=(n+1)^2$ by induction.
+  For the $n=0$ base step note that on the left the sum has a single term, $1$,
   which equals the value on the right, $1^2$.
 
   For the inductive step assume that the 
-  formula is true for cases $n=1$, $n=2$, \ldots, $n=k$, and 
+  formula is true for $n=0$, $n=1$, \ldots, $n=k$, and 
   consider the $n=k+1$ case.
-  The sum is $1+3+\cdots+(2k-1)+(2(k+1)-1)=1+3+\cdots+(2k-1)+(2k+1)$.
+  The sum is $1+3+\cdots+(2k+1)+(2(k+1)+1)=1+3+\cdots+(2k+1)+(2k+3)$.
   By the inductive hypothesis the statement is true in the $n=k$ case
   so we can substitute 
-  $1+3+\cdots+(2k-1)+(2k+1)=k^2+(2k+1)=(k+1)^2$.
-  This is the required expression for the case~$k+1$.
+  $1+3+\cdots+(2k+1)+(2k+3)=(k+1)^2+(2k+3)=(k^2+2k+1)+(2k+3)=(k+2)^2$.
+  This is the required expression for the $k+1$~case.
 \end{proof}
 
 \begin{ex}
 Prove by induction.
 \begin{exes}
-\item $1+2+\cdots+n=n(n+1)/2$
-\item $1+4+9+\cdots+n^2=n(n+1)(2n+1)/6$
-% \item $1+8+27+\cdots+n^3=n^2(n+1)^2/4$
-\item $1+2+4+8+\cdots+2^{n-1}=2^n-1$
+\item $0+1+2+\cdots+n=n(n+1)/2$
+\item $0+1+4+9+\cdots+n^2=n(n+1)(2n+1)/6$
+% \item $0+1+8+27+\cdots+n^3=n^2(n+1)^2/4$
+\item $1+2+4+8+\cdots+2^n=2^{n+1}-1$
 \end{exes}
 \begin{ans}
 \begin{exes}
-\item For the $n=1$ base step note that the sum on the left
-  has the single term~$1$
-  while the right side is $1\cdot(1+1)/2$, which also equals~$1$.
+\item For the $n=0$ base step note that the sum on the left
+  has the single term~$0$
+  while the right side is $0\cdot(0+1)/2$, which also equals~$0$.
 
   For the inductive step take the inductive hypothesis 
-  that the statement is true for $n=1$, 
-  \ldots\,, $n=k$ and consider $n=k+1$.
+  that the statement is true for $n=0$,~\ldots, $n=k$ and consider $n=k+1$.
   We have 
-  $1+2+\cdots+k+(k+1)=k(k+1)/2+(k+1)=(k+1)\cdot(k/2+1)=(k+1)\cdot(k+2)/2$, 
-  as required.  
-  (The first equality results from applying the inductive hypothesis to 
-  the $n=k$ case.) 
-\item The $n=1$ base step is that the left side has the single term~$1$
-  while the right side is $1\cdot(1+1)\cdot(2\cdot 1+1)/6$, and the 
+  $0+1+\cdots+k+(k+1)=(k(k+1)/2)+(k+1)=(k+1)\cdot(k/2+1)=(k+1)\cdot(k+2)/2$, 
+  as required  
+  (the first equality is from applying the inductive hypothesis in 
+  the $n=k$ case). 
+\item The $n=0$ base step is that the left side has the single term~$0$
+  while the right side is $0\cdot(0+1)\cdot(2\cdot 0+1)/6$, and the 
   two are equal.
 
   For the inductive step assume that the statement is true for 
-  $n=1$, \ldots\,, $n=k$ and consider $n=k+1$.
+  $n=0$,~\ldots, $n=k$ and consider $n=k+1$.
   Applying the inductive hypothesis in the $n=k$ case and reducing gives
-  $1+4+9+\cdots+k^2+(k+1)^2=k(k+1)(2k+1)/6+(k+1)^2
+  $0+1+4+\cdots+k^2+(k+1)^2=k(k+1)(2k+1)/6+(k+1)^2
     =(k+1)\cdot [k(2k+1)/6+(k+1)]
     =(k+1)\cdot [k(2k+1)+6(k+1)]/6
     =(k+1)\cdot [2k^2+7k+6]/6
     =(k+1)(k+2)(2(k+1)+1)/6$,
   as required.
-% \item The base step is~$n=1$.  
-%   The left side has the single term $1$ while the right side is 
-%   $1^2(2)^2/4$, so they are equal.
+% \item The base step is~$n=0$.  
+%   The left side has the single term $0$ while the right side is 
+%   $0^2(1)^2/4$, so they are equal.
 
-%   For the inductive step assume that the statement is true when $n=1$, 
-%   \ldots\,, $n=k$.
+%   For the inductive step assume that the statement is true when $n=0$, 
+%   \ldots, $n=k$.
 %   Then 
-%    $1+8+27+\cdots+k^3+(k+1)^3
+%    $0+8+\cdots+k^3+(k+1)^3
 %     =k^2(k+1)^2/4+(k+1)^3
 %     =(k+1)^2\cdot [(k^2/4)+(k+1)]
 %     =(k+1)^2\cdot (k^2+4k+4)/4
 %     =(k+1)^2(k+2)^2/4$. 
-\item The $n=1$ base step has a sum on the left with a single term, $1$.
+\item The $n=0$ base step has a sum on the left with a single term, $1$.
 The expression on the right is $2^1-1=1$, and they are equal.
 
 The inductive hypothesis is that 
-the statement is true for the cases $n=1$, \ldots\,, $n=k$.
+the statement is true for the cases $n=0$, \ldots, $n=k$.
 The $n=k+1$ summation is
-$1+2+4+\cdots+2^{k-1}+2^k$, 
-and application of the inductive hypothesis in the $n=k$ case gives
-$(2^k-1)+2^k=2\cdot 2^k-1=2^{k+1}-1$, as required. 
-
-(\remark we could instead take the base step to be
-$n=0$, giving an empty summation that totals to $0$, and an expression
-on the right of~$2^0-1=0$.)   
+$1+2+4+\cdots+2^k+2^{k+1}$. 
+Apply the inductive hypothesis to get
+$(2^{k+1}-1)+2^{k+1}=2\cdot 2^{k+1}-1=2^{k+2}-1$, as required. 
 \end{exes}
 \end{ans}
 \end{ex}
@@ -422,30 +416,30 @@ on the right of~$2^0-1=0$.)
 Prove by induction, for $a,b,r\in\R$.
 \begin{exes}
 \item \notetext{Arithmetic Series}
-  $b+(a+b)+(2a+b)+\cdots+((n-1)a+b)=(n(n-1)/2)\cdot a+n\cdot b$
+  $b+(a+b)+(2a+b)+\cdots+(na+b)=(n(n+1)/2)\cdot a+(n+1)\cdot b$
 \item \notetext{Geometric Series}
   $1+r+r^2+r^3+\cdots+r^n=(r^{n+1}-1)/(r-1)$ for $r\neq 1$
 \end{exes}
 \begin{ans}
 \begin{exes}
-\item The base step is~$n=1$.
-The sum on the left has one term, $b$, while the expression on the right is     
+\item The base step is~$n=0$.
+The summation on the left has one term, $b$, 
+while the expression on the right is     
 $0\cdot a+1\cdot b$, so the two sides are equal.
 
-For the inductive step assume that the statement holds when $n=1$, 
-\ldots\,, $n=k$ and consider the $n=k+1$~case.
+For the inductive step assume that the statement holds when $n=0$, 
+\ldots, $n=k$ and consider the $n=k+1$~case.
 We have
-$b+(a+b)+(2a+b)+\cdots+((k-1)a+b)+(ka+b)
-=[(k(k-1)/2)\cdot a+k\cdot b]+(ka+b)
-=[(2k+(k-1)k)/2]\cdot a+[k+1]\cdot b
-=((k+1)(k)/2)\cdot a+(k+1)\cdot b$,
+$b+(a+b)+(2a+b)+\cdots+(ka+b)+((k+1)a+b)
+=[(k(k+1)/2)\cdot a+(k+1)\cdot b]+((k+1)a+b)
+=[(k+1)\cdot((k/2)+1)]\cdot a+[k+2]\cdot b
+=((k+1)(k+2)/2)\cdot a+(k+2)\cdot b$,
 as required. 
-
 \item The $n=0$ base step has the single term~$1$ in the left summation and
   $(r^1-1)/(r-1)$ on the right, and they are equal.
 
   For the inductive step assume that the statement is true for 
-  $n=0$, \ldots\,, $n=k$.
+  $n=0$, \ldots, $n=k$.
   The $n=k+1$ case is
   $1+r+r^2+r^3+\cdots+r^k+r^{k+1}
   =(r^{k+1}-1)/(r-1)+r^{k+1}
@@ -459,10 +453,10 @@ as required.
 \begin{ex}
 Prove by induction that $n<2^n$ for all $n\in\N$.  
 \begin{ans}
-The $n=0$ base case is that $0$ is less than~$2^0$, which is true.
+The $n=0$ base case is that $0$ is less than~$2^0$, which is clear.
 
 For the inductive step assume that the statement holds when 
-$n=0$, \ldots\,, $n=k$ and  consider case~$n=k+1$.
+$n=0$, \ldots, $n=k$ and consider the~$n=k+1$ case.
 We have $k+1<2^k+1\leq 2^{k+1}$ (the second holds because $2^k<2^{k+1}$). 
 \end{ans}
 \end{ex}
@@ -472,26 +466,26 @@ Prove that $n+1$-term sums of reals commute
 $a_0+a_1+\cdots+a_{n-1}=a_{n-1}+\cdots+a_0$ for all $n\geq 1$,
 starting from the assumption that sums of two terms commute.
 \begin{ans}
-The $n=1$ base step is the commutativity assumption $a_0+a_1=a_1+a_0$.
+The $n=0$ base step is the commutativity assumption $a_0+a_1=a_1+a_0$.
 
 For the inductive step assume the statement is true for all 
-sums of~$n$ terms with 
-with $1\leq n\leq k$, and consider $n=k+1$.
+sums of~$n+1$ terms with 
+with $0\leq n\leq k$, and consider a sequence with $n=k+2$~terms.
 We have 
-$a_0+a_1+\cdots+a_{k-1}+a_k
-=(a_0+a_1+\cdots+a_{k-1})+a_k
-=a_k+(a_0+a_1+\cdots+a_{k-1})$ with the second equality coming from
+$a_0+a_1+\cdots+a_k+a_{k+1}
+=(a_0+a_1+\cdots+a_k)+a_{k+1}
+=a_{k+1}+(a_0+a_1+\cdots+a_k)$ with the second equality coming from
 two-term commutativity.
 By the inductive hypothesis that is equal to 
-$a_k+(a_{k-1}+\cdots+a_0)=a_k+a_{k-1}+\cdots+a_0$.
+$a_{k+1}+(a_k+\cdots+a_0)=a_{k+1}+a_k+\cdots+a_0$.
 \end{ans}
 \end{ex}
 
 \begin{ex}
-The sequence of \definend{Fibonacci numbers} is
-$0,1,2,3,5,8,13, \ldots$\,, defined by the condition that 
+The sequence of \definend{Fibonacci numbers}
+$0,1,2,3,5,8,13, \ldots$ is defined by the condition that 
 the next number is the sum of the 
-two prior numbers $f_{n+1}=f_n+f_{n-1}$, and with initial conditions
+two prior numbers $f_{n+1}=f_n+f_{n-1}$, subject to the initial conditions
 $f_0=0$ and~$f_1=0$.
 What is wrong with this argument purporting to show that
 all Fibonacci numbers are even?
@@ -503,7 +497,7 @@ the inductive hypothesis are both even.
 Thus their sum is even.''   
 \begin{ans}
 The argument does not completely cover the $n=k+1$ case.
-In that case, if $k=0$ the expression $f_{n+1}=f_n+f_{n-1}$ is undefined.  
+If $k=0$ then $f_{n+1}=f_n+f_{n-1}$ isn't defined.  
 \end{ans}
 \end{ex}
 
@@ -512,6 +506,7 @@ Prove each by induction.
 \begin{exes}
 \item For all $n\in\N$, the number~$k^2+k$ is even.
 \item For all $n\geq 2$ the number $n^3-n$ is divisible by $6$.
+  \hint take the base case to be $n=2$.
 \item If $n\in\N$ then $4\divides 13^n-1$.
 \item If $n\in\N$ then
     $(1+\sfrac{1}{1})\cdot(1+\sfrac{1}{2})\,\cdots\,(1+\sfrac{1}{n})=n+1$.
@@ -519,7 +514,7 @@ Prove each by induction.
 \begin{ans}
 \begin{exes}
 \item For the $n=0$ base step observe that $0^2+0$ is even.
-  For the inductive step assume the statement for $n=0$, \ldots\,, $n=k$
+  For the inductive step assume the statement for $n=0$, \ldots, $n=k$
   and consider the $n=k+1$ case.
   We have $(k+1)^2+(k+1)=k^2+2k+1+k+1=(k^2+k)+(2k+2)$. 
   By the inductive hypothesis $k^2+k$ is even, and clearly $2k+2$ is even, 
@@ -528,19 +523,19 @@ Prove each by induction.
   Since $6$ divides $2^3-2=8-2$, the statement holds in this case.
 
   For the inductive step assume that the statement is true for 
-  the cases $n=0$, \ldots\,, $n=k$.
+  the cases $n=0$, \ldots, $n=k$.
   In the $n=k+1$ case, consider 
   $(k+1)^3-(k+1)=(k^3+3k^2+3k+1)-(k+1)=(k^3+3k^2+3k)-k$.
   The inductive hypothesis gives that $6$ divides $(k^3-k)$ so we will
-  be finished if we show it divides  $3k^2+3k$.
+  be finished if we show that it divides  $3k^2+3k$.
   We have $3k^2+3k=3\cdot k(k+1)$, and since
   $k(k+1)$ is even (this was shown in the prior item),
   the product is divisible by $6$.  
 \item The $n=0$ base step is clear, since four divides $13^0-1=0$.
   For the inductive step assume that the statement is true for all cases 
   with $0\leq n\leq k$ and consider the $n=k+1$ case.
-  We have $13^{k+1}-1=(13^{k+1}-13)+(13-1)=13(13^k-1)+12$.
-  By the inductive hypothesis the first term is divisible by~$4$, while the
+  Then $13^{k+1}-1=(13^{k+1}-13)+(13-1)=13(13^k-1)+12$.
+  The first term is divisible by~$4$ by the inductive hypothesis, while the
   second term is obviously divisible by~$4$, and so the statement holds in 
   this case.
 
@@ -550,7 +545,7 @@ Prove each by induction.
   while you now are sure that the statement is true, 
   you can nonetheless be left with the sense
   that you are not sure really \emph{why} it is true.
-  For example, you can show that this statement holds in a 
+  You can prove that this statement holds in a 
   way that gives more intuition by plugging $13$ into the formula for a
   geometric series. 
 \item The base step is a product with $n=1$~term.
@@ -558,7 +553,7 @@ Prove each by induction.
   and they are equal.
 
   Assume the inductive hypothesis, that the statement is true for
-  $n=1$, \ldots\,, $n=k$ and consider the $n=k+1$ case.
+  $n=1$, \ldots, $n=k$ and consider the $n=k+1$ case.
   We have
   $(1+\sfrac{1}{1})\cdot(1+\sfrac{1}{2})\,\cdots\,(1+\sfrac{1}{k})\cdot(1+\sfrac{1}{k+1})
   =
@@ -570,12 +565,12 @@ Prove each by induction.
 \end{ex}
 
 \noindent
-Be aware that while many induction arguments use the inductive 
+While many induction arguments use the inductive 
 hypothesis only in the $n=k$ case,
 some break from that pattern.
 
 \begin{ex}
-The game of Nim starts with two piles of $n$~chips.
+The game of Nim starts with two piles, each containing $n$~chips.
 Two players take turns picking a pile and removing 
 some nonzero number of chips from that pile. 
 The winner is the player who takes the final chip.
@@ -588,7 +583,7 @@ The first player must pick a pile and must remove a chip, leaving one chip
 in one pile, so the second player wins.
 
 For the inductive step assume that the strategy wins when there are two piles
-with $n=1$, \ldots\,, $n=k$~chips and consider two piles with
+with $n=1$, \ldots, $n=k$~chips and consider two piles with
 $k+1$~chips.
 The first player picks a pile and removes some nonzero number of chips.
 If the second player removes the same number of chips from the other
@@ -606,12 +601,12 @@ initial number~$j\in\N$,
 and the inductive step that for any $k\in\N$, 
 if the statement is true for 
 all natural numbers $n$ with $j\leq n\leq k$ then the
-statement is also true for~$k+1$.  
+statement is also true for~$n=k+1$.  
 \end{df}
 
 \noindent (You may see the two reduced to a single condition: 
-if the statement is true for all natural numbers less than~$k$
-then the statement is also true for~$k$.
+if the statement is true for all natural numbers~$n$ less than~$k$
+then the statement is also true for~$n=k$.
 This formulation covers the base step by folding it into the 
 implication because
 the `if' part\Dash that the statement is true for all numbers prior to
@@ -641,7 +636,7 @@ least element then $A$ does not contain~$n$.
 The base case is easy since if $A$ were to contains~$0$ then it would
 clearly have a least element.
 For the inductive step assume that the statement is true in the cases
-$n=0$, \ldots\,, $n=k$ and consider the statement in the case~$n=k+1$.
+$n=0$, \ldots, $n=k$ and consider the statement in the case~$n=k+1$.
 If~$A$ has no least element and~$A$ does not contain any of $0$, \ldots,~$k$ 
 then~$A$ cannot contain~$k+1$ either, since it would be least.   
 \end{ans}
@@ -785,7 +780,7 @@ Prove each.
   The $n=1$ base step is true by the introductory assumption that 
   $a\equiv b\pmod m$.
   For the inductive step assume that the statement is true in the cases
-  $n=1$, \ldots\,, $n=k$.
+  $n=1$, \ldots, $n=k$.
   The $k+1$ case is an application of the prior item with 
   $a^k\cdot a$ on the left of the equivalence and $b^k\cdot b$ on the
   right.
@@ -842,7 +837,7 @@ the greatest integer less than or equal to~$x$.
 \end{exes}
 \begin{ans}
 \begin{exes}
-\item Let the numbers be $p_0$, \ldots\,, $p_{n-1}$.
+\item Let the numbers be $p_0$, \ldots, $p_{n-1}$.
   The average is $a=(p_0+\cdots+p_{n-1})/n$ and so 
   $p_0+\cdots+p_{n-1}=na$.
   If each number were less than average $p_i<a$ then the sum
@@ -1180,7 +1175,7 @@ use that calculation to express the greatest common divisor as a
 linear combination of the two:
 \begin{items}
 \item $15$, $25$
-\item $48$, $732$.
+\item $48$, $732$
 \end{items}
 \begin{ans}
 \begin{items}
@@ -1399,7 +1394,7 @@ There are infinitely many primes.
 \begin{ans}
 To obtain a contradiction, assume otherwise.
 Assume that there are finitely many primes: 
-$p_0=2$, $p_1=3$, \ldots\,, $p_{n-1}$.
+$p_0=2$, $p_1=3$, \ldots, $p_{n-1}$.
 Consider the number $m=(p_0\cdotp_1\cdots p_{n-1})+1$.
 
 This number is greater than~$1$ because it is greater than 
@@ -1462,7 +1457,7 @@ and $n=q_0\cdots q_{t-1}$ in ascending order and use induction on~$s$.
 \begin{exes}
 \item We do induction.
 For the base step, observe that $n=2$ is the product of one prime. 
-For the inductive step assume that the statement holds when $n=2$, \ldots\,, 
+For the inductive step assume that the statement holds when $n=2$, \ldots, 
 $n=k$ and consider~$n=k+1$.
 Every number greater than~$1$ factors $k+1=a\cdot b$ into two smaller
 numbers.
@@ -1482,7 +1477,7 @@ Now $p_0=q_0\cdots q_{t-1}$ and this is a nontrivial factorization of a prime
 unless $t=1$.
 
 For the inductive step assume that the factorization is unique for
-$s=1$, \ldots\,, $s=k$ and consider the $s=k+1$ case, with
+$s=1$, \ldots, $s=k$ and consider the $s=k+1$ case, with
 $n=p_0\cdots p_{s-1}\cdot p_s$.   
 Assume that there is another prime factorization $n=q_0\cdots q_{t-1}$
 for $t\geq 1$ and $q_0\leq\cdots \leq q_{t-1}$.
@@ -1552,7 +1547,7 @@ Prove each.
 \item Let $d=\gcd(a,b)$.
   Note that if $p$ is a prime that divides~$a$ and~$b$ then
   by \ref{ex:EuclidsOtherLemma} above, $p$ must be one of the 
-  $p_0$, \ldots\,, $p_{n-1}$.   
+  $p_0$, \ldots, $p_{n-1}$.   
   So let the prime factorization of~$d$ be $p_0^{g_0}\cdots p_n^{g_n}$. 
   If $g_i=\min(e_i,f_i)$ for each~$i$ then $d$~divides both $a$ and~$b$.
   If $g_i>\min(e_i,f_i)$ then, supposing without loss of generality
@@ -1845,8 +1840,8 @@ Another tool for illustrating set relationships is this table.
     $1$       &$1$       &$3$  
   \end{tabular}
 \end{center}
-We use the bits $0$ and~$1$ instead of $F$ and~$T$ so that the 
-row is the binary representation of the row number.
+We use the bits $0$ and~$1$ instead of $F$ and~$T$ so that each
+row is the binary representation of its row number.
 That table gives $A=\set{2,3}$, $B=\set{1,3}$, 
 and~$\universalset=\set{0,1,2,3}$.
 For each item below, illustrate the statements using these sets.
@@ -2267,7 +2262,7 @@ one element $\powerset(\emptyset)=\set{\emptyset}$ and
 since $2^0=1$, the statement is true in this case. 
 
 For the inductive step suppose that the statement is true for the 
-$n=0$, \ldots\,, $n=k$ cases and consider a set
+$n=0$, \ldots, $n=k$ cases and consider a set
 with $k+1$~elements
 $A=\set{a_0, \ldots, a_{k-1},a_k}$.
 For each element~$S\in\powerset(A)$, that is, each subset~$S\subseteq A$,
@@ -3467,11 +3462,11 @@ fixing a $xy$-axes, and giving the equations.
 \begin{ex}
 What is wrong with this purported proof that in the definition
 of an equivalence relation, the condition of reflexivity is redundant?
-\textit{For any $x$, symmetry is that $x$ is related to~$y$ 
+``For any $x$, symmetry is that $x$ is related to~$y$ 
 implies that $y$ is related to~$x$.
 By transitivity we have $x$ is related to~$y$ and $y$ is related to~$x$ 
 together imply that $x$ is related to~$x$.
-Therefore, symmetry and transitivity together imply reflexivity.}  
+Therefore, symmetry and transitivity together imply reflexivity.''  
 \begin{ans}
 Consider the relation   
 $R=\set{\sequence{0,0},\sequence{0,1},\sequence{1,0},\sequence{1,1}}$
