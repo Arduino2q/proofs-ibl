@@ -306,7 +306,7 @@ We pause now to introduce it.
 We will start with exercises about sums 
 (but note that induction is not about sums;
 we use them only because they make the best initial exercises).
-For instance, most people have noticed that the odd numbers sum to 
+For instance, most people have noticed that the odd natural numbers sum to 
 perfect squares: $1+3=4$, $1+3+5=9$, $1+3+5+7=16$, etc.,
 so we look to prove 
 the statement 
@@ -314,20 +314,20 @@ the statement
 
 Our induction proofs have two steps.
 For the \definend{base step} 
-we show that the statement holds for some first number;
+we show that the statement holds for some first natural number;
 below we will verify the the statement for the number~$0$.
 The \definend{inductive step} is more subtle;
 we will verify the following implication.
 \begin{equation*}
   \begin{tabular}{l} 
-  \textit{If} the statement holds from the base number up to and including 
-   the $n=k$ case \\
+  \textit{If} the statement holds from the case of the 
+   base number up to and including~$n=k$ \\
   \textit{then} the statement also holds in the~$n=k+1$ case.
   \end{tabular}
   \tag{$*$}
 \end{equation*}
-Doing both steps will 
-prove that our example statement is true for all~$n\geq 0$.
+Completing both steps proves that our example statement is true for all natural
+numbers~$n\geq 0$.
 That's because, first, the base step
 directly verifies the statement for the number~$n=0$.
 Next, because the inductive step verifies the implication~($*$) for all $k$, 
@@ -335,7 +335,7 @@ that implication applied to the~$k=0$ case gives
 that the statement is true for the case of the number~$n=1$. 
 Now, with the statement established for both $0$ and~$1$, 
 apply ($*$) again to conclude that the statement is true for the number~$n=2$.
-In this way, we bootstrap to all numbers~$n\geq 0$.
+In this way, we bootstrap to all natural numbers~$n\geq 0$.
 Below is an example proof.
 
 \begin{proof}
@@ -350,7 +350,7 @@ Below is an example proof.
   By the inductive hypothesis the statement is true in the $n=k$ case
   so we can substitute 
   $1+3+\cdots+(2k+1)+(2k+3)=(k+1)^2+(2k+3)=(k^2+2k+1)+(2k+3)=(k+2)^2$.
-  This is the required expression for the $k+1$~case.
+  This is the required expression for the $n=k+1$~case.
 \end{proof}
 
 \begin{ex}
@@ -463,14 +463,14 @@ We have $k+1<2^k+1\leq 2^{k+1}$ (the second holds because $2^k<2^{k+1}$).
 
 \begin{ex}
 Prove that $n+1$-term sums of reals commute
-$a_0+a_1+\cdots+a_{n-1}=a_{n-1}+\cdots+a_0$ for all $n\geq 1$,
+$a_0+a_1+\cdots+a_n=a_n+\cdots+a_0$ for all $n\geq 1$,
 starting from the assumption that sums of two terms commute.
 \begin{ans}
-The $n=0$ base step is the commutativity assumption $a_0+a_1=a_1+a_0$.
+The $n=1$ base step is the commutativity assumption $a_0+a_1=a_1+a_0$.
 
 For the inductive step assume the statement is true for all 
 sums of~$n+1$ terms with 
-with $0\leq n\leq k$, and consider a sequence with $n=k+2$~terms.
+with $1\leq n\leq k$, and consider a sequence with $n=k+2$~terms.
 We have 
 $a_0+a_1+\cdots+a_k+a_{k+1}
 =(a_0+a_1+\cdots+a_k)+a_{k+1}
@@ -715,10 +715,12 @@ From grade school we know an effective procedure, an algorithm, to
 determine the quotient and remainder.
 
 \begin{df}
-Where $b>0$ then the \definend{modulus} $a\bmod b$ 
-is the remainder when $a$ is divided by~$b$.
-Two numbers $a,c$ are \definend{congruent modulo $b$} $a\equiv c\pmod b$ 
-if they have the same modulus with respect to~$b$.
+Where $m>0$ the \definend{modulus} $a\bmod m$ 
+is the remainder when $a$ is divided by~$m$.
+Two numbers $a,b$ are \definend{congruent modulo $m$}, 
+written $a\equiv c\pmod m$, 
+if they leave the same remainder when divided by~$m$, that is,
+if they have the same modulus with respect to~$m$.
 \end{df}
 
 \begin{ex}\pord:
@@ -3307,6 +3309,39 @@ is an equivalence.
 \end{ans}
 \end{ex}
 
+\begin{ex}
+Characterize all of the binary relations on $A=\set{0,1}$
+as reflexive or not, symmetric or not,
+and transitive or not.
+\begin{ans}
+There are four ordered pairs in $A^2$.
+We can describe all the relations by listing whether or not they
+contain each of those four.
+\begin{center}
+  \begin{tabular}{cccc|ccc}
+    $\sequence{0,0}$ &$\sequence{0,1}$ &$\sequence{1,0}$ &$\sequence{1,1}$
+      &reflexive?  &symmetric?  &transitive?  \\ \hline
+    $0$ &$0$ &$0$ &$0$ &$0$  &$1$  &$1$  \\ 
+    $0$ &$0$ &$0$ &$1$ &$0$  &$1$  &$1$  \\ 
+    $0$ &$0$ &$1$ &$0$ &$0$  &$0$  &$1$  \\ 
+    $0$ &$0$ &$1$ &$1$ &$0$  &$0$  &$1$  \\ \hline
+    $0$ &$1$ &$0$ &$0$ &$0$  &$0$  &$1$  \\ 
+    $0$ &$1$ &$0$ &$1$ &$0$  &$0$  &$1$  \\ 
+    $0$ &$1$ &$1$ &$0$ &$0$  &$1$  &$0$  \\ 
+    $0$ &$1$ &$1$ &$1$ &$0$  &$1$  &$0$  \\ \hline
+    $1$ &$0$ &$0$ &$0$ &$0$  &$1$  &$1$  \\ 
+    $1$ &$0$ &$0$ &$1$ &$1$  &$1$  &$1$  \\ 
+    $1$ &$0$ &$1$ &$0$ &$0$  &$0$  &$1$  \\ 
+    $1$ &$0$ &$1$ &$1$ &$1$  &$0$  &$1$  \\ \hline
+    $1$ &$1$ &$0$ &$0$ &$0$  &$0$  &$1$  \\ 
+    $1$ &$1$ &$0$ &$1$ &$1$  &$0$  &$1$  \\ 
+    $1$ &$1$ &$1$ &$0$ &$0$  &$1$  &$0$  \\ 
+    $1$ &$1$ &$1$ &$1$ &$1$  &$1$  &$1$  
+  \end{tabular}
+\end{center}
+\end{ans}
+\end{ex}
+
 \begin{ex} There are eight combinations of reflexive or not, 
 symmetric or not, and transitive or not.
 For each, find a binary relation on $A=\set{0,1,2}$
@@ -3543,7 +3578,7 @@ and the $P$ are \definend{pairwise disjoint}
   where~$P_0$ is the set of even numbers
   and $P_1$ is the set of odd numbers
 \item $X=\R$, $\partition{P}=\setbuilder{P_x}{x\in \R}$
-      where $P_x=\setbuilder{y\in\R}{x-y\in Z}$
+      where $P_x=\setbuilder{y\in\R}{x-y\in \Z}$
       \hspace{1em}\hint in some cases $P_{x_0}=P_{x_1}$ for unequal
       $x_0,x_1\in\R$,
       so what may appear to be two elements of~$\partition{P}$
