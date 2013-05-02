@@ -220,7 +220,6 @@ qed=\qedsymbol
   label={ (\roman*)},
 }
 \newenvironment{items}{%
-\addtocounter{exercisecount}{1}%
 \begin{jhitems}
 }{%
 \end{jhitems}

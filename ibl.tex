@@ -829,29 +829,28 @@ the greatest integer less than or equal to~$x$.
 \end{ans}
 \end{ex}
 
-
-\begin{ex}\notetext{Pigeonhole Principle}  Prove each.
-\begin{exes}
-\item For a finite list of numbers,
-  the maximum is at least as big as the average.
-\item If you put $n$~many papers into fewer than $n$~many 
-  pigeonholes then at least one hole gets at least two papers.    
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item Let the numbers be $p_0$, \ldots, $p_{n-1}$.
-  The average is $a=(p_0+\cdots+p_{n-1})/n$ and so 
-  $p_0+\cdots+p_{n-1}=na$.
-  If each number were less than average $p_i<a$ then the sum
-  $p_0+\cdots+p_{n-1}$ would be less than $na$, so at least
-  one must be at least average.
-\item Form the list where $p_i$ is the in the $i$-th pigeonhole.
-  The average number of papers per hole is greater than~$1$, 
-  so the maximum number is greater than~$1$.
-  Since each $p_i$ is a natural number, the maximum must be at least~$2$.      
-\end{exes}
-\end{ans}
-\end{ex}
+% \begin{ex}\notetext{Pigeonhole Principle}  Prove each.
+% \begin{exes}
+% \item For a finite list of numbers,
+%   the maximum is at least as big as the average.
+% \item If you put $n$~many papers into fewer than $n$~many 
+%   pigeonholes then at least one hole gets at least two papers.    
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item Let the numbers be $p_0$, \ldots, $p_{n-1}$.
+%   The average is $a=(p_0+\cdots+p_{n-1})/n$ and so 
+%   $p_0+\cdots+p_{n-1}=na$.
+%   If each number were less than average $p_i<a$ then the sum
+%   $p_0+\cdots+p_{n-1}$ would be less than $na$, so at least
+%   one must be at least average.
+% \item Form the list where $p_i$ is the in the $i$-th pigeonhole.
+%   The average number of papers per hole is greater than~$1$, 
+%   so the maximum number is greater than~$1$.
+%   Since each $p_i$ is a natural number, the maximum must be at least~$2$.      
+% \end{exes}
+% \end{ans}
+% \end{ex}
 
 
 
@@ -962,14 +961,14 @@ The \definend{least common multiple} of two numbers $\lcm(a,b)$
 is the smallest natural number that is a multiple of each.
 \end{df}
 
-\begin{ex} Prove.
-\begin{exes}
+\begin{ex} Prove each.
+\begin{items}
 \item \notetext{Existence} Any two integers have a least common multiple.
   Nonzero integers have a positive lcm.
 \item \notetext{Commutativity} $\lcm(a,b)=\lcm(b,a)$
-\end{exes}
+\end{items}
 \begin{ans}
-\begin{exes}
+\begin{items}
 \item The absolute value of the product of the two is a common multiple,
   and is positive if neither number is zero.
   So the set of nonnegative common multiples is not empty.
@@ -980,7 +979,7 @@ is the smallest natural number that is a multiple of each.
   and     
   $\setbuilder{m\in\Z}{\text{$b\divides m$ and $a\divides m$}}$
   are equal, and so have the same smallest nonnegative element.
-\end{exes}
+\end{items}
 \end{ans}
 \end{ex}
 
@@ -1569,6 +1568,7 @@ Prove each.
 \item Prove that if a number is a square then in its prime factorization 
   each prime occurs an even number of times.
 \item Prove that $\sqrt{2}$ is irrational.
+% \item Prove that $\sqrt{17} is irrational.$ % College Math Journal Jan 2013 pp 53
 \end{exes}
 \begin{ans}
 \begin{exes}
@@ -3564,7 +3564,7 @@ $P\in\partition{P}$ is nonempty,
 $\partition{P}$ \definend{covers}~$X$
 (the union of all $P\in\partition{P}$ is equal to~$X$),
 and the $P$ are \definend{pairwise disjoint}
-(if $P\neq \hat{P}$ then $P\intersection \hat{P}=\emptyset$).
+(if $P\intersection \hat{P}\neq\emptyset$ then $P=\hat{P}$).
 \end{df}
 
 \begin{center}
@@ -3579,13 +3579,14 @@ and the $P$ are \definend{pairwise disjoint}
   and $P_1$ is the set of odd numbers
 \item $X=\R$, $\partition{P}=\setbuilder{P_x}{x\in \R}$
       where $P_x=\setbuilder{y\in\R}{x-y\in \Z}$
-      \hspace{1em}\hint in some cases $P_{x_0}=P_{x_1}$ for unequal
-      $x_0,x_1\in\R$,
-      so what may appear to be two elements of~$\partition{P}$
-      can in fact be a single element.
+      \hspace{0.75em}\hint some unequal reals $x_0\neq x_1$ 
+      are associated with equal parts $P_{x_0}=P_{x_1}$  
+      so what may naively appear to be two elements of~$\partition{P}$
+      is actually a single element.
 \item $X=\Z$, $\partition{P}=\setbuilder{P_n}{n\in\Z}$
-      where $P_n=\setbuilder{i\in\Z}{i\equiv n\pmod 3}$\hspace{1em}%
-      \hint some pairs $i\neq j$ give $P_i=P_j$. 
+      where $P_n=\setbuilder{i\in\Z}{i\equiv n\pmod 3}$
+      % \hspace{0.75em}%
+      % \hint some pairs $i\neq j$ have $P_i=P_j$. 
 \end{exes}
 \begin{ans}
 \begin{exes}
@@ -3604,8 +3605,7 @@ and the $P$ are \definend{pairwise disjoint}
   every $x\in\R$ is an element of some~$P\in\partition{P}$.
 
   To show that the $P$'s are pairwise disjoint 
-  we must show that if $P_x\neq P_y$ then~$P_x\intersection P_y=\emptyset$.
-  We will show the equivalent implication that
+  we must show that
   if $P_x\intersection P_y\neq\emptyset$ then~$P_x=P_y$.
   So suppose that $z\in P_x\intersection P_y$.
   Then $x-z\in\Z$ and~$y-z\in \Z$.
@@ -3630,7 +3630,7 @@ and the $P$ are \definend{pairwise disjoint}
   one~$P$.
 
   To prove that the $P$'s are pairwise disjoint
-  we will prove the equivalent implication that if 
+  we will prove that if 
   $P_i\intersection P_j\neq \emptyset$ then $P_i=P_j$.
   Fix $x\in P_i\intersection P_j$, which implies that
   $x\equiv i\pmod 3$ and~$x\equiv j\pmod 3$.
@@ -3664,7 +3664,7 @@ Prove.
   the collection of equivalence classes 
   $\setbuilder{\eqclass{x}}{x\in X}$ forms a partition of~$X$.
   We say that it is the partition \definend{induced} by the relation.
-\item Where $P$ is a partition of~$X$, 
+\item Where $\partition{P}$ is a partition of~$X$, 
   the relation 
   $R=\setbuilder{(x,y)\in X^2}{\text{$x$ and~$y$ are in the same part}}$ 
   is an equivalence.
@@ -3679,9 +3679,6 @@ Prove.
   every element of~$X$ is in some element of the partition.
 
   We must prove that the elements of~$\partition{P}$ are pairwise disjoint:
-  if $\eqclass{x}\neq\eqclass{y}$ 
-  then~$\eqclass{x}\intersection\eqclass{y}=\emptyset$.
-  We will prove the equivalent implication that
   if $\eqclass{x}\intersection\eqclass{y}\neq\emptyset$
   then~$\eqclass{x}=\eqclass{y}$ are equal.
   So suppose that $z\in\eqclass{x}\intersection\eqclass{y}$.
@@ -3712,7 +3709,7 @@ Prove.
   That is, there is a $P\in\partition{P}$ such that
   both $x$ and~$y$ are elements of~$P$, 
   and also both $y$ and~$z$ are elements of~$P$.
-  Clearly then both $x$ and~$z$ are in the same part~$P$.
+  Clearly then both $x$ and~$z$ are in the same part, $P$.
 \end{exes}
 \end{ans}
 \end{ex}
@@ -3765,58 +3762,58 @@ Suppose that $\map{f}{D}{C}$.
 \end{ans}
 \end{ex}
 
-\begin{df}
-A binary relation~$R$ is \definend{antisymmetric} if
-$(x,y)\in R$ and $(y,x)\in R$ implies that $x=y$.
-A relation is a \definend{partial ordering} if it is 
-reflexive, antisymmetric, and transitive.  
-\end{df}
+% \begin{df}
+% A binary relation~$R$ is \definend{antisymmetric} if
+% $(x,y)\in R$ and $(y,x)\in R$ implies that $x=y$.
+% A relation is a \definend{partial ordering} if it is 
+% reflexive, antisymmetric, and transitive.  
+% \end{df}
 
-\begin{ex} Prove each.
-\begin{exes}
-\item The usual less than or equal to relation~$\leq$ on 
-the real numbers is a partial order.
-\item The relation `divides' on $\N$ is a partial order.
-\item For any set~$A$ the relation $\subseteq$ on $\powerset(A)$ is
-a partial order.
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item We must show that it is reflexive, antisymmetric, and transitive.
-  Reflexive is trivial\Dash for any $r\in\R$ we have $r\leq r$.
-  Antisymmetric is also easy since if $r_0\leq r_1$ and~$r_1\leq r_0$
-  then $r_0=r_1$.
-  And transitive is no harder because if $r_0\leq r_1$ and~$r_1\leq r_2$
-  then $r_0\leq r_2$.
-\item This is like the prior item in that we just cite known results.
-  To show this relation is reflexive just recall that for all $a\in\N$ we have
-  $a\divides a$.
-  Antisymmetric is that if $a\divides b$ and~$b\divides a$ then
-  $a=b$.
-  (\remark antisymmetric would not hold if the relation were over
-  $\Z$ because there the two $a\divides b$ and~$b\divides a$ together imply
-  only that $a=\pm b$.)
-  Transitive is the statement that $a\divides b$ and~$b\divides c$ imply
-  that $a\divides c$, which appears
-  in the Divisibility Properties, Exercise~\ref{ex:DivisibilityProperties}.
-\item This is reflexive since $A\subseteq A$.
-  This is antisymmetric by mutual containment: 
-  if $A_0\subseteq A_1$ and~$A_1\subseteq A_0$ then the two are equal.
-  This is transitive by Exercise~\ref{ex:PropertiesOfSubset}, 
-  the Properties of Subset.
-\end{exes}
-\end{ans}
-\end{ex}
+% \begin{ex} Prove each.
+% \begin{exes}
+% \item The usual less than or equal to relation~$\leq$ on 
+% the real numbers is a partial order.
+% \item The relation `divides' on $\N$ is a partial order.
+% \item For any set~$A$ the relation $\subseteq$ on $\powerset(A)$ is
+% a partial order.
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item We must show that it is reflexive, antisymmetric, and transitive.
+%   Reflexive is trivial\Dash for any $r\in\R$ we have $r\leq r$.
+%   Antisymmetric is also easy since if $r_0\leq r_1$ and~$r_1\leq r_0$
+%   then $r_0=r_1$.
+%   And transitive is no harder because if $r_0\leq r_1$ and~$r_1\leq r_2$
+%   then $r_0\leq r_2$.
+% \item This is like the prior item in that we just cite known results.
+%   To show this relation is reflexive just recall that for all $a\in\N$ we have
+%   $a\divides a$.
+%   Antisymmetric is that if $a\divides b$ and~$b\divides a$ then
+%   $a=b$.
+%   (\remark antisymmetric would not hold if the relation were over
+%   $\Z$ because there the two $a\divides b$ and~$b\divides a$ together imply
+%   only that $a=\pm b$.)
+%   Transitive is the statement that $a\divides b$ and~$b\divides c$ imply
+%   that $a\divides c$, which appears
+%   in the Divisibility Properties, Exercise~\ref{ex:DivisibilityProperties}.
+% \item This is reflexive since $A\subseteq A$.
+%   This is antisymmetric by mutual containment: 
+%   if $A_0\subseteq A_1$ and~$A_1\subseteq A_0$ then the two are equal.
+%   This is transitive by Exercise~\ref{ex:PropertiesOfSubset}, 
+%   the Properties of Subset.
+% \end{exes}
+% \end{ans}
+% \end{ex}
 
-\begin{ex}
-Can a relation be both symmetric and antisymmetric?  
-\begin{ans}
-Yes.
-One example is the empty relation $R=\emptyset$ on any set.
-Another example is the relation of equality 
-$R=\setbuilder{(x,x)}{x\in\N}$ on $\N$.
-\end{ans}
-\end{ex}
+% \begin{ex}
+% Can a relation be both symmetric and antisymmetric?  
+% \begin{ans}
+% Yes.
+% One example is the empty relation $R=\emptyset$ on any set.
+% Another example is the relation of equality 
+% $R=\setbuilder{(x,x)}{x\in\N}$ on $\N$.
+% \end{ans}
+% \end{ex}
 
 
 
