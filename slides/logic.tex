@@ -520,7 +520,7 @@ For $T\rightarrow T$ take $x=4$.
 
 \begin{frame}
 \frametitle{Predicates, Quantifiers}
-Consider the ordinary mathematical
+Consider the mathematical
 statement `if $n$ is odd then $n$ is a perfect square'.
 
 \pause
@@ -532,10 +532,10 @@ yields either $T$ or~$F$, as in~$\text{Odd}(5)=T$.
 Another example is the function $\text{Square}$, as in $\text{Square}(5)=F$.
 
 \pause
-In addition, although it is not explicitly stated,
-a mathematician saying this would mean that the statement holds for all~$n$.
+Another point about that statement is that a mathematician would mean by it 
+that it holds for all~$n$.
 To make this explicit we need a
-\alert{quantifier} describing how many for how many values of the
+\alert{quantifier} describing for how many values of the
 variable the implication must hold, in order for the statement as a whole to
 be true.
 We denote `for all' by $\forall$.
@@ -546,7 +546,7 @@ With these, the statement is
 $\forall n\in\N \big[\text{Odd}(n)\rightarrow\text{Square}(n)\big]$.
 \end{frame}
 \begin{frame}
-Examples of formalized statements.
+Examples of statements written formally.
 
 \begin{itemize}
 \item Every number is divisible by $1$.
@@ -554,7 +554,8 @@ Examples of formalized statements.
     \forall n\in\N\,\big[1\divides n\big]
   \end{equation*}
 
-\item The equation $2^n-7=a^2$ has five different solutions.
+\pause
+\item There are five different powers~$n$ where the equation $2^n-7=a^2$ has a solution.
   \begin{multline*}
     \exists n_0, \ldots, n_4\in\N\, \big[(n_0\neq n_1) 
                                      \wedge (n_0\neq n_2) 
@@ -565,10 +566,18 @@ Examples of formalized statements.
                                      \exists a_4\in\N(2^{n_4}-7=a_4^2)\big]
   \end{multline*}
 
-\item If a number is divisible by $n$ then its square is divisible by~$n^2$.
+\pause
+\item Any two integers have a common multiple.
   \begin{equation*}
-    \forall m\in\N\,\exists n\in\N\,
-        \big[(n\divides m)\rightarrow (n^2\divides m^2)\big]
+    \forall n_0,n_1\in\N\;\exists m\in\N\,
+        \big[(n_0\divides m)\wedge (n_1\divides m)\big]
+  \end{equation*}
+
+\pause
+\item The function~$\map{f}{\R}{\R}$ is continuous at $a\in\R$.
+  \begin{equation*}
+    \forall \varepsilon >0\;\exists \delta > 0\;\forall x\in\R\,
+        \big[(\absval{x-a}<\delta)\rightarrow (\absval{f(x)-f(a)}<\varepsilon)\big]
   \end{equation*}
 \end{itemize}
 \end{frame}

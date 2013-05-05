@@ -1,6 +1,6 @@
 % One and only one of the next two lines should be uncommented
-\documentclass{ibl}  % for making book
-% \documentclass[compact]{ibl}  % for making handout for students
+% \documentclass{ibl}  % for making book
+\documentclass[compact]{ibl}  % for making handout for students
 
 \usepackage{ibltext} % for the text only; answers-only is another .sty
 
@@ -829,28 +829,28 @@ the greatest integer less than or equal to~$x$.
 \end{ans}
 \end{ex}
 
-% \begin{ex}\notetext{Pigeonhole Principle}  Prove each.
-% \begin{exes}
-% \item For a finite list of numbers,
-%   the maximum is at least as big as the average.
-% \item If you put $n$~many papers into fewer than $n$~many 
-%   pigeonholes then at least one hole gets at least two papers.    
-% \end{exes}
-% \begin{ans}
-% \begin{exes}
-% \item Let the numbers be $p_0$, \ldots, $p_{n-1}$.
-%   The average is $a=(p_0+\cdots+p_{n-1})/n$ and so 
-%   $p_0+\cdots+p_{n-1}=na$.
-%   If each number were less than average $p_i<a$ then the sum
-%   $p_0+\cdots+p_{n-1}$ would be less than $na$, so at least
-%   one must be at least average.
-% \item Form the list where $p_i$ is the in the $i$-th pigeonhole.
-%   The average number of papers per hole is greater than~$1$, 
-%   so the maximum number is greater than~$1$.
-%   Since each $p_i$ is a natural number, the maximum must be at least~$2$.      
-% \end{exes}
-% \end{ans}
-% \end{ex}
+\begin{ex}\notetext{Pigeonhole Principle}  Prove each.
+\begin{exes}
+\item For a finite list of real numbers,
+  the maximum is at least as big as the average.
+\item If you put $n$-many papers into fewer than $n$
+  pigeonholes then at least one hole gets at least two papers.    
+\end{exes}
+\begin{ans}
+\begin{exes}
+\item Let the real numbers be $p_0$, \ldots, $p_{n-1}$.
+  The average is $a=(p_0+\cdots+p_{n-1})/n$ and so 
+  $p_0+\cdots+p_{n-1}=na$.
+  If each number were less than average $p_i<a$ then the sum
+  $p_0+\cdots+p_{n-1}$ would be less than $na$, so at least
+  one must be at least average.
+\item Form the list where there are~$p_i$-many papers in the $i$-th pigeonhole.
+  The average number of papers per hole is greater than~$1$, 
+  so the maximum number is greater than~$1$.
+  Since each $p_i$ is a natural number, the maximum must be at least~$2$.      
+\end{exes}
+\end{ans}
+\end{ex}
 
 
 
@@ -964,7 +964,7 @@ is the smallest natural number that is a multiple of each.
 \begin{ex} Prove each.
 \begin{items}
 \item \notetext{Existence} Any two integers have a least common multiple.
-  Nonzero integers have a positive lcm.
+  If the integers are nonzero then the lcm is positive.
 \item \notetext{Commutativity} $\lcm(a,b)=\lcm(b,a)$
 \end{items}
 \begin{ans}
@@ -1161,8 +1161,8 @@ of the pair $154,33$.
 Backing up still further, the equation 
 $803=154\cdot 5+33$
 gives $11=-1\cdot 154+5\cdot (803-5\cdot 154)=5\cdot 803-26\cdot 154$, so 
-we can express the greatest common divisor as a combination of the pair
-$803,154$ of numbers that began the Euclid's algorithm example.
+we can express the greatest common divisor as a combination of our
+initial pair~$803,154$.
 
 
 \begin{df}
@@ -1799,7 +1799,7 @@ set of objects that are not elements of~$A$.
 \noindent\remark
 working inside of a universal set makes the complement
 operation sensible. 
-For instance, in discussing of number theory where
+For instance, in a number theory discussion, where
 $\universalset=\Z$, if $A$ is the set of 
 objects that are less than~$100$ then we can take the complement without 
 worrying about picking up unwanted objects such as $\pi$.
@@ -3762,58 +3762,58 @@ Suppose that $\map{f}{D}{C}$.
 \end{ans}
 \end{ex}
 
-% \begin{df}
-% A binary relation~$R$ is \definend{antisymmetric} if
-% $(x,y)\in R$ and $(y,x)\in R$ implies that $x=y$.
-% A relation is a \definend{partial ordering} if it is 
-% reflexive, antisymmetric, and transitive.  
-% \end{df}
+\begin{df}
+A binary relation~$R$ is \definend{antisymmetric} if
+$(x,y)\in R$ and $(y,x)\in R$ implies that $x=y$.
+A relation is a \definend{partial ordering} if it is 
+reflexive, antisymmetric, and transitive.  
+\end{df}
 
-% \begin{ex} Prove each.
-% \begin{exes}
-% \item The usual less than or equal to relation~$\leq$ on 
-% the real numbers is a partial order.
-% \item The relation `divides' on $\N$ is a partial order.
-% \item For any set~$A$ the relation $\subseteq$ on $\powerset(A)$ is
-% a partial order.
-% \end{exes}
-% \begin{ans}
-% \begin{exes}
-% \item We must show that it is reflexive, antisymmetric, and transitive.
-%   Reflexive is trivial\Dash for any $r\in\R$ we have $r\leq r$.
-%   Antisymmetric is also easy since if $r_0\leq r_1$ and~$r_1\leq r_0$
-%   then $r_0=r_1$.
-%   And transitive is no harder because if $r_0\leq r_1$ and~$r_1\leq r_2$
-%   then $r_0\leq r_2$.
-% \item This is like the prior item in that we just cite known results.
-%   To show this relation is reflexive just recall that for all $a\in\N$ we have
-%   $a\divides a$.
-%   Antisymmetric is that if $a\divides b$ and~$b\divides a$ then
-%   $a=b$.
-%   (\remark antisymmetric would not hold if the relation were over
-%   $\Z$ because there the two $a\divides b$ and~$b\divides a$ together imply
-%   only that $a=\pm b$.)
-%   Transitive is the statement that $a\divides b$ and~$b\divides c$ imply
-%   that $a\divides c$, which appears
-%   in the Divisibility Properties, Exercise~\ref{ex:DivisibilityProperties}.
-% \item This is reflexive since $A\subseteq A$.
-%   This is antisymmetric by mutual containment: 
-%   if $A_0\subseteq A_1$ and~$A_1\subseteq A_0$ then the two are equal.
-%   This is transitive by Exercise~\ref{ex:PropertiesOfSubset}, 
-%   the Properties of Subset.
-% \end{exes}
-% \end{ans}
-% \end{ex}
+\begin{ex} Prove each.
+\begin{exes}
+\item The usual less than or equal to relation~$\leq$ on 
+the real numbers is a partial order.
+\item The relation `divides' on $\N$ is a partial order.
+\item For any set~$A$ the relation $\subseteq$ on $\powerset(A)$ is
+a partial order.
+\end{exes}
+\begin{ans}
+\begin{exes}
+\item We must show that it is reflexive, antisymmetric, and transitive.
+  Reflexive is trivial\Dash for any $r\in\R$ we have $r\leq r$.
+  Antisymmetric is also easy since if $r_0\leq r_1$ and~$r_1\leq r_0$
+  then $r_0=r_1$.
+  And transitive is no harder because if $r_0\leq r_1$ and~$r_1\leq r_2$
+  then $r_0\leq r_2$.
+\item This is like the prior item in that we just cite known results.
+  To show this relation is reflexive just recall that for all $a\in\N$ we have
+  $a\divides a$.
+  Antisymmetric is that if $a\divides b$ and~$b\divides a$ then
+  $a=b$.
+  (\remark antisymmetric would not hold if the relation were over
+  $\Z$ because there the two $a\divides b$ and~$b\divides a$ together imply
+  only that $a=\pm b$.)
+  Transitive is the statement that $a\divides b$ and~$b\divides c$ imply
+  that $a\divides c$, which appears
+  in the Divisibility Properties, Exercise~\ref{ex:DivisibilityProperties}.
+\item This is reflexive since $A\subseteq A$.
+  This is antisymmetric by mutual containment: 
+  if $A_0\subseteq A_1$ and~$A_1\subseteq A_0$ then the two are equal.
+  This is transitive by Exercise~\ref{ex:PropertiesOfSubset}, 
+  the Properties of Subset.
+\end{exes}
+\end{ans}
+\end{ex}
 
-% \begin{ex}
-% Can a relation be both symmetric and antisymmetric?  
-% \begin{ans}
-% Yes.
-% One example is the empty relation $R=\emptyset$ on any set.
-% Another example is the relation of equality 
-% $R=\setbuilder{(x,x)}{x\in\N}$ on $\N$.
-% \end{ans}
-% \end{ex}
+\begin{ex}
+Can a relation be both symmetric and antisymmetric?  
+\begin{ans}
+Yes.
+One example is the empty relation $R=\emptyset$ on any set.
+Another example is the relation of equality 
+$R=\setbuilder{(x,x)}{x\in\N}$ on $\N$.
+\end{ans}
+\end{ex}
 
 
 
