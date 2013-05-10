@@ -1,6 +1,6 @@
 % One and only one of the next two lines should be uncommented
-% \documentclass{ibl}  % for making book
-\documentclass[compact]{ibl}  % for making handout for students
+\documentclass{ibl}  % for making book
+% \documentclass[compact]{ibl}  % for making handout for students
 
 \usepackage{ibltext} % for the text only; answers-only is another .sty
 
@@ -1601,26 +1601,27 @@ Prove each.
 \chapter{Sets}
 \begin{df}
 A \definend{set} is a collection of objects that is definite\Dash every 
-object is either
-definitely in the set or definitely not in the set.
-An object~$x$ that is in a set~$A$ is an \definend{element}
+object either
+definitely belongs to the set or definitely does not.
+An object~$x$ that belongs to a set~$A$ is an \definend{element}
 or \definend{member}
 of the set, written $x\in A$
 (to denote that $x$ is not an element of $A$ write~$x\notin A$).
-That is, two sets are equal if and only if they have the same elements.
+Two sets are equal if and only if they have the same elements.
 \end{df}
 \noindent Read `$\in$' as ``is an element of'' rather than ``in'' since the 
-latter word causes confusion with 
+latter causes confusion with 
 the subset relation defined below.
-We sometimes say ``collection'' as a synonym for set.
+We sometimes use ``collection'' as a synonym for set.
 
-We usually specify a set by either listing its elements or by
+We usually specify a set either by listing or by
 describing its elements.
 Thus we may write 
-the set of the primes less than ten 
-either as $\set{2, 3, 5, 7}$ or as~$\setbuilder{p\in\N}{\text{$p<10$ and $p$ is prime}}$.
+the set of the primes less than ten as either
+$\set{2, 3, 5, 7}$ or~$\setbuilder{p\in\N}{\text{$p<10$ and $p$ is prime}}$ 
+(the vertical bar is read ``such that'').
 
-\begin{ex} Decide if each is true, and justify:
+\begin{ex} Decide if each is true and justify your decision:
 \begin{items}
 \item $\set{1,3,5}=\set{5,3,1}$    
 \item $\set{2, 4, 6}=\set{2, 4, 6, 4}$    
@@ -1645,14 +1646,14 @@ either as $\set{2, 3, 5, 7}$ or as~$\setbuilder{p\in\N}{\text{$p<10$ and $p$ is 
 \end{ex}
 
 \begin{df}
-The set without any elements is the \definend{empty set} $\emptyset$.  
-\end{df}
-
-\begin{df}
 The set~$B$ is a \definend{subset} of the set~$A$
 if every element of $B$ is an element of~$A$,
 that is, if $x\in B$ implies that~$x\in A$.
 It is denoted $B\subseteq A$.
+\end{df}
+
+\begin{df}
+The set without any elements is the \definend{empty set} $\emptyset$.  
 \end{df}
 
 \begin{ex} Decide each, with justification:
@@ -1685,7 +1686,7 @@ It is denoted $B\subseteq A$.
 \end{ex}
 
 \begin{ex} \label{ex:EmptySetUnique}
-Prove for all sets $A$. 
+Prove, for all sets $A$. 
 \begin{exes}
 \item $A\subseteq A$ and $\emptyset\subseteq A$
 \item The empty set is unique: if $A$ is empty and $B$ is empty then $A=B$.
@@ -1707,7 +1708,7 @@ Prove for all sets $A$.
 \end{ex}
 
 \begin{ex} \notetext{Properties of Subset} \label{ex:PropertiesOfSubset}
-Prove, for $A$, $B$, and~$C$ sets.
+Prove, for any sets $A$, $B$, and~$C$.
 \begin{exes} 
 \item \notetext{Mutual Inclusion}
   If $A\subseteq B$ and $B\subseteq A$ then $A=B$.  
@@ -1744,24 +1745,26 @@ Prove, for $A$, $B$, and~$C$ sets.
 
 We will always work inside of a \definend{universal set}, 
 denoted $\universalset$.
-For instance, while we are doing number theory we may discuss 
-the set of objects less than $100$,
-but in the context of that discussion the universal set is $\universalset=\Z$ 
-so we are considering the set of integers less than $100$.
+For instance, the first chapter of this book is about number theory  
+so the universal set is~$\universalset=\Z$.
+In that context, if we describe considering 
+the set of things less than $100$ then 
+we are considering the set of integers less than $100$.
 
 \begin{df}
 The \definend{characteristic function} of a set~$A$ is a map
 $\charfcn{A}$ (whose domain is the universal set) such that
-$\charfcn{A}(x)=1$ for $x\in A$, and $\charfcn{A}(x)=0$ for $x\notin A$.  
+$\charfcn{A}(x)=1$ if~$x\in A$, and $\charfcn{A}(x)=0$ if~$x\notin A$.  
 \end{df}
 
 \begin{ex} \notetext{Russell's Paradox}
 The definition that we gave of sets allows them to contain anything, so 
 consider a set that contains all sets.
 It has itself as an element.
-So consider the set of all sets that have themselves as elements, and  
-the set of all sets that don't.
-Call the latter~$D$.
+Following that idea, 
+consider the set of all sets that have themselves as elements and  
+also the set of all sets that don't.
+Call the latter set~$D$.
 \begin{exes}
 \item Show that assuming $D$ contains itself leads to a contradiction.
 \item Show that assuming $D$ does not contain itself also leads to a
@@ -1799,10 +1802,10 @@ set of objects that are not elements of~$A$.
 \noindent\remark
 working inside of a universal set makes the complement
 operation sensible. 
-For instance, in a number theory discussion, where
-$\universalset=\Z$, if $A$ is the set of 
-objects that are less than~$100$ then we can take the complement without 
-worrying about picking up unwanted objects such as $\pi$.
+For instance, in a number theory discussion where $\universalset=\Z$, 
+we can take the complement of the set of 
+objects that are less than~$100$ and get a subset of 
+$\universalset$, so we are still in a number theory discussion.
 
 \begin{df}
 Let $A$ and $B$ be sets.
@@ -1842,12 +1845,12 @@ Another tool for illustrating set relationships is this table.
     $1$       &$1$       &$3$  
   \end{tabular}
 \end{center}
-We use the bits $0$ and~$1$ instead of $F$ and~$T$ so that each
+Use the bits $0$ and~$1$ instead of $F$ and~$T$ so that each
 row is the binary representation of its row number.
 That table gives $A=\set{2,3}$, $B=\set{1,3}$, 
 and~$\universalset=\set{0,1,2,3}$.
 For each item below, illustrate the statements using these sets.
-Pick one item and prove it:
+Then pick one item and prove it:
 \begin{items}
 \item the complement of the complement is the original set
   $\setcomp{\setcomp{A}}=A$  
@@ -2301,15 +2304,15 @@ up element-by-element, and therefore have the same number of elements.
 
 \begin{df}
 The \definend{sequence\/} $\seq{x_0, x_1, \ldots, x_{n-1}}$
-formed from the \definend{elements} 
-(or \definend{terms}) $x_0$, $x_1$, \ldots, $x_{n-1}$ 
+formed from the \definend{terms} 
+(or \definend{elements}) $x_0$, $x_1$, \ldots, $x_{n-1}$ 
 is an ordered list of objects.
 The \definend{length} of a sequence $\lh(\seq{x_0, x_1, \ldots, x_{n-1}})$
-is the number of elements~$n$.
+is the number of terms~$n$.
 Two sequences $\seq{x_0, x_1, \ldots, x_{n-1}}$ and
 $\seq{y_0, y_1, \ldots, y_{m-1}}$ are equal if and only if
 they have the same length and
-the same elements, in the same order:
+the same terms, in the same order:
 $n=m$ and
 $x_0=y_0$, $x_1=y_1$, \ldots, $x_{n-1}=y_{n-1}$. 
 \end{df}
@@ -2322,11 +2325,11 @@ $x_0=y_0$, $x_1=y_1$, \ldots, $x_{n-1}=y_{n-1}$.
 \end{items}
 \begin{ans}
 \begin{items}
-\item These two sets contain the same elements, $3$, $4$, and~$5$,
+\item These two are sets that contain the same elements, $3$, $4$, and~$5$,
   and so are equal.
-\item These sequences are not equal because they differ in the first element.
+\item These sequences are not equal because they differ in the first term.
 \item These sequences are not equal because they have different lengths.
-  (In addition, they differ in their third elements.)
+  (In addition, they differ in their third terms.)
 \end{items}
 \end{ans}
 \end{ex}
@@ -2363,7 +2366,7 @@ The argument is straightforward, just as in the prior paragraph,
 except for the~$n=0$ case.
 A length zero sequence~$\sequence{}$ is empty and so any two 
 length zero sequences are equal (they have the same length and do not 
-differ on any of their elements).
+differ on any of their terms).
 Thus $A^0=B^0=\set{\sequence{}}$.
 \end{ans}
 \end{ex}
@@ -2382,7 +2385,7 @@ Thus $A^0=B^0=\set{\sequence{}}$.
 \begin{ans}
 \begin{exes}
 \item If $A=\emptyset$ then $A\times B=\emptyset$ because there are no 
-  sequences with a first element drawn from $\emptyset$.
+  sequences with a first term drawn from $\emptyset$.
   For the same reason, $A\times\emptyset=\emptyset$.
  
   If neither set is empty then there exist some $a\in A$ and~$b\in B$, so 
@@ -2403,13 +2406,13 @@ Thus $A^0=B^0=\set{\sequence{}}$.
   are not equal.
   For instance, if $A=\set{a}$, $B=\set{b}$, and $C=\set{c}$ then 
   $(A\times B)\times C=\set{\sequence{\sequence{a,b},c}}$
-  has a single element, a sequence with two elements, the first
+  has a single element, a sequence with two terms, the first
   of which is a sequence.
   But while $A\times(B\times C)=\set{\sequence{a,\sequence{b,c}}}$ 
-  also has a single element that is a sequence with two elements, 
+  also has a single element that is a sequence with two terms, 
   the first element here is not a sequence. 
 
-  \remark they are only equal if one of them is empty.
+  \remark they are equal only if one of them is empty.
 \item The example 
   $A=\emptyset$, $B=\set{1,2}$, $A^\prime=\set{a}$, $B^\prime=\set{1}$
   shows that the statement is false since 
@@ -2577,6 +2580,18 @@ with arrows that begin with a bar.
 \end{ans}
 \end{ex}
 
+Do not think that a function must have a formula.
+The final item in the prior exercise has a formula but for other items 
+there is no natural formula, they are just arbitrary pairings.
+
+\remark as we did in the paragraph following the definition, 
+we often blur the distinction between a function and its graph; for instance 
+we might say, ``a function is an input-output relationship'' when really
+the pairing is the function's graph.
+(The distinction between function and graph
+is there only because the codomain is not determined
+by the graph so we must separately specify the codomain to define the function.)
+
 \begin{ex}
 Let $D$ and $C$ be finite sets.
 How many maps are there from $D$ to $C$?
@@ -2586,14 +2601,6 @@ of associating it with any of $|C|$-many values.
 Thus the number of possible function is $|C|^{|D|}$.
 \end{ans}
 \end{ex}
-
-\remark
-we often ignore the distinction between a function and its graph; for instance 
-someone might say, ``a function is an input-output relationship'' when 
-technically it is the graph that associates inputs with outputs.
-(The distinction is there only because the codomain is not determined
-by the graph so the function must be 
-defined as the triple $f=\sequence{D,C,G}$.)
 
 A function may have multiple arguments; one example is 
 $\sequence{x,y}\mapsunder{f}x^2-2y^2$.
@@ -2606,7 +2613,7 @@ The number of arguments is the function's \definend{arity}.
 For $\map{f}{D}{C}$,
 the \definend{range} is the set
 $\setbuilder{y\in C}{\text{there is a $x\in D$ such that $f(x)=y$}}$,
-denoted $\range(f)$ (or sometimes denoted $f(D)$).
+denoted $\range(f)$ (or $f(D)$).
 \end{df}
 
 \begin{ex}
@@ -2633,7 +2640,7 @@ $\restrictionmap{f}{B}(b)=f(b)$ for all $b\in B$.
 A synonym is that
 $f$ is an \definend{extension} of~$g$.
 The \definend{image} of the set $B$ under $f$, 
-denoted $f(B)$ or $\image(f)$,
+denoted $\image(f)$ (or $f(B)$),
 is the range of the function $\restrictionmap{f}{B}$.
 \end{df}
 
@@ -2700,7 +2707,7 @@ sets $S_a=\setbuilder{d\in D}{f(d)=a}$.
 
 \begin{df}
 The \definend{composition} of
-the two functions
+two functions
 $\map{f}{D}{C}$ and $\map{g}{C}{B}$ 
 is $\map{\composed{g}{f}}{D}{B}$ given by 
 $\composed{g}{f}(d)=g(f(d))$.
@@ -2715,7 +2722,7 @@ although when reading the expression $\composed{g}{f}$ from left to right
 the $g$ comes first, 
 the function that is applied first is~$f$. 
 Note also that the codomain of~$f$ is the domain of~$g$
-(we sometimes use a composition where the domain of~$g$ is not the 
+(we sometimes allow a composition when the domain of~$g$ is not the 
 entire codomain, but is a superset of the range of~$f$).
 
 Read $\composed{g}{f}$ aloud as ``$g$ circle $f$'' 
