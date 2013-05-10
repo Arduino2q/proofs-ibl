@@ -594,17 +594,18 @@ is a win for the second player.
 \end{ex}
 
 \begin{df}
-The \definend{principle of mathematical induction} is that a
-statement is true for all natural numbers if it
-meets two conditions: the base step that the statement is true for some
-initial number~$j\in\N$,
-and the inductive step that for any $k\in\N$, 
+The \definend{Principle of Mathematical Induction} is that if a statement
+meets two conditions, first the base step that the statement is true for some
+initial number~$j\in\N$
+and second the inductive step that for any $k\in\N$ 
 if the statement is true for 
 all natural numbers $n$ with $j\leq n\leq k$ then the
-statement is also true for~$n=k+1$.  
+statement is also true for~$n=k+1$,
+then the statement is true for all natural numbers greater than or
+equal to~$j$.  
 \end{df}
 
-\noindent (You may see the two reduced to a single condition: 
+\noindent (You may see the two reduced to a single condition that
 if the statement is true for all natural numbers~$n$ less than~$k$
 then the statement is also true for~$n=k$.
 This formulation covers the base step by folding it into the 
@@ -615,8 +616,8 @@ follows only from the truth of the `then' clause.
 Here we retain the base step, preferring to be explicit.)
 
 \begin{df}
-The \definend{well-ordering principle} 
-(or the \definend{least number principle})
+The \definend{Least Number Principle} 
+(or \definend{Well-ordering Principle})
 is that any nonempty 
 subset of the natural
 numbers has a least element.  
@@ -2584,13 +2585,13 @@ Do not think that a function must have a formula.
 The final item in the prior exercise has a formula but for other items 
 there is no natural formula, they are just arbitrary pairings.
 
-\remark as we did in the paragraph following the definition, 
-we often blur the distinction between a function and its graph; for instance 
-we might say, ``a function is an input-output relationship'' when really
-the pairing is the function's graph.
-(The distinction between function and graph
+\remark we often blur the distinction between a function and its graph;
+for instance we might say, ``a function is an input-output relationship'' 
+when really the pairing is the function's graph.
+(We've already blurred, in the paragraph following the definition.)
+The distinction between function and graph
 is there only because the codomain is not determined
-by the graph so we must separately specify the codomain to define the function.)
+by the graph so we must separately specify the codomain to define the function.
 
 \begin{ex}
 Let $D$ and $C$ be finite sets.
