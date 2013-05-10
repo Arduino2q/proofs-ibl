@@ -98,9 +98,9 @@
         \hskip -0.5\mylenA\rlap{\usebox\myboxA}{\hskip 0.5\mylenA\usebox\myboxB}%
     \fi}
 \renewcommand{\setcomp}[1]{\xoverline{#1}}
-% \newcommand{\charfcn}[1]{\mathbf{\chi}_{#1}} 
-\usepackage{bbm}
-\newcommand{\charfcn}[1]{\mathbbm{1}_{#1}} 
+\newcommand{\charfcn}[1]{\raisebox{.1ex}{$\chi$}_{#1}} % looks too low, to me
+% \usepackage{bbm}
+% \newcommand{\charfcn}[1]{\mathbbm{1}_{#1}} 
 
 \newcommand{\sequence}[1]{ \langle#1\rangle }  
 \newcommand{\seq}[1]{\sequence{#1}}
