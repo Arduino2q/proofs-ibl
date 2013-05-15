@@ -39,7 +39,7 @@ Some statements refer to the natural numbers $\N=\set{0,1,2,\ldots}$.
 \begin{df}
   For two integers $d,n$ we say that
   $d$ \definend{divides}~$n$
-  if there is an integer~$k$ such that $dk=n$.
+  if there is an integer~$k$ such that $d\cdot k=n$.
   Here, $d$~is the \definend{divisor}, 
   $n$~is the \definend{dividend},
   and~$k$ is the \definend{quotient}.
@@ -300,7 +300,7 @@ Suppose that $a,b,c\in\Z$.
 Results in the prior section need only proof techniques that come naturally
 to people with a mathematical aptitude.
 But some results to follow require a technique 
-that is not as natural, mathematical induction.
+that is less natural, mathematical induction.
 We pause now to introduce it.
 
 We will start with exercises about sums 
@@ -308,26 +308,31 @@ We will start with exercises about sums
 we use them only because they make the best initial exercises).
 For instance, most people have noticed that the odd natural numbers sum to 
 perfect squares: $1+3=4$, $1+3+5=9$, $1+3+5+7=16$, etc.,
-so we look to prove 
-the statement 
-``The sum of the first $n$ odd numbers $1+3+5+\cdots+2n+1$ is $(n+1)^2$.'' 
+so we look to prove the statement
+``The sum $1+3+5+\cdots+2n+1$ equals $(n+1)^2$.'' 
 
+This statement has a natural number variable~$n$ that is free, 
+meaning that if we set $n$ to be $0$, or~$1$, etc., then we get 
+a family of statements: $S(0)$, or~$S(1)$, 
+etc.\spacefactor=1000\  
+(for example, $S(1)$ says that $1+3$ equals $2^2$).
 Our induction proofs have two steps.
 For the \definend{base step} 
-we show that the statement holds for some first natural number;
-below we will verify the the statement for the number~$0$.
+we show that the statement holds for some first~$n$ and
+below we will verify the~$n=0$ case of the statement.
 The \definend{inductive step} is more subtle;
-we will verify the following implication.
+we will demonstrate that the following implication is true.
 \begin{equation*}
   \begin{tabular}{l} 
   \textit{If} the statement holds from the case of the 
-   base number up to and including~$n=k$ \\
-  \textit{then} the statement also holds in the~$n=k+1$ case.
+   base number up to and including the~$n=k$ case \\
+  \textit{then} the statement holds also in the~$n=k+1$ case.
   \end{tabular}
   \tag{$*$}
 \end{equation*}
-Completing both steps proves that our example statement is true for all natural
-numbers~$n\geq 0$.
+Completing both steps proves 
+that the statement is true for all natural
+numbers, that is, that $S(0)$ is true, and~$S(1)$ is true, etc.
 That's because, first, the base step
 directly verifies the statement for the number~$n=0$.
 Next, because the inductive step verifies the implication~($*$) for all $k$, 
@@ -462,7 +467,7 @@ We have $k+1<2^k+1\leq 2^{k+1}$ (the second holds because $2^k<2^{k+1}$).
 \end{ex}
 
 \begin{ex}
-Prove that $n+1$-term sums of reals commute
+Prove that $n+1$-term sums of reals commute:
 $a_0+a_1+\cdots+a_n=a_n+\cdots+a_0$ for all $n\geq 1$,
 starting from the assumption that sums of two terms commute.
 \begin{ans}
@@ -478,26 +483,6 @@ $a_0+a_1+\cdots+a_k+a_{k+1}
 two-term commutativity.
 By the inductive hypothesis that is equal to 
 $a_{k+1}+(a_k+\cdots+a_0)=a_{k+1}+a_k+\cdots+a_0$.
-\end{ans}
-\end{ex}
-
-\begin{ex}
-The sequence of \definend{Fibonacci numbers}
-$0,1,2,3,5,8,13, \ldots$ is defined by the condition that 
-the next number is the sum of the 
-two prior numbers $f_{n+1}=f_n+f_{n-1}$, subject to the initial conditions
-$f_0=0$ and~$f_1=0$.
-What is wrong with this argument purporting to show that
-all Fibonacci numbers are even?
-``The $n=0$ base case is clear.  For the inductive step, assume the statement 
-is true for all cases up to and including $n=k$.
-By definition 
-the next case $f_{k+1}$ is the sum of the two prior numbers, which by
-the inductive hypothesis are both even.  
-Thus their sum is even.''   
-\begin{ans}
-The argument does not completely cover the $n=k+1$ case.
-If $k=0$ then $f_{n+1}=f_n+f_{n-1}$ isn't defined.  
 \end{ans}
 \end{ex}
 
@@ -564,7 +549,26 @@ Prove each by induction.
 \end{ans}
 \end{ex}
 
-\noindent
+\begin{ex}
+The sequence of \definend{Fibonacci numbers}
+$0,1,2,3,5,8,13, \ldots$ is defined by the condition that 
+the next number is the sum of the 
+two prior numbers $f_{n+1}=f_n+f_{n-1}$, subject to the initial conditions
+$f_0=0$ and~$f_1=0$.
+What is wrong with this argument purporting to show that
+all Fibonacci numbers are even?
+``The $n=0$ base case is clear.  For the inductive step, assume the statement 
+is true for all cases up to and including $n=k$.
+By definition 
+the next case $f_{k+1}$ is the sum of the two prior numbers, which by
+the inductive hypothesis are both even.  
+Thus their sum is even.''   
+\begin{ans}
+The argument does not completely cover the $n=k+1$ case.
+If $k=0$ then $f_{n+1}=f_n+f_{n-1}$ isn't defined.  
+\end{ans}
+\end{ex}
+
 While many induction arguments use the inductive 
 hypothesis only in the $n=k$ case,
 some break from that pattern.
@@ -595,9 +599,10 @@ is a win for the second player.
 
 \begin{df}
 The \definend{Principle of Mathematical Induction} is that if a statement
-meets two conditions, first the base step that the statement is true for some
+meets two conditions, first that 
+the base step that the statement is true for some
 initial number~$j\in\N$
-and second the inductive step that for any $k\in\N$ 
+and second that the inductive step that for any $k\in\N$ 
 if the statement is true for 
 all natural numbers $n$ with $j\leq n\leq k$ then the
 statement is also true for~$n=k+1$,
@@ -611,9 +616,8 @@ then the statement is also true for~$n=k$.
 This formulation covers the base step by folding it into the 
 implication because
 the `if' part\Dash that the statement is true for all numbers prior to
-the initial number\Dash is vacuously true, so the truth of the implication
-follows only from the truth of the `then' clause.
-Here we retain the base step, preferring to be explicit.)
+the initial number\Dash is vacuously true.
+Here we retain the base step to be explicit.)
 
 \begin{df}
 The \definend{Least Number Principle} 
@@ -624,8 +628,8 @@ numbers has a least element.
 \end{df}
 
 \begin{ex}
-Show that the principle of induction implies the least number 
-principle.
+Show that the Principle of Induction implies the Least Number 
+Principle.
 \hint
 use induction to prove that if a set of natural numbers does not
 have a least element then that set is empty.
@@ -649,21 +653,23 @@ then~$A$ cannot contain~$k+1$ either, since it would be least.
 
 % .....................................
 \section{Division}
-\begin{ex} \notetext{Division Theorem} We prove that 
-where $a$ and $b>0$ are integers there are integers $q$ and~$r$
-such that $a=bq+r$ and $r\in\set{0,\ldots,b-1}$,
-breaking the argument into a few steps.
+\begin{ex} \notetext{Division Theorem} For any integer 
+\definend{divisor}~$b>0$ and \definend{dividend}~$a$ there is a unique pair of
+integers, the \definend{quotient}~$q$ and \definend{remainder}~$r$,
+such that $a=bq+r$ and $r\in\set{0,\ldots,b-1}$.
+We do this argument in steps.
 \begin{exes} 
 \item Show that the statement is true for $a=0$.
   Show also that if the statement is true for~$a>0$ then it is true
   for~$a<0$. 
 \item Prove the statement for $a>0$.
-  \hint you can consider the set $\setbuilder{a-bq}{q\in\Z}$, note that
-  because it has positive elements then by the Least Number principle
+  \hint you can consider the set $\setbuilder{a-bq}{q\in\Z}$,
+  note that
+  because it has positive elements then by the Least Number Principle
   it must have a smallest positive
   element, and show that this smallest positive element is the desired~$r$.
 \item
-  Prove that the $q$ and~$r$ are unique.
+  Prove that~$q$ and~$r$ are unique.
 % \item 
 % What to do if $b\leq 0$?
 \end{exes}
@@ -703,20 +709,12 @@ breaking the argument into a few steps.
 \end{ans}
 \end{ex}
 
+% \noindent 
+Observe that $r=0$ if and only if $b\divides a$. 
+Observe also that the definition only applies when the divisor is positive.
 
 \begin{df}
-In the  $a=bq+r$ of the Division Theorem, 
-$a$ is the \definend{dividend} and
-$b$ is the \definend{divisor} while 
-$q$ is the \definend{quotient} and~$r$ is the \definend{remainder}.  
-\end{df}
-
-Observe that in the Division Theorem, $r=0$ if and only if $b\divides a$. 
-From grade school we know an effective procedure, an algorithm, to 
-determine the quotient and remainder.
-
-\begin{df}
-Where $m>0$ the \definend{modulus} $a\bmod m$ 
+Where $m>0$, the \definend{modulus} $a\bmod m$ 
 is the remainder when $a$ is divided by~$m$.
 Two numbers $a,b$ are \definend{congruent modulo $m$}, 
 written $a\equiv c\pmod m$, 
@@ -1601,7 +1599,7 @@ Prove each.
 %===================================================
 \chapter{Sets}
 \begin{df}
-A \definend{set} is a collection of objects that is definite\Dash every 
+A \definend{set} is a collection that is definite\Dash every 
 object either
 definitely belongs to the set or definitely does not.
 An object~$x$ that belongs to a set~$A$ is an \definend{element}
