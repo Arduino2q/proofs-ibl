@@ -297,51 +297,58 @@ Suppose that $a,b,c\in\Z$.
 
 % .....................................
 \section{Interlude: induction}
-Results in the prior section need only proof techniques that come naturally
-to people with a mathematical aptitude.
-But some results to follow require a technique 
+Results in the prior section need only proof techniques that are natural
+for people with a mathematical aptitude.
+However some results require a technique 
 that is less natural, mathematical induction.
-We pause now to introduce it.
+We now introduce it.
 
 We will start with exercises about sums 
-(but note that induction is not about sums;
+(but induction is not about sums;
 we use them only because they make the best initial exercises).
 For instance, most people have noticed that the odd natural numbers sum to 
 perfect squares: $1+3=4$, $1+3+5=9$, $1+3+5+7=16$, etc.,
-so we look to prove the statement
+so we want to prove the statement
 ``The sum $1+3+5+\cdots+2n+1$ equals $(n+1)^2$.'' 
 
-This statement has a natural number variable~$n$ that is free, 
+That statement has a natural number variable~$n$ that is free, 
 meaning that if we set $n$ to be $0$, or~$1$, etc., then we get 
 a family of statements: $S(0)$, or~$S(1)$, 
-etc.\spacefactor=1000\  
-(for example, $S(1)$ says that $1+3$ equals $2^2$).
-Our induction proofs have two steps.
+etc.  
+For example, $S(1)$ says that $1+3$ equals $2^2$.
+Our induction proofs will all involve statements with one free 
+natural number variable.
+
+Those proofs will have two steps.
 For the \definend{base step} 
-we show that the statement holds for some first~$n$ and
-below we will verify the~$n=0$ case of the statement.
-The \definend{inductive step} is more subtle;
-we will demonstrate that the following implication is true.
+we show that the statement holds for some intial~$i\in\N$.
+The second step, the \definend{inductive step}, is more subtle;
+we show that the following implication is true.
 \begin{equation*}
   \begin{tabular}{l} 
-  \textit{If} the statement holds from the case of the 
-   base number up to and including the~$n=k$ case \\
+  \textit{If} the statement holds from the
+   base number up to and including $n=k$  \\
   \textit{then} the statement holds also in the~$n=k+1$ case.
   \end{tabular}
   \tag{$*$}
 \end{equation*}
-Completing both steps proves 
+The \definend{Principle of Mathematical Induction} is that
+completing both steps proves 
 that the statement is true for all natural
-numbers, that is, that $S(0)$ is true, and~$S(1)$ is true, etc.
-That's because, first, the base step
-directly verifies the statement for the number~$n=0$.
-Next, because the inductive step verifies the implication~($*$) for all $k$, 
-that implication applied to the~$k=0$ case gives 
+numbers greater than or equal to~$i$: 
+that $S(i)$ is true, and~$S(i+1)$ is true, etc.
+
+For the example statement about odd numbers and squares, 
+the intuition behind the principle is first that the base step
+directly verifies the statement for~$n=0$.
+Then, because the inductive step verifies the implication~($*$) for all $k$, 
+that implication applied to~$k=0$ gives 
 that the statement is true for the case of the number~$n=1$. 
 Now, with the statement established for both $0$ and~$1$, 
 apply ($*$) again to conclude that the statement is true for the number~$n=2$.
-In this way, we bootstrap to all natural numbers~$n\geq 0$.
-Below is an example proof.
+In this way, induction bootstraps to all natural numbers~$n\geq 0$.
+Below is an induction argument for the example statement, 
+with separate paragraphs for the base step and the inductive step.
 
 \begin{proof}
   We show that $1+3+\cdots+(2n+1)=(n+1)^2$ by induction.
@@ -418,15 +425,27 @@ $(2^{k+1}-1)+2^{k+1}=2\cdot 2^{k+1}-1=2^{k+2}-1$, as required.
 \end{ex}
 
 \begin{ex}
-Prove by induction, for $a,b,r\in\R$.
+Prove by induction.
 \begin{exes}
-\item \notetext{Arithmetic Series}
+\item \notetext{Geometric Series} For all $r\in\R$ with $r\neq 1$ we have
+  $1+r+r^2+\cdots+r^n=(r^{n+1}-1)/(r-1)$.
+\item \notetext{Arithmetic Series} We have
   $b+(a+b)+(2a+b)+\cdots+(na+b)=(n(n+1)/2)\cdot a+(n+1)\cdot b$
-\item \notetext{Geometric Series}
-  $1+r+r^2+r^3+\cdots+r^n=(r^{n+1}-1)/(r-1)$ for $r\neq 1$
+  for all $a,b\in\R$.
 \end{exes}
 \begin{ans}
 \begin{exes}
+\item The $n=0$ base step has the single term~$1$ in the left summation and
+  $(r^1-1)/(r-1)$ on the right, and they are equal.
+
+  For the inductive step assume that the statement is true for 
+  $n=0$, \ldots, $n=k$.
+  The $n=k+1$ case is
+  $1+r+r^2+r^3+\cdots+r^k+r^{k+1}
+  =(r^{k+1}-1)/(r-1)+r^{k+1}
+  =[r^{k+1}-1+r^{k+1}(r-1)]/(r-1)
+  =[r\cdot r^{k+1}-1]/(r-1)
+  =(r^{k+2}-1)/(r-1)$ for $r\neq 1$.
 \item The base step is~$n=0$.
 The summation on the left has one term, $b$, 
 while the expression on the right is     
@@ -440,17 +459,6 @@ $b+(a+b)+(2a+b)+\cdots+(ka+b)+((k+1)a+b)
 =[(k+1)\cdot((k/2)+1)]\cdot a+[k+2]\cdot b
 =((k+1)(k+2)/2)\cdot a+(k+2)\cdot b$,
 as required. 
-\item The $n=0$ base step has the single term~$1$ in the left summation and
-  $(r^1-1)/(r-1)$ on the right, and they are equal.
-
-  For the inductive step assume that the statement is true for 
-  $n=0$, \ldots, $n=k$.
-  The $n=k+1$ case is
-  $1+r+r^2+r^3+\cdots+r^k+r^{k+1}
-  =(r^{k+1}-1)/(r-1)+r^{k+1}
-  =[r^{k+1}-1+r^{k+1}(r-1)]/(r-1)
-  =[r\cdot r^{k+1}-1]/(r-1)
-  =(r^{k+2}-1)/(r-1)$ for $r\neq 1$.
 \end{exes}
 \end{ans}
 \end{ex}
@@ -467,31 +475,11 @@ We have $k+1<2^k+1\leq 2^{k+1}$ (the second holds because $2^k<2^{k+1}$).
 \end{ex}
 
 \begin{ex}
-Prove that $n+1$-term sums of reals commute:
-$a_0+a_1+\cdots+a_n=a_n+\cdots+a_0$ for all $n\geq 1$,
-starting from the assumption that sums of two terms commute.
-\begin{ans}
-The $n=1$ base step is the commutativity assumption $a_0+a_1=a_1+a_0$.
-
-For the inductive step assume the statement is true for all 
-sums of~$n+1$ terms with 
-with $1\leq n\leq k$, and consider a sequence with $n=k+2$~terms.
-We have 
-$a_0+a_1+\cdots+a_k+a_{k+1}
-=(a_0+a_1+\cdots+a_k)+a_{k+1}
-=a_{k+1}+(a_0+a_1+\cdots+a_k)$ with the second equality coming from
-two-term commutativity.
-By the inductive hypothesis that is equal to 
-$a_{k+1}+(a_k+\cdots+a_0)=a_{k+1}+a_k+\cdots+a_0$.
-\end{ans}
-\end{ex}
-
-\begin{ex}
 Prove each by induction.
 \begin{exes}
-\item For all $n\in\N$, the number~$k^2+k$ is even.
+\item For all $n\in\N$, the number~$n^2+n$ is even.
 \item For all $n\geq 2$ the number $n^3-n$ is divisible by $6$.
-  \hint take the base case to be $n=2$.
+  \hint take the base case to be $i=2$.
 \item If $n\in\N$ then $4\divides 13^n-1$.
 \item If $n\in\N$ then
     $(1+\sfrac{1}{1})\cdot(1+\sfrac{1}{2})\,\cdots\,(1+\sfrac{1}{n})=n+1$.
@@ -550,10 +538,30 @@ Prove each by induction.
 \end{ex}
 
 \begin{ex}
+Prove that $n+1$-term sums of reals commute:
+$a_0+a_1+\cdots+a_n=a_n+\cdots+a_0$ for all $n\geq 1$,
+starting from the assumption that sum of two terms commutes.
+\begin{ans}
+The $n=1$ base step is the commutativity assumption $a_0+a_1=a_1+a_0$.
+
+For the inductive step assume the statement is true for all 
+sums of~$n+1$ terms with 
+with $1\leq n\leq k$, and consider a sequence with $n=k+2$~terms.
+We have 
+$a_0+a_1+\cdots+a_k+a_{k+1}
+=(a_0+a_1+\cdots+a_k)+a_{k+1}
+=a_{k+1}+(a_0+a_1+\cdots+a_k)$ with the second equality coming from
+two-term commutativity.
+By the inductive hypothesis that is equal to 
+$a_{k+1}+(a_k+\cdots+a_0)=a_{k+1}+a_k+\cdots+a_0$.
+\end{ans}
+\end{ex}
+
+\begin{ex}
 The sequence of \definend{Fibonacci numbers}
 $0,1,2,3,5,8,13, \ldots$ is defined by the condition that 
-the next number is the sum of the 
-two prior numbers $f_{n+1}=f_n+f_{n-1}$, subject to the initial conditions
+each succeeding number in the sequence is the sum of the 
+two numbers before it $f_{n+1}=f_n+f_{n-1}$, subject to the initial conditions
 $f_0=0$ and~$f_1=0$.
 What is wrong with this argument purporting to show that
 all Fibonacci numbers are even?
@@ -598,28 +606,6 @@ is a win for the second player.
 \end{ex}
 
 \begin{df}
-The \definend{Principle of Mathematical Induction} is that if a statement
-meets two conditions, first that 
-the base step that the statement is true for some
-initial number~$j\in\N$
-and second that the inductive step that for any $k\in\N$ 
-if the statement is true for 
-all natural numbers $n$ with $j\leq n\leq k$ then the
-statement is also true for~$n=k+1$,
-then the statement is true for all natural numbers greater than or
-equal to~$j$.  
-\end{df}
-
-\noindent (You may see the two reduced to a single condition that
-if the statement is true for all natural numbers~$n$ less than~$k$
-then the statement is also true for~$n=k$.
-This formulation covers the base step by folding it into the 
-implication because
-the `if' part\Dash that the statement is true for all numbers prior to
-the initial number\Dash is vacuously true.
-Here we retain the base step to be explicit.)
-
-\begin{df}
 The \definend{Least Number Principle} 
 (or \definend{Well-ordering Principle})
 is that any nonempty 
@@ -631,7 +617,7 @@ numbers has a least element.
 Show that the Principle of Induction implies the Least Number 
 Principle.
 \hint
-use induction to prove that if a set of natural numbers does not
+show by induction that if a set of natural numbers does not
 have a least element then that set is empty.
 \begin{ans}
 We shall use induction to prove for all $n\in\N$ that if a set~$A$ 
@@ -709,9 +695,9 @@ We do this argument in steps.
 \end{ans}
 \end{ex}
 
-% \noindent 
+\noindent 
 Observe that $r=0$ if and only if $b\divides a$. 
-Observe also that the definition only applies when the divisor is positive.
+Observe also that the divisor must be positive.
 
 \begin{df}
 Where $m>0$, the \definend{modulus} $a\bmod m$ 
