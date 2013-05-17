@@ -306,24 +306,24 @@ We now introduce it.
 We will start with exercises about sums 
 (but induction is not about sums;
 we use them only because they make the best initial exercises).
-For instance, most people have noticed that the odd natural numbers sum to 
-perfect squares: $1+3=4$, $1+3+5=9$, $1+3+5+7=16$, etc.,
-so we want to prove the statement
-``The sum $1+3+5+\cdots+2n+1$ equals $(n+1)^2$.'' 
+For example, most people have noticed that the odd natural numbers sum to 
+perfect squares: $1+3=4$, $1+3+5=9$, $1+3+5+7=16$, etc.
+We will prove the statement
+``The sum $1+3+5+\cdots+(2n+1)$ equals $(n+1)^2$.'' 
 
 That statement has a natural number variable~$n$ that is free, 
-meaning that if we set $n$ to be $0$, or~$1$, etc., then we get 
-a family of statements: $S(0)$, or~$S(1)$, 
+meaning that setting $n$ to be $0$, or~$1$, etc., gives 
+a family of cases: $S(0)$, or~$S(1)$, 
 etc.  
 For example, $S(1)$ says that $1+3$ equals $2^2$.
 Our induction proofs will all involve statements with one free 
 natural number variable.
 
-Those proofs will have two steps.
+These proofs will have two steps.
 For the \definend{base step} 
-we show that the statement holds for some intial~$i\in\N$.
-The second step, the \definend{inductive step}, is more subtle;
-we show that the following implication is true.
+we will show that the statement holds for some intial number~$i\in\N$.
+The \definend{inductive step} is more subtle;
+we will show that the following implication holds.
 \begin{equation*}
   \begin{tabular}{l} 
   \textit{If} the statement holds from the
@@ -340,8 +340,8 @@ that $S(i)$ is true, and~$S(i+1)$ is true, etc.
 
 For the example statement about odd numbers and squares, 
 the intuition behind the principle is first that the base step
-directly verifies the statement for~$n=0$.
-Then, because the inductive step verifies the implication~($*$) for all $k$, 
+directly verifies the statement for the case of the initial number~$n=0$.
+Then because the inductive step verifies the implication~($*$) for all $k$, 
 that implication applied to~$k=0$ gives 
 that the statement is true for the case of the number~$n=1$. 
 Now, with the statement established for both $0$ and~$1$, 
@@ -2499,14 +2499,15 @@ and graph.
 \noindent Thus a function associates each element~$d$ from the domain,
 called an \definend{argument} or~\definend{input},
 with an element~$c$ from the codomain, 
-called a~\definend{value} or~\definend{output}. 
+called a~\definend{value} or~\definend{output},
+subject to the condition that $d$ determines~$c$. 
 We write $f(d)=c$ and say that $c$ is the \definend{image} of $d$ 
 or that $d$ \definend{maps to}~$c$.
 
 A \definend{bean diagram} pictures the domain and 
 codomain as blobs and 
 either shows the function as a whole as a simple arrow   
-or shows the function's action on individual elements 
+or else shows the function's action on individual elements 
 with arrows that begin with a bar.
 \begin{center}
   \grf{asy/bean_fcn.pdf}{$\map{f}{D}{C}$}
@@ -2571,11 +2572,13 @@ there is no natural formula, they are just arbitrary pairings.
 
 \remark we often blur the distinction between a function and its graph;
 for instance we might say, ``a function is an input-output relationship'' 
-when really the pairing is the function's graph.
-(We've already blurred, in the paragraph following the definition.)
+when technically the pairing is the function's graph.
+(We've already done some blurring, in the sentence following the definition.)
 The distinction between function and graph
-is there only because the codomain is not determined
-by the graph so we must separately specify the codomain to define the function.
+is there only because the graph does not determine the codomain,
+so we must specify it separately.
+(The graph does determine the domain, so that information is  
+redundant.)
 
 \begin{ex}
 Let $D$ and $C$ be finite sets.
@@ -2673,7 +2676,7 @@ given by $x\mapsto x^2$:
 \end{ex}
 
 \begin{ex}
-Prove that $f^{-1}(A)$ is the union of the sets $f^{-1}(a)$ for all $a\in A$.
+Prove that $f^{-1}(A)$ is the union of the sets $f^{-1}(a)$, over all $a\in A$.
 \begin{ans}
 We have that, where $D$ is the domain, 
 $f^{-1}(A)=\setbuilder{d\in D}{f(d)\in A}$.
