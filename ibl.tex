@@ -2488,7 +2488,7 @@ Thus $A^0=B^0=\set{\sequence{}}$.
 A \definend{function}~$f$ (or \definend{map} or \definend{morphism}) 
 from \definend{domain} set~$D$
 to \definend{codomain} set~$C$, written $\map{f}{D}{C}$,
-consists of the two sets along with a \definend{graph}, 
+is a sequence consisting of the two sets along with a \definend{graph}, 
 a set of pairs $(d,c)\in D\times C$ that is 
 \definend{well-defined}: for each $d\in D$ there is
 exactly one $c\in C$ such that $(d,c)$ is an element of the graph. 
@@ -2566,19 +2566,19 @@ with arrows that begin with a bar.
 \end{ans}
 \end{ex}
 
-Do not think that a function must have a formula.
-The final item in the prior exercise has a formula but for other items 
-there is no natural formula, they are just arbitrary pairings.
-
-\remark we often blur the distinction between a function and its graph;
-for instance we might say, ``a function is an input-output relationship'' 
-when technically the pairing is the function's graph.
+\remark we often blur the distinction between a function and its graph.
+For instance we may say, ``a function is an input-output relationship'' 
+when technically it is the function's graph that is the pairing.
 (We've already done some blurring, in the sentence following the definition.)
 The distinction between function and graph
 is there only because the graph does not determine the codomain,
 so we must specify it separately.
-(The graph does determine the domain, so that information is  
+(The graph does determine the domain so that information is  
 redundant.)
+
+Do not think that a function must have a formula.
+The final item in the prior exercise has a formula but for other items 
+$G$ just has arbitrary pairings.
 
 \begin{ex}
 Let $D$ and $C$ be finite sets.
@@ -2676,7 +2676,7 @@ given by $x\mapsto x^2$:
 \end{ex}
 
 \begin{ex}
-Prove that $f^{-1}(A)$ is the union of the sets $f^{-1}(a)$, over all $a\in A$.
+Prove that $f^{-1}(A)$ is the union of the sets $f^{-1}(a)$ over all $a\in A$.
 \begin{ans}
 We have that, where $D$ is the domain, 
 $f^{-1}(A)=\setbuilder{d\in D}{f(d)\in A}$.
@@ -2790,7 +2790,7 @@ by the formula is~$\composed{f}{g}(x)=(3x+1)^2=9x^2+6x+1$.
 The definition of a function specifies that for every argument in the
 domain there is 
 exactly one associated value.
-That definition puts no such condition on the elements of the codomain.
+The definition puts no such condition on the elements of the codomain.
 
 \begin{df}
 A function is \definend{one-to-one} (or an \definend{injection}) 
