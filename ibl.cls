@@ -3,7 +3,7 @@
 % Jim Hefferon jhefferon (at) smcvt.edu
 % --- Class structure: identification part
 % ---
-\ProvidesClass{ibl}[2013/04/13 version 0.95 of Inquiry-based Learning book class (Jim Hefferon)]
+\ProvidesClass{ibl}[2013/04/13 version 0.99 of Inquiry-based Learning book class (Jim Hefferon)]
 \NeedsTeXFormat{LaTeX2e}
 
 % ========================================
@@ -238,7 +238,7 @@ qed=\qedsymbol
 \begin{center}
   \setlength{\unitlength}{1in}
   \newcommand{\enormoussize}{\fontsize{30pt}{20pt}\selectfont}
-  {\enormoussize\scshape \makebox[0em][l]{\raisebox{24pt}{\large\itshape \hspace*{15pt}An Inquiry-Based}}{\color{darkii}Introduction to Proof}}  \\[5pt]
+  {\enormoussize\scshape \makebox[0em][l]{\raisebox{24pt}{\large\itshape \hspace*{15pt}An Inquiry-Based}}{\color{darkii}Introduction to Proofs}}  \\[5pt]
   {\Large\scshape \makebox[23em][r]{\color{darkii}#1}}
 \end{center}
 \vspace*{\fill}

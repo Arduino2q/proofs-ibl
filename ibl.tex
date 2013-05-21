@@ -513,8 +513,8 @@ Prove each by induction.
   this case.
 
   \remark
-  This illustrates that 
-  sometimes when you have finish a proof by induction, 
+  this illustrates that 
+  sometimes when you have finished a proof by induction, 
   while you now are sure that the statement is true, 
   you can nonetheless be left with the sense
   that you are not sure really \emph{why} it is true.
@@ -562,7 +562,7 @@ The sequence of \definend{Fibonacci numbers}
 $0,1,2,3,5,8,13, \ldots$ is defined by the condition that 
 each succeeding number in the sequence is the sum of the 
 two numbers before it $f_{n+1}=f_n+f_{n-1}$, subject to the initial conditions
-$f_0=0$ and~$f_1=0$.
+$f_0=0$ and~$f_1=1$.
 What is wrong with this argument purporting to show that
 all Fibonacci numbers are even?
 ``The $n=0$ base case is clear.  For the inductive step, assume the statement 
@@ -3144,6 +3144,10 @@ Prove each.
 
 % .....................................
 \section{Relations}
+A function, or more precisely the function's graph, is a set of $n$~tuples
+subject to the condition that the input determines the output.
+The generalization that we get by dropping the condition is useful.  
+
 \begin{df}
 A \definend{relation} on sets $A_0$, \ldots, $A_{n-1}$ is a subset
 $R\subseteq A_0\times \cdots \times A_{n-1}$. 
@@ -3153,23 +3157,24 @@ then we say it is a relation on~$A$.
 The number of sets~$n$ is the \definend{arity} of the relation
 and we say it is \definend{$n$-ary}.
 If the arity is~$2$ then it is a \definend{binary relation}.
-In this case, where $R=\setbuilder{(x,y)}{\text{$x\in X$ and $y\in Y$}}$
-if $(x,y)\in R$ we say $x$ is~\definend{$R$-related} to~$y$,
-sometimes written $xRy$.
+In this case, where $(a_0,a_1)\in R$ we say 
+that $a_0$ is~\definend{$R$-related} to~$a_1$,
+sometimes written $a_0Ra_1$.
 \end{df}
 
 \begin{ex}
 List five elements of each relation:
 \begin{items}
-\item $\setbuilder{(x,y)\in \R^2}{x+2=y}$
-\item less-than $<$ as a binary relation on $\N$
+\item $\setbuilder{(x,y)\in \N^2}{\text{$x$ and ~$y$ have the same parity}}$
+\item less-than $<$, as a binary relation on $\N$
 \item $\setbuilder{(x,y,z)\in\N^3}{x^2+y^2=z^2}$
 \end{items}
 \begin{ans}
 \begin{items}
 \item Five pairs from the relation are
-  $\sequence{0,2}$, $\sequence{1,3}$, $\sequence{-1,1}$, $\sequence{1/2,5/2}$, 
-  and~$\sequence{\pi,\pi+2}$.    
+  $\sequence{0,2}$, $\sequence{1,3}$, $\sequence{1,1}$, 
+  $\sequence{0,4}$, 
+ and~$\sequence{1,101}$.    
 \item Five elements of this binary relation are 
   $\sequence{0,1}$, $\sequence{0,2}$, $\sequence{1,2}$, $\sequence{0,3}$,
   and~$\sequence{100,1001}$. 
@@ -3194,7 +3199,7 @@ List five elements of each relation:
   $R_f=\setbuilder{(x,y)\in D^2}{f(x)=f(y)}$
   is a binary relation.
   Where $f(x)=x^2$ with domain and codomain~$\R$,
-  list five elements. 
+  list five elements of $R_f$. 
 \end{exes}
 \begin{ans}
 \begin{exes}
