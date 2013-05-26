@@ -1184,12 +1184,13 @@ linear combination of the two:
 \end{ans}
 \end{ex}
 
-\begin{ex}\notetext{B\'ezout's Lemma}  Prove.  \label{ex:Bezout}
+\begin{ex} Prove.  \label{ex:Bezout}
 \begin{exes}
 \item Euclid's algorithm terminates.
 \item The greatest common divisors of two numbers is a linear combination of 
 the two.
-\item The greatest common divisor of two numbers is the smallest positive
+\item \notetext{B\'ezout's Lemma} 
+The greatest common divisor of two numbers is the smallest positive
 number that is a linear combination of the two.
 \end{exes}
 \begin{ans}
@@ -2185,7 +2186,7 @@ $\powerset(\emptyset)=\set{\emptyset}$.
 \end{ans}
 \end{ex}
 
-\begin{ex}  Let $S=\set{\emptyset,\set{\emptyset}}$. \pord.
+\begin{ex}  Let $A=\set{\emptyset,\set{\emptyset}}$. \pord.
 \begin{exes}
 \item $\emptyset\in\powerset(A)$, 
   $\emptyset\subseteq\powerset(A)$    
@@ -2202,27 +2203,27 @@ $\powerset(S)=\set{\emptyset, \set{\emptyset}, \set{\set{\emptyset}},
                    \set{\emptyset, \set{\emptyset}}}$.
 \begin{exes}
 \item The first is true by inspection, the empty set is the first element
-  of $\powerset(S)$ listed.
+  of $\powerset(A)$ listed.
 
   The second is true by the earlier result~\ref{ex:EmptySetUnique}
   that the empty set is a subset of all sets.
 \item Again the first is true by inspection, 
-  since one of the elements of $\powerset(S)$ is 
+  since one of the elements of $\powerset(A)$ is 
   $\set{\emptyset}$.  (It is listed second.)
 
   The second is true.
   To verify that one set is a subset of another we can check that for all
   elements~$x$ of that one, $x$ is also an element of the other.
   In this case the subset~$\set{\emptyset}$ has only one element to check,
-  and the first item above checks that it is an element of~$\powerset(S)$.
+  and the first item above checks that it is an element of~$\powerset(A)$.
 \item The first is true by inspection, since it is the element that is listed
   third.
 
   To verify the second,
-  that $\set{\set{\emptyset}}$ is a subset of~$\powerset(S)$
+  that $\set{\set{\emptyset}}$ is a subset of~$\powerset(A)$
   we can check that each of its elements are elements of the power set.
   It has only one element, namely~$\set{\emptyset}$.
-  That is indeed one of the elements of~$\powerset(S)$, as checked in 
+  That is indeed one of the elements of~$\powerset(A)$, as checked in 
   an item above. 
 \end{exes}
 \end{ans}
