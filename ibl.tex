@@ -264,13 +264,13 @@ Thus $b=\pm a$ and~$a=\pm b$.
 \end{ans}
 \end{ex}
 
-\begin{ex} \notetext{Linearity} \label{ex:DividesAndLinearCombinations}
+\begin{ex} \label{ex:DividesAndLinearCombinations}
 Suppose that $a,b,c\in\Z$.
 \begin{exes}
 \item Prove that if $a\divides b$ then $a\divides bc$ for all integers~$c$.
 \item Prove that if $a\divides b$ and $a\divides c$ then $a$ divides the 
   sum~$b+c$ and difference~$b-c$.
-\item Generalize.
+\item  \notetext{Linearity} Generalize the prior item.
 \end{exes}
 \begin{ans}
 \begin{exes}
@@ -299,14 +299,14 @@ Suppose that $a,b,c\in\Z$.
 \section{Interlude: induction}
 Results in the prior section need only proof techniques that are natural
 for people with a mathematical aptitude.
-However some results require a technique 
+However some results to follow require a technique 
 that is less natural, mathematical induction.
 We pause now to introduce it.
 
-We will start with exercises about sums 
-(but induction is not about sums;
-we use them only because they make the best initial exercises).
-For example, most people have noticed that the odd natural numbers sum to 
+We will start with exercises about summations 
+(but induction is not about summation;
+we use these only because they make the best initial exercises).
+For example, many people have noticed that the odd natural numbers sum to 
 perfect squares: $1+3=4$, $1+3+5=9$, $1+3+5+7=16$, etc.
 We will prove the statement
 ``The sum $1+3+5+\cdots+(2n+1)$ equals $(n+1)^2$.'' 
@@ -315,7 +315,7 @@ That statement has a natural number variable~$n$ that is free,
 meaning that setting $n$ to be $0$, or~$1$, etc., gives 
 a family of cases: $S(0)$, or~$S(1)$, 
 etc.  
-For example, $S(1)$ says that $1+3$ equals $2^2$.
+For instance, the statement $S(1)$ asserts that $1+3$ equals $2^2$.
 Our induction proofs will all involve statements with one free 
 natural number variable.
 
@@ -936,10 +936,9 @@ Prove.
 
 \begin{df}
 Two numbers are \definend{relatively prime} 
-(or \definend{coprime}) if their greatest common divisor is $1$.
+(or \definend{coprime}, sometimes denoted~$a\perp b$) if their 
+greatest common divisor is $1$.
 \end{df}
-
-\noindent Sometimes $\gcd(a,b)=1$ is denoted $a\perp b$.
 
 \begin{df}
 The \definend{least common multiple} of two numbers $\lcm(a,b)$ 
@@ -1789,9 +1788,10 @@ set of objects that are not elements of~$A$.
 working inside of a universal set makes the complement
 operation sensible. 
 For instance, in a number theory discussion where $\universalset=\Z$, 
-we can take the complement of the set of 
-objects that are less than~$100$ and get a subset of 
-$\universalset$, so we are still in a number theory discussion.
+if $A$ is the set of objects that are greater than~$100$ then we can
+take the complement of~$A$ and the result is another subset of 
+$\universalset$\Dash for instance, it does not contain~$\pi$\Dash so 
+we are still in a discussion of elementary number theory.
 
 \begin{df}
 Let $A$ and $B$ be sets.
@@ -2048,7 +2048,7 @@ the universal set is~$X$.
 \end{ans}
 \end{ex}
 
-\begin{ex}\notetext{DeMorgan's Laws}  Prove.
+\begin{ex}\notetext{De Morgan's Laws}  Prove.
 \begin{exes}
 \item 
   $\setcomp{A\intersection B}=\setcomp{A}\union\setcomp{B}$
@@ -2161,7 +2161,7 @@ For a finite set~$A$, the \definend{order} $|A|$ is the number of elements.
 % \end{ex}
 
 \begin{df}
-For a set~$A$ the \definend{power set} is $\powerset(A)$ is the set of all
+For a set~$A$ the \definend{power set} $\powerset(A)$ is the set of all
 subsets of~$A$.
 \end{df}
 
