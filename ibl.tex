@@ -1269,6 +1269,23 @@ number that is a linear combination of the two.
 \end{ans}
 \end{ex}
 
+\begin{ex}
+You are given three buckets. 
+The first two are marked $6$~liters and $11$~liters
+while the last one, which is quite large, is unmarked.
+Taking water from a nearby pond, use those buckets
+to end with $8$~liters in the unmarked one.  
+\begin{ans}
+The greatest common divisor of $6$ and~$11$ is~$1$.
+Reversing Euclid's algorithm gives $1=2\cdot 6-1\cdot 11$.
+So first fill the $6$~liter bucket and pour that into the $11$~liter bucket.
+Next fill the $6$~liter bucket again and pour what you can into the~$11$.
+You are left with $1$~liter in the small bucket.  
+Pour that into the large unmarked bucket.
+Repeat seven more times.    
+\end{ans}
+\end{ex}
+
 \begin{ex}  \label{ex:EuclidsLemma}
 Let $a,b\in\Z$ and $m\in\N$. 
 Prove each.
