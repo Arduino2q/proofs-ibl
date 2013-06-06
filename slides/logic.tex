@@ -104,17 +104,17 @@ A proposition consisting of the word \alert{and}
 between two sub-propositions is true if
 the two halves are true.
 
-``Both $3+1=4$ and 
-$3-1=2$''
-is true.
+`$3+1=4$ and 
+$3-1=2$'
+is true
 
-``Both $3+1=4$ and 
-$3-1=1$''
-is false.
+`$3+1=4$ and 
+$3-1=1$'
+is false
 
-``Both $3+1=5$ and 
-$3-1=2$''
-is false.
+`$3+1=5$ and 
+$3-1=2$'
+is false
 
 \pause
 \bigskip
@@ -122,25 +122,23 @@ A compound proposition constructed with \alert{or}
 between two sub-propositions is true if at least one half
 is true.
 
-``$2\cdot 2=4$ or 
-$2\cdot 2\neq 4$''
-is true.
+`$2\cdot 2=4$ or 
+$2\cdot 2\neq 4$'
+is true
 
-``$2\cdot 2=3$ or 
-$2\cdot 2\neq 4$''
-is false.
+`$2\cdot 2=3$ or 
+$2\cdot 2\neq 4$'
+is false
 
-``$2\cdot 2=4$ or 
-$3+1=4$''
-is true.
+`$2\cdot 2=4$ or 
+$3+1=4$'
+is true
 
 \bigskip
 \pause
 So
-\textit{and} and \textit{or}
-are also logical operators.
-Whereas \textit{not} is unary, 
-these two are binary operators.
+`and' and `or'
+are \alert{binary logical operators}.
 \end{frame}
 
 
@@ -151,7 +149,7 @@ these two are binary operators.
 \begin{frame}
   \frametitle{Truth Tables}
 
-Describe the action of operators with a \alert{truth table}. 
+Describe the action of operators with \alert{truth tables}. 
 \begin{center}
   \begin{tabular}[t]{c|c}
     $P$  &$\neg P$  \\ \hline
@@ -167,15 +165,17 @@ Describe the action of operators with a \alert{truth table}.
     $T$  &$T$  &$T$          &$T$  
   \end{tabular}
 \end{center}
-Write $\neg P$ for `\textit{not}~$P$', 
-$P\wedge Q$ for `$P$~\textit{and}~$Q$',
-and $P\vee Q$ for '$P$~\textit{or}~$Q$'.  
+Write $\neg P$ for `not~$P$', 
+$P\wedge Q$ for `$P$~and~$Q$',
+and $P\vee Q$ for '$P$~or~$Q$'.  
 
 \pause
-This notation allows formulas of a complexity that would be awkward in
+One advantage of this
+notation is that it allows formulas of a complexity that would be awkward in
 an English sentence. 
-For instance, an English sentence expressing 
-$(P\vee Q)\wedge \neg(P\wedge Q)$ is convoluted.
+For instance,
+$(P\vee Q)\wedge \neg(P\wedge Q)$ is hard to express in 
+English.
 \end{frame}
 
 
@@ -205,10 +205,10 @@ the left side of the tables the rows make the ascending binary numbers.
 In this context \textit{not}~$P$ is symbolized $\bar{P}$.
 Note that $\bar{P}=1-P$.
 
-The table makes clear why `$P$~\textit{and}~$Q$' is symbolized with a 
+The table makes clear why `$P$~and~$Q$' is symbolized with a 
 multiplication dot~$P\cdot Q$.
 
-For `$P$~\textit{or}~$Q$' the plus sign is the best symbol because 
+For `$P$~or~$Q$' the plus sign is the best symbol because 
 \textit{or} is accumulation of the truth value~$T$.
 \end{frame}
 
@@ -352,7 +352,7 @@ $T$ and $F$.
 %..........
 \begin{frame}
   \frametitle{Evaluating complex statements}
-  We can easily calculate how the output results 
+  We can calculate how the output results 
   depend on the values of the input variables.
   \pause
   Here is the input-output relationship for
@@ -364,8 +364,8 @@ $T$ and $F$.
       $F$  &$F$  &$T$  &$T$  &$T$  &$T$   \\
       $F$  &$T$  &$F$  &$T$  &$T$  &$T$   \\
       $F$  &$T$  &$T$  &$T$  &$T$  &$T$   \\
-      $T$  &$F$  &$F$  &$F$  &$F$  &$T$   \\
-      $T$  &$F$  &$T$  &$F$  &$T$  &$T$   \\
+      $T$  &$F$  &$F$  &$F$  &$F$  &$F$   \\
+      $T$  &$F$  &$T$  &$F$  &$T$  &$F$   \\
       $T$  &$T$  &$F$  &$T$  &$F$  &$F$   \\
       $T$  &$T$  &$T$  &$T$  &$T$  &$T$      
     \end{tabular}
@@ -386,7 +386,8 @@ $T$ and $F$.
   \pause
   Two propositional expressions are \alert{logically equivalent} if they
   give the same input-output relationship. 
-  Check that $E_0$ and~$E_1$ are equivalent by using truth tables to
+  Check that the expressions 
+  $E_0$ and~$E_1$ are equivalent by using truth tables to
   verify that  
   $E_0\leftrightarrow E_1$ is a tautology.  
 
@@ -450,22 +451,22 @@ $T$ and $F$.
   \end{tabular}
 \end{center}
 Consider
-``if Babe Ruth was president then life exists on other planets'' 
-or ``if life exists on other planets then life exists on earth.'' 
+`if Babe Ruth was president then life exists on other planets' 
+or `if Mallory reached the summit of Everest then life exists on earth.' 
 Our definition of implies takes both of these statements to be true, 
 the first because its antecedent is false 
 and the second because its consequent is true.
 Some people say that this violates their intuition and ask why we 
-adopt this definition. 
+adopt the definition. 
 
 \pause
-Standard mathematical practice defines implication to have 
+Standard mathematical practice defines implication so as to have 
 \begin{center}
   if $n$ is a perfect square then $n$ is not prime
 \end{center}
 be true for all $n\in\N$.  
 Take $x=6$ to get that $F\rightarrow T$ must evaluate to $T$.  
-Take $x=3$ to get that $F\rightarrow F$ yields $T$.
+Take $x=3$ to get that $F\rightarrow F$ should yield $T$.
 For $T\rightarrow T$ take $x=4$.
 \end{frame}
 % http://www.earlham.edu/~peters/courses/log/mat-imp.htm
@@ -487,8 +488,8 @@ For $T\rightarrow T$ take $x=4$.
 \pause
 \item If the antecedent~$P$ is false then the statement as a whole is true.
 \pause
-\item If the antecedent is true then the statement as a whole has the
-  truth value of the consequent.
+\item If the antecedent~$P$ is true then the statement as a whole has the
+  same truth value as the consequent.
 \pause
 \item If the consequent~$Q$ is true then the statement as a whole is true. 
 \pause
@@ -498,12 +499,12 @@ For $T\rightarrow T$ take $x=4$.
   and also equivalent to the \alert{contrapositive}~$\neg Q\rightarrow \neg P$.
 \pause
 \item 
-  On a table in front of you are placed four cards, 
+  On a table in front of you are four cards, 
   marked `A', `B', `0', and~`1'.
   You must verify the truth of the implication, 
-  ``if a card has a vowel on the one side 
-  then it has an even number on the other.''  
-  Which card or cards must you turn over?
+  `if a card has a vowel on the one side 
+  then it has an even number on the other.'  
+  How to do it, turning over the fewest cards?
 % \item In ``Fred is Mike's brother's son and therefore Fred is Mike's nephew'' 
 %   the statement ``Fred is Mike's nephew'' is a \textit{material consequence} 
 %   of ``Fred is Mike's brother's son'' but not a formal consequence. 
@@ -525,18 +526,18 @@ statement `if $n$ is odd then $n$ is a perfect square'.
 
 \pause
 It involves two clauses, `$n$ is odd' and `$n$ is square',
-whose truth values depend on the variable~$n$.
+for each of which the truth value depend on the variable.
 A \alert{predicate} is a truth-valued function.
-An example is the function~$\text{Odd}$ that takes integers as inputs and 
+An example is the function~$\text{Odd}$ that takes an integer as input and 
 yields either $T$ or~$F$, as in~$\text{Odd}(5)=T$.
-Another example is the function $\text{Square}$, as in $\text{Square}(5)=F$.
+Another example is $\text{Square}$, as in $\text{Square}(5)=F$.
 
 \pause
-Another point about that statement is that a mathematician would mean by it 
-that it holds for all~$n$.
+A mathematician who made that statement would mean that
+it holds for all~$n$.
 To make this explicit we need a
 \alert{quantifier} describing for how many values of the
-variable the implication must hold, in order for the statement as a whole to
+variable the implication must hold in order for the statement as a whole to
 be true.
 We denote `for all' by $\forall$.
 The other main quantifier is 
@@ -546,7 +547,7 @@ With these, the statement is
 $\forall n\in\N \big[\text{Odd}(n)\rightarrow\text{Square}(n)\big]$.
 \end{frame}
 \begin{frame}
-Examples of statements written formally.
+Examples of statements written with explicit quantifiers.
 
 \begin{itemize}
 \item Every number is divisible by $1$.
