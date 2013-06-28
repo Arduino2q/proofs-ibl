@@ -1615,7 +1615,7 @@ Prove each.
 \begin{df}
 A \definend{set} is a collection that is definite\Dash every 
 object either
-definitely belongs to the set or definitely does not.
+definitely is contained in the collection or definitely is not.
 An object~$x$ that belongs to a set~$A$ is an \definend{element}
 or \definend{member}
 of the set, written $x\in A$
@@ -1625,14 +1625,14 @@ Two sets are equal if and only if they have the same elements.
 \noindent Read `$\in$' as ``is an element of'' rather than ``in'' since the 
 latter causes confusion with 
 the subset relation defined below.
-We sometimes use ``collection'' as a synonym for set.
+We sometimes say ``collection'' as a synonym for set.
 
 We usually specify a set either by listing or by
 describing its elements.
 Thus we may write 
 the set of the primes less than ten either 
 as $P=\set{2, 3, 5, 7}$ 
-or as~$P=\setbuilder{p\in\N}{\text{$p<10$ and $p$ is prime}}$ 
+or as~$P=\setbuilder{p\in\N}{\text{$p$ is prime and $p<10$}}$ 
 (read the vertical bar as ``such that'').
 
 \begin{ex} Decide if each is true and justify your decision:
@@ -1663,7 +1663,7 @@ or as~$P=\setbuilder{p\in\N}{\text{$p<10$ and $p$ is prime}}$
 The set~$B$ is a \definend{subset} of the set~$A$
 if every element of $B$ is an element of~$A$,
 that is, if $x\in B$ implies that~$x\in A$.
-It is denoted $B\subseteq A$.
+This is denoted $B\subseteq A$.
 \end{df}
 
 \begin{df}
@@ -1721,7 +1721,7 @@ Prove, for all sets $A$.
 \end{ans}
 \end{ex}
 
-\begin{ex} \notetext{Properties of Subset} \label{ex:PropertiesOfSubset}
+\begin{ex}  \label{ex:PropertiesOfSubset}
 Prove, for any sets $A$, $B$, and~$C$.
 \begin{exes} 
 \item \notetext{Mutual Inclusion}
@@ -1757,13 +1757,13 @@ Prove, for any sets $A$, $B$, and~$C$.
 \end{ans}
 \end{ex}
 
-We will always work inside of a \definend{universal set}, 
+In this book we will always work inside of a \definend{universal set}, 
 denoted $\universalset$.
-For instance, the first chapter of this book is about number theory  
-so the universal set is~$\universalset=\Z$.
-In that context, if we describe considering 
-the set of things less than $100$ then 
-we are considering the set of integers less than $100$.
+For instance, in the first chapter on number theory  
+the universal set is~$\universalset=\Z$.
+There, if we say we are considering 
+the set of things less than~$100$ then 
+we are considering the set of integers less than~$100$.
 
 \begin{df}
 The \definend{characteristic function} of a set~$A$ is a map
@@ -1780,8 +1780,8 @@ consider the set of all sets that have themselves as elements and
 also the set of all sets that don't.
 Call the latter set~$D$.
 \begin{exes}
-\item Show that assuming $D$ contains itself leads to a contradiction.
-\item Show that assuming $D$ does not contain itself also leads to a
+\item Show that assuming $D$ is an element of itself leads to a contradiction.
+\item Show that assuming $D$ is not an element of itself also leads to a
 contradiction.  
 \end{exes}
 \begin{ans}
