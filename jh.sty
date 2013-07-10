@@ -83,21 +83,22 @@
 \newsavebox\myboxB
 \newlength\mylenA
 % Use like: |\xoverline{W}|~~|\xoverline{i}|~~|\xoverline[3.0]{i}|$
-\newcommand*\xoverline[2][0.75]{%
-    \sbox{\myboxA}{$\m@th#2$}%
-    \setbox\myboxB\null% Phantom box
-    \ht\myboxB=\ht\myboxA%
-    \dp\myboxB=\dp\myboxA%
-    \wd\myboxB=#1\wd\myboxA% Scale phantom
-    \sbox\myboxB{$\m@th\overline{\copy\myboxB}$}%  Overlined phantom
-    \setlength\mylenA{\the\wd\myboxA}%   calc width diff
-    \addtolength\mylenA{-\the\wd\myboxB}%
-    \ifdim\wd\myboxB<\wd\myboxA%
-       \rlap{\hskip 0.5\mylenA\usebox\myboxB}{\usebox\myboxA}%
-    \else
-        \hskip -0.5\mylenA\rlap{\usebox\myboxA}{\hskip 0.5\mylenA\usebox\myboxB}%
-    \fi}
-\renewcommand{\setcomp}[1]{\xoverline{#1}}
+% \newcommand*\xoverline[2][0.75]{%
+%     \sbox{\myboxA}{$\m@th#2$}%
+%     \setbox\myboxB\null% Phantom box
+%     \ht\myboxB=\ht\myboxA%
+%     \dp\myboxB=\dp\myboxA%
+%     \wd\myboxB=#1\wd\myboxA% Scale phantom
+%     \sbox\myboxB{$\m@th\overline{\copy\myboxB}$}%  Overlined phantom
+%     \setlength\mylenA{\the\wd\myboxA}%   calc width diff
+%     \addtolength\mylenA{-\the\wd\myboxB}%
+%     \ifdim\wd\myboxB<\wd\myboxA%
+%        \rlap{\hskip 0.5\mylenA\usebox\myboxB}{\usebox\myboxA}%
+%     \else
+%         \hskip -0.5\mylenA\rlap{\usebox\myboxA}{\hskip 0.5\mylenA\usebox\myboxB}%
+%     \fi}
+% \renewcommand{\setcomp}[1]{\xoverline{#1}} % if you change this back you may want to eliminate some parens, as in \setcomp{(A\union B)}.
+\renewcommand{\setcomp}[1]{{#1}^{\mspace{1mu}\mathsf{c}}}
 \newcommand{\charfcn}[1]{\raisebox{.1ex}{$\chi$}_{#1}} % looks too low, to me
 % \usepackage{bbm}
 % \newcommand{\charfcn}[1]{\mathbbm{1}_{#1}} 

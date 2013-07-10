@@ -1868,7 +1868,7 @@ For each item below, illustrate the statements using these sets.
 Then pick one item and prove it:
 \begin{items}
 \item the complement of the complement is the original set
-  $\setcomp{\setcomp{A}}=A$  
+  $\setcomp{(\setcomp{A})}=A$  
 \item $A\intersection\emptyset=\emptyset$ and $A\union\emptyset=A$  
 \item \notetext{Idempotence} $A\intersection A=A$ and $A\union A=A$    
 \item $A\intersection B\subseteq A\subseteq A\union B$  
@@ -1887,18 +1887,18 @@ Then pick one item and prove it:
   Then the complement of the complement is~$\setcomp{\setcomp{A}}=\set{2,3}$.
   
   The proof 
-  is by mutual inclusion, that both~$A\subseteq\setcomp{\setcomp{A}}$
-  and~$\setcomp{\setcomp{A}}\subseteq A$.
+  is by mutual inclusion, that both~$A\subseteq\setcomp{(\setcomp{A})}$
+  and~$\setcomp{(\setcomp{A})}\subseteq A$.
   For the first inclusion suppose that $a\in A$.
   By the definition of complement $a\notin\setcomp{A}$.
   Thus $a\in\setcomp{\setcomp{A}}$,
   and so $A\subseteq\setcomp{\setcomp{A}}$.
 
   Inclusion in the other direction is similar.
-  Suppose that $x\in\setcomp{\setcomp{A}}$.
+  Suppose that $x\in\setcomp{(\setcomp{A})}$.
   Then $x\notin\setcomp{A}$.
   By definition of the complement then $x\in\setcomp{A}$.
-  Thus $\setcomp{\setcomp{A}}\subseteq A$. 
+  Thus $\setcomp{(\setcomp{A})}\subseteq A$. 
 \item In the illustration $A=\set{2,3}$ so the collection of
   elements of~$\universalset$ that are members of either~$A$ or~$\emptyset$
   is~$\set{2,3}$.
@@ -2025,8 +2025,8 @@ The \definend{symmetric difference} is
 $A\symdiff B=(A-B)\union(B-A)$.
 \end{df}
 
-\noindent If $A\subseteq X$ then $X-A$ is the same as $\setcomp{A}$ where
-the universal set is~$X$.     
+\noindent If $A\subseteq X$ then $X-A$ is the same as $\setcomp{A}$
+where $X$ is the universal set $\universalset=X$.     
 
 % \begin{ex}
 % Draw the Venn diagram for difference and symmetric difference.  
@@ -2080,9 +2080,9 @@ the universal set is~$X$.
 \begin{ex}\notetext{De Morgan's Laws}  Prove.
 \begin{exes}
 \item 
-  $\setcomp{A\intersection B}=\setcomp{A}\union\setcomp{B}$
+  $\setcomp{(A\intersection B)}=\setcomp{A}\union\setcomp{B}$
   and
-  $\setcomp{A\union B}=\setcomp{A}\intersection\setcomp{B}$ 
+  $\setcomp{(A\union B)}=\setcomp{A}\intersection\setcomp{B}$ 
 \item \notetext{Distributivity} 
 $A\union (B\intersection C)=(A\union B)\intersection (A\union C)$
  and $A\intersection (B\union C)=(A\intersection B)\union (A\intersection C)$
@@ -2093,20 +2093,20 @@ $A\union (B\intersection C)=(A\union B)\intersection (A\union C)$
   satisfies that `not($P$ and $Q$)' has the same truth value as
   `not($P$) or not($Q$)'.)
 
-  We show  $\setcomp{A\intersection B}=\setcomp{A}\union\setcomp{B}$
+  We show  $\setcomp{(A\intersection B)}=\setcomp{A}\union\setcomp{B}$
   by mutual containment.
-  Suppose first that $x\in \setcomp{A\intersection B}$ so that
+  Suppose first that $x\in \setcomp{(A\intersection B)}$ so that
   $x\notin A\intersection B$.
   Then $x\notin A$ or $x\notin B$.
   and so $x\in \setcomp{A}\union\setcomp{B}$.
-  Thus $\setcomp{A\intersection B}\subseteq\setcomp{A}\union\setcomp{B}$.
+  Thus $\setcomp{(A\intersection B)}\subseteq\setcomp{A}\union\setcomp{B}$.
 
-  Now suppose that $x\in \setcomp{A}\union\setcomp{B}$.
+  Suppose now that $x\in \setcomp{A}\union\setcomp{B}$.
   Then $x\in\setcomp{A}$ or~$x\in\setcomp{B}$.
   Restated, that is $x\notin A$ or $x\notin B$,
-  which gives that $x\notin A\intersection B$ and
-  so $x\in\setcomp{A\intersection B}$.
-  Thus $\setcomp{A}\union\setcomp{B}\subseteq\setcomp{A\intersection B}$.
+  which gives that $x\notin (A\intersection B)$ and
+  so $x\in\setcomp{(A\intersection B)}$.
+  Thus $\setcomp{A}\union\setcomp{B}\subseteq\setcomp{(A\intersection B)}$.
   
   The other identity is similar.
 \item For $A\union (B\intersection C)=(A\union B)\intersection (A\union C)$
@@ -2460,7 +2460,7 @@ Thus $A^0=B^0=\set{\sequence{}}$.
 % \begin{exes}
 % \item Prove that $(A\union B)\times C=(A\times C)\union(B\times C)$
 % \item What happens for intersection?
-% \item Show that in general $\setcomp{A\times B}$ does not equal 
+% \item Show that in general $\setcomp{(A\times B)}$ does not equal 
 %   $\setcomp{A}\times\setcomp{B}$.
 % \end{exes}
 % \begin{ans}
@@ -2493,7 +2493,7 @@ Thus $A^0=B^0=\set{\sequence{}}$.
 %   $\sequence{x,c}\in (A\times C)\intersection (B\times C)$.
 % \item If the universal set is $\universalset=\Z$,
 %   $A=\set{0}$, and $B=\set{1}$ then $A\times B=\set{\sequence{0,1}}$,
-%   so $\setcomp{A\times B}=\Z^2-\set{\sequence{0,1}}$,
+%   so $\setcomp{(A\times B)}=\Z^2-\set{\sequence{0,1}}$,
 %   while $\setcomp{A}\times\setcomp{B}=(\Z-\set{0})\times(\Z-\set{1})$.
 %   The two sets are not equal. 
 %   For instance, $\sequence{0,2}\in \setcomp{A\times B}$
