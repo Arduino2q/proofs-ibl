@@ -2019,6 +2019,33 @@ Then pick one item and prove it:
 % \end{ans}
 % \end{ex}
 
+\begin{ex} Prove that the following are equivalent:
+(i)~$A\subseteq B$,
+(ii)~$A\union B=B$,    
+and (iii)~$A\intersection B=A$.
+\begin{ans}
+One way to prove this is to 
+show that (i) holds iff (ii)~holds, and also show that (i) holds iff~(iii) 
+holds.
+The second is very like the first so here we only show the first.
+
+The first equivalence has two directions.
+For the first direction assume that $A\subseteq B$. 
+To check that $A\union B=B$ we need to check mutual inclusion.
+One of those inclusions, that $B\subseteq A\union B$, holds by the definition 
+of union so we only need  $A\union B\subseteq B$.
+Let $x$~be an element of $A\union B$.
+There are two cases, that $x\in A$ or that $x\in B$, and in both cases
+we must verify that $x\in B$.
+The $x\in B$ verification is trivial and the other is 
+immediate from the $A\subseteq B$ assumption.
+
+To get the first equivalence's other direction assume that $A\union B=B$.
+With this, for any $x\in A$ we have that $x\in A\union B$ and so $x\in B$.
+Thus $x\in A$ implies $x\in B$, which is the definition of $A\subseteq B$.
+\end{ans}
+\end{ex}
+
 \begin{df}
 The \definend{difference} of two sets is $A-B=\setbuilder{x\in A}{x\notin B}$.  
 The \definend{symmetric difference} is 
