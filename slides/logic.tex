@@ -440,7 +440,7 @@ $T$ and $F$.
 
 %..........
 \begin{frame}
-  \frametitle{Note on the definition of implication}
+  \frametitle{Non-obvious lines in the implication table}
 \begin{center}
   \begin{tabular}{cc|c}
     $P$  &$Q$  &$P \rightarrow Q$  \\ \hline
@@ -451,26 +451,28 @@ $T$ and $F$.
   \end{tabular}
 \end{center}
 Consider
-`if Babe Ruth was president then life exists on other planets' 
-or `if Mallory reached the summit of Everest then life exists on earth.' 
-Our definition of implies takes both of these statements to be true, 
-the first because its antecedent is false 
-and the second because its consequent is true.
-Some people say that this violates their intuition and ask why we 
-adopt the definition. 
+`if Babe Ruth was president then life exists on other planets'. 
+Our definition of implies takes it to be a true statement, 
+because its antecedent is false.
+\pause 
+Now consider 
+`if Mallory reached the summit of Everest then life exists on earth.' 
+We take this to be true because its consequent is true.
+\pause
+Why define implication this way?
 
 \pause
-Standard mathematical practice defines implication so as to have 
+Standard mathematical practice defines implication so that
 \begin{center}
   if $n$ is a perfect square then $n$ is not prime
 \end{center}
-be true for all $n\in\N$.  
-Take $x=6$ to get that $F\rightarrow T$ must evaluate to $T$.  
-Take $x=3$ to get that $F\rightarrow F$ should yield $T$.
-For $T\rightarrow T$ take $x=4$.
+is true for all $n\in\N$.
+\pause  Take $n=6$ to get that $F\rightarrow T$ must evaluate to $T$.  
+\pause Take $n=3$ to get that $F\rightarrow F$ should yield $T$.
+\pause For $T\rightarrow T$ take $n=4$.
 \end{frame}
 % http://www.earlham.edu/~peters/courses/log/mat-imp.htm
-\begin{frame}
+\begin{frame}\vspace*{-1ex}
 \frametitle{Points about implication}
 \begin{center}
   \begin{tabular}{cc|c}
@@ -482,16 +484,17 @@ For $T\rightarrow T$ take $x=4$.
   \end{tabular}
 \end{center}
 \begin{itemize}
-\item The antecedent~$P$ need not be materially connected to the 
-  consequent~$Q$; 
-  we saw that on the prior slide.
+\item As noted on the prior slide, 
+  the antecedent~$P$ need not be materially connected to the 
+  consequent~$Q$.
 \pause
-\item If the antecedent~$P$ is false then the statement as a whole is true.
-\pause
-\item If the antecedent~$P$ is true then the statement as a whole has the
-  same truth value as the consequent.
-\pause
-\item If the consequent~$Q$ is true then the statement as a whole is true. 
+\item Also noted there are:
+  (1) if the antecedent~$P$ is false then the statement as a whole is true; 
+  said to be \alert{vacuously true}
+  and (2) if the consequent~$Q$ is true then the statement as a whole is true.
+% \pause 
+% \item If the antecedent~$P$ is true then the statement as a whole has the
+%   same truth value as the consequent.
 \pause
 \item Truth tables show that $P\rightarrow Q$
   is equivalent to $\neg(P\wedge \neg Q)$, 
@@ -513,38 +516,43 @@ For $T\rightarrow T$ take $x=4$.
 %   the premise and conclusion, including the meanings of `brother', `son', 
 %   and `nephew', rather than on the logical form of the argument.
 \end{itemize}
-
-
 \end{frame}
 % See http://www.cs.cornell.edu/Info/People/gries/symposium/clarke.htm
 
 
 \begin{frame}
 \frametitle{Predicates, Quantifiers}
-Consider the mathematical
-statement `if $n$ is odd then $n$ is a perfect square'.
-
+Consider this statement. 
+\begin{equation*}
+  \text{`if $n$ is odd then $n$ is a perfect square'}
+  \tag{$*$}
+\end{equation*}
 \pause
 It involves two clauses, `$n$ is odd' and `$n$ is square',
-for each of which the truth value depend on the variable.
+and for both the truth value depend on the variable.
 A \alert{predicate} is a truth-valued function.
 An example is the function~$\text{Odd}$ that takes an integer as input and 
 yields either $T$ or~$F$, as in~$\text{Odd}(5)=T$.
 Another example is $\text{Square}$, as in $\text{Square}(5)=F$.
 
 \pause
-A mathematician who made that statement would mean that
+A mathematician asserting~($*$) would mean that
 it holds for all~$n$.
-To make this explicit we need a
-\alert{quantifier} describing for how many values of the
-variable the implication must hold in order for the statement as a whole to
-be true.
-We denote `for all' by $\forall$.
-The other main quantifier is 
-`there exists', denoted $\exists$.
-
-With these, the statement is 
+We denote `for all' by $\forall$ so the statement is formally written
 $\forall n\in\N \big[\text{Odd}(n)\rightarrow\text{Square}(n)\big]$.
+(It is, of course a false statement.)
+
+\pause
+A
+\alert{quantifier} describes for how many values of the
+variable the clause must be true, in order for the statement as a whole to
+be true.
+Besudes `for all' 
+the other common quantifier is 
+`there exists', denoted $\exists$.
+The statement
+$\exists n\in\N \big[\text{Odd}(n)\rightarrow\text{Square}(n)\big]$
+is true.
 \end{frame}
 \begin{frame}
 Examples of statements written with explicit quantifiers.
