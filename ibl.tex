@@ -79,22 +79,24 @@ but ``Does $2/5$?''\spacefactor=1000\ is not sensible.
 \begin{ans}
 \begin{exes}
 \item If $n\in\Z$ is even then $n=2k$ for some $k\in\Z$.
-Then $-n=-(2k)=2\cdot(-k)$ shows that the negative is also even.
-\item Let $n$ be an integer and suppose that its negative~$-n$ is even.
-Since the negative of $-n$ is $n$, the prior item shows that $n$ is even.
-That is, $n$ is even if and only if $-n$ is even.
-Thus if $n$ is not even then $-n$ is also not even.
+  Then $-n=2\cdot(-k)$ shows that the negative is also even.
+\item With the prior item in mind we first show that a number is even
+  if and only if its negative is even. 
+  Suppose that a number $n\in\Z$ has a negative $-n$ that is even.
+  Since the negative of $-n$ is~$n$, the prior item shows that $n$ is even.
+  Thus $n$ is even if and only if $-n$ is even, and therefore
+  if $n$ is not even then $-n$ is also not even.
 \item Assume that $d\divides a$ for $d,a\in\Z$, so that 
-$a=dk$ for some~$k\in\Z$.
-For the first, that $-d\divides a$, observe that
-$a=(-d)\cdot(-k)$.
-For the second, observe that $-a=d\cdot(-k)$.
+  $a=dk$ for some~$k\in\Z$.
+  For the first, that $-d\divides a$, observe that
+  $a=(-d)\cdot(-k)$.
+  For the second, observe that $-a=d\cdot(-k)$.
 \item Let $d\divides a$.
-For the $a\geq 0$ case, the implication that if $d\divides a$ then $d\divides a$
-is trivial.
-For the $a<0$ case, 
-the implication that if $d\divides a$ then $d\divides -a$ was
-proved in the prior item.
+  For the $a\geq 0$ case, the implication that if $d\divides a$ then 
+  $d\divides a$ is trivial.
+  For the $a<0$ case, 
+  the implication that if $d\divides a$ then $d\divides -a$ was
+  proved in the prior item.
 \end{exes}
 \end{ans}
 \end{ex}
@@ -111,41 +113,40 @@ The difference of two odds is odd.
 \begin{ans}
 \begin{exes}
 \item Let $a,b\in\Z$ be even so that $a=2m$ and~$b=2n$ for some $m,n\in\Z$.
-Then $a+b=2m+2n=2(m+n)$ is even,
-and $a-b=2m-2n=2(m-n)$ is even.
+  Then $a+b=2m+2n=2(m+n)$ is even, and $a-b=2m-2n=2(m-n)$ is even.
 \item Both statements are false: for instance $1$ and~$3$ are odd
-but both $1+3$ and~$1-3$ are even.
+  but both $1+3$ and~$1-3$ are even.
 \item A reasonable generalization is that for any $d\in\Z$
   the sum and difference of multiples of~$d$ is again a multiple of~$d$.
  
-For a proof
-let $a,b\in\Z$ be multiples of~$d$ so that $a=dm$ and~$b=dn$ 
-for some $m,n\in\Z$.
-Then $a+b=dm+dn=d(m+n)$ is a multiple of~$d$
-and $a-b=dm-dn=d(m-n)$ is multiple of~$d$.
+  For a proof
+  let $a,b\in\Z$ be multiples of~$d$ so that $a=dm$ and~$b=dn$ 
+  for some $m,n\in\Z$.
+  Then $a+b=dm+dn=d(m+n)$ is a multiple of~$d$
+  and $a-b=dm-dn=d(m-n)$ is multiple of~$d$.
 \end{exes}
 \end{ans}
 \end{ex}
 
-\begin{ex}
-Find a counterexample to:
-where $a,b\in\N$, the number $a+b$ is even if and only if $a-b$ is even.
-Patch the statement\Dash that is, alter it slightly\Dash to make it true.
-\begin{ans}
-One counterexample is to take the numbers $1,3\in\N$, since the difference
-$1-3$ does not have a defined value on the natural numbers.  
-The patch is to change the $\N$ to~$\Z$:
-where $a,b\in\Z$, 
-the number $a+b$ is even if and only if $a-b$ is even.
+% \begin{ex}
+% Find a counterexample to:
+% where $a,b\in\N$, the number $a+b$ is even if and only if $a-b$ is even.
+% Patch the statement\Dash that is, alter it slightly\Dash to make it true.
+% \begin{ans}
+% One counterexample is to take the numbers $1,3\in\N$, since the difference
+% $1-3$ does not have a defined value on the natural numbers.  
+% The patch is to change the $\N$ to~$\Z$:
+% where $a,b\in\Z$, 
+% the number $a+b$ is even if and only if $a-b$ is even.
 
-For a proof of the patched statement suppose that $a,b\in\Z$.
-Then $a+b$ is even if and only if 
-$a+b=2k$ for some $k\in\Z$,
-which is true if and only if
-$a-b=a+b-2b=2k-2b=2(k-b)$,
-which holds if and only if~$a-b$ is even. 
-\end{ans}
-\end{ex}
+% For a proof of the patched statement suppose that $a,b\in\Z$.
+% Then $a+b$ is even if and only if 
+% $a+b=2k$ for some $k\in\Z$,
+% which is true if and only if
+% $a-b=a+b-2b=2k-2b=2(k-b)$,
+% which holds if and only if~$a-b$ is even. 
+% \end{ans}
+% \end{ex}
 
 \begin{ex}[Interaction of parity and multiplication]
 \pord.
@@ -157,26 +158,26 @@ which holds if and only if~$a-b$ is even.
 \begin{ans}
 \begin{exes}
 \item Let $a,b\in\Z$ be even
-so that $a=2m$ and~$b=2n$ for some $m,n\in\Z$.
-Then $ab=2m\cdot 2n=2(m\cdot 2n)$ is even.
+  so that $a=2m$ and~$b=2n$ for some $m,n\in\Z$.
+  Then $ab=2m\cdot 2n=2(m\cdot 2n)$ is even.
 \item This is false since both $6$ and~$2$ are even but the quotient $6/2$
-is not even.
+  is not even.
 \item The first item can generalize to: for any~$din\N$, 
-the product of two multiples of~$d$ is a multiple of~$d$.
+  the product of two multiples of~$d$ is a multiple of~$d$.
 
-For the proof,  let $a,b\in\Z$ be multiples of~$d$
-so that $a=dm$ and~$b=dn$ for some $m,n\in\Z$.
-Then $ab=dm\cdot dn=d(m\cdot dn)$ is a multiple of~$d$.
+  For the proof,  let $a,b\in\Z$ be multiples of~$d$
+  so that $a=dm$ and~$b=dn$ for some $m,n\in\Z$.
+  Then $ab=dm\cdot dn=d(m\cdot dn)$ is a multiple of~$d$.
 
-(The first item can also generalize to: a product of two multiples of
-$d$ is a multiple of~$d^2$.)
+  (The first item can also generalize to: a product of two multiples of
+  $d$ is a multiple of~$d^2$.)
 \end{exes}
 \end{ans}
 \end{ex}
 
 \begin{ex}[Divisibility Properties] \label{ex:DivisibilityProperties}
 Let $d$, $m$, and $n$ be integers.
-Prove each.
+Prove each statement.
 \begin{exes}
 \item \notetext{Reflexivity} Every number divides itself.
 \item Every number divides $0$ while
