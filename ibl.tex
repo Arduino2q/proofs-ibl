@@ -185,8 +185,9 @@ Prove each statement.
 \item \notetext{Transitivity} If $d\divides n$ and $n\divides m$ 
    then $d\divides m$.
 \item \notetext{Cancellation} 
-  For $d,n\in\Z$ we have $d\divides n$ if and only if 
-  $ad\divides an$ for any~$a\in\Z$ with $a\neq 0$.
+  For $d,n\in\Z$, if for some nonzero integer~$a$ we have that $ad\divides an$ 
+  then $d\divides n$.
+  Conversely, if $d\divides n$ then $ad\divides an$ for all~$a\in\Z$.
 \item \notetext{Comparison} 
   For $d,n\in\Z^+$, if $n$ is a multiple of~$d$ then $n\geq d$.
 \item Every number is divisible by $1$.
@@ -206,12 +207,13 @@ Prove each statement.
   Substitute to get $m=(di)\cdot j=d\cdot(ij)$, which shows that
   $d$ divides~$m$.
 \item Fix~$d,n\in\Z$.
-  If $d\divides n$ then $n=dk$ for some $k\in\Z$ and so for any~$a\in\Z$
-  we have $an=adk$, which shows that $ad\divides an$.
-  For the other implication, if $a\in\Z$ is such that $a\neq 0$ and
-  $ad\divides an$ then $an=adk$ for some  $k$.
-  Since $a\neq 0$ we can multiply by $1/a$ to get $n=dk$, and therefore
+  First suppose that $ad\divides an$ for some $a\in\Z$ such that $a\neq 0$. 
+  Then $an=adk$ for some $k\in\Z$ and
+  since $a\neq 0$ we can multiply by $1/a$ to get $n=dk$, giving 
   $d\divides n$.
+  For the converse, 
+  if $d\divides n$ then $n=dk$ for some $k\in\Z$ and for all~$a\in\Z$
+  we have $an=adk$, which shows that $ad\divides an$.
 \item Assume $d,n\in\Z^+$.
   Because $n$ is a multiple of $d$ we have that $n=dk$ for some $k\in\Z$.
   Note that $k\geq 1$ since otherwise $n\leq 0$ but $n$ is given as positive.  
@@ -304,14 +306,14 @@ Results in the prior section need only proof techniques that are natural
 for people with a mathematical aptitude.
 However some results to follow require a technique 
 that is less natural, mathematical induction.
-We pause now to introduce it.
+This section is a pause for an introduction to induction.
 
 We will start with exercises about summations 
-(but induction is not about summation;
-we use these only because they make the best initial exercises).
+(note, though, that induction is not about summation;
+we use these only because they make helpful initial exercises).
 For example, many people have noticed that the odd natural numbers sum to 
 perfect squares: $1+3=4$, $1+3+5=9$, $1+3+5+7=16$, etc.
-We will prove the statement
+We will prove the statement,
 ``The sum $1+3+5+\cdots+(2n+1)$ equals $(n+1)^2$.'' 
 
 That statement has a natural number variable~$n$ that is free, 
@@ -322,7 +324,7 @@ For instance, the statement $S(1)$ asserts that $1+3$ equals $2^2$.
 Our induction proofs will all involve statements with one free 
 natural number variable.
 
-These proofs will have two steps.
+These proofs have two steps.
 For the \definend{base step} 
 we will show that the statement holds for some intial number~$i\in\N$.
 The \definend{inductive step} is more subtle;
@@ -482,7 +484,7 @@ Prove each by induction.
 \begin{exes}
 \item For all $n\in\N$, the number~$n^2+n$ is even.
 \item For all $n\geq 2$ the number $n^3-n$ is divisible by $6$.
-  \hint take the base case to be $i=2$.
+  \hint take the base case to be $2$.
 \item If $n\in\N$ then $4\divides 13^n-1$.
 \item If $n\in\N$ then
     $(1+\sfrac{1}{1})\cdot(1+\sfrac{1}{2})\,\cdots\,(1+\sfrac{1}{n})=n+1$.
