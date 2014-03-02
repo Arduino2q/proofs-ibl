@@ -1,8 +1,8 @@
 % One and only one of the next two lines should be uncommented
-\documentclass{ibl}  % for making book
+\documentclass{test}  % for making book
 % \documentclass[compact]{ibl}  % for making handout for students
 
-\usepackage{ibltext} % for the text only; answers-only is another .sty
+\usepackage{testtext} % for the text only; answers-only is another .sty
 
 \usepackage{etoolbox}
 \usepackage{comment}
@@ -22,6 +22,13 @@
 \coverpage{}
 \include{flyleaf}
 \ifbool{optioncompact}{}{\include{preface}}
+
+% \begin{exercise}
+  
+% \end{exercise}
+% \begin{answer}
+  
+% \end{answer}
 
 
 \mainmatter
@@ -64,91 +71,204 @@ It is different than the fraction $d/n$, which is a number.
 We can sensibly ask ``Does $2$ divide~$5$?''\spacefactor=1000\
 but ``Does $2/5$?''\spacefactor=1000\ is not sensible.   
 
-\begin{ex}[Interaction of parity and sign] 
+\begin{problem} \notetext{Interaction of parity and sign} 
 \label{ex:InteractionOfParityWithSign}
 \pord.
 \begin{exes}
-\item If a number is even then its negative is even.
-\item If a number is odd then its negative is odd.
-\item If $d\divides a$ then $-d\divides a$ and $d\divides -a$.
-\item If $d\divides a$ then $d\divides\absval{a}$.
-  (Recall that the absolute value  $\absval{a}$ of a number is~$a$ 
-  if $a\geq 0$ and is~$-a$ if $a<0$.)
-
+  \begin{exercise}
+    If a number is even then its negative is even.
+  \end{exercise}
+  \begin{answer}
+    If $n\in\Z$ is even then $n=2k$ for some $k\in\Z$.
+    Then $-n=2\cdot(-k)$ shows that the negative is also even.  
+  \end{answer}
+  \begin{exercise}
+    If a number is odd then its negative is odd.
+  \end{exercise}
+  \begin{answer}
+    With the prior item in mind we first show that a number is even
+    if and only if its negative is even.
+    Suppose that a number $n\in\Z$ has a negative $-n$ that is even.
+    Since the negative of $-n$ is~$n$, the prior item shows that $n$ is even.
+    Thus $n$ is even if and only if $-n$ is even, and therefore
+    if $n$ is not even then $-n$ is also not even.
+  \end{answer}
+  \begin{exercise}
+    If $d\divides a$ then $-d\divides a$ and $d\divides -a$.
+  \end{exercise}
+  \begin{answer}
+    Assume that $d\divides a$ for $d,a\in\Z$, so that 
+    $a=dk$ for some~$k\in\Z$.
+    For the first, that $-d\divides a$, observe that
+    $a=(-d)\cdot(-k)$.
+    For the second, observe that $-a=d\cdot(-k)$.
+  \end{answer}
+  \begin{exercise}
+    If $d\divides a$ then $d\divides\absval{a}$.
+    (Recall that the absolute value  $\absval{a}$ of a number is~$a$ 
+    if $a\geq 0$ and is~$-a$ if $a<0$.)
+  \end{exercise}
+  \begin{answer}
+    Suppose that $d\divides a$.
+    For the $a\geq 0$ case, the implication that if $d\divides a$ then 
+    $d\divides a$ is trivial.
+    For the $a<0$ case, 
+    the implication that if $d\divides a$ then $d\divides -a$ was
+    proved in the prior item.    
+  \end{answer}
 \end{exes}  
-\begin{ans}
-\begin{exes}
-\item If $n\in\Z$ is even then $n=2k$ for some $k\in\Z$.
-  Then $-n=2\cdot(-k)$ shows that the negative is also even.
-\item With the prior item in mind we first show that a number is even
-  if and only if its negative is even. 
-  Suppose that a number $n\in\Z$ has a negative $-n$ that is even.
-  Since the negative of $-n$ is~$n$, the prior item shows that $n$ is even.
-  Thus $n$ is even if and only if $-n$ is even, and therefore
-  if $n$ is not even then $-n$ is also not even.
-\item Assume that $d\divides a$ for $d,a\in\Z$, so that 
-  $a=dk$ for some~$k\in\Z$.
-  For the first, that $-d\divides a$, observe that
-  $a=(-d)\cdot(-k)$.
-  For the second, observe that $-a=d\cdot(-k)$.
-\item Let $d\divides a$.
-  For the $a\geq 0$ case, the implication that if $d\divides a$ then 
-  $d\divides a$ is trivial.
-  For the $a<0$ case, 
-  the implication that if $d\divides a$ then $d\divides -a$ was
-  proved in the prior item.
-\end{exes}
-\end{ans}
-\end{ex}
+\end{problem}
 
-\begin{ex}[Interaction of parity and addition]
+% \begin{problem}[4] \notetext{Interaction of parity and sign} 
+% \label{ex:InteractionOfParityWithSign}
+% \pord.
+% \begin{exes}
+% \begin{exercise}
+%   If a number is even then its negative is even. XXX 
+% \end{exercise}
+% \begin{answer}
+%   If $n\in\Z$ is even then $n=2k$ for some $k\in\Z$.
+%   Then $-n=2\cdot(-k)$ shows that the negative is also even.  
+% \end{answer}
+
+% \begin{exercise}
+%   If a number is odd then its negative is odd.  
+% \end{exercise}
+% \begin{answer}
+%   With the prior item in mind we first show that a number is even
+%   if and only if its negative is even. 
+%   Suppose that a number $n\in\Z$ has a negative $-n$ that is even.
+%   Since the negative of $-n$ is~$n$, the prior item shows that $n$ is even.
+%   Thus $n$ is even if and only if $-n$ is even, and therefore
+%   if $n$ is not even then $-n$ is also not even.  
+% \end{answer}
+
+% \begin{exercise}
+%   If $d\divides a$ then $-d\divides a$ and $d\divides -a$.  
+% \end{exercise}
+% \begin{answer}
+%   Assume that $d\divides a$ for $d,a\in\Z$, so that 
+%   $a=dk$ for some~$k\in\Z$.
+%   For the first, that $-d\divides a$, observe that
+%   $a=(-d)\cdot(-k)$.
+%   For the second, observe that $-a=d\cdot(-k)$.  
+% \end{answer}
+
+% \begin{exercise}[2]
+%   If $d\divides a$ then $d\divides\absval{a}$.
+%   (fThe absolute value  $\absval{a}$ of a number is~$a$ 
+%   if $a\geq 0$ and is~$-a$ if $a<0$.)  
+% \end{exercise}
+% \begin{answer}
+%   Let $d\divides a$.
+%   For the $a\geq 0$ case, the implication that if $d\divides a$ then 
+%   $d\divides a$ is trivial.
+%   For the $a<0$ case, 
+%   the implication that if $d\divides a$ then $d\divides -a$ was
+%   proved in the prior item.  
+% \end{answer}
+% \end{exes}
+% \end{problem}
+
+\begin{problem} \notetext{Interaction of parity and addition}
 \pord.
 \begin{exes}
-\item The sum of two evens is even.
-  The difference of two evens is even.
-\item The sum of two odds is odd. 
-The difference of two odds is odd.
-\item Where $a,b\in\Z$, the number $a+b$ is even if and only if $a-b$ is even.
-\item Generalize the first item to arbitrary divisors~$d$.
-\end{exes}  
-\begin{ans}
-\begin{exes}
-\item Let $a,b\in\Z$ be even so that $a=2m$ and~$b=2n$ for some $m,n\in\Z$.
-  Then $a+b=2m+2n=2(m+n)$ is even, and $a-b=2m-2n=2(m-n)$ is even.
-\item Both statements are false: for instance $1$ and~$3$ are odd
-  but both $1+3$ and~$1-3$ are even.
-\item First suppose that the sum is even, so $a+b=2k$ for some $k\in\Z$.
+\begin{exercise}
+  The sum of two evens is even.
+  The difference of two evens is even.  
+\end{exercise}
+\begin{answer}
+  Let $a,b\in\Z$ be even so that $a=2m$ and~$b=2n$ for some $m,n\in\Z$.
+  Then $a+b=2m+2n=2(m+n)$ is even, and $a-b=2m-2n=2(m-n)$ is even.  
+\end{answer}
+
+\begin{exercise}
+  The sum of two odds is odd. 
+  The difference of two odds is odd.  
+\end{exercise}
+\begin{answer}
+  Both statements are false: for instance $1$ and~$3$ are odd
+  but both $1+3$ and~$1-3$ are even.  
+\end{answer}
+
+\begin{exercise}
+  Where $a,b\in\Z$, the number $a+b$ is even if and only if $a-b$ is even.
+\end{exercise}
+\begin{answer}
+  First suppose that the sum is even, so $a+b=2k$ for some $k\in\Z$.
   Then $a-b=a+b-2b=2k-2b=2(k-b)$ is even.
 
   The other half is similar:
-  if $a-b=2m$ for $m\in\Z$ then $a+b=a-b+2b=2k+2b$ is even.
-\item A reasonable generalization is that for any $d\in\Z$
+  if $a-b=2m$ for $m\in\Z$ then $a+b=a-b+2b=2k+2b$ is even.  
+\end{answer}
+
+\begin{exercise}
+  Generalize the first item to arbitrary divisors~$d$.
+\end{exercise}
+\begin{answer}
+  A reasonable generalization is that for any $d\in\Z$
   the sum and difference of multiples of~$d$ is again a multiple of~$d$.
  
   For a proof
   let $a,b\in\Z$ be multiples of~$d$ so that $a=dm$ and~$b=dn$ 
   for some $m,n\in\Z$.
   Then $a+b=dm+dn=d(m+n)$ is a multiple of~$d$
-  and $a-b=dm-dn=d(m-n)$ is multiple of~$d$.
-\end{exes}
-\end{ans}
-\end{ex}
+  and $a-b=dm-dn=d(m-n)$ is multiple of~$d$.    
+\end{answer}
+% \item The sum of two evens is even.
+%   The difference of two evens is even.
+% \item The sum of two odds is odd. 
+% The difference of two odds is odd.
+% \item Where $a,b\in\Z$, the number $a+b$ is even if and only if $a-b$ is even.
+% \item Generalize the first item to arbitrary divisors~$d$.
+% \end{exes}  
+% \begin{ans}
+% \begin{exes}
+% \item Let $a,b\in\Z$ be even so that $a=2m$ and~$b=2n$ for some $m,n\in\Z$.
+%   Then $a+b=2m+2n=2(m+n)$ is even, and $a-b=2m-2n=2(m-n)$ is even.
+% \item Both statements are false: for instance $1$ and~$3$ are odd
+%   but both $1+3$ and~$1-3$ are even.
+% \item First suppose that the sum is even, so $a+b=2k$ for some $k\in\Z$.
+%   Then $a-b=a+b-2b=2k-2b=2(k-b)$ is even.
 
-\begin{ex}[Interaction of parity and multiplication]
+%   The other half is similar:
+%   if $a-b=2m$ for $m\in\Z$ then $a+b=a-b+2b=2k+2b$ is even.
+% \item A reasonable generalization is that for any $d\in\Z$
+%   the sum and difference of multiples of~$d$ is again a multiple of~$d$.
+ 
+%   For a proof
+%   let $a,b\in\Z$ be multiples of~$d$ so that $a=dm$ and~$b=dn$ 
+%   for some $m,n\in\Z$.
+%   Then $a+b=dm+dn=d(m+n)$ is a multiple of~$d$
+%   and $a-b=dm-dn=d(m-n)$ is multiple of~$d$.
+\end{exes}
+\end{problem}
+
+\begin{problem} \notetext{Interaction of parity and multiplication}
 \pord.
 \begin{exes}
-\item The product of two evens is even.
-\item The quotient of two evens, if it is an integer, is even.
-\item Generalize the first item to any divisor~$d$.
-\end{exes}  
-\begin{ans}
-\begin{exes}
-\item Let $a,b\in\Z$ be even
+\begin{exercise}
+  The product of two evens is even.
+\end{exercise}
+\begin{answer}
+  Let $a,b\in\Z$ be even
   so that $a=2m$ and~$b=2n$ for some $m,n\in\Z$.
-  Then $ab=2m\cdot 2n=2(m\cdot 2n)$ is even.
-\item This is false since both $6$ and~$2$ are even but the quotient $6/2$
+  Then $ab=2m\cdot 2n=2(m\cdot 2n)$ is even.  
+\end{answer}
+
+\begin{exercise}
+  The quotient of two evens, if it is an integer, is even.
+\end{exercise}
+\begin{answer}
+  This is false since both $6$ and~$2$ are even but the quotient $6/2$
   is not even.
-\item The first item can generalize to: for any~$din\N$, 
+\end{answer}
+
+\begin{exercise}
+  Generalize the first item to any divisor~$d$.  
+\end{exercise}
+\begin{answer}
+  The first item can generalize to: for any~$din\N$, 
   the product of two multiples of~$d$ is a multiple of~$d$.
 
   For the proof,  let $a,b\in\Z$ be multiples of~$d$
@@ -157,42 +277,69 @@ The difference of two odds is odd.
 
   (The first item can also generalize to: a product of two multiples of
   $d$ is a multiple of~$d^2$.)
-\end{exes}
-\end{ans}
-\end{ex}
+\end{answer}
+% \item The product of two evens is even.
+% \item The quotient of two evens, if it is an integer, is even.
+% \item Generalize the first item to any divisor~$d$.
+% \end{exes}  
+% \begin{ans}
+% \begin{exes}
+% \item Let $a,b\in\Z$ be even
+%   so that $a=2m$ and~$b=2n$ for some $m,n\in\Z$.
+%   Then $ab=2m\cdot 2n=2(m\cdot 2n)$ is even.
+% \item This is false since both $6$ and~$2$ are even but the quotient $6/2$
+%   is not even.
+% \item The first item can generalize to: for any~$din\N$, 
+%   the product of two multiples of~$d$ is a multiple of~$d$.
 
-\begin{ex}[Divisibility Properties] \label{ex:DivisibilityProperties}
-Let $d$, $m$, and $n$ be integers.
-Prove each statement.
-\begin{exes}
-\item \notetext{Reflexivity} Every number divides itself.
-\item Every number divides $0$ while
-  the only number that $0$ divides is itself.
-\item \notetext{Transitivity} If $d\divides n$ and $n\divides m$ 
-   then $d\divides m$.
-\item \notetext{Cancellation} 
-  For $d,n\in\Z$, if for some nonzero integer~$a$ we have that $ad\divides an$ 
-  then $d\divides n$.
-  Conversely, if $d\divides n$ then $ad\divides an$ for all~$a\in\Z$.
-\item \notetext{Comparison} 
-  For $d,n\in\Z^+$, if $n$ is a multiple of~$d$ then $n\geq d$.
-\item Every number is divisible by $1$.
-  The only numbers that divide~$1$ are $1$ and~$-1$.
-\item The largest divisor of $a$ is $\absval{a}$, for $a\in\Z$ with $a\neq 0$.
-\item Every nonzero integer has only finitely many divisors.
+%   For the proof,  let $a,b\in\Z$ be multiples of~$d$
+%   so that $a=dm$ and~$b=dn$ for some $m,n\in\Z$.
+%   Then $ab=dm\cdot dn=d(m\cdot dn)$ is a multiple of~$d$.
+
+%   (The first item can also generalize to: a product of two multiples of
+%   $d$ is a multiple of~$d^2$.)
 \end{exes}
-\begin{ans}
+\end{problem}
+
+\begin{problem} \notetext{Divisibility Properties} 
+\label{ex:DivisibilityProperties}
+Let $d$, $m$, and $n$ be integers.
+Prove each.
 \begin{exes}
-\item Any number $a\in\Z$ satisfies that $a=a\cdot 1$.
-\item For every $k\in\Z$ the equation~$0=k\cdot 0=0\cdot k$ has~$0$ 
+\begin{exercise}
+  \notetext{Reflexivity} Every number divides itself.
+\end{exercise}
+\begin{answer}
+  Any number $a\in\Z$ satisfies that $a=a\cdot 1$.
+\end{answer}
+\begin{exercise}
+  Every number divides $0$ while
+  the only number that $0$ divides is itself.
+\end{exercise}
+\begin{answer}
+  For every $k\in\Z$ the equation~$0=k\cdot 0=0\cdot k$ has~$0$ 
   as a multiple of~$k$.
   That equation also shows that the only number that~$0$ divides is itself. 
-\item Suppose that $d, n, m\in\Z$ are such that $d\divides n$ and
+\end{answer}
+\begin{exercise}
+  \notetext{Transitivity} If $d\divides n$ and $n\divides m$ 
+   then $d\divides m$.
+\end{exercise}
+\begin{answer}
+  Suppose that $d, n, m\in\Z$ are such that $d\divides n$ and
   $n\divides m$.
   Then there are $i,j\in\Z$ such that $n=di$ and~$m=nj$.
   Substitute to get $m=(di)\cdot j=d\cdot(ij)$, which shows that
   $d$ divides~$m$.
-\item Fix~$d,n\in\Z$.
+\end{answer}
+\begin{exercise}
+  \notetext{Cancellation} 
+  For $d,n\in\Z$, if for some nonzero integer~$a$ we have that $ad\divides an$ 
+  then $d\divides n$.
+  Conversely, if $d\divides n$ then $ad\divides an$ for all~$a\in\Z$.
+\end{exercise}
+\begin{answer}
+  Fix~$d,n\in\Z$.
   First suppose that $ad\divides an$ for some $a\in\Z$ such that $a\neq 0$. 
   Then $an=adk$ for some $k\in\Z$ and
   since $a\neq 0$ we can multiply by $1/a$ to get $n=dk$, giving 
@@ -200,11 +347,23 @@ Prove each statement.
   For the converse, 
   if $d\divides n$ then $n=dk$ for some $k\in\Z$ and for all~$a\in\Z$
   we have $an=adk$, which shows that $ad\divides an$.
-\item Assume $d,n\in\Z^+$.
+\end{answer}
+\begin{exercise}
+  \notetext{Comparison} 
+  For $d,n\in\Z^+$, if $n$ is a multiple of~$d$ then $n\geq d$.
+\end{exercise}
+\begin{answer}
+  Assume $d,n\in\Z^+$.
   Because $n$ is a multiple of $d$ we have that $n=dk$ for some $k\in\Z$.
   Note that $k\geq 1$ since otherwise $n\leq 0$ but $n$ is given as positive.  
-  Multiplying by the positive number~$d$ gives $n=dk\geq d$ 
-\item That every number is divisible by~$1$ follows from the fact that
+  Multiplying by the positive number~$d$ gives $n=dk\geq d$.
+\end{answer}
+\begin{exercise}
+  Every number is divisible by $1$.
+  The only numbers that divide~$1$ are $1$ and~$-1$.
+\end{exercise}
+\begin{answer}
+  That every number is divisible by~$1$ follows from the fact that
    for every $a\in\Z$ the equation $a=1\cdot a$ holds.
 
   For the other part 
@@ -217,7 +376,12 @@ Prove each statement.
   also divides~$1$.
   Since the only such positive number is~$-d=1$, the only 
   candidate for a negative divisor is $d=-1$. 
-\item Fix $a\in\Z$. 
+\end{answer}
+\begin{exercise}
+  The largest divisor of $a$ is $\absval{a}$, for $a\in\Z$ with $a\neq 0$.
+\end{exercise}
+\begin{answer}
+  Fix $a\in\Z$. 
   First note that $\absval{a}$ does indeed divide~$a$ because
   if $a\geq 0$ then $\absval{a}\divides a$ follows from 
   $a=\absval{a}\cdot 1$,
@@ -233,13 +397,87 @@ Prove each statement.
   By the Comparison property, a positive dividend is greater than or 
   equal to any of its divisors. 
   Thus~$\absval{a}$ is maximal.
-\item By the prior item if $a\neq 0$ then all of the divisors of~$a$
+\end{answer}
+\begin{exercise}
+  Every nonzero integer has only finitely many divisors.
+\end{exercise}
+\begin{answer}
+  By the prior item if $a\neq 0$ then all of the divisors of~$a$
   are in the interval of integers from $-a$ to~$a$. 
-\end{exes}
-\end{ans}
-\end{ex}
+\end{answer}
+% \item \notetext{Reflexivity} Every number divides itself.
+% \item Every number divides $0$ while
+%   the only number that $0$ divides is itself.
+% \item \notetext{Transitivity} If $d\divides n$ and $n\divides m$ 
+%    then $d\divides m$.
+% \item \notetext{Cancellation} 
+%   For $d,n\in\Z$, if for some nonzero integer~$a$ we have that $ad\divides an$ 
+%   then $d\divides n$.
+%   Conversely, if $d\divides n$ then $ad\divides an$ for all~$a\in\Z$.
+% \item \notetext{Comparison} 
+%   For $d,n\in\Z^+$, if $n$ is a multiple of~$d$ then $n\geq d$.
+% \item Every number is divisible by $1$.
+%   The only numbers that divide~$1$ are $1$ and~$-1$.
+% \item The largest divisor of $a$ is $\absval{a}$, for $a\in\Z$ with $a\neq 0$.
+% \item Every nonzero integer has only finitely many divisors.
+% \end{exes}
+% \begin{exes}
+% \item Any number $a\in\Z$ satisfies that $a=a\cdot 1$.
+% \item For every $k\in\Z$ the equation~$0=k\cdot 0=0\cdot k$ has~$0$ 
+%   as a multiple of~$k$.
+%   That equation also shows that the only number that~$0$ divides is itself. 
+% \item Suppose that $d, n, m\in\Z$ are such that $d\divides n$ and
+%   $n\divides m$.
+%   Then there are $i,j\in\Z$ such that $n=di$ and~$m=nj$.
+%   Substitute to get $m=(di)\cdot j=d\cdot(ij)$, which shows that
+%   $d$ divides~$m$.
+% \item Fix~$d,n\in\Z$.
+%   First suppose that $ad\divides an$ for some $a\in\Z$ such that $a\neq 0$. 
+%   Then $an=adk$ for some $k\in\Z$ and
+%   since $a\neq 0$ we can multiply by $1/a$ to get $n=dk$, giving 
+%   $d\divides n$.
+%   For the converse, 
+%   if $d\divides n$ then $n=dk$ for some $k\in\Z$ and for all~$a\in\Z$
+%   we have $an=adk$, which shows that $ad\divides an$.
+% \item Assume $d,n\in\Z^+$.
+%   Because $n$ is a multiple of $d$ we have that $n=dk$ for some $k\in\Z$.
+%   Note that $k\geq 1$ since otherwise $n\leq 0$ but $n$ is given as positive.  
+%   Multiplying by the positive number~$d$ gives $n=dk\geq d$. 
+% \item That every number is divisible by~$1$ follows from the fact that
+%    for every $a\in\Z$ the equation $a=1\cdot a$ holds.
 
-\begin{ex}
+%   For the other part 
+%   first consider a divisor~$d$ of~$1$ that is a positive integer.
+%   By the prior item $1\geq d$ so the only such divisor is~$d=1$.
+%   Clearly $0$ is not a divisor of~$1$ so the only remaining candidates
+%   are negative integers.
+%   We have shown that for $d,a\in\Z$, if $d\divides a$ then $-d\divides a$,
+%   so if a negative number~$d$ divides~$1$ then the positive~$-d$ 
+%   also divides~$1$.
+%   Since the only such positive number is~$-d=1$, the only 
+%   candidate for a negative divisor is $d=-1$. 
+% \item Fix $a\in\Z$. 
+%   First note that $\absval{a}$ does indeed divide~$a$ because
+%   if $a\geq 0$ then $\absval{a}\divides a$ follows from 
+%   $a=\absval{a}\cdot 1$,
+%   while if $a<0$ then $\absval{a}\divides a$ follows from 
+%   $a=\absval{a}\cdot(-1)$.
+
+%   We finish by showing that no divisor of~$a\neq 0$ is larger than $\absval{a}$.
+%   We have shown that for $d,a\in\Z$ if $d\divides a$ then $d\divides -a$,
+%   if a negative~$a$ had a divisor greater than~$\absval{a}$ then the
+%   positive number~$-a$ would also have such a divisor.
+%   So we will be done if
+%   we show there is no dividend~$a>0$ with a divisor larger than $\absval{a}=a$.
+%   By the Comparison property, a positive dividend is greater than or 
+%   equal to any of its divisors. 
+%   Thus~$\absval{a}$ is maximal.
+% \item By the prior item if $a\neq 0$ then all of the divisors of~$a$
+%   are in the interval of integers from $-a$ to~$a$. 
+\end{exes}
+\end{problem}
+
+\begin{problem}
 Give the converse of Reflexivity: what conclusion can you make
 if $a\divides b$ and~$b\divides a$?
 \begin{ans}
@@ -253,23 +491,24 @@ does not apply if $a=0$ but in this case the proof is easy).
 The only divisors of $1$ are $1$ and~$-1$, so $k=\pm 1$ and~$m=\pm 1$. 
 Thus $b=\pm a$ and~$a=\pm b$.
 \end{ans}
-\end{ex}
+\end{problem}
 
-\begin{ex} \label{ex:DividesAndLinearCombinations}
+\begin{problem} \label{ex:DividesAndLinearCombinations}
 Suppose that $a,b,c\in\Z$.
 \begin{exes}
-\item Prove that if $a\divides b$ then $a\divides bc$ for all integers~$c$.
-\item Prove that if $a\divides b$ and $a\divides c$ then $a$ divides the 
+\begin{exercise}
+  Prove that if $a\divides b$ then $a\divides bc$ for all integers~$c$.
+\end{exercise}
+\begin{answer}
+  If $a\divides b$ then $b=ak$ for some~$k\in\Z$.
+  Thus $bc=akc=a\cdot(kc)$ is a multiple of~$a$.
+\end{answer}
+\begin{exercise}
+  Prove that if $a\divides b$ and $a\divides c$ then $a$ divides the 
   sum~$b+c$ and difference~$b-c$.
-\begin{longversion}
-  \item  \notetext{Linearity} Generalize the prior item.
-\end{longversion}
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item If $a\divides b$ then $b=ak$ for some~$k\in\Z$.
-  Thus $bc=akc=a\cdot(kc)$ is a multiple of~$a$
-\item Suppose that $a,b,c\in\Z$ and that $a\divides b$ and $a\divides c$.
+\end{exercise}
+\begin{answer}
+  Suppose that $a,b,c\in\Z$ and that $a\divides b$ and $a\divides c$.
   Then $b=ak$ and $c=am$ for some $k,m\in\Z$. 
   Substitution  
   $b+c=ak+am=a\cdot(k+m)$
@@ -277,15 +516,42 @@ Suppose that $a,b,c\in\Z$.
   A similar substitution
   $b-c=ak-am=a\cdot(k-m)$
   shows that $a$ divides the difference.
-\begin{longversion}
-  \item A natural generalization is that $a$ divides any combination
-    $i\cdot b+j\cdot c$ where $i,j\in\Z$.
-    The proof is
-    $ib+jc=i\cdot (ak)+j\cdot(am)=a\cdot(ik+jm)$.
-\end{longversion}
+\end{answer}
+\begin{exercise}
+  \notetext{Linearity} Generalize the prior item.
+\end{exercise}
+\begin{answer}
+  A natural generalization is that $a$ divides any combination
+  $i\cdot b+j\cdot c$ where $i,j\in\Z$.
+  The proof is
+  $ib+jc=i\cdot (ak)+j\cdot(am)=a\cdot(ik+jm)$.
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item Prove that if $a\divides b$ then $a\divides bc$ for all integers~$c$.
+% \item Prove that if $a\divides b$ and $a\divides c$ then $a$ divides the 
+%   sum~$b+c$ and difference~$b-c$.
+% \item  \notetext{Linearity} Generalize the prior item.
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item If $a\divides b$ then $b=ak$ for some~$k\in\Z$.
+%   Thus $bc=akc=a\cdot(kc)$ is a multiple of~$a$
+% \item Suppose that $a,b,c\in\Z$ and that $a\divides b$ and $a\divides c$.
+%   Then $b=ak$ and $c=am$ for some $k,m\in\Z$. 
+%   Substitution  
+%   $b+c=ak+am=a\cdot(k+m)$
+%   shows that $a$ divides the sum~$b+c$.
+%   A similar substitution
+%   $b-c=ak-am=a\cdot(k-m)$
+%   shows that $a$ divides the difference.
+% \item A natural generalization is that $a$ divides any combination
+%   $i\cdot b+j\cdot c$ where $i,j\in\Z$.
+%   The proof is
+%   $ib+jc=i\cdot (ak)+j\cdot(am)=a\cdot(ik+jm)$.
+% \end{exes}
+% \end{ans}
+\end{problem}
 
 
 
@@ -360,17 +626,14 @@ with separate paragraphs for the base step and the inductive step.
   This is the required expression for the $n=k+1$~case.
 \end{proof}
 
-\begin{ex}
+\begin{problem}
 Prove by induction.
 \begin{exes}
-\item $0+1+2+\cdots+n=n(n+1)/2$
-\item $0+1+4+9+\cdots+n^2=n(n+1)(2n+1)/6$
-% \item $0+1+8+27+\cdots+n^3=n^2(n+1)^2/4$
-\item $1+2+4+8+\cdots+2^n=2^{n+1}-1$
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item For the $n=0$ base step note that the sum on the left
+\begin{exercise}
+  $0+1+2+\cdots+n=n(n+1)/2$
+\end{exercise}
+\begin{answer}
+  For the $n=0$ base step note that the sum on the left
   has the single term~$0$
   while the right side is $0\cdot(0+1)/2$, which also equals~$0$.
 
@@ -380,8 +643,13 @@ Prove by induction.
   $0+1+\cdots+k+(k+1)=(k(k+1)/2)+(k+1)=(k+1)\cdot(k/2+1)=(k+1)\cdot(k+2)/2$, 
   as required  
   (the first equality is from applying the inductive hypothesis in 
-  the $n=k$ case). 
-\item The $n=0$ base step is that the left side has the single term~$0$
+  the $n=k$ case).
+\end{answer} 
+\begin{exercise}
+  $0+1+4+9+\cdots+n^2=n(n+1)(2n+1)/6$
+\end{exercise}
+\begin{answer} 
+  The $n=0$ base step is that the left side has the single term~$0$
   while the right side is $0\cdot(0+1)\cdot(2\cdot 0+1)/6$, and the 
   two are equal.
 
@@ -394,7 +662,12 @@ Prove by induction.
     =(k+1)\cdot [2k^2+7k+6]/6
     =(k+1)(k+2)(2(k+1)+1)/6$,
   as required.
-% \item The base step is~$n=0$.  
+\end{answer}
+% \begin{exercise} 
+%    $0+1+8+27+\cdots+n^3=n^2(n+1)^2/4$
+% \end{exercise}
+% \begin{answer}
+%   The base step is~$n=0$.  
 %   The left side has the single term $0$ while the right side is 
 %   $0^2(1)^2/4$, so they are equal.
 
@@ -406,7 +679,12 @@ Prove by induction.
 %     =(k+1)^2\cdot [(k^2/4)+(k+1)]
 %     =(k+1)^2\cdot (k^2+4k+4)/4
 %     =(k+1)^2(k+2)^2/4$. 
-\item The $n=0$ base step has a sum on the left with a single term, $1$.
+% \end{answer}
+\begin{exercise}
+  $1+2+4+8+\cdots+2^n=2^{n+1}-1$
+\end{exercise}
+\begin{answer} 
+The $n=0$ base step has a sum on the left with a single term, $1$.
 The expression on the right is $2^1-1=1$, and they are equal.
 
 The inductive hypothesis is that 
@@ -415,22 +693,73 @@ The $n=k+1$ summation is
 $1+2+4+\cdots+2^k+2^{k+1}$. 
 Apply the inductive hypothesis to get
 $(2^{k+1}-1)+2^{k+1}=2\cdot 2^{k+1}-1=2^{k+2}-1$, as required. 
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item $0+1+2+\cdots+n=n(n+1)/2$
+% \item $0+1+4+9+\cdots+n^2=n(n+1)(2n+1)/6$
+% % \item $0+1+8+27+\cdots+n^3=n^2(n+1)^2/4$
+% \item $1+2+4+8+\cdots+2^n=2^{n+1}-1$
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item For the $n=0$ base step note that the sum on the left
+%   has the single term~$0$
+%   while the right side is $0\cdot(0+1)/2$, which also equals~$0$.
 
-\begin{ex}
-Prove by induction.
+%   For the inductive step take the inductive hypothesis 
+%   that the statement is true for $n=0$,~\ldots, $n=k$ and consider $n=k+1$.
+%   We have 
+%   $0+1+\cdots+k+(k+1)=(k(k+1)/2)+(k+1)=(k+1)\cdot(k/2+1)=(k+1)\cdot(k+2)/2$, 
+%   as required  
+%   (the first equality is from applying the inductive hypothesis in 
+%   the $n=k$ case). 
+% \item The $n=0$ base step is that the left side has the single term~$0$
+%   while the right side is $0\cdot(0+1)\cdot(2\cdot 0+1)/6$, and the 
+%   two are equal.
+
+%   For the inductive step assume that the statement is true for 
+%   $n=0$,~\ldots, $n=k$ and consider $n=k+1$.
+%   Applying the inductive hypothesis in the $n=k$ case and reducing gives
+%   $0+1+4+\cdots+k^2+(k+1)^2=k(k+1)(2k+1)/6+(k+1)^2
+%     =(k+1)\cdot [k(2k+1)/6+(k+1)]
+%     =(k+1)\cdot [k(2k+1)+6(k+1)]/6
+%     =(k+1)\cdot [2k^2+7k+6]/6
+%     =(k+1)(k+2)(2(k+1)+1)/6$,
+%   as required.
+% % \item The base step is~$n=0$.  
+% %   The left side has the single term $0$ while the right side is 
+% %   $0^2(1)^2/4$, so they are equal.
+
+% %   For the inductive step assume that the statement is true when $n=0$, 
+% %   \ldots, $n=k$.
+% %   Then 
+% %    $0+8+\cdots+k^3+(k+1)^3
+% %     =k^2(k+1)^2/4+(k+1)^3
+% %     =(k+1)^2\cdot [(k^2/4)+(k+1)]
+% %     =(k+1)^2\cdot (k^2+4k+4)/4
+% %     =(k+1)^2(k+2)^2/4$. 
+% \item The $n=0$ base step has a sum on the left with a single term, $1$.
+% The expression on the right is $2^1-1=1$, and they are equal.
+
+% The inductive hypothesis is that 
+% the statement is true for the cases $n=0$, \ldots, $n=k$.
+% The $n=k+1$ summation is
+% $1+2+4+\cdots+2^k+2^{k+1}$. 
+% Apply the inductive hypothesis to get
+% $(2^{k+1}-1)+2^{k+1}=2\cdot 2^{k+1}-1=2^{k+2}-1$, as required. 
+% \end{exes}
+% \end{ans}
+\end{problem}
+
+\begin{problem}
+Prove each by induction.  Suppose that $a,b\in\R$ and that $r\in\R$ with $r\neq 1$.
 \begin{exes}
-\item \notetext{Geometric Series} For all $r\in\R$ with $r\neq 1$ we have
-  $1+r+r^2+\cdots+r^n=(r^{n+1}-1)/(r-1)$.
-\item \notetext{Arithmetic Series} We have
-  $b+(a+b)+(2a+b)+\cdots+(na+b)=(n(n+1)/2)\cdot a+(n+1)\cdot b$
-  for all $a,b\in\R$.
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item The $n=0$ base step has the single term~$1$ in the left summation and
+\begin{exercise} \notetext{Geometric Series} 
+  $1+r+r^2+\cdots+r^n=(r^{n+1}-1)/(r-1)$
+\end{exercise}
+\begin{answer} 
+  The $n=0$ base step has the single term~$1$ in the left summation and
   $(r^1-1)/(r-1)$ on the right, and they are equal.
 
   For the inductive step assume that the statement is true for 
@@ -441,24 +770,63 @@ Prove by induction.
   =[r^{k+1}-1+r^{k+1}(r-1)]/(r-1)
   =[r\cdot r^{k+1}-1]/(r-1)
   =(r^{k+2}-1)/(r-1)$ for $r\neq 1$.
-\item The base step is~$n=0$.
-The summation on the left has one term, $b$, 
-while the expression on the right is     
-$0\cdot a+1\cdot b$, so the two sides are equal.
+\end{answer}
+\begin{exercise} \notetext{Arithmetic Series}  
+  $b+(a+b)+(2a+b)+\cdots+(na+b)=(n(n+1)/2)\cdot a+(n+1)\cdot b$
+\end{exercise}
+\begin{answer} 
+  The base step is~$n=0$.
+  The summation on the left has one term, $b$, 
+  while the expression on the right is     
+  $0\cdot a+1\cdot b$, so the two sides are equal.
 
-For the inductive step assume that the statement holds when $n=0$, 
-\ldots, $n=k$ and consider the $n=k+1$~case.
-We have
-$b+(a+b)+(2a+b)+\cdots+(ka+b)+((k+1)a+b)
-=[(k(k+1)/2)\cdot a+(k+1)\cdot b]+((k+1)a+b)
-=[(k+1)\cdot((k/2)+1)]\cdot a+[k+2]\cdot b
-=((k+1)(k+2)/2)\cdot a+(k+2)\cdot b$,
-as required. 
+  For the inductive step assume that the statement holds when $n=0$, 
+  \ldots, $n=k$ and consider the $n=k+1$~case.
+  We have
+  $b+(a+b)+(2a+b)+\cdots+(ka+b)+((k+1)a+b)
+  =[(k(k+1)/2)\cdot a+(k+1)\cdot b]+((k+1)a+b)
+  =[(k+1)\cdot((k/2)+1)]\cdot a+[k+2]\cdot b
+  =((k+1)(k+2)/2)\cdot a+(k+2)\cdot b$,
+  as required. 
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \item \notetext{Geometric Series} For all $r\in\R$ with $r\neq 1$ we have
+%   $1+r+r^2+\cdots+r^n=(r^{n+1}-1)/(r-1)$.
+% \item \notetext{Arithmetic Series} We have
+%   $b+(a+b)+(2a+b)+\cdots+(na+b)=(n(n+1)/2)\cdot a+(n+1)\cdot b$
+%   for all $a,b\in\R$.
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item The $n=0$ base step has the single term~$1$ in the left summation and
+%   $(r^1-1)/(r-1)$ on the right, and they are equal.
 
-\begin{ex}
+%   For the inductive step assume that the statement is true for 
+%   $n=0$, \ldots, $n=k$.
+%   The $n=k+1$ case is
+%   $1+r+r^2+r^3+\cdots+r^k+r^{k+1}
+%   =(r^{k+1}-1)/(r-1)+r^{k+1}
+%   =[r^{k+1}-1+r^{k+1}(r-1)]/(r-1)
+%   =[r\cdot r^{k+1}-1]/(r-1)
+%   =(r^{k+2}-1)/(r-1)$ for $r\neq 1$.
+% \item The base step is~$n=0$.
+% The summation on the left has one term, $b$, 
+% while the expression on the right is     
+% $0\cdot a+1\cdot b$, so the two sides are equal.
+
+% For the inductive step assume that the statement holds when $n=0$, 
+% \ldots, $n=k$ and consider the $n=k+1$~case.
+% We have
+% $b+(a+b)+(2a+b)+\cdots+(ka+b)+((k+1)a+b)
+% =[(k(k+1)/2)\cdot a+(k+1)\cdot b]+((k+1)a+b)
+% =[(k+1)\cdot((k/2)+1)]\cdot a+[k+2]\cdot b
+% =((k+1)(k+2)/2)\cdot a+(k+2)\cdot b$,
+% as required. 
+% \end{exes}
+% \end{ans}
+\end{problem}
+
+\begin{problem}
 Prove by induction that $n<2^n$ for all $n\in\N$.  
 \begin{ans}
 The $n=0$ base case is that $0$ is less than~$2^0$, which is clear.
@@ -467,27 +835,28 @@ For the inductive step assume that the statement holds when
 $n=0$, \ldots, $n=k$ and consider the~$n=k+1$ case.
 We have $k+1<2^k+1\leq 2^{k+1}$ (the second holds because $2^k<2^{k+1}$). 
 \end{ans}
-\end{ex}
+\end{problem}
 
-\begin{ex}
+\begin{problem}
 Prove each by induction.
 \begin{exes}
-\item For all $n\in\N$, the number~$n^2+n$ is even.
-\item For all $n\geq 2$ the number $n^3-n$ is divisible by $6$.
-  \hint take the base case to be $2$.
-\item If $n\in\N$ then $4\divides 13^n-1$.
-\item If $n\in\Z^+$ then
-    $(1+\sfrac{1}{1})\cdot(1+\sfrac{1}{2})\,\cdots\,(1+\sfrac{1}{n})=n+1$.
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item For the $n=0$ base step observe that $0^2+0$ is even.
+\begin{exercise}
+  For all $n\in\N$, the number~$n^2+n$ is even.
+\end{exercise}
+\begin{answer}
+  For the $n=0$ base step observe that $0^2+0$ is even.
   For the inductive step assume the statement for $n=0$, \ldots, $n=k$
   and consider the $n=k+1$ case.
   We have $(k+1)^2+(k+1)=k^2+2k+1+k+1=(k^2+k)+(2k+2)$. 
   By the inductive hypothesis $k^2+k$ is even, and clearly $2k+2$ is even, 
   so the sum is even.
-\item The base step is $n=2$.
+\end{answer}
+\begin{exercise} 
+  For all $n\geq 2$ the number $n^3-n$ is divisible by $6$.
+  \hint take the base case to be $2$.
+\end{exercise}
+\begin{answer}
+  The base step is $n=2$.
   Since $6$ divides $2^3-2=8-2$, the statement holds in this case.
 
   For the inductive step assume that the statement is true for 
@@ -499,7 +868,12 @@ Prove each by induction.
   We have $3k^2+3k=3\cdot k(k+1)$, and since
   $k(k+1)$ is even (this was shown in the prior item),
   the product is divisible by $6$.  
-\item The $n=0$ base step is clear, since four divides $13^0-1=0$.
+\end{answer}
+\begin{exercise} 
+  If $n\in\N$ then $4\divides 13^n-1$.
+\end{exercise}
+\begin{answer}
+  The $n=0$ base step is clear, since four divides $13^0-1=0$.
   For the inductive step assume that the statement is true for all cases 
   with $0\leq n\leq k$ and consider the $n=k+1$ case.
   Then $13^{k+1}-1=(13^{k+1}-13)+(13-1)=13(13^k-1)+12$.
@@ -516,7 +890,13 @@ Prove each by induction.
   You can prove that this statement holds in a 
   way that gives more intuition by plugging $13$ into the formula for a
   geometric series. 
-\item The base step is a product with $n=1$~term.
+\end{answer}
+\begin{exercise} 
+    If $n\in\Z^+$ then
+    $(1+\sfrac{1}{1})\cdot(1+\sfrac{1}{2})\,\cdots\,(1+\sfrac{1}{n})=n+1$.
+\end{exercise}
+\begin{answer}
+  The base step is a product with $n=1$~term.
   The left side is $(1+\sfrac{1}{1})=2$ while the right side is $1+1=2$,
   and they are equal.
 
@@ -527,16 +907,75 @@ Prove each by induction.
   =
   (k+1)\cdot(1+\sfrac{1}{k+1})
   =(k+1)+(k+1)/(k+1)
-  =k+2$.
+  =k+2$.  
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \end{ans}
+% \item For all $n\in\N$, the number~$n^2+n$ is even.
+% \item For all $n\geq 2$ the number $n^3-n$ is divisible by $6$.
+%   \hint take the base case to be $2$.
+% \item If $n\in\N$ then $4\divides 13^n-1$.
+% \item If $n\in\Z^+$ then
+%     $(1+\sfrac{1}{1})\cdot(1+\sfrac{1}{2})\,\cdots\,(1+\sfrac{1}{n})=n+1$.
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item For the $n=0$ base step observe that $0^2+0$ is even.
+%   For the inductive step assume the statement for $n=0$, \ldots, $n=k$
+%   and consider the $n=k+1$ case.
+%   We have $(k+1)^2+(k+1)=k^2+2k+1+k+1=(k^2+k)+(2k+2)$. 
+%   By the inductive hypothesis $k^2+k$ is even, and clearly $2k+2$ is even, 
+%   so the sum is even.
+% \item The base step is $n=2$.
+%   Since $6$ divides $2^3-2=8-2$, the statement holds in this case.
 
-\begin{ex}
+%   For the inductive step assume that the statement is true for 
+%   the cases $n=0$, \ldots, $n=k$.
+%   In the $n=k+1$ case, consider 
+%   $(k+1)^3-(k+1)=(k^3+3k^2+3k+1)-(k+1)=(k^3+3k^2+3k)-k$.
+%   The inductive hypothesis gives that $6$ divides $(k^3-k)$ so we will
+%   be finished if we show that it divides  $3k^2+3k$.
+%   We have $3k^2+3k=3\cdot k(k+1)$, and since
+%   $k(k+1)$ is even (this was shown in the prior item),
+%   the product is divisible by $6$.  
+% \item The $n=0$ base step is clear, since four divides $13^0-1=0$.
+%   For the inductive step assume that the statement is true for all cases 
+%   with $0\leq n\leq k$ and consider the $n=k+1$ case.
+%   Then $13^{k+1}-1=(13^{k+1}-13)+(13-1)=13(13^k-1)+12$.
+%   The first term is divisible by~$4$ by the inductive hypothesis, while the
+%   second term is obviously divisible by~$4$, and so the statement holds in 
+%   this case.
+
+%   \remark
+%   this illustrates that 
+%   sometimes when you have finished a proof by induction, 
+%   while you now are sure that the statement is true, 
+%   you can nonetheless be left with the sense
+%   that you are not sure really \emph{why} it is true.
+%   You can prove that this statement holds in a 
+%   way that gives more intuition by plugging $13$ into the formula for a
+%   geometric series. 
+% \item The base step is a product with $n=1$~term.
+%   The left side is $(1+\sfrac{1}{1})=2$ while the right side is $1+1=2$,
+%   and they are equal.
+
+%   Assume the inductive hypothesis, that the statement is true for
+%   $n=1$, \ldots, $n=k$ and consider the $n=k+1$ case.
+%   We have
+%   $(1+\sfrac{1}{1})\cdot(1+\sfrac{1}{2})\,\cdots\,(1+\sfrac{1}{k})\cdot(1+\sfrac{1}{k+1})
+%   =
+%   (k+1)\cdot(1+\sfrac{1}{k+1})
+%   =(k+1)+(k+1)/(k+1)
+%   =k+2$.
+% \end{exes}
+% \end{ans}
+\end{problem}
+
+\begin{problem}
 Prove that $n+1$-term sums of reals commute:
 $a_0+a_1+\cdots+a_n=a_n+\cdots+a_0$ for all $n\geq 1$,
 starting from the assumption that sum of two terms commutes.
-\begin{ans}
+\begin{answer}
 The $n=1$ base step is the commutativity assumption $a_0+a_1=a_1+a_0$.
 
 For the inductive step assume the statement is true for all 
@@ -549,10 +988,10 @@ $a_0+a_1+\cdots+a_k+a_{k+1}
 two-term commutativity.
 By the inductive hypothesis that is equal to 
 $a_{k+1}+(a_k+\cdots+a_0)=a_{k+1}+a_k+\cdots+a_0$.
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
-\begin{ex}
+\begin{problem}
 The sequence of \definend{Fibonacci numbers}
 $0,1,1,2,3,5,8,13, \ldots$ is defined by the condition that 
 each succeeding number in the sequence is the sum of the 
@@ -567,18 +1006,18 @@ By definition
 the next case $f_{k+1}$ is the sum of the two prior numbers, which by
 the inductive hypothesis are both even.  
 Thus their sum is even.''   
-\begin{ans}
+\begin{answer}
 The recurrence $f_{n+1}=f_n+f_{n-1}$ first applies to computing $f_2$.
 So to begin we must verify that both $f_0$ and~$f_1$ are even.
 Of course, $f_1=1$ is not even.
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
 While many induction arguments use the inductive 
 hypothesis only in the $n=k$ case,
 some break from that pattern.
 
-\begin{ex}
+\begin{problem}
 The game of Nim starts with two piles, each containing $n$~chips.
 Two players take turns picking a pile and removing 
 some nonzero number of chips from that pile. 
@@ -586,7 +1025,7 @@ The winner is the player who takes the final chip.
 Prove by induction on~$n$ that the second player always wins by
 playing this way: whatever number of chips the first player removes
 from one pile, the second player removes the same number from the other pile.
-\begin{ans}
+\begin{answer}
 The base step is where the two piles have $n=1$~chips.
 The first player must pick a pile and must remove a chip, leaving one chip
 in one pile, so the second player wins.
@@ -599,8 +1038,8 @@ If the second player removes the same number of chips from the other
 pile then we have reduced to a game with equal-sized piles, each
 with~$k$ or fewer chips, which the inductive hypothesis says
 is a win for the second player.  
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
 \begin{df}
 The \definend{Least Number Principle} 
@@ -610,13 +1049,13 @@ subset of the natural
 numbers has a least element.  
 \end{df}
 
-\begin{ex}
+\begin{problem}
 Show that the Principle of Induction implies the Least Number 
 Principle.
 \hint
 show by induction that if a set of natural numbers does not
 have a least element then that set is empty.
-\begin{ans}
+\begin{answer}
 We shall use induction to prove for all $n\in\N$ that if a set~$A$ 
 of natural numbers has no
 least element then $A$ does not contain~$n$.
@@ -627,8 +1066,8 @@ For the inductive step assume that the statement is true in the cases
 $n=0$, \ldots, $n=k$ and consider the statement in the case~$n=k+1$.
 If~$A$ has no least element and~$A$ does not contain any of $0$, \ldots,~$k$ 
 then~$A$ cannot contain~$k+1$ either, since it would be least.   
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
 
 
@@ -636,29 +1075,17 @@ then~$A$ cannot contain~$k+1$ either, since it would be least.
 
 % .....................................
 \section{Division}
-\begin{ex} \notetext{Division Theorem} For any integer 
+\begin{problem} \notetext{Division Theorem} For any integer 
 \definend{divisor}~$b>0$ and \definend{dividend}~$a\,$ there is a unique pair of
 integers, the \definend{quotient}~$q$ and \definend{remainder}~$r$,
 such that $a=bq+r$ and $0\leq r<b$.
-We do this argument in steps.
+We do this in steps.
 \begin{exes} 
-\item
+\begin{exercise}
   Prove that~$q$ and~$r$ are unique.
-\item Show that the statement is true for $a=0$.
-  Show also that if the statement is true for~$a>0$ then it is true
-  for~$a<0$. 
-\item Prove the statement for $a>0$.
-  \hint you can consider the set of integers $\setbuilder{a-bq}{q\in\Z}$,
-  note that it has nonnegative elements,
-  apply the Least Number Principle
-  to produce a smallest nonnegative element, and show that this is the desired
-  remainder~$r$.
-% \item 
-% What to do if $b\leq 0$?
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item Suppose that $q_0,r_0\in\Z$ and $q_1,r_1\in\Z$ are such that
+\end{exercise}
+\begin{answer}
+  Suppose that $q_0,r_0\in\Z$ and $q_1,r_1\in\Z$ are such that
   $a=bq_0+r_0$ where $0\leq r_0<b$, and also
   $a=bq_1+r_1$ where $0\leq r_1<b$.
   Subtract to get $0=b\cdot(q_0-q_1)+(r_0-r_1)$ and $-b<r_0-r_1<b$.
@@ -666,7 +1093,13 @@ We do this argument in steps.
   and divide by $-b$ to get $q_0-q_1=(r_0-r_1)/(-b)$.
   Thus  $-1<q_0-q_1<1$ and since $q_0-q_1\in\Z$ we have $q_0-q_1=0$.
   With that, the equation $q_0-q_1=(r_0-r_1)/(-b)$ shows that $r_0-r_1=0$.
-\item
+\end{answer}
+\begin{exercise}
+   Show that the statement is true for $a=0$.
+  Show also that if the statement is true for~$a>0$ then it is true
+  for~$a<0$.
+\end{exercise} 
+\begin{answer}
   If $a=0$ then the statement holds with $q=0$ and~$r=0$.
 
   Next assume that the statement holds for any positive dividend
@@ -676,8 +1109,18 @@ We do this argument in steps.
   Multiplying by $-1$ gives $a=b(-q)-r$ and
   rewriting this as $a=b\cdot(q-1)+(b-r)$ satisfies the condition on the
   remainder $0\leq b-r<b$ for for all~$r$ except $r=0$.
-  The $r=0$ case is easy: $a=b(-q)+0$ satisfies the statement. 
-\item We follow the hint.
+  The $r=0$ case is easy: $a=b(-q)+0$ satisfies the statement.   
+\end{answer}
+\begin{exercise} 
+  Prove the statement for $a>0$.
+  \hint you can consider the set of integers $\setbuilder{a-bq}{q\in\Z}$,
+  note that it has nonnegative elements,
+  apply the Least Number Principle
+  to produce a smallest nonnegative element, and show that this is the desired
+  remainder~$r$.
+\end{exercise}
+\begin{answer}
+  We follow the hint.
   Consider the set $E=\setbuilder{a-bq}{q\in\Z}$.
   Because $a>0$, the element of~$E$ associated with $q=0$ is nonegative,
   so the subset of $E$ comprised of natural numbers $\hat{E}$ is nonempty.
@@ -693,13 +1136,70 @@ We do this argument in steps.
   gives that $r-b$ is a nonegative number smaller than~$r$, and
   $r-b=a-b\cdot (q_r-1)$ gives that $r-b$ is an element of $\hat{E}$.
   This contradicts the choice of~$r$ as the least element of~$\hat{E}$.
+\end{answer}
+% \begin{exercise}
+%    What to do if $b\leq 0$?
+% \end{exercise}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes} 
+% \item
+%   Prove that~$q$ and~$r$ are unique.
+% \item Show that the statement is true for $a=0$.
+%   Show also that if the statement is true for~$a>0$ then it is true
+%   for~$a<0$. 
+% \item Prove the statement for $a>0$.
+%   \hint you can consider the set of integers $\setbuilder{a-bq}{q\in\Z}$,
+%   note that it has nonnegative elements,
+%   apply the Least Number Principle
+%   to produce a smallest nonnegative element, and show that this is the desired
+%   remainder~$r$.
+% % \item 
+% % What to do if $b\leq 0$?
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item Suppose that $q_0,r_0\in\Z$ and $q_1,r_1\in\Z$ are such that
+%   $a=bq_0+r_0$ where $0\leq r_0<b$, and also
+%   $a=bq_1+r_1$ where $0\leq r_1<b$.
+%   Subtract to get $0=b\cdot(q_0-q_1)+(r_0-r_1)$ and $-b<r_0-r_1<b$.
+%   Rearrange the equation $-b\cdot(q_0-q_1)=(r_0-r_1)$,
+%   and divide by $-b$ to get $q_0-q_1=(r_0-r_1)/(-b)$.
+%   Thus  $-1<q_0-q_1<1$ and since $q_0-q_1\in\Z$ we have $q_0-q_1=0$.
+%   With that, the equation $q_0-q_1=(r_0-r_1)/(-b)$ shows that $r_0-r_1=0$.
+% \item
+%   If $a=0$ then the statement holds with $q=0$ and~$r=0$.
+
+%   Next assume that the statement holds for any positive dividend
+%   and consider a negative~$a$.
+%   Since $-a$ is positive, $-a=bq+r$ for some 
+%   $q,r\in\Z$ with $0\leq r<b$.
+%   Multiplying by $-1$ gives $a=b(-q)-r$ and
+%   rewriting this as $a=b\cdot(q-1)+(b-r)$ satisfies the condition on the
+%   remainder $0\leq b-r<b$ for for all~$r$ except $r=0$.
+%   The $r=0$ case is easy: $a=b(-q)+0$ satisfies the statement. 
+% \item We follow the hint.
+%   Consider the set $E=\setbuilder{a-bq}{q\in\Z}$.
+%   Because $a>0$, the element of~$E$ associated with $q=0$ is nonegative,
+%   so the subset of $E$ comprised of natural numbers $\hat{E}$ is nonempty.
+%   By the Least Number Principle, $\hat{E}$ has a smallest element;
+%   call it~$r$.
+%   We will be done if we show that~$0\leq r<b$.
+
+%   Suppose, to get a contradiction, that~$r$ is not 
+%   an element of that interval and so $r\geq b$.
+%   Since $r$ is an element of~$E$ there is some associated
+%   $q_r\in\Z$ such that $a-b\cdot q_r=r$.
+%   This paragraph's assumption that $r\geq b$
+%   gives that $r-b$ is a nonegative number smaller than~$r$, and
+%   $r-b=a-b\cdot (q_r-1)$ gives that $r-b$ is an element of $\hat{E}$.
+%   This contradicts the choice of~$r$ as the least element of~$\hat{E}$.
+% \end{exes}
+% \end{ans}
+\end{problem}
 
 \noindent 
-Observe that $r=0$ if and only if $b\divides a$. 
-Observe also that the divisor must be positive.
+Observe that the divisor must be positive.
+Observe also that $r=0$ if and only if $b\divides a$. 
 
 \begin{df}
 Where $m>0$, the \definend{modulus} $a\bmod m$ 
@@ -710,7 +1210,7 @@ if they leave the same remainder when divided by~$m$, that is,
 if they have the same modulus with respect to~$m$.
 \end{df}
 
-\begin{ex}\pord:
+\begin{problem}  \pord:
 \begin{items}
 \item $a\bmod b=b\bmod a$
 \item $a\bmod b=-a\bmod b$
@@ -726,32 +1226,30 @@ if they have the same modulus with respect to~$m$.
   $1\bmod 1=0$.     
 \end{exes}
 \end{ans}
-\end{ex}
+\end{problem}
 
-\begin{ex} \label{ex:AEquivBpmodMIFFABDifferBYMultipleOfM}
+\begin{problem} \label{ex:AEquivBpmodMIFFABDifferBYMultipleOfM}
 Prove that $a\equiv b\pmod m$ if and only if $m\divides (a-b)$,
 that is, if and only if $a$ and~$b$ differ by a multiple of~$m$
 (for $m>0$).  
-\begin{ans}
+\begin{answer}
 If $a\equiv b\pmod m$ if and only if they leave the same remainder,
 $a=mq_a+r$ and~$b=bq_b+r$ for some $q_a,q_b\in\Z$.
 That's equivalent to $a-b=m\cdot(q_a-q_b)$, 
 which is true if and only if $a-b$ is divisible by~$m$.
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
-\begin{ex}
-Let $a,b,c,d,m$ be integers with $m>0$ and
-$a\equiv b\pmod m$ and $c\equiv d\pmod m$.
+\begin{problem}
+Let $a,b,c,d,m$ be integers with $m>0$, and
+$a\equiv b\pmod m$, and $c\equiv d\pmod m$.
 Prove each.
 \begin{exes}
-\item $a+c\equiv b+d\pmod m$
-\item $ac\equiv bd\pmod m$
-\item $a^n\equiv b^n\pmod m$ for all $n\in\Z^+$.
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item By the prior exercise, $a\equiv b\pmod m$ holds iff 
+\begin{exercise}
+  $a+c\equiv b+d\pmod m$
+\end{exercise}
+\begin{answer}
+  By the prior exercise, $a\equiv b\pmod m$ holds iff 
   $(a-b)$ is a multiple of~$m$, 
   so $a-b=mi$ for some~$i\in\Z$.
   Similarly, $c\equiv d\pmod m$ holds iff $m\divides (c-d)$, 
@@ -759,23 +1257,64 @@ Prove each.
   Adding gives $(a+c)-(b+d)=m(i+j)$, which holds if and only if
   $m\divides (a+c)-(b+d)$, which in turn is equivalent to
   $a+c\equiv b+d\pmod m$.
-\item We have that $a\equiv b\pmod m$ holds if and only if
+\end{answer}
+\begin{exercise} 
+  $ac\equiv bd\pmod m$
+\end{exercise}
+\begin{answer}
+  We have that $a\equiv b\pmod m$ holds if and only if
   $a$ and~$b$ differ by a multiple of~$m$, so 
   $a=b+mi$ for some~$i\in\Z$. 
   Similarly $c=d+mj$ for some~$j\in\Z$.
   Multiplying gives $ac=bd+m\cdot(id+mij+jb)$, 
-  which is equivalent to $ac\equiv bd\pmod m$. 
-\item We will show this by induction on the power~$n$.
+  which is equivalent to $ac\equiv bd\pmod m$.   
+\end{answer}
+\begin{exercise} 
+  $a^n\equiv b^n\pmod m$ for all $n\in\Z^+$
+\end{exercise}
+\begin{answer}
+  We will show this by induction on the power~$n$.
   The $n=1$ base step is true by the introductory assumption that 
   $a\equiv b\pmod m$.
   For the inductive step assume that the statement is true in the cases
   $n=1$, \ldots, $n=k$.
   The $k+1$ case is an application of the prior item with 
   $a^k\cdot a$ on the left of the equivalence and $b^k\cdot b$ on the
-  right.
+  right.  
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item $a+c\equiv b+d\pmod m$
+% \item $ac\equiv bd\pmod m$
+% \item $a^n\equiv b^n\pmod m$ for all $n\in\Z^+$.
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item By the prior exercise, $a\equiv b\pmod m$ holds iff 
+%   $(a-b)$ is a multiple of~$m$, 
+%   so $a-b=mi$ for some~$i\in\Z$.
+%   Similarly, $c\equiv d\pmod m$ holds iff $m\divides (c-d)$, 
+%   so $c-d=mj$ for some~$j\in\Z$.
+%   Adding gives $(a+c)-(b+d)=m(i+j)$, which holds if and only if
+%   $m\divides (a+c)-(b+d)$, which in turn is equivalent to
+%   $a+c\equiv b+d\pmod m$.
+% \item We have that $a\equiv b\pmod m$ holds if and only if
+%   $a$ and~$b$ differ by a multiple of~$m$, so 
+%   $a=b+mi$ for some~$i\in\Z$. 
+%   Similarly $c=d+mj$ for some~$j\in\Z$.
+%   Multiplying gives $ac=bd+m\cdot(id+mij+jb)$, 
+%   which is equivalent to $ac\equiv bd\pmod m$. 
+% \item We will show this by induction on the power~$n$.
+%   The $n=1$ base step is true by the introductory assumption that 
+%   $a\equiv b\pmod m$.
+%   For the inductive step assume that the statement is true in the cases
+%   $n=1$, \ldots, $n=k$.
+%   The $k+1$ case is an application of the prior item with 
+%   $a^k\cdot a$ on the left of the equivalence and $b^k\cdot b$ on the
+%   right.
+% \end{exes}
+% \end{ans}
+\end{problem}
 
 \begin{df}
 For any real number~$x$,
@@ -783,15 +1322,13 @@ its \definend{floor} $\floor{x}$ is
 the greatest integer less than or equal to~$x$.  
 \end{df}
 
-\begin{ex} Prove each.
+\begin{problem} Prove each.
 \begin{exes} 
-\item The quotient when $a$ is divided by $b$ is $\floor{a/b}$.
-\item $a =b\cdot\floor{a/b}+a\bmod b$.    
-\item $b\cdot(a\bmod m)=(ba)\bmod{(bm)}$.    
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item The quotient~$q$ when $a$ is divided by~$b$ is defined by the
+\begin{exercise} 
+  The quotient when $a$ is divided by $b$ is $\floor{a/b}$.
+\end{exercise}
+\begin{answer}
+  The quotient~$q$ when $a$ is divided by~$b$ is defined by the
   property that $a=bq+r$ where~$0\leq r<b$.
   So to show that $\floor{a/b}$ is the quotient we must show that
   $a=b\cdot\floor{a/b}+(a-b\floor{a/b})$, which is clear, and we must also
@@ -804,39 +1341,101 @@ the greatest integer less than or equal to~$x$.
   $a-b< b\cdot\floor{a/b}\leq a$.
   Therefore $b\cdot\floor{a/b}$ is at a minimum $0$ less than~$a$, and
   at a maximum $b-1$ less than~$a$, as required.
-\item This is immediate from the prior item and the 
-  definition of $a\bmod b$ as the remainder.
-\item Where $a, b, m\in\Z$ and $m>0$ we have
+\end{answer}
+\begin{exercise} 
+  $a =b\cdot\floor{a/b}+a\bmod b$
+\end{exercise}    
+\begin{answer}
+  This is immediate from the prior item and the 
+  definition of $a\bmod b$ as the remainder.  
+\end{answer}
+\begin{exercise} 
+  $b\cdot(a\bmod m)=(ba)\bmod{(bm)}$
+\end{exercise}
+\begin{answer}
+  Where $a, b, m\in\Z$ and $m>0$ we have
   $b\cdot(a\bmod m)=b\cdot(a-m\floor{a/m})
   =ba- bm\floor{a/m}
   =ba- bm\floor{ba/bm}
   =ba\bmod bm$.    
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes} 
+% \item The quotient when $a$ is divided by $b$ is $\floor{a/b}$.
+% \item $a =b\cdot\floor{a/b}+a\bmod b$.    
+% \item $b\cdot(a\bmod m)=(ba)\bmod{(bm)}$.    
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item The quotient~$q$ when $a$ is divided by~$b$ is defined by the
+%   property that $a=bq+r$ where~$0\leq r<b$.
+%   So to show that $\floor{a/b}$ is the quotient we must show that
+%   $a=b\cdot\floor{a/b}+(a-b\floor{a/b})$, which is clear, and we must also
+%   show that the remainder~$a-b\floor{a/b}$
+%   satisfies $0\leq a-b\floor{a/b}< b$.
+  
+%   By the definition of floor, $x-1<\floor{x}\leq x$ for any real~$x$. 
+%   Thus we have
+%   $(a/b)-1< \floor{a/b}\leq a/b$ and multiplication by~$b$ gives
+%   $a-b< b\cdot\floor{a/b}\leq a$.
+%   Therefore $b\cdot\floor{a/b}$ is at a minimum $0$ less than~$a$, and
+%   at a maximum $b-1$ less than~$a$, as required.
+% \item This is immediate from the prior item and the 
+%   definition of $a\bmod b$ as the remainder.
+% \item Where $a, b, m\in\Z$ and $m>0$ we have
+%   $b\cdot(a\bmod m)=b\cdot(a-m\floor{a/m})
+%   =ba- bm\floor{a/m}
+%   =ba- bm\floor{ba/bm}
+%   =ba\bmod bm$.    
+% \end{exes}
+% \end{ans}
+\end{problem}
 
-\begin{ex}\notetext{Pigeonhole Principle}  Prove each.
+\begin{problem}\notetext{Pigeonhole Principle}  Prove each.
 \begin{exes}
-\item For a finite list of real numbers,
+\begin{exercise} 
+  For a finite list of real numbers,
   the maximum is at least as big as the average.
-\item If you put $n$-many papers into fewer than $n$-many
-  pigeonholes then at least one hole gets at least two papers.    
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item Let the real numbers be $p_0$, \ldots, $p_{n-1}$.
+\end{exercise}
+\begin{answer}
+  Let the real numbers be $p_0$, \ldots, $p_{n-1}$.
   The average is $a=(p_0+\cdots+p_{n-1})/n$ and so 
   $p_0+\cdots+p_{n-1}=na$.
   If each number were less than average $p_i<a$ then the sum
   $p_0+\cdots+p_{n-1}$ would be less than $na$, so at least
-  one must be at least average.
-\item Form the list where there are~$p_i$-many papers in the $i$-th pigeonhole.
+  one must be at least average.  
+\end{answer}
+\begin{exercise} If you put $n$-many papers into fewer than $n$-many
+  pigeonholes then at least one hole gets at least two papers.
+\end{exercise}
+\begin{answer}
+  Form the list where there are~$p_i$-many papers in the $i$-th pigeonhole.
   The average number of papers per hole is greater than~$1$, 
   so the maximum number is greater than~$1$.
-  Since each $p_i$ is a natural number, the maximum must be at least~$2$.      
+  Since each $p_i$ is a natural number, the maximum must be at least~$2$.  
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item For a finite list of real numbers,
+%   the maximum is at least as big as the average.
+% \item If you put $n$-many papers into fewer than $n$-many
+%   pigeonholes then at least one hole gets at least two papers.    
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item Let the real numbers be $p_0$, \ldots, $p_{n-1}$.
+%   The average is $a=(p_0+\cdots+p_{n-1})/n$ and so 
+%   $p_0+\cdots+p_{n-1}=na$.
+%   If each number were less than average $p_i<a$ then the sum
+%   $p_0+\cdots+p_{n-1}$ would be less than $na$, so at least
+%   one must be at least average.
+% \item Form the list where there are~$p_i$-many papers in the $i$-th pigeonhole.
+%   The average number of papers per hole is greater than~$1$, 
+%   so the maximum number is greater than~$1$.
+%   Since each $p_i$ is a natural number, the maximum must be at least~$2$.      
+% \end{exes}
+% \end{ans}
+\end{problem}
 
 
 
@@ -848,35 +1447,24 @@ the greatest integer less than or equal to~$x$.
 \section{Common divisors and common multiples}
 
 \begin{df}
-An integer is a \definend{common divisor} of two other integers if it
+An integer is a \definend{common divisor} of two others if it
 divides both of them.
 The \definend{greatest common divisor} of two integers 
 is the largest of their common divisors,
 except that we take the greatest common divisor of $0$ and $0$ 
 to be $0$.
-We write $\gcd(a,b)$ for the greatest common divisor
+Write $\gcd(a,b)$ for the greatest common divisor
 of $a$ and~$b$.
 \end{df}
 
-\begin{ex}
+\begin{problem}
 Prove.
 \begin{exes} 
-\item \notetext{Existence} Any $a,b\in\Z$ have a greatest common divisor.
-\item \notetext{Commutativity} $\gcd(a,b)=\gcd(b,a)$
-\item If either number is nonzero then 
-  $0\leq \gcd(a,b)\leq\min(\absval{a},\absval{b})$.
-  If both are nonzero then the first
-  inequality is strict.
-\item If $d$ is a common divisor of $a$ and~$b$ then so is~$\absval{d}$.
-  Thus common divisors are limited to the interval from $-\gcd(a,b)$
-  to $\gcd(a,b)$.
-\item For any $a\in\Z$, both $\gcd(a,a)=\absval{a}$ 
-  and~$\gcd(a,0)=\absval{a}$.
-\item $\gcd(a,b)=\gcd(\absval{a},\absval{b})$
-\end{exes} 
-\begin{ans}
-\begin{exes}
-\item If $a=b=0$ then $\gcd(a,b)$ exists. 
+\begin{exercise} \notetext{Existence} 
+   Any $a,b\in\Z$ have a greatest common divisor.
+\end{exercise}
+\begin{answer}
+  If $a=b=0$ then $\gcd(a,b)$ exists. 
   If $a=0$ and~$b\neq 0$ then, since every number divides~$0$, the set of 
   common divisors of the two is the set of divisors of~$b$, 
   the largest of which is~$\absval{b}$.
@@ -888,14 +1476,27 @@ Prove.
   there is a common divisor that is greatest we will know it is positive.
   To establish that, note that each number has finitely many divisors and
   so the overlap\Dash the set of divisors common to both\Dash is finite.
-  A finite set of integers must have an element that is greatest.
-\item The two sets 
+  A finite set of integers must have an element that is greatest.  
+\end{answer}
+\begin{exercise} \notetext{Commutativity} 
+  $\gcd(a,b)=\gcd(b,a)$
+\end{exercise}
+\begin{answer}
+  The two sets 
   $\setbuilder{m\in\Z}{\text{$m\divides a$ and $m\divides b$\,}}$
   and 
   $\setbuilder{n\in\Z}{\text{$n\divides b$ and $n\divides a$\,}}$
   are equal and so have the same greatest element. 
-  That is, the definition is symmetric in $a$ and~$b$.
-\item If $a=b=0$ then $\gcd(a,b)=0$. 
+  That is, the definition is symmetric in $a$ and~$b$.  
+\end{answer}
+\begin{exercise} 
+  If either number is nonzero then 
+  $0\leq \gcd(a,b)\leq\min(\absval{a},\absval{b})$.
+  If both are nonzero then the first
+  inequality is strict.
+\end{exercise}
+\begin{answer}
+  If $a=b=0$ then $\gcd(a,b)=0$. 
   If $a=0$ and~$b\neq 0$ then the set of 
   common divisors of the two equals the set of divisors of~$b$, 
   the greatest of which $\gcd(a,b)=\absval{b}$ is larger than zero.
@@ -908,12 +1509,25 @@ Prove.
   where $d$ is a common divisor, 
   because it divides~$a$ we have that $d\leq\absval{a}$ and
   because it divides~$b$ we have that $d\leq\absval{b}$.
-  Thus $d$ is less than or equal to the minimum of the two. 
-\item If $d$ is nonnegative then the statement is trivial.
+  Thus $d$ is less than or equal to the minimum of the two.   
+\end{answer}
+\begin{exercise} 
+  If $d$ is a common divisor of $a$ and~$b$ then so is~$\absval{d}$.
+  Thus common divisors are limited to the interval from $-\gcd(a,b)$
+  to $\gcd(a,b)$.
+\end{exercise}
+\begin{answer}
+  If $d$ is nonnegative then the statement is trivial.
   If $d$ is negative then
   this is immediate from \ref{ex:InteractionOfParityWithSign},
-  which says that if $d$ divides a number then so does $-d$.
-\item The Divisibility Properties in \ref{ex:DivisibilityProperties}
+  which says that if $d$ divides a number then so does $-d$.  
+\end{answer}
+\begin{exercise} 
+  For any $a\in\Z$, both $\gcd(a,a)=\absval{a}$ 
+  and~$\gcd(a,0)=\absval{a}$.
+\end{exercise}
+\begin{answer}
+  The Divisibility Properties in \ref{ex:DivisibilityProperties}
   include that for any~$a\neq 0$ the largest divisor is $\absval{a}$.
   In the case that $a=0$ the definition of greatest common divisor 
   is that $\gcd(0,0)=0=\absval{0}$.
@@ -923,17 +1537,95 @@ Prove.
   divisor reduces to the condition that it divide~$a$.
   As in the previous paragraph, one of the Divisibility Properties  
   is that for any nonzero integer~$a$ the largest divisor is $\absval{a}$.
-  If $a=0$ then the equation is also true.
-\item If both numbers are zero then the statement is clearly true.
+  If $a=0$ then the equation is also true.  
+\end{answer}
+\begin{exercise} 
+  $\gcd(a,b)=\gcd(\absval{a},\absval{b})$
+\end{exercise}
+\begin{answer}
+  If both numbers are zero then the statement is clearly true.
   For the other case note that for any
   integer $c$, a number is a divisor of $c$ if and only if it divides 
   the absolute value~$\absval{c}$.
   Thus, the set of divisors of both~$a$ and~$b$ 
   is the same as the set of divisors of both~$\absval{a}$ and~$\absval{b}$, \
-  and therefore the two sets have the same greatest element.
-\end{exes}
-\end{ans}
-\end{ex}
+  and therefore the two sets have the same greatest element.  
+\end{answer}
+\end{exes} 
+% \begin{exes} 
+% \item \notetext{Existence} Any $a,b\in\Z$ have a greatest common divisor.
+% \item \notetext{Commutativity} $\gcd(a,b)=\gcd(b,a)$
+% \item If either number is nonzero then 
+%   $0\leq \gcd(a,b)\leq\min(\absval{a},\absval{b})$.
+%   If both are nonzero then the first
+%   inequality is strict.
+% \item If $d$ is a common divisor of $a$ and~$b$ then so is~$\absval{d}$.
+%   Thus common divisors are limited to the interval from $-\gcd(a,b)$
+%   to $\gcd(a,b)$.
+% \item For any $a\in\Z$, both $\gcd(a,a)=\absval{a}$ 
+%   and~$\gcd(a,0)=\absval{a}$.
+% \item $\gcd(a,b)=\gcd(\absval{a},\absval{b})$
+% \end{exes} 
+% \begin{ans}
+% \begin{exes}
+% \item If $a=b=0$ then $\gcd(a,b)$ exists. 
+%   If $a=0$ and~$b\neq 0$ then, since every number divides~$0$, the set of 
+%   common divisors of the two is the set of divisors of~$b$, 
+%   the largest of which is~$\absval{b}$.
+%   In the same way, if $a\neq 0$ and~$b=0$ then the greatest common divisor 
+%   is~$\absval{a}$.
+
+%   So suppose that each number is nonzero.
+%   In this case the number~$1$ is a common divisor, so when we establish that 
+%   there is a common divisor that is greatest we will know it is positive.
+%   To establish that, note that each number has finitely many divisors and
+%   so the overlap\Dash the set of divisors common to both\Dash is finite.
+%   A finite set of integers must have an element that is greatest.
+% \item The two sets 
+%   $\setbuilder{m\in\Z}{\text{$m\divides a$ and $m\divides b$\,}}$
+%   and 
+%   $\setbuilder{n\in\Z}{\text{$n\divides b$ and $n\divides a$\,}}$
+%   are equal and so have the same greatest element. 
+%   That is, the definition is symmetric in $a$ and~$b$.
+% \item If $a=b=0$ then $\gcd(a,b)=0$. 
+%   If $a=0$ and~$b\neq 0$ then the set of 
+%   common divisors of the two equals the set of divisors of~$b$, 
+%   the greatest of which $\gcd(a,b)=\absval{b}$ is larger than zero.
+%   In the same way, if $a\neq 0$ and~$b=0$ then the greatest common divisor 
+%   is~$\absval{a}>0$.
+
+%   If each number is nonzero then~$1$ is a common divisor so 
+%   the greatest common divisor is greater then zero.
+%   For the other inequality,
+%   where $d$ is a common divisor, 
+%   because it divides~$a$ we have that $d\leq\absval{a}$ and
+%   because it divides~$b$ we have that $d\leq\absval{b}$.
+%   Thus $d$ is less than or equal to the minimum of the two. 
+% \item If $d$ is nonnegative then the statement is trivial.
+%   If $d$ is negative then
+%   this is immediate from \ref{ex:InteractionOfParityWithSign},
+%   which says that if $d$ divides a number then so does $-d$.
+% \item The Divisibility Properties in \ref{ex:DivisibilityProperties}
+%   include that for any~$a\neq 0$ the largest divisor is $\absval{a}$.
+%   In the case that $a=0$ the definition of greatest common divisor 
+%   is that $\gcd(0,0)=0=\absval{0}$.
+
+%   For the other half, 
+%   every number divides zero, so the condition that $\gcd(a,0)$ be a common
+%   divisor reduces to the condition that it divide~$a$.
+%   As in the previous paragraph, one of the Divisibility Properties  
+%   is that for any nonzero integer~$a$ the largest divisor is $\absval{a}$.
+%   If $a=0$ then the equation is also true.
+% \item If both numbers are zero then the statement is clearly true.
+%   For the other case note that for any
+%   integer $c$, a number is a divisor of $c$ if and only if it divides 
+%   the absolute value~$\absval{c}$.
+%   Thus, the set of divisors of both~$a$ and~$b$ 
+%   is the same as the set of divisors of both~$\absval{a}$ and~$\absval{b}$, \
+%   and therefore the two sets have the same greatest element.
+% \end{exes}
+% \end{ans}
+\end{problem}
 
 \begin{df}
 Two numbers are \definend{relatively prime} 
@@ -946,13 +1638,13 @@ The \definend{least common multiple} of two numbers $\lcm(a,b)$
 is the smallest natural number that is a multiple of each.
 \end{df}
 
-\begin{ex} Prove each.
+\begin{problem} Prove each.
 \begin{items}
 \item \notetext{Existence} Any two integers have a least common multiple.
   If the integers are nonzero then the lcm is positive.
 \item \notetext{Commutativity} $\lcm(a,b)=\lcm(b,a)$
 \end{items}
-\begin{ans}
+\begin{answer}
 \begin{items}
 \item The absolute value of the product of the two is a common multiple,
   and is positive if neither number is zero.
@@ -965,49 +1657,60 @@ is the smallest natural number that is a multiple of each.
   $\setbuilder{m\in\Z}{\text{$b\divides m$ and $a\divides m$}}$
   are equal, and so have the same smallest nonnegative element.
 \end{items}
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
+
+
 
 % ========== Start Euclid's argument of lemma =========== 
 \begin{euclidproof}
-\begin{ex}
+\begin{problem}
 For each pair $a,b$ compute $\gcd(a,b)$, $\lcm(a,b)$, $ab$, and
 $\gcd(a,b)\cdot\lcm(a,b)$.
 \begin{exes}
-% \item $a=6$, $b=15$
-\item $a=18$, $b=35$  
-\item $a=20$, $b=-14$
+% \begin{exercise} 
+%   $a=6$, $b=15$
+% \end{exercise}
+% \begin{answer} 
+%   $\gcd(a,b)=3$, $\lcm(a,b)=30$, $ab=90$, $\gcd(a,b)\cdot\lcm(a,b)=90$
+% \end{answer}
+\begin{exercise} 
+  $a=18$, $b=35$
+\end{exercise}  
+\begin{answer}
+  $\gcd(a,b)=1$, $\lcm(a,b)=630$, $ab=630$, $\gcd(a,b)\cdot\lcm(a,b)=630$
+\end{answer}
+\begin{exercise} 
+  $a=20$, $b=-14$
+\end{exercise}
+\begin{answer}
+  $\gcd(a,b)=2$, $\lcm(a,b)=140$, $ab=-280$, $\gcd(a,b)\cdot\lcm(a,b)=280$  
+\end{answer}
 \end{exes}
-\begin{ans}
-\begin{exes}
-% \item $\gcd(a,b)=3$, $\lcm(a,b)=30$, $ab=90$, $\gcd(a,b)\cdot\lcm(a,b)=90$
-\item $\gcd(a,b)=1$, $\lcm(a,b)=630$, $ab=630$, $\gcd(a,b)\cdot\lcm(a,b)=630$
-\item $\gcd(a,b)=2$, $\lcm(a,b)=140$, $ab=-280$, $\gcd(a,b)\cdot\lcm(a,b)=280$
-\end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% % \item $a=6$, $b=15$
+% \item $a=18$, $b=35$  
+% \item $a=20$, $b=-14$
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% % \item $\gcd(a,b)=3$, $\lcm(a,b)=30$, $ab=90$, $\gcd(a,b)\cdot\lcm(a,b)=90$
+% \item $\gcd(a,b)=1$, $\lcm(a,b)=630$, $ab=630$, $\gcd(a,b)\cdot\lcm(a,b)=630$
+% \item $\gcd(a,b)=2$, $\lcm(a,b)=140$, $ab=-280$, $\gcd(a,b)\cdot\lcm(a,b)=280$
+% \end{exes}
+% \end{ans}
+\end{problem}
 
-\begin{ex} Let $a$ and~$b$ be integers.
-\begin{exes}
-\item Prove that any common multiple of two nonzero
+\begin{problem} Let $a$ and~$b$ be integers.
+\begin{exes}  %% TODO check the zero and negative cases.
+\begin{exercise} 
+   Prove that any common multiple of two nonzero
    numbers is divisible by their 
   least common multiple.
   \hint apply the Division-Remainder theorem with the divisor $\lcm(a,b)$.
-\item Prove that the product of two nonzero numbers is divisible by their 
-  least common multiple.
-\item Let $d$ be defined by 
-  $ab=\lcm(a,b)\cdot d$, except that if either $a$ or~$b$ is zero
-  then $d=\max\set{\absval{a},\absval{b}}$.
-  Prove that any common divisor of $a$ and~$b$ also divides~$d$.
-\item Prove that $\gcd(a,b)\leq\absval{d}$.
-\item Prove that $\absval{d}=\gcd(a,b)$. 
-\item Prove that any common divisor of two numbers also divides their
-  greatest common divisor.
-\item Prove that $\lcm(a,b)\cdot\gcd(a,b)=\absval{ab}$. 
-\end{exes}  
-\begin{ans}  %% TODO check the zero and negative cases.
-\begin{exes}
-\item Let $\ell=\lcm(a,b)$ and suppose that $m$ is a common multiple
+\end{exercise}
+\begin{answer}
+  Let $\ell=\lcm(a,b)$ and suppose that $m$ is a common multiple
   of the two numbers.
 
   Dividing $m$ by~$\ell$ gives 
@@ -1017,10 +1720,24 @@ $\gcd(a,b)\cdot\lcm(a,b)$.
   of both $a$ and~$b$ and so 
   $r$ is a common multiple of $a$ and~$b$.
   Because the remainder $r$ is less than the least common multiple~$\ell$,
-  we conclude that $r=0$ and so $\ell\divides m$.
-\item The product $ab$ is a common multiple of the two.
+  we conclude that $r=0$ and so $\ell\divides m$.  
+\end{answer}
+\begin{exercise} 
+  Prove that the product of two nonzero numbers is divisible by their 
+  least common multiple.
+\end{exercise}
+\begin{answer}
+  The product $ab$ is a common multiple of the two.
   Apply the prior item.
-\item If $a=0$ and~$b=0$ then $d=0$, and any number divides~$0$.
+\end{answer}
+\begin{exericse} 
+  Let $d$ be defined by 
+  $ab=\lcm(a,b)\cdot d$, except that if either $a$ or~$b$ is zero
+  then $d=\max\set{\absval{a},\absval{b}}$.
+  Prove that any common divisor of $a$ and~$b$ also divides~$d$.
+\end{exercise}
+\begin{answer}
+  If $a=0$ and~$b=0$ then $d=0$, and any number divides~$0$.
   If one of $a$ and~$b$ is zero and one is not then without loss of generality
   we can take $a=0$, $b\neq 0$.
   Since all numbers divide~$0$ the condition that a number~$c$ 
@@ -1045,8 +1762,13 @@ $\gcd(a,b)\cdot\lcm(a,b)$.
   Multiplication by $cd$ gives $\ell\cdot cd\divides ck_ak_b\cdot cd$.
   Regroup to $(\ell c)d\divides (ck_a)(ck_b)d$, which is
   $ab\cdot c\divides ab\cdot d$, and therefore by cancellation $c\divides d$,
-  as desired.
-\item The number~$d$ is zero only if both $a$ and~$b$ are
+  as desired.  
+\end{answer}
+\begin{exercise} 
+  Prove that $\gcd(a,b)\leq\absval{d}$.
+\end{exercise}
+\begin{answer}
+  The number~$d$ is zero only if both $a$ and~$b$ are
   zero.
   In this case the equation is true: $\gcd(0,0)=0\leq d=0$.
 
@@ -1055,20 +1777,115 @@ $\gcd(a,b)\cdot\lcm(a,b)$.
   largest divisor of a nonzero number is the absolute value of that number.
   By the prior item, any common divisor of $a$ and~$b$ will divide~$d$.
   One such common divisor is $\gcd(a,b)$.
-  Thus $\gcd(a,b)\leq\absval{d}$.
-\item
+  Thus $\gcd(a,b)\leq\absval{d}$.  
+\end{answer}
+\begin{exercise} 
+  Prove that $\absval{d}=\gcd(a,b)$. 
+\end{exercise}
+\begin{answer}
   After the previous item, we need only show that $\gcd(a,b)\geq\absval{d}$. 
   Because $\ell=\lcm(a,b)$ is a common multiple of the two, 
   both $\ell/a$ and~$\ell/b$ are integers. 
   Rewriting the equation~$ab=\ell d$ to 
   $a=(\ell/b)\cdot d$ shows that~$d$ is a divisor of~$a$, and similarly
   it is a divisor of~$b$.
-  Thus $d$ is a common divisor and so $\absval{d}\leq \gcd(a,b)$.
-\item This is immediate from the prior items.
-\item This is immediate from the prior items.
-\end{exes}
-\end{ans}
-\end{ex}
+  Thus $d$ is a common divisor and so $\absval{d}\leq \gcd(a,b)$.  
+\end{answer}
+\begin{exercise} 
+  Prove that any common divisor of two numbers also divides their
+  greatest common divisor.
+\end{exercise}
+\begin{answer}
+  This is immediate from the prior items.  
+\end{answer}
+\begin{exercise} 
+  Prove that $\lcm(a,b)\cdot\gcd(a,b)=\absval{ab}$. 
+\end{exercise}
+\begin{answer}
+  This is immediate from the prior items.
+\end{answer}
+\end{exes}  
+% \begin{exes}
+% \item Prove that any common multiple of two nonzero
+%    numbers is divisible by their 
+%   least common multiple.
+%   \hint apply the Division-Remainder theorem with the divisor $\lcm(a,b)$.
+% \item Prove that the product of two nonzero numbers is divisible by their 
+%   least common multiple.
+% \item Let $d$ be defined by 
+%   $ab=\lcm(a,b)\cdot d$, except that if either $a$ or~$b$ is zero
+%   then $d=\max\set{\absval{a},\absval{b}}$.
+%   Prove that any common divisor of $a$ and~$b$ also divides~$d$.
+% \item Prove that $\gcd(a,b)\leq\absval{d}$.
+% \item Prove that $\absval{d}=\gcd(a,b)$. 
+% \item Prove that any common divisor of two numbers also divides their
+%   greatest common divisor.
+% \item Prove that $\lcm(a,b)\cdot\gcd(a,b)=\absval{ab}$. 
+% \end{exes}  
+% \begin{ans}  %% TODO check the zero and negative cases.
+% \begin{exes}
+% \item Let $\ell=\lcm(a,b)$ and suppose that $m$ is a common multiple
+%   of the two numbers.
+
+%   Dividing $m$ by~$\ell$ gives 
+%   $m=\ell\cdot q+r$ with $0\leq r< \ell$.
+%   In $r=m-\ell q$ 
+%   each term on the right is a multiple
+%   of both $a$ and~$b$ and so 
+%   $r$ is a common multiple of $a$ and~$b$.
+%   Because the remainder $r$ is less than the least common multiple~$\ell$,
+%   we conclude that $r=0$ and so $\ell\divides m$.
+% \item The product $ab$ is a common multiple of the two.
+%   Apply the prior item.
+% \item If $a=0$ and~$b=0$ then $d=0$, and any number divides~$0$.
+%   If one of $a$ and~$b$ is zero and one is not then without loss of generality
+%   we can take $a=0$, $b\neq 0$.
+%   Since all numbers divide~$0$ the condition that a number~$c$ 
+%   is a common divisor of $a$ and~$b$
+%   becomes just that $c$ divides~$b$.
+%   So in this case we must show that any divisor of $b$ divides the 
+%   absolute value of~$b$, which we know to be true by the divisibility 
+%   properties~\ref{ex:DivisibilityProperties}.
+
+%   The remaining case is that both numbers are nonzero.
+%   First note that in this case,
+%   by the previous item, the least common multiple of $a,b\in\Z$ divides
+%   the product~$ab$.
+%   So $d$ is an integer for all pairs $a,b$ of nonzero numbers
+%   and we can sensibly apply the definition of `divides' to
+%   $a$ and~$d$, and to $b$ and~$d$.
+  
+%   Let~$c$ be a common divisor so that $a=c\cdot k_a$ and $b=c\cdot k_b$.
+%   The number $ck_ak_b$ is a common multiple of $a$ and~$b$. 
+%   By the first item it is divisible by the least common multiple  
+%   $\ell\divides ck_ak_b$.
+%   Multiplication by $cd$ gives $\ell\cdot cd\divides ck_ak_b\cdot cd$.
+%   Regroup to $(\ell c)d\divides (ck_a)(ck_b)d$, which is
+%   $ab\cdot c\divides ab\cdot d$, and therefore by cancellation $c\divides d$,
+%   as desired.
+% \item The number~$d$ is zero only if both $a$ and~$b$ are
+%   zero.
+%   In this case the equation is true: $\gcd(0,0)=0\leq d=0$.
+
+%   In the $d\neq 0$ case we can apply the 
+%   Divisibility property~\ref{ex:DivisibilityProperties} that the
+%   largest divisor of a nonzero number is the absolute value of that number.
+%   By the prior item, any common divisor of $a$ and~$b$ will divide~$d$.
+%   One such common divisor is $\gcd(a,b)$.
+%   Thus $\gcd(a,b)\leq\absval{d}$.
+% \item
+%   After the previous item, we need only show that $\gcd(a,b)\geq\absval{d}$. 
+%   Because $\ell=\lcm(a,b)$ is a common multiple of the two, 
+%   both $\ell/a$ and~$\ell/b$ are integers. 
+%   Rewriting the equation~$ab=\ell d$ to 
+%   $a=(\ell/b)\cdot d$ shows that~$d$ is a divisor of~$a$, and similarly
+%   it is a divisor of~$b$.
+%   Thus $d$ is a common divisor and so $\absval{d}\leq \gcd(a,b)$.
+% \item This is immediate from the prior items.
+% \item This is immediate from the prior items.
+% \end{exes}
+% \end{ans}
+\end{problem}
 
 \begin{ex}  \label{ex:EuclidsLemma}
 \begin{exes} 
@@ -1107,20 +1924,22 @@ $\gcd(a,b)\cdot\lcm(a,b)$.
 \end{ex}
 % ========== End Euclid's argument of lemma =========== 
 \end{euclidproof}
+
+
 % ========== Start Bezout argument of lemma =========== 
 \begin{bezoutproof}
 % TODO check answers
-\begin{ex}\notetext{Euclid's Algorithm}
+\begin{problem}\notetext{Euclid's Algorithm}
 Prove that if $a=bq+r$ then $\gcd(a,b)=\gcd(b,r)$.  
-\begin{ans}
+\begin{answer}
 Because $a=bq+r$ any common divisor of $b$ and~$r$ also divides~$a$, 
 by Linearity~\ref{ex:DividesAndLinearCombinations}.
 Rewrite the equation as $r=a-bq$ and then for the same reason any
 common divisor of $a$ and~$b$ also divides~$r$.
 So the pairs $b,r$ and $a,b$ have the same common divisors, and
 therefore the same greatest common divisor.
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
 The algorithm associated with this result finds the greatest common
 divisor for any $a,b\in\Z$ with $b\neq 0$.  
@@ -1155,7 +1974,7 @@ A number $c$ is a \definend{linear combination} of two others $a$ and~$b$
 if it has the form $c=a\cdot m+b\cdot n$ for some $m,n\in\Z$.  
 \end{df}
 
-\begin{ex}
+\begin{problem}
 Use Euclid's Algorithm to find the greatest common divisor and 
 use that calculation to express the greatest common divisor as a 
 linear combination of the two:
@@ -1163,7 +1982,7 @@ linear combination of the two:
 \item $15$, $25$
 \item $48$, $732$
 \end{items}
-\begin{ans}
+\begin{answer}
 \begin{items}
 \item To get the greatest common divisor the first step is
   $25=15\cdot 1+10$ followed by $15=10\cdot 1+5$ and finally
@@ -1181,21 +2000,16 @@ linear combination of the two:
   Reversing is trivial:
   $12=1\cdot 732-12\cdot 48$.
 \end{items}
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
-\begin{ex} Prove.  \label{ex:Bezout}
+\begin{problem} Prove.  \label{ex:Bezout}
 \begin{exes}
-\item Euclid's algorithm terminates.
-\item The greatest common divisors of two numbers is a linear combination of 
-the two.
-\item \notetext{B\'ezout's Lemma} 
-The greatest common divisor of two numbers is the smallest positive
-number that is a linear combination of the two.
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item Since $\gcd(a,b)=\gcd(\pm a, \pm b)$ we can restrict to $a\geq 0$
+\begin{exercise} 
+  Euclid's algorithm terminates.
+\end{exercise}
+\begin{answer}
+  Since $\gcd(a,b)=\gcd(\pm a, \pm b)$ we can restrict to $a\geq 0$
   and $b>0$.
   Write $a$ as~$a_0$ and~$b$ as~$b_0$.
   The first step of the algorithm divides the larger number by the smaller; 
@@ -1209,11 +2023,23 @@ number that is a linear combination of the two.
   In this way the remainders $r_i$ form a sequence of positive numbers that
   are falling.
   Such a sequence must be finite so that for some~$i$ 
-  an~$r_i$ is zero and the algorithm terminates.
-\item The above calculation reversing Euclid's algorithm proves by
+  an~$r_i$ is zero and the algorithm terminates.  
+\end{answer}
+\begin{exercise} 
+  The greatest common divisors of two numbers is a linear combination of 
+  the two.
+\end{exercise}
+\begin{answer}
+  The above calculation reversing Euclid's algorithm proves by
   construction that the greatest common divisor can be expressed 
-  a combination of the two.
-\item   The $a=b=0$ case is separate.
+  a combination of the two. 
+\end{answer}
+\begin{exercise} \notetext{B\'ezout's Lemma} 
+  The greatest common divisor of two numbers is the smallest positive
+  number that is a linear combination of the two.
+\end{exercise}
+\begin{answer}
+  The $a=b=0$ case is separate.
   Here $\gcd(a,b)=0$ by definition and for any $s$ and $t$ we
   have $0=\gcd(a,b)=s\cdot a+t\cdot b=s\cdot 0+t\cdot 0$.
 
@@ -1265,18 +2091,101 @@ number that is a linear combination of the two.
   % Because~$d$ is the minimal positive combination, and becasue $r<d$,
   % this implies that the remainder~$r$ is zero and so $d\divides a$.
   % In the same way $d\divides b$.
-  % As a common divisor, $d\leq\gcd(a,b)$.
+  % As a common divisor, $d\leq\gcd(a,b)$.  
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item Euclid's algorithm terminates.
+% \item The greatest common divisors of two numbers is a linear combination of 
+% the two.
+% \item \notetext{B\'ezout's Lemma} 
+% The greatest common divisor of two numbers is the smallest positive
+% number that is a linear combination of the two.
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item Since $\gcd(a,b)=\gcd(\pm a, \pm b)$ we can restrict to $a\geq 0$
+%   and $b>0$.
+%   Write $a$ as~$a_0$ and~$b$ as~$b_0$.
+%   The first step of the algorithm divides the larger number by the smaller; 
+%   without loss of generality we have $a_0=b_0\cdot q_0+r_0$ with 
+%   $0\leq r_0< b_0$.
+%   If the remainder~$r$ is not zero, which would mean the algorithm 
+%   terminated,
+%   then we next have $b_0=r_0\cdot q_1+r_1$ with $0\leq r_1< r_0$.
+%   Therefore $0\leq r_1<r_0<b$.
 
-\begin{ex}
+%   In this way the remainders $r_i$ form a sequence of positive numbers that
+%   are falling.
+%   Such a sequence must be finite so that for some~$i$ 
+%   an~$r_i$ is zero and the algorithm terminates.
+% \item The above calculation reversing Euclid's algorithm proves by
+%   construction that the greatest common divisor can be expressed 
+%   a combination of the two.
+% \item   The $a=b=0$ case is separate.
+%   Here $\gcd(a,b)=0$ by definition and for any $s$ and $t$ we
+%   have $0=\gcd(a,b)=s\cdot a+t\cdot b=s\cdot 0+t\cdot 0$.
+
+%   The other case is that one number or the other is nonzero.
+%   Consider the set of linear combinations 
+%   $\mathcal{L}=\setbuilder{sa+tb}{s,t\in\Z}$.
+%   It has a positive element since not all its elements are~$0$
+%   (one of $a$ or~$b$ is nonzero and taking $1$ times that element
+%   plus zero times the other gives a nonzero member), and if it has a 
+%   negative element then negating the coefficients $s$ and~$t$ gives 
+%   a positive element.
+%   Any set of positive integers has a least positive element.
+%   Call that element~$d\in\mathcal{L}$.
+
+%   For any combination $sa+tb$, because the greatest common divisor
+%   $\gcd(a,b)$ goes into both $a$ and~$b$ it also divides $sa+tb$  
+%   (from Linearity~\ref{ex:DividesAndLinearCombinations})
+%   Therefore $\gcd(a,b)\leq d$.
+
+%   The prior item shows $d\leq\gcd(a,b)$ and so the two are equal. 
+
+%   % Let the two numbers be $a,b\in\Z$; we want to show that there are
+%   % $s,t\in\Z$ so that $\gcd(a,b)=s\cdot a+t\cdot b$.
+
+%   % The $a=b=0$ case is separate.
+%   % In this case $\gcd(a,b)=0$ by definition and for any $s$ and $t$ we
+%   % have $0=\gcd(a,b)=s\cdot a+t\cdot b=s\cdot 0+t\cdot 0$.
+
+%   % The other case is that either number is nonzero.
+%   % Consider the set of linear combinations 
+%   % $\mathcal{L}=\setbuilder{sa+tb}{s,t\in\Z}$.
+%   % It has a positive element since not all its elements are~$0$
+%   % (one of $a$ or~$b$ is nonzero and taking $1$ times that element
+%   % plus zero times the other gives a nonzero member), and if it has a 
+%   % negative element then negating the coefficients $s$ and~$t$ gives 
+%   % a positive element.
+%   % Any set of positive integers has a least positive element.
+%   % Call that element~$d\in\mathcal{L}$.
+%   % We will show that $d=\gcd(a,b)$.
+
+%   % By the first item any divisor common to $a$ and $b$ also divides 
+%   % a combination of the two, so $\gcd(a,b)\divides d=sa+bt$, and therefore
+%   % $\gcd(a,b)\leq d$.
+
+%   % For the inequality in the other direction, 
+%   % we will show that $d$ is a common divisor.
+%   % To show that $d\divides a$ write $a=dq+r$ with $0\leq r<d$ and
+%   % substitute: $r=a-dq=a-(sa+tb)\cdot q=(1-s)\cdot a-t\cdot b$.
+%   % Because~$d$ is the minimal positive combination, and becasue $r<d$,
+%   % this implies that the remainder~$r$ is zero and so $d\divides a$.
+%   % In the same way $d\divides b$.
+%   % As a common divisor, $d\leq\gcd(a,b)$.
+% \end{exes}
+% \end{ans}
+\end{problem}
+
+\begin{problem}
 You are given three buckets. 
 The first two are marked $6$~liters and $11$~liters
 while the last one, which is quite large, is unmarked.
 Taking water from a nearby pond, use those buckets
 to end with $8$~liters in the unmarked one.  
-\begin{ans}
+\begin{answer}
 The greatest common divisor of $6$ and~$11$ is~$1$.
 Reversing Euclid's algorithm (or simply spotting the relation by eye) 
 gives $1=2\cdot 6-1\cdot 11$.
@@ -1293,43 +2202,80 @@ Next fill the $6$~liter bucket again and pour what you can into the~$11$.
 You are left with $1$~liter in the small bucket.  
 Pour that into the large unmarked bucket.
 Repeat seven more times.    
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
-\begin{ex}  \label{ex:EuclidsLemma}
+\begin{problem}  \label{ex:EuclidsLemma}
 Let $a,b\in\Z$ and $m\in\N$. 
 Prove each.
 \begin{exes}
-\item $\gcd(ma,mb)=m\cdot\gcd(a,b)$
-\item If $d$ is a common divisor of $a$ and~$b$ then 
-  $\gcd(a/d,\,b/d)=\gcd(a,b)/d$.
-  This implies that 
-  dividing by the greatest common divisor leaves no common divisors:
-  if $a$ and~$b$ are nonzero then $a/gcd(a,b)$ and $b/\gcd(a,b)$
-  are relatively prime.
-\item \notetext{Euclid's Lemma}  
-  If $a$ and~$b$ are relatively prime then $a\divides bc$ implies that 
-  $a\divides c$.
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item If both $a$ and~$b$ are zero then the equation is trivial.
+\begin{exercise} 
+  $\gcd(ma,mb)=m\cdot\gcd(a,b)$
+\end{exercise}
+\begin{answer}
+  If both $a$ and~$b$ are zero then the equation is trivial.
   If one or both numbers are nonzero then by 
   B\'ezout's Lemma~\ref{ex:Bezout}, $\gcd(ma,mb)$ is the least
   positive value of $\setbuilder{s\cdot ma+t\cdot mb}{s,t\in\Z}$.
   This equals $m$ times the least positive member of 
   $\setbuilder{sa+tb}{s,t\in\Z}$, 
-  which is $m\cdot\gcd(a,b)$.
-\item This is immediate from the prior item on taking $m$ to be~$d$, 
-  and also taking $a$ to be~$a/d$ and $b$ to be~$b/d$.     
-\item The numbers $a$ and~$b$ are relatively prime so $\gcd(a,b)=1$.
+  which is $m\cdot\gcd(a,b)$.  
+\end{answer}
+\begin{exercise} 
+  If $d$ is a common divisor of $a$ and~$b$ then 
+  $\gcd(a/d,\,b/d)=\gcd(a,b)/d$.
+  This implies that 
+  dividing by the greatest common divisor leaves no common divisors:
+  if $a$ and~$b$ are nonzero then $a/gcd(a,b)$ and $b/\gcd(a,b)$
+  are relatively prime.
+\end{exercise}
+\begin{answer}
+  This is immediate from the prior item on taking $m$ to be~$d$, 
+  and also taking $a$ to be~$a/d$ and $b$ to be~$b/d$.       
+\end{answer}
+\begin{exercise} \notetext{Euclid's Lemma}  
+  If $a$ and~$b$ are relatively prime then $a\divides bc$ implies that 
+  $a\divides c$.
+\end{exercise}
+\begin{answer}
+  The numbers $a$ and~$b$ are relatively prime so $\gcd(a,b)=1$.
   The first item gives $\gcd(ca,cb)=c$.
   Thus $c=s\cdot ac+t\cdot bc$ for some $s,t\in\Z$, and
   because $a\divides ac$ and~$a\divides bc$ we have by Linearity that
   $a\divides c$.
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item $\gcd(ma,mb)=m\cdot\gcd(a,b)$
+% \item If $d$ is a common divisor of $a$ and~$b$ then 
+%   $\gcd(a/d,\,b/d)=\gcd(a,b)/d$.
+%   This implies that 
+%   dividing by the greatest common divisor leaves no common divisors:
+%   if $a$ and~$b$ are nonzero then $a/gcd(a,b)$ and $b/\gcd(a,b)$
+%   are relatively prime.
+% \item \notetext{Euclid's Lemma}  
+%   If $a$ and~$b$ are relatively prime then $a\divides bc$ implies that 
+%   $a\divides c$.
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item If both $a$ and~$b$ are zero then the equation is trivial.
+%   If one or both numbers are nonzero then by 
+%   B\'ezout's Lemma~\ref{ex:Bezout}, $\gcd(ma,mb)$ is the least
+%   positive value of $\setbuilder{s\cdot ma+t\cdot mb}{s,t\in\Z}$.
+%   This equals $m$ times the least positive member of 
+%   $\setbuilder{sa+tb}{s,t\in\Z}$, 
+%   which is $m\cdot\gcd(a,b)$.
+% \item This is immediate from the prior item on taking $m$ to be~$d$, 
+%   and also taking $a$ to be~$a/d$ and $b$ to be~$b/d$.     
+% \item The numbers $a$ and~$b$ are relatively prime so $\gcd(a,b)=1$.
+%   The first item gives $\gcd(ca,cb)=c$.
+%   Thus $c=s\cdot ac+t\cdot bc$ for some $s,t\in\Z$, and
+%   because $a\divides ac$ and~$a\divides bc$ we have by Linearity that
+%   $a\divides c$.
+% \end{exes}
+% \end{ans}
+\end{problem}
 \end{bezoutproof}
 % ========== End Bezout argument of lemma =========== 
 
@@ -1351,18 +2297,14 @@ is \definend{prime} if its only divisors are~$1$ and itself.
 A number greater than~$1$ that is not prime is~\definend{composite}.  
 \end{df}
 
-\begin{ex} Prove.
+\begin{problem} Prove.
 \begin{exes}
-\item An integer $n>1$ is composite if and only if it has factors $a,b$ 
+\begin{exercise} 
+  An integer $n>1$ is composite if and only if it has factors $a,b$ 
   such that $1<a,b<n$.  
-\item Every number greater than $1$ has a prime divisor.
-\item Every composite number $n>1$ has a prime divisor~$p$ 
-  with $p\leq \sqrt{n}$.
-\item Show that the prior inequality cannot be made strict.     
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item The `if' direction, that if it has such factors then it is composite,
+\end{exercise}
+\begin{answer}
+  The `if' direction, that if it has such factors then it is composite,
   is clear.
   For `only if' assume that $n$ is composite so
   that at least one of its divisors~$a$ satisfies that $1<a<n$.
@@ -1371,8 +2313,13 @@ A number greater than~$1$ that is not prime is~\definend{composite}.
   First, $b$ is positive because $a$ and~$n$ are positive.
   Next,~$b$ must be greater than~$1$ because $0<b\leq 1$ 
   implies that $ab\leq a<n$.
-  Finally,~$b$ must be less than~$n$ because $1<a$ implies that $b<ab=n$. 
-\item We use induction to prove that
+  Finally,~$b$ must be less than~$n$ because $1<a$ implies that $b<ab=n$.   
+\end{answer}
+\begin{exercise} 
+  Every number greater than $1$ has a prime divisor.
+\end{exercise}
+\begin{answer}
+  We use induction to prove that
   every number greater than one has a prime divisor.
   The base step is~$n=2$, which has a prime divisor, namely~$2$ itself.
 
@@ -1382,8 +2329,14 @@ A number greater than~$1$ that is not prime is~\definend{composite}.
   Otherwise $k+1$ is composite.
   By the prior item it has factors $a,b$ with $1<a,b<k+1$.
   The inductive hypothesis applies to these numbers, and so~$a$ has at
-  least one prime factor, which is then a prime factor of $k+1$.
-\item Because~$n>1$ is composite there are numbers~$a,b\in\Z$ with
+  least one prime factor, which is then a prime factor of $k+1$.  
+\end{answer}
+\begin{exercise} 
+  Every composite number $n>1$ has a prime divisor~$p$ 
+  with $p\leq \sqrt{n}$.
+\end{exercise}
+\begin{answer}
+  Because~$n>1$ is composite there are numbers~$a,b\in\Z$ with
   $1<a,b<n$.
   If both~$a>\sqrt{n}$ and~$b>\sqrt{n}$ then we would have that
   $a\cdot b>\sqrt{n}\cdot\sqrt{n}=n$,
@@ -1396,15 +2349,68 @@ A number greater than~$1$ that is not prime is~\definend{composite}.
   This~$p$ is a factor of~$n$ by the Transitivity property. 
   It is 
   less than or equal to~$c$ by the Comparison property and therefore
-  is less than or equal to~$\sqrt{n}$.  
-\item Take $n=4$.
+  is less than or equal to~$\sqrt{n}$.    
+\end{answer}
+\begin{exercise} 
+  Show that the prior inequality cannot be made strict.
+\end{exercise}
+\begin{answer}
+  Take $n=4$.  
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item An integer $n>1$ is composite if and only if it has factors $a,b$ 
+%   such that $1<a,b<n$.  
+% \item Every number greater than $1$ has a prime divisor.
+% \item Every composite number $n>1$ has a prime divisor~$p$ 
+%   with $p\leq \sqrt{n}$.
+% \item Show that the prior inequality cannot be made strict.     
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item The `if' direction, that if it has such factors then it is composite,
+%   is clear.
+%   For `only if' assume that $n$ is composite so
+%   that at least one of its divisors~$a$ satisfies that $1<a<n$.
+%   Consider $b\in\Z$ such that $ab=n$; we will be finished when we show 
+%   that $1<b<n$.
+%   First, $b$ is positive because $a$ and~$n$ are positive.
+%   Next,~$b$ must be greater than~$1$ because $0<b\leq 1$ 
+%   implies that $ab\leq a<n$.
+%   Finally,~$b$ must be less than~$n$ because $1<a$ implies that $b<ab=n$. 
+% \item We use induction to prove that
+%   every number greater than one has a prime divisor.
+%   The base step is~$n=2$, which has a prime divisor, namely~$2$ itself.
 
-\begin{ex}[Euclid's Theorem]
+%   For the inductive step suppose that the statement is true for the cases 
+%   $n=2$, \ldots, $n=k$ and consider $k+1$.
+%   If $k+1$ is prime then we are done, the prime divisor is $k+1$~itself.
+%   Otherwise $k+1$ is composite.
+%   By the prior item it has factors $a,b$ with $1<a,b<k+1$.
+%   The inductive hypothesis applies to these numbers, and so~$a$ has at
+%   least one prime factor, which is then a prime factor of $k+1$.
+% \item Because~$n>1$ is composite there are numbers~$a,b\in\Z$ with
+%   $1<a,b<n$.
+%   If both~$a>\sqrt{n}$ and~$b>\sqrt{n}$ then we would have that
+%   $a\cdot b>\sqrt{n}\cdot\sqrt{n}=n$,
+%   so at least one of the factors of~$n$ must be less than or equal 
+%   to~$\sqrt{n}$.
+
+%   We finish by showing that $n$ has a factor in that category that is prime.
+%   Let $c$ be a factor of~$n$ with $c\leq\sqrt{n}$.
+%   Then $c$ has a prime factor~$p$.
+%   This~$p$ is a factor of~$n$ by the Transitivity property. 
+%   It is 
+%   less than or equal to~$c$ by the Comparison property and therefore
+%   is less than or equal to~$\sqrt{n}$.  
+% \item Take $n=4$.
+% \end{exes}
+% \end{ans}
+\end{problem}                   
+
+\begin{problem} \notetext{Euclid's Theorem}
 There are infinitely many primes.  
-\begin{ans}
+\begin{answer}
 To obtain a contradiction, assume otherwise.
 Assume that there are finitely many primes: 
 $p_0=2$, $p_1=3$, \ldots, $p_{n-1}$.
@@ -1418,25 +2424,28 @@ But~$m$ is constructed so that dividing it by any~$p_i$
 leaves a remainder of~$1$.
 This is a contradiction, so the assumption that there is a finite
 list of primes is impossible.
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
-\begin{ex} Suppose that $p$ is a prime.  Prove each.\label{ex:EuclidsOtherLemma}
+\begin{problem} 
+Suppose that $p$ is a prime.  Prove each.\label{ex:EuclidsOtherLemma}
 \begin{exes}
-\item If  $p\divides ab$ then either $p\divides a$ or
-$p\divides b$.
-\item If $p\divides a_0\cdot a_1\cdots a_{n-1}$ then 
-$p$ divides at least one~$a_i$.    
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item Let $d=\gcd(p,a)$.
+\begin{exercise} 
+  If  $p\divides ab$ then either $p\divides a$ or $p\divides b$.
+\end{exercise}
+\begin{answer}
+  Let $d=\gcd(p,a)$.
   Then $d$ is a positive number such that $d\divides p$ and~$d\divides a$.
   Because $p$ is prime, either $d=p$ or~$d=1$.
   If $d=p$ then $p\divides a$.
   If $d=1$ then Euclid's Lemma~\ref{ex:EuclidsLemma} shows that 
   $p\divides b$.
-\item We prove this by induction on the size of the product.
+\end{answer}
+\begin{exercise} 
+  If $p\divides a_0\cdot a_1\cdots a_{n-1}$ then $p$ divides at least one~$a_i$.
+\end{exercise}
+\begin{answer}
+  We prove this by induction on the size of the product.
   The base step is $n=1$, that there are two numbers in the product.
   This is proved in the prior item.
 
@@ -1445,119 +2454,208 @@ $p$ divides at least one~$a_i$.
   Taking $a_0\cdots a_{k-1}$ as~$a$ and $a_k$ as~$b$, the prior item applies
   to show that $p\divides a_0\cdots a_{k-1}$ or~$p\divides a_k$.
   In the latter case we are done while in the former case the
-  inductive hypothesis applies to show that $p$ divides one of the factors.
+  inductive hypothesis applies to show that $p$ divides one of the factors.  
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item If  $p\divides ab$ then either $p\divides a$ or
+% $p\divides b$.
+% \item If $p\divides a_0\cdot a_1\cdots a_{n-1}$ then 
+% $p$ divides at least one~$a_i$.    
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item Let $d=\gcd(p,a)$.
+%   Then $d$ is a positive number such that $d\divides p$ and~$d\divides a$.
+%   Because $p$ is prime, either $d=p$ or~$d=1$.
+%   If $d=p$ then $p\divides a$.
+%   If $d=1$ then Euclid's Lemma~\ref{ex:EuclidsLemma} shows that 
+%   $p\divides b$.
+% \item We prove this by induction on the size of the product.
+%   The base step is $n=1$, that there are two numbers in the product.
+%   This is proved in the prior item.
+
+%   For the inductive step assume that the statement is true for $n=1$, \ldots,
+%   $n=k$ and suppose that $n=k+1$, that $p\divides a_0\cdots a_{k-1}a_k$.
+%   Taking $a_0\cdots a_{k-1}$ as~$a$ and $a_k$ as~$b$, the prior item applies
+%   to show that $p\divides a_0\cdots a_{k-1}$ or~$p\divides a_k$.
+%   In the latter case we are done while in the former case the
+%   inductive hypothesis applies to show that $p$ divides one of the factors.
+% \end{exes}
+% \end{ans}
+\end{problem}
 
 
 % Gowers: http://gowers.wordpress.com/2011/11/13/why-isnt-the-fundamental-theorem-of-arithmetic-obvious/
 % and
 % http://gowers.wordpress.com/2011/11/18/proving-the-fundamental-theorem-of-arithmetic/
-\begin{ex}[Fundamental Theorem of Arithmetic]  Prove.
+\begin{problem} \notetext{Fundamental Theorem of Arithmetic}  
+Prove.
 \begin{exes}
-\item Any number $n>1$ can be written as a product of one or more primes
-$n=p_1^{e_1}p_2^{e_2}\cdots p_k^{e_k}$.
-\item That factorization is essentially unique:~if 
-$n=p_1^{e_1}p_2^{e_2}\cdots p_k^{e_k}$ and the primes
-are in ascending order $p_1<p_2<\cdots<p_k$ then any other
-factorization of~$n$ into a product of primes in ascending order will give the
-same result. 
-\hint~suppose that there are two factorizations into primes $n=p_0\cdots p_{s-1}$
-and $n=q_0\cdots q_{t-1}$ in ascending order and use induction on~$s$.     
+\begin{exercise} 
+  Any number $n>1$ can be written as a product of one or more primes
+  $n=p_1^{e_1}p_2^{e_2}\cdots p_k^{e_k}$.
+\end{exercise}
+\begin{answer}
+  We do induction.
+  For the base step, observe that $n=2$ is the product of one prime. 
+  For the inductive step assume that the statement holds when $n=2$, \ldots, 
+  $n=k$ and consider~$n=k+1$.
+  Every number greater than~$1$ factors $k+1=a\cdot b$ into two smaller
+  numbers.
+  Because these two are smaller
+  the inductive hypothesis applies, so each is a product of 
+  primes.
+  Then $k+1=ab$ can be written as a product of primes.  
+\end{answer}
+\begin{exercise} 
+  That factorization is essentially unique:~if 
+  $n=p_1^{e_1}p_2^{e_2}\cdots p_k^{e_k}$ and the primes
+  are in ascending order $p_1<p_2<\cdots<p_k$ then any other
+  factorization of~$n$ into a product of primes in ascending order will give the
+  same result. 
+  \hint~suppose that there are two factorizations into primes 
+   $n=p_0\cdots p_{s-1}$ and $n=q_0\cdots q_{t-1}$ in ascending order 
+   and use induction on~$s$.
+\end{exercise}
+\begin{answer}
+  Assume that $n=p_0\cdots p_{s-1}$ with $s\geq 1$ and
+  $p_0\leq\cdots \leq p_{s-1}$, 
+  and also that $n=q_0\cdots q_{t-1}$ with $t\geq 1$ 
+  and $q_0\leq\cdots \leq q_{t-1}$.
+  We will show that $s=t$ and that $p_i=q_i$ for each $i$.
+
+  We use induction on~$s$.
+  The base step is~$s=1$ so that $n=p_0$ is prime.
+  Now $p_0=q_0\cdots q_{t-1}$ and this is a nontrivial factorization of a prime
+  unless $t=1$.
+
+  For the inductive step assume that the factorization is unique for
+  $s=1$, \ldots, $s=k$ and consider the $s=k+1$ case, with
+  $n=p_0\cdots p_{s-1}\cdot p_s$.   
+  Assume that there is another prime factorization $n=q_0\cdots q_{t-1}$
+  for $t\geq 1$ and $q_0\leq\cdots \leq q_{t-1}$.
+
+  We first show that $p_s$ equals some $q_i$.
+  Because $p_s\divides n$ we have $p_s\divides q_0\cdots q_{t-1}$ and so
+  by the above result~\ref{ex:EuclidsOtherLemma} shows that
+  $p_s$ divides some $q_i$.
+  Because $q_i$ is prime this shows that $p_s$ equals~$q_i$,
+  since primes don't have any divisors other than~$1$ and themselves.
+
+  To finish, cancel the primes.
+  That is, consider 
+  $n/p_s=p_0\cdots p_{s-1}=q_0\cdots q_{i-1}\cdot q_{i+1}\cdots q_{t-1}$.
+  There remains at least one prime on the right (by the assumption that 
+  $s=k+1$), so the inductive hypothesis applies. 
+  Therefore
+  the ascending sequence of $q$'s without~$q_i$ 
+  equals the ascending sequence of $p$'s without~$p_s$,
+  both in length and in members. 
+  Obviously then the entire sequence of $q$'s equals the entire sequence of
+  $p$'s, again in length and in individual members.   
+\end{answer}
 \end{exes}
-\begin{ans}
-\begin{exes}
-\item We do induction.
-For the base step, observe that $n=2$ is the product of one prime. 
-For the inductive step assume that the statement holds when $n=2$, \ldots, 
-$n=k$ and consider~$n=k+1$.
-Every number greater than~$1$ factors $k+1=a\cdot b$ into two smaller
-numbers.
-Because these two are smaller
-the inductive hypothesis applies, so each is a product of 
-primes.
-Then $k+1=ab$ can be written as a product of primes.
-\item Assume that $n=p_0\cdots p_{s-1}$ with $s\geq 1$ and
-$p_0\leq\cdots \leq p_{s-1}$, 
-and also that $n=q_0\cdots q_{t-1}$ with $t\geq 1$ 
-and $q_0\leq\cdots \leq q_{t-1}$.
-We will show that $s=t$ and that $p_i=q_i$ for each $i$.
+% \begin{exes}
+% \item Any number $n>1$ can be written as a product of one or more primes
+% $n=p_1^{e_1}p_2^{e_2}\cdots p_k^{e_k}$.
+% \item That factorization is essentially unique:~if 
+% $n=p_1^{e_1}p_2^{e_2}\cdots p_k^{e_k}$ and the primes
+% are in ascending order $p_1<p_2<\cdots<p_k$ then any other
+% factorization of~$n$ into a product of primes in ascending order will give the
+% same result. 
+% \hint~suppose that there are two factorizations into primes $n=p_0\cdots p_{s-1}$
+% and $n=q_0\cdots q_{t-1}$ in ascending order and use induction on~$s$.     
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item We do induction.
+% For the base step, observe that $n=2$ is the product of one prime. 
+% For the inductive step assume that the statement holds when $n=2$, \ldots, 
+% $n=k$ and consider~$n=k+1$.
+% Every number greater than~$1$ factors $k+1=a\cdot b$ into two smaller
+% numbers.
+% Because these two are smaller
+% the inductive hypothesis applies, so each is a product of 
+% primes.
+% Then $k+1=ab$ can be written as a product of primes.
+% \item Assume that $n=p_0\cdots p_{s-1}$ with $s\geq 1$ and
+% $p_0\leq\cdots \leq p_{s-1}$, 
+% and also that $n=q_0\cdots q_{t-1}$ with $t\geq 1$ 
+% and $q_0\leq\cdots \leq q_{t-1}$.
+% We will show that $s=t$ and that $p_i=q_i$ for each $i$.
 
-We use induction on~$s$.
-The base step is~$s=1$ so that $n=p_0$ is prime.
-Now $p_0=q_0\cdots q_{t-1}$ and this is a nontrivial factorization of a prime
-unless $t=1$.
+% We use induction on~$s$.
+% The base step is~$s=1$ so that $n=p_0$ is prime.
+% Now $p_0=q_0\cdots q_{t-1}$ and this is a nontrivial factorization of a prime
+% unless $t=1$.
 
-For the inductive step assume that the factorization is unique for
-$s=1$, \ldots, $s=k$ and consider the $s=k+1$ case, with
-$n=p_0\cdots p_{s-1}\cdot p_s$.   
-Assume that there is another prime factorization $n=q_0\cdots q_{t-1}$
-for $t\geq 1$ and $q_0\leq\cdots \leq q_{t-1}$.
+% For the inductive step assume that the factorization is unique for
+% $s=1$, \ldots, $s=k$ and consider the $s=k+1$ case, with
+% $n=p_0\cdots p_{s-1}\cdot p_s$.   
+% Assume that there is another prime factorization $n=q_0\cdots q_{t-1}$
+% for $t\geq 1$ and $q_0\leq\cdots \leq q_{t-1}$.
 
-We first show that $p_s$ equals some $q_i$.
-Because $p_s\divides n$ we have $p_s\divides q_0\cdots q_{t-1}$ and so
-by the above result~\ref{ex:EuclidsOtherLemma} shows that
-$p_s$ divides some $q_i$.
-Because $q_i$ is prime this shows that $p_s$ equals~$q_i$,
-since primes don't have any divisors other than~$1$ and themselves.
+% We first show that $p_s$ equals some $q_i$.
+% Because $p_s\divides n$ we have $p_s\divides q_0\cdots q_{t-1}$ and so
+% by the above result~\ref{ex:EuclidsOtherLemma} shows that
+% $p_s$ divides some $q_i$.
+% Because $q_i$ is prime this shows that $p_s$ equals~$q_i$,
+% since primes don't have any divisors other than~$1$ and themselves.
 
-To finish, cancel the primes.
-That is, consider 
-$n/p_s=p_0\cdots p_{s-1}=q_0\cdots q_{i-1}\cdot q_{i+1}\cdots q_{t-1}$.
-There remains at least one prime on the right (by the assumption that $s=k+1$),
-so the inductive hypothesis applies. 
-Therefore
-the ascending sequence of $q$'s without~$q_i$ 
-equals the ascending sequence of $p$'s without~$p_s$,
-both in length and in members. 
-Obviously then the entire sequence of $q$'s equals the entire sequence of
-$p$'s, again in length and in individual members. 
-\end{exes}
-\end{ans}
-\end{ex}
+% To finish, cancel the primes.
+% That is, consider 
+% $n/p_s=p_0\cdots p_{s-1}=q_0\cdots q_{i-1}\cdot q_{i+1}\cdots q_{t-1}$.
+% There remains at least one prime on the right (by the assumption that $s=k+1$),
+% so the inductive hypothesis applies. 
+% Therefore
+% the ascending sequence of $q$'s without~$q_i$ 
+% equals the ascending sequence of $p$'s without~$p_s$,
+% both in length and in members. 
+% Obviously then the entire sequence of $q$'s equals the entire sequence of
+% $p$'s, again in length and in individual members. 
+% \end{exes}
+% \end{ans}\
+\end{problem}
 
 \noindent\remark had we included~$1$ among the primes then 
 factorization would not be unique 
 since to any existing factorization we could add more $1$'s.
 
-\begin{ex} True or false:
+\begin{problem} True or false:
 % From: http://gowers.wordpress.com/2011/11/13/why-isnt-the-fundamental-theorem-of-arithmetic-obvious/
 \begin{items}
 \item $5\cdot 7\cdot 19\neq 3\cdot 11\cdot 17$
 \item $47\cdot 863\neq 73\cdot 557$
 \item $1357\cdot 4183\neq 1081\cdot 5251$ % due to David Speyer
 \end{items}
-\begin{ans}
+\begin{answer}
 \begin{items}
 \item All the numbers are prime, and they are different.
 \item These numbers are prime, and different.
 \item The two sides are equal (the numbers are non-prime).     
 \end{items}
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
 % \begin{ex}
 % Give (and prove) a condition of the prime factorizations of $a$ and~$b$
 % equivalent to their being relatively prime.
 % \end{ex}
 
-\begin{ex}
+\begin{problem}
 Suppose that two numbers have prime factorizations 
 of $a=p_0^{e_0}\cdots p_{n-1}^{e_{n-1}}$
 and $b=p_0^{f_0}\cdots p_{n-1}^{f_{n-1}}$
 (to use the same primes, we allow that some of the exponents are zero).
 Prove each.
 \begin{exes}
-\item
+\begin{exercise}
   In the prime factorization of
   $\gcd(a,b)$ the exponent of $p_i$ is $\min(e_i,f_i)$.
-\item In the prime factorization of $\lcm(a,b)$ the exponent of 
-  $p_i$ is $\max(e_i,f_i)$.
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item Let $d=\gcd(a,b)$.
+\end{exercise}
+\begin{answer}
+  Let $d=\gcd(a,b)$.
   Note that if $p$ is a prime that divides~$a$ and~$b$ then
   by \ref{ex:EuclidsOtherLemma} above, $p$ must be one of the 
   $p_0$, \ldots, $p_{n-1}$.   
@@ -1569,24 +2667,58 @@ Prove each.
   equal to $p_0^{e_0}\cdots p_i^{e_i}\cdots p_{n-1}^{e_{n-1}}$, and 
   canceling the most factors of~$p_i$ possible (that is, cancel-ling $p_i^{e_i}$)
   gives a contradiction because there is at least one factor
-  of $p_i$ on one side but no such factor on the other.
-\item  This argument is just like the prior item's.  
+  of $p_i$ on one side but no such factor on the other.  
+\end{answer}
+\begin{exercise} 
+  In the prime factorization of $\lcm(a,b)$ the exponent of 
+  $p_i$ is $\max(e_i,f_i)$.
+\end{exercise}
+\begin{answer}
+  This argument is just like the prior item's.    
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item
+%   In the prime factorization of
+%   $\gcd(a,b)$ the exponent of $p_i$ is $\min(e_i,f_i)$.
+% \item In the prime factorization of $\lcm(a,b)$ the exponent of 
+%   $p_i$ is $\max(e_i,f_i)$.
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item Let $d=\gcd(a,b)$.
+%   Note that if $p$ is a prime that divides~$a$ and~$b$ then
+%   by \ref{ex:EuclidsOtherLemma} above, $p$ must be one of the 
+%   $p_0$, \ldots, $p_{n-1}$.   
+%   So let the prime factorization of~$d$ be $p_0^{g_0}\cdots p_n^{g_n}$. 
+%   If $g_i=\min(e_i,f_i)$ for each~$i$ then $d$~divides both $a$ and~$b$.
+%   If $g_i>\min(e_i,f_i)$ then, supposing without loss of generality
+%   that the smaller of $e_i$ and~$f_i$ is $e_i$, writing
+%   $d\cdot k=a$ gives $p_0^{g_0}\cdots p_i^{g_i}\cdots p_{n-1}^{g_{n-1}}\cdot k$
+%   equal to $p_0^{e_0}\cdots p_i^{e_i}\cdots p_{n-1}^{e_{n-1}}$, and 
+%   canceling the most factors of~$p_i$ possible (that is, cancel-ling $p_i^{e_i}$)
+%   gives a contradiction because there is at least one factor
+%   of $p_i$ on one side but no such factor on the other.
+% \item  This argument is just like the prior item's.  
+% \end{exes}
+% \end{ans}
+\end{problem}
 
-\begin{ex} \notetext{Existence of Irrational Numbers}
+\begin{problem} \notetext{Existence of Irrational Numbers}
 \begin{exes}
-\item Prove that if a number is a square then in its prime factorization 
+\begin{exercise} 
+  Prove that if a number is a square then in its prime factorization 
   each prime occurs an even number of times.
-\item Prove that $\sqrt{2}$ is irrational.
-% \item Prove that $\sqrt{17} is irrational.$ % College Math Journal Jan 2013 pp 53
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item The square of $n=p_0^{e_0}\cdots p_{s-1}^{e_{s-1}}$ is
-  $n=p_0^{2e_0}\cdots p_{s-1}^{2e_{s-1}}$.
-\item Suppose that $\sqrt{2}=n/d$ for $n,d\in\Z$.
+\end{exercise}
+\begin{answer}
+  The square of $n=p_0^{e_0}\cdots p_{s-1}^{e_{s-1}}$ is
+  $n=p_0^{2e_0}\cdots p_{s-1}^{2e_{s-1}}$.  
+\end{answer}
+\begin{exercise} 
+  Prove that $\sqrt{2}$ is irrational.
+\end{exercise}
+\begin{answer}
+  Suppose that $\sqrt{2}=n/d$ for $n,d\in\Z$.
   Clearing the fraction and squaring gives $2\cdot n^2=d^2$.
   On the right, the prime factorization of~$d^2$ has $2$ raised to an even 
   power.
@@ -1595,10 +2727,35 @@ Prove each.
   Thus the left has an odd number of factors of~$2$ while the right has
   and even number of factors of~$2$.
   This contradicts the uniqueness of factorizations, showing the 
-  original supposition to be false. 
+  original supposition to be false.   
+\end{answer}
+% \begin{exercise} 
+%   Prove that $\sqrt{17} is irrational.$ % College Math Journal Jan 2013 pp 53
+% \end{exercise}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item Prove that if a number is a square then in its prime factorization 
+%   each prime occurs an even number of times.
+% \item Prove that $\sqrt{2}$ is irrational.
+% % \item Prove that $\sqrt{17} is irrational.$ % College Math Journal Jan 2013 pp 53
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item The square of $n=p_0^{e_0}\cdots p_{s-1}^{e_{s-1}}$ is
+%   $n=p_0^{2e_0}\cdots p_{s-1}^{2e_{s-1}}$.
+% \item Suppose that $\sqrt{2}=n/d$ for $n,d\in\Z$.
+%   Clearing the fraction and squaring gives $2\cdot n^2=d^2$.
+%   On the right, the prime factorization of~$d^2$ has $2$ raised to an even 
+%   power.
+%   On the left, the prime factorization of~$n^2$ has $2$ raised to an even power
+%   also, but there is another factor of~$2$ on the right.
+%   Thus the left has an odd number of factors of~$2$ while the right has
+%   and even number of factors of~$2$.
+%   This contradicts the uniqueness of factorizations, showing the 
+%   original supposition to be false. 
+% \end{exes}
+% \end{ans}
+\end{problem}
 
 
 

@@ -1,0 +1,172 @@
+% ========================================
+% Page layout
+\RequirePackage[left=1.45in,right=1.45in,top=1in,bottom=1in]{geometry}
+
+% fancyhdr
+\fancypagestyle{bodypage}{%
+\fancyhf{}% clear all six fields
+\fancyhead[RE,LO]{\small \textit{Introduction to Proofs}, Hef{}feron, version~\version}
+\fancyhead[LE,RO]{\small page \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+}
+
+\pagestyle{prefacepage}
+\AtBeginDocument{\thispagestyle{firstpage}}
+
+% ========================================
+% Answers
+% This has to go in this .sty because it opens and empties answers.tex, 
+% which would be bad if you ran pdflatex answers.
+\usepackage{answers}
+\Newassociation{ans}{solution}{answers}
+\Opensolutionfile{answers}[answersbody]
+
+% \begin{Filesave}{answers}
+% \documentclass{ibl}
+% \begin{document}
+% \begin{answerlist}  
+% \end{Filesave}
+
+\AtEndDocument{%
+\Closesolutionfile{answers}}
+
+
+% ========================================
+% Title-ing of chapters and sections
+% Uses titlesec. 
+
+% If making compact version then put chapter start on same page
+\ifbool{optioncompact}{\titleclass{\chapter}{straight}}{}  % possibilities are: straight, part, top, page
+
+% Format the chapter and section heads
+\titleformat{\chapter}[block]{\color{darki}\Large\scshape}{Chapter \thechapter}{1em}{}[\thispagestyle{firstpage}]
+\titlespacing*{\chapter}{0em}{4ex}{2ex} 
+\titleformat{\section}[block]{\color{darki}\large\scshape}{}{0em}{}[]
+\titlespacing*{\section}{0em}{4ex}{1ex} 
+
+% Here is the interaction with answers package.  
+% Need to write the name of the chapter or section to the answer file.
+% But that I can tell, I can't get \thetitle into titlesec's 
+% \titleformat after-code.  So I write a new \chapter and \section
+% that grab those, write the material to answers, and then run the command
+% that titlesec has defined. 
+%   Grab the name of the chapter, write it to the answers file, then
+% invoke the titlesec \chapter command.
+\let\chapterholder\chapter
+\renewcommand{\chapter}{\@ifstar  % look out for \chapter*{Preface}
+                     \jhchapterStar%
+                     \jhchapterNoStar%
+}
+\newcommand{\jhchapterStar}[1]{\chapterholder{#1}}
+\newcommand{\jhchapterNoStar}[1]{\ifbool{inappendix}{\relax}{\Writetofile{answers}{\protect\chapter{#1}}}\chapterholder{#1}}
+% Same thing for the \section command
+\let\sectionholder\section
+\renewcommand{\section}{\@ifstar
+                     \jhsectionStar%
+                     \jhsectionNoStar%
+}
+\newcommand{\jhsectionStar}[1]{\sectionholder{#1}}
+\newcommand{\jhsectionNoStar}[1]{\Writetofile{answers}{\protect\section{#1}}\sectionholder{#1}}
+
+
+% ++++++++++++
+% Problems
+
+% Exercises and answers that do not appear in this file are put into
+% another .tex file for "Other exercises."
+\newcommand{\otherfilename}{otherbody}
+\Newassociation{otherproblems}{otherproblem}{otherex}
+\Opensolutionfile{otherex}[\otherfilename]
+\Newassociation{otherexercises}{otherexercise}{otherex}
+% \Opensolutionfile{otherex}[\otherfilename]
+\Newassociation{otheranswers}{otheranswer}{otherex}
+% \Opensolutionfile{otherans}[\otherfilename]
+\AtEndDocument{%
+\Closesolutionfile{otherex}}
+
+% A problem consists of a number of exercise items.  
+%  optional argument: A number that determines if this gets printed
+\newenvironment{problem}[1][\defaultbooklength]{%
+  \gdef\problem@booklengthvalue{#1}  % remember #1
+  \ifnumgreater{\problem@booklengthvalue}{\booklength}{
+      \typeout{About to turn on otherproblems macro}
+      \otherproblems
+    }{%
+     % \addtocounter{exerciseswithpartscount}{1}%
+     \begin{ex}
+     \Writetofile{answers}{\protect\begin{answer}{\Currentlabel}} 
+  }
+}{%
+  \ifnumgreater{\problem@booklengthvalue}{\booklength}{
+      \endotherproblems
+    }{%
+     \Writetofile{answers}{\protect\end{answer}} 
+     \Writetofile{answers}{}  % blank line for human readability
+  \end{ex}
+  }
+}
+
+
+% \usepackage{fancyvrb}
+\newenvironment{exercise}[1][\problem@booklengthvalue]{%
+  \gdef\exercise@booklengthvalue{#1}  % remember #1
+  \typeout{Exercise book length value \exercise@booklengthvalue}
+  \ifnumgreater{\exercise@booklengthvalue}{\booklength}{%
+     \typeout{  Writing exercise to other file}
+     \otherexercises
+  }{
+     \typeout{  Writing exercise to main file}
+     \item 
+  }  
+}{%
+  \ifnumgreater{\exercise@booklengthvalue}{\booklength}{%
+     \endotherexercises
+  }{}  
+}
+
+\newenvironment{answer}{%
+  \ifnumgreater{\exercise@booklengthvalue}{\booklength}{%
+     \otheranswers
+  }{% 
+    \ans  
+  }  
+}{%
+  \ifnumgreater{\exercise@booklengthvalue}{\booklength}{%
+     \endotheranswers
+  }{
+     \endans
+  }  
+}
+
+
+
+% ++++++++++++
+% Exercises sometimes have multiple parts.
+
+% For these exercises, when done on the board, I have separate students 
+% do separate parts
+\newlength{\exesindent}\setlength{\exesindent}{1.25em}
+\newenvironment{exes}{%
+  \typeout{exes: problem book length value \problem@booklengthvalue}
+  \ifnumgreater{\problem@booklengthvalue}{\booklength}{}{%
+     \Writetofile{answers}{\protect\begin{exes}} 
+    }
+     \begin{enumerate}[topsep=0.15ex,partopsep=0ex,parsep=0ex,
+                  beginpenalty=150,   % Prevent page break after newline start
+                  itemsep=.25ex plus .03ex minus .01ex,
+                  leftmargin=\exesindent,rightmargin=0em,
+                  align=left,label={\textsc{\alph*}.\protect\addtocounter{exercisepartscount}{1}}]
+}{%
+  \ifnumgreater{\problem@booklengthvalue}{\booklength}{}{%
+     \Writetofile{answers}{\protect\end{exes}} 
+  }
+     \end{enumerate}
+}
+
+% Each individual exercise has two main arguments, the exercise and
+% the answer.  There is also an optional argument, a number that
+% determines if the exercise gets printed in the various length
+% books.
+\newcommand{\exer}[3][\defaultbooklength]{\item #2 %
+  \Writetofile{answers}{\protect\item\space #3}}

@@ -1,14 +1,16 @@
-% ibl.sty
+% ibl.cls
 % Class for Inquiry-based Learning document
 % Jim Hefferon jhefferon (at) smcvt.edu
 % --- Class structure: identification part
 % ---
-\ProvidesClass{ibl}[2013/04/13 version 0.99 of Inquiry-based Learning book class (Jim Hefferon)]
+\ProvidesClass{test}[2013/04/13 version 0.99 of Inquiry-based Learning book class (Jim Hefferon)]
 \NeedsTeXFormat{LaTeX2e}
 
 % ========================================
 % I want the booleans offered by this package
 \usepackage{etoolbox}
+% Allow inclusion of additional questions if longer version is suitable 
+\usepackage{comment}
 
 % --- Class structure: declaration of options part
 % ---
@@ -26,11 +28,30 @@
   \booltrue{optioncompact}
 }
 
-% Allow inclusion of additional questions if longer version is suitable 
-% \usepackage{comment}
+% Include a minimal number of exercises, or medium number, or all?
+\newcommand{\defaultbooklength}{0}
+\newcommand{\booklength}{\defaultbooklength}
+\newcommand{\minimallength}{\def\booklength{0}}
+\newcommand{\midlength}{\def\booklength{1}}
+\newcommand{\maximallength}{\def\booklength{2}}
+\DeclareOption{minimallength}{
+  \minimallength
+}
+\DeclareOption{midlength}{
+  \midlength
+}
+\DeclareOption{maximallength}{
+  \maximallength
+}
+\newcommand{\current@useforbooklength}{\defaultbooklength}
+% Put these in text to set which exercises get used
+\newcommand{\useforminimallength}{\def\current@useforbooklength{0}}
+\newcommand{\useformidlength}{\def\current@useforbooklength{1}}
+\newcommand{\useformaximallength}{\def\current@useforbooklength{2}}
+
 % comment out one of these, depending on whether you want more questions
 %\includecomment{longversion}
-% \excludecomment{longversion}
+\excludecomment{longversion}
 
 
 
@@ -199,23 +220,6 @@ qed=\qedsymbol
 \addtocounter{exercisetotal}{-\value{exerciseswithpartscount}}%
 \typeout{Number for students to do is Total-Number+Count=\theexercisetotal.}}
 
-% ++++++++++++
-% Exercises sometimes have multiple parts.
-
-% For these exercises, when done on the board, I have separate students 
-% do separate parts
-\newlength{\exesindent}\setlength{\exesindent}{1.25em}
-\newenvironment{exes}{%
-\addtocounter{exerciseswithpartscount}{1}%
-% \hspace*{0em}% Causes it to start on a new line? 
-\begin{enumerate}[topsep=0.15ex,partopsep=0ex,parsep=0ex,
-                  beginpenalty=150,   % Prevent page break after newline start
-                  itemsep=.25ex plus .03ex minus .01ex,
-                  leftmargin=\exesindent,rightmargin=0em,
-                  align=left,label={\textsc{\alph*}.\protect\addtocounter{exercisepartscount}{1}}] 
-}{%
-\end{enumerate}
-}
 
 % For these exercises, when done on the board I have one student do them
 % all. 
