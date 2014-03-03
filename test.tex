@@ -2778,8 +2778,8 @@ of the set, written $x\in A$
 (to denote that $x$ is not an element of $A$ write~$x\notin A$).
 Two sets are equal if and only if they have the same elements.
 \end{df}
-\noindent Read `$\in$' as ``is an element of'' rather than ``in'' since the 
-latter causes confusion with 
+\noindent Read `$\in$' as ``is an element of'' rather than ``in'' to ease
+confusion with 
 the subset relation defined below.
 We sometimes say ``collection'' as a synonym for set.
 
@@ -2791,7 +2791,7 @@ as $P=\set{2, 3, 5, 7}$
 or as~$P=\setbuilder{p\in\N}{\text{$p$ is prime and $p<10$}}$ 
 (read the vertical bar as ``such that'').
 
-\begin{ex} Decide if each is true and justify your decision:
+\begin{problem} Decide if each is true and justify your decision.
 \begin{items}
 \item $\set{1,3,5}=\set{5,3,1}$    
 \item $\set{2, 4, 6}=\set{2, 4, 6, 4}$    
@@ -2799,7 +2799,7 @@ or as~$P=\setbuilder{p\in\N}{\text{$p$ is prime and $p<10$}}$
 \item $0\in\set{1,2,\set{0}}$   
 \item $4\in\set{n\in\N\suchthat n^2<50}$
 \end{items}
-\begin{ans}
+\begin{answer}
 \begin{items}
 \item These two sets are equal because they contain the same elements, 
   $1$, $3$, and~$5$.
@@ -2812,8 +2812,8 @@ or as~$P=\setbuilder{p\in\N}{\text{$p$ is prime and $p<10$}}$
   in particular, $\set{0}$ is not equal to~$0$.
 \item This is true because $4^2$ is less than $50$.    
 \end{items}
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
 \begin{df}
 The set~$B$ is a \definend{subset} of the set~$A$
@@ -2826,7 +2826,7 @@ This is denoted $B\subseteq A$.
 The set without any elements is the \definend{empty set} $\emptyset$.  
 \end{df}
 
-\begin{ex} Decide each, with justification:
+\begin{problem} Decide each, with justification.
 \begin{items}
 \item $\set{1,3,5}\subseteq\set{1,3, 5, 7, 9}$
 \item $\set{1, 3, 5}\in\set{1, 3, 5, 7, 9}$   
@@ -2836,7 +2836,7 @@ The set without any elements is the \definend{empty set} $\emptyset$.
 \item $\set{2}\in\set{1, \set{2}, 3}$
 \item $\set{2}\subseteq\set{1, \set{2}, 3}$
 \end{items}
-\begin{ans}
+\begin{answer}
 \begin{items}
 \item This is true because, by inspection, each of the elements of the set
   on the left, $1$, $3$, and~$5$, is an element of the set on the right.
@@ -2852,53 +2852,94 @@ The set without any elements is the \definend{empty set} $\emptyset$.
 \item This is not true since $2$ is an element of the set on the left but
   not an element of the set on the right.
 \end{items}
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
-\begin{ex} \label{ex:EmptySetUnique}
+\begin{problem} \label{ex:EmptySetUnique}
 Prove, for all sets $A$. 
 \begin{exes}
-\item $A\subseteq A$ and $\emptyset\subseteq A$
-\item The empty set is unique: if $A$ is empty and $B$ is empty then $A=B$.
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item For the first, let $x$ be an element of the set on the left, $A$.
+\begin{exercise} 
+  $A\subseteq A$ and $\emptyset\subseteq A$
+\end{exercise}
+\begin{answer}
+  For the first, let $x$ be an element of the set on the left, $A$.
   Then $x$ is an element of the set on the right, $A$, obviously.
-
   For the second, observe that the implication 
   `if $x\in\emptyset$ then $x\in A$' is true 
   because any implication with a false first clause is true
-  (that is, it is vacuously true).
-\item If $A=\emptyset$ and~$B=\emptyset$ then $A=B$ because they have the
+  (that is, it is vacuously true).  
+\end{answer}
+\begin{exercise} 
+  The empty set is unique: if $A$ is empty and $B$ is empty then $A=B$.
+\end{exercise}
+\begin{answer}
+  If $A=\emptyset$ and~$B=\emptyset$ then $A=B$ because they have the
   same elements: the statement `$x\in A$ if and only if~$x\in B$' holds   
-  for all $x$.
+  for all $x$.  
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item $A\subseteq A$ and $\emptyset\subseteq A$
+% \item The empty set is unique: if $A$ is empty and $B$ is empty then $A=B$.
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item For the first, let $x$ be an element of the set on the left, $A$.
+%   Then $x$ is an element of the set on the right, $A$, obviously.
 
-\begin{ex}  \label{ex:PropertiesOfSubset}
+%   For the second, observe that the implication 
+%   `if $x\in\emptyset$ then $x\in A$' is true 
+%   because any implication with a false first clause is true
+%   (that is, it is vacuously true).
+% \item If $A=\emptyset$ and~$B=\emptyset$ then $A=B$ because they have the
+%   same elements: the statement `$x\in A$ if and only if~$x\in B$' holds   
+%   for all $x$.
+% \end{exes}
+% \end{ans}
+\end{problem}
+
+\begin{problem}  \label{ex:PropertiesOfSubset}
 Prove, for any sets $A$, $B$, and~$C$.
 \begin{exes} 
-\item \notetext{Mutual Inclusion}
-  If $A\subseteq B$ and $B\subseteq A$ then $A=B$.  
-\item \notetext{Transitivity}
-  If $A\subseteq B$ and~$B\subseteq C$ then~$A\subseteq C$.  
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item Since $A\subseteq B$, any element of~$A$ is also an element of~$B$.
+\begin{exercise} \notetext{Mutual Inclusion}
+  If $A\subseteq B$ and $B\subseteq A$ then $A=B$.
+\end{exercise}  
+\begin{answer}
+   Since $A\subseteq B$, any element of~$A$ is also an element of~$B$.
    Since $B\subseteq A$, any element of~$B$ is also an element of~$A$.
-   Thus they contain the same elements.
-\item Consider $x\in A$.
+   Thus they contain the same elements.  
+\end{answer}
+\begin{exercise} \notetext{Transitivity}
+  If $A\subseteq B$ and~$B\subseteq C$ then~$A\subseteq C$.  
+\end{exercise}
+\begin{answer}
+   Consider $x\in A$.
    Because $A\subseteq B$ we have that~$x\in B$ and with that, because
    $B\subseteq C$ we have that $x\in C$.
-   So $x\in A$ implies that $x\in C$, and therefore~$A\subseteq C$.
+   So $x\in A$ implies that $x\in C$, and therefore~$A\subseteq C$.  
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes} 
+% \item \notetext{Mutual Inclusion}
+%   If $A\subseteq B$ and $B\subseteq A$ then $A=B$.  
+% \item \notetext{Transitivity}
+%   If $A\subseteq B$ and~$B\subseteq C$ then~$A\subseteq C$.  
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item Since $A\subseteq B$, any element of~$A$ is also an element of~$B$.
+%    Since $B\subseteq A$, any element of~$B$ is also an element of~$A$.
+%    Thus they contain the same elements.
+% \item Consider $x\in A$.
+%    Because $A\subseteq B$ we have that~$x\in B$ and with that, because
+%    $B\subseteq C$ we have that $x\in C$.
+%    So $x\in A$ implies that $x\in C$, and therefore~$A\subseteq C$.
+% \end{exes}
+% \end{ans}
+\end{problem}
 
-\begin{ex} For each, give example sets or show that no example is possible.
+\begin{problem} 
+For each, give example sets or show that no example is possible.
 \begin{items}
 \item $A\subseteq B$, $B\not\subseteq C$, $A\subseteq C$
 \item $A\not\subseteq B$, $B\not\subseteq C$, $A\subseteq C$
@@ -2911,7 +2952,7 @@ Prove, for any sets $A$, $B$, and~$C$.
 \item $A=\set{0}$, $B=\set{1}$, $C=\set{0,1}$
 \end{items}
 \end{ans}
-\end{ex}
+\end{problem}
 
 In this book we will always work inside of a \definend{universal set}, 
 denoted $\universalset$.
@@ -2927,33 +2968,54 @@ $\charfcn{A}$ (whose domain is the universal set) such that
 $\charfcn{A}(x)=1$ if~$x\in A$, and $\charfcn{A}(x)=0$ if~$x\notin A$.  
 \end{df}
 
-\begin{ex} \notetext{Russell's Paradox}
+\begin{problem} 
+\notetext{Russell's Paradox}
 The definition that we gave of sets allows them to contain anything, so 
 consider a set that contains all sets.
 It has itself as an element.
-Following that idea, 
+So
 consider the set of all sets that have themselves as elements and  
 also the set of all sets that don't.
-Call the latter set~$D$.
+Call the latter set~$D=\setbuilder{S}{S\notin S}$.
 \begin{exes}
-\item Show that assuming $D$ is an element of itself leads to a contradiction.
-\item Show that assuming $D$ is not an element of itself also leads to a
-contradiction.  
-\end{exes}
-\begin{ans}
-Let $D$ be the set of all sets~$S$ that do not contain themselves
-$D=\setbuilder{S}{S\notin S}$.
-\begin{exes}
-\item If~$D$ were to have itself as an element 
+\begin{exercise} 
+  Show that assuming $D$ is an element of itself leads to a contradiction.
+\end{exercise}
+\begin{answer}
+  If~$D$ were to have itself as an element 
   then it wouldn't satisfy the condition
   $S\notin S$, so $D$ would not be in the collection 
   $\setbuilder{\text{set~$S$}}{S\notin S}$.
-  That is, in this case $D\notin D$, a contradiction. 
-\item If $D$ does not have itself for an element then it satisfies the
-  condition $S\notin S$, so $D\in D$, a contradiction.
+  That is, in this case $D\notin D$, a contradiction.   
+\end{answer}
+\begin{exercise} 
+  Show that assuming $D$ is not an element of itself also leads to a
+  contradiction.  
+\end{exercise}
+\begin{answer}
+  If $D$ does not have itself for an element then it satisfies the
+  condition $S\notin S$, so $D\in D$, a contradiction.  
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item Show that assuming $D$ is an element of itself leads to a contradiction.
+% \item Show that assuming $D$ is not an element of itself also leads to a
+% contradiction.  
+% \end{exes}
+% \begin{ans}
+% Let $D$ be the set of all sets~$S$ that do not contain themselves
+% $D=\setbuilder{S}{S\notin S}$.
+% \begin{exes}
+% \item If~$D$ were to have itself as an element 
+%   then it wouldn't satisfy the condition
+%   $S\notin S$, so $D$ would not be in the collection 
+%   $\setbuilder{\text{set~$S$}}{S\notin S}$.
+%   That is, in this case $D\notin D$, a contradiction. 
+% \item If $D$ does not have itself for an element then it satisfies the
+%   condition $S\notin S$, so $D\in D$, a contradiction.
+% \end{exes}
+% \end{ans}
+\end{problem}
 
 
 
@@ -3005,7 +3067,7 @@ the middle shows the intersection
 containing only the region common to both,
 and on the right the mauve region, the complement, is all but the set~$A$.
 
-\begin{ex}
+\begin{problem}
 Another tool for illustrating set relationships is this table describing 
 two sets.
 \begin{center} \small
@@ -3037,7 +3099,7 @@ Then pick one item and prove it:
   and
   $(A\union B)\union C=A\union (B\union C)$ 
 \end{items}
-\begin{ans}
+\begin{answer}
 \begin{items}
 \item  The illustration is that the complement is 
   $\setcomp{A}=\set{0,1}$.
@@ -3140,14 +3202,14 @@ Then pick one item and prove it:
    (the second equality holds because `and' is associative).
    Union is similar.
 \end{items}
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
-% \begin{ex}
+% \begin{problem}
 % Give a formula relating $\charfcn{A}$ and $\charfcn{B}$ to
 %   $\charfcn{A\intersection B}$.
 % Do the same for union, and for complementation.
-% \begin{ans}
+% \begin{answer}
 %   The formula relating $\charfcn{A}$ and $\charfcn{B}$ to
 %   $\charfcn{A\intersection B}$ is 
 %   $\charfcn{A\intersection B}=\charfcn{A}\cdot\charfcn{B}$.
@@ -3173,14 +3235,14 @@ Then pick one item and prove it:
 %   There are two cases to verify: 
 %   $x\in A$ and~$x\notin A$.
 %   These cases are straightforward.
-% \end{ans}
-% \end{ex}
+% \end{answer}
+% \end{problem}
 
-\begin{ex} Prove that the following are equivalent:
+\begin{problem} Prove that the following are equivalent:
 (i)~$A\subseteq B$,
 (ii)~$A\union B=B$,    
 and (iii)~$A\intersection B=A$.
-\begin{ans}
+\begin{answer}
 One way to prove this is to 
 show that (i) holds iff (ii)~holds, and also show that (i) holds iff~(iii) 
 holds.
@@ -3200,8 +3262,8 @@ immediate from the $A\subseteq B$ assumption.
 To get the first equivalence's other direction assume that $A\union B=B$.
 With this, for any $x\in A$ we have that $x\in A\union B$ and so $x\in B$.
 Thus $x\in A$ implies $x\in B$, which is the definition of $A\subseteq B$.
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
 \begin{df}
 The \definend{difference} of two sets is $A-B=\setbuilder{x\in A}{x\notin B}$.  
@@ -3212,33 +3274,34 @@ $A\symdiff B=(A-B)\union(B-A)$.
 \noindent If $A\subseteq X$ then $X-A$ is the same as $\setcomp{A}$
 where $X$ is the universal set $\universalset=X$.     
 
-% \begin{ex}
+% \begin{problem}
 % Draw the Venn diagram for difference and symmetric difference.  
-% \begin{ans}
+% \begin{answer}
 % These are the Venn diagrams for difference and symmetric difference.
 % \begin{center}
 %   \grf{asy/venn_diff.pdf}{$A- B$}
 %   \hspace*{3em}
 %   \grf{asy/venn_symdiff.pdf}{$A\symdiff B$}
 % \end{center}  
-% \end{ans}
-% \end{ex}
+% \end{answer}
+% \end{problem}
 
-\begin{ex} \pord.
+\begin{problem} \pord.
 \begin{exes}
-\item $A-B\subseteq A$
-\item $A-B=A\intersection\setcomp{B}$
-\item For all pairs of sets, $A-B=B-A$.
-\item For all pairs of sets, $A\symdiff B=B\symdiff A$.
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item  This is true.
+\begin{exercise} 
+  $A-B\subseteq A$
+\end{exercise}
+\begin{answer}
+  This is true.
   If $x\in A-B$
   then by the definition of set difference $x\in A$ (but $x\notin B$).
-  This implication is the requirement for $A\subseteq B$.
-\item We will show the sets are equal by mutual inclusion.
-
+  This implication is the requirement for $A\subseteq B$.  
+\end{answer}
+\begin{exercise} 
+  $A-B=A\intersection\setcomp{B}$
+\end{exercise}
+\begin{answer}
+  We will show the sets are equal by mutual inclusion.
   For the left-to-right inclusion $A-B\subseteq A\intersection \setcomp{B}$
   suppose that $x\in A-B$.
   Then by the definition of set difference both $x\in A$ and $x\notin B$ hold.
@@ -3248,34 +3311,75 @@ where $X$ is the universal set $\universalset=X$.
   For the $A\intersection\setcomp{B}\subseteq A-B$ inclusion suppose that
   $x\in A\intersection\setcomp{B}$.
   Then $x\in A$ and $x\in\setcomp{B}$, so $x\notin B$.
-  By the definition of set difference then, $x\in A-B$.
-\item This is false.
+  By the definition of set difference then, $x\in A-B$.  
+\end{answer}
+\begin{exercise} 
+  For all pairs of sets, $A-B=B-A$.
+\end{exercise}
+\begin{answer}
+  This is false.
   One example is $A=\set{0,1}$ and~$B=\set{1,2}$.
-  Then $A-B=\set{0}$ while~$B-A=\set{2}$.
-\item We will prove that the two are equal.
+  Then $A-B=\set{0}$ while~$B-A=\set{2}$.  
+\end{answer}
+\begin{exercise} 
+  For all pairs of sets, $A\symdiff B=B\symdiff A$.
+\end{exercise}
+\begin{answer}
+  We will prove that the two are equal.
   One way is that 
   $A\symdiff B=\setbuilder{x}{\text{$x\in A-B$ and $x\in B-A$}}
               =\setbuilder{x}{\text{$x\in B-A$ and $x\in A-B$}}
-              =B\symdiff A$.
+              =B\symdiff A$.  
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item $A-B\subseteq A$
+% \item $A-B=A\intersection\setcomp{B}$
+% \item For all pairs of sets, $A-B=B-A$.
+% \item For all pairs of sets, $A\symdiff B=B\symdiff A$.
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item  This is true.
+%   If $x\in A-B$
+%   then by the definition of set difference $x\in A$ (but $x\notin B$).
+%   This implication is the requirement for $A\subseteq B$.
+% \item We will show the sets are equal by mutual inclusion.
 
-\begin{ex}\notetext{De Morgan's Laws}  Prove.
+%   For the left-to-right inclusion $A-B\subseteq A\intersection \setcomp{B}$
+%   suppose that $x\in A-B$.
+%   Then by the definition of set difference both $x\in A$ and $x\notin B$ hold.
+%   Therefore $x$ is an element of the intersection 
+%   $x\in A\intersection\setcomp{B}$.
+  
+%   For the $A\intersection\setcomp{B}\subseteq A-B$ inclusion suppose that
+%   $x\in A\intersection\setcomp{B}$.
+%   Then $x\in A$ and $x\in\setcomp{B}$, so $x\notin B$.
+%   By the definition of set difference then, $x\in A-B$.
+% \item This is false.
+%   One example is $A=\set{0,1}$ and~$B=\set{1,2}$.
+%   Then $A-B=\set{0}$ while~$B-A=\set{2}$.
+% \item We will prove that the two are equal.
+%   One way is that 
+%   $A\symdiff B=\setbuilder{x}{\text{$x\in A-B$ and $x\in B-A$}}
+%               =\setbuilder{x}{\text{$x\in B-A$ and $x\in A-B$}}
+%               =B\symdiff A$.
+% \end{exes}
+% \end{ans}
+\end{problem}
+
+\begin{problem}
+\notetext{De Morgan's Laws}  Prove.
 \begin{exes}
-\item 
+\begin{exercise} 
   $\setcomp{(A\intersection B)}=\setcomp{A}\union\setcomp{B}$
   and
   $\setcomp{(A\union B)}=\setcomp{A}\intersection\setcomp{B}$ 
-\item \notetext{Distributivity} 
-$A\union (B\intersection C)=(A\union B)\intersection (A\union C)$
- and $A\intersection (B\union C)=(A\intersection B)\union (A\intersection C)$
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item (These two are a consequence of the fact that logical negation
+\end{exercise}
+\begin{answer}
+  \remark: these two are a consequence of the fact that logical negation
   satisfies that `not($P$ and $Q$)' has the same truth value as
-  `not($P$) or not($Q$)'.)
+  `not($P$) or not($Q$)'.
 
   We show  $\setcomp{(A\intersection B)}=\setcomp{A}\union\setcomp{B}$
   by mutual containment.
@@ -3292,8 +3396,15 @@ $A\union (B\intersection C)=(A\union B)\intersection (A\union C)$
   so $x\in\setcomp{(A\intersection B)}$.
   Thus $\setcomp{A}\union\setcomp{B}\subseteq\setcomp{(A\intersection B)}$.
   
-  The other identity is similar.
-\item For $A\union (B\intersection C)=(A\union B)\intersection (A\union C)$
+  The other identity is similar.  
+\end{answer}
+\begin{exercise} \notetext{Distributivity} 
+  $A\union (B\intersection C)=(A\union B)\intersection (A\union C)$
+  and 
+  $A\intersection (B\union C)=(A\intersection B)\union (A\intersection C)$
+\end{exercise}
+\begin{answer}
+  For $A\union (B\intersection C)=(A\union B)\intersection (A\union C)$
   first suppose that $x\in A\union (B\intersection C)$.
   Then $x\in A$ or $x\in B\intersection C$.
   In the case that $x\in A$ we have both that $x\in A\union B$ and that
@@ -3315,31 +3426,91 @@ $A\union (B\intersection C)=(A\union B)\intersection (A\union C)$
   $(A\union B)\intersection (A\union C)\subseteq A\union (B\intersection C)$.
 
   Therefore, by mutual containment, the two sets are equal.
-  The other identity is similar.
+  The other identity is similar.  
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item 
+%   $\setcomp{(A\intersection B)}=\setcomp{A}\union\setcomp{B}$
+%   and
+%   $\setcomp{(A\union B)}=\setcomp{A}\intersection\setcomp{B}$ 
+% \item \notetext{Distributivity} 
+% $A\union (B\intersection C)=(A\union B)\intersection (A\union C)$
+%  and $A\intersection (B\union C)=(A\intersection B)\union (A\intersection C)$
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item (These two are a consequence of the fact that logical negation
+%   satisfies that `not($P$ and $Q$)' has the same truth value as
+%   `not($P$) or not($Q$)'.)
+
+%   We show  $\setcomp{(A\intersection B)}=\setcomp{A}\union\setcomp{B}$
+%   by mutual containment.
+%   Suppose first that $x\in \setcomp{(A\intersection B)}$ so that
+%   $x\notin A\intersection B$.
+%   Then $x\notin A$ or $x\notin B$.
+%   and so $x\in \setcomp{A}\union\setcomp{B}$.
+%   Thus $\setcomp{(A\intersection B)}\subseteq\setcomp{A}\union\setcomp{B}$.
+
+%   Suppose now that $x\in \setcomp{A}\union\setcomp{B}$.
+%   Then $x\in\setcomp{A}$ or~$x\in\setcomp{B}$.
+%   Restated, that is $x\notin A$ or $x\notin B$,
+%   which gives that $x\notin (A\intersection B)$ and
+%   so $x\in\setcomp{(A\intersection B)}$.
+%   Thus $\setcomp{A}\union\setcomp{B}\subseteq\setcomp{(A\intersection B)}$.
+  
+%   The other identity is similar.
+% \item For $A\union (B\intersection C)=(A\union B)\intersection (A\union C)$
+%   first suppose that $x\in A\union (B\intersection C)$.
+%   Then $x\in A$ or $x\in B\intersection C$.
+%   In the case that $x\in A$ we have both that $x\in A\union B$ and that
+%   $x\in A\union C$.
+%   In the case that $x\in B\intersection C$, so $x\in B$ and~$x\in C$, 
+%   we have both that $x\in A\union B$ and that~$x\in A\union C$.
+%   Since in either case $x\in (A\union B)\intersection (A\union C)$,
+%   we know that 
+%   $A\union (B\intersection C)\subseteq (A\union B)\intersection (A\union C)$.
+
+%   Now suppose that $x\in (A\union B)\intersection (A\union C)$.
+%   Then $x\in A\union B$ and also $x\in A\union C$.
+%   There are two cases: either~$x\in A$ or $x\notin A$.
+%   If $x\in A$ then $x\in A\union (B\intersection C)$.
+%   If $x\notin A$ then because $x\in A\union B$ we know that $x\in B$
+%   and because $x\in A\union C$ we know that $x\in C$.
+%   So in this case also $x\in A\union (B\intersection C)$.
+%   Thus 
+%   $(A\union B)\intersection (A\union C)\subseteq A\union (B\intersection C)$.
+
+%   Therefore, by mutual containment, the two sets are equal.
+%   The other identity is similar.
+% \end{exes}
+% \end{ans}
+\end{problem}
 
 \begin{df}
 Two sets are \definend{disjoint} if their intersection is empty.  
 \end{df}
 
-\begin{ex}
+\begin{problem}
 \begin{exes}
-\item \pord: $A\intersection B$ and $A\symdiff B$ are disjoint.  
-\item Find three sets $A$, $B$, and $C$, such that 
-$A\intersection B\intersection C$ is empty but the sets are
-not pairwise disjoint, that is, none of $A\intersection B$, 
-$A\intersection C$, or $B\intersection C$ is empty. 
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item The statement is true.
+\begin{exercise} 
+  \pord: $A\intersection B$ and $A\symdiff B$ are disjoint.  
+\end{exercise}
+\begin{answer}
+  The statement is true.
   By definition $A\symdiff B=\setbuilder{x}{\text{$x\in A-B$ or $x\in B-A$}}$.
   In the $x\in A-B$ case, $x\notin B$ and so $x\notin A\intersection B$.
   The $x\in B-A$ case is similar.
-  Thus $(A\symdiff B)\intersection (A\intersection B)$ has no elements.
-\item One example is $A=\set{5,6}$, $B=\set{3,6}$, and 
+  Thus $(A\symdiff B)\intersection (A\intersection B)$ has no elements.  
+\end{answer}
+\begin{exercise}
+  Find three sets $A$, $B$, and $C$, such that 
+  $A\intersection B\intersection C$ is empty but the sets are
+  not pairwise disjoint, that is, none of $A\intersection B$, 
+  $A\intersection C$, or $B\intersection C$ is empty. 
+\end{exercise}
+\begin{answer}
+  One example is $A=\set{5,6}$, $B=\set{3,6}$, and 
   $C=\set{3,5}$.
   \remark
   to get this example we used the three-set table.
@@ -3360,31 +3531,69 @@ $A\intersection C$, or $B\intersection C$ is empty.
   We want a number to fall in $A\intersection C$ so put
   $5$ into~$A$ and~$C$ (so the ``$A$ overlap~$C$'' region is occupied).
   We want a number in $A\intersection B$ so put~$6$ into each.
-  We want a number in $B\intersection C$ so put~$3$ into each.
+  We want a number in $B\intersection C$ so put~$3$ into each.  
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item \pord: $A\intersection B$ and $A\symdiff B$ are disjoint.  
+% \item Find three sets $A$, $B$, and $C$, such that 
+% $A\intersection B\intersection C$ is empty but the sets are
+% not pairwise disjoint, that is, none of $A\intersection B$, 
+% $A\intersection C$, or $B\intersection C$ is empty. 
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item The statement is true.
+%   By definition $A\symdiff B=\setbuilder{x}{\text{$x\in A-B$ or $x\in B-A$}}$.
+%   In the $x\in A-B$ case, $x\notin B$ and so $x\notin A\intersection B$.
+%   The $x\in B-A$ case is similar.
+%   Thus $(A\symdiff B)\intersection (A\intersection B)$ has no elements.
+% \item One example is $A=\set{5,6}$, $B=\set{3,6}$, and 
+%   $C=\set{3,5}$.
+%   \remark
+%   to get this example we used the three-set table.
+%   \begin{center} \small
+%     \begin{tabular}{ccc|c}
+%       $x\in A$  &$x\in B$  &$x\in C$  &row number \\ \hline
+%          $0$    &$0$       &$0$       &$0$    \\
+%          $0$    &$0$       &$1$       &$1$    \\
+%          $0$    &$1$       &$0$       &$2$    \\
+%          $0$    &$1$       &$1$       &$3$    \\[.5ex]
+%          $1$    &$0$       &$0$       &$4$    \\
+%          $1$    &$0$       &$1$       &$5$    \\
+%          $1$    &$1$       &$0$       &$6$    \\
+%          $1$    &$1$       &$1$       &$7$    
+%     \end{tabular}
+%   \end{center}
+%   Think of it as listing eight regions that could either be occupied or not.
+%   We want a number to fall in $A\intersection C$ so put
+%   $5$ into~$A$ and~$C$ (so the ``$A$ overlap~$C$'' region is occupied).
+%   We want a number in $A\intersection B$ so put~$6$ into each.
+%   We want a number in $B\intersection C$ so put~$3$ into each.
+% \end{exes}
+% \end{ans}
+\end{problem}
 
 \begin{df}
 For a finite set~$A$, the \definend{order} $|A|$ is the number of elements.
 \end{df}
 
-% \begin{ex}
-% For finite sets, if $A\subseteq B$ then $|A|\leq |B|$
-% \end{ex}
+% \begin{problem}
+%   For finite sets, if $A\subseteq B$ then $|A|\leq |B|$
+% \end{problem}
 
 \begin{df}
 For a set~$A$ the \definend{power set} $\powerset(A)$ is the set of all
 subsets of~$A$.
 \end{df}
 
-\begin{ex} List 
+\begin{problem} List 
   $\powerset(\set{a,b})$,   
   $\powerset(\set{a,b,c})$,   
   $\powerset(\set{a})$, and   
   $\powerset(\emptyset)$.
   Find the order of each.   
-\begin{ans}
+\begin{answer}
 The power set
 $\powerset(\set{a,b})=\set{\emptyset, \set{a}, \set{b}, \set{a,b}}$
 of the two-element set has four elements.
@@ -3396,31 +3605,34 @@ The power set of the singleton $\set{a}$ has two elements
 $\powerset(\set{a})=\set{\emptyset,\set{a}}$.
 The power set of the empty set has one element
 $\powerset(\emptyset)=\set{\emptyset}$.   
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
-\begin{ex}  Let $A=\set{\emptyset,\set{\emptyset}}$. \pord.
+\begin{problem}  Let $A=\set{\emptyset,\set{\emptyset}}$. \pord.
 \begin{exes}
-\item $\emptyset\in\powerset(A)$, 
+\begin{exercise} 
+  $\emptyset\in\powerset(A)$, 
   $\emptyset\subseteq\powerset(A)$    
-\item $\set{\emptyset}\in\powerset(A)$, 
-  $\set{\emptyset}\subseteq\powerset(A)$    
-\item $\set{\set{\emptyset}}\in\powerset(A)$,    
-  $\set{\set{\emptyset}}\subseteq\powerset(A)$    
-\end{exes}
-\begin{ans}
+\end{exercise}
+\begin{answer}
 The power set of a two-element set $\set{a,b}$ is 
 $\powerset(\set{a,b})=\set{\emptyset,\set{a},\set{b},\set{a,b}}$.
 Taking $\emptyset$ for~$a$ and $\set{\emptyset}$ for~$b$ we have
 $\powerset(S)=\set{\emptyset, \set{\emptyset}, \set{\set{\emptyset}}, 
                    \set{\emptyset, \set{\emptyset}}}$.
-\begin{exes}
-\item The first is true by inspection, the empty set is the first element
-  of $\powerset(A)$ listed.
 
+  So, the first clause is true by inspection; 
+  the empty set is the first element
+  of $\powerset(A)$ listed.
   The second is true by the earlier result~\ref{ex:EmptySetUnique}
   that the empty set is a subset of all sets.
-\item Again the first is true by inspection, 
+\end{answer}
+\begin{exercise} 
+  $\set{\emptyset}\in\powerset(A)$, 
+  $\set{\emptyset}\subseteq\powerset(A)$    
+\end{exercise}
+\begin{answer}
+  Again the first is true by inspection, 
   since one of the elements of $\powerset(A)$ is 
   $\set{\emptyset}$.  (It is listed second.)
 
@@ -3429,23 +3641,68 @@ $\powerset(S)=\set{\emptyset, \set{\emptyset}, \set{\set{\emptyset}},
   elements~$x$ of that one, $x$ is also an element of the other.
   In this case the subset~$\set{\emptyset}$ has only one element to check,
   and the first item above checks that it is an element of~$\powerset(A)$.
-\item The first is true by inspection, since it is the element that is listed
+\end{answer}
+\begin{exercise} 
+  $\set{\set{\emptyset}}\in\powerset(A)$,    
+  $\set{\set{\emptyset}}\subseteq\powerset(A)$    
+\end{exercise}
+\begin{answer}
+  The first is true by inspection, since it is the element that is listed
   third.
-
   To verify the second,
   that $\set{\set{\emptyset}}$ is a subset of~$\powerset(A)$
   we can check that each of its elements are elements of the power set.
   It has only one element, namely~$\set{\emptyset}$.
   That is indeed one of the elements of~$\powerset(A)$, as checked in 
-  an item above. 
+  an item above.   
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item $\emptyset\in\powerset(A)$, 
+%   $\emptyset\subseteq\powerset(A)$    
+% \item $\set{\emptyset}\in\powerset(A)$, 
+%   $\set{\emptyset}\subseteq\powerset(A)$    
+% \item $\set{\set{\emptyset}}\in\powerset(A)$,    
+%   $\set{\set{\emptyset}}\subseteq\powerset(A)$    
+% \end{exes}
+% \begin{ans}
+% The power set of a two-element set $\set{a,b}$ is 
+% $\powerset(\set{a,b})=\set{\emptyset,\set{a},\set{b},\set{a,b}}$.
+% Taking $\emptyset$ for~$a$ and $\set{\emptyset}$ for~$b$ we have
+% $\powerset(S)=\set{\emptyset, \set{\emptyset}, \set{\set{\emptyset}}, 
+%                    \set{\emptyset, \set{\emptyset}}}$.
+% \begin{exes}
+% \item The first is true by inspection, the empty set is the first element
+%   of $\powerset(A)$ listed.
 
-\begin{ex} \pord:
+%   The second is true by the earlier result~\ref{ex:EmptySetUnique}
+%   that the empty set is a subset of all sets.
+% \item Again the first is true by inspection, 
+%   since one of the elements of $\powerset(A)$ is 
+%   $\set{\emptyset}$.  (It is listed second.)
+
+%   The second is true.
+%   To verify that one set is a subset of another we can check that for all
+%   elements~$x$ of that one, $x$ is also an element of the other.
+%   In this case the subset~$\set{\emptyset}$ has only one element to check,
+%   and the first item above checks that it is an element of~$\powerset(A)$.
+% \item The first is true by inspection, since it is the element that is listed
+%   third.
+
+%   To verify the second,
+%   that $\set{\set{\emptyset}}$ is a subset of~$\powerset(A)$
+%   we can check that each of its elements are elements of the power set.
+%   It has only one element, namely~$\set{\emptyset}$.
+%   That is indeed one of the elements of~$\powerset(A)$, as checked in 
+%   an item above. 
+% \end{exes}
+% \end{ans}
+\end{problem}
+
+\begin{problem} \pord:
 if $A\subseteq B$ then $\powerset(A)\subseteq\powerset(B)$.  
 % \item $\powerset(A)=\powerset(B)$ iff $A=B$  
-\begin{ans}
+\begin{answer}
 This is true.
 Let $A\subseteq B$ and consider $x\in\powerset(A)$.
 Then~$x$ is a subset of~$A$.
@@ -3453,12 +3710,12 @@ Any subset of~$A$ is a subset of~$B$ by
 the Transitivity property of~\ref{ex:PropertiesOfSubset},
 so $x$ is a subset of~$B$.
 Therefore $\powerset(A)\subseteq\powerset(B)$.
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
-\begin{ex}
+\begin{problem}
 Where~$A$ is a finite set, prove that $|\powerset(A)|=2^{|A|}$.    
-\begin{ans}
+\begin{answer}
 We prove this by induction on the number of elements in~$A$.
 The base step is that~$A$ has zero-many elements.
 The power set of the empty set has
@@ -3491,8 +3748,8 @@ Clearly for each such~$S$ there is one and only one such~$\hat{S}$.
 So, the two collections\Dash the set of subsets of $A$ containing~$a_k$
 and the set of subsets of~$A$ that do not contain~$a_k$\Dash match
 up element-by-element, and therefore have the same number of elements.
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
 
 
@@ -3516,13 +3773,13 @@ $n=m$ and
 $x_0=y_0$, $x_1=y_1$, \ldots, $x_{n-1}=y_{n-1}$. 
 \end{df}
 
-\begin{ex}\pord:
+\begin{problem}\pord:
 \begin{items}
 \item $\set{3, 4, 4, 5}=\set{4, 3, 5}$
 \item $\sequence{3, 4, 5}=\sequence{4, 3, 5}$
 \item $\sequence{3, 4, 4, 5}=\sequence{3,4,5}$  
 \end{items}
-\begin{ans}
+\begin{answer}
 \begin{items}
 \item These two are sets that contain the same elements, $3$, $4$, and~$5$,
   and so are equal.
@@ -3530,8 +3787,8 @@ $x_0=y_0$, $x_1=y_1$, \ldots, $x_{n-1}=y_{n-1}$.
 \item These sequences are not equal because they have different lengths.
   (In addition, they differ in their third terms.)
 \end{items}
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
 \begin{df}
 For sets $A_0$, $A_1$, \ldots, $A_{n-1}$
@@ -3550,10 +3807,10 @@ Thus, we write
 Cartesian coordinates of points in the plane as members of
 $\R^2=\setbuilder{(x,y)}{x,y\in\R}$.
 
-\begin{ex}
+\begin{problem}
 Prove that $\N^2\subseteq \Z^2$.
 Generalize. 
-\begin{ans}
+\begin{answer}
 Any element of $\N^2$ is a sequence of length two $\sequence{a,b}$ where
 $a,b\in\N$.
 Since $\N\subseteq\Z$, that is a sequence of length two of elements of~$\Z$, 
@@ -3567,29 +3824,28 @@ A length zero sequence~$\sequence{}$ is empty and so any two
 length zero sequences are equal (they have the same length and do not 
 differ on any of their terms).
 Thus $A^0=B^0=\set{\sequence{}}$.
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
-\begin{ex}
+\begin{problem}
 \begin{exes}
-\item Prove that $A\times B=\emptyset$ iff $A=\emptyset$ or~$B=\emptyset$.
-\item Show that there are sets so that $A\times B\neq B\times A$.
-  Under what circumstances is $A\times B=B\times A$?
-\item Is $(A\times B)\times C$ equal to $A\times (B\times C)$?
-\item Show that this statement is false: 
-  $A\times B\subseteq A^\prime\times B^\prime$ if and only if
-  $A\subseteq A^\prime$ and $B\subseteq B^\prime$.
-  Patch the statement to make it true.
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item If $A=\emptyset$ then $A\times B=\emptyset$ because there are no 
+\begin{exercise} 
+  Prove that $A\times B=\emptyset$ iff $A=\emptyset$ or~$B=\emptyset$.
+\end{exercise}
+\begin{answer}
+  If $A=\emptyset$ then $A\times B=\emptyset$ because there are no 
   sequences with a first term drawn from $\emptyset$.
   For the same reason, $A\times\emptyset=\emptyset$.
  
   If neither set is empty then there exist some $a\in A$ and~$b\in B$, so 
-  $(a,b)\in A\times B$, and $A\times B$ is not empty.
-\item The two sets $A\times B$ and~$B\times A$ are not equal. 
+  $(a,b)\in A\times B$, and $A\times B$ is not empty.  
+\end{answer}
+\begin{exercise} 
+  Show that there are sets so that $A\times B\neq B\times A$.
+  Under what circumstances is $A\times B=B\times A$?
+\end{exercise}
+\begin{answer}
+  The two sets $A\times B$ and~$B\times A$ are not equal. 
   For instance, if $A=\set{0}$ and~$B=\set{1}$ then 
   $A\times B=\set{\sequence{0,1}}$
   while
@@ -3600,8 +3856,13 @@ Thus $A^0=B^0=\set{\sequence{}}$.
   or it is not.
   If it is not empty then for each of its elements $\sequence{x,y}$,
   we have both that $x\in A$ and that $x\in B$ (and similarly for~$y$).
-  Clearly in this case $A=B$.
-\item The two sets $(A\times B)\times C$ and~$A\times (B\times C)$ 
+  Clearly in this case $A=B$.  
+\end{answer}
+\begin{exercise} 
+  Is $(A\times B)\times C$ equal to $A\times (B\times C)$?
+\end{exercise}
+\begin{answer}
+  The two sets $(A\times B)\times C$ and~$A\times (B\times C)$ 
   are not equal.
   For instance, if $A=\set{a}$, $B=\set{b}$, and $C=\set{c}$ then 
   $(A\times B)\times C=\set{\sequence{\sequence{a,b},c}}$
@@ -3611,8 +3872,16 @@ Thus $A^0=B^0=\set{\sequence{}}$.
   also has a single element that is a sequence with two terms, 
   the first element here is not a sequence. 
 
-  \remark they are equal only if one of them is empty.
-\item The example 
+  \remark they are equal only if one of them is empty.  
+\end{answer}
+\begin{exercise} 
+  Show that this statement is false: 
+  $A\times B\subseteq A^\prime\times B^\prime$ if and only if
+  $A\subseteq A^\prime$ and $B\subseteq B^\prime$.
+  Patch the statement to make it true.
+\end{exercise}
+\begin{answer}
+  The example 
   $A=\emptyset$, $B=\set{1,2}$, $A^\prime=\set{a}$, $B^\prime=\set{1}$
   shows that the statement is false since 
   $A\times B=\emptyset\subseteq A^\prime\times B^\prime$ but 
@@ -3635,12 +3904,130 @@ Thus $A^0=B^0=\set{\sequence{}}$.
   Because $B$ is not empty there is a~$b\in B$ and 
   so~$\sequence{a,b}\in A\times B$.
   But $\sequence{a,b}\notin A^\prime\times B^\prime$,\
-  and so $A\times B\neq A^\prime\times B^\prime$.   
+  and so $A\times B\neq A^\prime\times B^\prime$.     
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item Prove that $A\times B=\emptyset$ iff $A=\emptyset$ or~$B=\emptyset$.
+% \item Show that there are sets so that $A\times B\neq B\times A$.
+%   Under what circumstances is $A\times B=B\times A$?
+% \item Is $(A\times B)\times C$ equal to $A\times (B\times C)$?
+% \item Show that this statement is false: 
+%   $A\times B\subseteq A^\prime\times B^\prime$ if and only if
+%   $A\subseteq A^\prime$ and $B\subseteq B^\prime$.
+%   Patch the statement to make it true.
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item If $A=\emptyset$ then $A\times B=\emptyset$ because there are no 
+%   sequences with a first term drawn from $\emptyset$.
+%   For the same reason, $A\times\emptyset=\emptyset$.
+ 
+%   If neither set is empty then there exist some $a\in A$ and~$b\in B$, so 
+%   $(a,b)\in A\times B$, and $A\times B$ is not empty.
+% \item The two sets $A\times B$ and~$B\times A$ are not equal. 
+%   For instance, if $A=\set{0}$ and~$B=\set{1}$ then 
+%   $A\times B=\set{\sequence{0,1}}$
+%   while
+%   $B\times A=\set{\sequence{1,0}}$.
 
-% \begin{ex} \notetext{Cartesian product and other set operations}
+%   If $A\times B$ and $B\times A$ are the same set then either that set is empty 
+%   and so either $A$ is empty or $B$ is empty,
+%   or it is not.
+%   If it is not empty then for each of its elements $\sequence{x,y}$,
+%   we have both that $x\in A$ and that $x\in B$ (and similarly for~$y$).
+%   Clearly in this case $A=B$.
+% \item The two sets $(A\times B)\times C$ and~$A\times (B\times C)$ 
+%   are not equal.
+%   For instance, if $A=\set{a}$, $B=\set{b}$, and $C=\set{c}$ then 
+%   $(A\times B)\times C=\set{\sequence{\sequence{a,b},c}}$
+%   has a single element, a sequence with two terms, the first
+%   of which is a sequence.
+%   But while $A\times(B\times C)=\set{\sequence{a,\sequence{b,c}}}$ 
+%   also has a single element that is a sequence with two terms, 
+%   the first element here is not a sequence. 
+
+%   \remark they are equal only if one of them is empty.
+% \item The example 
+%   $A=\emptyset$, $B=\set{1,2}$, $A^\prime=\set{a}$, $B^\prime=\set{1}$
+%   shows that the statement is false since 
+%   $A\times B=\emptyset\subseteq A^\prime\times B^\prime$ but 
+%   $B\not\subseteq B^\prime$.
+
+%   The adjusted statement is: for all nonempty sets,  
+%   $A\times B\subseteq A^\prime\times B^\prime$ if and only if
+%   $A\subseteq A^\prime$ and $B\subseteq B^\prime$.
+%   We will prove the `if' and `only if' clauses separately.
+
+%   For `only if' suppose that $A\subseteq A^\prime$ and~$B\subseteq B^\prime$.
+%   Then any element of~$A\times B$ is a pair $\sequence{a,b}$. 
+%   Because of the subset relationship, $a\in A^\prime$ and~$b\in B^\prime$
+%   and so $\sequence{a,b}\in A^\prime\times B^\prime$.
+%   Thus $A\times B\subseteq A^\prime\times B^\prime$.
+
+%   Now assume that $A\not\subseteq A^\prime$ (the case 
+%   of $B\not\subseteq B^\prime$ is similar) and that $a\in A$ 
+%   but~$a\notin A^\prime$.
+%   Because $B$ is not empty there is a~$b\in B$ and 
+%   so~$\sequence{a,b}\in A\times B$.
+%   But $\sequence{a,b}\notin A^\prime\times B^\prime$,\
+%   and so $A\times B\neq A^\prime\times B^\prime$.   
+% \end{exes}
+% \end{ans}
+\end{problem}
+
+\begin{problem} \notetext{Interaction of Cartesian product with other set operations}
+\begin{exes}
+\begin{exercise}
+  Prove that $(A\union B)\times C=(A\times C)\union(B\times C)$.
+\end{exercise}
+\begin{answer}
+  Assume first that $\sequence{x,c}\in (A\union B)\times C$.
+  Then $x\in A\union B$ and so either $x\in A$ or~$x\in B$.
+  If $x\in A$ then $\sequence{x,c}\in A\times C$, while 
+  if $x\in B$ then $\sequence{x,c}\in B\times C$, and so 
+  $\sequence{x,c}\in (A\times C)\union (B\times C)$.
+  Thus $(A\union B)\times C\subseteq (A\times C)\union (B\times C)$.
+  
+  To get containment in the other direction assume that 
+  $\sequence{x,c}\in (A\times C)\union (B\times C)$.
+  Then either $\sequence{x,c}\in A\times C$ or~$\sequence{x,c}\in B\times C$.
+  If $\sequence{x,c}\in A\times C$ then~$x\in A$ and so 
+  $\sequence{x,c}\in (A\union B)\times C$.
+  The  $\sequence{x,c}\in B\times C$ case is similar.
+  Thus $(A\times C)\union (B\times C)\subseteq (A\union B)\times C$.   
+\end{answer}
+\begin{exercise}
+  What is the interaction of Cartesian product and intersection?
+\end{exercise}
+\begin{answer}
+\item We will prove that 
+  $(A\intersection B)\times C = (A\times C)\intersection (B\times C)$.
+  For contrast with the prior item
+  we will use a sequence of if and only if statements.
+
+  We have that $\sequence{x,c}\in (A\intersection B)\times C$
+  if and only if both
+  $x\in A\intersection B$ and~$c\in C$.
+  That holds if and only if both
+  $\sequence{x,c}\in A\times C$ and~$\sequence{x,c}\in B\times C$ are true,
+  which in turn is equivalent to
+  $\sequence{x,c}\in (A\times C)\intersection (B\times C)$.  
+\end{answer}
+\begin{exercise} 
+  Show that in general $\setcomp{(A\times B)}$ does not equal 
+  $\setcomp{A}\times\setcomp{B}$.
+\end{exercise}
+\begin{answer}
+  If the universal set is $\universalset=\Z$,
+  $A=\set{0}$, and $B=\set{1}$ then $A\times B=\set{\sequence{0,1}}$,
+  so $\setcomp{(A\times B)}=\Z^2-\set{\sequence{0,1}}$,
+  while $\setcomp{A}\times\setcomp{B}=(\Z-\set{0})\times(\Z-\set{1})$.
+  The two sets are not equal. 
+  For instance, $\sequence{0,2}\in \setcomp{A\times B}$
+  while $\sequence{0,2}\notin\setcomp{A}\times\setcomp{B}$.  
+\end{answer}
+\end{exes}
 % \begin{exes}
 % \item Prove that $(A\union B)\times C=(A\times C)\union(B\times C)$
 % \item What happens for intersection?
@@ -3684,7 +4071,7 @@ Thus $A^0=B^0=\set{\sequence{}}$.
 %   while $\sequence{0,2}\notin\setcomp{A}\times\setcomp{B}$.
 % \end{exes}
 % \end{ans}
-% \end{ex}
+\end{problem}
 
 
 
