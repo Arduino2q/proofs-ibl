@@ -166,8 +166,8 @@ cleveref, % \cref
 
 % Count the number of exercises so a person can comment some out to adjust
 % the semester-long number.
-\newcounter{exercisecount}
-\AtEndDocument{\typeout{Total number of exercises: \theexercisecount.}}
+% \newcounter{exercisecount}
+% \AtEndDocument{\typeout{Total number of exercises: \theexercisecount.}}
 
 \declaretheoremstyle[
 spaceabove=1.1ex plus .1ex, spacebelow=1.1ex plus .2ex minus .1ex,
@@ -184,7 +184,7 @@ qed=\qedsymbol
 % \newcommand{\exercisename}{Exercise}
 \theoremstyle{jhstyle}
 \declaretheorem[name=Exercise,numberwithin=chapter]{ex}
-\addtotheorempreheadhook[ex]{\addtocounter{exercisecount}{1}} % count exery ex
+% \addtotheorempreheadhook[ex]{\addtocounter{exercisecount}{1}} % count exery ex
 \declaretheorem[name=Definition,sibling=ex]{df} % see defn of \definend
 \declaretheorem[name=Note,sibling=ex]{nt}
 \declaretheorem[name=Axiom,numberwithin=chapter]{ax}
@@ -210,15 +210,15 @@ qed=\qedsymbol
 \RequirePackage{enumitem}
 
 % Count number of exercises with parts; see also counter exercisecount
-\newcounter{exerciseswithpartscount}
-\AtEndDocument{\typeout{Number of exercises with parts: \theexerciseswithpartscount.}}
-\newcounter{exercisepartscount}
-\AtEndDocument{\typeout{Count of parts: \theexercisepartscount.}}
-\newcounter{exercisetotal}
-\AtEndDocument{\setcounter{exercisetotal}{\value{exercisecount}}%
-\addtocounter{exercisetotal}{\value{exercisepartscount}}%
-\addtocounter{exercisetotal}{-\value{exerciseswithpartscount}}%
-\typeout{Number for students to do is Total-Number+Count=\theexercisetotal.}}
+% \newcounter{exerciseswithpartscount}
+% \AtEndDocument{\typeout{Number of exercises with parts: \theexerciseswithpartscount.}}
+% \newcounter{exercisepartscount}
+% \AtEndDocument{\typeout{Count of parts: \theexercisepartscount.}}
+% \newcounter{exercisetotal}
+% \AtEndDocument{\setcounter{exercisetotal}{\value{exercisecount}}%
+% \addtocounter{exercisetotal}{\value{exercisepartscount}}%
+% \addtocounter{exercisetotal}{-\value{exerciseswithpartscount}}%
+% \typeout{Number for students to do is Total-Number+Count=\theexercisetotal.}}
 
 
 % For these exercises, when done on the board I have one student do them

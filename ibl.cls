@@ -143,11 +143,6 @@ cleveref, % \cref
 % n.b. cleveref after! hyperref
 }
 
-% Count the number of exercises so a person can comment some out to adjust
-% the semester-long number.
-\newcounter{exercisecount}
-\AtEndDocument{\typeout{Total number of exercises: \theexercisecount.}}
-
 \declaretheoremstyle[
 spaceabove=1.1ex plus .1ex, spacebelow=1.1ex plus .2ex minus .1ex,
 headfont=\normalfont\scshape,
@@ -163,7 +158,7 @@ qed=\qedsymbol
 % \newcommand{\exercisename}{Exercise}
 \theoremstyle{jhstyle}
 \declaretheorem[name=Exercise,numberwithin=chapter]{ex}
-\addtotheorempreheadhook[ex]{\addtocounter{exercisecount}{1}} % count exery ex
+% \addtotheorempreheadhook[ex]{\addtocounter{exercisecount}{1}} % count exery ex
 \declaretheorem[name=Definition,sibling=ex]{df} % see defn of \definend
 \declaretheorem[name=Note,sibling=ex]{nt}
 \declaretheorem[name=Axiom,numberwithin=chapter]{ax}
@@ -189,15 +184,15 @@ qed=\qedsymbol
 \RequirePackage{enumitem}
 
 % Count number of exercises with parts; see also counter exercisecount
-\newcounter{exerciseswithpartscount}
-\AtEndDocument{\typeout{Number of exercises with parts: \theexerciseswithpartscount.}}
-\newcounter{exercisepartscount}
-\AtEndDocument{\typeout{Count of parts: \theexercisepartscount.}}
-\newcounter{exercisetotal}
-\AtEndDocument{\setcounter{exercisetotal}{\value{exercisecount}}%
-\addtocounter{exercisetotal}{\value{exercisepartscount}}%
-\addtocounter{exercisetotal}{-\value{exerciseswithpartscount}}%
-\typeout{Number for students to do is Total-Number+Count=\theexercisetotal.}}
+% \newcounter{exerciseswithpartscount}
+% \AtEndDocument{\typeout{Number of exercises with parts: \theexerciseswithpartscount.}}
+% \newcounter{exercisepartscount}
+% \AtEndDocument{\typeout{Count of parts: \theexercisepartscount.}}
+% \newcounter{exercisetotal}
+% \AtEndDocument{\setcounter{exercisetotal}{\value{exercisecount}}%
+% \addtocounter{exercisetotal}{\value{exercisepartscount}}%
+% \addtocounter{exercisetotal}{-\value{exerciseswithpartscount}}%
+% \typeout{Number for students to do is Total-Number+Count=\theexercisetotal.}}
 
 % ++++++++++++
 % Exercises sometimes have multiple parts.
@@ -206,13 +201,13 @@ qed=\qedsymbol
 % do separate parts
 \newlength{\exesindent}\setlength{\exesindent}{1.25em}
 \newenvironment{exes}{%
-\addtocounter{exerciseswithpartscount}{1}%
+% \addtocounter{exerciseswithpartscount}{1}%
 % \hspace*{0em}% Causes it to start on a new line? 
 \begin{enumerate}[topsep=0.15ex,partopsep=0ex,parsep=0ex,
                   beginpenalty=150,   % Prevent page break after newline start
                   itemsep=.25ex plus .03ex minus .01ex,
                   leftmargin=\exesindent,rightmargin=0em,
-                  align=left,label={\textsc{\alph*}.\protect\addtocounter{exercisepartscount}{1}}] 
+                  align=left,label={\textsc{\alph*}.}] 
 }{%
 \end{enumerate}
 }

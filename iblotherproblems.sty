@@ -6,7 +6,7 @@
 % fancyhdr
 \fancypagestyle{bodypage}{%
 \fancyhf{}% clear all six fields
-\fancyhead[RE,LO]{\small Answers: Introduction to Proofs}
+\fancyhead[RE,LO]{\small Other problems and answers: Introduction to Proofs}
 \fancyhead[LE,RO]{\small page \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0pt}
@@ -26,7 +26,7 @@
 \newlength{\unifiedlistparindent}  % use same value in lists and sublists
 \setlength{\unifiedlistparindent}{1.25em}  
 \newlength{\unifiedinterexerciseverticalspace}
-\setlength{\unifiedinterexerciseverticalspace}{0.20ex plus 0.02ex minus 0.01ex}
+\setlength{\unifiedinterexerciseverticalspace}{0.75ex plus 0.02ex minus 0.01ex}
 
 
 \newenvironment{otherproblem}[1]{%
@@ -37,7 +37,7 @@
                   itemsep=.25ex plus .03ex minus .01ex,
                   leftmargin=1.25em,rightmargin=0em,
                   listparindent=\unifiedlistparindent,
-                  align=left,label={}]\item[Exercise #1]\  % 
+                  align=left,label={}]\item[\textsc{Exercise near #1}]\  % 
 }{%
   \end{itemize}
 }

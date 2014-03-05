@@ -31,6 +31,18 @@
 \AtEndDocument{%
 \Closesolutionfile{answers}}
 
+% Exercises and answers that do not appear in this file are put into
+% another .tex file for "Other exercises."
+\newcommand{\otherfilename}{otherbody}
+\Newassociation{otherproblems}{otherproblem}{otherex}
+\Opensolutionfile{otherex}[\otherfilename]
+\Newassociation{otherexercises}{otherexercise}{otherex}
+% \Opensolutionfile{otherex}[\otherfilename]
+\Newassociation{otheranswers}{otheranswer}{otherex}
+% \Opensolutionfile{otherans}[\otherfilename]
+\AtEndDocument{%
+\Closesolutionfile{otherex}}
+
 
 % ========================================
 % Title-ing of chapters and sections
@@ -59,7 +71,8 @@
                      \jhchapterNoStar%
 }
 \newcommand{\jhchapterStar}[1]{\chapterholder{#1}}
-\newcommand{\jhchapterNoStar}[1]{\ifbool{inappendix}{\relax}{\Writetofile{answers}{\protect\chapter{#1}}}\chapterholder{#1}}
+\newcommand{\jhchapterNoStar}[1]{\ifbool{inappendix}{\relax}{%
+  \Writetofile{answers}{\protect\chapter{#1}}\Writetofile{otherex}{\protect\chapter{#1}}}\chapterholder{#1}}
 % Same thing for the \section command
 \let\sectionholder\section
 \renewcommand{\section}{\@ifstar
@@ -67,23 +80,15 @@
                      \jhsectionNoStar%
 }
 \newcommand{\jhsectionStar}[1]{\sectionholder{#1}}
-\newcommand{\jhsectionNoStar}[1]{\Writetofile{answers}{\protect\section{#1}}\sectionholder{#1}}
+\newcommand{\jhsectionNoStar}[1]{%
+  \Writetofile{answers}{\protect\section{#1}}\Writetofile{otherex}{\protect\section{#1}}\sectionholder{#1}}
 
 
 % ++++++++++++
 % Problems
+\newcounter{exercisescount}
+\AtEndDocument{\typeout{Total number of exercises: \theexercisescount.}}
 
-% Exercises and answers that do not appear in this file are put into
-% another .tex file for "Other exercises."
-\newcommand{\otherfilename}{otherbody}
-\Newassociation{otherproblems}{otherproblem}{otherex}
-\Opensolutionfile{otherex}[\otherfilename]
-\Newassociation{otherexercises}{otherexercise}{otherex}
-% \Opensolutionfile{otherex}[\otherfilename]
-\Newassociation{otheranswers}{otheranswer}{otherex}
-% \Opensolutionfile{otherans}[\otherfilename]
-\AtEndDocument{%
-\Closesolutionfile{otherex}}
 
 % A problem consists of a number of exercise items.  
 %  optional argument: A number that determines if this gets printed
@@ -93,7 +98,7 @@
       \typeout{About to turn on otherproblems macro}
       \otherproblems
     }{%
-     % \addtocounter{exerciseswithpartscount}{1}%
+     \addtocounter{exercisescount}{1}  % some exercises are just a problem env, no exes
      \begin{ex}
      \Writetofile{answers}{\protect\begin{answer}{\Currentlabel}} 
   }
@@ -111,12 +116,13 @@
 % \usepackage{fancyvrb}
 \newenvironment{exercise}[1][\problem@booklengthvalue]{%
   \gdef\exercise@booklengthvalue{#1}  % remember #1
-  \typeout{Exercise book length value \exercise@booklengthvalue}
+  % \typeout{Exercise book length value \exercise@booklengthvalue}
   \ifnumgreater{\exercise@booklengthvalue}{\booklength}{%
-     \typeout{  Writing exercise to other file}
+     % \typeout{  Writing exercise to other file}
      \otherexercises
   }{
-     \typeout{  Writing exercise to main file}
+     % \typeout{  Writing exercise to main file}
+     \addtocounter{exercisescount}{1}  % each exercise adds 1 to total
      \item 
   }  
 }{%
@@ -157,8 +163,9 @@
   \end{enumerate}
 }
 \newenvironment{exes}{%
-  \typeout{exes: problem book length value \problem@booklengthvalue}
+  % \typeout{exes: problem book length value \problem@booklengthvalue}
   \ifnumgreater{\problem@booklengthvalue}{\booklength}{}{%
+     \addtocounter{exercisescount}{-1}  % got +1 for problem env, so cancel that
      \Writetofile{answers}{\protect\begin{exes}} 
     }
     \begin{exlist}
