@@ -147,21 +147,32 @@
 % For these exercises, when done on the board, I have separate students 
 % do separate parts
 \newlength{\exesindent}\setlength{\exesindent}{1.25em}
+\newenvironment{exlist}{%  used in appendix as well as in exercises
+  \begin{enumerate}[topsep=0.15ex,partopsep=0ex,parsep=0ex,
+                    beginpenalty=150,   % Prevent page break after newline start
+                    itemsep=.25ex plus .03ex minus .01ex,
+                    leftmargin=\exesindent,rightmargin=0em,
+                    align=left,label={\textsc{\alph*}.}]
+}{%
+  \end{enumerate}
+}
 \newenvironment{exes}{%
   \typeout{exes: problem book length value \problem@booklengthvalue}
   \ifnumgreater{\problem@booklengthvalue}{\booklength}{}{%
      \Writetofile{answers}{\protect\begin{exes}} 
     }
-     \begin{enumerate}[topsep=0.15ex,partopsep=0ex,parsep=0ex,
-                  beginpenalty=150,   % Prevent page break after newline start
-                  itemsep=.25ex plus .03ex minus .01ex,
-                  leftmargin=\exesindent,rightmargin=0em,
-                  align=left,label={\textsc{\alph*}.\protect\addtocounter{exercisepartscount}{1}}]
+    \begin{exlist}
+     % \begin{enumerate}[topsep=0.15ex,partopsep=0ex,parsep=0ex,
+     %              beginpenalty=150,   % Prevent page break after newline start
+     %              itemsep=.25ex plus .03ex minus .01ex,
+     %              leftmargin=\exesindent,rightmargin=0em,
+     %              align=left,label={\textsc{\alph*}.\protect\addtocounter{exercisepartscount}{1}}]
 }{%
   \ifnumgreater{\problem@booklengthvalue}{\booklength}{}{%
      \Writetofile{answers}{\protect\end{exes}} 
   }
-     \end{enumerate}
+  % \end{enumerate}
+  \end{exlist}
 }
 
 % Each individual exercise has two main arguments, the exercise and

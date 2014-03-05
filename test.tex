@@ -170,7 +170,7 @@ but ``Does $2/5$?''\spacefactor=1000\ is not sensible.
 % \end{exes}
 % \end{problem}
 
-\begin{problem} \notetext{Interaction of parity and addition}
+\begin{problem}[2] \notetext{Interaction of parity and addition}
 \pord.
 \begin{exes}
 \begin{exercise}
@@ -256,7 +256,7 @@ but ``Does $2/5$?''\spacefactor=1000\ is not sensible.
   Then $ab=2m\cdot 2n=2(m\cdot 2n)$ is even.  
 \end{answer}
 
-\begin{exercise}
+\begin{exercise}[2]
   The quotient of two evens, if it is an integer, is even.
 \end{exercise}
 \begin{answer}
@@ -264,11 +264,11 @@ but ``Does $2/5$?''\spacefactor=1000\ is not sensible.
   is not even.
 \end{answer}
 
-\begin{exercise}
+\begin{exercise}[2]
   Generalize the first item to any divisor~$d$.  
 \end{exercise}
 \begin{answer}
-  The first item can generalize to: for any~$din\N$, 
+  The first item can generalize to: for any~$d\in\N$, 
   the product of two multiples of~$d$ is a multiple of~$d$.
 
   For the proof,  let $a,b\in\Z$ be multiples of~$d$
@@ -1095,7 +1095,7 @@ We do this in steps.
   With that, the equation $q_0-q_1=(r_0-r_1)/(-b)$ shows that $r_0-r_1=0$.
 \end{answer}
 \begin{exercise}
-   Show that the statement is true for $a=0$.
+  Show that the statement is true for $a=0$.
   Show also that if the statement is true for~$a>0$ then it is true
   for~$a<0$.
 \end{exercise} 
@@ -1730,7 +1730,7 @@ $\gcd(a,b)\cdot\lcm(a,b)$.
   The product $ab$ is a common multiple of the two.
   Apply the prior item.
 \end{answer}
-\begin{exericse} 
+\begin{exercise} 
   Let $d$ be defined by 
   $ab=\lcm(a,b)\cdot d$, except that if either $a$ or~$b$ is zero
   then $d=\max\set{\absval{a},\absval{b}}$.
@@ -4097,7 +4097,7 @@ Functions are equal only if they have the same domain, codomain,
 and graph.
 \end{df}
 
-\noindent Thus a function associates each element~$d$ from the domain,
+\noindent Thus, a function associates each element~$d$ from the domain,
 called an \definend{argument} or~\definend{input},
 with an element~$c$ from the codomain, 
 called a~\definend{value} or~\definend{output},
@@ -4118,7 +4118,7 @@ with arrows that begin with a bar.
 % In place of $\map{f}{D}{C}$ you may see $D\mapsvia{f} C$ and
 % in place of $f(d)=c$ you may see $d\mapsunder{f}c$.
 
-\begin{ex} Decide if each is a function:\label{FindFunctions}
+\begin{problem} Decide if each is a function:\label{FindFunctions}
 \begin{items}
 \item $D=\set{0,1,2}$, $C=\set{3,4,5}$,
   $G=\set{(0,3), (1,4), (2,5)}$    
@@ -4135,7 +4135,7 @@ with arrows that begin with a bar.
 \item $D=\N$, $C=\N$,
   $G=\setbuilder{(d,c)\in D\times C}{c=d^2}$    
 \end{items}
-\begin{ans}
+\begin{answer}
 \begin{items}
 \item This is a function.
   By inspection, for each pair $(x,y)\in G$ we have that
@@ -4164,8 +4164,8 @@ with arrows that begin with a bar.
   Also, we have that for each $x\in D$ there is one and only 
   one associated~$c\in C$, namely $c=d^2$.  
 \end{items}
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
 \remark we often blur the distinction between a function and its graph.
 For instance we may say, ``a function is an input-output relationship'' 
@@ -4181,15 +4181,15 @@ Do not think that a function must have a formula.
 The final item in the prior exercise has a formula but for other items 
 $G$ just has arbitrary pairings.
 
-\begin{ex}
+\begin{problem}
 Let $D$ and $C$ be finite sets.
 How many maps are there from $D$ to $C$?
-\begin{ans}
+\begin{answer}
 For each element of the domain, in making a function we have a choice 
 of associating it with any of $|C|$-many values.
 Thus the number of possible function is $|C|^{|D|}$.
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
 A function may have multiple arguments; one example is 
 $\sequence{x,y}\mapsunder{f}x^2-2y^2$.
@@ -4205,10 +4205,10 @@ $\setbuilder{y\in C}{\text{there is a $x\in D$ such that $f(x)=y$}}$,
 denoted $\range(f)$ (or $f(D)$).
 \end{df}
 
-\begin{ex}
+\begin{problem}
 For each item in Exericse~\ref{FindFunctions}, 
 if it is a function then find its range.  
-\begin{ans}
+\begin{answer}
 \begin{items}
 \item The range is $\set{3,4,5}=C$.    
 \item The range is $\set{3,4}$.
@@ -4218,8 +4218,8 @@ if it is a function then find its range.
 \item This is not a function.   
 \item The range is the set of perfect squares $\setbuilder{a^2}{a\in\N}$.   
 \end{items}
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
 \begin{df}
 Let $\map{f}{D}{C}$.
@@ -4233,14 +4233,14 @@ denoted $\image(f)$ (or $f(B)$),
 is the range of the function $\restrictionmap{f}{B}$.
 \end{df}
 
-\begin{ex}
+\begin{problem}
 Find the image of each set under the real function $f(x)=\tan(x)$:
 \begin{items}
 \item $\leftclosed{\pi/4}{\pi/2}=\setbuilder{x\in\R}{\pi/4\leq x<\pi/2}$
 \item \set{-\pi/3}
 % \item $\R^+$  
 \end{items}
-\begin{ans}
+\begin{answer}
 \begin{items}
 \item $f(\leftclosed{\pi/4}{\pi/2})=\leftclosed{1}{\infty}
              =\setbuilder{x\in\R}{1\leq x<\infty}$ 
@@ -4250,8 +4250,8 @@ Find the image of each set under the real function $f(x)=\tan(x)$:
 %   Thus, $\restrictionmap{f}{\R^+}$ isn't defined, and so the
 %   image isn't defined.
 \end{items}
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
 \begin{df}
 Let $\map{f}{D}{C}$.
@@ -4261,31 +4261,31 @@ The \definend{inverse image of the set}~$A\subseteq C$
 is the set $f^{-1}(A)=\setbuilder{d\in D}{f(d)\in A}$.   
 \end{df}
 
-\begin{ex}
+\begin{problem}
 Find the inverse image of each under the function $\map{f}{\R}{\R}$ 
 given by $x\mapsto x^2$:
 \begin{items}
 \item $9$
 \item $\closed{16}{25}=\setbuilder{y\in\R}{16\leq y\leq 25}$
 \end{items}
-\begin{ans}
+\begin{answer}
 \begin{items}
 \item It is the set $\set{3,-3}$, sometimes abbreviated as $\pm 3$.
 \item It is the union $\closed{4}{5}\union \closed{-5}{-4}$.    
 \end{items}
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
-\begin{ex}
+\begin{problem}
 Prove that $f^{-1}(A)$ is the union of the sets $f^{-1}(a)$ over all $a\in A$.
-\begin{ans}
+\begin{answer}
 We have that, where $D$ is the domain, 
 $f^{-1}(A)=\setbuilder{d\in D}{f(d)\in A}$.
 Restated, this is $\setbuilder{d\in D}{\text{$f(d)=a$ for $a\in A$}}$.
 This is the union over all $a\in A$ of the 
 sets $S_a=\setbuilder{d\in D}{f(d)=a}$.  
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
 
 
@@ -4318,7 +4318,7 @@ Read $\composed{g}{f}$ aloud as ``$g$ circle $f$''
 or~``$g$ composed with $f$''
 (or~``$g$ following $f$'').
 
-\begin{ex} Let $D=\set{0,1,2}$, $C=\set{a,b,c,d}$, 
+\begin{problem} Let $D=\set{0,1,2}$, $C=\set{a,b,c,d}$, 
 and $B=\set{\alpha,\beta,\gamma}$.
 Suppose that $\map{f}{D}{C}$ is given by $0\mapsunder{} a$, $1\mapsunder{} c$, 
 $2\mapsunder{} d$ and that $\map{g}{C}{B}$
@@ -4331,7 +4331,7 @@ and $d\mapsunder{}\alpha$.
 \item Compute $\composed{f}{g}$ on all arguments or show it is not defined.
 \item Find the range of $f$, $g$, and any defined compositions    
 \end{items}
-\begin{ans}
+\begin{answer}
 \begin{items}
 \item The function $\map{\composed{g}{f}}{D}{B}$ is given by 
   $0\mapsunder{}\alpha$, $1\mapsunder{}\gamma$, and $2\mapsunder{}\alpha$.
@@ -4341,45 +4341,71 @@ and $d\mapsunder{}\alpha$.
   The range of~$g$ is $\set{\alpha,\beta,\gamma}$. 
   The range of $\composed{g}{f}$ is $\set{\alpha,\gamma}$.
 \end{items}
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
-\begin{ex}
+\begin{problem}
 Let $\map{f}{\R}{\R}$ be $f(x)=x^2$ and let $\map{g}{\R}{\R}$ be~$g(x)=3x+1$.
 Find the domain, codomain, and a formula for each of
 $\composed{g}{f}$ and $\composed{f}{g}$.  
-\begin{ans}
+\begin{answer}
 For $\composed{g}{f}$ the domain and codomain are~$\R$ while a formula is
 $\composed{g}{f}(x)=3x^2+1$.
 The map~$\composed{f}{g}$ also has domain and codomain equal tp~$\R$,
 by the formula is~$\composed{f}{g}(x)=(3x+1)^2=9x^2+6x+1$.
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
-\begin{ex} Prove each.
+\begin{problem} Prove each.
 \begin{exes}
-\item\notetext{Associativity} 
+\begin{exercise}
+  \notetext{Associativity} 
   $\composed{h}{(\composed{g}{f})}=\composed{(\composed{h}{g})}{f}$    
-\item Function composition need not be commutative.
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item The action of the map on the left side
+\end{exercise}
+\begin{answer}
+  The action of the map on the left side
   is $(\composed{h}{(\composed{g}{f})(x)}=h(\composed{g}{f}(x))
        =h(g(f(x)))$.
   The action of the map on the right side  
   is $(\composed{(\composed{h}{g})}{f})(x)=(\composed{h}{g})(f(x))
       =h(g(f(x)))$.
   The two actions are equal\Dash the two give the same association of inputs
-  with outputs\Dash so the maps are equal.
-\item One example of noncommutativity is $\map{f,g}{\R}{\R}$ given by 
+  with outputs\Dash so the maps are equal.  
+\end{answer}
+\begin{exercise} 
+  Function composition need not be commutative.
+\end{exercise}
+\begin{answer}
+  One example of noncommutativity is $\map{f,g}{\R}{\R}$ given by 
   $f(x)=x+1$ and $g(x)=2x+3$.
   The formula for $\composed{f}{g}$ is $2\cdot(x+1)+3=2x+5$ while
   the formula for $\composed{g}{f}$ is $(2x+3)+1=2x+4$.
-  Thus, for instance, the two differ on argument~$0$.
+  Thus, for instance, the two differ on argument~$0$.  
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item\notetext{Associativity} 
+%   $\composed{h}{(\composed{g}{f})}=\composed{(\composed{h}{g})}{f}$    
+% \item Function composition need not be commutative.
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item The action of the map on the left side
+%   is $(\composed{h}{(\composed{g}{f})(x)}=h(\composed{g}{f}(x))
+%        =h(g(f(x)))$.
+%   The action of the map on the right side  
+%   is $(\composed{(\composed{h}{g})}{f})(x)=(\composed{h}{g})(f(x))
+%       =h(g(f(x)))$.
+%   The two actions are equal\Dash the two give the same association of inputs
+%   with outputs\Dash so the maps are equal.
+% \item One example of noncommutativity is $\map{f,g}{\R}{\R}$ given by 
+%   $f(x)=x+1$ and $g(x)=2x+3$.
+%   The formula for $\composed{f}{g}$ is $2\cdot(x+1)+3=2x+5$ while
+%   the formula for $\composed{g}{f}$ is $(2x+3)+1=2x+4$.
+%   Thus, for instance, the two differ on argument~$0$.
+% \end{exes}
+% \end{ans}
+\end{problem}
 
 
 
@@ -4407,42 +4433,70 @@ is exactly one associated argument, is a
 \definend{correspondence} (or \definend{bijection}, or \definend{permutation}).
 \end{df}
 
-\begin{ex} Let $\map{f}{\R}{\R}$ be $f(x)=3x+1$ and 
+\begin{problem} 
+  Let $\map{f}{\R}{\R}$ be $f(x)=3x+1$ and 
   $\map{g}{\R}{\R}$ be $g(x)=x^2+1$.
 \begin{exes}
-\item Show that $f$ is one-to-one.
-\item Show that $f$ is onto.    
-\item Show that $g$ is not one-to-one, and also that it is not onto.
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item Suppose that $f(x_0)=f(x_1)$ for $x_0,x_1\in\R$.
+\begin{exercise} 
+  Show that $f$ is one-to-one.
+\end{exercise}
+\begin{answer}
+  Suppose that $f(x_0)=f(x_1)$ for $x_0,x_1\in\R$.
   Then $3x_0+1=3x_1+1$.
   Subtract the~$1$'s and divide by~$3$ to conclude that $x_0=x_1$.
-  Thus~$f$ is one-to-one. 
-\item Fix a member of the codomain~$c\in\R$.
+  Thus~$f$ is one-to-one.   
+\end{answer}
+\begin{exercise} 
+  Show that $f$ is onto.
+\end{exercise}
+\begin{answer}
+  Fix a member of the codomain~$c\in\R$.
   Observe that $d=(c-1)/3$ is a member of the domain and that 
   $f(d)=c$.
-  Thus $f$ is onto.
-\item The function~$g$ is not one-to-one because $g(2)=g(-2)$.
+  Thus $f$ is onto.  
+\end{answer}
+\begin{exercise} 
+  Show that $g$ is not one-to-one, and also that it is not onto.
+\end{exercise}
+\begin{answer}
+  The function~$g$ is not one-to-one because $g(2)=g(-2)$.
   It is not onto because no element of the domain~$\R$ is mapped by~$g$
-  to the element $-1$ of the codomain.        
+  to the element $-1$ of the codomain.          
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item Show that $f$ is one-to-one.
+% \item Show that $f$ is onto.    
+% \item Show that $g$ is not one-to-one, and also that it is not onto.
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item Suppose that $f(x_0)=f(x_1)$ for $x_0,x_1\in\R$.
+%   Then $3x_0+1=3x_1+1$.
+%   Subtract the~$1$'s and divide by~$3$ to conclude that $x_0=x_1$.
+%   Thus~$f$ is one-to-one. 
+% \item Fix a member of the codomain~$c\in\R$.
+%   Observe that $d=(c-1)/3$ is a member of the domain and that 
+%   $f(d)=c$.
+%   Thus $f$ is onto.
+% \item The function~$g$ is not one-to-one because $g(2)=g(-2)$.
+%   It is not onto because no element of the domain~$\R$ is mapped by~$g$
+%   to the element $-1$ of the codomain.        
+% \end{exes}
+% \end{ans}
+\end{problem}
 
-\begin{ex}   \label{CorrespondingSetsHaveSameNumberOfElements}
+\begin{problem}   \label{CorrespondingSetsHaveSameNumberOfElements}
   Proving these two items shows that, 
   where $D$ and~$C$ are finite sets, 
   if there is a correspondence~$\map{f}{D}{C}$
   then the two sets have the same number of elements.
 \begin{exes}
-\item If $f$ is onto then $|C|\leq |D|$.
-\item If $f$ is one-to-one then $|C|\geq |D|$.
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item Assume that $\map{f}{D}{C}$ is onto and
+\begin{exercise}
+  If $f$ is onto then $|C|\leq |D|$.
+\end{exercise}
+\begin{answer}
+  Assume that $\map{f}{D}{C}$ is onto and
   that the sets are finite.
   We will prove the statement by induction on the number of elements in~$D$.
   The base step is that~$D$ has no elements at all, so $D=\emptyset$.
@@ -4468,8 +4522,13 @@ is exactly one associated argument, is a
   The set~$D$ has one element more than the set~$\hat{D}$.
   And $\range(f)=C$ is no more than one element larger than
   $\range(\restrictionmap{f}{\hat{D}})$.
-  Thus $|C|\leq|D|$.
-\item Assume that $\map{f}{D}{C}$ is one-to-one and
+  Thus $|C|\leq|D|$.  
+\end{answer}
+\begin{exercise} 
+  If $f$ is one-to-one then $|C|\geq |D|$.
+\end{exercise}
+\begin{answer}
+  Assume that $\map{f}{D}{C}$ is one-to-one and
   that the sets are finite.
   We will do induction on the number of elements in~$D$.
   The base step is that~$|D|=0$.
@@ -4493,21 +4552,79 @@ is exactly one associated argument, is a
   the range of the restriction map~$\range(\restrictionmap{f}{\hat{D}})$.
   Thus $\range(f)$ is one element larger than
   $|\range(\restrictionmap{f}{\hat{D}})|$.
-  Therefore $|C|\geq|D|$.
+  Therefore $|C|\geq|D|$.  
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item If $f$ is onto then $|C|\leq |D|$.
+% \item If $f$ is one-to-one then $|C|\geq |D|$.
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item Assume that $\map{f}{D}{C}$ is onto and
+%   that the sets are finite.
+%   We will prove the statement by induction on the number of elements in~$D$.
+%   The base step is that~$D$ has no elements at all, so $D=\emptyset$.
+%   The only function with an empty domain is the function whose graph is 
+%   empty. 
+%   Since this function is onto, the codomain~$C$ is also empty, 
+%   and also has no elements.
+%   So the statement holds in this case.
 
-\begin{ex} \label{InteractionOneToONeOntoWithComposition}
+%   For the inductive step assume that the statement is true when $|D|=0$, 
+%   $|D|=1$, \ldots, $|D|=k$ and consider the~$|D|=k+1$ case.
+%   Put an element of~$D$ aside by picking some $d\in D$ and considering 
+%   $\hat{D}=D-\set{d}$ (because this is the $k+1$ case there is at least
+%   one such element in~$D$).
+%   The inductive hypothesis applies to $\hat{D}$ so the number of elements in
+%   the range of the restriction map 
+%   $\map{\restrictionmap{f}{\hat{D}}}{\hat{D}}{\range(\restrictionmap{f}{\hat{D}})}$
+%   is less than or equal to the number of elements in the domain of that map
+%   $|\range(\restrictionmap{f}{\hat{D}})|\leq |\hat{D}|$.
+
+%   Now add the element~$d$ back by returning to considering~$D$ and the 
+%   map~$\map{f}{D}{C}$.
+%   The set~$D$ has one element more than the set~$\hat{D}$.
+%   And $\range(f)=C$ is no more than one element larger than
+%   $\range(\restrictionmap{f}{\hat{D}})$.
+%   Thus $|C|\leq|D|$.
+% \item Assume that $\map{f}{D}{C}$ is one-to-one and
+%   that the sets are finite.
+%   We will do induction on the number of elements in~$D$.
+%   The base step is that~$|D|=0$.
+%   The codomain cannot have fewer elements than this
+%   so~$|C|\geq |D|$ holds in this case.
+
+%   For the inductive step assume that the statement is true when $|D|=0$, 
+%   \ldots, $|D|=k$ and consider~$|D|=k+1$.
+%   Pick some $d\in D$ and consider 
+%   $\hat{D}=D-\set{d}$ (because this is the $k+1$ case there is at least
+%   one such element).
+%   The inductive hypothesis applies to $\hat{D}$ so that 
+%   the number of elements in the range of the restriction map 
+%   $\map{\restrictionmap{f}{\hat{D}}}{\hat{D}}{\range(\restrictionmap{f}{\hat{D}})}$
+%   is at least as great as the number of elements in the domain of that map
+%   $|\range(\restrictionmap{f}{\hat{D}})|\geq |\hat{D}|$.
+
+%   Now extend to~$D$ and the map~$\map{f}{D}{C}$.
+%   The set~$D$ has one element more than the set~$\hat{D}$.
+%   Because~$f$ is one-to-one, the value~$f(d)$ is not in 
+%   the range of the restriction map~$\range(\restrictionmap{f}{\hat{D}})$.
+%   Thus $\range(f)$ is one element larger than
+%   $|\range(\restrictionmap{f}{\hat{D}})|$.
+%   Therefore $|C|\geq|D|$.
+% \end{exes}
+% \end{ans}
+\end{problem}
+
+\begin{problem} \label{InteractionOneToONeOntoWithComposition}
 Prove.
 \begin{exes}
-\item A composition of one-to-one functions is one-to-one.
-\item A composition of onto functions is onto.
-\item A composition of correspondences is a correspondence.    
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item Let $\map{f}{D}{C}$ and~$\map{g}{C}{B}$ be one-to-one.
+\begin{exercise} 
+  A composition of one-to-one functions is one-to-one.
+\end{exercise}
+\begin{answer}
+  Let $\map{f}{D}{C}$ and~$\map{g}{C}{B}$ be one-to-one.
   Suppose that $\composed{g}{f}(x_0)=\composed{g}{f}(x_1)$ for
   some $x_0,x_1\in D$.
   Then $g(f(x_0))=g(f(x_1))$.
@@ -4516,43 +4633,86 @@ Prove.
   also equal.
   The function~$f$ is one-to-one and so $x_0=x_1$.
   Because $\composed{g}{f}(x_0)=\composed{g}{f}(x_1)$ implies that
-  $x_0=x_1$, the composition is one-to-one.
-\item Let $\map{f}{D}{C}$ and~$\map{g}{C}{B}$ be functions that are onto.
+  $x_0=x_1$, the composition is one-to-one.  
+\end{answer}
+\begin{exercise} 
+  A composition of onto functions is onto.
+\end{exercise}
+\begin{answer}
+  Let $\map{f}{D}{C}$ and~$\map{g}{C}{B}$ be functions that are onto.
   Fix an element of the codomain of the composition~$b\in B$.
   The function~$g$ is onto so there is a $c\in C$ such that $g(c)=b$.
   The function~$f$ is onto so there is a $d\in D$ such that $f(d)=c$.
   Then $\composed{g}{f}(d)=b$, and so the composition is onto.
-\item This is immediate from the prior two items. 
+\end{answer}
+\begin{exercise} 
+  A composition of correspondences is a correspondence.
+\end{exercise}
+\begin{answer}
+  This is immediate from the prior two items. 
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item A composition of one-to-one functions is one-to-one.
+% \item A composition of onto functions is onto.
+% \item A composition of correspondences is a correspondence.    
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item Let $\map{f}{D}{C}$ and~$\map{g}{C}{B}$ be one-to-one.
+%   Suppose that $\composed{g}{f}(x_0)=\composed{g}{f}(x_1)$ for
+%   some $x_0,x_1\in D$.
+%   Then $g(f(x_0))=g(f(x_1))$.
+%   The function~$g$ is one-to-one so since the values $g(f(x_0))$ 
+%   and~$g(f(x_1))$ are equal, the arguments $f(x_0)$ and~$f(x_1)$ are
+%   also equal.
+%   The function~$f$ is one-to-one and so $x_0=x_1$.
+%   Because $\composed{g}{f}(x_0)=\composed{g}{f}(x_1)$ implies that
+%   $x_0=x_1$, the composition is one-to-one.
+% \item Let $\map{f}{D}{C}$ and~$\map{g}{C}{B}$ be functions that are onto.
+%   Fix an element of the codomain of the composition~$b\in B$.
+%   The function~$g$ is onto so there is a $c\in C$ such that $g(c)=b$.
+%   The function~$f$ is onto so there is a $d\in D$ such that $f(d)=c$.
+%   Then $\composed{g}{f}(d)=b$, and so the composition is onto.
+% \item This is immediate from the prior two items. 
+% \end{exes}
+% \end{ans}
+\end{problem}
 
-\begin{ex} 
+\begin{problem} 
 \begin{exes}
-\item Prove that if $\composed{g}{f}$ is onto then $g$ is onto.
-\item Prove that if $\composed{g}{f}$ is one-to-one then $f$ is one-to-one.
-\item Do the other two cases hold?     
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item Let $\map{f}{D}{C}$ and~$\map{g}{C}{B}$ be such that 
+\begin{exercise} 
+  Prove that if $\composed{g}{f}$ is onto then $g$ is onto.
+\end{exercise}
+\begin{answer}
+  Let $\map{f}{D}{C}$ and~$\map{g}{C}{B}$ be such that 
   the composition $\composed{g}{f}$ is onto.
   Suppose that~$g$ is not onto.
   Then there is a~$b\in B$ such that there is no~$c\in C$
   with~$g(c)=b$.
   But this means that there is no~$d\in D$ such that 
   $b=g(f(d))$, contradicting that the composition is onto.
-  So the supposition is false and $g$ must be onto.
-\item Let $\map{f}{D}{C}$ and~$\map{g}{C}{B}$ be such that 
+  So the supposition is false and $g$ must be onto.  
+\end{answer}
+\begin{exercise} 
+  Prove that if $\composed{g}{f}$ is one-to-one then $f$ is one-to-one.
+\end{exercise}
+\begin{answer}
+  Let $\map{f}{D}{C}$ and~$\map{g}{C}{B}$ be such that 
   the composition $\composed{g}{f}$ is one-to-one.
   Suppose that~$f$ is not one-to-one.
   Then there are $d_0,d_1\in D$ with $d_0\neq d_1$ such that $f(d_0)=f(d_1)$.
   But this implies that $g(f(d_0))=g(f(d_1))$, contradicting that 
   the composition is one-to-one.
-  Thus the supposition is false and $f$ is one-to-one.
-\item The other two cases do not hold.
+  Thus the supposition is false and $f$ is one-to-one.  
+\end{answer}
+\begin{exercise} 
+  Do the other two cases hold? 
+\end{exercise}
+\begin{answer}
+  The other two cases do not hold.
   
-  First is an example of a composition $\composed{g}{f}$ that is onto
+  First we give an example of a composition $\composed{g}{f}$ that is onto
   but where~$f$ is not onto.   
   Let $D=\set{0,1,2}$, $C=\set{a,b,c}$, and $B=\set{\alpha, \beta}$.
   Let $f$ map $0\mapsunder{} b$, $1\mapsunder{}b$, and~$2\mapsunder{} c$.
@@ -4572,9 +4732,55 @@ Prove.
   Then $\composed{g}{f}$ is one-to-one because 
   $\composed{g}{f}(0)\neq\composed{g}{f}(1)$.
   But $g$ is not one-to-one because $g(a)=g(b)$. 
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item Prove that if $\composed{g}{f}$ is onto then $g$ is onto.
+% \item Prove that if $\composed{g}{f}$ is one-to-one then $f$ is one-to-one.
+% \item Do the other two cases hold?     
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item Let $\map{f}{D}{C}$ and~$\map{g}{C}{B}$ be such that 
+%   the composition $\composed{g}{f}$ is onto.
+%   Suppose that~$g$ is not onto.
+%   Then there is a~$b\in B$ such that there is no~$c\in C$
+%   with~$g(c)=b$.
+%   But this means that there is no~$d\in D$ such that 
+%   $b=g(f(d))$, contradicting that the composition is onto.
+%   So the supposition is false and $g$ must be onto.
+% \item Let $\map{f}{D}{C}$ and~$\map{g}{C}{B}$ be such that 
+%   the composition $\composed{g}{f}$ is one-to-one.
+%   Suppose that~$f$ is not one-to-one.
+%   Then there are $d_0,d_1\in D$ with $d_0\neq d_1$ such that $f(d_0)=f(d_1)$.
+%   But this implies that $g(f(d_0))=g(f(d_1))$, contradicting that 
+%   the composition is one-to-one.
+%   Thus the supposition is false and $f$ is one-to-one.
+% \item The other two cases do not hold.
+  
+%   First is an example of a composition $\composed{g}{f}$ that is onto
+%   but where~$f$ is not onto.   
+%   Let $D=\set{0,1,2}$, $C=\set{a,b,c}$, and $B=\set{\alpha, \beta}$.
+%   Let $f$ map $0\mapsunder{} b$, $1\mapsunder{}b$, and~$2\mapsunder{} c$.
+%   Let $g$ map $a\mapsunder{} \alpha$, $b\mapsunder{}\alpha$, 
+%   and~$c\mapsunder{} \beta$. 
+%   Then $\composed{g}{f}$ is onto because $\composed{g}{f}(0)=\alpha$ and
+%   $\composed{g}{f}(2)=\beta$.
+%   But $f$ is not onto because no element of its domain~$D$ is mapped to the
+%   element $a$ of its codomain~$C$. 
+
+%   Next is an example of a composition that is one-to-one but where
+%   the function performed second is not one-to-one.
+%   Let $D=\set{0,1}$, $C=\set{a,b,c}$, and $B=\set{\alpha, \beta}$.
+%   Let $f$ map $0\mapsunder{} b$, and~$1\mapsunder{}c$.
+%   Let $g$ map $a\mapsunder{} \alpha$, $b\mapsunder{}\alpha$, 
+%   and~$c\mapsunder{} \beta$. 
+%   Then $\composed{g}{f}$ is one-to-one because 
+%   $\composed{g}{f}(0)\neq\composed{g}{f}(1)$.
+%   But $g$ is not one-to-one because $g(a)=g(b)$. 
+% \end{exes}
+% \end{ans}
+\end{problem}
 
 \begin{df}
 An \definend{identity function} $\map{\identity}{D}{D}$ has
@@ -4588,51 +4794,99 @@ $\composed{f^{-1}}{f}$ is the identity map on~$D$ and
 $\composed{f}{f^{-1}}$ is the identity map on~$C$.
 \end{df}
 
-\begin{ex} 
+\begin{problem} 
 \begin{exes}
-\item Let $\map{f}{\Z}{\Z}$ be~$f(a)=a+3$ and let
+\begin{exercise} 
+  Let $\map{f}{\Z}{\Z}$ be~$f(a)=a+3$ and let
   $\map{g}{\Z}{\Z}$ be $g(a)=a-3$.
   Show that $g$ is inverse to $f$.
-\item Let $\map{h}{\Z}{\Z}$ be the function that returns
-  $n+1$ if $n$ is even, and returns $n-1$ if $n$ is odd.
-  Find a function inverse to~$h$.
-\item Let $\map{s}{\R^+}{\R^+}$ be~$s(x)=x^2$.
-  Find the map that is inverse to $s$.    
-\item Show that $\map{t}{\R}{\R}$ given by $t(x)=x^2$
-  has no inverse.
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item Observe first that the domain of each equals the codomain of the other,
+\end{exercise}
+\begin{answer}
+  Observe first that the domain of each equals the codomain of the other,
   so their composition is defined both ways.
   Now, $\composed{g}{f}(a)=g(f(a))=g(a+3)=(a+3)-3=a$
   is the identity map.
   Similarly, $\composed{f}{g}(a)=(a-3)+3$ is also the identity map.
-  Thus they are inverse.
-\item The inverse of~$s$ is the map~$\map{r}{\R^+}{\R^+}$ given my 
+  Thus they are inverse.  
+\end{answer}
+\begin{exercise} 
+  Let $\map{h}{\Z}{\Z}$ be the function that returns
+  $n+1$ if $n$ is even, and returns $n-1$ if $n$ is odd.
+  Find a function inverse to~$h$.
+\end{exercise}
+\begin{answer}
+  The inverse of~$s$ is the map~$\map{r}{\R^+}{\R^+}$ given my 
   $r(x)=\sqrt{x}$.
   The domain of each is the codomain of the other,
-  and both $\composed{s}{r}$ and~$\composed{r}{s}$ are the identity function.
-\item The inverse of~$h$ is itself.
+  and both $\composed{s}{r}$ and~$\composed{r}{s}$ are the identity function.  
+\end{answer}
+\begin{exercise} 
+  Let $\map{s}{\R^+}{\R^+}$ be~$s(x)=x^2$.
+  Find the map that is inverse to $s$.
+\end{exercise}
+\begin{answer}
+  The inverse of~$h$ is itself.
   The domain and codomain are equal, as required. 
   If~$n$ is odd then $\composed{h}{h}(n)=h(n-1)=(n-1)+1=n$ because 
   $n-1$ is even in this case.
-  Similarly if~$n$ is even then $\composed{h}{h}=(n+1)-1=n$.
-\item Consider the element~$4$ of the codomain.
+  Similarly if~$n$ is even then $\composed{h}{h}=(n+1)-1=n$.  
+\end{answer}
+\begin{exercise} 
+  Show that $\map{t}{\R}{\R}$ given by $t(x)=x^2$
+  has no inverse.
+\end{exercise}
+\begin{answer}
+  Consider the element~$4$ of the codomain.
   It is the image of two different elements of the domain
   $t(2)=t(-2)=4$. 
   Any map $u$ that would be the inverse of~$t$ would have to associate~$4$ 
-  in its domain with both~$2$ and~$-2$, and so would not be well-defined.
+  in its domain with both~$2$ and~$-2$, and so would not be well-defined.  
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item Let $\map{f}{\Z}{\Z}$ be~$f(a)=a+3$ and let
+%   $\map{g}{\Z}{\Z}$ be $g(a)=a-3$.
+%   Show that $g$ is inverse to $f$.
+% \item Let $\map{h}{\Z}{\Z}$ be the function that returns
+%   $n+1$ if $n$ is even, and returns $n-1$ if $n$ is odd.
+%   Find a function inverse to~$h$.
+% \item Let $\map{s}{\R^+}{\R^+}$ be~$s(x)=x^2$.
+%   Find the map that is inverse to $s$.    
+% \item Show that $\map{t}{\R}{\R}$ given by $t(x)=x^2$
+%   has no inverse.
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item Observe first that the domain of each equals the codomain of the other,
+%   so their composition is defined both ways.
+%   Now, $\composed{g}{f}(a)=g(f(a))=g(a+3)=(a+3)-3=a$
+%   is the identity map.
+%   Similarly, $\composed{f}{g}(a)=(a-3)+3$ is also the identity map.
+%   Thus they are inverse.
+% \item The inverse of~$s$ is the map~$\map{r}{\R^+}{\R^+}$ given my 
+%   $r(x)=\sqrt{x}$.
+%   The domain of each is the codomain of the other,
+%   and both $\composed{s}{r}$ and~$\composed{r}{s}$ are the identity function.
+% \item The inverse of~$h$ is itself.
+%   The domain and codomain are equal, as required. 
+%   If~$n$ is odd then $\composed{h}{h}(n)=h(n-1)=(n-1)+1=n$ because 
+%   $n-1$ is even in this case.
+%   Similarly if~$n$ is even then $\composed{h}{h}=(n+1)-1=n$.
+% \item Consider the element~$4$ of the codomain.
+%   It is the image of two different elements of the domain
+%   $t(2)=t(-2)=4$. 
+%   Any map $u$ that would be the inverse of~$t$ would have to associate~$4$ 
+%   in its domain with both~$2$ and~$-2$, and so would not be well-defined.
+% \end{exes}
+% \end{ans}
+\end{problem}
 
-\begin{ex}
+\begin{problem}
   Find a domain and codomain, and a pair of maps $\map{f}{D}{C}$ 
   and~$\map{g}{C}{D}$,
   such that $\composed{g}{f}$ is the identity but $\composed{f}{g}$
   is not.
-\begin{ans}
+\begin{answer}
 Let $\map{f}{\N^2}{\N^3}$ be the injection map
 $\sequence{a,b}\mapsunder{}\sequence{a,b,0}$
 and let 
@@ -4644,8 +4898,8 @@ But the action in the other direction~$\composed{f}{g}$ is not the identity
 $\sequence{a,b,c}\mapsunder{}\sequence{a,b}\mapsunder{}\sequence{a,b,0}$;
 one instance is that $\composed{f}{g}(\sequence{1,2,3})$ equals
 $\sequence{1,2,0}$, not $\sequence{1,2,3}$.     
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
 If $\composed{g}{f}$ is the identity function then we say that 
 $g$~is a \definend{left inverse} of~$f$\!, or what is the
@@ -4654,7 +4908,7 @@ If $g$ is both a left and right inverse of~$f$ then,
 as above, we say just that it is
 an inverse of~$f$ (or for emphasis, a \definend{two-sided inverse}). 
 
-\begin{ex}
+\begin{problem}
 Let $D=\set{0,1,2}$ and~$C=\set{\alpha,\beta,\gamma}$.
 Also let $\map{f,g}{D}{C}$ be given by
 $f(0)=\alpha$, $f(1)=\beta$, $f(2)=\gamma$, and
@@ -4666,7 +4920,7 @@ Then:
 \item verify that~$g$ is not a correspondence
 \item show that~$g$ has no inverse 
 \end{items}
-\begin{ans}
+\begin{answer}
 \begin{items}
 \item By inspection $f$ is both one-to-one and onto.
 \item Reverse the association made by $f$ so that $f^{-1}(\alpha)=0$,
@@ -4677,23 +4931,18 @@ Then:
   then both $h(\alpha)=0$ and~$h(\alpha)=1$, 
   which violates the definition of a function.   
 \end{items}
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
-\begin{ex} \label{PropertiesOfInverses}
+\begin{problem} \label{PropertiesOfInverses}
 Prove each.
 \begin{exes}
-\item A function has an inverse if and only if that 
+\begin{exercise} 
+  A function has an inverse if and only if that 
   function is a correspondence.
-\item If a function has an inverse then that inverse
-  is unique.
-\item The inverse of a correspondence is a correspondence.  
-\item If $f$ and $g$ each is invertible then so is 
-  $\composed{g}{f}$, and $(\composed{g}{f})^{-1}=\composed{f^{-1}}{g^{-1}}$.
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item Let $\map{f}{D}{C}$ have an inverse~$\map{f^{-1}}{C}{D}$.
+\end{exercise}
+\begin{answer}
+  Let $\map{f}{D}{C}$ have an inverse~$\map{f^{-1}}{C}{D}$.
 
   Suppose that $f$ is not one-to-one.
   Then there are unequal elements~$d_0,d_1\in D$
@@ -4711,8 +4960,14 @@ Prove each.
   The map~$\composed{f}{f^{-1}}$
   cannot give $c=\composed{f}{f^{-1}}(c)=f(f^{-1}(c))$, 
   because $c\notin\range(f)$, so this supposition yields a contradiction.
-  Therefore~$f$ is onto.
-\item Suppose that $\map{f}{D}{C}$ has two inverses $\map{g_0}{C}{D}$
+  Therefore~$f$ is onto.  
+\end{answer}
+\begin{exercise} 
+  If a function has an inverse then that inverse
+  is unique.
+\end{exercise}
+\begin{answer}
+  Suppose that $\map{f}{D}{C}$ has two inverses $\map{g_0}{C}{D}$
   and~$\map{g_1}{C}{D}$.
   We will show that the two make the same associations, that is, they 
   have the same graph and
@@ -4722,11 +4977,22 @@ Prove each.
   The prior item shows that~$f$ is onto so there is a~$d\in D$ such that
   $f(d)=c$.
   The prior item shows also that~$f$ is one-to-one so there is only 
-  one~$d$ with that property, and so $d=g_0(c)=g_1(c)$.
-\item An inverse is a function that has an inverse: the inverse of~$f^{-1}$
+  one~$d$ with that property, and so $d=g_0(c)=g_1(c)$.  
+\end{answer}
+\begin{exercise} 
+  The inverse of a correspondence is a correspondence.  
+\end{exercise}
+\begin{answer}
+  An inverse is a function that has an inverse: the inverse of~$f^{-1}$
   is~$f$.
-  By the first item then, $f^{-1}$ is a correspondence.
-\item The composition of $\composed{f^{-1}}{g^{-1}}$ with~$\composed{g}{f}$,
+  By the first item then, $f^{-1}$ is a correspondence.  
+\end{answer}
+\begin{exercise} 
+  If $f$ and $g$ each is invertible then so is 
+  $\composed{g}{f}$, and $(\composed{g}{f})^{-1}=\composed{f^{-1}}{g^{-1}}$.
+\end{exercise}
+\begin{answer}
+  The composition of $\composed{f^{-1}}{g^{-1}}$ with~$\composed{g}{f}$,
   in either order, is the identity map.
   The order this way  
   $\composed{(\composed{f^{-1}}{g^{-1}})}{(\composed{g}{f})}(x)
@@ -4734,10 +5000,65 @@ Prove each.
   =f^{-1}(g^{-1}(g(f(x))))
   =f^{-1}(f(x))=x$
   gives the identity,
-  and the other order is similar.
+  and the other order is similar.  
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item A function has an inverse if and only if that 
+%   function is a correspondence.
+% \item If a function has an inverse then that inverse
+%   is unique.
+% \item The inverse of a correspondence is a correspondence.  
+% \item If $f$ and $g$ each is invertible then so is 
+%   $\composed{g}{f}$, and $(\composed{g}{f})^{-1}=\composed{f^{-1}}{g^{-1}}$.
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item Let $\map{f}{D}{C}$ have an inverse~$\map{f^{-1}}{C}{D}$.
+
+%   Suppose that $f$ is not one-to-one.
+%   Then there are unequal elements~$d_0,d_1\in D$
+%   such that $f(d_0)=f(d_1)$.
+%   Let~$c\in C$ be that value~$c=f(d_0)$ and consider~$f^{-1}(c)$.
+%   If $f^{-1}(c)\neq d_0$ then we have a contradiction since the 
+%   action $d_0\mapsunder{}c\mapsunder{}f^{-1}(c)$
+%   of $\composed{f^{-1}}{f}$ is not the identity on~$d_0$.
+%   If $f^{-1}(c)=d_0$ then we have a similar contradiction for the
+%   action of $\composed{f^{-1}}{f}$ on~$d_1$.
+%   These contradictions together show that~$f$ is one-to-one.
+   
+%   Now suppose that~$f$ is not onto,
+%   so that there is a~$c\in C$ with no associated~$d\in D$.
+%   The map~$\composed{f}{f^{-1}}$
+%   cannot give $c=\composed{f}{f^{-1}}(c)=f(f^{-1}(c))$, 
+%   because $c\notin\range(f)$, so this supposition yields a contradiction.
+%   Therefore~$f$ is onto.
+% \item Suppose that $\map{f}{D}{C}$ has two inverses $\map{g_0}{C}{D}$
+%   and~$\map{g_1}{C}{D}$.
+%   We will show that the two make the same associations, that is, they 
+%   have the same graph and
+%   thus are the same function.
+
+%   So let $c$ be an element of the domain~$C$ of the two.
+%   The prior item shows that~$f$ is onto so there is a~$d\in D$ such that
+%   $f(d)=c$.
+%   The prior item shows also that~$f$ is one-to-one so there is only 
+%   one~$d$ with that property, and so $d=g_0(c)=g_1(c)$.
+% \item An inverse is a function that has an inverse: the inverse of~$f^{-1}$
+%   is~$f$.
+%   By the first item then, $f^{-1}$ is a correspondence.
+% \item The composition of $\composed{f^{-1}}{g^{-1}}$ with~$\composed{g}{f}$,
+%   in either order, is the identity map.
+%   The order this way  
+%   $\composed{(\composed{f^{-1}}{g^{-1}})}{(\composed{g}{f})}(x)
+%   =(\composed{f^{-1}}{g^{-1}})(g(f(x)))
+%   =f^{-1}(g^{-1}(g(f(x))))
+%   =f^{-1}(f(x))=x$
+%   gives the identity,
+%   and the other order is similar.
+% \end{exes}
+% \end{ans}
+\end{problem}
 
 
 
@@ -4745,9 +5066,9 @@ Prove each.
 
 % .....................................
 \section{Relations}
-A function, or more precisely the function's graph, is a set of $n$~tuples
+A function's graph is a set of $n$~tuples
 subject to the condition that the input determines the output.
-The generalization that we get by dropping the condition is useful.  
+We now consider the generalization that we get by dropping that condition.  
 
 \begin{df}
 A \definend{relation} on sets $A_0$, \ldots, $A_{n-1}$ is a subset
@@ -4763,14 +5084,14 @@ that $a_0$ is~\definend{$R$-related} to~$a_1$,
 sometimes written $a_0Ra_1$.
 \end{df}
 
-\begin{ex}
+\begin{problem}
 List five elements of each relation:
 \begin{items}
 \item $\setbuilder{(x,y)\in \N^2}{\text{$x$ and ~$y$ have the same parity}}$
 \item less-than $<$, as a binary relation on $\N$
 \item $\setbuilder{(x,y,z)\in\N^3}{x^2+y^2=z^2}$
 \end{items}
-\begin{ans}
+\begin{answer}
 \begin{items}
 \item Five pairs from the relation are
   $\sequence{0,2}$, $\sequence{1,3}$, $\sequence{1,1}$, 
@@ -4783,40 +5104,75 @@ List five elements of each relation:
   $\sequence{3,4,5}$, $\sequence{5,12,13}$, $\sequence{7,24,25}$, 
   $\sequence{8,15,17}$, and~$\sequence{0,0,0}$.
 \end{items}
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
 
-\begin{ex}
+\begin{problem}
 \begin{exes}
-\item Show that if $\map{f}{D}{C}$ is a function then 
+\begin{exercise} 
+  Show that if $\map{f}{D}{C}$ is a function then 
   its graph is a relation.
-\item
+\end{exercise}
+\begin{answer}
+  By definition its graph is a binary relation on~$D\times C$.  
+\end{answer}
+\begin{exercise}
   Consider the set~$A=\set{0,1}$.
   List all the elements of the relation 
   $E=\setbuilder{(x,y)\in A\times\powerset(A)}{x\in y}$.
-\item Let $\map{f}{D}{C}$ be a function.
+\end{exercise}
+\begin{answer}
+  There are four: $\sequence{0,\set{0}}$, 
+  $\sequence{1,\set{1}}$, $\sequence{0,\set{0,1}}$, 
+  and~$\sequence{1,\set{0,1}}$.   
+\end{answer}
+\begin{exercise} 
+  Let $\map{f}{D}{C}$ be a function.
   Show that 
   $R_f=\setbuilder{(x,y)\in D^2}{f(x)=f(y)}$
   is a binary relation.
   Where $f(x)=x^2$ with domain and codomain~$\R$,
   list five elements of $R_f$. 
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item By definition its graph is a binary relation on~$D\times C$.
-\item There are four: $\sequence{0,\set{0}}$, 
-  $\sequence{1,\set{1}}$, $\sequence{0,\set{0,1}}$, 
-  and~$\sequence{1,\set{0,1}}$. 
-\item The set $R_f$ is a subset of the set of ordered pairs~$C^2$,
+\end{exercise}
+\begin{answer}
+  The set $R_f$ is a subset of the set of ordered pairs~$C^2$,
   so it is a binary relation on~$C$.
 
   Where $\map{f}{\R}{\R}$ is $f(x)=x^2$ then five elements are
   $\sequence{-1,1}$, $\sequence{-2,2}$, $\sequence{0,0}$,
-  $\sequence{1,-1}$, and $\sequence{1,1}$.
+  $\sequence{1,-1}$, and $\sequence{1,1}$.  
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item Show that if $\map{f}{D}{C}$ is a function then 
+%   its graph is a relation.
+% \item
+%   Consider the set~$A=\set{0,1}$.
+%   List all the elements of the relation 
+%   $E=\setbuilder{(x,y)\in A\times\powerset(A)}{x\in y}$.
+% \item Let $\map{f}{D}{C}$ be a function.
+%   Show that 
+%   $R_f=\setbuilder{(x,y)\in D^2}{f(x)=f(y)}$
+%   is a binary relation.
+%   Where $f(x)=x^2$ with domain and codomain~$\R$,
+%   list five elements of $R_f$. 
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item By definition its graph is a binary relation on~$D\times C$.
+% \item There are four: $\sequence{0,\set{0}}$, 
+%   $\sequence{1,\set{1}}$, $\sequence{0,\set{0,1}}$, 
+%   and~$\sequence{1,\set{0,1}}$. 
+% \item The set $R_f$ is a subset of the set of ordered pairs~$C^2$,
+%   so it is a binary relation on~$C$.
+
+%   Where $\map{f}{\R}{\R}$ is $f(x)=x^2$ then five elements are
+%   $\sequence{-1,1}$, $\sequence{-2,2}$, $\sequence{0,0}$,
+%   $\sequence{1,-1}$, and $\sequence{1,1}$.
+% \end{exes}
+% \end{ans}
+\end{problem}
 
 \begin{df} 
 Let $R$ be a binary relation on a set~$X$.
@@ -4830,48 +5186,85 @@ A relation that satisfies all three conditions is an
 \definend{equivalence relation}.  
 \end{df}
 
-\begin{ex} For each of the three conditions reflexive, symmetric, 
+\begin{problem} 
+  For each of the three conditions reflexive, symmetric, 
   or transitive,
   prove or disprove that the relation satisfies the condition.
 \begin{exes}
-\item The ``goes into'' relation
+\begin{exercise} 
+  The ``goes into'' relation
   $D=\setbuilder{(d,m)\in\Z^2}{d\divides m}$.
-\item
-  For any set~$A$ the \definend{diagonal relation} on $A$ 
-  is $\setbuilder{(a,a)}{a\in A}$. 
-\item
-  The relation on~$\R$ of `at least two greater'
-  $T=\setbuilder{(x,y)\in \R^2}{x-y\geq 2}$.
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item This relation is reflexive since each integer~$n\in Z$ 
+\end{exercise}
+\begin{answer}
+  This relation is reflexive since each integer~$n\in Z$ 
   divides itself.
   It is not symmetric since $1\divides 2$ but $2\ndivides 1$.
   This relation is transitive by Exercise~\ref{ex:DivisibilityProperties}.
-\item This relation is reflexive since for any $a\in A$ we have that
+\end{answer}
+\begin{exercise}
+  For any set~$A$ the \definend{diagonal relation} on $A$ 
+  is $\setbuilder{(a,a)}{a\in A}$. 
+\end{exercise}
+\begin{answer}
+  This relation is reflexive since for any $a\in A$ we have that
   $(a,a)\in A$ (this is the minimal reflexive relation on~$A$).
   It is symmetric since if $(x,y)\in A$ then there is an
   $a\in A$ such that $x=y=a$, and so $(y,x\in A)$ also.
   Similarly it is transitive since if 
   $(x,y)\in A$ and~$(y,z)\in A$ then $x=y=z=a$ for some~$a\in A$, and
   thus $(x,z)\in A$.
-\item This relation is not reflexive since $(0,0)\notin T$,
+\end{answer}
+\begin{exercise}
+  The relation on~$\R$ of `at least two greater'
+  $T=\setbuilder{(x,y)\in \R^2}{x-y\geq 2}$.
+\end{exercise}
+\begin{answer}
+  This relation is not reflexive since $(0,0)\notin T$,
   and it is not symmetric since $(2,0)\in T$ but 
   $(0,2)\notin T$.
   This relation is transitive since if $(x,y)\in T$ and $(y,z)\in T$ 
   then $x-y\geq 2$ and~$y-z\geq 2$, so addition gives that $x-z\geq 4$.
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item The ``goes into'' relation
+%   $D=\setbuilder{(d,m)\in\Z^2}{d\divides m}$.
+% \item
+%   For any set~$A$ the \definend{diagonal relation} on $A$ 
+%   is $\setbuilder{(a,a)}{a\in A}$. 
+% \item
+%   The relation on~$\R$ of `at least two greater'
+%   $T=\setbuilder{(x,y)\in \R^2}{x-y\geq 2}$.
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item This relation is reflexive since each integer~$n\in Z$ 
+%   divides itself.
+%   It is not symmetric since $1\divides 2$ but $2\ndivides 1$.
+%   This relation is transitive by Exercise~\ref{ex:DivisibilityProperties}.
+% \item This relation is reflexive since for any $a\in A$ we have that
+%   $(a,a)\in A$ (this is the minimal reflexive relation on~$A$).
+%   It is symmetric since if $(x,y)\in A$ then there is an
+%   $a\in A$ such that $x=y=a$, and so $(y,x\in A)$ also.
+%   Similarly it is transitive since if 
+%   $(x,y)\in A$ and~$(y,z)\in A$ then $x=y=z=a$ for some~$a\in A$, and
+%   thus $(x,z)\in A$.
+% \item This relation is not reflexive since $(0,0)\notin T$,
+%   and it is not symmetric since $(2,0)\in T$ but 
+%   $(0,2)\notin T$.
+%   This relation is transitive since if $(x,y)\in T$ and $(y,z)\in T$ 
+%   then $x-y\geq 2$ and~$y-z\geq 2$, so addition gives that $x-z\geq 4$.
+% \end{exes}
+% \end{ans}
+\end{problem}
 
-\begin{ex}
+\begin{problem}
 Recall that two integers have the same parity if they are both odd or 
 both even.
 Show that the binary relation 
 $P=\setbuilder{(x,y)\in\Z^2}{\text{$x$ and $y$ have the same parity}}$  
 is an equivalence.
-\begin{ans}
+\begin{answer}
 For reflexivity, observe that a number has the same parity as itself.
 For symmetry, if $(x,y)\in P$ then
 two numbers have the same parity\Dash are either both even or both odd\Dash
@@ -4882,15 +5275,15 @@ Suppose that both $(x,y)\in P$ and~$(y,z)\in P$.
 Then $x$ and~$y$ have the same parity, and also $y$ and~$z$ have the same
 parity, and consequently $x$ and~$z$ have the same parity.
 So $(x,z)\in P$.  
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
-\begin{ex}  \label{ex:EquivModMIsEquivalenceRelation}
+\begin{problem}  \label{ex:EquivModMIsEquivalenceRelation}
 Fix a divisor $m\in\Z^+$.
 Show that the relation 
 $\setbuilder{(a,b)\in\Z^2}{a\equiv b\pmod m}$  
 is an equivalence.
-\begin{ans}
+\begin{answer}
   Call the relation~$M$.
   Exercise~\ref{ex:AEquivBpmodMIFFABDifferBYMultipleOfM}
   shows that for $m>0$ the statement $a\equiv b\pmod m$
@@ -4907,14 +5300,14 @@ is an equivalence.
   $a-b=mk_0$ and $b-c=mk_1$ for some~$k_0,k_1\in Z$.
   Add: $(a-b)+(b-c)=m\cdot(k_0-k_1)$. 
   Then $a-c$ is a multiple of~$m$.
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
-\begin{ex}
-Characterize all of the binary relations on $A=\set{0,1}$
-as reflexive or not, symmetric or not,
-and transitive or not.
-\begin{ans}
+\begin{problem}
+  Characterize all of the binary relations on $A=\set{0,1}$
+  as reflexive or not, symmetric or not,
+  and transitive or not.
+\begin{answer}
 There are four ordered pairs in $A^2$.
 We can describe all the relations by listing whether or not they
 contain each of those four.
@@ -4940,14 +5333,15 @@ contain each of those four.
     $1$ &$1$ &$1$ &$1$ &$1$  &$1$  &$1$  
   \end{tabular}
 \end{center}
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
-\begin{ex} There are eight combinations of reflexive or not, 
-symmetric or not, and transitive or not.
-For each, find a binary relation on $A=\set{0,1,2}$
-satisfying that combination.
-\begin{ans}
+\begin{problem} 
+  There are eight combinations of reflexive or not, 
+  symmetric or not, and transitive or not.
+  For each, find a binary relation on $A=\set{0,1,2}$
+  satisfying that combination.
+\begin{answer}
   The first is a relation that is not reflexive, not symmetric, and
   not transitive.
   The relation~$R_0=\set{\sequence{0,1},\sequence{1,2}}$
@@ -5028,8 +5422,8 @@ satisfying that combination.
   pair is an element of~$R_7$.
   Since~$R_7$ contains all pairs, each implication must be
   satisfied.
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
 % \begin{ex} \label{RationalsAsEqClasses}
 % Consider the relation
@@ -5061,7 +5455,8 @@ satisfying that combination.
 % \end{ans}
 % \end{ex}
 
-\begin{ex} \label{PlaneLinesAsClasses}
+\begin{problem} 
+\label{PlaneLinesAsClasses}
 Let $\mathcal{L}$ be the set of lines in the Euclidean plane and consider
 the relation
 $R=\setbuilder{(\ell_0,\ell_1)\in \mathcal{L}^2}{\text{the two are parallel, or the same}}$.
@@ -5072,7 +5467,7 @@ $R=\setbuilder{(\ell_0,\ell_1)\in \mathcal{L}^2}{\text{the two are parallel, or 
 %   List five elements of $\mathcal{L}$ that are related to~$\ell$.
 \item Show that $R$ is an equivalence
 \end{items}
-\begin{ans}
+\begin{answer}
 We can express the lines using analytic geometry, 
 fixing a $xy$-axes, and giving the equations.
 \begin{items}
@@ -5092,10 +5487,10 @@ fixing a $xy$-axes, and giving the equations.
   is parallel to or the same as~$\ell_2$, so the relation is
   transitive. 
 \end{items}
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
-\begin{ex}
+\begin{problem}
 What is wrong with this purported proof that in the definition
 of an equivalence relation, the condition of reflexivity is redundant?
 ``For any $x$, symmetry is that $x$ is related to~$y$ 
@@ -5103,15 +5498,15 @@ implies that $y$ is related to~$x$.
 By transitivity we have $x$ is related to~$y$ and $y$ is related to~$x$ 
 together imply that $x$ is related to~$x$.
 Therefore, symmetry and transitivity together imply reflexivity.''  
-\begin{ans}
+\begin{answer}
 Consider the relation   
 $R=\set{\sequence{0,0},\sequence{0,1},\sequence{1,0},\sequence{1,1}}$
 on the set~$A=\set{0,1,2}$.
 This relation is symmetric and transitive but is not reflexive.
 The implication `if $x$ is related to~$y$ then $y$ is related to~$x$'
 is true in the case of $x=2$ and~$y=2$, but it is vacuously true.
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
 \begin{df}
 If $R$ is an equivalence relation on~$X$ then instead of $(x,y)\in R$
@@ -5120,12 +5515,12 @@ The \definend{equivalence class} of $x\in X$ is the set
 $\eqclass{x}=\setbuilder{y\in X}{y\equiv x\pmod R}$.   
 \end{df}
 
-\begin{ex} Let $R$ be an equivalence on~$X$.
+\begin{problem} Let $R$ be an equivalence on~$X$.
 Prove that the following are equivalent statements for $x_0,x_1\in X$:
 (i)~$x_0\equiv x_1\pmod R$
 (ii)~$\eqclass{x_0}=\eqclass{x_1}$    
 and (iii)~$\eqclass{x_0}\intersection\eqclass{x_1}\neq \emptyset$.
-\begin{ans}
+\begin{answer}
 We will prove this three-long chain of implications: 
 statement~(i) implies statement~(ii),
 statement~(ii) implies statement~(iii),
@@ -5153,8 +5548,8 @@ symmetry applied to $(y,x_0)\in R$ yields~$(x_0,y)\in R$.
 Transitivity applied to the two $(x_0,y)\in R$ and~$(y,x_1)\in R$ yields
 that $(x_0,x_1)\in R$, and so $x_0\equiv x_1\pmod R$.
 Therefore~(iii) implies~(i).
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
 \begin{df}
 A \definend{partition}~$\partition{P}$ of a set $X$ is a 
@@ -5172,33 +5567,34 @@ and the $P$ are \definend{pairwise disjoint}
   \grf{asy/bean_partition.pdf}{Set~$X$ partitioned into four parts $\partition{P}=\set{P_0,P_1,P_2,P_3}$}
 \end{center}
 
-\begin{ex} Verify that~$\partition{P}$ is a partition of~$X$.  
+\begin{problem} 
+  Verify that~$\partition{P}$ is a partition of~$X$.  
   How many elements are in~$\partition{P}$?
 \begin{exes}
-\item $X=\N$, $\partition{P}=\set{P_0,P_1}$, 
+\begin{exercise} 
+  $X=\N$, $\partition{P}=\set{P_0,P_1}$, 
   where~$P_0$ is the set of even numbers
   and $P_1$ is the set of odd numbers
-\item $X=\R$, $\partition{P}=\setbuilder{P_x}{x\in \R}$
-      where $P_x=\setbuilder{y\in\R}{x-y\in \Z}$
-      \hspace{0.75em}\hint some unequal reals $x_0\neq x_1$ 
-      are associated with equal parts $P_{x_0}=P_{x_1}$  
-      so what may naively appear to be two elements of~$\partition{P}$
-      is actually a single element.
-\item $X=\Z$, $\partition{P}=\setbuilder{P_n}{n\in\Z}$
-      where $P_n=\setbuilder{i\in\Z}{i\equiv n\pmod 3}$
-      % \hspace{0.75em}%
-      % \hint some pairs $i\neq j$ have $P_i=P_j$. 
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item To verify that it is a partition we will check the three conditions.
+\end{exercise}
+\begin{answer}
+  To verify that it is a partition we will check the three conditions.
   First, that no element $P_i\in \partition{P}$ is empty is clear.
   Second, that every element of~$\N$ is an element of some~$P_i$ is
   also clear.
   The third is also clear; no element of~$\N$ is both even and odd.
 
-  Finally, $\partition{P}$ has two elements since $P_0\neq P_1$.
-\item Before we start we observe that there are $x_0,x_1\in\R$ such that
+  Finally, $\partition{P}$ has two elements since $P_0\neq P_1$.  
+\end{answer}
+\begin{exercise} 
+      $X=\R$, $\partition{P}=\setbuilder{P_x}{x\in \R}$
+      where $P_x=\setbuilder{y\in\R}{x-y\in \Z}$
+      \hspace{0.75em}\hint some unequal reals $x_0\neq x_1$ 
+      are associated with equal parts $P_{x_0}=P_{x_1}$  
+      so what may naively appear to be two elements of~$\partition{P}$
+      is actually a single element.
+\end{exercise}
+\begin{answer}
+  Before we start we observe that there are $x_0,x_1\in\R$ such that
   $P_{x_0}=P_{x_1}$; an example is $x_0=0.25$ and~$x_1=1.25$.
 
   To prove that $\partition{p}$ is a partition, first note that $x\in P_x$.
@@ -5220,8 +5616,16 @@ and the $P$ are \definend{pairwise disjoint}
 
   This partition~$\partition{P}$ has infinitely many elements.
   One element is $P_{0.25}=P_{1.25}=\cdots$, and there is a $P$ for every
-  number between zero and one.
-\item  Before we begin observe that 
+  number between zero and one.  
+\end{answer}
+\begin{exercise} 
+     $X=\Z$, $\partition{P}=\setbuilder{P_n}{n\in\Z}$
+      where $P_n=\setbuilder{i\in\Z}{i\equiv n\pmod 3}$
+      % \hspace{0.75em}%
+      % \hint some pairs $i\neq j$ have $P_i=P_j$. 
+\end{exercise}
+\begin{answer}
+  Before we begin observe that 
   for some pairs $i,j\in\Z$ the sets $P_i$ and~$P_j$ are equal;
   one example is that $P_1=P_4$ (numbers in either set leave a remainder 
   of~$1$ on division by~$3$).
@@ -5252,28 +5656,103 @@ and the $P$ are \definend{pairwise disjoint}
 
   Finally, $\partition{P}$ has three elements: 
   one is $P_0=P_3=P_{-3}=\cdots\hbox{}$ and the other two are
-  $P_1=P_4=P_{-2}=\cdots{}$ and~$P_2=P_5=P_{-1}=\cdots\hbox{}$.
+  $P_1=P_4=P_{-2}=\cdots{}$ and~$P_2=P_5=P_{-1}=\cdots\hbox{}$.  
+\end{answer}
 \end{exes}
-\end{ans}
+% \begin{exes}
+% \item $X=\N$, $\partition{P}=\set{P_0,P_1}$, 
+%   where~$P_0$ is the set of even numbers
+%   and $P_1$ is the set of odd numbers
+% \item $X=\R$, $\partition{P}=\setbuilder{P_x}{x\in \R}$
+%       where $P_x=\setbuilder{y\in\R}{x-y\in \Z}$
+%       \hspace{0.75em}\hint some unequal reals $x_0\neq x_1$ 
+%       are associated with equal parts $P_{x_0}=P_{x_1}$  
+%       so what may naively appear to be two elements of~$\partition{P}$
+%       is actually a single element.
+% \item $X=\Z$, $\partition{P}=\setbuilder{P_n}{n\in\Z}$
+%       where $P_n=\setbuilder{i\in\Z}{i\equiv n\pmod 3}$
+%       % \hspace{0.75em}%
+%       % \hint some pairs $i\neq j$ have $P_i=P_j$. 
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item To verify that it is a partition we will check the three conditions.
+%   First, that no element $P_i\in \partition{P}$ is empty is clear.
+%   Second, that every element of~$\N$ is an element of some~$P_i$ is
+%   also clear.
+%   The third is also clear; no element of~$\N$ is both even and odd.
 
-\end{ex}
+%   Finally, $\partition{P}$ has two elements since $P_0\neq P_1$.
+% \item Before we start we observe that there are $x_0,x_1\in\R$ such that
+%   $P_{x_0}=P_{x_1}$; an example is $x_0=0.25$ and~$x_1=1.25$.
 
-\begin{ex} \label{ex:EquivClassesFormPartition}
+%   To prove that $\partition{p}$ is a partition, first note that $x\in P_x$.
+%   For this reason no~$P_x$ is empty and also
+%   every $x\in\R$ is an element of some~$P\in\partition{P}$.
+
+%   To show that the $P$'s are pairwise disjoint 
+%   we must show that
+%   if $P_x\intersection P_y\neq\emptyset$ then~$P_x=P_y$.
+%   So suppose that $z\in P_x\intersection P_y$.
+%   Then $x-z\in\Z$ and~$y-z\in \Z$.
+  
+%   To prove that $P_x=P_y$ by mutual containment assume $a\in P_x$.
+%   Then $x-a\in\Z$.
+%   The expression $(y-z)-(x-z)+(x-a)$ is a combination of three integers,
+%   and so is an integer $y-a\in\Z$.
+%   Thus $a\in P_y$.
+%   Containment in the other direction is similar.
+
+%   This partition~$\partition{P}$ has infinitely many elements.
+%   One element is $P_{0.25}=P_{1.25}=\cdots$, and there is a $P$ for every
+%   number between zero and one.
+% \item  Before we begin observe that 
+%   for some pairs $i,j\in\Z$ the sets $P_i$ and~$P_j$ are equal;
+%   one example is that $P_1=P_4$ (numbers in either set leave a remainder 
+%   of~$1$ on division by~$3$).
+
+%   No $P_n$ is empty because $n\in P_n$, as~$n\equiv n\pmod 3$.
+%   For the same reason every~$n\in\N$ is an element of at least
+%   one~$P$.
+
+%   To prove that the $P$'s are pairwise disjoint
+%   we will prove that if 
+%   $P_i\intersection P_j\neq \emptyset$ then $P_i=P_j$.
+%   Fix $x\in P_i\intersection P_j$, which implies that
+%   $x\equiv i\pmod 3$ and~$x\equiv j\pmod 3$.
+
+%   To verify that the two sets $P_i$ and~$P_j$ are equal by mutual
+%   containment, start with~$y\in P_i$.
+%   Then $y\equiv i\pmod 3$.
+%   Exercise~\ref{ex:EquivModMIsEquivalenceRelation}
+%   shows that the relation of `equivalent modulo~$3$' is an 
+%   equivalence relation.
+%   Symmetry implies that $i\equiv x\pmod 3$ and, 
+%   together with $y\equiv i\pmod 3$,
+%   transitivity implies that $y\equiv x\pmod 3$.
+%   Apply transitivity again, using $x\equiv j\pmod 3$, to conclude that
+%   $y\equiv j\pmod 3$. 
+%   Thus~$y\in P_j$.
+%   Containment in the other direction is similar.  
+
+%   Finally, $\partition{P}$ has three elements: 
+%   one is $P_0=P_3=P_{-3}=\cdots\hbox{}$ and the other two are
+%   $P_1=P_4=P_{-2}=\cdots{}$ and~$P_2=P_5=P_{-1}=\cdots\hbox{}$.
+% \end{exes}
+% \end{ans}
+\end{problem}
+
+\begin{problem} \label{ex:EquivClassesFormPartition}
 Prove.
 \begin{exes}
-\item Where $R$ is an equivalence, 
+\begin{exercise} 
+  Where $R$ is an equivalence, 
   the collection of equivalence classes 
   $\setbuilder{\eqclass{x}}{x\in X}$ forms a partition of~$X$.
   We say that it is the partition \definend{induced} by the relation.
-\item Where $\partition{P}$ is a partition of~$X$, 
-  the relation 
-  $R=\setbuilder{(x,y)\in X^2}{\text{$x$ and~$y$ are in the same part}}$ 
-  is an equivalence.
-  We say that this relation \definend{arises from} the partition. 
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item Let $\partition{P}$ be the collection $\setbuilder{\eqclass{x}}{x\in X}$.
+\end{exercise}
+\begin{answer}
+  Let $\partition{P}$ be the collection $\setbuilder{\eqclass{x}}{x\in X}$.
  
   Note that $x\in\eqclass{x}$ by reflexivity.
   Thus no element of the partition is empty, and 
@@ -5294,8 +5773,17 @@ Prove.
   With that and $z\equiv y\pmod R$, transitivity gives
   that $a\equiv y\pmod R$. 
   Thus $a\in\eqclass{y}$.
-  Containment in the other direction is similar.  
-\item Suppose that $\partition{P}$ is a partition. 
+  Containment in the other direction is similar.    
+\end{answer}
+\begin{exercise} 
+  Where $\partition{P}$ is a partition of~$X$, 
+  the relation 
+  $R=\setbuilder{(x,y)\in X^2}{\text{$x$ and~$y$ are in the same part}}$ 
+  is an equivalence.
+  We say that this relation \definend{arises from} the partition. 
+\end{exercise}
+\begin{answer}
+  Suppose that $\partition{P}$ is a partition. 
 
   The relation~$R$ is reflexive because any~$x\in X$ is an element of
   the same part as itself
@@ -5310,36 +5798,96 @@ Prove.
   That is, there is a $P\in\partition{P}$ such that
   both $x$ and~$y$ are elements of~$P$, 
   and also both $y$ and~$z$ are elements of~$P$.
-  Clearly then both $x$ and~$z$ are in the same part, $P$.
+  Clearly then both $x$ and~$z$ are in the same part, $P$.  
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item Where $R$ is an equivalence, 
+%   the collection of equivalence classes 
+%   $\setbuilder{\eqclass{x}}{x\in X}$ forms a partition of~$X$.
+%   We say that it is the partition \definend{induced} by the relation.
+% \item Where $\partition{P}$ is a partition of~$X$, 
+%   the relation 
+%   $R=\setbuilder{(x,y)\in X^2}{\text{$x$ and~$y$ are in the same part}}$ 
+%   is an equivalence.
+%   We say that this relation \definend{arises from} the partition. 
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item Let $\partition{P}$ be the collection $\setbuilder{\eqclass{x}}{x\in X}$.
+ 
+%   Note that $x\in\eqclass{x}$ by reflexivity.
+%   Thus no element of the partition is empty, and 
+%   every element of~$X$ is in some element of the partition.
 
-\begin{ex}
+%   We must prove that the elements of~$\partition{P}$ are pairwise disjoint:
+%   if $\eqclass{x}\intersection\eqclass{y}\neq\emptyset$
+%   then~$\eqclass{x}=\eqclass{y}$ are equal.
+%   So suppose that $z\in\eqclass{x}\intersection\eqclass{y}$.
+%   Then $z\equiv x\pmod R$ and~$z\equiv y\pmod R$.
+
+%   To show the equality of the sets $\eqclass{x}$ and~$\eqclass{y}$ 
+%   by mutual inclusion, assume $a\in\eqclass{x}$.
+%   Then $a\equiv x\pmod R$.
+%   From $z\equiv x\pmod R$, symmetry gives $x\equiv z\pmod R$.
+%   Apply transitivity to $a\equiv x\pmod R$ and~$x\equiv z\pmod R$ to
+%   derive that $a\equiv z\pmod R$.
+%   With that and $z\equiv y\pmod R$, transitivity gives
+%   that $a\equiv y\pmod R$. 
+%   Thus $a\in\eqclass{y}$.
+%   Containment in the other direction is similar.  
+% \item Suppose that $\partition{P}$ is a partition. 
+
+%   The relation~$R$ is reflexive because any~$x\in X$ is an element of
+%   the same part as itself
+%   (the parts $P\in\partition{P}$ are sets and the set~$P$ containing~$x$
+%   is known to contain~$x$).
+%   The relation~$R$ is symmetric because if $x$ is in the same part as~$y$
+%   then $y$ is in the same part as~$x$.
+
+%   For transitivity assume that $x,y,z\in X$ are such that 
+%   $x$ is in the same part as~$y$, and 
+%   $y$ is in the same part as~$z$.
+%   That is, there is a $P\in\partition{P}$ such that
+%   both $x$ and~$y$ are elements of~$P$, 
+%   and also both $y$ and~$z$ are elements of~$P$.
+%   Clearly then both $x$ and~$z$ are in the same part, $P$.
+% \end{exes}
+% \end{ans}
+\end{problem}
+
+\begin{problem}
 Suppose that $\map{f}{D}{C}$.
 \begin{exes}
-\item Show that the relation
+\begin{exercise} 
+  Show that the relation
   $R=\setbuilder{(d_0,d_1)\in D^2}{f(d_0)=f(d_1)}$ 
-  is an equivalence on~$D$. 
-\item Show that the set of inverse images 
+  is an equivalence on~$D$.
+\end{exercise} 
+\begin{answer}
+  The relation~$R$ is reflexive because $f(d)=f(d)$ for any $d\in D$.
+  It is symmetric because if $f(d_0)=f(d_1)$ then~$f(d_1)=f(d_0)$.
+  It is transitive because if $f(d_0)=f(d_1)$ and also~$f(d_1)=f(d_2)$ 
+  then $f(d_0)=f(d_2)$.  
+\end{answer}
+\begin{exercise} 
+  Show that the set of inverse images 
   $\partition{P}=\setbuilder{f^{-1}(c)}{c\in C}$ form a partition of the domain.
-\item Consider the map
+\end{exercise}
+\begin{answer}
+  They are the equivalence classes of the relation in the prior 
+  item.
+  By Exercise~\ref{ex:EquivClassesFormPartition} they form a
+  partition of the domain.  
+\end{answer}
+\begin{exercise} 
+  Consider the map
   $\map{\hat{f}}{\partition{P}}{C}$ whose action is given by:
   $\hat{f}(P)=f(d)$ where $d\in P$.
   Show that~$\hat{f}$ is a function, and that it is one-to-one.
-\item Show that if $f$ is onto then so is~$\hat{f}$.
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item The relation~$R$ is reflexive because $f(d)=f(d)$ for any $d\in D$.
-  It is symmetric because if $f(d_0)=f(d_1)$ then~$f(d_1)=f(d_0)$.
-  It is transitive because if $f(d_0)=f(d_1)$ and also~$f(d_1)=f(d_2)$ 
-  then $f(d_0)=f(d_2)$.
-\item They are the equivalence classes of the relation in the prior 
-  item.
-  By Exercise~\ref{ex:EquivClassesFormPartition} they form a
-  partition of the domain.
-\item  To show that $\hat{f}$ is a function we need to show that
+\end{exercise}
+\begin{answer}
+  To show that $\hat{f}$ is a function we need to show that
   it is well-defined.
   For this, note that $f(d_0)=f(d_1)$ for all $d_0,d_1\in P$
   by definition of the parts~$P$, so 
@@ -5352,16 +5900,65 @@ Suppose that $\map{f}{D}{C}$.
   Since $f$ gives the same value on these two arguments,
   the two are in the same inverse image and so  
   by the definition of the parts as the inverse images,
-  $P_0=P_1$.
-\item If $f$ is onto then for any $c\in C$ there is a~$d\in D$
+  $P_0=P_1$.  
+\end{answer}
+\begin{exercise} 
+  Show that if $f$ is onto then so is~$\hat{f}$.
+\end{exercise}
+\begin{answer}
+  If $f$ is onto then for any $c\in C$ there is a~$d\in D$
   such that $f(d)=c$.
   So one of the equivalence classes~$P$ that is an element of~$\partition{P}$ 
   is the set of 
   $d\in D$ such that $f(d)=c$.
-  Then $\hat{f}(P)=c$.
+  Then $\hat{f}(P)=c$.  
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item Show that the relation
+%   $R=\setbuilder{(d_0,d_1)\in D^2}{f(d_0)=f(d_1)}$ 
+%   is an equivalence on~$D$. 
+% \item Show that the set of inverse images 
+%   $\partition{P}=\setbuilder{f^{-1}(c)}{c\in C}$ form a partition of the domain.
+% \item Consider the map
+%   $\map{\hat{f}}{\partition{P}}{C}$ whose action is given by:
+%   $\hat{f}(P)=f(d)$ where $d\in P$.
+%   Show that~$\hat{f}$ is a function, and that it is one-to-one.
+% \item Show that if $f$ is onto then so is~$\hat{f}$.
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item The relation~$R$ is reflexive because $f(d)=f(d)$ for any $d\in D$.
+%   It is symmetric because if $f(d_0)=f(d_1)$ then~$f(d_1)=f(d_0)$.
+%   It is transitive because if $f(d_0)=f(d_1)$ and also~$f(d_1)=f(d_2)$ 
+%   then $f(d_0)=f(d_2)$.
+% \item They are the equivalence classes of the relation in the prior 
+%   item.
+%   By Exercise~\ref{ex:EquivClassesFormPartition} they form a
+%   partition of the domain.
+% \item  To show that $\hat{f}$ is a function we need to show that
+%   it is well-defined.
+%   For this, note that $f(d_0)=f(d_1)$ for all $d_0,d_1\in P$
+%   by definition of the parts~$P$, so 
+%   the value of~$\hat{f}$ is the same no matter which representative~$d\in P$
+%   is used to compute that value.
+%   Restated, $\hat{f}(P)=c$ where $P=f^{-1}(c)$.
+
+%   To show that $\hat{f}$ is one-to-one suppose that $\hat{f}(P_0)=\hat{f}(P_1)$.
+%   Then $f(d_0)=f(d_1)$ for some $d_0\in P_0$ and~$d_1\in P_1$.
+%   Since $f$ gives the same value on these two arguments,
+%   the two are in the same inverse image and so  
+%   by the definition of the parts as the inverse images,
+%   $P_0=P_1$.
+% \item If $f$ is onto then for any $c\in C$ there is a~$d\in D$
+%   such that $f(d)=c$.
+%   So one of the equivalence classes~$P$ that is an element of~$\partition{P}$ 
+%   is the set of 
+%   $d\in D$ such that $f(d)=c$.
+%   Then $\hat{f}(P)=c$.
+% \end{exes}
+% \end{ans}
+\end{problem}
 
 \begin{df}
 A binary relation~$R$ is \definend{antisymmetric} if
@@ -5370,23 +5967,25 @@ A relation is a \definend{partial ordering} if it is
 reflexive, antisymmetric, and transitive.  
 \end{df}
 
-\begin{ex} Prove each.
+\begin{problem} Prove each.
 \begin{exes}
-\item The usual less than or equal to relation~$\leq$ on 
-the real numbers is a partial order.
-\item The relation `divides' on $\N$ is a partial order.
-\item For any set~$A$ the relation $\subseteq$ on $\powerset(A)$ is
-a partial order.
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item We must show that it is reflexive, antisymmetric, and transitive.
+\begin{exercise}
+  The usual less than or equal to relation~$\leq$ on 
+  the real numbers is a partial order.
+\end{exercise}
+\begin{answer}
+  We must show that it is reflexive, antisymmetric, and transitive.
   Reflexive is trivial\Dash for any $r\in\R$ we have $r\leq r$.
   Antisymmetric is also easy since if $r_0\leq r_1$ and~$r_1\leq r_0$
   then $r_0=r_1$.
   And transitive is no harder because if $r_0\leq r_1$ and~$r_1\leq r_2$
-  then $r_0\leq r_2$.
-\item This is like the prior item in that we just cite known results.
+  then $r_0\leq r_2$.  
+\end{answer}
+\begin{exercise} 
+  The relation `divides' on $\N$ is a partial order.
+\end{exercise}
+\begin{answer}
+  This is like the prior item in that we just cite known results.
   To show this relation is reflexive just recall that for all $a\in\N$ we have
   $a\divides a$.
   Antisymmetric is that if $a\divides b$ and~$b\divides a$ then
@@ -5396,25 +5995,64 @@ a partial order.
   only that $a=\pm b$.)
   Transitive is the statement that $a\divides b$ and~$b\divides c$ imply
   that $a\divides c$, which appears
-  in the Divisibility Properties, Exercise~\ref{ex:DivisibilityProperties}.
-\item This is reflexive since $A\subseteq A$.
+  in the Divisibility Properties, Exercise~\ref{ex:DivisibilityProperties}.  
+\end{answer}
+\begin{exercise} 
+  For any set~$A$ the relation $\subseteq$ on $\powerset(A)$ is
+  a partial order.
+\end{exercise}
+\begin{answer}
+  This is reflexive since $A\subseteq A$.
   This is antisymmetric by mutual containment: 
   if $A_0\subseteq A_1$ and~$A_1\subseteq A_0$ then the two are equal.
   This is transitive by Exercise~\ref{ex:PropertiesOfSubset}, 
-  the Properties of Subset.
+  the Properties of Subset.  
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes}
+% \item The usual less than or equal to relation~$\leq$ on 
+% the real numbers is a partial order.
+% \item The relation `divides' on $\N$ is a partial order.
+% \item For any set~$A$ the relation $\subseteq$ on $\powerset(A)$ is
+% a partial order.
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item We must show that it is reflexive, antisymmetric, and transitive.
+%   Reflexive is trivial\Dash for any $r\in\R$ we have $r\leq r$.
+%   Antisymmetric is also easy since if $r_0\leq r_1$ and~$r_1\leq r_0$
+%   then $r_0=r_1$.
+%   And transitive is no harder because if $r_0\leq r_1$ and~$r_1\leq r_2$
+%   then $r_0\leq r_2$.
+% \item This is like the prior item in that we just cite known results.
+%   To show this relation is reflexive just recall that for all $a\in\N$ we have
+%   $a\divides a$.
+%   Antisymmetric is that if $a\divides b$ and~$b\divides a$ then
+%   $a=b$.
+%   (\remark antisymmetric would not hold if the relation were over
+%   $\Z$ because there the two $a\divides b$ and~$b\divides a$ together imply
+%   only that $a=\pm b$.)
+%   Transitive is the statement that $a\divides b$ and~$b\divides c$ imply
+%   that $a\divides c$, which appears
+%   in the Divisibility Properties, Exercise~\ref{ex:DivisibilityProperties}.
+% \item This is reflexive since $A\subseteq A$.
+%   This is antisymmetric by mutual containment: 
+%   if $A_0\subseteq A_1$ and~$A_1\subseteq A_0$ then the two are equal.
+%   This is transitive by Exercise~\ref{ex:PropertiesOfSubset}, 
+%   the Properties of Subset.
+% \end{exes}
+% \end{ans}
+\end{problem}
 
-\begin{ex}
+\begin{problem}
 Can a relation be both symmetric and antisymmetric?  
-\begin{ans}
+\begin{answer}
 Yes.
 One example is the empty relation $R=\emptyset$ on any set.
 Another example is the relation of equality 
 $R=\setbuilder{(x,x)}{x\in\N}$ on $\N$.
-\end{ans}
-\end{ex}
+\end{answer}
+\end{problem}
 
 
 
@@ -5425,7 +6063,7 @@ $R=\setbuilder{(x,x)}{x\in\N}$ on $\N$.
 
 
 %===================================================
-\ifbool{optioncompact}{}{\include{appendix}}
+% \ifbool{optioncompact}{}{\include{appendix}}
 \end{document}
 
 
