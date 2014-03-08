@@ -92,6 +92,7 @@
 
 % A problem consists of a number of exercise items.  
 %  optional argument: A number that determines if this gets printed
+\gdef\problem@booklengthvalue{0}  % default value, for testing
 \newenvironment{problem}[1][\defaultbooklength]{%
   \gdef\problem@booklengthvalue{#1}  % remember #1
   \ifnumgreater{\problem@booklengthvalue}{\booklength}{
@@ -113,7 +114,6 @@
 }
 
 
-% \usepackage{fancyvrb}
 \newenvironment{exercise}[1][\problem@booklengthvalue]{%
   \gdef\exercise@booklengthvalue{#1}  % remember #1
   % \typeout{Exercise book length value \exercise@booklengthvalue}
@@ -128,7 +128,8 @@
 }{%
   \ifnumgreater{\exercise@booklengthvalue}{\booklength}{%
      \endotherexercises
-  }{}  
+  }{%
+  }  
 }
 
 \newenvironment{answer}{%

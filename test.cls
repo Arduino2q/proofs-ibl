@@ -9,8 +9,11 @@
 % ========================================
 % I want the booleans offered by this package
 \usepackage{etoolbox}
-% Allow inclusion of additional questions if longer version is suitable 
-\usepackage{comment}
+
+% Use these to set options from the command line.
+% See http://stackoverflow.com/a/1466610
+\providecommand{\defaultcompact}{\setbool{optioncompact}{true}}
+\providecommand{\defaultbooklength}{0}
 
 % --- Class structure: declaration of options part
 % ---
@@ -25,36 +28,39 @@
 \newbool{optioncompact}
 \boolfalse{optioncompact}
 \DeclareOption{compact}{
-  \booltrue{optioncompact}
+  \defaultcompact
+  % \booltrue{optioncompact}
 }
 
 % Include a minimal number of exercises, or medium number, or all?
-\newcommand{\defaultbooklength}{0}
+% \newcommand{\defaultbooklength}{0}
 \newcommand{\booklength}{\defaultbooklength}
-\newcommand{\minimallength}{\def\booklength{0}}
-\newcommand{\midlength}{\def\booklength{1}}
-\newcommand{\maximallength}{\def\booklength{2}}
 \DeclareOption{minimallength}{
-  \minimallength
+  \def\booklength{0}
 }
-\DeclareOption{midlength}{
-  \midlength
+\DeclareOption{middlelength}{
+  \def\booklength{1}
 }
 \DeclareOption{maximallength}{
-  \maximallength
+  \def\booklength{2}
 }
 \newcommand{\current@useforbooklength}{\defaultbooklength}
-% Put these in text to set which exercises get used
-\newcommand{\useforminimallength}{\def\current@useforbooklength{0}}
-\newcommand{\useformidlength}{\def\current@useforbooklength{1}}
-\newcommand{\useformaximallength}{\def\current@useforbooklength{2}}
-
-% comment out one of these, depending on whether you want more questions
-%\includecomment{longversion}
-\excludecomment{longversion}
-
-
-
+% Put these in text to set which exercises get used.
+% Each problem or exercise environment takes an optional
+% argument, and these are suitable:
+%  * \begin{problem}[\midlength] .. \end{problem}
+%    causes the entire problem, including the instructions and the exercises, 
+%    to be omitted from the text unless the option middlelength or 
+%    maximallength was used.
+% * \begin{exercise}[maxlength]  .. \end{exercise}
+%    omits this exercise from the text unless the option maximallength
+%    was used
+% Note that the exercises and solutions get put in the otherproblem document.
+% So you can mark something for there only.  
+\newcommand{\minlength}{0}
+\newcommand{\midlength}{1}
+\newcommand{\maxlength}{2}
+\newcommand{\inflength}{3}  % larger than maximal length
 
 % --- Class structure: execution of options part
 % ---

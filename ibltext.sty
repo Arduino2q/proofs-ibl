@@ -19,7 +19,7 @@
 % This has to go in this .sty because it opens and empties answers.tex, 
 % which would be bad if you ran pdflatex answers.
 \usepackage{answers}
-\Newassociation{ans}{answer}{answers}
+\Newassociation{ans}{solution}{answers}
 \Opensolutionfile{answers}[answersbody]
 
 % \begin{Filesave}{answers}
@@ -30,6 +30,18 @@
 
 \AtEndDocument{%
 \Closesolutionfile{answers}}
+
+% Exercises and answers that do not appear in this file are put into
+% another .tex file for "Other exercises."
+\newcommand{\otherfilename}{otherbody}
+\Newassociation{otherproblems}{otherproblem}{otherex}
+\Opensolutionfile{otherex}[\otherfilename]
+\Newassociation{otherexercises}{otherexercise}{otherex}
+% \Opensolutionfile{otherex}[\otherfilename]
+\Newassociation{otheranswers}{otheranswer}{otherex}
+% \Opensolutionfile{otherans}[\otherfilename]
+\AtEndDocument{%
+\Closesolutionfile{otherex}}
 
 
 % ========================================
@@ -59,7 +71,8 @@
                      \jhchapterNoStar%
 }
 \newcommand{\jhchapterStar}[1]{\chapterholder{#1}}
-\newcommand{\jhchapterNoStar}[1]{\ifbool{inappendix}{\relax}{\Writetofile{answers}{\protect\chapter{#1}}}\chapterholder{#1}}
+\newcommand{\jhchapterNoStar}[1]{\ifbool{inappendix}{\relax}{%
+  \Writetofile{answers}{\protect\chapter{#1}}\Writetofile{otherex}{\protect\chapter{#1}}}\chapterholder{#1}}
 % Same thing for the \section command
 \let\sectionholder\section
 \renewcommand{\section}{\@ifstar
@@ -67,4 +80,112 @@
                      \jhsectionNoStar%
 }
 \newcommand{\jhsectionStar}[1]{\sectionholder{#1}}
-\newcommand{\jhsectionNoStar}[1]{\Writetofile{answers}{\protect\section{#1}}\sectionholder{#1}}
+\newcommand{\jhsectionNoStar}[1]{%
+  \Writetofile{answers}{\protect\section{#1}}\Writetofile{otherex}{\protect\section{#1}}\sectionholder{#1}}
+
+
+% ++++++++++++
+% Problems
+\newcounter{exercisescount}
+\AtEndDocument{\typeout{Total number of exercises: \theexercisescount.}}
+
+
+% A problem consists of a number of exercise items.  
+%  optional argument: A number that determines if this gets printed
+\gdef\problem@booklengthvalue{0}  % default value, for testing
+\newenvironment{problem}[1][\defaultbooklength]{%
+  \gdef\problem@booklengthvalue{#1}  % remember #1
+  \ifnumgreater{\problem@booklengthvalue}{\booklength}{
+      % \typeout{About to turn on otherproblems macro}
+      \otherproblems
+    }{%
+     \addtocounter{exercisescount}{1}  % some exercises are just a problem env, no exes
+     \begin{ex}
+     \Writetofile{answers}{\protect\begin{answer}{\Currentlabel}} 
+  }
+}{%
+  \ifnumgreater{\problem@booklengthvalue}{\booklength}{
+      \endotherproblems
+    }{%
+     \Writetofile{answers}{\protect\end{answer}} 
+     \Writetofile{answers}{}  % blank line for human readability
+  \end{ex}
+  }
+}
+
+
+\newenvironment{exercise}[1][\problem@booklengthvalue]{%
+  \gdef\exercise@booklengthvalue{#1}  % remember #1
+  % \typeout{Exercise book length value \exercise@booklengthvalue}
+  \ifnumgreater{\exercise@booklengthvalue}{\booklength}{%
+     % \typeout{  Writing exercise to other file}
+     \otherexercises
+  }{
+     % \typeout{  Writing exercise to main file}
+     \addtocounter{exercisescount}{1}  % each exercise adds 1 to total
+     \item 
+  }  
+}{%
+  \ifnumgreater{\exercise@booklengthvalue}{\booklength}{%
+     \endotherexercises
+  }{%
+  }  
+}
+
+\newenvironment{answer}{%
+  \ifnumgreater{\exercise@booklengthvalue}{\booklength}{%
+     \otheranswers
+  }{% 
+    \ans  
+  }  
+}{%
+  \ifnumgreater{\exercise@booklengthvalue}{\booklength}{%
+     \endotheranswers
+  }{
+     \endans
+  }  
+}
+
+
+
+% ++++++++++++
+% Exercises sometimes have multiple parts.
+
+% For these exercises, when done on the board, I have separate students 
+% do separate parts
+\newlength{\exesindent}\setlength{\exesindent}{1.25em}
+\newenvironment{exlist}{%  used in appendix as well as in exercises
+  \begin{enumerate}[topsep=0.15ex,partopsep=0ex,parsep=0ex,
+                    beginpenalty=150,   % Prevent page break after newline start
+                    itemsep=.25ex plus .03ex minus .01ex,
+                    leftmargin=\exesindent,rightmargin=0em,
+                    align=left,label={\textsc{\alph*}.}]
+}{%
+  \end{enumerate}
+}
+\newenvironment{exes}{%
+  % \typeout{exes: problem book length value \problem@booklengthvalue}
+  \ifnumgreater{\problem@booklengthvalue}{\booklength}{}{%
+     \addtocounter{exercisescount}{-1}  % got +1 for problem env, so cancel that
+     \Writetofile{answers}{\protect\begin{exes}} 
+    }
+    \begin{exlist}
+     % \begin{enumerate}[topsep=0.15ex,partopsep=0ex,parsep=0ex,
+     %              beginpenalty=150,   % Prevent page break after newline start
+     %              itemsep=.25ex plus .03ex minus .01ex,
+     %              leftmargin=\exesindent,rightmargin=0em,
+     %              align=left,label={\textsc{\alph*}.\protect\addtocounter{exercisepartscount}{1}}]
+}{%
+  \ifnumgreater{\problem@booklengthvalue}{\booklength}{}{%
+     \Writetofile{answers}{\protect\end{exes}} 
+  }
+  % \end{enumerate}
+  \end{exlist}
+}
+
+% Each individual exercise has two main arguments, the exercise and
+% the answer.  There is also an optional argument, a number that
+% determines if the exercise gets printed in the various length
+% books.
+\newcommand{\exer}[3][\defaultbooklength]{\item #2 %
+  \Writetofile{answers}{\protect\item\space #3}}

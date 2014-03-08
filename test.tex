@@ -1,6 +1,6 @@
 % One and only one of the next two lines should be uncommented
-\documentclass{test}  % for making book
-% \documentclass[compact]{ibl}  % for making handout for students
+% \documentclass{test}  % for making book
+\documentclass[compact]{test}  % for making handout for students
 
 \usepackage{testtext} % for the text only; answers-only is another .sty
 
@@ -22,14 +22,6 @@
 \coverpage{}
 \include{flyleaf}
 \ifbool{optioncompact}{}{\include{preface}}
-
-% \begin{exercise}
-  
-% \end{exercise}
-% \begin{answer}
-  
-% \end{answer}
-
 
 \mainmatter
 \pagestyle{bodypage}
@@ -105,7 +97,7 @@ but ``Does $2/5$?''\spacefactor=1000\ is not sensible.
   \end{answer}
   \begin{exercise}
     If $d\divides a$ then $d\divides\absval{a}$.
-    (Recall that the absolute value  $\absval{a}$ of a number is~$a$ 
+    (Recall that the absolute value of a number $\absval{a}$ is~$a$ 
     if $a\geq 0$ and is~$-a$ if $a<0$.)
   \end{exercise}
   \begin{answer}
@@ -213,7 +205,7 @@ but ``Does $2/5$?''\spacefactor=1000\ is not sensible.
   is not even.
 \end{answer}
 
-\begin{exercise}
+\begin{exercise}[\midlength]
   Generalize the first item to any divisor~$d$.  
 \end{exercise}
 \begin{answer}
@@ -466,7 +458,7 @@ Suppose that $a,b,c\in\Z$.
   $b-c=ak-am=a\cdot(k-m)$
   shows that $a$ divides the difference.
 \end{answer}
-\begin{exercise}
+\begin{exercise}  % Needed for Bezout's Lemma
   \notetext{Linearity} Generalize the prior item.
 \end{exercise}
 \begin{answer}
@@ -940,7 +932,7 @@ $a_{k+1}+(a_k+\cdots+a_0)=a_{k+1}+a_k+\cdots+a_0$.
 \end{answer}
 \end{problem}
 
-\begin{problem}
+\begin{problem}[\maxlength]
 The sequence of \definend{Fibonacci numbers}
 $0,1,1,2,3,5,8,13, \ldots$ is defined by the condition that 
 each succeeding number in the sequence is the sum of the 
@@ -1028,29 +1020,30 @@ then~$A$ cannot contain~$k+1$ either, since it would be least.
 \definend{divisor}~$b>0$ and \definend{dividend}~$a\,$ there is a unique pair of
 integers, the \definend{quotient}~$q$ and \definend{remainder}~$r$,
 such that $a=bq+r$ and $0\leq r<b$.
-We do this in steps.
+We prove this in steps.
 \begin{exes} 
 \begin{exercise}
-  Prove that~$q$ and~$r$ are unique.
+  Show that~$q$ and~$r$ are unique.
 \end{exercise}
 \begin{answer}
   Suppose that $q_0,r_0\in\Z$ and $q_1,r_1\in\Z$ are such that
   $a=bq_0+r_0$ where $0\leq r_0<b$, and also
   $a=bq_1+r_1$ where $0\leq r_1<b$.
-  Subtract to get $0=b\cdot(q_0-q_1)+(r_0-r_1)$ and $-b<r_0-r_1<b$.
-  Rearrange the equation $-b\cdot(q_0-q_1)=(r_0-r_1)$,
+  Subtract to get $0=b\cdot(q_0-q_1)+(r_0-r_1)$ where $-b<r_0-r_1<b$.
+  Rearrange the inequality to $1>(r_0-r_1)/(-b)>1$
+  Rearrange the equation to $-b\cdot(q_0-q_1)=(r_0-r_1)$
   and divide by $-b$ to get $q_0-q_1=(r_0-r_1)/(-b)$.
-  Thus  $-1<q_0-q_1<1$ and since $q_0-q_1\in\Z$ we have $q_0-q_1=0$.
-  With that, the equation $q_0-q_1=(r_0-r_1)/(-b)$ shows that $r_0-r_1=0$.
+  Thus  $1>q_0-q_1>-1$ and since $q_0-q_1$ is an integer, and
+  the only integer strictly between those two is zero, we have $q_0-q_1=0$.
+  With that, the equation $q_0-q_1=(r_0-r_1)/(-b)$ yields that $r_0-r_1=0$.
 \end{answer}
 \begin{exercise}
-  Show that the statement is true for $a=0$.
+  Show that the statement is true if $a=0$.
   Show also that if the statement is true for~$a>0$ then it is true
   for~$a<0$.
 \end{exercise} 
 \begin{answer}
   If $a=0$ then the statement holds with $q=0$ and~$r=0$.
-
   Next assume that the statement holds for any positive dividend
   and consider a negative~$a$.
   Since $-a$ is positive, $-a=bq+r$ for some 
@@ -1151,15 +1144,15 @@ Observe that the divisor must be positive.
 Observe also that $r=0$ if and only if $b\divides a$. 
 
 \begin{df}
-Where $m>0$, the \definend{modulus} $a\bmod m$ 
-is the remainder when $a$ is divided by~$m$.
+Where $m>0$, the remainder when $a$ is divided by~$m$ is
+the \definend{modulus} $a\bmod m$.
 Two numbers $a,b$ are \definend{congruent modulo $m$}, 
 written $a\equiv c\pmod m$, 
 if they leave the same remainder when divided by~$m$, that is,
 if they have the same modulus with respect to~$m$.
 \end{df}
 
-\begin{problem}  \pord:
+\begin{problem}[\midlength]  \pord:
 \begin{items}
 \item $a\bmod b=b\bmod a$
 \item $a\bmod b=-a\bmod b$
@@ -1218,7 +1211,7 @@ Prove each.
   Multiplying gives $ac=bd+m\cdot(id+mij+jb)$, 
   which is equivalent to $ac\equiv bd\pmod m$.   
 \end{answer}
-\begin{exercise} 
+\begin{exercise}[\maxlength] 
   $a^n\equiv b^n\pmod m$ for all $n\in\Z^+$
 \end{exercise}
 \begin{answer}
@@ -1340,7 +1333,7 @@ the greatest integer less than or equal to~$x$.
 % \end{ans}
 \end{problem}
 
-\begin{problem}\notetext{Pigeonhole Principle}  Prove each.
+\begin{problem}[\midlength]  \notetext{Pigeonhole Principle}  Prove each.
 \begin{exes}
 \begin{exercise} 
   For a finite list of real numbers,
@@ -1406,6 +1399,7 @@ Write $\gcd(a,b)$ for the greatest common divisor
 of $a$ and~$b$.
 \end{df}
 
+% TODO redundancy in the exercises?
 \begin{problem}
 Prove.
 \begin{exes} 
@@ -1439,39 +1433,6 @@ Prove.
   That is, the definition is symmetric in $a$ and~$b$.  
 \end{answer}
 \begin{exercise} 
-  If either number is nonzero then 
-  $0\leq \gcd(a,b)\leq\min(\absval{a},\absval{b})$.
-  If both are nonzero then the first
-  inequality is strict.
-\end{exercise}
-\begin{answer}
-  If $a=b=0$ then $\gcd(a,b)=0$. 
-  If $a=0$ and~$b\neq 0$ then the set of 
-  common divisors of the two equals the set of divisors of~$b$, 
-  the greatest of which $\gcd(a,b)=\absval{b}$ is larger than zero.
-  In the same way, if $a\neq 0$ and~$b=0$ then the greatest common divisor 
-  is~$\absval{a}>0$.
-
-  If each number is nonzero then~$1$ is a common divisor so 
-  the greatest common divisor is greater then zero.
-  For the other inequality,
-  where $d$ is a common divisor, 
-  because it divides~$a$ we have that $d\leq\absval{a}$ and
-  because it divides~$b$ we have that $d\leq\absval{b}$.
-  Thus $d$ is less than or equal to the minimum of the two.   
-\end{answer}
-\begin{exercise} 
-  If $d$ is a common divisor of $a$ and~$b$ then so is~$\absval{d}$.
-  Thus common divisors are limited to the interval from $-\gcd(a,b)$
-  to $\gcd(a,b)$.
-\end{exercise}
-\begin{answer}
-  If $d$ is nonnegative then the statement is trivial.
-  If $d$ is negative then
-  this is immediate from \ref{ex:InteractionOfParityWithSign},
-  which says that if $d$ divides a number then so does $-d$.  
-\end{answer}
-\begin{exercise} 
   For any $a\in\Z$, both $\gcd(a,a)=\absval{a}$ 
   and~$\gcd(a,0)=\absval{a}$.
 \end{exercise}
@@ -1489,6 +1450,17 @@ Prove.
   If $a=0$ then the equation is also true.  
 \end{answer}
 \begin{exercise} 
+  If $d$ is a common divisor of $a$ and~$b$ then so is~$\absval{d}$.
+  Thus common divisors are limited to the interval from $-\gcd(a,b)$
+  to $\gcd(a,b)$.
+\end{exercise}
+\begin{answer}
+  If $d$ is nonnegative then the statement is trivial.
+  If $d$ is negative then
+  this is immediate from \ref{ex:InteractionOfParityWithSign},
+  which says that if $d$ divides a number then so does $-d$.  
+\end{answer}
+\begin{exercise} 
   $\gcd(a,b)=\gcd(\absval{a},\absval{b})$
 \end{exercise}
 \begin{answer}
@@ -1499,6 +1471,28 @@ Prove.
   Thus, the set of divisors of both~$a$ and~$b$ 
   is the same as the set of divisors of both~$\absval{a}$ and~$\absval{b}$, \
   and therefore the two sets have the same greatest element.  
+\end{answer}
+\begin{exercise}[\midlength] 
+  If both numbers are nonzero then 
+  $0< \gcd(a,b)\leq\min(\absval{a},\absval{b})$.
+  If either is zero then the greatest common divisor is the 
+  maximum of the absolute values.
+\end{exercise}
+\begin{answer}
+  If both numbers are nonzero then~$1$ is a common divisor so 
+  the greatest common divisor is greater then zero.
+  For the other inequality,
+  where $d$ is a common divisor, 
+  because it divides~$a$ we have that $d\leq\absval{a}$ and
+  because it divides~$b$ we have that $d\leq\absval{b}$.
+  Thus $d$ is less than or equal to the minimum of the two.
+
+  If $a=b=0$ then $\gcd(a,b)=0$, which is the maximum of the absolute values. 
+  If $a=0$ and~$b\neq 0$ then the set of 
+  common divisors of the two equals the set of divisors of~$b$, 
+  the greatest of which $\gcd(a,b)=\absval{b}$ is larger than zero.
+  In the same way, if $a\neq 0$ and~$b=0$ then the greatest common divisor 
+  is~$\absval{a}>0$.
 \end{answer}
 \end{exes} 
 % \begin{exes} 
@@ -1590,7 +1584,7 @@ is the smallest natural number that is a multiple of each.
 \begin{problem} Prove each.
 \begin{items}
 \item \notetext{Existence} Any two integers have a least common multiple.
-  If the integers are nonzero then the lcm is positive.
+  If the integers are nonzero then the lcm is positive
 \item \notetext{Commutativity} $\lcm(a,b)=\lcm(b,a)$
 \end{items}
 \begin{answer}
@@ -1836,27 +1830,27 @@ $\gcd(a,b)\cdot\lcm(a,b)$.
 % \end{ans}
 \end{problem}
 
-\begin{ex}  \label{ex:EuclidsLemma}
+\begin{problem}  \label{ex:EuclidsLemma}
 \begin{exes} 
-\item 
+\begin{exercise}
   Prove that
   dividing by the greatest common divisor leaves no common divisors:
   $a/\gcd(a,b)$ and $b/\gcd(a,b)$ are relatively prime.
-\item \notetext{Euclid's Lemma}  
-  If $a$ and~$b$ are relatively prime then $a\divides bc$ implies that 
-  $a\divides c$.
-\end{exes}
-\begin{ans}
-\begin{exes}
-\item
+\end{exercise}
+\begin{answer}
   Let $\gcd(a,b)$ be~$d$ and suppose that $\gcd(a/d,\,b/d)=c$.
   Then $c\cdot k_a=a/d$ and~$c\cdot k_b=b/d$ for some numbers $k_a, k_b\in\Z$.
   Thus $cd\cdot k_a=a$ and $cd\cdot k_b=b$ and so $cd$ is a common divisor
   of $a$ and~$b$. 
   But $d$ is the greatest of the common divisors and so $c=1$, 
   or else $cd$ would be a common divisor
-  that is larger than the greatest common divisor.    
-\item
+  that is larger than the greatest common divisor.      
+\end{answer}
+\begin{exercise} \notetext{Euclid's Lemma}  
+  If $a$ and~$b$ are relatively prime then $a\divides bc$ implies that 
+  $a\divides c$.
+\end{exercise}
+\begin{answer}
   Since $a\divides bc$ we know that $a$ is nonzero.
   If $b=0$ then because $\gcd(a,b)=1$ we have that $\absval{a}=1$ 
   and therefore $a\divides c$.
@@ -1867,10 +1861,43 @@ $\gcd(a,b)\cdot\lcm(a,b)$.
   Because $a\divides bc$, the product $bc$ is a common 
   multiple of $a$ and~$b$ and so it is divisible by the least common multiple
   $\lcm(a,b)\divides bc$, giving that $ab\divides bc$.  
-  Cancellation then gives that $a\divides c$. 
+  Cancellation then gives that $a\divides c$.  
+\end{answer}
 \end{exes}
-\end{ans}
-\end{ex}
+% \begin{exes} 
+% \item 
+%   Prove that
+%   dividing by the greatest common divisor leaves no common divisors:
+%   $a/\gcd(a,b)$ and $b/\gcd(a,b)$ are relatively prime.
+% \item \notetext{Euclid's Lemma}  
+%   If $a$ and~$b$ are relatively prime then $a\divides bc$ implies that 
+%   $a\divides c$.
+% \end{exes}
+% \begin{ans}
+% \begin{exes}
+% \item
+%   Let $\gcd(a,b)$ be~$d$ and suppose that $\gcd(a/d,\,b/d)=c$.
+%   Then $c\cdot k_a=a/d$ and~$c\cdot k_b=b/d$ for some numbers $k_a, k_b\in\Z$.
+%   Thus $cd\cdot k_a=a$ and $cd\cdot k_b=b$ and so $cd$ is a common divisor
+%   of $a$ and~$b$. 
+%   But $d$ is the greatest of the common divisors and so $c=1$, 
+%   or else $cd$ would be a common divisor
+%   that is larger than the greatest common divisor.    
+% \item
+%   Since $a\divides bc$ we know that $a$ is nonzero.
+%   If $b=0$ then because $\gcd(a,b)=1$ we have that $\absval{a}=1$ 
+%   and therefore $a\divides c$.
+
+%   In the $b\neq 0$ case, the assumption that $\gcd(a,b)=1$ 
+%   along with the equation $\absval{ab}=\gcd(a,b)\cdot\lcm(a,b)$ implies that 
+%   $\lcm(a,b)=\absval{ab}$.
+%   Because $a\divides bc$, the product $bc$ is a common 
+%   multiple of $a$ and~$b$ and so it is divisible by the least common multiple
+%   $\lcm(a,b)\divides bc$, giving that $ab\divides bc$.  
+%   Cancellation then gives that $a\divides c$. 
+% \end{exes}
+% \end{ans}
+\end{problem}
 % ========== End Euclid's argument of lemma =========== 
 \end{euclidproof}
 
@@ -1925,7 +1952,7 @@ if it has the form $c=a\cdot m+b\cdot n$ for some $m,n\in\Z$.
 
 \begin{problem}
 Use Euclid's Algorithm to find the greatest common divisor and 
-use that calculation to express the greatest common divisor as a 
+reverse that to express the greatest common divisor as a 
 linear combination of the two:
 \begin{items}
 \item $15$, $25$
@@ -1974,7 +2001,7 @@ linear combination of the two:
   Such a sequence must be finite so that for some~$i$ 
   an~$r_i$ is zero and the algorithm terminates.  
 \end{answer}
-\begin{exercise} 
+\begin{exercise}[\midlength]
   The greatest common divisors of two numbers is a linear combination of 
   the two.
 \end{exercise}
@@ -1988,24 +2015,25 @@ linear combination of the two:
   number that is a linear combination of the two.
 \end{exercise}
 \begin{answer}
-  The $a=b=0$ case is separate.
-  Here $\gcd(a,b)=0$ by definition and for any $s$ and $t$ we
-  have $0=\gcd(a,b)=s\cdot a+t\cdot b=s\cdot 0+t\cdot 0$.
+  The $a=b=0$ case is separate:
+  $\gcd(a,b)=0$ by definition and for any $s$ and $t$ we
+  have that $0=\gcd(a,b)=s\cdot a+t\cdot b=s\cdot 0+t\cdot 0$.
 
-  The other case is that one number or the other is nonzero.
+  The remaining case is that one number or the other is nonzero.
   Consider the set of linear combinations 
   $\mathcal{L}=\setbuilder{sa+tb}{s,t\in\Z}$.
-  It has a positive element since not all its elements are~$0$
-  (one of $a$ or~$b$ is nonzero and taking $1$ times that element
-  plus zero times the other gives a nonzero member), and if it has a 
+  Not all its elements are~$0$ since
+  one of $a$ or~$b$ is nonzero and taking $1$ times that element
+  plus $0$~times the other gives a nonzero member). 
+  If $\mathcal{L}$ has a 
   negative element then negating the coefficients $s$ and~$t$ gives 
-  a positive element.
-  Any set of positive integers has a least positive element.
-  Call that element~$d\in\mathcal{L}$.
+  a positive element, thus $\mathcal{L}$ has a positive element.
+  Any set of positive integers has a least element;
+  call that~$d$.
 
   For any combination $sa+tb$, because the greatest common divisor
   $\gcd(a,b)$ goes into both $a$ and~$b$ it also divides $sa+tb$  
-  (from Linearity~\ref{ex:DividesAndLinearCombinations})
+  (from Linearity~\ref{ex:DividesAndLinearCombinations}).
   Therefore $\gcd(a,b)\leq d$.
 
   The prior item shows $d\leq\gcd(a,b)$ and so the two are equal. 
@@ -2173,7 +2201,7 @@ Prove each.
 \begin{exercise} 
   If $d$ is a common divisor of $a$ and~$b$ then 
   $\gcd(a/d,\,b/d)=\gcd(a,b)/d$.
-  This implies that 
+  This shows that 
   dividing by the greatest common divisor leaves no common divisors:
   if $a$ and~$b$ are nonzero then $a/gcd(a,b)$ and $b/\gcd(a,b)$
   are relatively prime.
@@ -2567,11 +2595,13 @@ Prove.
 % \end{ans}\
 \end{problem}
 
-\noindent\remark had we included~$1$ among the primes then 
-factorization would not be unique 
+\noindent\remark had we included~$1$ among the primes then this theorem would
+not
+hold\Dash factorization would not be unique, 
 since to any existing factorization we could add more $1$'s.
 
-\begin{problem} True or false:
+\begin{problem}[\midlength] 
+True or false:
 % From: http://gowers.wordpress.com/2011/11/13/why-isnt-the-fundamental-theorem-of-arithmetic-obvious/
 \begin{items}
 \item $5\cdot 7\cdot 19\neq 3\cdot 11\cdot 17$
@@ -2592,7 +2622,7 @@ since to any existing factorization we could add more $1$'s.
 % equivalent to their being relatively prime.
 % \end{ex}
 
-\begin{problem}
+\begin{problem}[\maxlength]
 Suppose that two numbers have prime factorizations 
 of $a=p_0^{e_0}\cdots p_{n-1}^{e_{n-1}}$
 and $b=p_0^{f_0}\cdots p_{n-1}^{f_{n-1}}$
@@ -2653,7 +2683,7 @@ Prove each.
 % \end{ans}
 \end{problem}
 
-\begin{problem} \notetext{Existence of Irrational Numbers}
+\begin{problem}[\midlength] \notetext{Existence of Irrational Numbers}
 \begin{exes}
 \begin{exercise} 
   Prove that if a number is a square then in its prime factorization 
@@ -2740,7 +2770,8 @@ as $P=\set{2, 3, 5, 7}$
 or as~$P=\setbuilder{p\in\N}{\text{$p$ is prime and $p<10$}}$ 
 (read the vertical bar as ``such that'').
 
-\begin{problem} Decide if each is true and justify your decision.
+\begin{problem}[\midlength] 
+Decide if each is true and justify your decision.
 \begin{items}
 \item $\set{1,3,5}=\set{5,3,1}$    
 \item $\set{2, 4, 6}=\set{2, 4, 6, 4}$    
@@ -2887,7 +2918,7 @@ Prove, for any sets $A$, $B$, and~$C$.
 % \end{ans}
 \end{problem}
 
-\begin{problem} 
+\begin{problem}[\maxlength] 
 For each, give example sets or show that no example is possible.
 \begin{items}
 \item $A\subseteq B$, $B\not\subseteq C$, $A\subseteq C$
@@ -2917,7 +2948,7 @@ $\charfcn{A}$ (whose domain is the universal set) such that
 $\charfcn{A}(x)=1$ if~$x\in A$, and $\charfcn{A}(x)=0$ if~$x\notin A$.  
 \end{df}
 
-\begin{problem} 
+\begin{problem}[\maxlength] 
 \notetext{Russell's Paradox}
 The definition that we gave of sets allows them to contain anything, so 
 consider a set that contains all sets.
@@ -3187,7 +3218,8 @@ Then pick one item and prove it:
 % \end{answer}
 % \end{problem}
 
-\begin{problem} Prove that the following are equivalent:
+\begin{problem}[\maxlength] 
+Prove that the following are equivalent:
 (i)~$A\subseteq B$,
 (ii)~$A\union B=B$,    
 and (iii)~$A\intersection B=A$.
@@ -3246,7 +3278,7 @@ where $X$ is the universal set $\universalset=X$.
   then by the definition of set difference $x\in A$ (but $x\notin B$).
   This implication is the requirement for $A\subseteq B$.  
 \end{answer}
-\begin{exercise} 
+\begin{exercise}[\midlength] 
   $A-B=A\intersection\setcomp{B}$
 \end{exercise}
 \begin{answer}
@@ -3262,7 +3294,7 @@ where $X$ is the universal set $\universalset=X$.
   Then $x\in A$ and $x\in\setcomp{B}$, so $x\notin B$.
   By the definition of set difference then, $x\in A-B$.  
 \end{answer}
-\begin{exercise} 
+\begin{exercise}[\midlength] 
   For all pairs of sets, $A-B=B-A$.
 \end{exercise}
 \begin{answer}
@@ -3440,11 +3472,8 @@ where $X$ is the universal set $\universalset=X$.
 Two sets are \definend{disjoint} if their intersection is empty.  
 \end{df}
 
-\begin{problem}
-\begin{exes}
-\begin{exercise} 
-  \pord: $A\intersection B$ and $A\symdiff B$ are disjoint.  
-\end{exercise}
+\begin{problem}[\midlength]
+ \pord: $A\intersection B$ and $A\symdiff B$ are disjoint.
 \begin{answer}
   The statement is true.
   By definition $A\symdiff B=\setbuilder{x}{\text{$x\in A-B$ or $x\in B-A$}}$.
@@ -3452,12 +3481,13 @@ Two sets are \definend{disjoint} if their intersection is empty.
   The $x\in B-A$ case is similar.
   Thus $(A\symdiff B)\intersection (A\intersection B)$ has no elements.  
 \end{answer}
-\begin{exercise}
+\end{problem}
+
+\begin{problem}
   Find three sets $A$, $B$, and $C$, such that 
   $A\intersection B\intersection C$ is empty but the sets are
   not pairwise disjoint, that is, none of $A\intersection B$, 
   $A\intersection C$, or $B\intersection C$ is empty. 
-\end{exercise}
 \begin{answer}
   One example is $A=\set{5,6}$, $B=\set{3,6}$, and 
   $C=\set{3,5}$.
@@ -3482,7 +3512,7 @@ Two sets are \definend{disjoint} if their intersection is empty.
   We want a number in $A\intersection B$ so put~$6$ into each.
   We want a number in $B\intersection C$ so put~$3$ into each.  
 \end{answer}
-\end{exes}
+\end{problem}
 % \begin{exes}
 % \item \pord: $A\intersection B$ and $A\symdiff B$ are disjoint.  
 % \item Find three sets $A$, $B$, and $C$, such that 
@@ -3521,7 +3551,6 @@ Two sets are \definend{disjoint} if their intersection is empty.
 %   We want a number in $B\intersection C$ so put~$3$ into each.
 % \end{exes}
 % \end{ans}
-\end{problem}
 
 \begin{df}
 For a finite set~$A$, the \definend{order} $|A|$ is the number of elements.
@@ -3536,7 +3565,8 @@ For a set~$A$ the \definend{power set} $\powerset(A)$ is the set of all
 subsets of~$A$.
 \end{df}
 
-\begin{problem} List 
+\begin{problem}[\midlength] 
+  List 
   $\powerset(\set{a,b})$,   
   $\powerset(\set{a,b,c})$,   
   $\powerset(\set{a})$, and   
@@ -3557,7 +3587,9 @@ $\powerset(\emptyset)=\set{\emptyset}$.
 \end{answer}
 \end{problem}
 
-\begin{problem}  Let $A=\set{\emptyset,\set{\emptyset}}$. \pord.
+\begin{problem}  
+Let $A=\set{\emptyset,\set{\emptyset}}$.
+Decide, with justification, whether each is true or false.
 \begin{exes}
 \begin{exercise} 
   $\emptyset\in\powerset(A)$, 
@@ -3745,7 +3777,7 @@ the \definend{Cartesian product}
 is the set of all length~$n$ sequences
 $A_0\times A_1\times \cdots \times A_{n-1}
   =\setbuilder{\sequence{a_0,a_1,\ldots,a_{n-1}}}{\text{$a_0\in A_0$, \ldots, and~$a_{n-1}\in A_{n-1}$}}$.
-If the sets are the same we often write $A\times\cdots\times A$ 
+If the sets are the same we write $A\times\cdots\times A$ 
 as~$A^n$.
 \end{df}
 
@@ -3776,7 +3808,7 @@ Thus $A^0=B^0=\set{\sequence{}}$.
 \end{answer}
 \end{problem}
 
-\begin{problem}
+\begin{problem} \notetext{Algebra of Cartesian Product}
 \begin{exes}
 \begin{exercise} 
   Prove that $A\times B=\emptyset$ iff $A=\emptyset$ or~$B=\emptyset$.
@@ -3925,7 +3957,8 @@ Thus $A^0=B^0=\set{\sequence{}}$.
 % \end{ans}
 \end{problem}
 
-\begin{problem} \notetext{Interaction of Cartesian product with other set operations}
+\begin{problem}[\maxlength] 
+\notetext{Interaction of Cartesian product with other set operations}
 \begin{exes}
 \begin{exercise}
   Prove that $(A\union B)\times C=(A\times C)\union(B\times C)$.
@@ -4130,7 +4163,7 @@ Do not think that a function must have a formula.
 The final item in the prior exercise has a formula but for other items 
 $G$ just has arbitrary pairings.
 
-\begin{problem}
+\begin{problem}[\maxlength]
 Let $D$ and $C$ be finite sets.
 How many maps are there from $D$ to $C$?
 \begin{answer}
@@ -4293,7 +4326,7 @@ and $d\mapsunder{}\alpha$.
 \end{answer}
 \end{problem}
 
-\begin{problem}
+\begin{problem}[\midlength]
 Let $\map{f}{\R}{\R}$ be $f(x)=x^2$ and let $\map{g}{\R}{\R}$ be~$g(x)=3x+1$.
 Find the domain, codomain, and a formula for each of
 $\composed{g}{f}$ and $\composed{f}{g}$.  
@@ -4387,25 +4420,21 @@ is exactly one associated argument, is a
   $\map{g}{\R}{\R}$ be $g(x)=x^2+1$.
 \begin{exes}
 \begin{exercise} 
-  Show that $f$ is one-to-one.
+  Show that $f$ is one-to-one, and onto.
 \end{exercise}
 \begin{answer}
-  Suppose that $f(x_0)=f(x_1)$ for $x_0,x_1\in\R$.
+  For one-to-one, suppose that $f(x_0)=f(x_1)$ for $x_0,x_1\in\R$.
   Then $3x_0+1=3x_1+1$.
   Subtract the~$1$'s and divide by~$3$ to conclude that $x_0=x_1$.
   Thus~$f$ is one-to-one.   
-\end{answer}
-\begin{exercise} 
-  Show that $f$ is onto.
-\end{exercise}
-\begin{answer}
-  Fix a member of the codomain~$c\in\R$.
+
+  For onto, fix a member of the codomain~$c\in\R$.
   Observe that $d=(c-1)/3$ is a member of the domain and that 
   $f(d)=c$.
   Thus $f$ is onto.  
 \end{answer}
 \begin{exercise} 
-  Show that $g$ is not one-to-one, and also that it is not onto.
+  Show that $g$ is not one-to-one, and not onto.
 \end{exercise}
 \begin{answer}
   The function~$g$ is not one-to-one because $g(2)=g(-2)$.
@@ -4600,7 +4629,7 @@ Prove.
 \begin{answer}
   This is immediate from the prior two items. 
 \end{answer}
-\end{exes}
+% \end{exes}
 % \begin{exes}
 % \item A composition of one-to-one functions is one-to-one.
 % \item A composition of onto functions is onto.
@@ -4626,12 +4655,12 @@ Prove.
 % \item This is immediate from the prior two items. 
 % \end{exes}
 % \end{ans}
-\end{problem}
+% \end{problem}
 
-\begin{problem} 
-\begin{exes}
+% \begin{problem} 
+% \begin{exes}
 \begin{exercise} 
-  Prove that if $\composed{g}{f}$ is onto then $g$ is onto.
+  If $\composed{g}{f}$ is onto then $g$ is onto.
 \end{exercise}
 \begin{answer}
   Let $\map{f}{D}{C}$ and~$\map{g}{C}{B}$ be such that 
@@ -4644,7 +4673,7 @@ Prove.
   So the supposition is false and $g$ must be onto.  
 \end{answer}
 \begin{exercise} 
-  Prove that if $\composed{g}{f}$ is one-to-one then $f$ is one-to-one.
+  If $\composed{g}{f}$ is one-to-one then $f$ is one-to-one.
 \end{exercise}
 \begin{answer}
   Let $\map{f}{D}{C}$ and~$\map{g}{C}{B}$ be such that 
@@ -4655,7 +4684,7 @@ Prove.
   the composition is one-to-one.
   Thus the supposition is false and $f$ is one-to-one.  
 \end{answer}
-\begin{exercise} 
+\begin{exercise}[\maxlength] 
   Do the other two cases hold? 
 \end{exercise}
 \begin{answer}
@@ -4744,6 +4773,7 @@ $\composed{f}{f^{-1}}$ is the identity map on~$C$.
 \end{df}
 
 \begin{problem} 
+These exercises compute inverses.
 \begin{exes}
 \begin{exercise} 
   Let $\map{f}{\Z}{\Z}$ be~$f(a)=a+3$ and let
@@ -4769,7 +4799,7 @@ $\composed{f}{f^{-1}}$ is the identity map on~$C$.
   The domain of each is the codomain of the other,
   and both $\composed{s}{r}$ and~$\composed{r}{s}$ are the identity function.  
 \end{answer}
-\begin{exercise} 
+\begin{exercise}[\maxlength] 
   Let $\map{s}{\R^+}{\R^+}$ be~$s(x)=x^2$.
   Find the map that is inverse to $s$.
 \end{exercise}
@@ -5033,6 +5063,9 @@ that $a_0$ is~\definend{$R$-related} to~$a_1$,
 sometimes written $a_0Ra_1$.
 \end{df}
 
+Observe that that if $\map{f}{D}{C}$ is a function then 
+its graph is a relation on $D\times C$.
+
 \begin{problem}
 List five elements of each relation:
 \begin{items}
@@ -5056,16 +5089,9 @@ List five elements of each relation:
 \end{answer}
 \end{problem}
 
-
 \begin{problem}
+These are exercises in computing relations.
 \begin{exes}
-\begin{exercise} 
-  Show that if $\map{f}{D}{C}$ is a function then 
-  its graph is a relation.
-\end{exercise}
-\begin{answer}
-  By definition its graph is a binary relation on~$D\times C$.  
-\end{answer}
 \begin{exercise}
   Consider the set~$A=\set{0,1}$.
   List all the elements of the relation 
@@ -5163,7 +5189,7 @@ A relation that satisfies all three conditions is an
   $(x,y)\in A$ and~$(y,z)\in A$ then $x=y=z=a$ for some~$a\in A$, and
   thus $(x,z)\in A$.
 \end{answer}
-\begin{exercise}
+\begin{exercise}[\midlength]
   The relation on $\R$ of `at least two greater'
   $T=\setbuilder{(x,y)\in \R^2}{x-y\geq 2}$.
 \end{exercise}
@@ -5207,7 +5233,7 @@ A relation that satisfies all three conditions is an
 % \end{ans}
 \end{problem}
 
-\begin{problem}
+\begin{problem}[\midlength]
 Recall that two integers have the same parity if they are both odd or 
 both even.
 Show that the binary relation 
@@ -5252,7 +5278,7 @@ is an equivalence.
 \end{answer}
 \end{problem}
 
-\begin{problem}
+\begin{problem}[\maxlength]
   Characterize all of the binary relations on $A=\set{0,1}$
   as reflexive or not, symmetric or not,
   and transitive or not.
@@ -5404,7 +5430,7 @@ contain each of those four.
 % \end{ans}
 % \end{ex}
 
-\begin{problem} 
+\begin{problem}[\midlength] 
 \label{PlaneLinesAsClasses}
 Let $\mathcal{L}$ be the set of lines in the Euclidean plane and consider
 the relation
@@ -5439,7 +5465,7 @@ fixing a $xy$-axes, and giving the equations.
 \end{answer}
 \end{problem}
 
-\begin{problem}
+\begin{problem}[\maxlength]
 What is wrong with this purported proof that in the definition
 of an equivalence relation, the condition of reflexivity is redundant?
 ``For any $x$, symmetry is that $x$ is related to~$y$ 
@@ -5918,7 +5944,7 @@ reflexive, antisymmetric, and transitive.
 
 \begin{problem} Prove each.
 \begin{exes}
-\begin{exercise}
+\begin{exercise}[\midlength]
   The usual less than or equal to relation~$\leq$ on 
   the real numbers is a partial order.
 \end{exercise}
@@ -6008,7 +6034,7 @@ $R=\setbuilder{(x,x)}{x\in\N}$ on $\N$.
 
 
 %===================================================
-\ifbool{optioncompact}{}{\include{infinity}}
+% \ifbool{optioncompact}{}{\include{infinity}}
 
 
 %===================================================

@@ -1,14 +1,19 @@
-% ibl.sty
+% ibl.cls
 % Class for Inquiry-based Learning document
 % Jim Hefferon jhefferon (at) smcvt.edu
 % --- Class structure: identification part
 % ---
-\ProvidesClass{ibl}[2013/04/13 version 0.99 of Inquiry-based Learning book class (Jim Hefferon)]
+\ProvidesClass{test}[2013/04/13 version 0.99 of Inquiry-based Learning book class (Jim Hefferon)]
 \NeedsTeXFormat{LaTeX2e}
 
 % ========================================
 % I want the booleans offered by this package
 \usepackage{etoolbox}
+
+% Use these to set options from the command line.
+% See http://stackoverflow.com/a/1466610
+\providecommand{\defaultcompact}{\setbool{optioncompact}{true}}
+\providecommand{\defaultbooklength}{0}
 
 % --- Class structure: declaration of options part
 % ---
@@ -23,17 +28,39 @@
 \newbool{optioncompact}
 \boolfalse{optioncompact}
 \DeclareOption{compact}{
-  \booltrue{optioncompact}
+  \defaultcompact
+  % \booltrue{optioncompact}
 }
 
-% Allow inclusion of additional questions if longer version is suitable 
-% \usepackage{comment}
-% comment out one of these, depending on whether you want more questions
-%\includecomment{longversion}
-% \excludecomment{longversion}
-
-
-
+% Include a minimal number of exercises, or medium number, or all?
+% \newcommand{\defaultbooklength}{0}
+\newcommand{\booklength}{\defaultbooklength}
+\DeclareOption{minimallength}{
+  \def\booklength{0}
+}
+\DeclareOption{middlelength}{
+  \def\booklength{1}
+}
+\DeclareOption{maximallength}{
+  \def\booklength{2}
+}
+\newcommand{\current@useforbooklength}{\defaultbooklength}
+% Put these in text to set which exercises get used.
+% Each problem or exercise environment takes an optional
+% argument, and these are suitable:
+%  * \begin{problem}[\midlength] .. \end{problem}
+%    causes the entire problem, including the instructions and the exercises, 
+%    to be omitted from the text unless the option middlelength or 
+%    maximallength was used.
+% * \begin{exercise}[maxlength]  .. \end{exercise}
+%    omits this exercise from the text unless the option maximallength
+%    was used
+% Note that the exercises and solutions get put in the otherproblem document.
+% So you can mark something for there only.  
+\newcommand{\minlength}{0}
+\newcommand{\midlength}{1}
+\newcommand{\maxlength}{2}
+\newcommand{\inflength}{3}  % larger than maximal length
 
 % --- Class structure: execution of options part
 % ---
@@ -143,6 +170,11 @@ cleveref, % \cref
 % n.b. cleveref after! hyperref
 }
 
+% Count the number of exercises so a person can comment some out to adjust
+% the semester-long number.
+% \newcounter{exercisecount}
+% \AtEndDocument{\typeout{Total number of exercises: \theexercisecount.}}
+
 \declaretheoremstyle[
 spaceabove=1.1ex plus .1ex, spacebelow=1.1ex plus .2ex minus .1ex,
 headfont=\normalfont\scshape,
@@ -194,23 +226,6 @@ qed=\qedsymbol
 % \addtocounter{exercisetotal}{-\value{exerciseswithpartscount}}%
 % \typeout{Number for students to do is Total-Number+Count=\theexercisetotal.}}
 
-% ++++++++++++
-% Exercises sometimes have multiple parts.
-
-% For these exercises, when done on the board, I have separate students 
-% do separate parts
-\newlength{\exesindent}\setlength{\exesindent}{1.25em}
-\newenvironment{exes}{%
-% \addtocounter{exerciseswithpartscount}{1}%
-% \hspace*{0em}% Causes it to start on a new line? 
-\begin{enumerate}[topsep=0.15ex,partopsep=0ex,parsep=0ex,
-                  beginpenalty=150,   % Prevent page break after newline start
-                  itemsep=.25ex plus .03ex minus .01ex,
-                  leftmargin=\exesindent,rightmargin=0em,
-                  align=left,label={\textsc{\alph*}.}] 
-}{%
-\end{enumerate}
-}
 
 % For these exercises, when done on the board I have one student do them
 % all. 
