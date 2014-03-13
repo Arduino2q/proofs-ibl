@@ -1,0 +1,171 @@
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{.35ex plus 0.15ex minus 0.05ex}
+
+\usepackage[T1]{fontenc} % Font encoding: T1
+
+\usepackage{conc}
+% Make TeX not give "no such font size" errors
+% \usepackage{type1cm}
+% \usepackage{exscale}  % uncommenting this makes \infty disappear
+
+% \usepackage[scaled=0.97]{inconsolata}  % for typewriter text
+% \usepackage[scaled=0.86]{luximono}  % for typewriter text
+% I like the following, but it causes graphic stuff to fail 
+% \usepackage{fontspec}
+% \setmonofont[Scale=MatchLowercase]{Dina ttf 10px}
+% % \DeclareGraphicsRule{*}{mps}{}{} 
+
+% Dash code stolen from tugboat.dtx
+\def\thinskip{\hskip 0.16667em\relax}
+\def\endash{--}
+\def\emdash{\endash-}
+\def\d@sh#1#2{\unskip#1\thinskip#2\thinskip\ignorespaces}
+\def\dash{\d@sh\nobreak\endash}
+\def\Dash{\d@sh\nobreak\emdash}
+\def\ldash{\d@sh\empty{\hbox{\endash}\nobreak}}
+\def\rdash{\d@sh\nobreak\endash}
+\def\Ldash{\d@sh\empty{\hbox{\emdash}\nobreak}}
+\def\Rdash{\d@sh\nobreak\emdash}
+
+\DeclareGraphicsRule{*}{mps}{*}{}
+\newcommand{\centergraphic}[2][]{\begin{center}\includegraphics[#1]{#2}\end{center}}
+
+% This is for putting figures inside a paragraph
+% Example: \begin{wrapfigure}{r}{0.25\textwidth}\includegraphics[width=0.2\textwidth]{xxx.png}\end{wrapfigure}
+\usepackage{wrapfig} \setlength{\rightskip}{0pt plus 200pt} % see http://newsgroup.derkeiler.com/Archive/Comp/comt.text.tex/2010-10/msg00471.html
+
+
+% asparadesc  A description environment
+\definecolor{labelcolor}{rgb}{.318, .277, .718}  % #5147B7
+\definecolor{labelnumcolor}{rgb}{.773, .769, .812}  % #C5C4CF
+\usepackage[olditem,oldenum]{paralist}
+\renewcommand*\paradescriptionlabel[1]{%
+\normalfont\bfseries\color{labelcolor} #1}
+
+%...........
+% environment: tfae
+%  for lists of statements that are equivalent.
+\newcounter{tfaecount}
+\newenvironment{tfae}{%
+\begin{list}{(\arabic{tfaecount})}{\usecounter{tfaecount}
+  \setlength{\leftmargin}{2.5em}
+  \setlength{\itemsep}{0ex}
+  \setlength{\topsep}{.2ex}
+  \setlength{\partopsep}{0ex}
+  \setlength{\parskip}{0ex}
+  \setlength{\parsep}{0ex}}}{%
+\end{list}}
+
+\newcommand{\nearbydefinition}[1]{Definition~\ref{#1}}
+\newcommand{\nearbyfigure}[1]{Figure~\ref{#1}}
+\newcommand{\nearbylemma}[1]{Lemma~\ref{#1}}
+\newcommand{\nearbyexample}[1]{Example~\ref{#1}}
+\newcommand{\nearbycounterexample}[1]{Counterexample~\ref{#1}}
+\newcommand{\nearbytheorem}[1]{Theorem~\ref{#1}}
+\newcommand{\nearbycorollary}[1]{Corollary~\ref{#1}}
+\newcommand{\nearbyexercise}[1]{Exercise~\ref{#1}}
+\newcommand{\nearbyremark}[1]{Remark~\ref{#1}}
+\newcommand{\nearbynotice}[1]{Notice~\ref{#1}}
+\newcommand{\nearbynote}[1]{Note~\ref{#1}}
+
+% Bug in beamer; see 
+%  http://tex.stackexchange.com/questions/50465/ref-with-beamer
+% {\def\protect{\global\let\YesIMeanThisRef}\ref}
+% \AtBeginDocument{\def\ref{\protect\YesIMeanThisRef}}
+% \usepackage{xparse}% http://ctan.org/pkg/xparse
+
+% \makeatletter
+% \NewDocumentCommand{\reff}{s m}{%
+%   \IfBooleanTF{#1}% Check for starred variant
+%     {\beamer@origref{#2}}% \reff*
+%     {\hyperlink{#2}{\beamer@origref{#2}}}% \reff
+% }
+% \makeatother
+
+\usepackage{xparse}% http://ctan.org/pkg/xparse
+% \NewDocumentCommand{\reff}{s m}{%
+%   \IfBooleanTF{#1}% Check for starred variant
+%     {\beamer@origref{#2}}% \reff*
+%     {\hyperlink{#2}{\beamer@origref{#2}}}% \reff
+% }
+\NewDocumentCommand{\reff}{s m}{%
+  \beamer@origref{#2}
+  % \IfBooleanTF{#1}% Check for starred variant
+  %   {\beamer@origref{#2}}% \reff*
+  %   {\hyperlink{#2}{\beamer@origref{#2}}}% \reff
+}
+\AtBeginDocument{\makeatletter
+\let\ref\reff  % make all references like \ref*{..}
+\makeatother}
+
+% {\def\protect{\global\let\YesIMeanThisRef}\ref}
+% \AtBeginDocument{\def\ref{\protect\YesIMeanThisRef}}
+
+\newcommand{\bookref}[1]{\reff*{#1}}
+\newcommand{\prewordspace}{.15em}
+\newcommand{\postwordspace}{0em plus.1em minus.0em}
+
+% Text headers: Example, Definition, etc.
+% Each comes with an optional argument into which you can put a 
+% string that is a \label{..} from the book. For instance: \th[th:GaussMethod].
+\newcommand{\ex}[1][]{\par\noindent%
+\ifx #1\relax %
+\else{\llap{\textcolor{labelnumcolor}{\bookref{#1}}\hspace{\prewordspace}}}\fi%
+{\textcolor{labelcolor}{\textit{Example}} \hspace{\postwordspace}}}
+
+\newcommand{\df}[1][]{\par\noindent%
+\ifx #1\relax %
+\else{\llap{\textcolor{labelnumcolor}{\bookref{#1}}\hspace{\prewordspace}}}\fi%
+{\textcolor{labelcolor}{\textit{Definition}} \hspace{\postwordspace}}}
+
+\renewcommand{\th}[1][]{\par\noindent%  \th is thorn
+\ifx #1\relax %
+\else{\llap{\textcolor{labelnumcolor}{\bookref{#1}}\hspace{\prewordspace}}}\fi%
+{\textcolor{labelcolor}{\textit{Theorem}} \hspace{\postwordspace}}}
+
+\newcommand{\co}[1][]{\par\noindent%
+\ifx #1\relax %
+\else{\llap{\textcolor{labelnumcolor}{\bookref{#1}}\hspace{\prewordspace}}}\fi%
+{\textcolor{labelcolor}{\textit{Corollary}} \hspace{\postwordspace}}}
+
+\newcommand{\lm}[1][]{\par\noindent%
+\ifx #1\relax %
+\else{\llap{\textcolor{labelnumcolor}{\bookref{#1}}\hspace{\prewordspace}}}\fi%
+{\textcolor{labelcolor}{\textit{Lemma}} \hspace{\postwordspace}}}
+
+\newcommand{\re}[1][]{\par\noindent%
+\ifx #1\relax %
+\else{\llap{\textcolor{labelnumcolor}{\bookref{#1}}\hspace{\prewordspace}}}\fi%
+{\textcolor{labelcolor}{\textit{Remark}} \hspace{\postwordspace}}}
+
+\newcommand{\no}[1][]{\par\noindent%
+\ifx #1\relax %
+\else{\llap{\textcolor{labelnumcolor}{\bookref{#1}}\hspace{\prewordspace}}}\fi%
+{\textcolor{labelcolor}{\textit{Note}} \hspace{\postwordspace}}}
+
+\newcommand{\pf}[1][]{\par\noindent%
+\ifx #1\relax %
+\else{\llap{\textcolor{labelnumcolor}{\bookref{#1}}\hspace{\prewordspace}}}\fi%
+{\textcolor{labelcolor}{\textit{Proof}} \hspace{\postwordspace}}}
+
+% Some misc definitions
+\renewcommand{\qedsymbol}{{\scshape\small QED}}
+\renewcommand{\definend}[1]{\textcolor{red}{\textit{#1}}}
+\newcommand{\appendrefs}[1]{\relax}  
+
+% Make \section{..} show a page all alone.
+\AtBeginSection{
+\begin{frame}
+\vfill
+\begin{center}
+\structure{\LARGE \insertsection}
+\end{center}
+\vspace*{14ex}
+\end{frame}
+}
+
+% Vertically center graphics
+% ex: \vcenteredhbox{\usegraphics{mygraph.png}}
+% From http://tex.stackexchange.com/questions/7219/how-to-vertically-center-two-images
+% \newcommand*{\vcenteredhbox}[1]{\begingroup
+% \setbox0=\hbox{#1}\parbox{\wd0}{\box0}\endgroup}

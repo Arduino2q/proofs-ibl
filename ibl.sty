@@ -1,0 +1,45 @@
+% ibl.sty
+% definitions broken out of ibl.cls for use in the slides
+\usepackage{jh}
+
+% % ========================================
+% % Font
+% \usepackage{fourier}
+% \usepackage[T1]{fontenc}
+
+
+\usepackage{mathtools}  % imports amsmath
+\DeclarePairedDelimiter\absval{\lvert}{\rvert}%
+\newcommand{\lcm}{\operatorname{lcm}}
+
+\RequirePackage{amsthm}
+\renewcommand{\qedsymbol}{\rule{0.5em}{2ex}}
+
+% Graphics, with a caption
+\newcommand{\grf}[2]{\begin{tabular}{@{}c@{}}\includegraphics{#1} \\ #2\end{tabular}}
+
+% Vulgar fractions
+\RequirePackage{xfrac}
+
+% Script characters
+\RequirePackage{mathrsfs}
+\newcommand{\eqcl}[1]{{\mathscr E}_{#1}}
+
+% euscript characters
+\RequirePackage{euscript}
+\newcommand{\partition}[1]{\EuScript{#1}}
+
+% mathdots fot dots from lower-left to upper right
+\RequirePackage{mathdots}
+
+% Misc commands
+\newcommand{\definend}[1]{\textit{#1}}
+\newcommand{\pord}{Prove or disprove}
+\DeclareMathOperator{\add}{add}
+\DeclareMathOperator{\mul}{mul}
+\newcommand*{\symdiff}{\mathbin{\triangle}}
+\newcommand{\universalset}{\Omega}
+\DeclareMathOperator{\range}{Ran}
+\DeclareMathOperator{\image}{Im}
+\newcommand{\hint}{\textit{Hint:} }
+\newcommand{\remark}{\textit{Remark:} }

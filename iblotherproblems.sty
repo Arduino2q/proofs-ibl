@@ -43,7 +43,7 @@
 }
 
 % \newlength{\exesindent}\setlength{\exesindent}{1.25em}
-\renewenvironment{exes}{%
+\newenvironment{exes}{%
   \begin{enumerate}[topsep=0.15ex plus 0.02ex minus 0.01ex,
                     partopsep=0ex,parsep=0ex,
                     beginpenalty=150,   % Prevent page break after newline start
@@ -70,7 +70,11 @@
 }{%
 }
 \newenvironment{answer}{%
-  \par\textsc{Answer.}\  %
+  \par\noindent\textsc{Answer.}\  %
+}{%
+}
+\newenvironment{ans}{%
+  \par\noindent\textsc{Answer.}\  %
 }{%
 }
 

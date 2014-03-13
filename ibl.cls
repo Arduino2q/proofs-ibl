@@ -12,7 +12,14 @@
 
 % Use these to set options from the command line.
 % See http://stackoverflow.com/a/1466610
-\providecommand{\defaultcompact}{\setbool{optioncompact}{true}}
+\ifdefined\compactflag
+  \typeout{COMPACT}
+  \newcommand{\defaultcompact}{\setbool{optioncompact}{true}}
+\else
+  \typeout{NOT COMPACT}
+  \newcommand{\defaultcompact}{\setbool{optioncompact}{false}}
+\fi
+
 \providecommand{\defaultbooklength}{0}
 
 % --- Class structure: declaration of options part
@@ -26,10 +33,10 @@
 
 % compact option: make shorter-length output, for copying and handing out
 \newbool{optioncompact}
-\boolfalse{optioncompact}
+% \boolfalse{optioncompact}
+\defaultcompact
 \DeclareOption{compact}{
-  \defaultcompact
-  % \booltrue{optioncompact}
+  \booltrue{optioncompact}
 }
 
 % Include a minimal number of exercises, or medium number, or all?
