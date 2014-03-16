@@ -995,7 +995,7 @@ Show that the Principle of Induction implies the Least Number
 Principle.
 \hint
 show by induction that if a set of natural numbers does not
-have a least element then that set is empty.
+have a least element then it is empty.
 \begin{answer}
 We shall use induction to prove for all $n\in\N$ that if a set~$A$ 
 of natural numbers has no
@@ -2274,10 +2274,36 @@ is \definend{prime} if its only divisors are~$1$ and itself.
 A number greater than~$1$ that is not prime is~\definend{composite}.  
 \end{df}
 
+\begin{problem}[\maxlength]
+Verify 
+\begin{items}
+\item there are twenty five primes less than one hundred
+\item each of these are \definend{twin primes}, pairs of primes
+  separated by two: $(3, 5)$, $(5, 7)$, $(11, 13)$, $(17, 19)$, 
+  $(29, 31)$, $(41, 43)$, $(59, 61)$
+\item the numbers $2^{2^0}+1$, \ldots, $2^{2^4}+1$ are prime.
+\end{items}
+\begin{answer}
+Verification of each of these is easy, for instance with a pocket calculator
+or a computer script.
+\begin{items}
+\item 
+  They are $2$, $3$, $5$, $7$, $11$, $13$, $17$, $19$, $23$, $29$, $31$, 
+  $37$, $41$, $43$, $47$, $53$, $59$, $61$, $67$, $71$, $73$, $79$, $83$, 
+  $89$, and $97$.
+\item 
+  See the prior item.
+\item
+  The numbers $3$, $5$, $17$, $257$, and $65537$ are prime.
+\end{items}
+\end{answer}
+\end{problem}
+
 \begin{problem} Prove.
 \begin{exes}
 \begin{exercise} 
-  An integer $n>1$ is composite if and only if it has factors $a,b$ 
+  An integer $n>1$ is composite if and only if it has factors $n=a\cdot b$ 
+  (they may be equal) 
   such that $1<a,b<n$.  
 \end{exercise}
 \begin{answer}
@@ -2285,7 +2311,7 @@ A number greater than~$1$ that is not prime is~\definend{composite}.
   is clear.
   For `only if' assume that $n$ is composite so
   that at least one of its divisors~$a$ satisfies that $1<a<n$.
-  Consider $b\in\Z$ such that $ab=n$; we will be finished when we show 
+  Suppose that $b\in\Z$ is such that $ab=n$; we will be finished when we show 
   that $1<b<n$.
   First, $b$ is positive because $a$ and~$n$ are positive.
   Next,~$b$ must be greater than~$1$ because $0<b\leq 1$ 
@@ -2310,7 +2336,7 @@ A number greater than~$1$ that is not prime is~\definend{composite}.
 \end{answer}
 \begin{exercise} 
   Every composite number $n>1$ has a prime divisor~$p$ 
-  with $p\leq \sqrt{n}$.
+  with $p\leq \sqrt{n}$; this inequality cannot be made strict.
 \end{exercise}
 \begin{answer}
   Because~$n>1$ is composite there are numbers~$a,b\in\Z$ with
@@ -2327,12 +2353,8 @@ A number greater than~$1$ that is not prime is~\definend{composite}.
   It is 
   less than or equal to~$c$ by the Comparison property and therefore
   is less than or equal to~$\sqrt{n}$.    
-\end{answer}
-\begin{exercise} 
-  Show that the prior inequality cannot be made strict.
-\end{exercise}
-\begin{answer}
-  Take $n=4$.  
+
+  To see that the inquality cannot be made strict take $n=4$.  
 \end{answer}
 \end{exes}
 % \begin{exes}
@@ -2798,8 +2820,8 @@ Decide if each is true and justify your decision.
 \begin{df}
 The set~$B$ is a \definend{subset} of the set~$A$
 if every element of $B$ is an element of~$A$,
-that is, if $x\in B$ implies that~$x\in A$.
-This is denoted $B\subseteq A$.
+that is, $x\in B$ implies that~$x\in A$.
+We denote it as $B\subseteq A$.
 \end{df}
 
 \begin{df}
@@ -2836,10 +2858,10 @@ The set without any elements is the \definend{empty set} $\emptyset$.
 \end{problem}
 
 \begin{problem} \label{ex:EmptySetUnique}
-Prove, for all sets $A$. 
+Prove. 
 \begin{exes}
 \begin{exercise} 
-  $A\subseteq A$ and $\emptyset\subseteq A$
+   For all sets $A$, both $A\subseteq A$ and $\emptyset\subseteq A$
 \end{exercise}
 \begin{answer}
   For the first, let $x$ be an element of the set on the left, $A$.
@@ -2850,12 +2872,13 @@ Prove, for all sets $A$.
   (that is, it is vacuously true).  
 \end{answer}
 \begin{exercise} 
-  The empty set is unique: if $A$ is empty and $B$ is empty then $A=B$.
+  The empty set is unique: if the set~$A$ is empty and 
+  the set~$B$ is empty then $A=B$.
 \end{exercise}
 \begin{answer}
   If $A=\emptyset$ and~$B=\emptyset$ then $A=B$ because they have the
   same elements: the statement `$x\in A$ if and only if~$x\in B$' holds   
-  for all $x$.  
+  for all $x$.
 \end{answer}
 \end{exes}
 % \begin{exes}
@@ -2950,13 +2973,13 @@ $\charfcn{A}(x)=1$ if~$x\in A$, and $\charfcn{A}(x)=0$ if~$x\notin A$.
 
 \begin{problem}[\maxlength] 
 \notetext{Russell's Paradox}
-The definition that we gave of sets allows them to contain anything, so 
-consider a set that contains all sets.
+The definition that we gave allows sets to contain anything.
+This turns out to be naive. 
+For, consider a set that contains all sets.
 It has itself as an element.
 So
-consider the set of all sets that have themselves as elements and  
-also the set of all sets that don't.
-Call the latter set~$D=\setbuilder{S}{S\notin S}$.
+consider the set of all sets that don't have themselves as 
+elements~$D=\setbuilder{S}{S\notin S}$.
 \begin{exes}
 \begin{exercise} 
   Show that assuming $D$ is an element of itself leads to a contradiction.

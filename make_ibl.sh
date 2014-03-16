@@ -13,9 +13,9 @@ just got the source material then run this command without any options.
 
 OPTIONS:
    -h      Show this message
-   -0      Generate maximim length book (used to speed development)
+   -0      Generate minimim length book (used to speed development)
    -1      Generate medium length book (used to speed development)
-   -2      Generate minimal length book (used to speed development)
+   -2      Generate maximal length book (used to speed development)
    -r      Regenerating; don't run asymptote (used to speed development)
    -v      Verbose
 If no digit is chosen then all three lengths are generated.
@@ -58,8 +58,8 @@ done
 
 generate_maxlength () {
   rm -r ibl.pdf
-  pdflatex "\def\defaultbooklength{0}\input{ibl}"
-  pdflatex "\def\defaultbooklength{0}\input{ibl}"
+  pdflatex "\def\defaultbooklength{2}\input{ibl}"
+  pdflatex "\def\defaultbooklength{2}\input{ibl}"
   cp ibl.pdf output/ibl-maxlength.pdf
   pdflatex answers
   pdflatex answers
@@ -67,8 +67,8 @@ generate_maxlength () {
   pdflatex otherproblems
   pdflatex otherproblems
   cp otherproblems.pdf output/otherproblems-maxlength.pdf
-  pdflatex "\def\compactflag{}\def\defaultbooklength{0}\input{ibl}"
-  pdflatex "\def\compactflag{}\def\defaultbooklength{0}\input{ibl}"
+  pdflatex "\def\compactflag{}\def\defaultbooklength{2}\input{ibl}"
+  pdflatex "\def\compactflag{}\def\defaultbooklength{2}\input{ibl}"
   cp ibl.pdf output/ibl-compact-maxlength.pdf
 }
 
@@ -90,8 +90,8 @@ generate_midlength () {
 
 generate_minlength () {
   rm -r ibl.pdf
-  pdflatex "\def\defaultbooklength{2}\input{ibl}"
-  pdflatex "\def\defaultbooklength{2}\input{ibl}"
+  pdflatex "\def\defaultbooklength{0}\input{ibl}"
+  pdflatex "\def\defaultbooklength{0}\input{ibl}"
   cp ibl.pdf output/ibl-minlength.pdf
   pdflatex answers
   pdflatex answers

@@ -51,6 +51,13 @@
 \DeclareOption{maximallength}{
   \def\booklength{2}
 }
+% Say which version this is
+\newcommand{\thisversion}{%
+  \ifnumequal{\booklength}{0}{minimal length}%
+  \ifnumequal{\booklength}{1}{middle length}%
+  \ifnumequal{\booklength}{2}{maximal length}%
+}
+
 \newcommand{\current@useforbooklength}{\defaultbooklength}
 % Put these in text to set which exercises get used.
 % Each problem or exercise environment takes an optional

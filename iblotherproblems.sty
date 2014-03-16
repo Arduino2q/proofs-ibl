@@ -29,15 +29,16 @@
 \setlength{\unifiedinterexerciseverticalspace}{0.75ex plus 0.02ex minus 0.01ex}
 
 
-\newenvironment{otherproblem}[1]{%
+\newenvironment{otherproblem}[1]{% Note that answer comes inside this env
   \begin{itemize}[topsep=\unifiedinterexerciseverticalspace,
                   partopsep=0ex, parsep=0ex plus 0.01ex,
                   beginpenalty=150,% Prevent page break after newline start
-                  labelwidth=1em,align=left,labelsep=0em,
+                  labelwidth=0em,align=left,labelsep=0em,
+                  itemindent=0em,
                   itemsep=.25ex plus .03ex minus .01ex,
-                  leftmargin=1.25em,rightmargin=0em,
+                  leftmargin=0em,rightmargin=0em,
                   listparindent=\unifiedlistparindent,
-                  align=left,label={}]\item[\textsc{Exercise near #1}]\  % 
+                  align=left,label={}]\item[\textsc{Exercise near #1.}]\  % 
 }{%
   \end{itemize}
 }
@@ -102,6 +103,12 @@
   \textsc{Exercise near #1.}\hspace*{0.5em}
 }{%
 }
+
+% \newenvironment{otherproblem}[1]{%
+%   \vspace{\unifiedinterexerciseverticalspace}\par\noindent
+%   \textsc{Exercise near #1.}\hspace*{0.5em}
+% }{%
+% }
 
 \newenvironment{otheranswer}[1]{%
   \par\noindent
