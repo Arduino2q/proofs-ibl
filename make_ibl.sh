@@ -123,6 +123,8 @@ then
   asy -fpdf venn_int_emptyset.asy
   asy -fpdf venn_self.asy
   asy -fpdf venn_symdiff.asy
+  asy -fpdf venn_three.asy
+  asy -fpdf venn_two.asy
   asy -fpdf venn_union.asy
   asy -fpdf venn_union_emptyset.asy
   cd ..

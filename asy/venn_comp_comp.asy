@@ -14,8 +14,10 @@ fill(c1,color_light1);
 
 draw(c1);
 
+picture a_box=new picture;
 real label_offset_x=0.4*r, label_offset_y=0.5*r;
-label("{\scriptsize $A$}",z1+(-1*label_offset_x,label_offset_y));            
+label(a_box,"{\scriptsize $A$}",z1+(-1*label_offset_x,label_offset_y));
+add(a_box,filltype=Fill(white));
 
 draw((-1-r,0)--(1+r,0),nullpen); // empty line to make universal box same size as other two
 

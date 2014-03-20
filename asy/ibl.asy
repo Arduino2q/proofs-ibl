@@ -24,3 +24,10 @@ defaultpen(fontsize(8pt));
 
 // Read in the assorted style stuff, including default font
 texpreamble("\usepackage{ibl_asy}");
+
+// Pick a point at random inside a circle
+pair jiggle(real radius) {
+  real r=radius*unitrand();
+  real theta=360*unitrand();
+  return r*(Cos(theta),Sin(theta));
+}

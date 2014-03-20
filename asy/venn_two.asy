@@ -1,12 +1,7 @@
-// venn_union.asy
+// venn_two.asy
 // Jim Hefferon 2014-Mar-18 PD
+import ibl;
 size(3cm,0);
-// Colors from "Still not getting any" by sp613g, https://kuler.adobe.com/#themeID/181115 
-pen color_light1=rgb(219,213,242);
-pen color_dark1=rgb(22,64,89);
-pen color_base=rgb(201,235,242);
-pen color_dark2=rgb(69,115,110);
-pen color_light2=rgb(242,226,196);
 
 pair z0=(0,0);
 pair z1=(-1,0);  // center of circle1
@@ -16,23 +11,24 @@ path c1=circle(z1,r);
 path c2=circle(z2,r);
 fill(c1,color_light1);
 fill(c2,color_light1);
-
-// picture intersection=new picture;
-// fill(intersection,c1,colour1+colour2);
-// clip(intersection,c2);
-
-// add(intersection);
-
 draw(c1);
 draw(c2);
 
 picture a_box=new picture;
 picture b_box=new picture;
 real label_offset_x=0.4*r, label_offset_y=0.5*r;
+pair label_offset=(label_offset_x,label_offset_y);
 label(a_box,"{\scriptsize $A$}",z1+(-1*label_offset_x,label_offset_y));
 label(b_box,"{\scriptsize $B$}",z2+(label_offset_x,label_offset_y));
 add(a_box,filltype=Fill(white));
 add(b_box,filltype=Fill(white));
+
+
+label("{\tiny $0$}",(-1-0.9*r,-1*r));
+label("{\tiny $1$}",z2+(0.5*label_offset_x,-0.25*label_offset_y)+jiggle(.05*r));
+label("{\tiny $2$}",z1+(-0.5*label_offset_x,-0.25*label_offset_y)+jiggle(.05*r));
+label("{\tiny $3$}",z0+jiggle(.05*r));
+
 
 // pair z=(0,-2);
 // real m=3;

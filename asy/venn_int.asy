@@ -1,3 +1,5 @@
+// venn_int.asy
+// Jim Hefferon 2014-Mar-18 PD
 size(3cm,0);
 // Colors from "Still not getting any" by sp613g, https://kuler.adobe.com/#themeID/181115 
 pen color_light1=rgb(219,213,242);
@@ -24,11 +26,13 @@ add(intersection);
 draw(c1);
 draw(c2);
 
-//draw("$\A$",box,z1);              // Requires [inline] package option.
-//draw(Label("$\B$","$B$"),box,z2); // Requires [inline] package option.
+picture a_box=new picture;
+picture b_box=new picture;
 real label_offset_x=0.4*r, label_offset_y=0.5*r;
-label("{\scriptsize $A$}",z1+(-1*label_offset_x,label_offset_y));            
-label("{\scriptsize $B$}",z2+(label_offset_x,label_offset_y));
+label(a_box,"{\scriptsize $A$}",z1+(-1*label_offset_x,label_offset_y));
+label(b_box,"{\scriptsize $B$}",z2+(label_offset_x,label_offset_y));
+add(a_box,filltype=Fill(white));
+add(b_box,filltype=Fill(white));
 
 // pair z=(0,-2);
 // real m=3;
