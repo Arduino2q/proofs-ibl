@@ -6,7 +6,7 @@ pair codomain_offset=(4,0);
 transform codomain_shift=shift(codomain_offset);
 filldraw(bean,fillpen=color_light2);
 filldraw(codomain_shift*bean,fillpen=color_light2);
-// label("$\mapsvia{f}$",(2,1.5),E);
+filldraw(codomain_shift*codomain_shift*bean,fillpen=color_light2);
 
 real r=.1cm;
 real bar_length=2.5pt;

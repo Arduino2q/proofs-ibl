@@ -3383,8 +3383,8 @@ Therefore $\powerset(A)\subseteq\powerset(B)$.
 \begin{problem}
 Where~$A$ is a finite set, prove that $|\powerset(A)|=2^{|A|}$.    
 \begin{answer}
-We prove this by induction on the number of elements in~$A$.
-The base step is that~$A$ has zero-many elements.
+We use induction on the number of elements in~$A$.
+The base step is that~$A$ is empty and so has zero-many elements.
 The power set of the empty set has
 one element $\powerset(\emptyset)=\set{\emptyset}$ and
 since $2^0=1$, the statement is true in this case. 
@@ -3393,10 +3393,10 @@ For the inductive step suppose that the statement is true for the
 $n=0$, \ldots, $n=k$ cases and consider a set
 with $k+1$~elements
 $A=\set{a_0, \ldots, a_{k-1},a_k}$.
-For each element~$S\in\powerset(A)$, that is, each subset~$S\subseteq A$,
-either $a_k\in S$ or $a_k\notin S$.
-The number of subsets in the first category is $2^{k-1}$ by the inductive
-hypothesis.
+Elements $S\in\powerset(A)$\Dash that is, subsets~$S\subseteq A$\Dash
+fall into one of two categories: either $a_k\notin S$ or $a_k\in S$.
+The inductive hypothesis gives that 
+the number of subsets in the first category is $2^{k-1}$.
 Showing that 
 the second category also contains~$2^{k-1}$-many elements will finish the proof
 because then
@@ -3405,9 +3405,8 @@ $2^{k-1}+2^{k-1}=2\cdot(2^{k-1})=2^k$.
 
 We will show that the collection of subsets containing~$a_k$
 has the same number of elements as the collection of subsets that do not
-contain~$a_k$
-(as noted in the prior paragraph, the inductive hypothesis gives that
-the second collection has $2^{k-1}$-many elements).
+contain~$a_k$.
+(As noted in the prior paragraph, this collection has $2^{k-1}$-many elements.)
 To prove that, with every subset~$S$ of $A$ that contains~$a_k$ we associate
 a subset $\hat{S}$ that does not contain~$a_k$,
 namely $\hat{S}=S-\set{a_k}$.
@@ -3426,7 +3425,7 @@ up element-by-element, and therefore have the same number of elements.
 \section{Cartesian product}
 
 \begin{df}
-The \definend{sequence\/} $\seq{x_0, x_1, \ldots, x_{n-1}}$
+The \definend{sequence} $\seq{x_0, x_1, \ldots, x_{n-1}}$
 formed from the \definend{terms} 
 (or \definend{elements}) $x_0$, $x_1$, \ldots, $x_{n-1}$ 
 is an ordered list of objects.
@@ -3442,14 +3441,11 @@ $x_0=y_0$, $x_1=y_1$, \ldots, $x_{n-1}=y_{n-1}$.
 
 \begin{problem}\pord:
 \begin{items}
-\item $\set{3, 4, 4, 5}=\set{4, 3, 5}$
 \item $\sequence{3, 4, 5}=\sequence{4, 3, 5}$
 \item $\sequence{3, 4, 4, 5}=\sequence{3,4,5}$  
 \end{items}
 \begin{answer}
 \begin{items}
-\item These two are sets that contain the same elements, $3$, $4$, and~$5$,
-  and so are equal.
 \item These sequences are not equal because they differ in the first term.
 \item These sequences are not equal because they have different lengths.
   (In addition, they differ in their third terms.)
@@ -3463,16 +3459,15 @@ the \definend{Cartesian product}
 is the set of all length~$n$ sequences
 $A_0\times A_1\times \cdots \times A_{n-1}
   =\setbuilder{\sequence{a_0,a_1,\ldots,a_{n-1}}}{\text{$a_0\in A_0$, \ldots, and~$a_{n-1}\in A_{n-1}$}}$.
-If the sets are the same we write $A\times\cdots\times A$ 
-as~$A^n$.
+We write $A^n$ for for the 
+Cartesian product of $n$~equal sets $A\times\cdots\times A$.
 \end{df}
 
 A sequence of length two is often called an \definend{ordered pair} and 
 written with parentheses $(x_0,x_1)$
 (similarly we have ordered triples, four-tuples, etc.).
-Thus, we write 
-Cartesian coordinates of points in the plane as members of
-$\R^2=\setbuilder{(x,y)}{x,y\in\R}$.
+Thus we write $\R^2=\setbuilder{(x,y)}{x,y\in\R}$ for the
+Cartesian plane.
 
 \begin{problem}
 Prove that $\N^2\subseteq \Z^2$.
@@ -3483,11 +3478,11 @@ $a,b\in\N$.
 Since $\N\subseteq\Z$, that is a sequence of length two of elements of~$\Z$, 
 and so is an element of~$\Z^2$.
 
-The generalization is that $A\subseteq B$ implies that~$A^n=B^n$ for all 
-$n\in\N$.
+The generalization is that $A\subseteq B$ implies that~$A^n\subseteq B^n$ 
+for all~$n\in\N$.
 The argument is straightforward, just as in the prior paragraph,
 except for the~$n=0$ case.
-A length zero sequence~$\sequence{}$ is empty and so any two 
+A length zero sequence~$\sequence{}$ is empty and so two 
 length zero sequences are equal (they have the same length and do not 
 differ on any of their terms).
 Thus $A^0=B^0=\set{\sequence{}}$.
@@ -3502,21 +3497,21 @@ Thus $A^0=B^0=\set{\sequence{}}$.
 \begin{answer}
   If $A=\emptyset$ then $A\times B=\emptyset$ because there are no 
   sequences with a first term drawn from $\emptyset$.
-  For the same reason, $A\times\emptyset=\emptyset$.
+  Similarly, $A\times\emptyset=\emptyset$.
  
-  If neither set is empty then there exist some $a\in A$ and~$b\in B$, so 
-  $(a,b)\in A\times B$, and $A\times B$ is not empty.  
+  For the other implication, 
+  if neither set is empty then there exist some $a\in A$ and~$b\in B$, so 
+  $(a,b)\in A\times B$, and thus $A\times B$ is not empty.  
 \end{answer}
 \begin{exercise} 
   Show that there are sets so that $A\times B\neq B\times A$.
   Under what circumstances is $A\times B=B\times A$?
 \end{exercise}
 \begin{answer}
-  The two sets $A\times B$ and~$B\times A$ are not equal. 
-  For instance, if $A=\set{0}$ and~$B=\set{1}$ then 
-  $A\times B=\set{\sequence{0,1}}$
-  while
-  $B\times A=\set{\sequence{1,0}}$.
+  An example where $A\times B\neq B\times A$ is if 
+  $A=\set{0}$ and~$B=\set{1}$.
+  Then $A\times B=\set{\sequence{0,1}}$ while
+  $B\times A=\set{\sequence{1,0}}$ and the two sets are not equal.
 
   If $A\times B$ and $B\times A$ are the same set then either that set is empty 
   and so either $A$ is empty or $B$ is empty,
@@ -3530,117 +3525,50 @@ Thus $A^0=B^0=\set{\sequence{}}$.
 \end{exercise}
 \begin{answer}
   The two sets $(A\times B)\times C$ and~$A\times (B\times C)$ 
-  are not equal.
-  For instance, if $A=\set{a}$, $B=\set{b}$, and $C=\set{c}$ then 
-  $(A\times B)\times C=\set{\sequence{\sequence{a,b},c}}$
+  are not equal in general.
+  For instance, if $A=\set{0}$, $B=\set{1}$, and $C=\set{2}$ then 
+  $(A\times B)\times C=\set{\sequence{\sequence{0,1},2}}$
   has a single element, a sequence with two terms, the first
   of which is a sequence.
-  But while $A\times(B\times C)=\set{\sequence{a,\sequence{b,c}}}$ 
+  But while $A\times(B\times C)=\set{\sequence{0,\sequence{1,2}}}$ 
   also has a single element that is a sequence with two terms, 
   the first element here is not a sequence. 
-
-  \remark they are equal only if one of them is empty.  
+% 
+%   \remark we could prove that they are equal only if one of them is empty.  
 \end{answer}
 \begin{exercise} 
   Show that this statement is false: 
-  $A\times B\subseteq A^\prime\times B^\prime$ if and only if
-  $A\subseteq A^\prime$ and $B\subseteq B^\prime$.
+  $A\times B\subseteq \hat{A}\times \hat{B}$ if and only if
+  $A\subseteq \hat{A}$ and $B\subseteq \hat{B}$.
   Patch the statement to make it true.
 \end{exercise}
 \begin{answer}
   The example 
-  $A=\emptyset$, $B=\set{1,2}$, $A^\prime=\set{a}$, $B^\prime=\set{1}$
+  $A=\emptyset$, $B=\set{1,2}$, $\hat{A}=\set{a}$, $\hat{B}=\set{1}$
   shows that the statement is false since 
-  $A\times B=\emptyset\subseteq A^\prime\times B^\prime$ but 
-  $B\not\subseteq B^\prime$.
+  $A\times B=\emptyset\subseteq \hat{A}\times \hat{B}$ but 
+  $B\not\subseteq \hat{B}$.
 
   The adjusted statement is: for all nonempty sets,  
-  $A\times B\subseteq A^\prime\times B^\prime$ if and only if
-  $A\subseteq A^\prime$ and $B\subseteq B^\prime$.
+  $A\times B\subseteq \hat{A}\times \hat{B}$ if and only if
+  $A\subseteq \hat{A}$ and $B\subseteq \hat{B}$.
   We will prove the `if' and `only if' clauses separately.
 
-  For `only if' suppose that $A\subseteq A^\prime$ and~$B\subseteq B^\prime$.
+  For `only if' suppose that $A\subseteq \hat{A}$ and~$B\subseteq \hat{B}$.
   Then any element of~$A\times B$ is a pair $\sequence{a,b}$. 
-  Because of the subset relationship, $a\in A^\prime$ and~$b\in B^\prime$
-  and so $\sequence{a,b}\in A^\prime\times B^\prime$.
-  Thus $A\times B\subseteq A^\prime\times B^\prime$.
+  Because of the subset relationship, $a\in \hat{A}$ and~$b\in \hat{B}$
+  and so $\sequence{a,b}\in \hat{A}\times \hat{B}$.
+  Thus $A\times B\subseteq \hat{A}\times \hat{B}$.
 
-  Now assume that $A\not\subseteq A^\prime$ (the case 
-  of $B\not\subseteq B^\prime$ is similar) and that $a\in A$ 
-  but~$a\notin A^\prime$.
+  Now assume that $A\not\subseteq \hat{A}$ (the case 
+  of $B\not\subseteq \hat{B}$ is similar) and that $a\in A$ 
+  but~$a\notin \hat{A}$.
   Because $B$ is not empty there is a~$b\in B$ and 
   so~$\sequence{a,b}\in A\times B$.
-  But $\sequence{a,b}\notin A^\prime\times B^\prime$,\
-  and so $A\times B\neq A^\prime\times B^\prime$.     
+  But $\sequence{a,b}\notin \hat{A}\times \hat{B}$,
+  and so $A\times B\neq \hat{A}\times \hat{B}$.     
 \end{answer}
 \end{exes}
-% \begin{exes}
-% \item Prove that $A\times B=\emptyset$ iff $A=\emptyset$ or~$B=\emptyset$.
-% \item Show that there are sets so that $A\times B\neq B\times A$.
-%   Under what circumstances is $A\times B=B\times A$?
-% \item Is $(A\times B)\times C$ equal to $A\times (B\times C)$?
-% \item Show that this statement is false: 
-%   $A\times B\subseteq A^\prime\times B^\prime$ if and only if
-%   $A\subseteq A^\prime$ and $B\subseteq B^\prime$.
-%   Patch the statement to make it true.
-% \end{exes}
-% \begin{ans}
-% \begin{exes}
-% \item If $A=\emptyset$ then $A\times B=\emptyset$ because there are no 
-%   sequences with a first term drawn from $\emptyset$.
-%   For the same reason, $A\times\emptyset=\emptyset$.
- 
-%   If neither set is empty then there exist some $a\in A$ and~$b\in B$, so 
-%   $(a,b)\in A\times B$, and $A\times B$ is not empty.
-% \item The two sets $A\times B$ and~$B\times A$ are not equal. 
-%   For instance, if $A=\set{0}$ and~$B=\set{1}$ then 
-%   $A\times B=\set{\sequence{0,1}}$
-%   while
-%   $B\times A=\set{\sequence{1,0}}$.
-
-%   If $A\times B$ and $B\times A$ are the same set then either that set is empty 
-%   and so either $A$ is empty or $B$ is empty,
-%   or it is not.
-%   If it is not empty then for each of its elements $\sequence{x,y}$,
-%   we have both that $x\in A$ and that $x\in B$ (and similarly for~$y$).
-%   Clearly in this case $A=B$.
-% \item The two sets $(A\times B)\times C$ and~$A\times (B\times C)$ 
-%   are not equal.
-%   For instance, if $A=\set{a}$, $B=\set{b}$, and $C=\set{c}$ then 
-%   $(A\times B)\times C=\set{\sequence{\sequence{a,b},c}}$
-%   has a single element, a sequence with two terms, the first
-%   of which is a sequence.
-%   But while $A\times(B\times C)=\set{\sequence{a,\sequence{b,c}}}$ 
-%   also has a single element that is a sequence with two terms, 
-%   the first element here is not a sequence. 
-
-%   \remark they are equal only if one of them is empty.
-% \item The example 
-%   $A=\emptyset$, $B=\set{1,2}$, $A^\prime=\set{a}$, $B^\prime=\set{1}$
-%   shows that the statement is false since 
-%   $A\times B=\emptyset\subseteq A^\prime\times B^\prime$ but 
-%   $B\not\subseteq B^\prime$.
-
-%   The adjusted statement is: for all nonempty sets,  
-%   $A\times B\subseteq A^\prime\times B^\prime$ if and only if
-%   $A\subseteq A^\prime$ and $B\subseteq B^\prime$.
-%   We will prove the `if' and `only if' clauses separately.
-
-%   For `only if' suppose that $A\subseteq A^\prime$ and~$B\subseteq B^\prime$.
-%   Then any element of~$A\times B$ is a pair $\sequence{a,b}$. 
-%   Because of the subset relationship, $a\in A^\prime$ and~$b\in B^\prime$
-%   and so $\sequence{a,b}\in A^\prime\times B^\prime$.
-%   Thus $A\times B\subseteq A^\prime\times B^\prime$.
-
-%   Now assume that $A\not\subseteq A^\prime$ (the case 
-%   of $B\not\subseteq B^\prime$ is similar) and that $a\in A$ 
-%   but~$a\notin A^\prime$.
-%   Because $B$ is not empty there is a~$b\in B$ and 
-%   so~$\sequence{a,b}\in A\times B$.
-%   But $\sequence{a,b}\notin A^\prime\times B^\prime$,\
-%   and so $A\times B\neq A^\prime\times B^\prime$.   
-% \end{exes}
-% \end{ans}
 \end{problem}
 
 \begin{problem}[\maxlength] 
@@ -3650,7 +3578,9 @@ Thus $A^0=B^0=\set{\sequence{}}$.
   Prove that $(A\union B)\times C=(A\times C)\union(B\times C)$.
 \end{exercise}
 \begin{answer}
-  Assume first that $\sequence{x,c}\in (A\union B)\times C$.
+  We will use mutual containment.
+  For the left-to-right direction
+  assume that $\sequence{x,c}\in (A\union B)\times C$.
   Then $x\in A\union B$ and so either $x\in A$ or~$x\in B$.
   If $x\in A$ then $\sequence{x,c}\in A\times C$, while 
   if $x\in B$ then $\sequence{x,c}\in B\times C$, and so 
@@ -3669,15 +3599,15 @@ Thus $A^0=B^0=\set{\sequence{}}$.
   What is the interaction of Cartesian product and intersection?
 \end{exercise}
 \begin{answer}
-\item We will prove that 
+  As suggested by the prior item,
   $(A\intersection B)\times C = (A\times C)\intersection (B\times C)$.
-  For contrast with the prior item
+  Simply to provide an additional proof style besides the one in the prior item,
   we will use a sequence of if and only if statements.
 
-  We have that $\sequence{x,c}\in (A\intersection B)\times C$
-  if and only if both
+  The membership relation $\sequence{x,c}\in (A\intersection B)\times C$
+  holds if and only if both
   $x\in A\intersection B$ and~$c\in C$.
-  That holds if and only if both
+  That is true if and only if both
   $\sequence{x,c}\in A\times C$ and~$\sequence{x,c}\in B\times C$ are true,
   which in turn is equivalent to
   $\sequence{x,c}\in (A\times C)\intersection (B\times C)$.  
@@ -3687,58 +3617,16 @@ Thus $A^0=B^0=\set{\sequence{}}$.
   $\setcomp{A}\times\setcomp{B}$.
 \end{exercise}
 \begin{answer}
-  If the universal set is $\universalset=\Z$,
-  $A=\set{0}$, and $B=\set{1}$ then $A\times B=\set{\sequence{0,1}}$,
+  Fix the universal set~$\universalset=\Z$.
+  If
+  $A=\set{0}$ and $B=\set{1}$ then $A\times B=\set{\sequence{0,1}}$,
   so $\setcomp{(A\times B)}=\Z^2-\set{\sequence{0,1}}$,
   while $\setcomp{A}\times\setcomp{B}=(\Z-\set{0})\times(\Z-\set{1})$.
-  The two sets are not equal. 
-  For instance, $\sequence{0,2}\in \setcomp{A\times B}$
+  The two sets are not equal; 
+  for instance, $\sequence{0,2}\in \setcomp{A\times B}$
   while $\sequence{0,2}\notin\setcomp{A}\times\setcomp{B}$.  
 \end{answer}
 \end{exes}
-% \begin{exes}
-% \item Prove that $(A\union B)\times C=(A\times C)\union(B\times C)$
-% \item What happens for intersection?
-% \item Show that in general $\setcomp{(A\times B)}$ does not equal 
-%   $\setcomp{A}\times\setcomp{B}$.
-% \end{exes}
-% \begin{ans}
-% \begin{exes}
-% \item Assume first that $\sequence{x,c}\in (A\union B)\times C$.
-%   Then $x\in A\union B$ and so either $x\in A$ or~$x\in B$.
-%   If $x\in A$ then $\sequence{x,c}\in A\times C$, while 
-%   if $x\in B$ then $\sequence{x,c}\in B\times C$, and so 
-%   $\sequence{x,c}\in (A\times C)\union (B\times C)$.
-%   Thus $(A\union B)\times C\subseteq (A\times C)\union (B\times C)$.
-  
-%   To get containment in the other direction assume that 
-%   $\sequence{x,c}\in (A\times C)\union (B\times C)$.
-%   Then either $\sequence{x,c}\in A\times C$ or~$\sequence{x,c}\in B\times C$.
-%   If $\sequence{x,c}\in A\times C$ then~$x\in A$ and so 
-%   $\sequence{x,c}\in (A\union B)\times C$.
-%   The  $\sequence{x,c}\in B\times C$ case is similar.
-%   Thus $(A\times C)\union (B\times C)\subseteq (A\union B)\times C$. 
-% \item We will prove that 
-%   $(A\intersection B)\times C = (A\times C)\intersection (B\times C)$.
-%   For contrast with the prior item
-%   we will use a sequence of if and only if statements.
-
-%   We have that $\sequence{x,c}\in (A\intersection B)\times C$
-%   if and only if both
-%   $x\in A\intersection B$ and~$c\in C$.
-%   That holds if and only if both
-%   $\sequence{x,c}\in A\times C$ and~$\sequence{x,c}\in B\times C$ are true,
-%   which in turn is equivalent to
-%   $\sequence{x,c}\in (A\times C)\intersection (B\times C)$.
-% \item If the universal set is $\universalset=\Z$,
-%   $A=\set{0}$, and $B=\set{1}$ then $A\times B=\set{\sequence{0,1}}$,
-%   so $\setcomp{(A\times B)}=\Z^2-\set{\sequence{0,1}}$,
-%   while $\setcomp{A}\times\setcomp{B}=(\Z-\set{0})\times(\Z-\set{1})$.
-%   The two sets are not equal. 
-%   For instance, $\sequence{0,2}\in \setcomp{A\times B}$
-%   while $\sequence{0,2}\notin\setcomp{A}\times\setcomp{B}$.
-% \end{exes}
-% \end{ans}
 \end{problem}
 
 
@@ -3753,6 +3641,7 @@ Thus $A^0=B^0=\set{\sequence{}}$.
 
 %===================================================
 \chapter{Functions, relations}
+% http://gowers.wordpress.com/2009/06/08/why-arent-all-functions-well-defined/
 \begin{df}
 A \definend{function}~$f$ (or \definend{map} or \definend{morphism}) 
 from \definend{domain} set~$D$
@@ -3770,12 +3659,12 @@ called an \definend{argument} or~\definend{input},
 with an element~$c$ from the codomain, 
 called a~\definend{value} or~\definend{output},
 subject to the condition that $d$ determines~$c$. 
-We write $f(d)=c$ and say that $c$ is the \definend{image} of $d$ 
+We write $f(d)=c$ or $d\mapsto c$ 
+and say that $c$ is the \definend{image} of $d$ 
 or that $d$ \definend{maps to}~$c$.
 
-A \definend{bean diagram} pictures the domain and 
-codomain as blobs and 
-either shows the function as a whole as a simple arrow   
+A \definend{bean diagram} pictures sets as blobs and 
+either shows the entire function as a simple arrow,   
 or else shows the function's action on individual elements 
 with arrows that begin with a bar.
 \begin{center}
@@ -3835,6 +3724,10 @@ with arrows that begin with a bar.
 \end{answer}
 \end{problem}
 
+Do not think that a function must have a formula.
+The final item in the prior exercise has a formula but for other items 
+$G$ just has arbitrary pairings.
+
 \remark we often blur the distinction between a function and its graph.
 For instance we may say, ``a function is an input-output relationship'' 
 when technically it is the function's graph that is the pairing.
@@ -3842,16 +3735,21 @@ when technically it is the function's graph that is the pairing.
 The distinction between function and graph
 is there only because the graph does not determine the codomain,
 so we must specify it separately.
-(The graph does determine the domain so that information is  
-redundant.)
-
-Do not think that a function must have a formula.
-The final item in the prior exercise has a formula but for other items 
-$G$ just has arbitrary pairings.
+(The graph does determine the domain.)
 
 \begin{problem}[\maxlength]
-Let $D$ and $C$ be finite sets.
-How many maps are there from $D$ to $C$?
+Show that
+$G=\setbuilder{\sequence{q,n}\in \Q^+\!\!\times\Z^+}{\text{$n$ is $q$'s numerator}}$
+is not well-defined.
+\begin{answer}
+The rational number $1/2$ can be written $2/4$, in which case the numerator 
+is different.  
+\end{answer}
+\end{problem}
+
+\begin{problem}[\maxlength]
+Where $D$ and $C$ are finite sets,
+how many maps are there from $D$ to $C$?
 \begin{answer}
 For each element of the domain, in making a function we have a choice 
 of associating it with any of $|C|$-many values.
@@ -3859,18 +3757,20 @@ Thus the number of possible function is $|C|^{|D|}$.
 \end{answer}
 \end{problem}
 
-A function may have multiple arguments; one example is 
-$\sequence{x,y}\mapsunder{f}x^2-2y^2$.
-We write this map $\map{f}{\R^2}{\R}$ as 
+A function may have multiple arguments; one example is the function
+$\map{f}{\R^2}{\R}$ whose action is 
+$\sequence{x,y}\mapsto x^2-2y^2$.
+We typically write 
 $f(x,y)$ rather than
 $f(\sequence{x,y})$.
-The number of arguments is the function's \definend{arity}.
+We say this $f$ is a \definend{$2$-ary} function (similarly there
+are $3$-ary functions, etc.);
+the number of arguments is the function's \definend{arity}.
 
 \begin{df}
-For $\map{f}{D}{C}$,
-the \definend{range} is the set
-$\setbuilder{y\in C}{\text{there is a $x\in D$ such that $f(x)=y$}}$,
-denoted $\range(f)$ (or $f(D)$).
+For $\map{f}{D}{C}$, the \definend{range} is the set
+$\range(f)=\setbuilder{y\in C}{\text{there is an $x\in D$ such that $f(x)=y$}}$,
+(also denoted $f(D)$).
 \end{df}
 
 \begin{problem}
@@ -3894,7 +3794,7 @@ Let $\map{f}{D}{C}$.
 The \definend{restriction} of $f$ to $B\subseteq D$ is
 the function $\map{\restrictionmap{f}{B}}{B}{C}$ whose action is given by 
 $\restrictionmap{f}{B}(b)=f(b)$ for all $b\in B$.
-A synonym is that
+We may instead say that
 $f$ is an \definend{extension} of~$\restrictionmap{f}{B}$.
 The \definend{image} of the set $B$ under $f$, 
 denoted $\image(f)$ (or $f(B)$),
@@ -3926,7 +3826,7 @@ Let $\map{f}{D}{C}$.
 The \definend{inverse image of the element}~$c\in C$ is
 the set $f^{-1}(c)=\setbuilder{d\in D}{f(d)=c}$.
 The \definend{inverse image of the set}~$A\subseteq C$
-is the set $f^{-1}(A)=\setbuilder{d\in D}{f(d)\in A}$.   
+is $f^{-1}(A)=\setbuilder{d\in D}{f(d)\in A}$.   
 \end{df}
 
 \begin{problem}
@@ -3938,7 +3838,7 @@ given by $x\mapsto x^2$:
 \end{items}
 \begin{answer}
 \begin{items}
-\item It is the set $\set{3,-3}$, sometimes abbreviated as $\pm 3$.
+\item It is the set $\set{3,-3}$, sometimes abbreviated $\pm 3$.
 \item It is the union $\closed{4}{5}\union \closed{-5}{-4}$.    
 \end{items}
 \end{answer}
@@ -3947,9 +3847,9 @@ given by $x\mapsto x^2$:
 \begin{problem}
 Prove that $f^{-1}(A)$ is the union of the sets $f^{-1}(a)$ over all $a\in A$.
 \begin{answer}
-We have that, where $D$ is the domain, 
+Where $D$ is the domain, 
 $f^{-1}(A)=\setbuilder{d\in D}{f(d)\in A}$.
-Restated, this is $\setbuilder{d\in D}{\text{$f(d)=a$ for $a\in A$}}$.
+Restated, this is $\setbuilder{d\in D}{\text{$f(d)=a$ for some $a\in A$}}$.
 This is the union over all $a\in A$ of the 
 sets $S_a=\setbuilder{d\in D}{f(d)=a}$.  
 \end{answer}
@@ -3974,36 +3874,37 @@ $\composed{g}{f}(d)=g(f(d))$.
   \includegraphics{asy/bean_fcn_comp.pdf}  
 \end{center}
 
-Note that, 
-although when reading the expression $\composed{g}{f}$ from left to right 
-the $g$ comes first, 
+Note that while
+in the expression $\composed{g}{f}$ the $g$ is read first,
 the function that is applied first is~$f$. 
 Note also that the codomain of~$f$ is the domain of~$g$
-(we sometimes allow a composition when the domain of~$g$ is not the 
-entire codomain, but instead is a superset of the range of~$f$).
+(we sometimes relax this to 
+allow a composition when the domain of~$g$ is not the 
+entire codomain of~$f$ but instead is a superset of its range).
 
 Read $\composed{g}{f}$ aloud as ``$g$ circle $f$'' 
-or~``$g$ composed with $f$''
+or as~``$g$ composed with $f$''
 (or~``$g$ following $f$'').
 
 \begin{problem} Let $D=\set{0,1,2}$, $C=\set{a,b,c,d}$, 
 and $B=\set{\alpha,\beta,\gamma}$.
-Suppose that $\map{f}{D}{C}$ is given by $0\mapsunder{} a$, $1\mapsunder{} c$, 
-$2\mapsunder{} d$ and that $\map{g}{C}{B}$
-is given by 
+Let $\map{f}{D}{C}$ be given by $0\mapsunder{} a$, $1\mapsunder{} c$, 
+$2\mapsunder{} d$ and let $\map{g}{C}{B}$
+be given by 
 $a\mapsunder{}\alpha$, $b\mapsunder{} \beta$, $c\mapsunder{}\gamma$,
 and $d\mapsunder{}\alpha$.
 \begin{items}
 \item Compute $\composed{g}{f}$ on all arguments or show that the composition
   is not defined.
-\item Compute $\composed{f}{g}$ on all arguments or show it is not defined.
+\item Compute $\composed{f}{g}$ on all arguments or show that it is not defined.
 \item Find the range of $f$, $g$, and any defined compositions    
 \end{items}
 \begin{answer}
 \begin{items}
 \item The function $\map{\composed{g}{f}}{D}{B}$ is given by 
   $0\mapsunder{}\alpha$, $1\mapsunder{}\gamma$, and $2\mapsunder{}\alpha$.
-\item This map is not defined since the codomain of~$g$ is not equal to 
+\item This map is not defined since the outputs from $g$ are not the inputs
+  to~$f$, that is, the codomain of~$g$ is not equal to 
   the domain of~$f$.
 \item The range of~$f$ is $\set{a,c,d}$.
   The range of~$g$ is $\set{\alpha,\beta,\gamma}$. 
@@ -4014,13 +3915,13 @@ and $d\mapsunder{}\alpha$.
 
 \begin{problem}[\midlength]
 Let $\map{f}{\R}{\R}$ be $f(x)=x^2$ and let $\map{g}{\R}{\R}$ be~$g(x)=3x+1$.
-Find the domain, codomain, and a formula for each of
+Find the domain, codomain, and a formula for
 $\composed{g}{f}$ and $\composed{f}{g}$.  
 \begin{answer}
 For $\composed{g}{f}$ the domain and codomain are~$\R$ while a formula is
 $\composed{g}{f}(x)=3x^2+1$.
-The map~$\composed{f}{g}$ also has domain and codomain equal tp~$\R$,
-by the formula is~$\composed{f}{g}(x)=(3x+1)^2=9x^2+6x+1$.
+The map~$\composed{f}{g}$ also has domain and codomain equal to~$\R$,
+but the formula is~$\composed{f}{g}(x)=(3x+1)^2=9x^2+6x+1$.
 \end{answer}
 \end{problem}
 
@@ -4045,34 +3946,13 @@ by the formula is~$\composed{f}{g}(x)=(3x+1)^2=9x^2+6x+1$.
 \end{exercise}
 \begin{answer}
   One example of noncommutativity is $\map{f,g}{\R}{\R}$ given by 
-  $f(x)=x+1$ and $g(x)=2x+3$.
-  The formula for $\composed{f}{g}$ is $2\cdot(x+1)+3=2x+5$ while
-  the formula for $\composed{g}{f}$ is $(2x+3)+1=2x+4$.
-  Thus, for instance, the two differ on argument~$0$.  
+  $f(x)=x+2$ and $g(x)=3x+4$.
+  The formula for $\composed{f}{g}$ is $3\cdot(x+2)+4=3x+10$ while
+  the formula for $\composed{g}{f}$ is $(3x+4)+2=3x+6$.
+  The two are not the same function; 
+  for instance, they differ on argument~$0$.  
 \end{answer}
 \end{exes}
-% \begin{exes}
-% \item\notetext{Associativity} 
-%   $\composed{h}{(\composed{g}{f})}=\composed{(\composed{h}{g})}{f}$    
-% \item Function composition need not be commutative.
-% \end{exes}
-% \begin{ans}
-% \begin{exes}
-% \item The action of the map on the left side
-%   is $(\composed{h}{(\composed{g}{f})(x)}=h(\composed{g}{f}(x))
-%        =h(g(f(x)))$.
-%   The action of the map on the right side  
-%   is $(\composed{(\composed{h}{g})}{f})(x)=(\composed{h}{g})(f(x))
-%       =h(g(f(x)))$.
-%   The two actions are equal\Dash the two give the same association of inputs
-%   with outputs\Dash so the maps are equal.
-% \item One example of noncommutativity is $\map{f,g}{\R}{\R}$ given by 
-%   $f(x)=x+1$ and $g(x)=2x+3$.
-%   The formula for $\composed{f}{g}$ is $2\cdot(x+1)+3=2x+5$ while
-%   the formula for $\composed{g}{f}$ is $(2x+3)+1=2x+4$.
-%   Thus, for instance, the two differ on argument~$0$.
-% \end{exes}
-% \end{ans}
 \end{problem}
 
 
@@ -4082,16 +3962,16 @@ by the formula is~$\composed{f}{g}(x)=(3x+1)^2=9x^2+6x+1$.
 % .....................................
 \section{Inverse}
 
-The definition of a function specifies that for every argument in the
-domain there is 
-exactly one associated value.
-The definition puts no such condition on the elements of the codomain.
+The definition of a function specifies that for every input in the
+domain there is exactly one associated output.
+There is an asymmetry because the 
+definition puts no such condition on elements of the codomain.
 
 \begin{df}
 A function is \definend{one-to-one} (or an \definend{injection}) 
 if for each value there is at most
 one associated argument, that is, if $f(d_0)=f(d_1)$ implies that $d_0=d_1$
-for elements $d_0,d_1$ of the domain.
+for all elements $d_0,d_1$ of the domain.
 A function is \definend{onto} (or a \definend{surjection}) 
 if for each value there is at least
 one associated argument, that is, if for each element $c$ of the codomain
@@ -4116,7 +3996,7 @@ is exactly one associated argument, is a
 
   For onto, fix a member of the codomain~$c\in\R$.
   Observe that $d=(c-1)/3$ is a member of the domain and that 
-  $f(d)=c$.
+  $f(d)=3\cdot ((c-1)/3)+1=(c-1)+1=c$.
   Thus $f$ is onto.  
 \end{answer}
 \begin{exercise} 
@@ -4128,46 +4008,28 @@ is exactly one associated argument, is a
   to the element $-1$ of the codomain.          
 \end{answer}
 \end{exes}
-% \begin{exes}
-% \item Show that $f$ is one-to-one.
-% \item Show that $f$ is onto.    
-% \item Show that $g$ is not one-to-one, and also that it is not onto.
-% \end{exes}
-% \begin{ans}
-% \begin{exes}
-% \item Suppose that $f(x_0)=f(x_1)$ for $x_0,x_1\in\R$.
-%   Then $3x_0+1=3x_1+1$.
-%   Subtract the~$1$'s and divide by~$3$ to conclude that $x_0=x_1$.
-%   Thus~$f$ is one-to-one. 
-% \item Fix a member of the codomain~$c\in\R$.
-%   Observe that $d=(c-1)/3$ is a member of the domain and that 
-%   $f(d)=c$.
-%   Thus $f$ is onto.
-% \item The function~$g$ is not one-to-one because $g(2)=g(-2)$.
-%   It is not onto because no element of the domain~$\R$ is mapped by~$g$
-%   to the element $-1$ of the codomain.        
-% \end{exes}
-% \end{ans}
 \end{problem}
 
 \begin{problem}   \label{CorrespondingSetsHaveSameNumberOfElements}
-  Proving these two items shows that, 
+  Prove that, 
   where $D$ and~$C$ are finite sets, 
   if there is a correspondence~$\map{f}{D}{C}$
-  then the two sets have the same number of elements.
+  then the two have the same number of elements.
+  We do this in two halves, each of which is useful on its own.
 \begin{exes}
 \begin{exercise}
   If $f$ is onto then $|C|\leq |D|$.
 \end{exercise}
 \begin{answer}
-  Assume that $\map{f}{D}{C}$ is onto and
-  that the sets are finite.
-  We will prove the statement by induction on the number of elements in~$D$.
+  Assume that $\map{f}{D}{C}$ is onto.
+  We will prove the statement by induction on the number of elements in
+  the domain~$D$.
   The base step is that~$D$ has no elements at all, so $D=\emptyset$.
   The only function with an empty domain is the function whose graph is 
   empty. 
-  Since this function is onto, the codomain~$C$ is also empty, 
-  and also has no elements.
+  Since this function is onto, the codomain~$C$ is also empty 
+  (otherwise there would be an element of the codomain with no inverse
+  image).
   So the statement holds in this case.
 
   For the inductive step assume that the statement is true when $|D|=0$, 
@@ -4181,19 +4043,19 @@ is exactly one associated argument, is a
   is less than or equal to the number of elements in the domain of that map
   $|\range(\restrictionmap{f}{\hat{D}})|\leq |\hat{D}|$.
 
-  Now add the element~$d$ back by returning to considering~$D$ and the 
-  map~$\map{f}{D}{C}$.
+  Now consider~$D$ and the 
+  map~$\map{f}{D}{C}$ (that is, add the element~$d$ back).
   The set~$D$ has one element more than the set~$\hat{D}$.
   And $\range(f)=C$ is no more than one element larger than
-  $\range(\restrictionmap{f}{\hat{D}})$.
+  $\range(\restrictionmap{f}{\hat{D}})$ since it grows by at most the
+  element $f(d)$.
   Thus $|C|\leq|D|$.  
 \end{answer}
 \begin{exercise} 
   If $f$ is one-to-one then $|C|\geq |D|$.
 \end{exercise}
 \begin{answer}
-  Assume that $\map{f}{D}{C}$ is one-to-one and
-  that the sets are finite.
+  Assume that $\map{f}{D}{C}$ is one-to-one.
   We will do induction on the number of elements in~$D$.
   The base step is that~$|D|=0$.
   The codomain cannot have fewer elements than this
@@ -4219,66 +4081,6 @@ is exactly one associated argument, is a
   Therefore $|C|\geq|D|$.  
 \end{answer}
 \end{exes}
-% \begin{exes}
-% \item If $f$ is onto then $|C|\leq |D|$.
-% \item If $f$ is one-to-one then $|C|\geq |D|$.
-% \end{exes}
-% \begin{ans}
-% \begin{exes}
-% \item Assume that $\map{f}{D}{C}$ is onto and
-%   that the sets are finite.
-%   We will prove the statement by induction on the number of elements in~$D$.
-%   The base step is that~$D$ has no elements at all, so $D=\emptyset$.
-%   The only function with an empty domain is the function whose graph is 
-%   empty. 
-%   Since this function is onto, the codomain~$C$ is also empty, 
-%   and also has no elements.
-%   So the statement holds in this case.
-
-%   For the inductive step assume that the statement is true when $|D|=0$, 
-%   $|D|=1$, \ldots, $|D|=k$ and consider the~$|D|=k+1$ case.
-%   Put an element of~$D$ aside by picking some $d\in D$ and considering 
-%   $\hat{D}=D-\set{d}$ (because this is the $k+1$ case there is at least
-%   one such element in~$D$).
-%   The inductive hypothesis applies to $\hat{D}$ so the number of elements in
-%   the range of the restriction map 
-%   $\map{\restrictionmap{f}{\hat{D}}}{\hat{D}}{\range(\restrictionmap{f}{\hat{D}})}$
-%   is less than or equal to the number of elements in the domain of that map
-%   $|\range(\restrictionmap{f}{\hat{D}})|\leq |\hat{D}|$.
-
-%   Now add the element~$d$ back by returning to considering~$D$ and the 
-%   map~$\map{f}{D}{C}$.
-%   The set~$D$ has one element more than the set~$\hat{D}$.
-%   And $\range(f)=C$ is no more than one element larger than
-%   $\range(\restrictionmap{f}{\hat{D}})$.
-%   Thus $|C|\leq|D|$.
-% \item Assume that $\map{f}{D}{C}$ is one-to-one and
-%   that the sets are finite.
-%   We will do induction on the number of elements in~$D$.
-%   The base step is that~$|D|=0$.
-%   The codomain cannot have fewer elements than this
-%   so~$|C|\geq |D|$ holds in this case.
-
-%   For the inductive step assume that the statement is true when $|D|=0$, 
-%   \ldots, $|D|=k$ and consider~$|D|=k+1$.
-%   Pick some $d\in D$ and consider 
-%   $\hat{D}=D-\set{d}$ (because this is the $k+1$ case there is at least
-%   one such element).
-%   The inductive hypothesis applies to $\hat{D}$ so that 
-%   the number of elements in the range of the restriction map 
-%   $\map{\restrictionmap{f}{\hat{D}}}{\hat{D}}{\range(\restrictionmap{f}{\hat{D}})}$
-%   is at least as great as the number of elements in the domain of that map
-%   $|\range(\restrictionmap{f}{\hat{D}})|\geq |\hat{D}|$.
-
-%   Now extend to~$D$ and the map~$\map{f}{D}{C}$.
-%   The set~$D$ has one element more than the set~$\hat{D}$.
-%   Because~$f$ is one-to-one, the value~$f(d)$ is not in 
-%   the range of the restriction map~$\range(\restrictionmap{f}{\hat{D}})$.
-%   Thus $\range(f)$ is one element larger than
-%   $|\range(\restrictionmap{f}{\hat{D}})|$.
-%   Therefore $|C|\geq|D|$.
-% \end{exes}
-% \end{ans}
 \end{problem}
 
 \begin{problem} \label{InteractionOneToONeOntoWithComposition}
@@ -4292,7 +4094,7 @@ Prove.
   Suppose that $\composed{g}{f}(x_0)=\composed{g}{f}(x_1)$ for
   some $x_0,x_1\in D$.
   Then $g(f(x_0))=g(f(x_1))$.
-  The function~$g$ is one-to-one so since the values $g(f(x_0))$ 
+  The function~$g$ is one-to-one, so since the values $g(f(x_0))$ 
   and~$g(f(x_1))$ are equal, the arguments $f(x_0)$ and~$f(x_1)$ are
   also equal.
   The function~$f$ is one-to-one and so $x_0=x_1$.
@@ -4315,43 +4117,13 @@ Prove.
 \begin{answer}
   This is immediate from the prior two items. 
 \end{answer}
-% \end{exes}
-% \begin{exes}
-% \item A composition of one-to-one functions is one-to-one.
-% \item A composition of onto functions is onto.
-% \item A composition of correspondences is a correspondence.    
-% \end{exes}
-% \begin{ans}
-% \begin{exes}
-% \item Let $\map{f}{D}{C}$ and~$\map{g}{C}{B}$ be one-to-one.
-%   Suppose that $\composed{g}{f}(x_0)=\composed{g}{f}(x_1)$ for
-%   some $x_0,x_1\in D$.
-%   Then $g(f(x_0))=g(f(x_1))$.
-%   The function~$g$ is one-to-one so since the values $g(f(x_0))$ 
-%   and~$g(f(x_1))$ are equal, the arguments $f(x_0)$ and~$f(x_1)$ are
-%   also equal.
-%   The function~$f$ is one-to-one and so $x_0=x_1$.
-%   Because $\composed{g}{f}(x_0)=\composed{g}{f}(x_1)$ implies that
-%   $x_0=x_1$, the composition is one-to-one.
-% \item Let $\map{f}{D}{C}$ and~$\map{g}{C}{B}$ be functions that are onto.
-%   Fix an element of the codomain of the composition~$b\in B$.
-%   The function~$g$ is onto so there is a $c\in C$ such that $g(c)=b$.
-%   The function~$f$ is onto so there is a $d\in D$ such that $f(d)=c$.
-%   Then $\composed{g}{f}(d)=b$, and so the composition is onto.
-% \item This is immediate from the prior two items. 
-% \end{exes}
-% \end{ans}
-% \end{problem}
-
-% \begin{problem} 
-% \begin{exes}
 \begin{exercise} 
   If $\composed{g}{f}$ is onto then $g$ is onto.
 \end{exercise}
 \begin{answer}
   Let $\map{f}{D}{C}$ and~$\map{g}{C}{B}$ be such that 
   the composition $\composed{g}{f}$ is onto.
-  Suppose that~$g$ is not onto.
+  Suppose for a contradiction that~$g$ is not onto.
   Then there is a~$b\in B$ such that there is no~$c\in C$
   with~$g(c)=b$.
   But this means that there is no~$d\in D$ such that 
@@ -4375,8 +4147,7 @@ Prove.
 \end{exercise}
 \begin{answer}
   The other two cases do not hold.
-  
-  First we give an example of a composition $\composed{g}{f}$ that is onto
+  First is an example of a composition $\composed{g}{f}$ that is onto
   but where~$f$ is not onto.   
   Let $D=\set{0,1,2}$, $C=\set{a,b,c}$, and $B=\set{\alpha, \beta}$.
   Let $f$ map $0\mapsunder{} b$, $1\mapsunder{}b$, and~$2\mapsunder{} c$.
