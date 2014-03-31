@@ -10,14 +10,13 @@ filldraw(codomain_shift*bean,fillpen=color_light2);
 filldraw(cocodomain_shift*bean,fillpen=color_light2);
 // label("$\mapsvia{f}$",(2,1.5),E);
 
-// Points
 real r=.1cm;
 real bar_length=2.5pt;
 // real label_offset_x=0.12*r, label_offset_y=0.23*r;
 // label("{$D$}",bean1+(label_offset_x,label_offset_y));            
 // label("{$C$}",codomain_shift*bean1+(label_offset_x,label_offset_y));
-pair zero=bean1+(0.14*r,0.20*r);
-pair one=bean0+(0.18*r,0.20*r);
+pair zero=bean1+(0.14*r,0.28*r);
+pair one=bean0+(0.18*r,0.30*r);
 dot("{$0$}",zero,align=W);
 dot("{$1$}",one,align=W);
 pair a=codomain_shift*(bean1+(0.14*r,0.26*r));
@@ -31,8 +30,7 @@ pair beta=codomain_shift*codomain_shift*(bean0+(0.14*r,0.20*r));
 dot("{$\alpha$}",alpha,align=E);
 dot("{$\beta$}",beta,align=E);
 
-//Function associations between points
-path zero_to_b = zero{dir(20)}..b;
+path zero_to_b = zero{dir(30)}..b;
 path one_to_c = one{dir(20)}..c;
 
 path zero_to_b_drawn = subpath(zero_to_b,0.04,0.96);  // I don't think bar takes account of Margin
@@ -50,15 +48,3 @@ path b_to_alpha_drawn = subpath(b_to_alpha,0.04,0.96);
 draw(b_to_alpha_drawn,black,BeginBar(bar_length),Arrow(TeXHead),margin=NoMargin);
 path c_to_beta_drawn = subpath(c_to_beta,0.04,0.96);  
 draw(c_to_beta_drawn,black,BeginBar(bar_length),Arrow(TeXHead),margin=NoMargin);
-
-// Functions
-pair f_start=interp(bean2,bean5,0.5)+(0,0.5);
-pair f_end=codomain_shift*f_start;
-pair g_start=f_end;
-pair g_end=codomain_shift*f_end;
-path f = f_start{dir(30)}..f_end;
-path f_drawn = subpath(f,0.3,0.7);  // 
-draw("{$f$}",f_drawn,LeftSide,black,ArcArrow,NoMargin);
-path g = g_start{dir(30)}..g_end;
-path g_drawn = subpath(g,0.3,0.7);  // 
-draw("{$g$}",g_drawn,LeftSide,black,ArcArrow,NoMargin);

@@ -19,13 +19,13 @@ dot("{$a$}",a,align=W);
 dot("{$f(a)$}",fa,align=E);
 path atofa = a{dir(30)}..fa;
 path atofa_drawn = subpath(atofa,0.04,0.96);  // I don't think bar takes account of Margin
-draw(atofa_drawn,black,BeginBar(bar_length),ArcArrow,margin=NoMargin);
+draw(atofa_drawn,black,BeginBar(bar_length),Arrow(TeXHead),margin=NoMargin);
 pair b=bean0+(0.18*r,0.26*r);
 pair fb=codomain_shift*bean0+(0.01*r,0.20*r);
 dot("{$b$}",b,align=W);
 dot("{$f(b)$}",fb,align=E);
 path btofb = b{dir(30)}..fb;
 path btofb_drawn = subpath(btofb,0.04,0.96);  // I don't think bar takes account of Margin
-draw(btofb_drawn,black,BeginBar(bar_length),ArcArrow,margin=NoMargin);
+draw(btofb_drawn,black,BeginBar(bar_length),Arrow(TeXHead),margin=NoMargin);
 
 
