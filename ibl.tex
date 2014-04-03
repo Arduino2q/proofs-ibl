@@ -3425,18 +3425,14 @@ up element-by-element, and therefore have the same number of elements.
 \section{Cartesian product}
 
 \begin{df}
-The \definend{sequence} $\seq{x_0, x_1, \ldots, x_{n-1}}$
-formed from the \definend{terms} 
-(or \definend{elements}) $x_0$, $x_1$, \ldots, $x_{n-1}$ 
-is an ordered list of objects.
-The \definend{length} of a sequence $\lh(\seq{x_0, x_1, \ldots, x_{n-1}})$
+A \definend{sequence} $\seq{x_0, x_1, \ldots, x_{n-1}}$
+is an ordered list of its \definend{terms} 
+$x_0$, $x_1$, \ldots, $x_{n-1}$.
+Its \definend{length} $\lh(\seq{x_0, x_1, \ldots, x_{n-1}})$
 is the number of terms~$n$.
-Two sequences $\seq{x_0, x_1, \ldots, x_{n-1}}$ and
-$\seq{y_0, y_1, \ldots, y_{m-1}}$ are equal if and only if
+Two sequences are equal if and only if
 they have the same length and
-the same terms, in the same order:
-$n=m$ and
-$x_0=y_0$, $x_1=y_1$, \ldots, $x_{n-1}=y_{n-1}$. 
+the same terms, in the same order. 
 \end{df}
 
 \begin{problem}\pord:
@@ -3447,8 +3443,7 @@ $x_0=y_0$, $x_1=y_1$, \ldots, $x_{n-1}=y_{n-1}$.
 \begin{answer}
 \begin{items}
 \item These sequences are not equal because they differ in the first term.
-\item These sequences are not equal because they have different lengths.
-  (In addition, they differ in their third terms.)
+\item These are unequal because they differ in their third terms.
 \end{items}
 \end{answer}
 \end{problem}
@@ -3463,10 +3458,12 @@ We write $A^n$ for for the
 Cartesian product of $n$~equal sets $A\times\cdots\times A$.
 \end{df}
 
+Note the distinction between the diamond brackets $\sequence{\cdots}$ 
+that denote sequences and the curly braces $\set{\cdots}$ for sets. 
 A sequence of length two is often called an \definend{ordered pair} and 
 written with parentheses $(x_0,x_1)$
 (similarly we have ordered triples, four-tuples, etc.).
-Thus we write $\R^2=\setbuilder{(x,y)}{x,y\in\R}$ for the
+Thus we may write $\R^2=\setbuilder{(x,y)}{x,y\in\R}$ for the
 Cartesian plane.
 
 \begin{problem}
@@ -4618,16 +4615,15 @@ fixing axes and giving equations.
 \end{problem}
 
 \begin{problem} 
-Relations could be reflexive or not, 
+Relations can be reflexive or not, 
 symmetric or not, and transitive or not.
-We will find a binary relation on $A=\set{0,1,2}$
-satisfying each possibility.
+For each combination, give a binary relation on $A=\set{0,1,2}$.
 \begin{exes}
 \begin{exercise}
   Give example relations for the four cases
   that are not reflexive. 
-  That is, find a relation that is 
-  also not symmetric and not transitive, etc.     
+  That is, give a first relation that is not reflexive
+  not symmetric and not transitive, etc.     
 \end{exercise}
 \begin{answer}
   The first is a relation that is not reflexive, not symmetric, and
@@ -4678,7 +4674,6 @@ satisfying each possibility.
 \begin{exercise}
   Give examples for the other four cases.
 \end{exercise}
-\end{exes}
 \begin{answer}
   A relation that is reflexive, not symmetric, and not transitive is
   $R_4=\set{\sequence{0,0},\sequence{1,1},\sequence{2,2}}$.
@@ -4716,59 +4711,63 @@ satisfying each possibility.
   Since~$R_7$ contains all pairs, each implication must be
   satisfied.
 \end{answer}
+\end{exes}
 \end{problem}
 
-% \begin{ex} \label{RationalsAsEqClasses}
-% Consider the relation
-% $\setbuilder{((p,q),(n,d))\in (\Z\times\Z^+)^2}{pd=qn}$
-% (restated, the pair $(p,q)\\Z\times\Z^+$\ is related to the pair~$(n,d)$
-% if $pd=qn$).
-% List five elements.
-% Prove that it is an equivalence relation.
-% \begin{ans}
-% Each element is a pair of pairs.
-% Five elements are~$((1,2),(2,4))$, 
-% $((-1,2),(2,-4))$,  
-% $((0,1),(0,4))$,  
-% $((3,3),(-2,-2))$,  
-% and~$((10,5),(2,1))$.
-
-% The relation is reflexive, each $(p,q)\in\Z\times\Z^+$ is related to itself, 
-% because $pq=qp$. 
-% To verify that it is symmetric assume that $(p,q)$ is related to~$(n,d)$.
-% Then $pd=qn$, which gives $nq=dp$, and so $(n,d)$ is related to~$(p,q)$.
-
-% To check that the relation is transitive assume that 
-% $(p,q)$ is related to~$(n,d)$
-% and also that $(n,d)$ is related to~$(a,b)$.
-% Then $pd=qn$ and~$nb=da$.
-% Multiply both sides of the first equation by $ab$ to get $pdab=qnab$, regroup as
-% $pb\cdot(da)=qa\cdot(nb)$, and cancel $da=nb$ to get $pb=qa$.
-% This shows that $(p,q)$ is related to $(a,b)$.  
-% \end{ans}
-% \end{ex}
-
-\begin{problem}[\maxlength]
-What is wrong with this purported proof that in the definition
-of an equivalence relation, the condition of reflexivity is redundant?
-``For any $x$, symmetry is that $x$ is related to~$y$ 
-implies that $y$ is related to~$x$.
-By transitivity we have $x$ is related to~$y$ and $y$ is related to~$x$ 
-together imply that $x$ is related to~$x$.
-Therefore, symmetry and transitivity together imply reflexivity.''  
+\begin{problem} \label{RationalsAsEqClasses}
+Consider the relation
+$\setbuilder{(\sequence{p,q},\sequence{n,d})\in (\Z\times\Z^+)^2}{pd=qn}$
+(restated, $\sequence{p,q}\\Z\times\Z^+$\ is related to~$\sequence{n,d}$
+if $pd=qn$).
+List five elements.
+Prove that it is an equivalence.
 \begin{answer}
-Consider the relation   
-$R=\set{\sequence{0,0},\sequence{0,1},\sequence{1,0},\sequence{1,1}}$
-on the set~$A=\set{0,1,2}$.
-This relation is symmetric and transitive but is not reflexive.
-The implication `if $x$ is related to~$y$ then $y$ is related to~$x$'
-is true in the case of $x=2$ and~$y=2$, but it is vacuously true.
+Each element of the relation is a sequence of sequence, specifically a
+pair of pairs.
+Five elements are~$\sequence{\sequence{1,2},\sequence{2,4}}$, 
+$\sequence{\sequence{-1,2},\sequence{2,-4}}$,  
+$\sequence{\sequence{0,1},\sequence{0,4}}$,  
+$\sequence{\sequence{3,3},\sequence{-2,-2}}$,  
+and~$\sequence{\sequence{10,5},\sequence{2,1}}$.
+
+The relation is reflexive, each $\sequence{p,q}\in\Z\times\Z^+$ is 
+related to itself, because $pq=qp$. 
+To verify that it is symmetric assume that 
+$\sequence{p,q}$ is related to~$\sequence{n,d}$.
+Then $pd=qn$, which gives $nq=dp$,
+and so $\sequence{n,d}$ is related to~$\sequence{p,q}$.
+
+To check that the relation is transitive assume that 
+$\sequence{p,q}$ is related to~$\sequence{n,d}$
+and also that $\sequence{n,d}$ is related to~$\sequence{a,b}$.
+Then $pd=qn$ and~$nb=da$.
+Multiply both sides of the first equation by $ab$ to get $pdab=qnab$, regroup as
+$pb\cdot(da)=qa\cdot(nb)$, and cancel $da=nb$ to get $pb=qa$.
+This shows that $\sequence{p,q}$ is related to $\sequence{a,b}$.  
 \end{answer}
 \end{problem}
 
+% \begin{problem}[\maxlength]
+% What is wrong with this purported proof that in the definition
+% of an equivalence relation, the condition of reflexivity is redundant?
+% ``For any $x$, symmetry is that $x$ is related to~$y$ 
+% implies that $y$ is related to~$x$.
+% By transitivity we have $x$ is related to~$y$ and $y$ is related to~$x$ 
+% together imply that $x$ is related to~$x$.
+% Therefore, symmetry and transitivity together imply reflexivity.''  
+% \begin{answer}
+% Consider the relation   
+% $R=\set{\sequence{0,0},\sequence{0,1},\sequence{1,0},\sequence{1,1}}$
+% on the set~$A=\set{0,1,2}$.
+% This relation is symmetric and transitive but is not reflexive.
+% The implication `if $x$ is related to~$y$ then $y$ is related to~$x$'
+% is true in the case of $x=2$ and~$y=2$, but it is vacuously true.
+% \end{answer}
+% \end{problem}
+
 \begin{df}
-If $R$ is an equivalence relation on~$X$ then instead of $(x,y)\in R$
-we may write $x\equiv y\pmod R$.
+If $R$ is an equivalence relation on~$X$ then 
+we sometimes write $x\equiv y\pmod R$ instead of $\sequence{x,y}\in R$.
 The \definend{equivalence class} of $x\in X$ is the set
 $\eqclass{x}=\setbuilder{y\in X}{y\equiv x\pmod R}$.   
 \end{df}
@@ -4789,8 +4788,8 @@ First assume that statement~(i) holds, so that $x_0\equiv x_1\pmod R$.
 The equivalence classes $\eqclass{x_0}$ and~$\eqclass{x_1}$ are sets so
 we will prove that they are equal by mutual containment.
 If $y\in\eqclass{x_0}$ then $y\equiv x_0 \pmod R$,
-so $(y,x_0)\in R$, and so $(y,x_1)\in R$
-(by transitivity, with $(x_0,x_1)\in R$),
+so $\sequence{y,x_0}\in R$, and so $\sequence{y,x_1}\in R$
+(by transitivity, with $\sequence{x_0,x_1}\in R$),
 showing that $y\in\eqclass{x_1}$.
 Containment the other way is similar.
 Thus statement~(i) implies statement~(ii).
@@ -4800,11 +4799,12 @@ That statement~(ii) implies statement~(iii) is trivial.
 Finally, assume statement~(iii).
 Let $y$ be an element of $\eqclass{x_0}\intersection\eqclass{x_1}$.
 Then $y\equiv x_0\pmod R$ and~$y\equiv x_1\pmod R$,
-that is, $(y,x_0)\in R$ and~$(y,x_1)\in R$.
+that is, $\sequence{y,x_0}\in R$ and~$\sequence{y,x_1}\in R$.
 The equivalence relation property of 
-symmetry applied to $(y,x_0)\in R$ yields~$(x_0,y)\in R$.
-Transitivity applied to the two $(x_0,y)\in R$ and~$(y,x_1)\in R$ yields
-that $(x_0,x_1)\in R$, and so $x_0\equiv x_1\pmod R$.
+symmetry applied to $\sequence{y,x_0}\in R$ yields~$\sequence{x_0,y}\in R$.
+Transitivity applied to the 
+two $\sequence{x_0,y}\in R$ and~$\sequence{y,x_1}\in R$ yields
+that $\sequence{x_0,x_1}\in R$, and so $x_0\equiv x_1\pmod R$.
 Therefore~(iii) implies~(i).
 \end{answer}
 \end{problem}
@@ -4815,14 +4815,14 @@ collection of nonempty subsets of~$P\subseteq X$ such that every
 element $x\in X$ is in exactly one of the $P$'s.
 That is, $\partition{P}$ partitions~$X$ if and only if each
 $P\in\partition{P}$ is nonempty,
-$\partition{P}$ \definend{covers}~$X$
+and $\partition{P}$ \definend{covers}~$X$
 (the union of all $P\in\partition{P}$ is equal to~$X$),
 and the $P$ are \definend{pairwise disjoint}
 (if $P\intersection \hat{P}\neq\emptyset$ then $P=\hat{P}$).
 \end{df}
 
 \begin{center}
-  \grf{asy/bean_partition.pdf}{Set~$X$ partitioned into four parts $\partition{P}=\set{P_0,P_1,P_2,P_3}$}
+  \grf{asy/bean_partition.pdf}{Set~$X$ partitioned into four subset parts $\partition{P}=\set{P_0,P_1,P_2,P_3}$}
 \end{center}
 
 \begin{problem} 
@@ -4847,15 +4847,13 @@ and the $P$ are \definend{pairwise disjoint}
       $X=\R$, $\partition{P}=\setbuilder{P_x}{x\in \R}$
       where $P_x=\setbuilder{y\in\R}{x-y\in \Z}$
       \hspace{0.75em}\hint some unequal reals $x_0\neq x_1$ 
-      are associated with equal parts $P_{x_0}=P_{x_1}$  
-      so what may naively appear to be two elements of~$\partition{P}$
+      are associated with parts that are equal $P_{x_0}=P_{x_1}$; 
+      for instance, $P_{0.3}=P_{1.3}$.  
+      so what may at first look appear to be two elements of~$\partition{P}$
       is actually a single element.
 \end{exercise}
 \begin{answer}
-  Before we start we observe that there are $x_0,x_1\in\R$ such that
-  $P_{x_0}=P_{x_1}$; an example is $x_0=0.25$ and~$x_1=1.25$.
-
-  To prove that $\partition{p}$ is a partition, first note that $x\in P_x$.
+  To prove that $\partition{P}$ is a partition, first note that $x\in P_x$.
   For this reason no~$P_x$ is empty and also
   every $x\in\R$ is an element of some~$P\in\partition{P}$.
 
@@ -4884,7 +4882,7 @@ and the $P$ are \definend{pairwise disjoint}
 \end{exercise}
 \begin{answer}
   Before we begin observe that 
-  for some pairs $i,j\in\Z$ the sets $P_i$ and~$P_j$ are equal;
+  for some $i,j\in\Z$ the sets $P_i$ and~$P_j$ are equal;
   one example is that $P_1=P_4$ (numbers in either set leave a remainder 
   of~$1$ on division by~$3$).
 
@@ -5006,8 +5004,8 @@ Prove.
 \begin{exercise} 
   Where $R$ is an equivalence, 
   the collection of equivalence classes 
-  $\setbuilder{\eqclass{x}}{x\in X}$ forms a partition of~$X$.
-  We say that it is the partition \definend{induced} by the relation.
+  $\setbuilder{\eqclass{x}}{x\in X}$ forms a partition of~$X$,
+  the partition \definend{induced} by the relation.
 \end{exercise}
 \begin{answer}
   Let $\partition{P}$ be the collection $\setbuilder{\eqclass{x}}{x\in X}$.
@@ -5036,9 +5034,10 @@ Prove.
 \begin{exercise} 
   Where $\partition{P}$ is a partition of~$X$, 
   the relation 
-  $R=\setbuilder{(x,y)\in X^2}{\text{$x$ and~$y$ are in the same part}}$ 
-  is an equivalence.
-  We say that this relation \definend{arises from} the partition. 
+  $R=\setbuilder{\sequence{x,y}\in X^2}{
+            \text{$x$ and~$y$ are in the same part}}$ 
+  is an equivalence, 
+  the relation that \definend{arises from} the partition. 
 \end{exercise}
 \begin{answer}
   Suppose that $\partition{P}$ is a partition. 
@@ -5221,7 +5220,7 @@ Suppose that $\map{f}{D}{C}$.
 \begin{df}
 A binary relation~$R$ is \definend{antisymmetric} if
 $(x,y)\in R$ and $(y,x)\in R$ implies that $x=y$.
-A relation is a \definend{partial ordering} if it is 
+A binary relation is a \definend{partial ordering} if it is 
 reflexive, antisymmetric, and transitive.  
 \end{df}
 
