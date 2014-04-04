@@ -1,3 +1,4 @@
+// bean_fcn_comp.asy
 size(6cm,6.5cm);
 // Colors from "Still not getting any" by sp613g, https://kuler.adobe.com/#themeID/181115
 import ibl;
@@ -12,9 +13,19 @@ filldraw(cocodomain_shift*bean,fillpen=color_light2);
 
 real r=.1cm;
 real label_offset_x=0.12*r, label_offset_y=0.23*r;
-label("{$D$}",bean1+(label_offset_x,label_offset_y));            
-label("{$C$}",codomain_shift*bean1+(label_offset_x,label_offset_y));            
-label("{$B$}",cocodomain_shift*bean1+(label_offset_x,label_offset_y));            
+// label("{$D$}",bean1+(label_offset_x,label_offset_y));            
+// label("{$C$}",codomain_shift*bean1+(label_offset_x,label_offset_y));            
+// label("{$B$}",cocodomain_shift*bean1+(label_offset_x,label_offset_y));          
+picture d_box=new picture;
+label(d_box,"$D$",bean1+(label_offset_x,label_offset_y));
+add(d_box,filltype=Fill(white));
+picture c_box=new picture;
+label(c_box,"$C$",codomain_shift*bean1+(label_offset_x,label_offset_y));
+add(c_box,filltype=Fill(white));
+picture b_box=new picture;
+label(b_box,"$B$",cocodomain_shift*bean1+(label_offset_x,label_offset_y));
+add(b_box,filltype=Fill(white));
+  
 
 path dtoc = bean4{dir(30)}..codomain_shift*bean1;
 path dtoc_drawn=subpath(dtoc,0.3,0.7);
@@ -24,7 +35,7 @@ path ctob = codomain_shift*bean4{dir(30)}..cocodomain_shift*bean1;
 path ctob_drawn=subpath(ctob,0.3,0.7);
 draw(ctob_drawn,black,ArcArrow,margin=NoMargin);
 label("$g$",point(ctob,0.5),align=N);
-path dtob = bean4{dir(35)}..cocodomain_shift*bean1;
+path dtob = bean4{dir(25)}..cocodomain_shift*bean1;
 path dtob_drawn=shift((0,1))*subpath(dtob,0.20,0.80);
 draw(dtob_drawn,black,ArcArrow,margin=NoMargin);
 label("$g\circ f$",point(dtob_drawn,0.5),align=N);

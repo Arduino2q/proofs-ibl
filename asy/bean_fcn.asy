@@ -10,8 +10,12 @@ filldraw(codomain_shift*bean,fillpen=color_light2);
 
 real r=.1cm;
 real label_offset_x=0.12*r, label_offset_y=0.23*r;
-label("{$D$}",bean1+(label_offset_x,label_offset_y));            
-label("{$C$}",codomain_shift*bean1+(label_offset_x,label_offset_y));            
+picture d_box=new picture;
+label(d_box,"$D$",bean1+(label_offset_x,label_offset_y));
+add(d_box,filltype=Fill(white));
+picture c_box=new picture;
+label(c_box,"$C$",codomain_shift*bean1+(label_offset_x,label_offset_y));
+add(c_box,filltype=Fill(white));
 
 path dtoc = bean4{dir(30)}..codomain_shift*bean1;
 path dtoc_drawn=subpath(dtoc,0.3,0.7);

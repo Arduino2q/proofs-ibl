@@ -28,7 +28,7 @@
 \chapter{Number Theory}
 
 We begin with results about the integers $\Z=\set{\ldots,-2,-1,0,1,2,\ldots}$.
-In this chapter ``number'' means integer.
+In this chapter, ``number'' means integer.
 Some statements refer to the natural numbers $\N=\set{0,1,2,\ldots}$.
 
 
@@ -74,11 +74,11 @@ but ``Does $2/5$?''\spacefactor=1000\ is not sensible.
     If $n\in\Z$ is even then $n=2k$ for some $k\in\Z$.
     Then $-n=2\cdot(-k)$ shows that the negative is also even.  
   \end{answer}
-  \begin{exercise}
+  \begin{exercise}[\midlength]
     If a number is odd then its negative is odd.
   \end{exercise}
   \begin{answer}
-    With the prior item in mind we first show that a number is even
+    Extending the prior item, we will show that a number is even
     if and only if its negative is even.
     Suppose that a number $n\in\Z$ has a negative $-n$ that is even.
     Since the negative of $-n$ is~$n$, the prior item shows that $n$ is even.
@@ -148,40 +148,13 @@ but ``Does $2/5$?''\spacefactor=1000\ is not sensible.
 \end{exercise}
 \begin{answer}
   A reasonable generalization is that for any $d\in\Z$
-  the sum and difference of multiples of~$d$ is again a multiple of~$d$.
- 
-  For a proof
+  the sum and difference of multiples of~$d$ is again a multiple of~$d$. 
+  For the proof,
   let $a,b\in\Z$ be multiples of~$d$ so that $a=dm$ and~$b=dn$ 
   for some $m,n\in\Z$.
   Then $a+b=dm+dn=d(m+n)$ is a multiple of~$d$
   and $a-b=dm-dn=d(m-n)$ is multiple of~$d$.    
 \end{answer}
-% \item The sum of two evens is even.
-%   The difference of two evens is even.
-% \item The sum of two odds is odd. 
-% The difference of two odds is odd.
-% \item Where $a,b\in\Z$, the number $a+b$ is even if and only if $a-b$ is even.
-% \item Generalize the first item to arbitrary divisors~$d$.
-% \end{exes}  
-% \begin{ans}
-% \begin{exes}
-% \item Let $a,b\in\Z$ be even so that $a=2m$ and~$b=2n$ for some $m,n\in\Z$.
-%   Then $a+b=2m+2n=2(m+n)$ is even, and $a-b=2m-2n=2(m-n)$ is even.
-% \item Both statements are false: for instance $1$ and~$3$ are odd
-%   but both $1+3$ and~$1-3$ are even.
-% \item First suppose that the sum is even, so $a+b=2k$ for some $k\in\Z$.
-%   Then $a-b=a+b-2b=2k-2b=2(k-b)$ is even.
-
-%   The other half is similar:
-%   if $a-b=2m$ for $m\in\Z$ then $a+b=a-b+2b=2k+2b$ is even.
-% \item A reasonable generalization is that for any $d\in\Z$
-%   the sum and difference of multiples of~$d$ is again a multiple of~$d$.
- 
-%   For a proof
-%   let $a,b\in\Z$ be multiples of~$d$ so that $a=dm$ and~$b=dn$ 
-%   for some $m,n\in\Z$.
-%   Then $a+b=dm+dn=d(m+n)$ is a multiple of~$d$
-%   and $a-b=dm-dn=d(m-n)$ is multiple of~$d$.
 \end{exes}
 \end{problem}
 
@@ -196,7 +169,6 @@ but ``Does $2/5$?''\spacefactor=1000\ is not sensible.
   so that $a=2m$ and~$b=2n$ for some $m,n\in\Z$.
   Then $ab=2m\cdot 2n=2(m\cdot 2n)$ is even.  
 \end{answer}
-
 \begin{exercise}
   The quotient of two evens, if it is an integer, is even.
 \end{exercise}
@@ -204,41 +176,19 @@ but ``Does $2/5$?''\spacefactor=1000\ is not sensible.
   This is false since both $6$ and~$2$ are even but the quotient $6/2$
   is not even.
 \end{answer}
-
 \begin{exercise}[\midlength]
   Generalize the first item to any divisor~$d$.  
 \end{exercise}
 \begin{answer}
   The first item can generalize to: for any~$d\in\N$, 
   the product of two multiples of~$d$ is a multiple of~$d$.
-
   For the proof,  let $a,b\in\Z$ be multiples of~$d$
   so that $a=dm$ and~$b=dn$ for some $m,n\in\Z$.
   Then $ab=dm\cdot dn=d(m\cdot dn)$ is a multiple of~$d$.
 
-  (The first item can also generalize to: a product of two multiples of
+  (The first item could also generalize to: a product of two multiples of
   $d$ is a multiple of~$d^2$.)
 \end{answer}
-% \item The product of two evens is even.
-% \item The quotient of two evens, if it is an integer, is even.
-% \item Generalize the first item to any divisor~$d$.
-% \end{exes}  
-% \begin{ans}
-% \begin{exes}
-% \item Let $a,b\in\Z$ be even
-%   so that $a=2m$ and~$b=2n$ for some $m,n\in\Z$.
-%   Then $ab=2m\cdot 2n=2(m\cdot 2n)$ is even.
-% \item This is false since both $6$ and~$2$ are even but the quotient $6/2$
-%   is not even.
-% \item The first item can generalize to: for any~$din\N$, 
-%   the product of two multiples of~$d$ is a multiple of~$d$.
-
-%   For the proof,  let $a,b\in\Z$ be multiples of~$d$
-%   so that $a=dm$ and~$b=dn$ for some $m,n\in\Z$.
-%   Then $ab=dm\cdot dn=d(m\cdot dn)$ is a multiple of~$d$.
-
-%   (The first item can also generalize to: a product of two multiples of
-%   $d$ is a multiple of~$d^2$.)
 \end{exes}
 \end{problem}
 
@@ -251,7 +201,7 @@ Prove each.
   \notetext{Reflexivity} Every number divides itself.
 \end{exercise}
 \begin{answer}
-  Any number $a\in\Z$ satisfies that $a=a\cdot 1$.
+  Every number $a\in\Z$ satisfies that $a=a\cdot 1$.
 \end{answer}
 \begin{exercise}
   Every number divides $0$ while
@@ -285,6 +235,7 @@ Prove each.
   Then $an=adk$ for some $k\in\Z$ and
   since $a\neq 0$ we can multiply by $1/a$ to get $n=dk$, giving 
   $d\divides n$.
+
   For the converse, 
   if $d\divides n$ then $n=dk$ for some $k\in\Z$ and for all~$a\in\Z$
   we have $an=adk$, which shows that $ad\divides an$.
@@ -346,82 +297,13 @@ Prove each.
   By the prior item if $a\neq 0$ then all of the divisors of~$a$
   are in the interval of integers from $-a$ to~$a$. 
 \end{answer}
-% \item \notetext{Reflexivity} Every number divides itself.
-% \item Every number divides $0$ while
-%   the only number that $0$ divides is itself.
-% \item \notetext{Transitivity} If $d\divides n$ and $n\divides m$ 
-%    then $d\divides m$.
-% \item \notetext{Cancellation} 
-%   For $d,n\in\Z$, if for some nonzero integer~$a$ we have that $ad\divides an$ 
-%   then $d\divides n$.
-%   Conversely, if $d\divides n$ then $ad\divides an$ for all~$a\in\Z$.
-% \item \notetext{Comparison} 
-%   For $d,n\in\Z^+$, if $n$ is a multiple of~$d$ then $n\geq d$.
-% \item Every number is divisible by $1$.
-%   The only numbers that divide~$1$ are $1$ and~$-1$.
-% \item The largest divisor of $a$ is $\absval{a}$, for $a\in\Z$ with $a\neq 0$.
-% \item Every nonzero integer has only finitely many divisors.
-% \end{exes}
-% \begin{exes}
-% \item Any number $a\in\Z$ satisfies that $a=a\cdot 1$.
-% \item For every $k\in\Z$ the equation~$0=k\cdot 0=0\cdot k$ has~$0$ 
-%   as a multiple of~$k$.
-%   That equation also shows that the only number that~$0$ divides is itself. 
-% \item Suppose that $d, n, m\in\Z$ are such that $d\divides n$ and
-%   $n\divides m$.
-%   Then there are $i,j\in\Z$ such that $n=di$ and~$m=nj$.
-%   Substitute to get $m=(di)\cdot j=d\cdot(ij)$, which shows that
-%   $d$ divides~$m$.
-% \item Fix~$d,n\in\Z$.
-%   First suppose that $ad\divides an$ for some $a\in\Z$ such that $a\neq 0$. 
-%   Then $an=adk$ for some $k\in\Z$ and
-%   since $a\neq 0$ we can multiply by $1/a$ to get $n=dk$, giving 
-%   $d\divides n$.
-%   For the converse, 
-%   if $d\divides n$ then $n=dk$ for some $k\in\Z$ and for all~$a\in\Z$
-%   we have $an=adk$, which shows that $ad\divides an$.
-% \item Assume $d,n\in\Z^+$.
-%   Because $n$ is a multiple of $d$ we have that $n=dk$ for some $k\in\Z$.
-%   Note that $k\geq 1$ since otherwise $n\leq 0$ but $n$ is given as positive.  
-%   Multiplying by the positive number~$d$ gives $n=dk\geq d$. 
-% \item That every number is divisible by~$1$ follows from the fact that
-%    for every $a\in\Z$ the equation $a=1\cdot a$ holds.
-
-%   For the other part 
-%   first consider a divisor~$d$ of~$1$ that is a positive integer.
-%   By the prior item $1\geq d$ so the only such divisor is~$d=1$.
-%   Clearly $0$ is not a divisor of~$1$ so the only remaining candidates
-%   are negative integers.
-%   We have shown that for $d,a\in\Z$, if $d\divides a$ then $-d\divides a$,
-%   so if a negative number~$d$ divides~$1$ then the positive~$-d$ 
-%   also divides~$1$.
-%   Since the only such positive number is~$-d=1$, the only 
-%   candidate for a negative divisor is $d=-1$. 
-% \item Fix $a\in\Z$. 
-%   First note that $\absval{a}$ does indeed divide~$a$ because
-%   if $a\geq 0$ then $\absval{a}\divides a$ follows from 
-%   $a=\absval{a}\cdot 1$,
-%   while if $a<0$ then $\absval{a}\divides a$ follows from 
-%   $a=\absval{a}\cdot(-1)$.
-
-%   We finish by showing that no divisor of~$a\neq 0$ is larger than $\absval{a}$.
-%   We have shown that for $d,a\in\Z$ if $d\divides a$ then $d\divides -a$,
-%   if a negative~$a$ had a divisor greater than~$\absval{a}$ then the
-%   positive number~$-a$ would also have such a divisor.
-%   So we will be done if
-%   we show there is no dividend~$a>0$ with a divisor larger than $\absval{a}=a$.
-%   By the Comparison property, a positive dividend is greater than or 
-%   equal to any of its divisors. 
-%   Thus~$\absval{a}$ is maximal.
-% \item By the prior item if $a\neq 0$ then all of the divisors of~$a$
-%   are in the interval of integers from $-a$ to~$a$. 
 \end{exes}
 \end{problem}
 
 \begin{problem}
 Give the converse of Reflexivity: what conclusion can you make
 if $a\divides b$ and~$b\divides a$?
-\begin{ans}
+\begin{answer}
 We will show that for $a,b\in\Z$, if both $a\divides b$ and~$b\divides a$
 then $a=\pm b$.
 
@@ -431,7 +313,7 @@ Substitution gives $a=bm=akm$ and then cancellation gives $1=km$ (cancellation
 does not apply if $a=0$ but in this case the proof is easy).
 The only divisors of $1$ are $1$ and~$-1$, so $k=\pm 1$ and~$m=\pm 1$. 
 Thus $b=\pm a$ and~$a=\pm b$.
-\end{ans}
+\end{answer}
 \end{problem}
 
 \begin{problem} \label{ex:DividesAndLinearCombinations}
@@ -462,36 +344,12 @@ Suppose that $a,b,c\in\Z$.
   \notetext{Linearity} Generalize the prior item.
 \end{exercise}
 \begin{answer}
-  A natural generalization is that $a$ divides any combination
+  The natural generalization is that $a$ divides any combination
   $i\cdot b+j\cdot c$ where $i,j\in\Z$.
   The proof is
   $ib+jc=i\cdot (ak)+j\cdot(am)=a\cdot(ik+jm)$.
 \end{answer}
 \end{exes}
-% \begin{exes}
-% \item Prove that if $a\divides b$ then $a\divides bc$ for all integers~$c$.
-% \item Prove that if $a\divides b$ and $a\divides c$ then $a$ divides the 
-%   sum~$b+c$ and difference~$b-c$.
-% \item  \notetext{Linearity} Generalize the prior item.
-% \end{exes}
-% \begin{ans}
-% \begin{exes}
-% \item If $a\divides b$ then $b=ak$ for some~$k\in\Z$.
-%   Thus $bc=akc=a\cdot(kc)$ is a multiple of~$a$
-% \item Suppose that $a,b,c\in\Z$ and that $a\divides b$ and $a\divides c$.
-%   Then $b=ak$ and $c=am$ for some $k,m\in\Z$. 
-%   Substitution  
-%   $b+c=ak+am=a\cdot(k+m)$
-%   shows that $a$ divides the sum~$b+c$.
-%   A similar substitution
-%   $b-c=ak-am=a\cdot(k-m)$
-%   shows that $a$ divides the difference.
-% \item A natural generalization is that $a$ divides any combination
-%   $i\cdot b+j\cdot c$ where $i,j\in\Z$.
-%   The proof is
-%   $ib+jc=i\cdot (ak)+j\cdot(am)=a\cdot(ik+jm)$.
-% \end{exes}
-% \end{ans}
 \end{problem}
 
 
@@ -636,65 +494,11 @@ Apply the inductive hypothesis to get
 $(2^{k+1}-1)+2^{k+1}=2\cdot 2^{k+1}-1=2^{k+2}-1$, as required. 
 \end{answer}
 \end{exes}
-% \begin{exes}
-% \item $0+1+2+\cdots+n=n(n+1)/2$
-% \item $0+1+4+9+\cdots+n^2=n(n+1)(2n+1)/6$
-% % \item $0+1+8+27+\cdots+n^3=n^2(n+1)^2/4$
-% \item $1+2+4+8+\cdots+2^n=2^{n+1}-1$
-% \end{exes}
-% \begin{ans}
-% \begin{exes}
-% \item For the $n=0$ base step note that the sum on the left
-%   has the single term~$0$
-%   while the right side is $0\cdot(0+1)/2$, which also equals~$0$.
-
-%   For the inductive step take the inductive hypothesis 
-%   that the statement is true for $n=0$,~\ldots, $n=k$ and consider $n=k+1$.
-%   We have 
-%   $0+1+\cdots+k+(k+1)=(k(k+1)/2)+(k+1)=(k+1)\cdot(k/2+1)=(k+1)\cdot(k+2)/2$, 
-%   as required  
-%   (the first equality is from applying the inductive hypothesis in 
-%   the $n=k$ case). 
-% \item The $n=0$ base step is that the left side has the single term~$0$
-%   while the right side is $0\cdot(0+1)\cdot(2\cdot 0+1)/6$, and the 
-%   two are equal.
-
-%   For the inductive step assume that the statement is true for 
-%   $n=0$,~\ldots, $n=k$ and consider $n=k+1$.
-%   Applying the inductive hypothesis in the $n=k$ case and reducing gives
-%   $0+1+4+\cdots+k^2+(k+1)^2=k(k+1)(2k+1)/6+(k+1)^2
-%     =(k+1)\cdot [k(2k+1)/6+(k+1)]
-%     =(k+1)\cdot [k(2k+1)+6(k+1)]/6
-%     =(k+1)\cdot [2k^2+7k+6]/6
-%     =(k+1)(k+2)(2(k+1)+1)/6$,
-%   as required.
-% % \item The base step is~$n=0$.  
-% %   The left side has the single term $0$ while the right side is 
-% %   $0^2(1)^2/4$, so they are equal.
-
-% %   For the inductive step assume that the statement is true when $n=0$, 
-% %   \ldots, $n=k$.
-% %   Then 
-% %    $0+8+\cdots+k^3+(k+1)^3
-% %     =k^2(k+1)^2/4+(k+1)^3
-% %     =(k+1)^2\cdot [(k^2/4)+(k+1)]
-% %     =(k+1)^2\cdot (k^2+4k+4)/4
-% %     =(k+1)^2(k+2)^2/4$. 
-% \item The $n=0$ base step has a sum on the left with a single term, $1$.
-% The expression on the right is $2^1-1=1$, and they are equal.
-
-% The inductive hypothesis is that 
-% the statement is true for the cases $n=0$, \ldots, $n=k$.
-% The $n=k+1$ summation is
-% $1+2+4+\cdots+2^k+2^{k+1}$. 
-% Apply the inductive hypothesis to get
-% $(2^{k+1}-1)+2^{k+1}=2\cdot 2^{k+1}-1=2^{k+2}-1$, as required. 
-% \end{exes}
-% \end{ans}
 \end{problem}
 
 \begin{problem}
-Prove each by induction.  Suppose that $a,b\in\R$ and that $r\in\R$ with $r\neq 1$.
+Prove each by induction.  
+Suppose that $a,b\in\R$ and that $r\in\R$ with $r\neq 1$.
 \begin{exes}
 \begin{exercise} \notetext{Geometric Series} 
   $1+r+r^2+\cdots+r^n=(r^{n+1}-1)/(r-1)$
@@ -712,7 +516,7 @@ Prove each by induction.  Suppose that $a,b\in\R$ and that $r\in\R$ with $r\neq 
   =[r\cdot r^{k+1}-1]/(r-1)
   =(r^{k+2}-1)/(r-1)$ for $r\neq 1$.
 \end{answer}
-\begin{exercise} \notetext{Arithmetic Series}  
+\begin{exercise}[\midlength] \notetext{Arithmetic Series}  
   $b+(a+b)+(2a+b)+\cdots+(na+b)=(n(n+1)/2)\cdot a+(n+1)\cdot b$
 \end{exercise}
 \begin{answer} 
@@ -731,40 +535,6 @@ Prove each by induction.  Suppose that $a,b\in\R$ and that $r\in\R$ with $r\neq 
   as required. 
 \end{answer}
 \end{exes}
-% \item \notetext{Geometric Series} For all $r\in\R$ with $r\neq 1$ we have
-%   $1+r+r^2+\cdots+r^n=(r^{n+1}-1)/(r-1)$.
-% \item \notetext{Arithmetic Series} We have
-%   $b+(a+b)+(2a+b)+\cdots+(na+b)=(n(n+1)/2)\cdot a+(n+1)\cdot b$
-%   for all $a,b\in\R$.
-% \end{exes}
-% \begin{ans}
-% \begin{exes}
-% \item The $n=0$ base step has the single term~$1$ in the left summation and
-%   $(r^1-1)/(r-1)$ on the right, and they are equal.
-
-%   For the inductive step assume that the statement is true for 
-%   $n=0$, \ldots, $n=k$.
-%   The $n=k+1$ case is
-%   $1+r+r^2+r^3+\cdots+r^k+r^{k+1}
-%   =(r^{k+1}-1)/(r-1)+r^{k+1}
-%   =[r^{k+1}-1+r^{k+1}(r-1)]/(r-1)
-%   =[r\cdot r^{k+1}-1]/(r-1)
-%   =(r^{k+2}-1)/(r-1)$ for $r\neq 1$.
-% \item The base step is~$n=0$.
-% The summation on the left has one term, $b$, 
-% while the expression on the right is     
-% $0\cdot a+1\cdot b$, so the two sides are equal.
-
-% For the inductive step assume that the statement holds when $n=0$, 
-% \ldots, $n=k$ and consider the $n=k+1$~case.
-% We have
-% $b+(a+b)+(2a+b)+\cdots+(ka+b)+((k+1)a+b)
-% =[(k(k+1)/2)\cdot a+(k+1)\cdot b]+((k+1)a+b)
-% =[(k+1)\cdot((k/2)+1)]\cdot a+[k+2]\cdot b
-% =((k+1)(k+2)/2)\cdot a+(k+2)\cdot b$,
-% as required. 
-% \end{exes}
-% \end{ans}
 \end{problem}
 
 \begin{problem}
@@ -794,7 +564,7 @@ Prove each by induction.
 \end{answer}
 \begin{exercise} 
   For all $n\geq 2$ the number $n^3-n$ is divisible by $6$.
-  \hint take the base case to be $2$.
+  \hint use~$2$ for the base.
 \end{exercise}
 \begin{answer}
   The base step is $n=2$.
@@ -851,65 +621,6 @@ Prove each by induction.
   =k+2$.  
 \end{answer}
 \end{exes}
-% \end{ans}
-% \item For all $n\in\N$, the number~$n^2+n$ is even.
-% \item For all $n\geq 2$ the number $n^3-n$ is divisible by $6$.
-%   \hint take the base case to be $2$.
-% \item If $n\in\N$ then $4\divides 13^n-1$.
-% \item If $n\in\Z^+$ then
-%     $(1+\sfrac{1}{1})\cdot(1+\sfrac{1}{2})\,\cdots\,(1+\sfrac{1}{n})=n+1$.
-% \end{exes}
-% \begin{ans}
-% \begin{exes}
-% \item For the $n=0$ base step observe that $0^2+0$ is even.
-%   For the inductive step assume the statement for $n=0$, \ldots, $n=k$
-%   and consider the $n=k+1$ case.
-%   We have $(k+1)^2+(k+1)=k^2+2k+1+k+1=(k^2+k)+(2k+2)$. 
-%   By the inductive hypothesis $k^2+k$ is even, and clearly $2k+2$ is even, 
-%   so the sum is even.
-% \item The base step is $n=2$.
-%   Since $6$ divides $2^3-2=8-2$, the statement holds in this case.
-
-%   For the inductive step assume that the statement is true for 
-%   the cases $n=0$, \ldots, $n=k$.
-%   In the $n=k+1$ case, consider 
-%   $(k+1)^3-(k+1)=(k^3+3k^2+3k+1)-(k+1)=(k^3+3k^2+3k)-k$.
-%   The inductive hypothesis gives that $6$ divides $(k^3-k)$ so we will
-%   be finished if we show that it divides  $3k^2+3k$.
-%   We have $3k^2+3k=3\cdot k(k+1)$, and since
-%   $k(k+1)$ is even (this was shown in the prior item),
-%   the product is divisible by $6$.  
-% \item The $n=0$ base step is clear, since four divides $13^0-1=0$.
-%   For the inductive step assume that the statement is true for all cases 
-%   with $0\leq n\leq k$ and consider the $n=k+1$ case.
-%   Then $13^{k+1}-1=(13^{k+1}-13)+(13-1)=13(13^k-1)+12$.
-%   The first term is divisible by~$4$ by the inductive hypothesis, while the
-%   second term is obviously divisible by~$4$, and so the statement holds in 
-%   this case.
-
-%   \remark
-%   this illustrates that 
-%   sometimes when you have finished a proof by induction, 
-%   while you now are sure that the statement is true, 
-%   you can nonetheless be left with the sense
-%   that you are not sure really \emph{why} it is true.
-%   You can prove that this statement holds in a 
-%   way that gives more intuition by plugging $13$ into the formula for a
-%   geometric series. 
-% \item The base step is a product with $n=1$~term.
-%   The left side is $(1+\sfrac{1}{1})=2$ while the right side is $1+1=2$,
-%   and they are equal.
-
-%   Assume the inductive hypothesis, that the statement is true for
-%   $n=1$, \ldots, $n=k$ and consider the $n=k+1$ case.
-%   We have
-%   $(1+\sfrac{1}{1})\cdot(1+\sfrac{1}{2})\,\cdots\,(1+\sfrac{1}{k})\cdot(1+\sfrac{1}{k+1})
-%   =
-%   (k+1)\cdot(1+\sfrac{1}{k+1})
-%   =(k+1)+(k+1)/(k+1)
-%   =k+2$.
-% \end{exes}
-% \end{ans}
 \end{problem}
 
 \begin{problem}
@@ -1023,7 +734,7 @@ such that $a=bq+r$ and $0\leq r<b$.
 We prove this in steps.
 \begin{exes} 
 \begin{exercise}
-  Show that~$q$ and~$r$ are unique.
+  Show that~$q$ and~$r$, if they exist, are unique.
 \end{exercise}
 \begin{answer}
   Suppose that $q_0,r_0\in\Z$ and $q_1,r_1\in\Z$ are such that
@@ -1038,8 +749,8 @@ We prove this in steps.
   With that, the equation $q_0-q_1=(r_0-r_1)/(-b)$ yields that $r_0-r_1=0$.
 \end{answer}
 \begin{exercise}
-  Show that the statement is true if $a=0$.
-  Show also that if the statement is true for~$a>0$ then it is true
+  Prove the statement when $a=0$.
+  Show that if it holds for~$a>0$ then it holds
   for~$a<0$.
 \end{exercise} 
 \begin{answer}
@@ -1062,7 +773,6 @@ We prove this in steps.
   remainder~$r$.
 \end{exercise}
 \begin{answer}
-  We follow the hint.
   Consider the set $E=\setbuilder{a-bq}{q\in\Z}$.
   Because $a>0$, the element of~$E$ associated with $q=0$ is nonegative,
   so the subset of $E$ comprised of natural numbers $\hat{E}$ is nonempty.
@@ -1079,64 +789,7 @@ We prove this in steps.
   $r-b=a-b\cdot (q_r-1)$ gives that $r-b$ is an element of $\hat{E}$.
   This contradicts the choice of~$r$ as the least element of~$\hat{E}$.
 \end{answer}
-% \begin{exercise}
-%    What to do if $b\leq 0$?
-% \end{exercise}
 \end{exes}
-% \begin{exes} 
-% \item
-%   Prove that~$q$ and~$r$ are unique.
-% \item Show that the statement is true for $a=0$.
-%   Show also that if the statement is true for~$a>0$ then it is true
-%   for~$a<0$. 
-% \item Prove the statement for $a>0$.
-%   \hint you can consider the set of integers $\setbuilder{a-bq}{q\in\Z}$,
-%   note that it has nonnegative elements,
-%   apply the Least Number Principle
-%   to produce a smallest nonnegative element, and show that this is the desired
-%   remainder~$r$.
-% % \item 
-% % What to do if $b\leq 0$?
-% \end{exes}
-% \begin{ans}
-% \begin{exes}
-% \item Suppose that $q_0,r_0\in\Z$ and $q_1,r_1\in\Z$ are such that
-%   $a=bq_0+r_0$ where $0\leq r_0<b$, and also
-%   $a=bq_1+r_1$ where $0\leq r_1<b$.
-%   Subtract to get $0=b\cdot(q_0-q_1)+(r_0-r_1)$ and $-b<r_0-r_1<b$.
-%   Rearrange the equation $-b\cdot(q_0-q_1)=(r_0-r_1)$,
-%   and divide by $-b$ to get $q_0-q_1=(r_0-r_1)/(-b)$.
-%   Thus  $-1<q_0-q_1<1$ and since $q_0-q_1\in\Z$ we have $q_0-q_1=0$.
-%   With that, the equation $q_0-q_1=(r_0-r_1)/(-b)$ shows that $r_0-r_1=0$.
-% \item
-%   If $a=0$ then the statement holds with $q=0$ and~$r=0$.
-
-%   Next assume that the statement holds for any positive dividend
-%   and consider a negative~$a$.
-%   Since $-a$ is positive, $-a=bq+r$ for some 
-%   $q,r\in\Z$ with $0\leq r<b$.
-%   Multiplying by $-1$ gives $a=b(-q)-r$ and
-%   rewriting this as $a=b\cdot(q-1)+(b-r)$ satisfies the condition on the
-%   remainder $0\leq b-r<b$ for for all~$r$ except $r=0$.
-%   The $r=0$ case is easy: $a=b(-q)+0$ satisfies the statement. 
-% \item We follow the hint.
-%   Consider the set $E=\setbuilder{a-bq}{q\in\Z}$.
-%   Because $a>0$, the element of~$E$ associated with $q=0$ is nonegative,
-%   so the subset of $E$ comprised of natural numbers $\hat{E}$ is nonempty.
-%   By the Least Number Principle, $\hat{E}$ has a smallest element;
-%   call it~$r$.
-%   We will be done if we show that~$0\leq r<b$.
-
-%   Suppose, to get a contradiction, that~$r$ is not 
-%   an element of that interval and so $r\geq b$.
-%   Since $r$ is an element of~$E$ there is some associated
-%   $q_r\in\Z$ such that $a-b\cdot q_r=r$.
-%   This paragraph's assumption that $r\geq b$
-%   gives that $r-b$ is a nonegative number smaller than~$r$, and
-%   $r-b=a-b\cdot (q_r-1)$ gives that $r-b$ is an element of $\hat{E}$.
-%   This contradicts the choice of~$r$ as the least element of~$\hat{E}$.
-% \end{exes}
-% \end{ans}
 \end{problem}
 
 \noindent 
@@ -1225,37 +878,6 @@ Prove each.
   right.  
 \end{answer}
 \end{exes}
-% \begin{exes}
-% \item $a+c\equiv b+d\pmod m$
-% \item $ac\equiv bd\pmod m$
-% \item $a^n\equiv b^n\pmod m$ for all $n\in\Z^+$.
-% \end{exes}
-% \begin{ans}
-% \begin{exes}
-% \item By the prior exercise, $a\equiv b\pmod m$ holds iff 
-%   $(a-b)$ is a multiple of~$m$, 
-%   so $a-b=mi$ for some~$i\in\Z$.
-%   Similarly, $c\equiv d\pmod m$ holds iff $m\divides (c-d)$, 
-%   so $c-d=mj$ for some~$j\in\Z$.
-%   Adding gives $(a+c)-(b+d)=m(i+j)$, which holds if and only if
-%   $m\divides (a+c)-(b+d)$, which in turn is equivalent to
-%   $a+c\equiv b+d\pmod m$.
-% \item We have that $a\equiv b\pmod m$ holds if and only if
-%   $a$ and~$b$ differ by a multiple of~$m$, so 
-%   $a=b+mi$ for some~$i\in\Z$. 
-%   Similarly $c=d+mj$ for some~$j\in\Z$.
-%   Multiplying gives $ac=bd+m\cdot(id+mij+jb)$, 
-%   which is equivalent to $ac\equiv bd\pmod m$. 
-% \item We will show this by induction on the power~$n$.
-%   The $n=1$ base step is true by the introductory assumption that 
-%   $a\equiv b\pmod m$.
-%   For the inductive step assume that the statement is true in the cases
-%   $n=1$, \ldots, $n=k$.
-%   The $k+1$ case is an application of the prior item with 
-%   $a^k\cdot a$ on the left of the equivalence and $b^k\cdot b$ on the
-%   right.
-% \end{exes}
-% \end{ans}
 \end{problem}
 
 \begin{df}
@@ -1302,35 +924,6 @@ the greatest integer less than or equal to~$x$.
   =ba\bmod bm$.    
 \end{answer}
 \end{exes}
-% \begin{exes} 
-% \item The quotient when $a$ is divided by $b$ is $\floor{a/b}$.
-% \item $a =b\cdot\floor{a/b}+a\bmod b$.    
-% \item $b\cdot(a\bmod m)=(ba)\bmod{(bm)}$.    
-% \end{exes}
-% \begin{ans}
-% \begin{exes}
-% \item The quotient~$q$ when $a$ is divided by~$b$ is defined by the
-%   property that $a=bq+r$ where~$0\leq r<b$.
-%   So to show that $\floor{a/b}$ is the quotient we must show that
-%   $a=b\cdot\floor{a/b}+(a-b\floor{a/b})$, which is clear, and we must also
-%   show that the remainder~$a-b\floor{a/b}$
-%   satisfies $0\leq a-b\floor{a/b}< b$.
-  
-%   By the definition of floor, $x-1<\floor{x}\leq x$ for any real~$x$. 
-%   Thus we have
-%   $(a/b)-1< \floor{a/b}\leq a/b$ and multiplication by~$b$ gives
-%   $a-b< b\cdot\floor{a/b}\leq a$.
-%   Therefore $b\cdot\floor{a/b}$ is at a minimum $0$ less than~$a$, and
-%   at a maximum $b-1$ less than~$a$, as required.
-% \item This is immediate from the prior item and the 
-%   definition of $a\bmod b$ as the remainder.
-% \item Where $a, b, m\in\Z$ and $m>0$ we have
-%   $b\cdot(a\bmod m)=b\cdot(a-m\floor{a/m})
-%   =ba- bm\floor{a/m}
-%   =ba- bm\floor{ba/bm}
-%   =ba\bmod bm$.    
-% \end{exes}
-% \end{ans}
 \end{problem}
 
 \begin{problem}[\midlength]  \notetext{Pigeonhole Principle}  Prove each.
@@ -1357,26 +950,6 @@ the greatest integer less than or equal to~$x$.
   Since each $p_i$ is a natural number, the maximum must be at least~$2$.  
 \end{answer}
 \end{exes}
-% \begin{exes}
-% \item For a finite list of real numbers,
-%   the maximum is at least as big as the average.
-% \item If you put $n$-many papers into fewer than $n$-many
-%   pigeonholes then at least one hole gets at least two papers.    
-% \end{exes}
-% \begin{ans}
-% \begin{exes}
-% \item Let the real numbers be $p_0$, \ldots, $p_{n-1}$.
-%   The average is $a=(p_0+\cdots+p_{n-1})/n$ and so 
-%   $p_0+\cdots+p_{n-1}=na$.
-%   If each number were less than average $p_i<a$ then the sum
-%   $p_0+\cdots+p_{n-1}$ would be less than $na$, so at least
-%   one must be at least average.
-% \item Form the list where there are~$p_i$-many papers in the $i$-th pigeonhole.
-%   The average number of papers per hole is greater than~$1$, 
-%   so the maximum number is greater than~$1$.
-%   Since each $p_i$ is a natural number, the maximum must be at least~$2$.      
-% \end{exes}
-% \end{ans}
 \end{problem}
 
 
@@ -1395,8 +968,7 @@ The \definend{greatest common divisor} of two integers
 is the largest of their common divisors,
 except that we take the greatest common divisor of $0$ and $0$ 
 to be $0$.
-Write $\gcd(a,b)$ for the greatest common divisor
-of $a$ and~$b$.
+Write $\gcd(a,b)$ for the greatest common divisor.
 \end{df}
 
 % TODO redundancy in the exercises?
@@ -1419,7 +991,12 @@ Prove.
   there is a common divisor that is greatest we will know it is positive.
   To establish that, note that each number has finitely many divisors and
   so the overlap\Dash the set of divisors common to both\Dash is finite.
-  A finite set of integers must have an element that is greatest.  
+  A finite set of integers must have an element that is greatest.
+  (To prove this last statement, let $m$ be the maximum of $a$ and~$b$
+  and consider the set 
+  $\setbuilder{m-d}{\text{$d$ is a common divisor of $a$ and~$b$}}$.
+  This is a finite, nonempty, set of natural numbers and so has a least element.
+  The associated~$d$ is the greatest common divisor.)  
 \end{answer}
 \begin{exercise} \notetext{Commutativity} 
   $\gcd(a,b)=\gcd(b,a)$
@@ -1487,7 +1064,8 @@ Prove.
   because it divides~$b$ we have that $d\leq\absval{b}$.
   Thus $d$ is less than or equal to the minimum of the two.
 
-  If $a=b=0$ then $\gcd(a,b)=0$, which is the maximum of the absolute values. 
+  If $a=b=0$ then by definition $\gcd(a,b)=0$, 
+  which is the maximum of the absolute values. 
   If $a=0$ and~$b\neq 0$ then the set of 
   common divisors of the two equals the set of divisors of~$b$, 
   the greatest of which $\gcd(a,b)=\absval{b}$ is larger than zero.
@@ -1495,79 +1073,6 @@ Prove.
   is~$\absval{a}>0$.
 \end{answer}
 \end{exes} 
-% \begin{exes} 
-% \item \notetext{Existence} Any $a,b\in\Z$ have a greatest common divisor.
-% \item \notetext{Commutativity} $\gcd(a,b)=\gcd(b,a)$
-% \item If either number is nonzero then 
-%   $0\leq \gcd(a,b)\leq\min(\absval{a},\absval{b})$.
-%   If both are nonzero then the first
-%   inequality is strict.
-% \item If $d$ is a common divisor of $a$ and~$b$ then so is~$\absval{d}$.
-%   Thus common divisors are limited to the interval from $-\gcd(a,b)$
-%   to $\gcd(a,b)$.
-% \item For any $a\in\Z$, both $\gcd(a,a)=\absval{a}$ 
-%   and~$\gcd(a,0)=\absval{a}$.
-% \item $\gcd(a,b)=\gcd(\absval{a},\absval{b})$
-% \end{exes} 
-% \begin{ans}
-% \begin{exes}
-% \item If $a=b=0$ then $\gcd(a,b)$ exists. 
-%   If $a=0$ and~$b\neq 0$ then, since every number divides~$0$, the set of 
-%   common divisors of the two is the set of divisors of~$b$, 
-%   the largest of which is~$\absval{b}$.
-%   In the same way, if $a\neq 0$ and~$b=0$ then the greatest common divisor 
-%   is~$\absval{a}$.
-
-%   So suppose that each number is nonzero.
-%   In this case the number~$1$ is a common divisor, so when we establish that 
-%   there is a common divisor that is greatest we will know it is positive.
-%   To establish that, note that each number has finitely many divisors and
-%   so the overlap\Dash the set of divisors common to both\Dash is finite.
-%   A finite set of integers must have an element that is greatest.
-% \item The two sets 
-%   $\setbuilder{m\in\Z}{\text{$m\divides a$ and $m\divides b$\,}}$
-%   and 
-%   $\setbuilder{n\in\Z}{\text{$n\divides b$ and $n\divides a$\,}}$
-%   are equal and so have the same greatest element. 
-%   That is, the definition is symmetric in $a$ and~$b$.
-% \item If $a=b=0$ then $\gcd(a,b)=0$. 
-%   If $a=0$ and~$b\neq 0$ then the set of 
-%   common divisors of the two equals the set of divisors of~$b$, 
-%   the greatest of which $\gcd(a,b)=\absval{b}$ is larger than zero.
-%   In the same way, if $a\neq 0$ and~$b=0$ then the greatest common divisor 
-%   is~$\absval{a}>0$.
-
-%   If each number is nonzero then~$1$ is a common divisor so 
-%   the greatest common divisor is greater then zero.
-%   For the other inequality,
-%   where $d$ is a common divisor, 
-%   because it divides~$a$ we have that $d\leq\absval{a}$ and
-%   because it divides~$b$ we have that $d\leq\absval{b}$.
-%   Thus $d$ is less than or equal to the minimum of the two. 
-% \item If $d$ is nonnegative then the statement is trivial.
-%   If $d$ is negative then
-%   this is immediate from \ref{ex:InteractionOfParityWithSign},
-%   which says that if $d$ divides a number then so does $-d$.
-% \item The Divisibility Properties in \ref{ex:DivisibilityProperties}
-%   include that for any~$a\neq 0$ the largest divisor is $\absval{a}$.
-%   In the case that $a=0$ the definition of greatest common divisor 
-%   is that $\gcd(0,0)=0=\absval{0}$.
-
-%   For the other half, 
-%   every number divides zero, so the condition that $\gcd(a,0)$ be a common
-%   divisor reduces to the condition that it divide~$a$.
-%   As in the previous paragraph, one of the Divisibility Properties  
-%   is that for any nonzero integer~$a$ the largest divisor is $\absval{a}$.
-%   If $a=0$ then the equation is also true.
-% \item If both numbers are zero then the statement is clearly true.
-%   For the other case note that for any
-%   integer $c$, a number is a divisor of $c$ if and only if it divides 
-%   the absolute value~$\absval{c}$.
-%   Thus, the set of divisors of both~$a$ and~$b$ 
-%   is the same as the set of divisors of both~$\absval{a}$ and~$\absval{b}$, \
-%   and therefore the two sets have the same greatest element.
-% \end{exes}
-% \end{ans}
 \end{problem}
 
 \begin{df}
@@ -1630,18 +1135,6 @@ $\gcd(a,b)\cdot\lcm(a,b)$.
   $\gcd(a,b)=2$, $\lcm(a,b)=140$, $ab=-280$, $\gcd(a,b)\cdot\lcm(a,b)=280$  
 \end{answer}
 \end{exes}
-% \begin{exes}
-% % \item $a=6$, $b=15$
-% \item $a=18$, $b=35$  
-% \item $a=20$, $b=-14$
-% \end{exes}
-% \begin{ans}
-% \begin{exes}
-% % \item $\gcd(a,b)=3$, $\lcm(a,b)=30$, $ab=90$, $\gcd(a,b)\cdot\lcm(a,b)=90$
-% \item $\gcd(a,b)=1$, $\lcm(a,b)=630$, $ab=630$, $\gcd(a,b)\cdot\lcm(a,b)=630$
-% \item $\gcd(a,b)=2$, $\lcm(a,b)=140$, $ab=-280$, $\gcd(a,b)\cdot\lcm(a,b)=280$
-% \end{exes}
-% \end{ans}
 \end{problem}
 
 \begin{problem} Let $a$ and~$b$ be integers.
@@ -1748,86 +1241,6 @@ $\gcd(a,b)\cdot\lcm(a,b)$.
   This is immediate from the prior items.
 \end{answer}
 \end{exes}  
-% \begin{exes}
-% \item Prove that any common multiple of two nonzero
-%    numbers is divisible by their 
-%   least common multiple.
-%   \hint apply the Division-Remainder theorem with the divisor $\lcm(a,b)$.
-% \item Prove that the product of two nonzero numbers is divisible by their 
-%   least common multiple.
-% \item Let $d$ be defined by 
-%   $ab=\lcm(a,b)\cdot d$, except that if either $a$ or~$b$ is zero
-%   then $d=\max\set{\absval{a},\absval{b}}$.
-%   Prove that any common divisor of $a$ and~$b$ also divides~$d$.
-% \item Prove that $\gcd(a,b)\leq\absval{d}$.
-% \item Prove that $\absval{d}=\gcd(a,b)$. 
-% \item Prove that any common divisor of two numbers also divides their
-%   greatest common divisor.
-% \item Prove that $\lcm(a,b)\cdot\gcd(a,b)=\absval{ab}$. 
-% \end{exes}  
-% \begin{ans}  %% TODO check the zero and negative cases.
-% \begin{exes}
-% \item Let $\ell=\lcm(a,b)$ and suppose that $m$ is a common multiple
-%   of the two numbers.
-
-%   Dividing $m$ by~$\ell$ gives 
-%   $m=\ell\cdot q+r$ with $0\leq r< \ell$.
-%   In $r=m-\ell q$ 
-%   each term on the right is a multiple
-%   of both $a$ and~$b$ and so 
-%   $r$ is a common multiple of $a$ and~$b$.
-%   Because the remainder $r$ is less than the least common multiple~$\ell$,
-%   we conclude that $r=0$ and so $\ell\divides m$.
-% \item The product $ab$ is a common multiple of the two.
-%   Apply the prior item.
-% \item If $a=0$ and~$b=0$ then $d=0$, and any number divides~$0$.
-%   If one of $a$ and~$b$ is zero and one is not then without loss of generality
-%   we can take $a=0$, $b\neq 0$.
-%   Since all numbers divide~$0$ the condition that a number~$c$ 
-%   is a common divisor of $a$ and~$b$
-%   becomes just that $c$ divides~$b$.
-%   So in this case we must show that any divisor of $b$ divides the 
-%   absolute value of~$b$, which we know to be true by the divisibility 
-%   properties~\ref{ex:DivisibilityProperties}.
-
-%   The remaining case is that both numbers are nonzero.
-%   First note that in this case,
-%   by the previous item, the least common multiple of $a,b\in\Z$ divides
-%   the product~$ab$.
-%   So $d$ is an integer for all pairs $a,b$ of nonzero numbers
-%   and we can sensibly apply the definition of `divides' to
-%   $a$ and~$d$, and to $b$ and~$d$.
-  
-%   Let~$c$ be a common divisor so that $a=c\cdot k_a$ and $b=c\cdot k_b$.
-%   The number $ck_ak_b$ is a common multiple of $a$ and~$b$. 
-%   By the first item it is divisible by the least common multiple  
-%   $\ell\divides ck_ak_b$.
-%   Multiplication by $cd$ gives $\ell\cdot cd\divides ck_ak_b\cdot cd$.
-%   Regroup to $(\ell c)d\divides (ck_a)(ck_b)d$, which is
-%   $ab\cdot c\divides ab\cdot d$, and therefore by cancellation $c\divides d$,
-%   as desired.
-% \item The number~$d$ is zero only if both $a$ and~$b$ are
-%   zero.
-%   In this case the equation is true: $\gcd(0,0)=0\leq d=0$.
-
-%   In the $d\neq 0$ case we can apply the 
-%   Divisibility property~\ref{ex:DivisibilityProperties} that the
-%   largest divisor of a nonzero number is the absolute value of that number.
-%   By the prior item, any common divisor of $a$ and~$b$ will divide~$d$.
-%   One such common divisor is $\gcd(a,b)$.
-%   Thus $\gcd(a,b)\leq\absval{d}$.
-% \item
-%   After the previous item, we need only show that $\gcd(a,b)\geq\absval{d}$. 
-%   Because $\ell=\lcm(a,b)$ is a common multiple of the two, 
-%   both $\ell/a$ and~$\ell/b$ are integers. 
-%   Rewriting the equation~$ab=\ell d$ to 
-%   $a=(\ell/b)\cdot d$ shows that~$d$ is a divisor of~$a$, and similarly
-%   it is a divisor of~$b$.
-%   Thus $d$ is a common divisor and so $\absval{d}\leq \gcd(a,b)$.
-% \item This is immediate from the prior items.
-% \item This is immediate from the prior items.
-% \end{exes}
-% \end{ans}
 \end{problem}
 
 \begin{problem}  \label{ex:EuclidsLemma}
@@ -1864,39 +1277,6 @@ $\gcd(a,b)\cdot\lcm(a,b)$.
   Cancellation then gives that $a\divides c$.  
 \end{answer}
 \end{exes}
-% \begin{exes} 
-% \item 
-%   Prove that
-%   dividing by the greatest common divisor leaves no common divisors:
-%   $a/\gcd(a,b)$ and $b/\gcd(a,b)$ are relatively prime.
-% \item \notetext{Euclid's Lemma}  
-%   If $a$ and~$b$ are relatively prime then $a\divides bc$ implies that 
-%   $a\divides c$.
-% \end{exes}
-% \begin{ans}
-% \begin{exes}
-% \item
-%   Let $\gcd(a,b)$ be~$d$ and suppose that $\gcd(a/d,\,b/d)=c$.
-%   Then $c\cdot k_a=a/d$ and~$c\cdot k_b=b/d$ for some numbers $k_a, k_b\in\Z$.
-%   Thus $cd\cdot k_a=a$ and $cd\cdot k_b=b$ and so $cd$ is a common divisor
-%   of $a$ and~$b$. 
-%   But $d$ is the greatest of the common divisors and so $c=1$, 
-%   or else $cd$ would be a common divisor
-%   that is larger than the greatest common divisor.    
-% \item
-%   Since $a\divides bc$ we know that $a$ is nonzero.
-%   If $b=0$ then because $\gcd(a,b)=1$ we have that $\absval{a}=1$ 
-%   and therefore $a\divides c$.
-
-%   In the $b\neq 0$ case, the assumption that $\gcd(a,b)=1$ 
-%   along with the equation $\absval{ab}=\gcd(a,b)\cdot\lcm(a,b)$ implies that 
-%   $\lcm(a,b)=\absval{ab}$.
-%   Because $a\divides bc$, the product $bc$ is a common 
-%   multiple of $a$ and~$b$ and so it is divisible by the least common multiple
-%   $\lcm(a,b)\divides bc$, giving that $ab\divides bc$.  
-%   Cancellation then gives that $a\divides c$. 
-% \end{exes}
-% \end{ans}
 \end{problem}
 % ========== End Euclid's argument of lemma =========== 
 \end{euclidproof}
@@ -1996,7 +1376,7 @@ linear combination of the two:
   then we next have $b_0=r_0\cdot q_1+r_1$ with $0\leq r_1< r_0$.
   Therefore $0\leq r_1<r_0<b$.
 
-  In this way the remainders $r_i$ form a sequence of positive numbers that
+  In this way the remainders $r_i$ form a sequence of natural numbers that
   are falling.
   Such a sequence must be finite so that for some~$i$ 
   an~$r_i$ is zero and the algorithm terminates.  
@@ -2037,123 +1417,8 @@ linear combination of the two:
   Therefore $\gcd(a,b)\leq d$.
 
   The prior item shows $d\leq\gcd(a,b)$ and so the two are equal. 
-
-  % Let the two numbers be $a,b\in\Z$; we want to show that there are
-  % $s,t\in\Z$ so that $\gcd(a,b)=s\cdot a+t\cdot b$.
-
-  % The $a=b=0$ case is separate.
-  % In this case $\gcd(a,b)=0$ by definition and for any $s$ and $t$ we
-  % have $0=\gcd(a,b)=s\cdot a+t\cdot b=s\cdot 0+t\cdot 0$.
-
-  % The other case is that either number is nonzero.
-  % Consider the set of linear combinations 
-  % $\mathcal{L}=\setbuilder{sa+tb}{s,t\in\Z}$.
-  % It has a positive element since not all its elements are~$0$
-  % (one of $a$ or~$b$ is nonzero and taking $1$ times that element
-  % plus zero times the other gives a nonzero member), and if it has a 
-  % negative element then negating the coefficients $s$ and~$t$ gives 
-  % a positive element.
-  % Any set of positive integers has a least positive element.
-  % Call that element~$d\in\mathcal{L}$.
-  % We will show that $d=\gcd(a,b)$.
-
-  % By the first item any divisor common to $a$ and $b$ also divides 
-  % a combination of the two, so $\gcd(a,b)\divides d=sa+bt$, and therefore
-  % $\gcd(a,b)\leq d$.
-
-  % For the inequality in the other direction, 
-  % we will show that $d$ is a common divisor.
-  % To show that $d\divides a$ write $a=dq+r$ with $0\leq r<d$ and
-  % substitute: $r=a-dq=a-(sa+tb)\cdot q=(1-s)\cdot a-t\cdot b$.
-  % Because~$d$ is the minimal positive combination, and becasue $r<d$,
-  % this implies that the remainder~$r$ is zero and so $d\divides a$.
-  % In the same way $d\divides b$.
-  % As a common divisor, $d\leq\gcd(a,b)$.  
 \end{answer}
 \end{exes}
-% \begin{exes}
-% \item Euclid's algorithm terminates.
-% \item The greatest common divisors of two numbers is a linear combination of 
-% the two.
-% \item \notetext{B\'ezout's Lemma} 
-% The greatest common divisor of two numbers is the smallest positive
-% number that is a linear combination of the two.
-% \end{exes}
-% \begin{ans}
-% \begin{exes}
-% \item Since $\gcd(a,b)=\gcd(\pm a, \pm b)$ we can restrict to $a\geq 0$
-%   and $b>0$.
-%   Write $a$ as~$a_0$ and~$b$ as~$b_0$.
-%   The first step of the algorithm divides the larger number by the smaller; 
-%   without loss of generality we have $a_0=b_0\cdot q_0+r_0$ with 
-%   $0\leq r_0< b_0$.
-%   If the remainder~$r$ is not zero, which would mean the algorithm 
-%   terminated,
-%   then we next have $b_0=r_0\cdot q_1+r_1$ with $0\leq r_1< r_0$.
-%   Therefore $0\leq r_1<r_0<b$.
-
-%   In this way the remainders $r_i$ form a sequence of positive numbers that
-%   are falling.
-%   Such a sequence must be finite so that for some~$i$ 
-%   an~$r_i$ is zero and the algorithm terminates.
-% \item The above calculation reversing Euclid's algorithm proves by
-%   construction that the greatest common divisor can be expressed 
-%   a combination of the two.
-% \item   The $a=b=0$ case is separate.
-%   Here $\gcd(a,b)=0$ by definition and for any $s$ and $t$ we
-%   have $0=\gcd(a,b)=s\cdot a+t\cdot b=s\cdot 0+t\cdot 0$.
-
-%   The other case is that one number or the other is nonzero.
-%   Consider the set of linear combinations 
-%   $\mathcal{L}=\setbuilder{sa+tb}{s,t\in\Z}$.
-%   It has a positive element since not all its elements are~$0$
-%   (one of $a$ or~$b$ is nonzero and taking $1$ times that element
-%   plus zero times the other gives a nonzero member), and if it has a 
-%   negative element then negating the coefficients $s$ and~$t$ gives 
-%   a positive element.
-%   Any set of positive integers has a least positive element.
-%   Call that element~$d\in\mathcal{L}$.
-
-%   For any combination $sa+tb$, because the greatest common divisor
-%   $\gcd(a,b)$ goes into both $a$ and~$b$ it also divides $sa+tb$  
-%   (from Linearity~\ref{ex:DividesAndLinearCombinations})
-%   Therefore $\gcd(a,b)\leq d$.
-
-%   The prior item shows $d\leq\gcd(a,b)$ and so the two are equal. 
-
-%   % Let the two numbers be $a,b\in\Z$; we want to show that there are
-%   % $s,t\in\Z$ so that $\gcd(a,b)=s\cdot a+t\cdot b$.
-
-%   % The $a=b=0$ case is separate.
-%   % In this case $\gcd(a,b)=0$ by definition and for any $s$ and $t$ we
-%   % have $0=\gcd(a,b)=s\cdot a+t\cdot b=s\cdot 0+t\cdot 0$.
-
-%   % The other case is that either number is nonzero.
-%   % Consider the set of linear combinations 
-%   % $\mathcal{L}=\setbuilder{sa+tb}{s,t\in\Z}$.
-%   % It has a positive element since not all its elements are~$0$
-%   % (one of $a$ or~$b$ is nonzero and taking $1$ times that element
-%   % plus zero times the other gives a nonzero member), and if it has a 
-%   % negative element then negating the coefficients $s$ and~$t$ gives 
-%   % a positive element.
-%   % Any set of positive integers has a least positive element.
-%   % Call that element~$d\in\mathcal{L}$.
-%   % We will show that $d=\gcd(a,b)$.
-
-%   % By the first item any divisor common to $a$ and $b$ also divides 
-%   % a combination of the two, so $\gcd(a,b)\divides d=sa+bt$, and therefore
-%   % $\gcd(a,b)\leq d$.
-
-%   % For the inequality in the other direction, 
-%   % we will show that $d$ is a common divisor.
-%   % To show that $d\divides a$ write $a=dq+r$ with $0\leq r<d$ and
-%   % substitute: $r=a-dq=a-(sa+tb)\cdot q=(1-s)\cdot a-t\cdot b$.
-%   % Because~$d$ is the minimal positive combination, and becasue $r<d$,
-%   % this implies that the remainder~$r$ is zero and so $d\divides a$.
-%   % In the same way $d\divides b$.
-%   % As a common divisor, $d\leq\gcd(a,b)$.
-% \end{exes}
-% \end{ans}
 \end{problem}
 
 \begin{problem}
@@ -2201,10 +1466,9 @@ Prove each.
 \begin{exercise} 
   If $d$ is a common divisor of $a$ and~$b$ then 
   $\gcd(a/d,\,b/d)=\gcd(a,b)/d$.
-  This shows that 
-  dividing by the greatest common divisor leaves no common divisors:
+  (From this it follows that 
   if $a$ and~$b$ are nonzero then $a/gcd(a,b)$ and $b/\gcd(a,b)$
-  are relatively prime.
+  are relatively prime.)
 \end{exercise}
 \begin{answer}
   This is immediate from the prior item on taking $m$ to be~$d$, 
@@ -2222,36 +1486,6 @@ Prove each.
   $a\divides c$.
 \end{answer}
 \end{exes}
-% \begin{exes}
-% \item $\gcd(ma,mb)=m\cdot\gcd(a,b)$
-% \item If $d$ is a common divisor of $a$ and~$b$ then 
-%   $\gcd(a/d,\,b/d)=\gcd(a,b)/d$.
-%   This implies that 
-%   dividing by the greatest common divisor leaves no common divisors:
-%   if $a$ and~$b$ are nonzero then $a/gcd(a,b)$ and $b/\gcd(a,b)$
-%   are relatively prime.
-% \item \notetext{Euclid's Lemma}  
-%   If $a$ and~$b$ are relatively prime then $a\divides bc$ implies that 
-%   $a\divides c$.
-% \end{exes}
-% \begin{ans}
-% \begin{exes}
-% \item If both $a$ and~$b$ are zero then the equation is trivial.
-%   If one or both numbers are nonzero then by 
-%   B\'ezout's Lemma~\ref{ex:Bezout}, $\gcd(ma,mb)$ is the least
-%   positive value of $\setbuilder{s\cdot ma+t\cdot mb}{s,t\in\Z}$.
-%   This equals $m$ times the least positive member of 
-%   $\setbuilder{sa+tb}{s,t\in\Z}$, 
-%   which is $m\cdot\gcd(a,b)$.
-% \item This is immediate from the prior item on taking $m$ to be~$d$, 
-%   and also taking $a$ to be~$a/d$ and $b$ to be~$b/d$.     
-% \item The numbers $a$ and~$b$ are relatively prime so $\gcd(a,b)=1$.
-%   The first item gives $\gcd(ca,cb)=c$.
-%   Thus $c=s\cdot ac+t\cdot bc$ for some $s,t\in\Z$, and
-%   because $a\divides ac$ and~$a\divides bc$ we have by Linearity that
-%   $a\divides c$.
-% \end{exes}
-% \end{ans}
 \end{problem}
 \end{bezoutproof}
 % ========== End Bezout argument of lemma =========== 
@@ -4714,7 +3948,7 @@ For each combination, give a binary relation on $A=\set{0,1,2}$.
 \end{exes}
 \end{problem}
 
-\begin{problem} \label{RationalsAsEqClasses}
+\begin{problem}[\maxlength] \label{RationalsAsEqClasses}
 Consider the relation
 $\setbuilder{(\sequence{p,q},\sequence{n,d})\in (\Z\times\Z^+)^2}{pd=qn}$
 (restated, $\sequence{p,q}\\Z\times\Z^+$\ is related to~$\sequence{n,d}$
@@ -4847,7 +4081,7 @@ and the $P$ are \definend{pairwise disjoint}
       $X=\R$, $\partition{P}=\setbuilder{P_x}{x\in \R}$
       where $P_x=\setbuilder{y\in\R}{x-y\in \Z}$
       \hspace{0.75em}\hint some unequal reals $x_0\neq x_1$ 
-      are associated with parts that are equal $P_{x_0}=P_{x_1}$; 
+      are associated with equal parts $P_{x_0}=P_{x_1}$; 
       for instance, $P_{0.3}=P_{1.3}$.  
       so what may at first look appear to be two elements of~$\partition{P}$
       is actually a single element.
@@ -4862,7 +4096,6 @@ and the $P$ are \definend{pairwise disjoint}
   if $P_x\intersection P_y\neq\emptyset$ then~$P_x=P_y$.
   So suppose that $z\in P_x\intersection P_y$.
   Then $x-z\in\Z$ and~$y-z\in \Z$.
-  
   To prove that $P_x=P_y$ by mutual containment assume $a\in P_x$.
   Then $x-a\in\Z$.
   The expression $(y-z)-(x-z)+(x-a)$ is a combination of three integers,
@@ -4886,7 +4119,7 @@ and the $P$ are \definend{pairwise disjoint}
   one example is that $P_1=P_4$ (numbers in either set leave a remainder 
   of~$1$ on division by~$3$).
 
-  No $P_n$ is empty because $n\in P_n$, as~$n\equiv n\pmod 3$.
+  Every $P_n$ is nonempty because $n\in P_n$, as~$n\equiv n\pmod 3$.
   For the same reason every~$n\in\N$ is an element of at least
   one~$P$.
 
@@ -4895,13 +4128,12 @@ and the $P$ are \definend{pairwise disjoint}
   $P_i\intersection P_j\neq \emptyset$ then $P_i=P_j$.
   Fix $x\in P_i\intersection P_j$, which implies that
   $x\equiv i\pmod 3$ and~$x\equiv j\pmod 3$.
-
   To verify that the two sets $P_i$ and~$P_j$ are equal by mutual
   containment, start with~$y\in P_i$.
   Then $y\equiv i\pmod 3$.
   Exercise~\ref{ex:EquivModMIsEquivalenceRelation}
-  shows that the relation of `equivalent modulo~$3$' is an 
-  equivalence relation.
+  shows that the relation `equivalent modulo~$3$' is an 
+  equivalence.
   Symmetry implies that $i\equiv x\pmod 3$ and, 
   together with $y\equiv i\pmod 3$,
   transitivity implies that $y\equiv x\pmod 3$.
@@ -4915,87 +4147,6 @@ and the $P$ are \definend{pairwise disjoint}
   $P_1=P_4=P_{-2}=\cdots{}$ and~$P_2=P_5=P_{-1}=\cdots\hbox{}$.  
 \end{answer}
 \end{exes}
-% \begin{exes}
-% \item $X=\N$, $\partition{P}=\set{P_0,P_1}$, 
-%   where~$P_0$ is the set of even numbers
-%   and $P_1$ is the set of odd numbers
-% \item $X=\R$, $\partition{P}=\setbuilder{P_x}{x\in \R}$
-%       where $P_x=\setbuilder{y\in\R}{x-y\in \Z}$
-%       \hspace{0.75em}\hint some unequal reals $x_0\neq x_1$ 
-%       are associated with equal parts $P_{x_0}=P_{x_1}$  
-%       so what may naively appear to be two elements of~$\partition{P}$
-%       is actually a single element.
-% \item $X=\Z$, $\partition{P}=\setbuilder{P_n}{n\in\Z}$
-%       where $P_n=\setbuilder{i\in\Z}{i\equiv n\pmod 3}$
-%       % \hspace{0.75em}%
-%       % \hint some pairs $i\neq j$ have $P_i=P_j$. 
-% \end{exes}
-% \begin{ans}
-% \begin{exes}
-% \item To verify that it is a partition we will check the three conditions.
-%   First, that no element $P_i\in \partition{P}$ is empty is clear.
-%   Second, that every element of~$\N$ is an element of some~$P_i$ is
-%   also clear.
-%   The third is also clear; no element of~$\N$ is both even and odd.
-
-%   Finally, $\partition{P}$ has two elements since $P_0\neq P_1$.
-% \item Before we start we observe that there are $x_0,x_1\in\R$ such that
-%   $P_{x_0}=P_{x_1}$; an example is $x_0=0.25$ and~$x_1=1.25$.
-
-%   To prove that $\partition{p}$ is a partition, first note that $x\in P_x$.
-%   For this reason no~$P_x$ is empty and also
-%   every $x\in\R$ is an element of some~$P\in\partition{P}$.
-
-%   To show that the $P$'s are pairwise disjoint 
-%   we must show that
-%   if $P_x\intersection P_y\neq\emptyset$ then~$P_x=P_y$.
-%   So suppose that $z\in P_x\intersection P_y$.
-%   Then $x-z\in\Z$ and~$y-z\in \Z$.
-  
-%   To prove that $P_x=P_y$ by mutual containment assume $a\in P_x$.
-%   Then $x-a\in\Z$.
-%   The expression $(y-z)-(x-z)+(x-a)$ is a combination of three integers,
-%   and so is an integer $y-a\in\Z$.
-%   Thus $a\in P_y$.
-%   Containment in the other direction is similar.
-
-%   This partition~$\partition{P}$ has infinitely many elements.
-%   One element is $P_{0.25}=P_{1.25}=\cdots$, and there is a $P$ for every
-%   number between zero and one.
-% \item  Before we begin observe that 
-%   for some pairs $i,j\in\Z$ the sets $P_i$ and~$P_j$ are equal;
-%   one example is that $P_1=P_4$ (numbers in either set leave a remainder 
-%   of~$1$ on division by~$3$).
-
-%   No $P_n$ is empty because $n\in P_n$, as~$n\equiv n\pmod 3$.
-%   For the same reason every~$n\in\N$ is an element of at least
-%   one~$P$.
-
-%   To prove that the $P$'s are pairwise disjoint
-%   we will prove that if 
-%   $P_i\intersection P_j\neq \emptyset$ then $P_i=P_j$.
-%   Fix $x\in P_i\intersection P_j$, which implies that
-%   $x\equiv i\pmod 3$ and~$x\equiv j\pmod 3$.
-
-%   To verify that the two sets $P_i$ and~$P_j$ are equal by mutual
-%   containment, start with~$y\in P_i$.
-%   Then $y\equiv i\pmod 3$.
-%   Exercise~\ref{ex:EquivModMIsEquivalenceRelation}
-%   shows that the relation of `equivalent modulo~$3$' is an 
-%   equivalence relation.
-%   Symmetry implies that $i\equiv x\pmod 3$ and, 
-%   together with $y\equiv i\pmod 3$,
-%   transitivity implies that $y\equiv x\pmod 3$.
-%   Apply transitivity again, using $x\equiv j\pmod 3$, to conclude that
-%   $y\equiv j\pmod 3$. 
-%   Thus~$y\in P_j$.
-%   Containment in the other direction is similar.  
-
-%   Finally, $\partition{P}$ has three elements: 
-%   one is $P_0=P_3=P_{-3}=\cdots\hbox{}$ and the other two are
-%   $P_1=P_4=P_{-2}=\cdots{}$ and~$P_2=P_5=P_{-1}=\cdots\hbox{}$.
-% \end{exes}
-% \end{ans}
 \end{problem}
 
 \begin{problem} \label{ex:EquivClassesFormPartition}
@@ -5019,7 +4170,6 @@ Prove.
   then~$\eqclass{x}=\eqclass{y}$ are equal.
   So suppose that $z\in\eqclass{x}\intersection\eqclass{y}$.
   Then $z\equiv x\pmod R$ and~$z\equiv y\pmod R$.
-
   To show the equality of the sets $\eqclass{x}$ and~$\eqclass{y}$ 
   by mutual inclusion, assume $a\in\eqclass{x}$.
   Then $a\equiv x\pmod R$.
@@ -5043,9 +4193,7 @@ Prove.
   Suppose that $\partition{P}$ is a partition. 
 
   The relation~$R$ is reflexive because any~$x\in X$ is an element of
-  the same part as itself
-  (the parts $P\in\partition{P}$ are sets and the set~$P$ containing~$x$
-  is known to contain~$x$).
+  the same part $P_{x}\in\partition{P}$ as itself.
   The relation~$R$ is symmetric because if $x$ is in the same part as~$y$
   then $y$ is in the same part as~$x$.
 
@@ -5055,66 +4203,13 @@ Prove.
   That is, there is a $P\in\partition{P}$ such that
   both $x$ and~$y$ are elements of~$P$, 
   and also both $y$ and~$z$ are elements of~$P$.
-  Clearly then both $x$ and~$z$ are in the same part, $P$.  
+  Then both $x$ and~$z$ are elements of $P$.  
 \end{answer}
 \end{exes}
-% \begin{exes}
-% \item Where $R$ is an equivalence, 
-%   the collection of equivalence classes 
-%   $\setbuilder{\eqclass{x}}{x\in X}$ forms a partition of~$X$.
-%   We say that it is the partition \definend{induced} by the relation.
-% \item Where $\partition{P}$ is a partition of~$X$, 
-%   the relation 
-%   $R=\setbuilder{(x,y)\in X^2}{\text{$x$ and~$y$ are in the same part}}$ 
-%   is an equivalence.
-%   We say that this relation \definend{arises from} the partition. 
-% \end{exes}
-% \begin{ans}
-% \begin{exes}
-% \item Let $\partition{P}$ be the collection $\setbuilder{\eqclass{x}}{x\in X}$.
- 
-%   Note that $x\in\eqclass{x}$ by reflexivity.
-%   Thus no element of the partition is empty, and 
-%   every element of~$X$ is in some element of the partition.
-
-%   We must prove that the elements of~$\partition{P}$ are pairwise disjoint:
-%   if $\eqclass{x}\intersection\eqclass{y}\neq\emptyset$
-%   then~$\eqclass{x}=\eqclass{y}$ are equal.
-%   So suppose that $z\in\eqclass{x}\intersection\eqclass{y}$.
-%   Then $z\equiv x\pmod R$ and~$z\equiv y\pmod R$.
-
-%   To show the equality of the sets $\eqclass{x}$ and~$\eqclass{y}$ 
-%   by mutual inclusion, assume $a\in\eqclass{x}$.
-%   Then $a\equiv x\pmod R$.
-%   From $z\equiv x\pmod R$, symmetry gives $x\equiv z\pmod R$.
-%   Apply transitivity to $a\equiv x\pmod R$ and~$x\equiv z\pmod R$ to
-%   derive that $a\equiv z\pmod R$.
-%   With that and $z\equiv y\pmod R$, transitivity gives
-%   that $a\equiv y\pmod R$. 
-%   Thus $a\in\eqclass{y}$.
-%   Containment in the other direction is similar.  
-% \item Suppose that $\partition{P}$ is a partition. 
-
-%   The relation~$R$ is reflexive because any~$x\in X$ is an element of
-%   the same part as itself
-%   (the parts $P\in\partition{P}$ are sets and the set~$P$ containing~$x$
-%   is known to contain~$x$).
-%   The relation~$R$ is symmetric because if $x$ is in the same part as~$y$
-%   then $y$ is in the same part as~$x$.
-
-%   For transitivity assume that $x,y,z\in X$ are such that 
-%   $x$ is in the same part as~$y$, and 
-%   $y$ is in the same part as~$z$.
-%   That is, there is a $P\in\partition{P}$ such that
-%   both $x$ and~$y$ are elements of~$P$, 
-%   and also both $y$ and~$z$ are elements of~$P$.
-%   Clearly then both $x$ and~$z$ are in the same part, $P$.
-% \end{exes}
-% \end{ans}
 \end{problem}
 
 \begin{problem}
-Suppose that $\map{f}{D}{C}$.
+Suppose $\map{f}{D}{C}$.
 \begin{exes}
 \begin{exercise} 
   Show that the relation
@@ -5139,9 +4234,9 @@ Suppose that $\map{f}{D}{C}$.
 \end{answer}
 \begin{exercise} 
   Consider the map
-  $\map{\hat{f}}{\partition{P}}{C}$ whose action is given by:
-  $\hat{f}(P)=f(d)$ where $d\in P$.
-  Show that~$\hat{f}$ is a function, and that it is one-to-one.
+  $\map{\hat{f}}{\partition{P}}{C}$ whose action is:
+  $\hat{f}(P)$ is defined to be~$f(d)$ where $d\in P$.
+  Show that~$\hat{f}$ is a function and that it is one-to-one.
 \end{exercise}
 \begin{answer}
   To show that $\hat{f}$ is a function we need to show that
@@ -5171,55 +4266,11 @@ Suppose that $\map{f}{D}{C}$.
   Then $\hat{f}(P)=c$.  
 \end{answer}
 \end{exes}
-% \begin{exes}
-% \item Show that the relation
-%   $R=\setbuilder{(d_0,d_1)\in D^2}{f(d_0)=f(d_1)}$ 
-%   is an equivalence on~$D$. 
-% \item Show that the set of inverse images 
-%   $\partition{P}=\setbuilder{f^{-1}(c)}{c\in C}$ form a partition of the domain.
-% \item Consider the map
-%   $\map{\hat{f}}{\partition{P}}{C}$ whose action is given by:
-%   $\hat{f}(P)=f(d)$ where $d\in P$.
-%   Show that~$\hat{f}$ is a function, and that it is one-to-one.
-% \item Show that if $f$ is onto then so is~$\hat{f}$.
-% \end{exes}
-% \begin{ans}
-% \begin{exes}
-% \item The relation~$R$ is reflexive because $f(d)=f(d)$ for any $d\in D$.
-%   It is symmetric because if $f(d_0)=f(d_1)$ then~$f(d_1)=f(d_0)$.
-%   It is transitive because if $f(d_0)=f(d_1)$ and also~$f(d_1)=f(d_2)$ 
-%   then $f(d_0)=f(d_2)$.
-% \item They are the equivalence classes of the relation in the prior 
-%   item.
-%   By Exercise~\ref{ex:EquivClassesFormPartition} they form a
-%   partition of the domain.
-% \item  To show that $\hat{f}$ is a function we need to show that
-%   it is well-defined.
-%   For this, note that $f(d_0)=f(d_1)$ for all $d_0,d_1\in P$
-%   by definition of the parts~$P$, so 
-%   the value of~$\hat{f}$ is the same no matter which representative~$d\in P$
-%   is used to compute that value.
-%   Restated, $\hat{f}(P)=c$ where $P=f^{-1}(c)$.
-
-%   To show that $\hat{f}$ is one-to-one suppose that $\hat{f}(P_0)=\hat{f}(P_1)$.
-%   Then $f(d_0)=f(d_1)$ for some $d_0\in P_0$ and~$d_1\in P_1$.
-%   Since $f$ gives the same value on these two arguments,
-%   the two are in the same inverse image and so  
-%   by the definition of the parts as the inverse images,
-%   $P_0=P_1$.
-% \item If $f$ is onto then for any $c\in C$ there is a~$d\in D$
-%   such that $f(d)=c$.
-%   So one of the equivalence classes~$P$ that is an element of~$\partition{P}$ 
-%   is the set of 
-%   $d\in D$ such that $f(d)=c$.
-%   Then $\hat{f}(P)=c$.
-% \end{exes}
-% \end{ans}
 \end{problem}
 
 \begin{df}
 A binary relation~$R$ is \definend{antisymmetric} if
-$(x,y)\in R$ and $(y,x)\in R$ implies that $x=y$.
+$\sequence{x,y}\in R$ and $\sequence{y,x}\in R$ implies that $x=y$.
 A binary relation is a \definend{partial ordering} if it is 
 reflexive, antisymmetric, and transitive.  
 \end{df}
@@ -5242,15 +4293,16 @@ reflexive, antisymmetric, and transitive.
   The relation `divides' on $\N$ is a partial order.
 \end{exercise}
 \begin{answer}
-  This is like the prior item in that we just cite known results.
-  To show this relation is reflexive just recall that for all $a\in\N$ we have
+  To show that 
+  this relation is reflexive just recall that for all $a\in\N$ we have
   $a\divides a$.
   Antisymmetric is that if $a\divides b$ and~$b\divides a$ then
   $a=b$.
   (\remark antisymmetric would not hold if the relation were over
   $\Z$ because there the two $a\divides b$ and~$b\divides a$ together imply
   only that $a=\pm b$.)
-  Transitive is the statement that $a\divides b$ and~$b\divides c$ imply
+
+  Transitivity is the statement that $a\divides b$ and~$b\divides c$ imply
   that $a\divides c$, which appears
   in the Divisibility Properties, Exercise~\ref{ex:DivisibilityProperties}.  
 \end{answer}
@@ -5259,46 +4311,13 @@ reflexive, antisymmetric, and transitive.
   a partial order.
 \end{exercise}
 \begin{answer}
-  This is reflexive since $A\subseteq A$.
+  This relation is reflexive since $A\subseteq A$.
   This is antisymmetric by mutual containment: 
   if $A_0\subseteq A_1$ and~$A_1\subseteq A_0$ then the two are equal.
-  This is transitive by Exercise~\ref{ex:PropertiesOfSubset}, 
+  It is transitive by Exercise~\ref{ex:PropertiesOfSubset}, 
   the Properties of Subset.  
 \end{answer}
 \end{exes}
-% \begin{exes}
-% \item The usual less than or equal to relation~$\leq$ on 
-% the real numbers is a partial order.
-% \item The relation `divides' on $\N$ is a partial order.
-% \item For any set~$A$ the relation $\subseteq$ on $\powerset(A)$ is
-% a partial order.
-% \end{exes}
-% \begin{ans}
-% \begin{exes}
-% \item We must show that it is reflexive, antisymmetric, and transitive.
-%   Reflexive is trivial\Dash for any $r\in\R$ we have $r\leq r$.
-%   Antisymmetric is also easy since if $r_0\leq r_1$ and~$r_1\leq r_0$
-%   then $r_0=r_1$.
-%   And transitive is no harder because if $r_0\leq r_1$ and~$r_1\leq r_2$
-%   then $r_0\leq r_2$.
-% \item This is like the prior item in that we just cite known results.
-%   To show this relation is reflexive just recall that for all $a\in\N$ we have
-%   $a\divides a$.
-%   Antisymmetric is that if $a\divides b$ and~$b\divides a$ then
-%   $a=b$.
-%   (\remark antisymmetric would not hold if the relation were over
-%   $\Z$ because there the two $a\divides b$ and~$b\divides a$ together imply
-%   only that $a=\pm b$.)
-%   Transitive is the statement that $a\divides b$ and~$b\divides c$ imply
-%   that $a\divides c$, which appears
-%   in the Divisibility Properties, Exercise~\ref{ex:DivisibilityProperties}.
-% \item This is reflexive since $A\subseteq A$.
-%   This is antisymmetric by mutual containment: 
-%   if $A_0\subseteq A_1$ and~$A_1\subseteq A_0$ then the two are equal.
-%   This is transitive by Exercise~\ref{ex:PropertiesOfSubset}, 
-%   the Properties of Subset.
-% \end{exes}
-% \end{ans}
 \end{problem}
 
 \begin{problem}
