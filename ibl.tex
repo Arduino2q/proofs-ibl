@@ -516,7 +516,7 @@ Suppose that $a,b\in\R$ and that $r\in\R$ with $r\neq 1$.
   =[r\cdot r^{k+1}-1]/(r-1)
   =(r^{k+2}-1)/(r-1)$ for $r\neq 1$.
 \end{answer}
-\begin{exercise}[\midlength] \notetext{Arithmetic Series}  
+\begin{exercise} \notetext{Arithmetic Series}  
   $b+(a+b)+(2a+b)+\cdots+(na+b)=(n(n+1)/2)\cdot a+(n+1)\cdot b$
 \end{exercise}
 \begin{answer} 
@@ -2871,7 +2871,7 @@ Thus $A^0=B^0=\set{\sequence{}}$.
 
 
 %===================================================
-\chapter{Functions, relations}
+\chapter{Functions and relations}
 % http://gowers.wordpress.com/2009/06/08/why-arent-all-functions-well-defined/
 \begin{df}
 A \definend{function}~$f$ (or \definend{map} or \definend{morphism}) 
@@ -2959,12 +2959,47 @@ Do not think that a function must have a formula.
 The final item in the prior exercise has a formula but for other items 
 $G$ just has arbitrary pairings.
 
-\remark we often blur the distinction between a function and its graph.
+
+\begin{problem}[\midlength]
+The \textit{Collatz function} $\map{C}{\N}{\N}$ is defined by cases.
+\begin{equation*}
+  C(n)=\begin{cases}
+         n/2  &\text{if $n$ is even}  \\
+         3n+1 &\text{otherwise}
+       \end{cases}
+\end{equation*}
+It has a different formula when the input is even than when it is odd.
+\begin{items}
+  \item Compute $C(n)$ for $n=0$, \ldots, $n=9$.
+  \item Starting with $n=6$ iterate the function, that is, 
+    compute $C(n)$, then $C(C(n))$, etc., until the result is $1$.
+    How many steps does it take?
+  \item How many steps does it tak estarting with $n=11$?
+\end{items}
+The \textit{Collatz conjecture} is that for every natural number starting
+value, iteration will eventually reach~$1$.
+No one knows if it is true.
+\begin{answer}
+\begin{items}
+  \item $C(0)=0$, $C(1)=4$, $C(2)=1$, $C(3)=10$, $C(4)=2$, $C(5)=16$,
+    $C(6)=3$, $C(7)=22$, $C(8)=4$, $C(9)=28$. 
+  \item $C(6)=3$, $C(C(6))=10$, etc.
+    It takes eight steps: from $6$, to~$3$, and to~$10$, to~$5$, 
+    then~$16$, after that~$8$, and~$4$, then~$2$, and finally~$1$.
+  \item Starting with $11$ takes fourteen steps, with successive 
+    values $11$, $34$, $17$, $52$, $26$, $13$, $40$, $20$, $10$, $5$, 
+    $16$, $8$, $4$, $2$, and~$1$.   
+\end{items}
+\end{answer}
+\end{problem}
+
+We are often not careful about the distinction between a function and its graph.
 For instance we may say, ``a function is an input-output relationship'' 
 when technically it is the function's graph that is the pairing.
-(We've already done some blurring, in the sentence following the definition.)
+(We've already done some of this blurring, 
+in the sentence following the definition.)
 The distinction between function and graph
-is there only because the graph does not determine the codomain,
+is there only because the graph does not determine the codomain and
 so we must specify it separately.
 (The graph does determine the domain.)
 
@@ -3118,7 +3153,8 @@ entire codomain of~$f$ but instead is a superset of its range).
 
 
 \begin{problem} Let $D=\set{0,1,2}$, $C=\set{a,b,c,d}$, 
-and $B=\set{\alpha,\beta,\gamma}$.
+and $B=\set{\alpha,\beta,\gamma}$ (these letters are not variables, they are
+distinct set elements).
 Let $\map{f}{D}{C}$ be given by $0\mapsunder{} a$, $1\mapsunder{} c$, 
 $2\mapsunder{} d$ and let $\map{g}{C}{B}$
 be given by 
@@ -3248,40 +3284,6 @@ is exactly one associated argument, is a
   then the two have the same number of elements.
   We do this in two halves, each of which is useful on its own.
 \begin{exes}
-\begin{exercise}
-  If $f$ is onto then $|C|\leq |D|$.
-\end{exercise}
-\begin{answer}
-  Assume that $\map{f}{D}{C}$ is onto.
-  We will prove the statement by induction on the number of elements in
-  the domain~$D$.
-  The base step is that~$D$ has no elements at all, so $D=\emptyset$.
-  The only function with an empty domain is the function whose graph is 
-  empty. 
-  Since this function is onto, the codomain~$C$ is also empty 
-  (otherwise there would be an element of the codomain with no inverse
-  image).
-  So the statement holds in this case.
-
-  For the inductive step assume that the statement is true when $|D|=0$, 
-  $|D|=1$, \ldots, $|D|=k$ and consider the~$|D|=k+1$ case.
-  Put an element of~$D$ aside by picking some $d\in D$ and considering 
-  $\hat{D}=D-\set{d}$ (because this is the $k+1$ case there is at least
-  one such element in~$D$).
-  The inductive hypothesis applies to $\hat{D}$ so the number of elements in
-  the range of the restriction map 
-  $\map{\restrictionmap{f}{\hat{D}}}{\hat{D}}{\range(\restrictionmap{f}{\hat{D}})}$
-  is less than or equal to the number of elements in the domain of that map
-  $|\range(\restrictionmap{f}{\hat{D}})|\leq |\hat{D}|$.
-
-  Now consider~$D$ and the 
-  map~$\map{f}{D}{C}$ (that is, add the element~$d$ back).
-  The set~$D$ has one element more than the set~$\hat{D}$.
-  And $\range(f)=C$ is no more than one element larger than
-  $\range(\restrictionmap{f}{\hat{D}})$ since it grows by at most the
-  element $f(d)$.
-  Thus $|C|\leq|D|$.  
-\end{answer}
 \begin{exercise} 
   If $f$ is one-to-one then $|C|\geq |D|$.
 \end{exercise}
@@ -3310,6 +3312,41 @@ is exactly one associated argument, is a
   Thus $\range(f)$ is one element larger than
   $|\range(\restrictionmap{f}{\hat{D}})|$.
   Therefore $|C|\geq|D|$.  
+\end{answer}
+\begin{exercise}
+  If $f$ is onto then $|C|\leq |D|$.
+\end{exercise}
+\begin{answer}
+  Assume that $\map{f}{D}{C}$ is onto.
+  We will prove the statement by induction on the number of elements in
+  the domain~$D$.
+  The base step is that~$D$ has no elements at all, so $D=\emptyset$.
+  The only function with an empty domain is the function whose graph is 
+  empty. 
+  Since this function is onto, the codomain~$C$ is also empty 
+  (otherwise there would be an element of the codomain with no inverse
+  image).
+  So the statement holds in this case.
+
+  For the inductive step assume that the statement is true when $|D|=0$, 
+  $|D|=1$, \ldots, $|D|=k$ and consider the~$|D|=k+1$ case.
+  Aiming to apply the inductive hypothesis, 
+  pick some $d_0\in D$ and put it aside by considering 
+  $\hat{D}=D-\set{d_0}$ (because this is the $k+1$ case there is at least
+  one such element in~$D$).
+
+  There are two cases:
+  wither the codomain element $f(d_0)$ is also the image of another domain
+  element, some $d\in\hat{D}$, or else it is not.
+  In the first case the restriction $\restrictionmap{f}{\hat{D}}$ is onto
+  and so the inductive hypothesis applies, giving that 
+  $|C|\leq |\hat{D}|<|D|$.
+
+  In the other case, that $d_0$ is the only element of~$D$ associated 
+  by~$f$ with the codomain element~$f(d_0)$, let $\hat{C}=C-\set{f(d_0)}$.
+  The map~$\map{\restrictionmap{f}{\hat{D}}}{\hat{D}}{\hat{C}}$ is clearly onto.
+  So the inductive hypothesis applies: $|\hat{C}|\leq |\hat{D}|$.
+  Therefore $|\hat{C}|+1=|C|\leq |D|=|\hat{D}|+1$.
 \end{answer}
 \end{exes}
 \end{problem}
@@ -3597,8 +3634,8 @@ Prove.
 
 % .....................................
 \section{Relations}
-A function's graph is a set of $n$~tuples
-subject to a condition, that the input determines the output.
+A function's graph is a set of pairs,
+subject to the condition that the input determines the output.
 We next generalize functions by dropping that condition.  
 
 \begin{df}
@@ -3614,9 +3651,6 @@ In this case, where $\sequence{a_0,a_1}\in R$ we say
 that $a_0$ is~\definend{$R$-related} to~$a_1$,
 sometimes written $a_0Ra_1$.
 \end{df}
-
-% Observe that that if $\map{f}{D}{C}$ is a function then 
-% its graph is a relation on $D\times C$.
 
 \begin{problem}
 List five elements of each relation:
