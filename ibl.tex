@@ -74,15 +74,18 @@ but ``Does $2/5$?''\spacefactor=1000\ is not sensible.
     If $n\in\Z$ is even then $n=2k$ for some $k\in\Z$.
     Then $-n=2\cdot(-k)$ shows that the negative is also even.  
   \end{answer}
-  \begin{exercise}[\midlength]
+  \begin{exercise}
     If a number is odd then its negative is odd.
   \end{exercise}
   \begin{answer}
-    Extending the prior item, we will show that a number is even
+    Following the prior item we will show that a number is even
     if and only if its negative is even.
     Suppose that a number $n\in\Z$ has a negative $-n$ that is even.
-    Since the negative of $-n$ is~$n$, the prior item shows that $n$ is even.
-    Thus $n$ is even if and only if $-n$ is even, and therefore
+    Since the negative of $-n$ is~$n$, the prior paragraph 
+    shows that $n$ is even.
+    Thus $n$ is even if and only if $-n$ is even.
+
+    Therefore
     if $n$ is not even then $-n$ is also not even.
   \end{answer}
   \begin{exercise}
@@ -2903,8 +2906,6 @@ with arrows that begin with a bar.
   \hspace{8em}
   \grf{asy/bean_fcn_elets.pdf}{$a\mapsunder{}f(a)$ and $b\mapsunder{}f(b)$}
 \end{center}
-% In place of $\map{f}{D}{C}$ you may see $D\mapsvia{f} C$ and
-% in place of $f(d)=c$ you may see $d\mapsunder{f}c$.
 
 \begin{problem} Decide if each is a function:\label{FindFunctions}
 \begin{items}
@@ -2961,18 +2962,18 @@ $G$ just has arbitrary pairings.
 
 
 \begin{problem}[\midlength]
-The \textit{Collatz function} $\map{C}{\N}{\N}$ is defined by cases.
+This \textit{hailstone function} $\map{h}{\N}{\N}$ is defined by cases.
 \begin{equation*}
-  C(n)=\begin{cases}
+  h(n)=\begin{cases}
          n/2  &\text{if $n$ is even}  \\
          3n+1 &\text{otherwise}
        \end{cases}
 \end{equation*}
-It has a different formula when the input is even than when it is odd.
+It uses a different formula when the input is even than when it is odd.
 \begin{items}
-  \item Compute $C(n)$ for $n=0$, \ldots, $n=9$.
+  \item Compute $h(n)$ for $n=0$, \ldots, $n=9$.
   \item Starting with $n=6$ iterate the function, that is, 
-    compute $C(n)$, then $C(C(n))$, etc., until the result is $1$.
+    compute $h(n)$, then $h(h(n))$, etc., until the result is $1$.
     How many steps does it take?
   \item How many steps does it take starting with $n=11$?
 \end{items}
@@ -2981,9 +2982,9 @@ value, iteration will eventually reach~$1$.
 No one knows if it is true.
 \begin{answer}
 \begin{items}
-  \item $C(0)=0$, $C(1)=4$, $C(2)=1$, $C(3)=10$, $C(4)=2$, $C(5)=16$,
-    $C(6)=3$, $C(7)=22$, $C(8)=4$, $C(9)=28$. 
-  \item $C(6)=3$, $C(C(6))=10$, etc.
+  \item $h(0)=0$, $h(1)=4$, $h(2)=1$, $h(3)=10$, $h(4)=2$, $h(5)=16$,
+    $h(6)=3$, $h(7)=22$, $h(8)=4$, $h(9)=28$. 
+  \item $h(6)=3$, $h(C(6))=10$, etc.
     It takes eight steps: from $6$, to~$3$, and to~$10$, to~$5$, 
     then~$16$, after that~$8$, and~$4$, then~$2$, and finally~$1$.
   \item Starting with $11$ takes fourteen steps, with successive 
@@ -3015,7 +3016,7 @@ is different.
 
 \begin{problem}[\maxlength]
 Where $D$ and $C$ are finite sets,
-how many maps are there from $D$ to $C$?
+how many functions are there from $D$ to $C$?
 \begin{answer}
 For each element of the domain, in making a function we have a choice 
 of associating it with any of $|C|$-many values.
@@ -3059,56 +3060,42 @@ if it is a function then find its range.
 Let $\map{f}{D}{C}$.
 The \definend{restriction} of $f$ to $B\subseteq D$ is
 the function $\map{\restrictionmap{f}{B}}{B}{C}$ whose action is given by 
-$\restrictionmap{f}{B}(b)=f(b)$ for all $b\in B$.
-We may instead say that
-$f$ is an \definend{extension} of~$\restrictionmap{f}{B}$.
+$\restrictionmap{f}{B}(b)=f(b)$ for all $b\in B$
+(we may instead say that
+$f$ is an \definend{extension} of~$\restrictionmap{f}{B}$).
 The \definend{image} of the set $B$ under $f$, 
 denoted $\image(f)$ (or $f(B)$),
 is the range of the function $\restrictionmap{f}{B}$.
+In the other direction, 
+the \definend{inverse image of the element}~$c\in C$ is
+the set $f^{-1}(c)=\setbuilder{d\in D}{f(d)=c}$, and 
+the \definend{inverse image of the set}~$A\subseteq C$
+is $f^{-1}(A)=\setbuilder{d\in D}{f(d)\in A}$.   
 \end{df}
 
 \begin{problem}
-Find the image of each set under the real function $f(x)=\tan(x)$:
 \begin{items}
-\item $\leftclosed{\pi/4}{\pi/2}=\setbuilder{x\in\R}{\pi/4\leq x<\pi/2}$
-\item \set{-\pi/3}
-% \item $\R^+$  
+Where $\map{f}{\R}{\R}$ is the function $f(x)=\tan(x)$
+\item find the image under $f$ of the interval
+$\leftclosed{\pi/4}{\pi/2}=\setbuilder{x\in\R}{\pi/4\leq x<\pi/2}$
+\item find the image of the set \set{-\pi/3}
+\item find the inverse image of the number $1$
+\item find the inverse image of the interval
+  $\closed{16}{25}=\setbuilder{y\in\R}{16\leq y\leq 25}$.
 \end{items}
 \begin{answer}
 \begin{items}
 \item $f(\leftclosed{\pi/4}{\pi/2})=\leftclosed{1}{\infty}
              =\setbuilder{x\in\R}{1\leq x<\infty}$ 
 \item $f(\set{\pi/3})=\set{\sqrt{3}}$
-% \item The function $f(x)=\tan(x)$ isn't defined for all values in $\R^+$.
-%   In particular, the function isn't defined for $x=\pi/4$.
-%   Thus, $\restrictionmap{f}{\R^+}$ isn't defined, and so the
-%   image isn't defined.
+\item There are many angles with a tangent of $1$ so the
+  solution is the set $\setbuilder{(\pi/4)+n\pi}{n\in \N}$.
+\item It is the infinite union of intervals
+ $\setbuilder{\closed{\arctan(16)+n\pi}{\arctan(25)+n\pi}}{n\in \N}$.
 \end{items}
 \end{answer}
 \end{problem}
 
-\begin{df}
-Let $\map{f}{D}{C}$.
-The \definend{inverse image of the element}~$c\in C$ is
-the set $f^{-1}(c)=\setbuilder{d\in D}{f(d)=c}$.
-The \definend{inverse image of the set}~$A\subseteq C$
-is $f^{-1}(A)=\setbuilder{d\in D}{f(d)\in A}$.   
-\end{df}
-
-\begin{problem}
-Find the inverse image of each under the function $\map{f}{\R}{\R}$ 
-given by $x\mapsto x^2$:
-\begin{items}
-\item $9$
-\item $\closed{16}{25}=\setbuilder{y\in\R}{16\leq y\leq 25}$
-\end{items}
-\begin{answer}
-\begin{items}
-\item It is the set $\set{3,-3}$, sometimes abbreviated $\pm 3$.
-\item It is the union $\closed{4}{5}\union \closed{-5}{-4}$.    
-\end{items}
-\end{answer}
-\end{problem}
 
 \begin{problem}
 Prove that $f^{-1}(A)$ is the union of the sets $f^{-1}(a)$ over all $a\in A$.
@@ -3193,12 +3180,16 @@ but the formula is~$\composed{f}{g}(x)=(3x+1)^2=9x^2+6x+1$.
 \end{problem}
 
 \begin{problem} Prove each.
-\begin{exes}
-\begin{exercise}
+\begin{items}
+\item
   \notetext{Associativity} 
   $\composed{h}{(\composed{g}{f})}=\composed{(\composed{h}{g})}{f}$    
-\end{exercise}
+\item
+  Function composition need not be commutative.
+\end{items}
 \begin{answer}
+\begin{items}
+\item
   The action of the map on the left side
   is $(\composed{h}{(\composed{g}{f})(x)}=h(\composed{g}{f}(x))
        =h(g(f(x)))$.
@@ -3207,19 +3198,13 @@ but the formula is~$\composed{f}{g}(x)=(3x+1)^2=9x^2+6x+1$.
       =h(g(f(x)))$.
   The two actions are equal\Dash the two give the same association of inputs
   with outputs\Dash so the maps are equal.  
-\end{answer}
-\begin{exercise} 
-  Function composition need not be commutative.
-\end{exercise}
-\begin{answer}
-  One example of noncommutativity is $\map{f,g}{\R}{\R}$ given by 
+\item
+  An example of noncommutativity is $\map{f,g}{\R}{\R}$ given by 
   $f(x)=x+2$ and $g(x)=3x+4$.
-  The formula for $\composed{f}{g}$ is $3\cdot(x+2)+4=3x+10$ while
-  the formula for $\composed{g}{f}$ is $(3x+4)+2=3x+6$.
-  The two are not the same function; 
-  for instance, they differ on argument~$0$.  
+  Then $\composed{f}{g}\,(x)=3\cdot(x+2)+4=3x+10$ while
+  $\composed{g}{f}\,(x)=(3x+4)+2=3x+6$.
+\end{items}
 \end{answer}
-\end{exes}
 \end{problem}
 
 
@@ -4040,6 +4025,80 @@ The \definend{equivalence class} of $x\in X$ is the set
 $\eqclass{x}=\setbuilder{y\in X}{y\equiv x\pmod R}$.   
 \end{df}
 
+\begin{problem} 
+  Verify that each relation is an equivalence on~$X$.
+  Describe the equivalence classes.
+\begin{exes}
+\begin{exercise} 
+  $X=\N$, $x_0\equiv x_1 \pmod R$ if both are even or both are odd. 
+\end{exercise}
+\begin{answer}
+  To verify that it is an equivalence we will check that it is reflexive,
+  symmetric, and transitive.
+
+  For reflexive observe that for any $x\in\N$, either both $x$ and~$x$
+  are even or both are odd.
+  For symmetric, if $x_0\equiv x_1\pmod R$ then $(x_0,x_1)\in R$
+  and either both $x_0$ or $x_1$ are even (in which case we also have
+  $(x_1,x_0)\in R$) or both are even.
+  In either case $x_1\equiv x_0\pmod R$.
+
+  Finally, for transitive assume that $x_0\equiv x_1\pmod R$
+  and $x_1\equiv x_2\pmod R$.
+  If $x_0$ is odd then $x_1$ is odd also, and therefore $x_2$ is odd.
+  The case that $x_0$ is even is similar.
+  Either way, $x_0\equiv x_2\pmod R$.
+
+  The equivalence classes are the even numbers
+  $\set{0,2,4,\ldots}=\eqclass{0}=\eqclass{2}=\eqclass{4}=\cdots$
+  and the odd numbers
+  $\set{1,3,5,\ldots}=\eqclass{1}=\eqclass{3}=\eqclass{5}=\cdots$.
+\end{answer}
+\begin{exercise} 
+      $X=\R$, $x_0\equiv x_1\pmod R$ if $x_0-x_1\in \Z$
+\end{exercise}
+\begin{answer}
+  Reflexivitity $x\equiv x\pmod R$ holds because $x-x=0\in\Z$ for any $x\in\R$. 
+  Symmetry holds because if $x_0-x_1=k$ is an integer then $x_1-x_0=-k$ is also
+  an integer.
+
+  Transitivity is also routine.
+  If $x_0\equiv x_1\pmod R$ and $x_1\equiv x_2\pmod R$ then
+  $x_0-x_1$ and~$x_1-x_2$ are integers.
+  So their sum $x_0-x_2$ is an integer and $x_0\equiv x_2\pmod R$.  
+
+  One example class is 
+  $\eqclass{0.25}=\set{\ldots,-1.75,-0.75,0.25,1.25,2.25,\ldots}$
+  (note that 
+  $\eqclass{0.25}=\eqclass{-1.75}=\eqclass{-0.75}=\eqclass{1.25}=\cdots$).
+  Thus there are infinitely many equivalence classes, one for every
+  number $r\in\R$ with $0\leq r<1$.  
+\end{answer}
+\begin{exercise} 
+     $X=\Z$, $i\equiv n \pmod R$ if 
+      $i\equiv n\pmod 3$
+\end{exercise}
+\begin{answer}
+  The relation is reflexive because for every integer, 
+  on division by~$3$ it leaves the same remainder as itself.
+  The relation is symmetric because if, on division by~$3$, 
+  $i$ leaves the same remainder as~$n$
+  then $n$ leaves the same one as~$i$.
+  Transitivity is as easy: if $i_0$ leaves the same remainder as~$i_1$,
+  which in turn leaves the same remainder as~$i_2$ then all three leave
+  the same remainder and in particular $i_0$ and~$i_2$ do. 
+
+  There are three equivalence classes.
+  One is 
+  $\set{\ldots,-6,-3,0,3,6,9,\ldots}=\eqclass{0}=\eqclass{3}=\eqclass{-3}=\cdots$.
+  Another is 
+  $\set{\ldots,-5,-2,1,4,7,\ldots}=\eqclass{1}=\eqclass{-2}=\eqclass{4}=\cdots$.
+  The last is $\eqclass{2}$.
+\end{answer}
+\end{exes}
+\end{problem}
+
+
 \begin{problem} Let $R$ be an equivalence on~$X$.
 Prove that the following are equivalent statements for $x_0,x_1\in X$:
 (i)~$x_0\equiv x_1\pmod R$
@@ -4100,7 +4159,7 @@ and the $P$ are \definend{pairwise disjoint}
 \begin{exercise} 
   $X=\N$, $\partition{P}=\set{P_0,P_1}$, 
   where~$P_0$ is the set of even numbers
-  and $P_1$ is the set of odd numbers
+  and $P_1$ is the set of odd numbers.
 \end{exercise}
 \begin{answer}
   To verify that it is a partition we will check the three conditions.
