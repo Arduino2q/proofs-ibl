@@ -10,9 +10,8 @@ or Discovery Method.  This means that the goal is to have students
 directly grapple with the material.  The text is a sequence of exercises
 with a few definitions and remarks.  Usually the exercises ask for proofs, 
 although a few ask for examples.  The class works through the 
-material together, talking through what they are learning, sometimes
-stumbling around in the dark (the instructor should only lightly guide),
-and sometimes triumphantly emerging with an answer.
+material together, talking through what they are learning (the instructor 
+should only lightly guide).
 
 The material is elementary number theory through the Fundamental Theorem
 of Arithmetic, sets through DeMorgan's Laws, functions through inverse
@@ -23,24 +22,22 @@ relations and partitions.
 LICENSE
 
 This is Free, including the LaTeX source.  You can use it in any way 
-that you like.
+that you like.  The technical license details are on the book's home page;
+see below.
 
-In particular, instructors can use it in class without cost.  They can
-make copies and sell those copies at the bookstore (they may want to 
-prorate the cost to pay for their copy).
+Of most interest is that instructors can use it in class without cost.  
+You can make copies and give them out or sell them copies at the bookstore
+without having to ask me, or to pay me.
 
 
 LATEX
 
 The book is in standard LaTeX.  
 
-Compile it with 
-  1) cd asy
-     asy -fpdf *.asy
-     cd ..
-  2) latexmk  (or `pdflatex ibl' twice followed by`pdflatex answers' twice)
-  3) cd slides
-     pdflatex logic
+On Linux compile it with 
+  ./make_ibl.sh
+and on other platforms have a look in the make_ibl.sh file to see the
+steps.
 
 _Options_
 
@@ -61,8 +58,8 @@ natural but less slick.  See the boolean in the preamble of ibl.tex .
 WEB PAGE
 
 There is more on the book's home page http://joshua.smcvt.edu/proofs .
-Information is there on getting an already-made copy so you don't have 
-to mess with my LaTeX.
+You can get there an already-made .pdf copy so you don't have 
+to mess with my LaTeX.  (There is a selection of lengths available.)
 
 I appreciate bug reports.  I typically save them up and address them in 
 a batch but I welcome them any time.  My contact information is below, and 
