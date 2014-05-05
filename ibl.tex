@@ -2977,9 +2977,9 @@ It uses a different formula when the input is even than when it is odd.
     How many steps does it take?
   \item How many steps does it take starting with $n=11$?
 \end{items}
-The \textit{Collatz conjecture} is that for every natural number starting
+(The \textit{Collatz conjecture} is that for every natural number starting
 value, iteration will eventually reach~$1$.
-No one knows if it is true.
+No one knows if it is true.)
 \begin{answer}
 \begin{items}
   \item $h(0)=0$, $h(1)=4$, $h(2)=1$, $h(3)=10$, $h(4)=2$, $h(5)=16$,
@@ -3075,13 +3075,14 @@ is $f^{-1}(A)=\setbuilder{d\in D}{f(d)\in A}$.
 
 \begin{problem}
 \begin{items}
-Where $\map{f}{\R}{\R}$ is the function $f(x)=\tan(x)$
+Where $\map{f}{\R-\setbuilder{n\pi/2}{n\in\Z}}{\R}$ 
+is the function $f(x)=\tan(x)$
 \item find the image under $f$ of the interval
 $\leftclosed{\pi/4}{\pi/2}=\setbuilder{x\in\R}{\pi/4\leq x<\pi/2}$
 \item find the image of the set \set{-\pi/3}
 \item find the inverse image of the number $1$
-\item find the inverse image of the interval
-  $\closed{16}{25}=\setbuilder{y\in\R}{16\leq y\leq 25}$.
+% \item find the inverse image of the interval
+%   $\closed{16}{25}=\setbuilder{y\in\R}{16\leq y\leq 25}$
 \end{items}
 \begin{answer}
 \begin{items}
@@ -3090,8 +3091,8 @@ $\leftclosed{\pi/4}{\pi/2}=\setbuilder{x\in\R}{\pi/4\leq x<\pi/2}$
 \item $f(\set{\pi/3})=\set{\sqrt{3}}$
 \item There are many angles with a tangent of $1$ so the
   solution is the set $\setbuilder{(\pi/4)+n\pi}{n\in \N}$.
-\item It is the infinite union of intervals
- $\setbuilder{\closed{\arctan(16)+n\pi}{\arctan(25)+n\pi}}{n\in \N}$.
+% \item It is the infinite union of intervals
+%  $\setbuilder{\closed{\arctan(16)+n\pi}{\arctan(25)+n\pi}}{n\in \N}$.
 \end{items}
 \end{answer}
 \end{problem}
@@ -4246,7 +4247,7 @@ and the $P$ are \definend{pairwise disjoint}
 Prove.
 \begin{exes}
 \begin{exercise} 
-  Where $R$ is an equivalence, 
+  Where $R$ is an equivalence on the set~$X$, 
   the collection of equivalence classes 
   $\setbuilder{\eqclass{x}}{x\in X}$ forms a partition of~$X$,
   the partition \definend{induced} by the relation.
@@ -4317,17 +4318,27 @@ Suppose $\map{f}{D}{C}$.
 \end{answer}
 \begin{exercise} 
   Show that the set of inverse images 
-  $\partition{P}=\setbuilder{f^{-1}(c)}{c\in C}$ form a partition of the domain.
+  $\partition{P}=\setbuilder{f^{-1}(c)}{c\in\range(f)}$ 
+  form a partition of the domain.
 \end{exercise}
 \begin{answer}
-  They are the equivalence classes of the relation in the prior 
+  We will show that 
+  they are the equivalence classes of the relation in the prior 
   item.
-  By Exercise~\ref{ex:EquivClassesFormPartition} they form a
-  partition of the domain.  
+  Then by Exercise~\ref{ex:EquivClassesFormPartition} they form a
+  partition of the domain. 
+
+  Let $P_c=f^{-1}(c)=\setbuilder{d\in D}{f(d)=c}$ and suppose that
+  $d\in P_c$ (because $f$ is onto its range, $P_c$ is nonempty).
+  If $\hat{d}\in D$ is related to $c$, that is, if it 
+  is such that $f(\hat{d})=f(d)$, then both equal~$c$
+  and $\hat{d}\in P_c$.
+  Conversely, if $\hat{d}\in P_c$ then $f(\hat{d})=c=f(d)$ and
+  the two are related.
 \end{answer}
 \begin{exercise} 
   Consider the map
-  $\map{\hat{f}}{\partition{P}}{C}$ whose action is:
+  $\map{\hat{f}}{\partition{P}}{\range(f)}$ whose action is:
   $\hat{f}(P)$ is defined to be~$f(d)$ where $d\in P$.
   Show that~$\hat{f}$ is a function and that it is one-to-one.
 \end{exercise}
