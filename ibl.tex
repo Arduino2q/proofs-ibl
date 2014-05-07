@@ -218,6 +218,7 @@ Prove each.
 \begin{exercise}
   \notetext{Transitivity} If $d\divides n$ and $n\divides m$ 
    then $d\divides m$.
+   That is, if $n$ divides~$m$ then so do $n$'s factors.
 \end{exercise}
 \begin{answer}
   Suppose that $d, n, m\in\Z$ are such that $d\divides n$ and
@@ -3004,6 +3005,9 @@ is there only because the graph does not determine the codomain and
 so we must specify it separately.
 (The graph does determine the domain.)
 
+In the edge case that the domain is the empty set, the only function possible
+is the empty set of ordered pairs.
+
 \begin{problem}[\maxlength]
 Show that
 $G=\setbuilder{\sequence{q,n}\in \Q^+\!\!\times\Z^+}{\text{$n$ is $q$'s numerator}}$
@@ -3061,7 +3065,7 @@ Let $\map{f}{D}{C}$.
 The \definend{restriction} of $f$ to $B\subseteq D$ is
 the function $\map{\restrictionmap{f}{B}}{B}{C}$ whose action is given by 
 $\restrictionmap{f}{B}(b)=f(b)$ for all $b\in B$
-(we may instead say that
+(we also say that
 $f$ is an \definend{extension} of~$\restrictionmap{f}{B}$).
 The \definend{image} of the set $B$ under $f$, 
 denoted $\image(f)$ (or $f(B)$),
@@ -3072,6 +3076,9 @@ the set $f^{-1}(c)=\setbuilder{d\in D}{f(d)=c}$, and
 the \definend{inverse image of the set}~$A\subseteq C$
 is $f^{-1}(A)=\setbuilder{d\in D}{f(d)\in A}$.   
 \end{df}
+
+Observe that $f^{-1}(c)$ is a set,
+not an element.
 
 \begin{problem}
 \begin{items}
@@ -3436,6 +3443,12 @@ it is an \definend{inverse}
 (or a \definend{two-sided inverse}) of~$f$, denoted $f^{-1}$. 
 \end{df}
 
+Earlier we defined
+$f^{-1}(c)=\setbuilder{d\in D}{f(d)=c}$.
+Do not be mislead by this\Dash 
+the earlier notation is standard but it is confusing in that it
+does not imply that the function has an inverse.
+
 \begin{problem} Show each.
 \begin{exes}
 \begin{exercise}
@@ -3497,7 +3510,7 @@ Compute each:
 \begin{ans}
 \begin{items}
 \item
-  Observe first that the domain of each equals the codomain of the other
+  First, the domain of each equals the codomain of the other
   so their composition is defined both ways.
   Now, $\composed{g}{f}(a)=g(f(a))=g(a+3)=(a+3)-3=a$
   is the identity map.
@@ -4317,30 +4330,28 @@ Suppose $\map{f}{D}{C}$.
   then $f(d_0)=f(d_2)$.  
 \end{answer}
 \begin{exercise} 
-  Show that the set of inverse images 
+  Prove that the set of inverse images 
   $\partition{P}=\setbuilder{f^{-1}(c)}{c\in\range(f)}$ 
   form a partition of the domain.
 \end{exercise}
 \begin{answer}
-  We will show that 
-  they are the equivalence classes of the relation in the prior 
-  item.
-  Then by Exercise~\ref{ex:EquivClassesFormPartition} they form a
-  partition of the domain. 
-
-  Let $P_c=f^{-1}(c)=\setbuilder{d\in D}{f(d)=c}$ and suppose that
-  $d\in P_c$ (because $f$ is onto its range, $P_c$ is nonempty).
-  If $\hat{d}\in D$ is related to $c$, that is, if it 
-  is such that $f(\hat{d})=f(d)$, then both equal~$c$
-  and $\hat{d}\in P_c$.
-  Conversely, if $\hat{d}\in P_c$ then $f(\hat{d})=c=f(d)$ and
-  the two are related.
+  Each element $f^{-1}(c)=\setbuilder{d\in D}{f(d)=c}$ of the partition
+  $\partition{P}$ is  
+  an equivalence classes of the relation in the prior 
+  item,
+  namely it is the equivalence class $\eqclass{d}$ for any $d$ such that
+  $f(d)=c$ (there is such a domain element~$d$ because the map is onto).
+  Then by Exercise~\ref{ex:EquivClassesFormPartition} these $f^{-1}(c)$
+  partition the domain. 
 \end{answer}
 \begin{exercise} 
   Consider the map
   $\map{\hat{f}}{\partition{P}}{\range(f)}$ whose action is:
   $\hat{f}(P)$ is defined to be~$f(d)$ where $d\in P$.
   Show that~$\hat{f}$ is a function and that it is one-to-one.
+  \remark every function can be modified to be onto by 
+    changing its codomain to equal its range.
+    This exercise gets one-to-one-ness by modifying the function's domain.
 \end{exercise}
 \begin{answer}
   To show that $\hat{f}$ is a function we need to show that
