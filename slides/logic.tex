@@ -26,8 +26,8 @@
 \addheadbox{filler}{\ }  % create extra space at top of slide 
 \hypersetup{colorlinks=true,linkcolor=blue} 
 
-\title[Propositional Logic] % (optional, use only with long paper titles)
-{Propositional Logic}
+\title[Proof foundations] % (optional, use only with long paper titles)
+{Proof foundations}
 
 \author{{\small Jim Hef{}feron}}
 \institute{
@@ -36,7 +36,7 @@
 \date{}
 
 
-\subject{Propositional Logic}
+\subject{Proof foundations}
 % This is only inserted into the PDF information catalog. Can be left
 % out. 
 
@@ -47,9 +47,120 @@
 
 
 
+% ============================================================
+\section{The need for proof}
+\begin{frame}{In Mathematics we prove things}
+
+That the base angles of an isoceles triangle are equal is obvious
+to a person with a mathematical aptitude.
+Another statement that is obvious to such a person
+is that natural numbers factor into a product of primes. 
+
+But is the Pythagorean Theorem, that in a right triangle the 
+square of the length of the hypoteneuse is equal to the sum
+of the squares of the other two sides, also obvious?
+Does it not need to be firmly established?
+
+One of the characteristics of our subject is 
+that we prove new results from already established 
+statements.  
+\end{frame}
+
+
+\begin{frame}{Why we must prove things}
+\begin{itemize}
+\item
+At first glance the polynomial $n^2+n+41$ seems to output only primes.
+Here are the outputs that are less than $100$.
+\begin{center} \small
+  \begin{tabular}{r|rrrrrrrr}
+    $n$        &$0$  &$1$  &$2$  &$3$  &$4$  &$5$  &$6$  &$7$ \\ \cline{2-9}
+    $n^2+n+41$ &$41$ &$43$ &$47$ &$53$ &$61$ &$71$ &$83$ &$97$
+  \end{tabular}
+\end{center}
+But that pattern breaks down;  
+for $n=41$ the polynomial $41^2+41+41$ is clearly 
+divisible by~$41$.
+
+\pause
+\item 
+We can count a positive integer's prime factors. 
+For instance $18=2\cdot 3\cdot 3$ has three.
+If it has an even number of them it is of \textit{even} type, otherwise it
+is of \textit{odd} type (the number $1$ is of odd type).
+In 1919 P\`olya conjectured that below any~$n$ the even types never
+outnumber the odd types. 
+\begin{center} \small
+  \makebox[0.9\textwidth]{
+  \begin{tabular}{r|rrrrrrrrrr}
+    $n$  &$1$  &$2$  &$3$  &$4$  &$5$  &$6$  &$7$ &$8$ &$9$ \\ \cline{2-10}
+    type &odd  &odd  &odd  &even &odd  &even &odd &odd &even
+  \end{tabular}}
+\end{center}
+In 1962 that Lehman found the 
+counterexample $906\,180\,359$.
+\end{itemize}
+\end{frame}
+% >>> def prime_factors(n):
+% ...     i = 2
+% ...     factors = []
+% ...     while i * i <= n:
+% ...         if n % i:
+% ...             i += 1
+% ...         else:
+% ...             n //= i
+% ...             factors.append(i)
+% ...     if n > 1:
+% ...         factors.append(n)
+% ...     return factors
+% >>> for i in range(41):
+% ...     print i, i*i+i+41, prime_factors(i*i+i+41)
+% ... 
+% 0 41 [41]
+% 1 43 [43]
+% 2 47 [47]
+% 3 53 [53]
+% 4 61 [61]
+% 5 71 [71]
+% 6 83 [83]
+% 7 97 [97]
+% 8 113 [113]
+% 9 131 [131]
+% 10 151 [151]
+% 11 173 [173]
+% 12 197 [197]
+% 13 223 [223]
+% 14 251 [251]
+% 15 281 [281]
+% 16 313 [313]
+% 17 347 [347]
+% 18 383 [383]
+% 19 421 [421]
+% 20 461 [461]
+% 21 503 [503]
+% 22 547 [547]
+% 23 593 [593]
+% 24 641 [641]
+% 25 691 [691]
+% 26 743 [743]
+% 27 797 [797]
+% 28 853 [853]
+% 29 911 [911]
+% 30 971 [971]
+% 31 1033 [1033]
+% 32 1097 [1097]
+% 33 1163 [1163]
+% 34 1231 [1231]
+% 35 1301 [1301]
+% 36 1373 [1373]
+% 37 1447 [1447]
+% 38 1523 [1523]
+% 39 1601 [1601]
+% 40 1681 [41, 41]
+
 
 % ============================================================
-\section{Truth tables}
+\section{Elements of logic}
 
 %..........
 \begin{frame}
