@@ -53,19 +53,19 @@
 
 `The base angles of an isoceles triangle are equal' seems obvious
 to a person with mathematical aptitude.
-\begin{center}
+\begin{center}\small
   \vcenteredhbox{\includegraphics{asy/pons.pdf}}
   \hspace*{2em}
   \vcenteredhbox{if $a\cong b$ then $A\cong B$}
 \end{center}
-Another statement that seems obvious to such a person
-is that each positive integer factors into a product of primes. 
+Another example of a statement that seems obvious to such a person
+is `each positive integer factors into a product of primes'. 
 
 \pause
-But is the Pythagorean Theorem, that in a right triangle the 
+But is the Pythagorean Theorem `in a right triangle the 
 square of the length of the hypoteneuse is equal to the sum
-of the squares of the other two sides, also perfectly clear?
-Does it not need to be firmly established?
+of the squares of the other two sides' perfectly clear?
+Does it not require an argument?
 
 A characteristic of our subject is 
 that we show that new results follow logically from those already established.  
@@ -74,7 +74,7 @@ that we show that new results follow logically from those already established.
 
 
 \begin{frame}{Why we prove, not just convince}
-Here are examples of statements that seem convincing, 
+Here are examples of assertions that seem convincing 
 but turn out to be false.
 
 \begin{itemize}
@@ -181,13 +181,13 @@ A \alert{proposition} is an assertion that has a truth value,
 either `true' or `false'.
 
 \pause
-These are propositions: ``$2+2=4$'' 
-and ``Two circles in the plane intersect in either zero points, one point,
-two points, or all of their points.''
+These are propositions: `$2+2=4$' 
+and `Two circles in the plane intersect in either zero points, one point,
+two points, or all of their points.'
 
 \pause
-These are not propositions: ``$3+5$''
-and ``$x$ is not prime.''
+These are not propositions: `$3+5$'
+and `$x$ is not prime.'
 \end{frame}
 
 
@@ -198,19 +198,19 @@ and ``$x$ is not prime.''
 
 Prefixing a proposition with \alert{not} inverts its truth value.
 
-``It is not the case that $3+3=5$''
+`It is not the case that $3+3=5$'
 is true.
 
-``It is not the case that $3+3=6$''
+`It is not the case that $3+3=6$'
 is false.
 
 \pause
 \bigskip
-So the truth
-of \textit{not}~$P$ depends only on the truth value of~$P$.
-Specifically, the truth value of \textit{not}~$P$ is 
-the opposite of the truth value of~$P$.  
-We say it is a \alert{unary logical operator} or 
+So the truth value
+of `not~$P$' depends only on the truth of~$P$.
+% Specifically, the truth value of \textit{not}~$P$ is 
+% the opposite of the truth value of~$P$.  
+We say `not' is a \alert{unary logical operator} or 
 a \alert{unary boolean function} since it takes one input, a truth value, 
 and yields as output a truth value.
 
@@ -271,7 +271,10 @@ are \alert{binary logical operators}.
 \begin{frame}
   \frametitle{Truth Tables}
 
-Describe the action of operators with \alert{truth tables}. 
+Write $\neg P$ for `not~$P$', 
+$P\wedge Q$ for `$P$~and~$Q$',
+and $P\vee Q$ for `$P$~or~$Q$'.  
+We can describe the action of these operators using \alert{truth tables}. 
 \begin{center}
   \begin{tabular}[t]{c|c}
     $P$  &$\neg P$  \\ \hline
@@ -287,14 +290,11 @@ Describe the action of operators with \alert{truth tables}.
     $T$  &$T$  &$T$          &$T$  
   \end{tabular}
 \end{center}
-Write $\neg P$ for `not~$P$', 
-$P\wedge Q$ for `$P$~and~$Q$',
-and $P\vee Q$ for `$P$~or~$Q$'.  
 
 \pause
 One advantage of this
 notation is that it allows formulas of a complexity that would be awkward in
-an English sentence. 
+a natural language. 
 For instance,
 $(P\vee Q)\wedge \neg(P\wedge Q)$ is hard to express in 
 English.
@@ -324,14 +324,14 @@ the left side of the tables the rows make the ascending binary numbers.
   \end{tabular}
 \end{center}
 \pause
-In this context \textit{not}~$P$ is symbolized $\bar{P}$.
+In this context `not~$P$' is symbolized $\bar{P}$.
 Note that $\bar{P}=1-P$.
 
 The table makes clear why `$P$~and~$Q$' is symbolized with a 
 multiplication dot~$P\cdot Q$.
 
-For `$P$~or~$Q$' the plus sign is the best symbol because 
-\textit{or} is accumulation of the truth value~$T$.
+For `$P$~or~$Q$' the plus sign is a good symbol because 
+`or' accumulates the truth value~$T$.
 \end{frame}
 
 
@@ -342,14 +342,15 @@ For `$P$~or~$Q$' the plus sign is the best symbol because
 
 %..........
 \begin{frame}
-  \frametitle{Other operators: Exclusive Or}
+  \frametitle{Other operators: Exclusive or}
 
 Disjunction models
 sentences meaning `and/or'.
 In contrast,
-``Eat your dinner or no dessert'',
-``Live free or die'', and
-``Let me go or the hostage gets it'' all mean `one or the other, but not both'.
+`Live free or die', 
+`Eat your dinner or no dessert', and
+`Give me the money or the hostage gets it' all 
+mean one or the other, but not both.
 \begin{center}
   \begin{tabular}{cc|c}
     $P$  &$Q$  &$P$ \text{\small\textsc{XOR}} $Q$  \\ \hline
@@ -368,7 +369,7 @@ In contrast,
 \begin{frame}
   \frametitle{Other operators: Implies}
 
-We model ``if $P$ then $Q$'' this way.
+We model `if $P$ then $Q$' this way.
 \begin{center}
   \begin{tabular}{cc|c}
     $P$  &$Q$  &$P \rightarrow Q$  \\ \hline
@@ -389,7 +390,7 @@ Here $P$ is the \emph{antecedent} while $Q$ is the
 \begin{frame}
   \frametitle{Other operators: Bi-implication}
 
-Model ``$P$ if and only if $Q$'' with this.
+Model `$P$ if and only if $Q$' with this.
 \begin{center}
   \begin{tabular}{cc|c}
     $P$  &$Q$  &$P \leftrightarrow Q$  \\ \hline
@@ -399,7 +400,7 @@ Model ``$P$ if and only if $Q$'' with this.
     $T$  &$T$  &$T$     
   \end{tabular}
 \end{center}
-Mathematicians sometimes write ``iff''.
+Mathematicians sometimes write `iff'.
 \end{frame}
 
 
@@ -473,10 +474,11 @@ $T$ and $F$.
 %..........
 \begin{frame}
   \frametitle{Evaluating complex statements}
-  We can calculate how the output results 
-  depend on the values of the input variables.
+  No matter how hard the propositional logic sentence, with patience 
+  we can calculate how the output truth values
+  depend on the values of the inputs.
   \pause
-  Here is the input-output relationship for
+  Here is the work for
   $(P\rightarrow Q)\wedge (P\rightarrow R)$.
   \begin{center}
     \begin{tabular}{ccc|ccc}
@@ -484,7 +486,7 @@ $T$ and $F$.
       $F$  &$F$  &$F$  &$T$  &$T$  &$T$   \\
       $F$  &$F$  &$T$  &$T$  &$T$  &$T$   \\
       $F$  &$T$  &$F$  &$T$  &$T$  &$T$   \\
-      $F$  &$T$  &$T$  &$T$  &$T$  &$T$   \\
+      $F$  &$T$  &$T$  &$T$  &$T$  &$T$   \\[0.75ex]
       $T$  &$F$  &$F$  &$F$  &$F$  &$F$   \\
       $T$  &$F$  &$T$  &$F$  &$T$  &$F$   \\
       $T$  &$T$  &$F$  &$T$  &$F$  &$F$   \\
@@ -571,15 +573,13 @@ $T$ and $F$.
     $T$  &$T$  &$T$     
   \end{tabular}
 \end{center}
-Consider
-`if Babe Ruth was president then $1+2=4$'. 
-Our definition of implies takes it to be a true statement, 
+Our definition of implies takes
+`if Babe Ruth was president then $1+2=4$'
+to be a true statement, 
 because its antecedent is false.
-\pause 
-Now consider 
-`if Mallory reached the summit of Everest then $1+2=3$.' 
-We take this to be true because its consequent is true.
-\pause
+Similarly we take
+`if Mallory reached the summit of Everest then $1+2=3$' 
+to be true because its consequent is true.
 Why define implication this way?
 
 \pause
@@ -588,8 +588,8 @@ Standard mathematical practice defines implication so that
   if $n$ is a perfect square then $n$ is not prime
 \end{center}
 is true for all $n\in\N$.
-\pause  Take $n=6$ to get that $F\rightarrow T$ must evaluate to $T$.  
-\pause Take $n=3$ to get that $F\rightarrow F$ should yield $T$.
+\pause  Use $n=6$ to get that $F\rightarrow T$ must evaluate to $T$.  
+\pause Use $n=3$ to get that $F\rightarrow F$ should yield $T$.
 \pause For $T\rightarrow T$ take $n=4$.
 \end{frame}
 % http://www.earlham.edu/~peters/courses/log/mat-imp.htm
@@ -629,7 +629,8 @@ is true for all $n\in\N$.
   `if a card has a vowel on the one side 
   then it has an even number on the other.'  
   How to do it, turning over the fewest cards?
-  (This is the \textit{Wason test}; fewer than $10\%$ of people get it right.)
+  (This is the \textit{Wason test}; fewer than $10\%$ of Americans 
+  get it right.)
 % \item In ``Fred is Mike's brother's son and therefore Fred is Mike's nephew'' 
 %   the statement ``Fred is Mike's nephew'' is a \textit{material consequence} 
 %   of ``Fred is Mike's brother's son'' but not a formal consequence. 
