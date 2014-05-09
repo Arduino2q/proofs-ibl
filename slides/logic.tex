@@ -26,8 +26,8 @@
 \addheadbox{filler}{\ }  % create extra space at top of slide 
 \hypersetup{colorlinks=true,linkcolor=blue} 
 
-\title[Proof foundations] % (optional, use only with long paper titles)
-{Proof foundations}
+\title[Foundation of proofs] % (optional, use only with long paper titles)
+{Foundation of proofs}
 
 \author{{\small Jim Hef{}feron}}
 \institute{
@@ -36,7 +36,7 @@
 \date{}
 
 
-\subject{Proof foundations}
+\subject{Foundation of proofs}
 % This is only inserted into the PDF information catalog. Can be left
 % out. 
 
@@ -48,57 +48,68 @@
 
 
 % ============================================================
-\section{The need for proof}
+\section{The need to prove}
 \begin{frame}{In Mathematics we prove things}
 
-That the base angles of an isoceles triangle are equal is obvious
-to a person with a mathematical aptitude.
-Another statement that is obvious to such a person
-is that natural numbers factor into a product of primes. 
+`The base angles of an isoceles triangle are equal' seems obvious
+to a person with mathematical aptitude.
+\begin{center}
+  \vcenteredhbox{\includegraphics{asy/pons.pdf}}
+  \hspace*{2em}
+  \vcenteredhbox{if $a\cong b$ then $A\cong B$}
+\end{center}
+Another statement that seems obvious to such a person
+is that each positive integer factors into a product of primes. 
 
+\pause
 But is the Pythagorean Theorem, that in a right triangle the 
 square of the length of the hypoteneuse is equal to the sum
-of the squares of the other two sides, also obvious?
+of the squares of the other two sides, also perfectly clear?
 Does it not need to be firmly established?
 
-One of the characteristics of our subject is 
-that we prove new results from already established 
-statements.  
+A characteristic of our subject is 
+that we show that new results follow logically from those already established.  
 \end{frame}
 
 
-\begin{frame}{Why we must prove things}
+
+\begin{frame}{Why we prove, not just convince}
+Here are examples of statements that seem convincing, 
+but turn out to be false.
+
 \begin{itemize}
-\item
-At first glance the polynomial $n^2+n+41$ seems to output only primes.
-Here are the outputs that are less than $100$.
-\begin{center} \small
+\pause\item
+At first we may guess that the polynomial $n^2+n+41$ 
+outputs only primes. 
+\begin{center} \small\smallskip
   \begin{tabular}{r|rrrrrrrr}
     $n$        &$0$  &$1$  &$2$  &$3$  &$4$  &$5$  &$6$  &$7$ \\ \cline{2-9}
     $n^2+n+41$ &$41$ &$43$ &$47$ &$53$ &$61$ &$71$ &$83$ &$97$
-  \end{tabular}
+  \end{tabular}\smallskip
 \end{center}
-But that pattern breaks down;  
-for $n=41$ the polynomial $41^2+41+41$ is clearly 
+However, that pattern breaks down;  
+for $n=41$ the output $41^2+41+41$ is clearly 
 divisible by~$41$.
 
 \pause
 \item 
-We can count a positive integer's prime factors. 
-For instance $18=2\cdot 3\cdot 3$ has three.
-If it has an even number of them it is of \textit{even} type, otherwise it
-is of \textit{odd} type (the number $1$ is of odd type).
-In 1919 P\`olya conjectured that below any~$n$ the even types never
-outnumber the odd types. 
-\begin{center} \small
+When decomposed, $18=2^1\cdot 3^2$ has an odd number $1+2$ of 
+prime factors, while
+$24=2^3\cdot 3^1$ has an even number~$3+1$ of them.
+We say that $18$ is of \textit{odd} type and
+$24$ is of \textit{even} type.
+\begin{center} \small\smallskip
   \makebox[0.9\textwidth]{
   \begin{tabular}{r|rrrrrrrrrr}
-    $n$  &$1$  &$2$  &$3$  &$4$  &$5$  &$6$  &$7$ &$8$ &$9$ \\ \cline{2-10}
-    type &odd  &odd  &odd  &even &odd  &even &odd &odd &even
-  \end{tabular}}
+    $n$  &$1$   &$2$  &$3$  &$4$  &$5$  &$6$  &$7$ &$8$ &$9$ \\ \cline{2-10}
+    type &even  &odd  &odd  &even &odd  &even &odd &odd &even
+  \end{tabular}}\smallskip
 \end{center}
-In 1962 that Lehman found the 
-counterexample $906\,180\,359$.
+P\`olya conjectured that below any~$n>1$ the even types do not
+outnumber the odd types. 
+The numerical evidence is strong\Dash 
+the statement holds until $906\,150\,257$\Dash 
+but that number gives a counterexample. 
 \end{itemize}
 \end{frame}
 % >>> def prime_factors(n):
@@ -566,7 +577,7 @@ Our definition of implies takes it to be a true statement,
 because its antecedent is false.
 \pause 
 Now consider 
-`if Mallory reached the summit of Everest then life exists on earth.' 
+`if Mallory reached the summit of Everest then $1+2=3$.' 
 We take this to be true because its consequent is true.
 \pause
 Why define implication this way?
@@ -599,17 +610,17 @@ is true for all $n\in\N$.
   consequent~$Q$.
 \pause
 \item Also noted there are:
-  (1) if the antecedent~$P$ is false then the statement as a whole is true; 
+  (1)~if the antecedent~$P$ is false then the statement as a whole is true, 
   said to be \alert{vacuously true}
-  and (2) if the consequent~$Q$ is true then the statement as a whole is true.
+  and (2)~if the consequent~$Q$ is true then the statement as a whole is true.
 % \pause 
 % \item If the antecedent~$P$ is true then the statement as a whole has the
 %   same truth value as the consequent.
 \pause
 \item Truth tables show that $P\rightarrow Q$
-  is equivalent to $\neg(P\wedge \neg Q)$, 
+  is logically equivalent to $\neg(P\wedge \neg Q)$, 
   to $\neg P\vee Q$,
-  and also equivalent to the \alert{contrapositive}~$\neg Q\rightarrow \neg P$.
+  and also to the \alert{contrapositive}~$\neg Q\rightarrow \neg P$.
 \pause
 \item 
   On a table in front of you are four cards, 
@@ -618,6 +629,7 @@ is true for all $n\in\N$.
   `if a card has a vowel on the one side 
   then it has an even number on the other.'  
   How to do it, turning over the fewest cards?
+  (This is the \textit{Wason test}; fewer than $10\%$ of people get it right.)
 % \item In ``Fred is Mike's brother's son and therefore Fred is Mike's nephew'' 
 %   the statement ``Fred is Mike's nephew'' is a \textit{material consequence} 
 %   of ``Fred is Mike's brother's son'' but not a formal consequence. 
@@ -632,32 +644,31 @@ is true for all $n\in\N$.
 
 \begin{frame}
 \frametitle{Predicates, Quantifiers}
-Consider this statement. 
+The statement
 \begin{equation*}
   \text{`if $n$ is odd then $n$ is a perfect square'}
   \tag{$*$}
 \end{equation*}
-\pause
-It involves two clauses, `$n$ is odd' and `$n$ is square',
-and for both the truth value depend on the variable.
+involves two clauses, `$n$ is odd' and `$n$ is square'.
+For each the truth value depend on the variable.
 A \alert{predicate} is a truth-valued function.
 An example is the function~$\text{Odd}$ that takes an integer as input and 
 yields either $T$ or~$F$, as in~$\text{Odd}(5)=T$.
 Another example is $\text{Square}$, as in $\text{Square}(5)=F$.
 
 \pause
-A mathematician asserting~($*$) would mean that
+A mathematician stating~($*$) would mean that
 it holds for all~$n$.
 We denote `for all' by $\forall$ so the statement is formally written
 $\forall n\in\N \big[\text{Odd}(n)\rightarrow\text{Square}(n)\big]$.
-(It is, of course a false statement.)
+(It is of course a false statement.)
 
 \pause
 A
 \alert{quantifier} describes for how many values of the
 variable the clause must be true, in order for the statement as a whole to
 be true.
-Besudes `for all' 
+Besides `for all' 
 the other common quantifier is 
 `there exists', denoted $\exists$.
 The statement
@@ -665,7 +676,7 @@ $\exists n\in\N \big[\text{Odd}(n)\rightarrow\text{Square}(n)\big]$
 is true.
 \end{frame}
 \begin{frame}
-Examples of statements written with explicit quantifiers.
+Examples of statements written formally, with explicit quantifiers.
 
 \begin{itemize}
 \item Every number is divisible by $1$.
@@ -701,9 +712,14 @@ Examples of statements written with explicit quantifiers.
 \end{itemize}
 \end{frame}
 \begin{frame}
-Observe that the negation of a `$\forall$' statement is a `$\exists\,\neg$' 
+The negation of a `$\forall$' statement is a `$\exists\,\neg$' 
 statement.
-For instance, the negation of `every odd number is a perfect square'
+For instance, the negation of `every raven is black' is 
+`there is a raven that is not black'.
+
+\pause
+A mathematical example is that 
+the negation of `every odd number is a perfect square'
 \begin{equation*}
   \forall n\in\N\,\big[ \text{Odd}(n)\rightarrow\text{Square}(n)\big]
 \end{equation*}
@@ -715,7 +731,7 @@ which is equivalent to this.
 \begin{equation*}
   \exists n\in\N\,\big[\text{Odd}(n)\wedge\neg\text{Square}(n)\big]
 \end{equation*}
-Thus a person could show `every odd number is a perfect square' is false
+Thus a person could show that `every odd number is a perfect square' is false
 by finding a number that is both odd and not a square.
 
 \pause
