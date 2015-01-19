@@ -56,7 +56,7 @@ to a person with mathematical aptitude.
 \begin{center}\small
   \vcenteredhbox{\includegraphics{asy/pons.pdf}}
   \hspace*{2em}
-  \vcenteredhbox{if $a\cong b$ then $A\cong B$}
+  \vcenteredhbox{if $a\cong b$ then $\angle A\cong \angle B$}
 \end{center}
 Another example of a statement that seems obvious to such a person
 is `each positive integer factors into a product of primes'. 
@@ -65,7 +65,6 @@ is `each positive integer factors into a product of primes'.
 But is the Pythagorean Theorem `in a right triangle the 
 square of the length of the hypoteneuse is equal to the sum
 of the squares of the other two sides' perfectly clear?
-Does it not require an argument?
 
 A characteristic of our subject is 
 that we show that new results follow logically from those already established.  
@@ -74,8 +73,8 @@ that we show that new results follow logically from those already established.
 
 
 \begin{frame}{Why we prove, not just convince}
-Here are examples of assertions that seem convincing 
-but turn out to be false.
+% These assertions seem convincing 
+% but turn out to be false.
 
 \begin{itemize}
 \pause\item
@@ -87,9 +86,9 @@ outputs only primes.
     $n^2+n+41$ &$41$ &$43$ &$47$ &$53$ &$61$ &$71$ &$83$ &$97$
   \end{tabular}\smallskip
 \end{center}
-However, that pattern breaks down;  
-for $n=41$ the output $41^2+41+41$ is clearly 
-divisible by~$41$.
+\pause
+However,  
+for $n=41$ the output $41^2+41+41$ is divisible by~$41$.
 
 \pause
 \item 
@@ -105,11 +104,10 @@ $24$ is of \textit{even} type.
     type &even  &odd  &odd  &even &odd  &even &odd &odd &even
   \end{tabular}}\smallskip
 \end{center}
-P\`olya conjectured that below any~$n>1$ the even types do not
-outnumber the odd types. 
-The numerical evidence is strong\Dash 
-the statement holds until $906\,150\,257$\Dash 
-but that number gives a counterexample. 
+P\`olya conjectured that if you fix an~$n>1$ and look at the numbers below it 
+then the even types never outnumber the odd types. 
+\pause
+The first counterexample is $906\,150\,257$. 
 \end{itemize}
 \end{frame}
 % >>> def prime_factors(n):
@@ -323,13 +321,14 @@ the left side of the tables the rows make the ascending binary numbers.
     $1$  &$1$  &$1$          &$1$  
   \end{tabular}
 \end{center}
+In this context we symbolize `not~$P$' with $\bar{P}$,
+we symbolize `$P$~and~$Q$' with $P\cdot Q$, and 
+we symbolize `$P$~or~$Q$' with $P+Q$.
+
 \pause
-In this context `not~$P$' is symbolized $\bar{P}$.
 Note that $\bar{P}=1-P$.
-
-The table makes clear why `$P$~and~$Q$' is symbolized with a 
+The table makes clear why for `$P$~and~$Q$' we use a  
 multiplication dot~$P\cdot Q$.
-
 For `$P$~or~$Q$' the plus sign is a good symbol because 
 `or' accumulates the truth value~$T$.
 \end{frame}
@@ -381,6 +380,8 @@ We model `if $P$ then $Q$' this way.
 \end{center}
 Here $P$ is the \emph{antecedent} while $Q$ is the 
 \emph{consequent}. 
+
+(There are some tricky aspects to this definition that we will discuss below.)
 \end{frame}
 
 
@@ -400,7 +401,7 @@ Model `$P$ if and only if $Q$' with this.
     $T$  &$T$  &$T$     
   \end{tabular}
 \end{center}
-Mathematicians sometimes write `iff'.
+Mathematicians often write `iff'.
 \end{frame}
 
 
@@ -409,7 +410,7 @@ Mathematicians sometimes write `iff'.
 \begin{frame}
   \frametitle{All binary operators}
 
-We can lists all of the binary logical operators.
+This lists all of the binary logical operators.
 \begin{center} \small
     \begin{tabular}{cc|c}
        $P$  &$Q$  &$P$ $\alpha_0$ $Q$  \\ \hline
@@ -461,7 +462,6 @@ These are the unary ones.
      \end{tabular} 
   \end{tabular}
 \end{center}
-
 \pause
 \bigskip
 A zero-ary operator is constant so there are two:
@@ -474,10 +474,9 @@ $T$ and $F$.
 %..........
 \begin{frame}
   \frametitle{Evaluating complex statements}
-  No matter how hard the propositional logic sentence, with patience 
+  No matter how intricate the propositional logic sentence, with patience 
   we can calculate how the output truth values
-  depend on the values of the inputs.
-  \pause
+  depend on the inputs.
   Here is the work for
   $(P\rightarrow Q)\wedge (P\rightarrow R)$.
   \begin{center}
@@ -493,6 +492,8 @@ $T$ and $F$.
       $T$  &$T$  &$T$  &$T$  &$T$  &$T$      
     \end{tabular}
   \end{center}
+  We've just decomposed the statement into its 
+  components $P\rightarrow Q$, etc., and built up to the full sentence.
 \end{frame}
 
 
@@ -509,7 +510,7 @@ $T$ and $F$.
   \pause
   Two propositional expressions are \alert{logically equivalent} if they
   give the same input-output relationship. 
-  Check that the expressions 
+  We can check that expressions 
   $E_0$ and~$E_1$ are equivalent by using truth tables to
   verify that  
   $E_0\leftrightarrow E_1$ is a tautology.  
@@ -580,7 +581,7 @@ because its antecedent is false.
 Similarly we take
 `if Mallory reached the summit of Everest then $1+2=3$' 
 to be true because its consequent is true.
-Why define implication this way?
+Why define it this way?
 
 \pause
 Standard mathematical practice defines implication so that
@@ -588,8 +589,8 @@ Standard mathematical practice defines implication so that
   if $n$ is a perfect square then $n$ is not prime
 \end{center}
 is true for all $n\in\N$.
-\pause  Use $n=6$ to get that $F\rightarrow T$ must evaluate to $T$.  
-\pause Use $n=3$ to get that $F\rightarrow F$ should yield $T$.
+\pause  Then $n=6$ shows that we need $F\rightarrow T$ to evaluate to $T$.  
+\pause Use $n=3$ to get that $F\rightarrow F$ yields $T$.
 \pause For $T\rightarrow T$ take $n=4$.
 \end{frame}
 % http://www.earlham.edu/~peters/courses/log/mat-imp.htm

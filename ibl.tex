@@ -368,8 +368,8 @@ that is less natural, mathematical induction.
 This section is a pause for an introduction to induction.
 
 We will start with exercises about summations 
-(note, though, that induction is not about summation;
-we use these only because they make helpful initial exercises).
+(note though that induction is not about summation;
+we use these simply because they make helpful initial exercises).
 For example, many people have noticed that the odd natural numbers sum to 
 perfect squares: $1+3=4$, $1+3+5=9$, $1+3+5+7=16$, etc.
 We will prove the statement,
@@ -407,11 +407,15 @@ the intuition behind the principle is first that the base step
 directly verifies the statement for the case of the initial number~$n=0$.
 Then because the inductive step verifies the implication~($*$) for all $k$, 
 that implication applied to~$k=0$ gives 
-that the statement is true for the case of the number~$n=1$. 
-Now, with the statement established for both $0$ and~$1$, 
-apply ($*$) again to conclude that the statement is true for the number~$n=2$.
-In this way, induction bootstraps to all natural numbers~$n\geq 0$.
-Below is an induction argument for the example statement, 
+that the statement is true for the case of the number~$n=1$.
+That is, ($*$) with $k=0$ says that $S(0)$ implies~$S(1)$, and with the $S(0)$
+verification we conclude that $S(1)$ holds.
+Then ($*$) with $k=1$ says that $S(0)$ and~$S(1)$ together imply~$S(2)$, 
+so we know that $S(2)$ holds.
+% Now, with the statement established for both $0$ and~$1$, 
+% apply ($*$) again to conclude that the statement is true for the number~$n=2$.
+In this way, induction bootstraps to all larger numbers.
+Here is an induction argument for the example statement, 
 with separate paragraphs for the base step and the inductive step.
 
 \begin{proof}
@@ -770,11 +774,10 @@ We prove this in steps.
 \end{answer}
 \begin{exercise} 
   Prove the statement for $a>0$.
-  \hint you can consider the set of integers $\setbuilder{a-bq}{q\in\Z}$,
-  note that it has nonnegative elements,
+  \hint note that the set $\setbuilder{a-bq}{q\in\Z}$,
+  has nonnegative elements,
   apply the Least Number Principle
-  to produce a smallest nonnegative element, and show that this is the desired
-  remainder~$r$.
+  to produce a smallest, and show it is the desired~$r$.
 \end{exercise}
 \begin{answer}
   Consider the set $E=\setbuilder{a-bq}{q\in\Z}$.
@@ -809,11 +812,11 @@ if they leave the same remainder when divided by~$m$, that is,
 if they have the same modulus with respect to~$m$.
 \end{df}
 
-\begin{problem}[\midlength]  \pord:
+\begin{problem}[\midlength] Prove.  % \pord:
 \begin{items}
 \item $a\bmod b=b\bmod a$
 \item $a\bmod b=-a\bmod b$
-\item $b\bmod b=1$
+% \item $b\bmod b=1$
 \end{items}
 \begin{ans}
 \begin{exes}
@@ -821,8 +824,8 @@ if they have the same modulus with respect to~$m$.
   A counterexample is that $2\bmod 1=0$ but $1\bmod 2=1$.
 \item This is false.
   A counterexample is that $1\bmod 3=0$ but $-1\bmod 3=2$.
-\item This is false;
-  $1\bmod 1=0$.     
+% \item This is false;
+%   $1\bmod 1=0$.     
 \end{exes}
 \end{ans}
 \end{problem}
@@ -1608,9 +1611,9 @@ For a contradiction, assume otherwise,
 that there are finitely many primes 
 $p_0=2$, $p_1=3$, \ldots, $p_{n-1}$.
 
-Multiply them and add one $m=(p_0\cdotp_1\cdots p_{n-1})+1$.
+Multiply them and add one $m=(p_0\cdot p_1\cdots p_{n-1})+1$.
 This number is greater than~$1$ because it is greater than 
-$p_0\cdotp_1\cdots p_{n-1}$, 
+$p_0\cdot p_1\cdots p_{n-1}$, 
 which is a product of $n>0$-many numbers, each of which is greater than~$1$.
 Thus~$m$ has a prime factor~$p_i$.
 But dividing~$m$ by any~$p_i$ 
@@ -1618,6 +1621,15 @@ leaves a remainder of~$1$, which
 is a contradiction. 
 Hence a finite
 list of primes is an impossibility.
+
+\textit{Alternate proof.}
+For contradiction suppose there are finitely many primes
+$2,3,\ldots,p_k$, let $n$ be the product $2\cdot 3\cdots p_k$,
+and consider $n-1$.
+Since $n-1$ is greater than each prime (as $n$ is greater than
+$3\cdot\cdots p_k$ by a factor of $2$), 
+some prime $p_i$ divides~$n-1$.
+But then $p_i$ divides $n-(n-1)=1$, which is impossible.
 \end{answer}
 \end{problem}
 
@@ -1859,10 +1871,10 @@ of the set, written $x\in A$
 (to denote that $x$ is not an element of $A$ write~$x\notin A$).
 Two sets are equal if and only if they have the same elements.
 \end{df}
-\noindent Read `$\in$' as ``is an element of'' rather than ``in'' to ease
-confusion with 
+\noindent Read `$\in$' as ``is an element of'' rather than ``in'' to avoid
+confusion between this and
 the subset relation defined below.
-We sometimes say ``collection'' as a synonym for set.
+As a synonym for set we sometimes say ``collection.''
 
 We usually specify a set either by listing or by
 describing its elements.
