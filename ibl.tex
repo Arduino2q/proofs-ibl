@@ -652,10 +652,10 @@ $a_{k+1}+(a_k+\cdots+a_0)=a_{k+1}+a_k+\cdots+a_0$.
 \end{problem}
 
 \begin{problem}[\maxlength]
-The sequence of \definend{Fibonacci numbers}
+The \definend{Fibonacci number sequence}
 $0,1,1,2,3,5,8,13, \ldots$ is defined by the condition that 
-each succeeding number in the sequence is the sum of the 
-two numbers before it $f_{n+1}=f_n+f_{n-1}$, subject to the initial conditions
+each succeeding number is the sum of the 
+prior two $f_{n+1}=f_n+f_{n-1}$, subject to 
 $f_0=0$ and~$f_1=1$.
 Where does this argument, which purports to show that
 all Fibonacci numbers are even, go wrong?
@@ -742,7 +742,9 @@ such that $a=bq+r$ and $0\leq r<b$.
 We prove this in steps.
 \begin{exes} 
 \begin{exercise}
-  Show that~$q$ and~$r$, if they exist, are unique.
+  Show that~$q$ and~$r$ are unique, assuming that they exist.
+  (One way to proceed is to suppose $a=bq_0+r_0=bq_1+r_1$
+   with $0\leq r_0,r_1 <b$ and show that $q_0=q_1$ and~$r_0=r_1$.)
 \end{exercise}
 \begin{answer}
   Suppose that $q_0,r_0\in\Z$ and $q_1,r_1\in\Z$ are such that
@@ -757,12 +759,13 @@ We prove this in steps.
   With that, the equation $q_0-q_1=(r_0-r_1)/(-b)$ yields that $r_0-r_1=0$.
 \end{answer}
 \begin{exercise}
-  Prove the statement when $a=0$.
-  Show that if it holds for~$a>0$ then it holds
+  Verify the statement for $a=0$.
+  Show that if it holds when~$a>0$ then it holds
   for~$a<0$.
 \end{exercise} 
 \begin{answer}
   If $a=0$ then the statement holds with $q=0$ and~$r=0$.
+
   Next assume that the statement holds for any positive dividend
   and consider a negative~$a$.
   Since $-a$ is positive, $-a=bq+r$ for some 
@@ -775,9 +778,9 @@ We prove this in steps.
 \begin{exercise} 
   Prove the statement for $a>0$.
   \hint note that the set $\setbuilder{a-bq}{q\in\Z}$,
-  has nonnegative elements,
+  has nonnegative elements and
   apply the Least Number Principle
-  to produce a smallest, and show it is the desired~$r$.
+  to produce the desired~$r$.
 \end{exercise}
 \begin{answer}
   Consider the set $E=\setbuilder{a-bq}{q\in\Z}$.

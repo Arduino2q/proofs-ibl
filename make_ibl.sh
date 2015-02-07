@@ -131,7 +131,7 @@ then
 fi
 
 # Generate the book, answer, and otheranswers
-if [[ "$LENGTH" -eq 0 ]]
+if [[ "$LENGTH" -eq 2 ]]
 then
   generate_maxlength
   rm -f ibl.pdf
@@ -151,7 +151,7 @@ then
   rm -f otherproblems.pdf
   ln -s output/otherproblems-midlength.pdf otherproblems.pdf
 fi
-if [[ "$LENGTH" -eq 2 ]]
+if [[ "$LENGTH" -eq 0 ]]
 then
   generate_minlength
   rm -f ibl.pdf
