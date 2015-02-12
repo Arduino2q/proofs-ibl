@@ -735,16 +735,21 @@ then~$A$ cannot contain~$k+1$ either, since it would be least.
 
 % .....................................
 \section{Division}
-\begin{problem} \notetext{Division Theorem} For any integer 
-\definend{divisor}~$b>0$ and \definend{dividend}~$a\,$ there is a unique pair of
-integers, the \definend{quotient}~$q$ and \definend{remainder}~$r$,
-such that $a=bq+r$ and $0\leq r<b$.
-We prove this in steps.
+\begin{problem} \notetext{Division Theorem} 
+For any integers $a,b$ with $b>0$ there are unique integers $q,r$ such that 
+both $a=bq+r$ and~$0\leq r<b$.
+Here $a$ is called the \definend{dividend}, $b$ is the \definend{divisor}, 
+$q$ is the \definend{quotient}, and $r$ is the \definend{remainder}.
+% For any integer 
+% \definend{divisor}~$b>0$ and \definend{dividend}~$a\,$ there is a unique pair of
+% integers, the \definend{quotient}~$q$ and \definend{remainder}~$r$,
+% such that $a=bq+r$ and $0\leq r<b$.
+We prove this in three stages.
 \begin{exes} 
 \begin{exercise}
   Show that~$q$ and~$r$ are unique, assuming that they exist.
-  (One way to proceed is to suppose $a=bq_0+r_0=bq_1+r_1$
-   with $0\leq r_0,r_1 <b$ and show that $q_0=q_1$ and~$r_0=r_1$.)
+  (One way to proceed is to suppose that $a=bq_0+r_0=bq_1+r_1$
+   with $0\leq r_0,r_1 <b$ and then show that $q_0=q_1$ and~$r_0=r_1$.)
 \end{exercise}
 \begin{answer}
   Suppose that $q_0,r_0\in\Z$ and $q_1,r_1\in\Z$ are such that
@@ -2082,8 +2087,8 @@ set of objects that are not elements of~$A$.
 working inside of a universal set makes the complement
 operation sensible. 
 For instance, in a number theory discussion where $\universalset=\Z$, 
-if $A$ is the set of objects greater than~$100$ then we can
-take the complement of~$A$ and the result is another subset of 
+if we consider the set of things than than~$100$ then we can
+take the complement and the result is another subset of 
 $\universalset$, so 
 we are still in number theory.
 
@@ -2978,14 +2983,14 @@ $G$ just has arbitrary pairings.
 
 
 \begin{problem}[\midlength]
-This \textit{hailstone function} $\map{h}{\N}{\N}$ is defined by cases.
+This \textit{hailstone function} $\map{h}{\N}{\N}$ is defined by cases,
 \begin{equation*}
   h(n)=\begin{cases}
          n/2  &\text{if $n$ is even}  \\
          3n+1 &\text{otherwise}
        \end{cases}
 \end{equation*}
-It uses a different formula when the input is even than when it is odd.
+using a different formula when the input is even than when it is odd.
 \begin{items}
   \item Compute $h(n)$ for $n=0$, \ldots, $n=9$.
   \item Starting with $n=6$ iterate the function, that is, 
