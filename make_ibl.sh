@@ -163,13 +163,15 @@ then
 fi
 if [[ "$LENGTH" -eq 3 ]]
 then
-  generate_maxlength
-  generate_midlength
   generate_minlength
-  rm -f ibl.pdf
-  ln -s output/ibl-maxlength.pdf ibl.pdf
-  rm -f answers.pdf
-  ln -s output/answers-maxlength.pdf answers.pdf
-  rm -f otherproblems.pdf
-  ln -s output/otherproblems-maxlength.pdf otherproblems.pdf
+  generate_midlength
+  generate_maxlength
+  # rm -f ibl.pdf
+  # ln -s output/ibl-maxlength.pdf ibl.pdf
+  # rm -f answers.pdf
+  # ln -s output/answers-maxlength.pdf answers.pdf
+  # rm -f otherproblems.pdf
+  # ln -s output/otherproblems-maxlength.pdf otherproblems.pdf
 fi
+
+# echo "LENGTH is $LENGTH"

@@ -25,7 +25,7 @@
 
 \mainmatter
 \pagestyle{bodypage}
-\chapter{Number Theory}
+\chapter{Numbers}
 
 We begin with results about the integers $\Z=\set{\ldots,-2,-1,0,1,2,\ldots}$.
 In this chapter, ``number'' means integer.
@@ -1302,8 +1302,26 @@ $\gcd(a,b)\cdot\lcm(a,b)$.
 \begin{problem}\notetext{Euclid's Algorithm}
 Prove that if $a=bq+r$ then $\gcd(a,b)=\gcd(b,r)$.  
 \begin{answer}
-Because $a=bq+r$ any common divisor of $b$ and~$r$ also divides~$a$, 
-by Linearity~\ref{ex:DividesAndLinearCombinations}.
+With $a=bq+r$, any common divisor of $b$ and~$r$ on the right
+also divides~$a$ on the left, 
+by Exercise~\ref{ex:DividesAndLinearCombinations}, Linearity.
+Thus any common divisor of $b$ and~$r$ is a common divisor of $a$ and~$b$,
+and so any common divisor of $b$ and~$r$ is less than the greatest common
+divisor $\gcd(a,b)$, by Exercise~\ref{ex:DivisibilityProperties}.\ref{exer:ComparisonDivisibility}
+In particular, $\gcd(b,r)\leq\gcd(a,b)$.
+
+Rewrite the equation as $r=a-bq$. 
+By similar reasoning\Dash
+any common divisor of $a$ and~$b$ is also a common divisor of $r$
+and~$b$, implying that any
+common divisor of $a$ and~$b$ is less than $\gcd(b,r)$\Dash
+we get that in particular $\gcd(a,b)\leq \gcd(b,r)$.
+So the two greatest common divisors are equal.
+
+\smallskip
+\textit{Alternative proof.}\hspace{1em}
+Because $a=bq+r$, any common divisor of $b$ and~$r$ also divides~$a$, 
+by Exercise~\ref{ex:DividesAndLinearCombinations}, Linearity.
 Thus any common divisor of $b$ and~$r$ is a common divisor of $a$ and~$r$.
 Rewrite the equation as $r=a-bq$ and then for the same reason any
 common divisor of $a$ and~$b$ also divides~$r$, and so any
@@ -1898,7 +1916,8 @@ Thus we may write
 the set of the primes less than ten either 
 as $P=\set{2, 3, 5, 7}$ 
 or as~$P=\setbuilder{p\in\N}{\text{$p$ is prime and $p<10$}}$ 
-(read the vertical bar as ``such that'').
+(read the vertical bar as ``such that''; some authors use a colon~$:$ instead
+of a vertical bar).
 
 \begin{problem}[\midlength] 
 Decide if each is true and justify your decision.
