@@ -63,22 +63,19 @@ It is different than the fraction $d/n$, which is a number.
 We can sensibly ask ``Does $2$ divide~$5$?''\spacefactor=1000\
 but ``Does $2/5$?''\spacefactor=1000\ is not sensible.   
 
-\begin{problem} \notetext{Interaction of parity and sign} 
+\begin{problem} \notetext{Interaction with sign} 
 \label{ex:InteractionOfParityWithSign}
 \pord.
 \begin{exes}
   \begin{exercise}
     If a number is even then its negative is even.
+    If a number is odd then its negative is odd.
   \end{exercise}
   \begin{answer}
     If $n\in\Z$ is even then $n=2k$ for some $k\in\Z$.
     Then $-n=2\cdot(-k)$ shows that the negative is also even.  
-  \end{answer}
-  \begin{exercise}
-    If a number is odd then its negative is odd.
-  \end{exercise}
-  \begin{answer}
-    Following the prior item we will show that a number is even
+
+    Following the prior paragraph, we will show that a number is even
     if and only if its negative is even.
     Suppose that a number $n\in\Z$ has a negative $-n$ that is even.
     Since the negative of $-n$ is~$n$, the prior paragraph 
@@ -90,6 +87,9 @@ but ``Does $2/5$?''\spacefactor=1000\ is not sensible.
   \end{answer}
   \begin{exercise}
     If $d\divides a$ then $-d\divides a$ and $d\divides -a$.
+    In addition, $d\divides\absval{a}$
+    (recall that the absolute value of a number $\absval{a}$ is~$a$ 
+    if $a\geq 0$ and is~$-a$ if $a<0$).
   \end{exercise}
   \begin{answer}
     Assume that $d\divides a$ for $d,a\in\Z$, so that 
@@ -97,15 +97,9 @@ but ``Does $2/5$?''\spacefactor=1000\ is not sensible.
     For the first, that $-d\divides a$, observe that
     $a=(-d)\cdot(-k)$.
     For the second, observe that $-a=d\cdot(-k)$.
-  \end{answer}
-  \begin{exercise}
-    If $d\divides a$ then $d\divides\absval{a}$.
-    (Recall that the absolute value of a number $\absval{a}$ is~$a$ 
-    if $a\geq 0$ and is~$-a$ if $a<0$.)
-  \end{exercise}
-  \begin{answer}
-    Suppose that $d\divides a$.
-    For the $a\geq 0$ case, the implication that if $d\divides a$ then 
+
+    For the absolute value there are two cases.
+    In the $a\geq 0$ case, the implication that if $d\divides a$ then 
     $d\divides a$ is trivial.
     For the $a<0$ case, 
     the implication that if $d\divides a$ then $d\divides -a$ was
@@ -162,15 +156,25 @@ but ``Does $2/5$?''\spacefactor=1000\ is not sensible.
 \end{problem}
 
 \begin{problem} \notetext{Interaction of parity and multiplication}
-\pord.
+Prove the first, and prove or disprove the second.
 \begin{exes}
 \begin{exercise}
   The product of two evens is even.
+  Generalize to any divisor~$d$.  
 \end{exercise}
 \begin{answer}
   Let $a,b\in\Z$ be even
   so that $a=2m$ and~$b=2n$ for some $m,n\in\Z$.
   Then $ab=2m\cdot 2n=2(m\cdot 2n)$ is even.  
+
+  The first paragraph can generalize to: for any~$d\in\N$, 
+  the product of two multiples of~$d$ is a multiple of~$d$.
+  For the proof,  let $a,b\in\Z$ be multiples of~$d$
+  so that $a=dm$ and~$b=dn$ for some $m,n\in\Z$.
+  Then $ab=dm\cdot dn=d(m\cdot dn)$ is a multiple of~$d$.
+
+  (The first paragraph could also generalize to: a product of two multiples of
+  $d$ is a multiple of~$d^2$.)
 \end{answer}
 \begin{exercise}
   The quotient of two evens, if it is an integer, is even.
@@ -178,19 +182,6 @@ but ``Does $2/5$?''\spacefactor=1000\ is not sensible.
 \begin{answer}
   This is false since both $6$ and~$2$ are even but the quotient $6/2$
   is not even.
-\end{answer}
-\begin{exercise}[\midlength]
-  Generalize the first item to any divisor~$d$.  
-\end{exercise}
-\begin{answer}
-  The first item can generalize to: for any~$d\in\N$, 
-  the product of two multiples of~$d$ is a multiple of~$d$.
-  For the proof,  let $a,b\in\Z$ be multiples of~$d$
-  so that $a=dm$ and~$b=dn$ for some $m,n\in\Z$.
-  Then $ab=dm\cdot dn=d(m\cdot dn)$ is a multiple of~$d$.
-
-  (The first item could also generalize to: a product of two multiples of
-  $d$ is a multiple of~$d^2$.)
 \end{answer}
 \end{exes}
 \end{problem}
@@ -588,28 +579,28 @@ Prove each by induction.
   $k(k+1)$ is even (this was shown in the prior item),
   the product is divisible by $6$.  
 \end{answer}
-\begin{exercise} 
-  If $n\in\N$ then $4\divides 13^n-1$.
-\end{exercise}
-\begin{answer}
-  The $n=0$ base step is clear, since four divides $13^0-1=0$.
-  For the inductive step assume that the statement is true for all cases 
-  with $0\leq n\leq k$ and consider the $n=k+1$ case.
-  Then $13^{k+1}-1=(13^{k+1}-13)+(13-1)=13(13^k-1)+12$.
-  The first term is divisible by~$4$ by the inductive hypothesis, while the
-  second term is obviously divisible by~$4$, and so the statement holds in 
-  this case.
+% \begin{exercise} 
+%   If $n\in\N$ then $4\divides 13^n-1$.
+% \end{exercise}
+% \begin{answer}
+%   The $n=0$ base step is clear, since four divides $13^0-1=0$.
+%   For the inductive step assume that the statement is true for all cases 
+%   with $0\leq n\leq k$ and consider the $n=k+1$ case.
+%   Then $13^{k+1}-1=(13^{k+1}-13)+(13-1)=13(13^k-1)+12$.
+%   The first term is divisible by~$4$ by the inductive hypothesis, while the
+%   second term is obviously divisible by~$4$, and so the statement holds in 
+%   this case.
 
-  \remark
-  this illustrates that 
-  sometimes when you have finished a proof by induction, 
-  while you now are sure that the statement is true, 
-  you can nonetheless be left with the sense
-  that you are not sure really \emph{why} it is true.
-  You can prove that this statement holds in a 
-  way that gives more intuition by plugging $13$ into the formula for a
-  geometric series. 
-\end{answer}
+%   \remark
+%   this illustrates that 
+%   sometimes when you have finished a proof by induction, 
+%   while you now are sure that the statement is true, 
+%   you can nonetheless be left with the sense
+%   that you are not sure really \emph{why} it is true.
+%   You can prove that this statement holds in a 
+%   way that gives more intuition by plugging $13$ into the formula for a
+%   geometric series. 
+% \end{answer}
 \begin{exercise}[\maxlength] 
     If $n\in\Z^+$ then
     $(1+\sfrac{1}{1})\cdot(1+\sfrac{1}{2})\,\cdots\,(1+\sfrac{1}{n})=n+1$.
@@ -840,8 +831,8 @@ if they have the same modulus with respect to~$m$.
 
 \begin{problem} \label{ex:AEquivBpmodMIFFABDifferBYMultipleOfM}
 Prove that $a\equiv b\pmod m$ if and only if $m\divides (a-b)$,
-that is, if and only if $a$ and~$b$ differ by a multiple of~$m$
-(for $m>0$).  
+that is, if and only if $a$ and~$b$ differ by a multiple of~$m$,
+where $m>0$.  
 \begin{answer}
 If $a\equiv b\pmod m$ if and only if they leave the same remainder,
 $a=mq_a+r$ and~$b=bq_b+r$ for some $q_a,q_b\in\Z$.
@@ -883,7 +874,7 @@ Prove each.
   $a^n\equiv b^n\pmod m$ for all $n\in\Z^+$
 \end{exercise}
 \begin{answer}
-  We will show this by induction on the power~$n$.
+  We will do induction on the power~$n$.
   The $n=1$ base step is true by the introductory assumption that 
   $a\equiv b\pmod m$.
   For the inductive step assume that the statement is true in the cases
@@ -1402,26 +1393,26 @@ linear combination of the two:
 
 \begin{problem} Prove.  \label{ex:Bezout}
 \begin{exes}
-\begin{exercise} 
-  Euclid's algorithm terminates.
-\end{exercise}
-\begin{answer}
-  Since $\gcd(a,b)=\gcd(\pm a, \pm b)$ we can restrict to $a\geq 0$
-  and $b>0$.
-  Write $a$ as~$a_0$ and~$b$ as~$b_0$.
-  The first step of the algorithm divides the larger number by the smaller; 
-  without loss of generality we have $a_0=b_0\cdot q_0+r_0$ with 
-  $0\leq r_0< b_0$.
-  If the remainder~$r$ is not zero, which would mean the algorithm 
-  terminated,
-  then we next have $b_0=r_0\cdot q_1+r_1$ with $0\leq r_1< r_0$.
-  Therefore $0\leq r_1<r_0<b$.
+% \begin{exercise} 
+%   Euclid's algorithm terminates.
+% \end{exercise}
+% \begin{answer}
+%   Since $\gcd(a,b)=\gcd(\pm a, \pm b)$ we can restrict to $a\geq 0$
+%   and $b>0$.
+%   Write $a$ as~$a_0$ and~$b$ as~$b_0$.
+%   The first step of the algorithm divides the larger number by the smaller; 
+%   without loss of generality we have $a_0=b_0\cdot q_0+r_0$ with 
+%   $0\leq r_0< b_0$.
+%   If the remainder~$r$ is not zero, which would mean the algorithm 
+%   terminated,
+%   then we next have $b_0=r_0\cdot q_1+r_1$ with $0\leq r_1< r_0$.
+%   Therefore $0\leq r_1<r_0<b$.
 
-  In this way the remainders $r_i$ form a sequence of natural numbers that
-  are falling.
-  Such a sequence must be finite so that for some~$i$ 
-  an~$r_i$ is zero and the algorithm terminates.  
-\end{answer}
+%   In this way the remainders $r_i$ form a sequence of natural numbers that
+%   are falling.
+%   Such a sequence must be finite so that for some~$i$ 
+%   an~$r_i$ is zero and the algorithm terminates.  
+% \end{answer}
 \begin{exercise}[\midlength]
   The greatest common divisors of two numbers is a linear combination of 
   the two.
@@ -1498,9 +1489,9 @@ Prove each.
 \begin{answer}
   If both $a$ and~$b$ are zero then the equation is trivial.
   If one or both numbers are nonzero then by 
-  B\'ezout's Lemma~\ref{ex:Bezout}, $\gcd(ma,mb)$ is the least
+  B\'ezout's Lemma~\ref{ex:Bezout}, $\gcd(ma,mb)$ is the smallest
   positive value of $\setbuilder{s\cdot ma+t\cdot mb}{s,t\in\Z}$.
-  This equals $m$ times the least positive member of 
+  This equals $m$ times the smallest positive member of 
   $\setbuilder{sa+tb}{s,t\in\Z}$, 
   which is $m\cdot\gcd(a,b)$.  
 \end{answer}
@@ -1512,8 +1503,13 @@ Prove each.
   are relatively prime.)
 \end{exercise}
 \begin{answer}
-  This is immediate from the prior item on taking $m$ to be~$d$, 
-  and also taking $a$ to be~$a/d$ and $b$ to be~$b/d$.       
+  Apply the prior item, taking $m$ to be~$d$, 
+  and also taking $a$ to be~$a/d$ and $b$ to be~$b/d$
+  (since $d$ is a common divisor, the results of these divisions are
+  integers).
+  That gives $\gcd(a,b)=d\cdot\gcd(a/d,b/d)$.
+  Divide both sides by~$d$
+  (again, the result is an integer).       
 \end{answer}
 \begin{exercise} \notetext{Euclid's Lemma}  
   If $a$ and~$b$ are relatively prime then $a\divides bc$ implies that 
@@ -1584,14 +1580,29 @@ or a computer script.
 \begin{answer}
   The `if' direction, that if it has such factors then it is composite,
   is clear.
-  For `only if' assume that $n$ is composite so
-  that at least one of its divisors~$a$ satisfies that $1<a<n$.
-  Suppose that $b\in\Z$ is such that $ab=n$; we will be finished when we show 
-  that $1<b<n$.
+  For `only if' assume that $n$ is composite, so that it has 
+  factors $n=a\cdot b$ that are not trivial\Dash it is not the case that
+  one of them is~$1$ and the other~$n$.
+  By one of the divisibility properties 
+  Exercise~\ref{ex:DivisibilityProperties}, both divisors are less than or
+  equal to~$n$.
+  They must both be strictly less than~$n$ because by choice of $a,b$ they
+  are not trivial factors, and if one were~$n$ then the other would have to
+  be~$1$.
+  For the same reason neither equals~$1$.
+
+  By a property of the interaction with sign
+  Exercise~\ref{ex:InteractionOfParityWithSign}
+  we know that if $a|n$ then so also $-a|n$.
+  Thus, without loss of generality we can assume 
+  that $a$ is positive.
+  So, $1<a<n$.
+  
+  It remains to show that the same is true of~$b$.
   First, $b$ is positive because $a$ and~$n$ are positive.
   Next,~$b$ must be greater than~$1$ because $0<b\leq 1$ 
   implies that $ab\leq a<n$.
-  Finally,~$b$ must be less than~$n$ because $1<a$ implies that $b<ab=n$.   
+  We have already shown~$b$ must be less than~$n$.   
 \end{answer}
 \begin{exercise} 
   Every number greater than $1$ has a prime divisor.
@@ -1777,9 +1788,8 @@ Suppose that $p$ is a prime.  Prove each.\label{ex:EuclidsOtherLemma}
 \end{problem}
 
 \noindent\remark had we
-included~$1$ among the primes then this theorem would not
-hold\Dash factorization would not be unique\Dash 
-since to any existing factorization we could add more $1$'s.
+included~$1$ among the primes then factorization would not be unique
+since to any existing factorization we could multiply by more~$1$'s.
 
 \begin{problem}[\midlength] 
 True or false:
@@ -1809,12 +1819,11 @@ of $a=p_0^{e_0}\cdots p_{n-1}^{e_{n-1}}$
 and $b=p_0^{f_0}\cdots p_{n-1}^{f_{n-1}}$
 (to use the same primes we abandon unique factorization and 
 allow that some exponents are zero).
-Prove each.
-\begin{exes}
-\begin{exercise}
-  In the prime factorization of
-  $\gcd(a,b)$ the exponent of $p_i$ is $\min(e_i,f_i)$.
-\end{exercise}
+Prove that
+in the prime factorization of
+$\gcd(a,b)$ the exponent of $p_i$ is $\min(e_i,f_i)$.
+(The proof that in the prime factorization of $\lcm(a,b)$ the exponent of 
+$p_i$ is $\max(e_i,f_i)$ is much the same.)
 \begin{answer}
   Let $d=\gcd(a,b)$ and consider its prime factorization.
   If $p$ is a prime that divides~$a$ (or~$b$) then
@@ -1836,14 +1845,6 @@ Prove each.
   because there are more 
   $p_i$'s on the left than on the right.  
 \end{answer}
-\begin{exercise} 
-  In the prime factorization of $\lcm(a,b)$ the exponent of 
-  $p_i$ is $\max(e_i,f_i)$.
-\end{exercise}
-\begin{answer}
-  This is just like the prior item's argument.    
-\end{answer}
-\end{exes}
 \end{problem}
 
 \begin{problem}[\midlength] \notetext{Existence of Irrational Numbers}
@@ -1871,16 +1872,16 @@ Prove each.
   and even number of~$2$'s, which
   contradicts the uniqueness of prime factorizations.   
 \end{answer}
-\begin{exercise}[\maxlength] 
-  Prove that $\sqrt{17}$ is irrational. % College Math Journal Jan 2013 pp 53
-\end{exercise}
-\begin{answer}
-  If $\sqrt{17}=n/d$ for $n,d\in\Z$ then $17d^2=n^2$.
-  Expand $d$ and~$n$ into their prime factorizations.
-  Then on the left is an odd number of $17$'s while on the right
-  is an even number, which contradicts uniqueness of 
-  prime factorization. 
-\end{answer}
+% \begin{exercise}[\maxlength] 
+%   Prove that $\sqrt{17}$ is irrational. % College Math Journal Jan 2013 pp 53
+% \end{exercise}
+% \begin{answer}
+%   If $\sqrt{17}=n/d$ for $n,d\in\Z$ then $17d^2=n^2$.
+%   Expand $d$ and~$n$ into their prime factorizations.
+%   Then on the left is an odd number of $17$'s while on the right
+%   is an even number, which contradicts uniqueness of 
+%   prime factorization. 
+% \end{answer}
 \end{exes}
 \end{problem}
 
@@ -2036,7 +2037,8 @@ Prove, for any sets $A$, $B$, and~$C$.
 \end{problem}
 
 \begin{problem}[\maxlength] 
-For each, give example sets or show that no example is possible.
+For each, give an example of three sets satisfying the conditions,
+or show that no example is possible.
 \begin{items}
 \item $A\subseteq B$, $B\not\subseteq C$, $A\subseteq C$
 \item $A\not\subseteq B$, $B\not\subseteq C$, $A\subseteq C$
@@ -2061,7 +2063,7 @@ we are considering the set of integers less than~$100$.
 
 \begin{df}
 The \definend{characteristic function} of a set~$A$ is a map
-$\charfcn{A}$ (whose domain is the universal set) such that
+$\charfcn{A}$ (or $\mathbb{1}_A$), whose domain is the universal set, such that
 $\charfcn{A}(x)=1$ if~$x\in A$, and $\charfcn{A}(x)=0$ if~$x\notin A$.  
 \end{df}
 
@@ -2069,11 +2071,10 @@ $\charfcn{A}(x)=1$ if~$x\in A$, and $\charfcn{A}(x)=0$ if~$x\notin A$.
 \notetext{Russell's Paradox}
 The definition that we gave allows sets to contain anything.
 This turns out to be naive. 
-For, from our definition it is natural to consider 
-the set that contains all sets.
+For, if sets can contain anything then we naturally think of 
+the set that contains everything, all sets. 
 Note that it has itself as an element.
-With that in mind, 
-consider the set of all sets that don't have themselves as 
+So, consider the set of all sets that don't contain themselves as 
 elements~$D=\setbuilder{S}{S\notin S}$.
 \begin{exes}
 \begin{exercise} 
@@ -2391,19 +2392,21 @@ where $X$ is the universal set $\universalset=X$.
 % \end{answer}
 % \end{problem}
 
-\begin{problem} \pord.
+\begin{problem} \pord
 \begin{exes}
-\begin{exercise} 
-  $A-B\subseteq A$
-\end{exercise}
-\begin{answer}
-  This is true.
-  If $x\in A-B$
-  then by the definition of set difference $x\in A$ (but $x\notin B$).
-  This implication is the requirement for $A\subseteq B$.  
-\end{answer}
+% \begin{exercise} 
+%   $A-B\subseteq A$
+% \end{exercise}
+% \begin{answer}
+%   This is true.
+%   If $x\in A-B$
+%   then by the definition of set difference $x\in A$ (but $x\notin B$).
+%   This implication is the requirement for $A\subseteq B$.  
+% \end{answer}
 \begin{exercise}[\midlength] 
+  For any two sets,  
   $A-B=A\intersection\setcomp{B}$
+  (and thus $A-B\subseteq A$).
 \end{exercise}
 \begin{answer}
   We will show the sets are equal by mutual inclusion.
@@ -2510,16 +2513,16 @@ where $X$ is the universal set $\universalset=X$.
 Two sets are \definend{disjoint} if their intersection is empty.  
 \end{df}
 
-\begin{problem}[\midlength]
- \pord: $A\intersection B$ and $A\symdiff B$ are disjoint.
-\begin{answer}
-  The statement is true.
-  By definition $A\symdiff B=\setbuilder{x}{\text{$x\in A-B$ or $x\in B-A$}}$.
-  In the $x\in A-B$ case, $x\notin B$ and so $x\notin A\intersection B$.
-  The $x\in B-A$ case is similar.
-  Thus $(A\symdiff B)\intersection (A\intersection B)$ has no elements.  
-\end{answer}
-\end{problem}
+% \begin{problem}[\midlength]
+%  \pord: $A\intersection B$ and $A\symdiff B$ are disjoint.
+% \begin{answer}
+%   The statement is true.
+%   By definition $A\symdiff B=\setbuilder{x}{\text{$x\in A-B$ or $x\in B-A$}}$.
+%   In the $x\in A-B$ case, $x\notin B$ and so $x\notin A\intersection B$.
+%   The $x\in B-A$ case is similar.
+%   Thus $(A\symdiff B)\intersection (A\intersection B)$ has no elements.  
+% \end{answer}
+% \end{problem}
 
 \begin{problem}
   Find three sets $A$, $B$, and $C$, such that 
@@ -2578,7 +2581,7 @@ subsets of~$A$.
 \end{df}
 
 \begin{problem}[\midlength] 
-  List 
+  List the elements of each power set
   $\powerset(\set{0,1})$,   
   $\powerset(\set{0,1,2})$,   
   $\powerset(\set{0})$, and   
@@ -2589,8 +2592,10 @@ The power set of the two-element set
 $\powerset(\set{0,1})=\set{\emptyset, \set{0}, \set{1}, \set{0,1}}$
 has four elements, that is, is of order four.
 The power set of the three-element set 
-$\powerset(\set{0,1,2})=\set{\emptyset,\set{0},\set{1},\set{2},
-                             \set{0,1},\set{1,2},\set{0,2},\set{0,1,2}}$
+\begin{equation*}
+  \powerset(\set{0,1,2})=\set{\emptyset,\set{0},\set{1},\set{2},
+                             \set{0,1},\set{1,2},\set{0,2},\set{0,1,2}}
+\end{equation*}
 has eight elements.
 The power set of the singleton $\set{0}$ has two elements
 $\powerset(\set{0})=\set{\emptyset,\set{0}}$.
@@ -2602,12 +2607,19 @@ $\powerset(\emptyset)=\set{\emptyset}$.
 \begin{problem}  
 Let $A=\set{\emptyset,\set{\emptyset}}$.
 Decide, with justification, whether each is true or false.
-\begin{exes}
-\begin{exercise} 
+\begin{items}
+\item 
   $\emptyset\in\powerset(A)$, 
   $\emptyset\subseteq\powerset(A)$    
-\end{exercise}
+\item   $\set{\emptyset}\in\powerset(A)$, 
+  $\set{\emptyset}\subseteq\powerset(A)$    
+\item
+  $\set{\set{\emptyset}}\in\powerset(A)$,    
+  $\set{\set{\emptyset}}\subseteq\powerset(A)$    
+\end{items}
 \begin{answer}
+\begin{items}
+\item    
 The power set of a two-element set $\set{a,b}$ is 
 $\powerset(\set{a,b})=\set{\emptyset,\set{a},\set{b},\set{a,b}}$.
 Taking $\emptyset$ for~$a$ and $\set{\emptyset}$ for~$b$ we have
@@ -2619,12 +2631,8 @@ $\powerset(S)=\set{\emptyset, \set{\emptyset}, \set{\set{\emptyset}},
   of $\powerset(A)$ listed.
   The second is true by the earlier result~\ref{ex:EmptySetUnique}
   that the empty set is a subset of all sets.
-\end{answer}
-\begin{exercise} 
-  $\set{\emptyset}\in\powerset(A)$, 
-  $\set{\emptyset}\subseteq\powerset(A)$    
-\end{exercise}
-\begin{answer}
+
+\item
   Again the first is true by inspection, 
   since one of the elements of $\powerset(A)$ is 
   $\set{\emptyset}$.  (It is listed second.)
@@ -2634,12 +2642,7 @@ $\powerset(S)=\set{\emptyset, \set{\emptyset}, \set{\set{\emptyset}},
   elements~$x$ of the first, $x$ is also an element of the second.
   In this case the subset~$\set{\emptyset}$ has only one element to check,
   it is indeed an element of~$\powerset(A)$.
-\end{answer}
-\begin{exercise} 
-  $\set{\set{\emptyset}}\in\powerset(A)$,    
-  $\set{\set{\emptyset}}\subseteq\powerset(A)$    
-\end{exercise}
-\begin{answer}
+\item
   The first is true by inspection, since it is the element that is listed
   third.
   To verify the second,
@@ -2647,8 +2650,8 @@ $\powerset(S)=\set{\emptyset, \set{\emptyset}, \set{\set{\emptyset}},
   we can check that each of its elements are elements of the power set.
   It has only one element, namely~$\set{\emptyset}$.
   That is indeed one of the elements of~$\powerset(A)$.   
+\end{items}
 \end{answer}
-\end{exes}
 \end{problem}
 
 \begin{problem} \pord:
@@ -2681,17 +2684,17 @@ $A=\set{a_0, \ldots, a_{k-1},a_k}$.
 Elements $S\in\powerset(A)$\Dash that is, subsets~$S\subseteq A$\Dash
 fall into one of two categories: either $a_k\notin S$ or $a_k\in S$.
 The inductive hypothesis gives that 
-the number of subsets in the first category is $2^{k-1}$.
+the number of subsets in the first category is $2^{k}$.
 Showing that 
-the second category also contains~$2^{k-1}$-many elements will finish the proof
+the second category also contains~$2^{k}$-many elements will finish the proof
 because then
 the total of the two categories is 
-$2^{k-1}+2^{k-1}=2\cdot(2^{k-1})=2^k$.
+$2^{k}+2^{k}=2\cdot(2^{k})=2^{k+1}$.
 
 We will show that the collection of subsets containing~$a_k$
 has the same number of elements as the collection of subsets that do not
 contain~$a_k$.
-(As noted in the prior paragraph, this collection has $2^{k-1}$-many elements.)
+(As noted in the prior paragraph, this collection has $2^{k}$-many elements.)
 To prove that, with every subset~$S$ of $A$ that contains~$a_k$ we associate
 a subset $\hat{S}$ that does not contain~$a_k$,
 namely $\hat{S}=S-\set{a_k}$.
@@ -2802,22 +2805,22 @@ Thus $A^0=B^0=\set{\sequence{}}$.
   we have both that $x\in A$ and that $x\in B$ (and similarly for~$y$).
   Clearly in this case $A=B$.  
 \end{answer}
-\begin{exercise} 
-  Is $(A\times B)\times C$ equal to $A\times (B\times C)$?
-\end{exercise}
-\begin{answer}
-  The two sets $(A\times B)\times C$ and~$A\times (B\times C)$ 
-  are not equal in general.
-  For instance, if $A=\set{0}$, $B=\set{1}$, and $C=\set{2}$ then 
-  $(A\times B)\times C=\set{\sequence{\sequence{0,1},2}}$
-  has a single element, a sequence with two terms, the first
-  of which is a sequence.
-  But while $A\times(B\times C)=\set{\sequence{0,\sequence{1,2}}}$ 
-  also has a single element that is a sequence with two terms, 
-  the first element here is not a sequence. 
+% \begin{exercise} 
+%   Is $(A\times B)\times C$ equal to $A\times (B\times C)$?
+% \end{exercise}
+% \begin{answer}
+%   The two sets $(A\times B)\times C$ and~$A\times (B\times C)$ 
+%   are not equal in general.
+%   For instance, if $A=\set{0}$, $B=\set{1}$, and $C=\set{2}$ then 
+%   $(A\times B)\times C=\set{\sequence{\sequence{0,1},2}}$
+%   has a single element, a sequence with two terms, the first
+%   of which is a sequence.
+%   But while $A\times(B\times C)=\set{\sequence{0,\sequence{1,2}}}$ 
+%   also has a single element that is a sequence with two terms, 
+%   the first element here is not a sequence. 
 % 
 %   \remark we could prove that they are equal only if one of them is empty.  
-\end{answer}
+% \end{answer}
 \begin{exercise} 
   Show that this statement is false: 
   $A\times B\subseteq \hat{A}\times \hat{B}$ if and only if
@@ -2858,9 +2861,10 @@ Thus $A^0=B^0=\set{\sequence{}}$.
 \begin{exes}
 \begin{exercise}
   Prove that $(A\union B)\times C=(A\times C)\union(B\times C)$.
+  What is the interaction of Cartesian product and intersection?
 \end{exercise}
 \begin{answer}
-  We will use mutual containment.
+  For union we will use mutual containment.
   For the left-to-right direction
   assume that $\sequence{x,c}\in (A\union B)\times C$.
   Then $x\in A\union B$ and so either $x\in A$ or~$x\in B$.
@@ -2876,16 +2880,9 @@ Thus $A^0=B^0=\set{\sequence{}}$.
   $\sequence{x,c}\in (A\union B)\times C$.
   The  $\sequence{x,c}\in B\times C$ case is similar.
   Thus $(A\times C)\union (B\times C)\subseteq (A\union B)\times C$.   
-\end{answer}
-\begin{exercise}
-  What is the interaction of Cartesian product and intersection?
-\end{exercise}
-\begin{answer}
-  As suggested by the prior item,
-  $(A\intersection B)\times C = (A\times C)\intersection (B\times C)$.
-  Simply to provide an additional proof style besides the one in the prior item,
-  we will use a sequence of if and only if statements.
 
+  As to intersection,
+  $(A\intersection B)\times C = (A\times C)\intersection (B\times C)$.
   The membership relation $\sequence{x,c}\in (A\intersection B)\times C$
   holds if and only if both
   $x\in A\intersection B$ and~$c\in C$.
@@ -2905,7 +2902,7 @@ Thus $A^0=B^0=\set{\sequence{}}$.
   so $\setcomp{(A\times B)}=\Z^2-\set{\sequence{0,1}}$,
   while $\setcomp{A}\times\setcomp{B}=(\Z-\set{0})\times(\Z-\set{1})$.
   The two sets are not equal; 
-  for instance, $\sequence{0,2}\in \setcomp{A\times B}$
+  for instance, $\sequence{0,2}\in \setcomp{(A\times B)}$
   while $\sequence{0,2}\notin\setcomp{A}\times\setcomp{B}$.  
 \end{answer}
 \end{exes}
@@ -3006,15 +3003,15 @@ with arrows that begin with a bar.
 
 Do not think that a function must have a formula.
 The final item in the prior exercise has a formula but for other items 
-$G$ just has arbitrary pairings.
+$G$ just consists of arbitrary pairings.
 
 
 \begin{problem}[\midlength]
 This \textit{hailstone function} $\map{h}{\N}{\N}$ is defined by cases,
 \begin{equation*}
   h(n)=\begin{cases}
-         n/2  &\text{if $n$ is even}  \\
-         3n+1 &\text{otherwise}
+         n/2  &\text{-- if $n$ is even}  \\
+         3n+1 &\text{-- otherwise}
        \end{cases}
 \end{equation*}
 using a different formula when the input is even than when it is odd.
@@ -3050,23 +3047,24 @@ in the sentence following the definition.)
 The distinction between function and graph
 is there only because the graph does not determine the codomain and
 so we must specify it separately.
-(The graph does determine the domain.)
+(The graph, however, does determine the domain.)
 
 In the edge case that the domain is the empty set, the only function possible
 is the empty set of ordered pairs.
 
 \begin{problem}[\maxlength]
-Show that
-$G=\setbuilder{\sequence{q,n}\in \Q^+\!\!\times\Z^+}{\text{$n$ is $q$'s numerator}}$
-is not well-defined.
+Show that 
+$\setbuilder{\sequence{q,n}\in \Q^+\!\!\times\Z^+}{\text{$n$ is $q$'s numerator}}$ 
+is not the graph of a function.
 \begin{answer}
+It is not well-defined.
 The rational number $1/2$ can be written $2/4$, in which case the numerator 
 is different.  
 \end{answer}
 \end{problem}
 
 \begin{problem}[\maxlength]
-Where $D$ and $C$ are finite sets,
+When $D$ and $C$ are finite sets,
 how many functions are there from $D$ to $C$?
 \begin{answer}
 For each element of the domain, in making a function we have a choice 
@@ -3411,6 +3409,8 @@ Prove.
 \end{answer}
 \begin{exercise} 
   A composition of onto functions is onto.
+  (With the prior item this gives that a
+  composition of correspondences is a correspondence.)
 \end{exercise}
 \begin{answer}
   Let $\map{f}{D}{C}$ and~$\map{g}{C}{B}$ be functions that are onto.
@@ -3418,12 +3418,6 @@ Prove.
   The function~$g$ is onto so there is a $c\in C$ such that $g(c)=b$.
   The function~$f$ is onto so there is a $d\in D$ such that $f(d)=c$.
   Then $\composed{g}{f}(d)=b$, and so the composition is onto.
-\end{answer}
-\begin{exercise} 
-  A composition of correspondences is a correspondence.
-\end{exercise}
-\begin{answer}
-  This is immediate from the prior two items. 
 \end{answer}
 \begin{exercise} 
   If $\composed{g}{f}$ is onto then $g$ is onto.
@@ -3810,24 +3804,24 @@ A relation that satisfies all three conditions is an
 \end{exes}
 \end{problem}
 
-\begin{problem}[\midlength]
-Show that the binary relation 
-$P=\setbuilder{\sequence{x,y}\in\Z^2}{\text{$x$ and $y$ have the same parity}}$
-is an equivalence.
-\begin{answer}
-For reflexivity observe that a number has the same parity as itself.
-For symmetry, if $\sequence{x,y}\in P$ then
-the two numbers have the same parity\Dash they 
-are either both even or both odd\Dash
-and so $\sequence{y,x}\in P$.
+% \begin{problem}[\midlength]
+% Show that the binary relation 
+% $P=\setbuilder{\sequence{x,y}\in\Z^2}{\text{$x$ and $y$ have the same parity}}$
+% is an equivalence.
+% \begin{answer}
+% For reflexivity observe that a number has the same parity as itself.
+% For symmetry, if $\sequence{x,y}\in P$ then
+% the two numbers have the same parity\Dash they 
+% are either both even or both odd\Dash
+% and so $\sequence{y,x}\in P$.
 
-Suppose, to prove transitivity, that both $\sequence{x,y}\in P$ 
-and~$\sequence{y,z}\in P$.
-Then $x$ and~$y$ have the same parity, and also $y$ and~$z$ have the same
-parity, and consequently $x$ and~$z$ have the same parity.
-So $\sequence{x,z}\in P$.  
-\end{answer}
-\end{problem}
+% Suppose, to prove transitivity, that both $\sequence{x,y}\in P$ 
+% and~$\sequence{y,z}\in P$.
+% Then $x$ and~$y$ have the same parity, and also $y$ and~$z$ have the same
+% parity, and consequently $x$ and~$z$ have the same parity.
+% So $\sequence{x,z}\in P$.  
+% \end{answer}
+% \end{problem}
 
 \begin{problem}  \label{ex:EquivModMIsEquivalenceRelation}
 Fix a divisor $m\in\Z^+$.
@@ -3851,43 +3845,6 @@ is an equivalence.
   $a-b=mk_0$ and $b-c=mk_1$ for some~$k_0,k_1\in Z$.
   Add: $(a-b)+(b-c)=m\cdot(k_0-k_1)$. 
   Then $a-c$ is a multiple of~$m$.
-\end{answer}
-\end{problem}
-
-\begin{problem}[\maxlength]
-  Characterize all of the binary relations on $A=\set{0,1}$
-  as reflexive or not, symmetric or not,
-  and transitive or not.
-\begin{answer}
-There are four length~$2$ sequences (that is, ordered pairs) in $A^2$.
-We can describe all the relations by listing whether or not they
-contain each of those four.
-Here we write $0$ or~$1$ instead of $F$ or~$T$ so that the relation's
-subscript written in binary describes its members.
-\begin{center}
-  \def\adjrel#1{\makebox[1.5em][l]{#1}} % make R's come out left-adjusted
-  \begin{tabular}{c|cccc|ccc}
-    relation
-    &$\sequence{0,0}$ &$\sequence{0,1}$ &$\sequence{1,0}$ &$\sequence{1,1}$
-      &reflexive?  &symmetric?  &transitive?  \\ \hline
-    \adjrel{$R_0$} &$0$ &$0$ &$0$ &$0$ &$0$  &$1$  &$1$  \\ 
-    \adjrel{$R_1$} &$0$ &$0$ &$0$ &$1$ &$0$  &$1$  &$1$  \\ 
-    \adjrel{$R_2$} &$0$ &$0$ &$1$ &$0$ &$0$  &$0$  &$1$  \\ 
-    \adjrel{$R_3$} &$0$ &$0$ &$1$ &$1$ &$0$  &$0$  &$1$  \\[0.5ex] % \hline
-    \adjrel{$R_4$} &$0$ &$1$ &$0$ &$0$ &$0$  &$0$  &$1$  \\ 
-    \adjrel{$R_5$} &$0$ &$1$ &$0$ &$1$ &$0$  &$0$  &$1$  \\ 
-    \adjrel{$R_6$} &$0$ &$1$ &$1$ &$0$ &$0$  &$1$  &$0$  \\ 
-    \adjrel{$R_7$} &$0$ &$1$ &$1$ &$1$ &$0$  &$1$  &$0$  \\[0.5ex] % \hline
-    \adjrel{$R_8$} &$1$ &$0$ &$0$ &$0$ &$0$  &$1$  &$1$  \\ 
-    \adjrel{$R_9$} &$1$ &$0$ &$0$ &$1$ &$1$  &$1$  &$1$  \\ 
-    \adjrel{$R_{10}$} &$1$ &$0$ &$1$ &$0$ &$0$  &$0$  &$1$  \\ 
-    \adjrel{$R_{11}$} &$1$ &$0$ &$1$ &$1$ &$1$  &$0$  &$1$  \\[0.5ex] %\hline
-    \adjrel{$R_{12}$} &$1$ &$1$ &$0$ &$0$ &$0$  &$0$  &$1$  \\ 
-    \adjrel{$R_{13}$} &$1$ &$1$ &$0$ &$1$ &$1$  &$0$  &$1$  \\ 
-    \adjrel{$R_{14}$} &$1$ &$1$ &$1$ &$0$ &$0$  &$1$  &$0$  \\ 
-    \adjrel{$R_{15}$} &$1$ &$1$ &$1$ &$1$ &$1$  &$1$  &$1$  
-  \end{tabular}
-\end{center}
 \end{answer}
 \end{problem}
 
@@ -3928,16 +3885,54 @@ fixing axes and giving equations.
 \end{answer}
 \end{problem}
 
+
+\begin{problem}[\maxlength]
+  Consider all of the binary relations on $A=\set{0,1}$.
+  Characterize each as reflexive or not, symmetric or not,
+  and transitive or not.
+\begin{answer}
+There are four length~$2$ sequences (that is, ordered pairs) in $A^2$.
+We can describe all the relations by listing whether or not they
+contain each of those four.
+Here we write $0$ or~$1$ instead of $F$ or~$T$ so that the relation's
+subscript written in binary describes its members.
+\begin{center}
+  \def\adjrel#1{\makebox[1.5em][l]{#1}} % make R's come out left-adjusted
+  \begin{tabular}{c|cccc|ccc}
+    relation
+    &$\sequence{0,0}$ &$\sequence{0,1}$ &$\sequence{1,0}$ &$\sequence{1,1}$
+      &reflexive?  &symmetric?  &transitive?  \\ \hline
+    \adjrel{$R_0$} &$0$ &$0$ &$0$ &$0$ &$0$  &$1$  &$1$  \\ 
+    \adjrel{$R_1$} &$0$ &$0$ &$0$ &$1$ &$0$  &$1$  &$1$  \\ 
+    \adjrel{$R_2$} &$0$ &$0$ &$1$ &$0$ &$0$  &$0$  &$1$  \\ 
+    \adjrel{$R_3$} &$0$ &$0$ &$1$ &$1$ &$0$  &$0$  &$1$  \\[0.5ex] % \hline
+    \adjrel{$R_4$} &$0$ &$1$ &$0$ &$0$ &$0$  &$0$  &$1$  \\ 
+    \adjrel{$R_5$} &$0$ &$1$ &$0$ &$1$ &$0$  &$0$  &$1$  \\ 
+    \adjrel{$R_6$} &$0$ &$1$ &$1$ &$0$ &$0$  &$1$  &$0$  \\ 
+    \adjrel{$R_7$} &$0$ &$1$ &$1$ &$1$ &$0$  &$1$  &$0$  \\[0.5ex] % \hline
+    \adjrel{$R_8$} &$1$ &$0$ &$0$ &$0$ &$0$  &$1$  &$1$  \\ 
+    \adjrel{$R_9$} &$1$ &$0$ &$0$ &$1$ &$1$  &$1$  &$1$  \\ 
+    \adjrel{$R_{10}$} &$1$ &$0$ &$1$ &$0$ &$0$  &$0$  &$1$  \\ 
+    \adjrel{$R_{11}$} &$1$ &$0$ &$1$ &$1$ &$1$  &$0$  &$1$  \\[0.5ex] %\hline
+    \adjrel{$R_{12}$} &$1$ &$1$ &$0$ &$0$ &$0$  &$0$  &$1$  \\ 
+    \adjrel{$R_{13}$} &$1$ &$1$ &$0$ &$1$ &$1$  &$0$  &$1$  \\ 
+    \adjrel{$R_{14}$} &$1$ &$1$ &$1$ &$0$ &$0$  &$1$  &$0$  \\ 
+    \adjrel{$R_{15}$} &$1$ &$1$ &$1$ &$1$ &$1$  &$1$  &$1$  
+  \end{tabular}
+\end{center}
+\end{answer}
+\end{problem}
+
 \begin{problem} 
 Relations can be reflexive or not, 
-symmetric or not, and transitive or not.
+symmetric or not, and transitive or not, so there are eight cases.
 For each combination, give a binary relation on $A=\set{0,1,2}$.
 \begin{exes}
 \begin{exercise}
-  Give example relations for the four cases
-  that are not reflexive. 
-  That is, give a first relation that is not reflexive
-  not symmetric and not transitive, etc.     
+  There are four cases 
+  that are not reflexive (e.g., one is: not reflexive, not symmetric, and 
+  not transitive). 
+  For each case give an example relation on $A=\set{0,1,2}$.
 \end{exercise}
 \begin{answer}
   The first is a relation that is not reflexive, not symmetric, and
@@ -4031,8 +4026,8 @@ For each combination, give a binary relation on $A=\set{0,1,2}$.
 \begin{problem}[\maxlength] \label{RationalsAsEqClasses}
 Consider the relation
 $\setbuilder{(\sequence{p,q},\sequence{n,d})\in (\Z\times\Z^+)^2}{pd=qn}$
-(restated, $\sequence{p,q}\\Z\times\Z^+$\ is related to~$\sequence{n,d}$
-if $pd=qn$).
+(restated, elements $\sequence{p,q}$ and~$\sequence{n,d}$ of $\Z\times\Z^+$ 
+are related if $pd=qn$).
 List five elements.
 Prove that it is an equivalence.
 \begin{answer}
